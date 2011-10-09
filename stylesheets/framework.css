@@ -74,7 +74,7 @@ img.lfloat {
 	float: left;	
 	margin: 0 15px 10px 0;
 }
-	img.rfloat.frame, img.lfloat.frame {
+	img.rfloat.frame, img.lfloat.frame, img.frame {
 		background: #fff;
 		-moz-box-shadow: 2px 2px 5px #999;
 		-webkit-box-shadow: 2px 2px 5px #999;
@@ -95,8 +95,6 @@ header big { color:#FFF; }
 header small { color:#ededed; }
 
 /* General */
-big { color:#333; }
-small { color:#555; }
 
 h1 big {
 	font-size: 1.5em;
@@ -113,7 +111,16 @@ h2 small {
 	display:block;
 }
 
+/* Captions */
+.caption {
+	color:#999;
+	font-weight: bold;
+	font-size: .9em;
+	margin-top: 5px;
+}
+
 /* Footer */
+footer h1, footer h2, footer h3 { color: #fff; }
 footer p { color:#fff; }
 
 
@@ -321,7 +328,7 @@ a.small {
 .last { margin-right: -20px; }*/
 
 .visible { display:block !important; }
-
+.center { text-align: center; }
 
 
 

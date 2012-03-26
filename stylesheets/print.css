@@ -1,0 +1,111 @@
+/* -------------------------------------------------------
+	
+	Print Stylesheet
+	
+	Centurion Framework v.2.1
+	
+	Created by: 	Justin Hough
+	Documentation:	http://www.justinhough.com/centurion
+
+	Free to use under the MIT license.
+	http://www.opensource.org/licenses/mit-license.php
+	
+-------------------------------------------------------- */
+
+@page {
+	margin: 5%;
+}
+
+.wrapper, 
+.container { 
+  border: 0;
+  padding: 0;
+  width: auto;
+  word-wrap:break-word;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+  line-height: 1.3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul li,
+ol li {
+  color: #000;
+  word-wrap:break-word;
+}
+
+a,
+a:visited, 
+a:hover {
+  color:#00F;
+}
+
+
+a.button,
+a.button.large,
+a.button.small,
+a.button.grey,
+a.button.blue,
+a.button.green,
+a.button.orange,
+a.button.yellow {
+  background: #fff;
+  border: 0;
+  /* Remove all shadows and borders */
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  -o-border-radius: none;
+  border-radius: none;
+  
+  color: #000;
+  display:block;
+  outline: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+  max-width: 400px;
+}
+
+
+header nav,
+footer {
+	display: none;
+}
+
+/* Consider replacing with an image to denote what was removed */
+video,
+embed,
+audio,
+object {
+	display: none;
+}
+
+
+.container .grid-1,
+.container .grid-2,
+.container .grid-3,
+.container .grid-4,
+.container .grid-5,
+.container .grid-6,
+.container .grid-7,
+.container .grid-8,
+.container .grid-9,
+.container .grid-10,
+.container .grid-11,
+.container .grid-12 { width: 86%; }
+

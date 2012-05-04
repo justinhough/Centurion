@@ -2,23 +2,11 @@
 	
 	Custom Site Styles
 	
-	Centurion Framework v.2.1
-	
-	Created by: 	Justin Hough
-	Documentation:	http://www.justinhough.com/centurion
-
-	Free to use under the MIT license.
-	http://www.opensource.org/licenses/mit-license.php
-	
 -------------------------------------------------------- */
 
 /* ================================================
 		Site Wide Styling
 ================================================== */
-body {
-	background-image: url('../images/brick_wall.jpg');
-	background-attachment:fixed;
-}
 
 
 
@@ -33,7 +21,7 @@ body {
 		Custom Media Queries
 ================================================== */
 
-/* Standard 960
+/* Standard Framework
 --------------------------------- */
 @media only screen and (max-width: 959px) {
 	
@@ -42,12 +30,6 @@ body {
 /* Tablet - Landscape
 --------------------------------- */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-	
-}
-
-/* Tablet - Portrait
---------------------------------- */
-@media only screen and (max-width: 767px) {
 	
 }
 

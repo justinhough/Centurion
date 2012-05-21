@@ -20,3 +20,8 @@ FEATURES
 * 
 
 And more...
+
+Licensed under GPL.
+
+GPL license:
+http://www.gnu.org/licenses/gpl.html

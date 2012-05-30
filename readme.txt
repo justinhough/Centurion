@@ -2,9 +2,9 @@
 	Centurion
 ================================================================
 
-Centurion is a CSS Media Query driven framework. It comes out of
-the box, or the Git with pre-built features that help you build
-sites faster for Desktop and Mobile.
+Centurion is a HTML5 / CSS 3 based framework for rapid prototyping. 
+It comes out of the box, or the Git with pre-built features that
+help you build sites faster for Desktop and Mobile.
 
 The grid adjusts to the screen proportions that are given by the
 browser, and that is all there is to it.

@@ -116,7 +116,7 @@ img.rfloat.frame, img.lfloat.frame, img.frame {
 	float: left;
 	margin-left: 10px;
 	margin-right: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 }
 
 /* Full Grid

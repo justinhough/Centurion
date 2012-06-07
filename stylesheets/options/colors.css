@@ -43,12 +43,19 @@ nav {
 nav ul li {
   color: #333;
 }
-nav ul li a {
-  color:  #333;
+nav ul li a,
+nav ul li a:visited {
+  color: #333;
 }
 nav ul li a:hover {
-  color:#000;
   background: #C5C5C5;
+  color:#000;
+  text-decoration: none;
+}
+nav ul li a.on,
+nav ul li a.active {
+  background: #FFF;
+  color:#000;
   text-decoration: none;
 }
 

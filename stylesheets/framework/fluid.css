@@ -14,14 +14,15 @@
 /* Desktop/Tablet Fluid Grid Layout - 92% */
 .container {
   width: 92%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 .container .grid-1, .container .grid-2, .container .grid-3, .container .grid-4, .container .grid-5, .container .grid-6, .container .grid-7, .container .grid-8, .container .grid-9, .container .grid-10, .container .grid-11, .container .grid-12 {
   display: inline;
   float: left;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
+  margin-left: 1%;
+  margin-right: 1%;
+  position: relative;
 }
 .container .centerGrid {
   display: block;
@@ -36,136 +37,112 @@
   margin-right: 0;
 }
 .container .grid-1 {
-  width: 6.667%;
+  width: 6.333%;
 }
 .container .grid-2 {
-  width: 14.333%;
+  width: 14.667%;
 }
 .container .grid-3 {
-  width: 22%;
+  width: 23%;
 }
 .container .grid-4 {
-  width: 29.667%;
+  width: 31.333%;
 }
 .container .grid-5 {
-  width: 37.333%;
+  width: 39.667%;
 }
 .container .grid-6 {
-  width: 45%;
+  width: 48%;
 }
 .container .grid-7 {
-  width: 52.667%;
+  width: 56.333%;
 }
 .container .grid-8 {
-  width: 60.333%;
+  width: 64.667%;
 }
 .container .grid-9 {
-  width: 68%;
+  width: 73%;
 }
 .container .grid-10 {
-  width: 75.667%;
+  width: 81.333%;
 }
 .container .grid-11 {
-  width: 83.333%;
+  width: 89.667%;
 }
 .container .grid-12 {
-  width: 91%;
+  width: 98%;
 }
 .container .pull-1 {
-  left: -7.667%;
-  position: relative;
+  left: -8.333%;
 }
 .container .pull-2 {
-  left: -15.333%;
-  position: relative;
+  left: -16.667%;
 }
 .container .pull-3 {
-  left: -23%;
-  position: relative;
+  left: -25%;
 }
 .container .pull-4 {
-  left: -30.667%;
-  position: relative;
+  left: -33.333%;
 }
 .container .pull-5 {
-  left: -38.333%;
-  position: relative;
+  left: -41.667%;
 }
 .container .pull-6 {
-  left: -46%;
-  position: relative;
+  left: -50%;
 }
 .container .pull-7 {
-  left: -53.667%;
-  position: relative;
+  left: -58.333%;
 }
 .container .pull-8 {
-  left: -61.333%;
-  position: relative;
+  left: -66.667%;
 }
 .container .pull-9 {
-  left: -69%;
-  position: relative;
+  left: -75%;
 }
 .container .pull-10 {
-  left: -76.667%;
-  position: relative;
+  left: -83.333%;
 }
 .container .pull-11 {
-  left: -84.333%;
-  position: relative;
+  left: -91.667%;
 }
 .container .pull-12 {
-  left: -92%;
-  position: relative;
+  left: -100%;
 }
 .container .push-1 {
-  left: 7.667%;
-  position: relative !important;
+  left: 8.333%;
 }
 .container .push-2 {
-  left: 15.333%;
-  position: relative !important;
+  left: 16.667%;
 }
 .container .push-3 {
-  left: 23%;
-  position: relative !important;
+  left: 25%;
 }
 .container .push-4 {
-  left: 30.667%;
-  position: relative !important;
+  left: 33.333%;
 }
 .container .push-5 {
-  left: 38.333%;
-  position: relative !important;
+  left: 41.667%;
 }
 .container .push-6 {
-  left: 46%;
-  position: relative !important;
+  left: 50%;
 }
 .container .push-7 {
-  left: 53.667%;
-  position: relative !important;
+  left: 58.333%;
 }
 .container .push-8 {
-  left: 61.333%;
-  position: relative !important;
+  left: 66.667%;
 }
 .container .push-9 {
-  left: 69%;
-  position: relative !important;
+  left: 75%;
 }
 .container .push-10 {
-  left: 76.667%;
-  position: relative !important;
+  left: 83.333%;
 }
 .container .push-11 {
-  left: 84.333%;
-  position: relative !important;
+  left: 91.667%;
 }
 .container .push-12 {
-  left: 92%;
-  position: relative !important;
+  left: 100%;
 }
 
 .centerGrid {

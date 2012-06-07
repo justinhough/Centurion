@@ -1,0 +1,71 @@
+/* -------------------------------------------------------
+  
+  Centurion Framework - Mobile Landscape
+  
+  Centurion Framework v.2.3
+  
+  Created by:  Justin Hough
+  Documentation:  http://www.justinhough.com/centurion
+
+  GPL license:
+  http://www.gnu.org/licenses/gpl.html
+
+-------------------------------------------------------- */
+/* Mobile Landscape Grid Layout - 480px */
+.container {
+  width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container .grid-1, .container .grid-2, .container .grid-3, .container .grid-4, .container .grid-5, .container .grid-6, .container .grid-7, .container .grid-8, .container .grid-9, .container .grid-10, .container .grid-11, .container .grid-12 {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 480px;
+}
+.container .centerGrid {
+  display: block;
+  float: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.container .alpha {
+  margin-left: 0;
+}
+.container .omega {
+  margin-right: 0;
+}
+
+.centerGrid {
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Clearfix */
+.clearfix:after, .clearfix:before,
+.container:after,
+.container:before {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+}
+* html .clearfix, * html
+.container {
+  height: 1px;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}

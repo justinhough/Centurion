@@ -1,6 +1,6 @@
 /* -------------------------------------------------------
   
-  Centurion Framework - FLUID
+  Centurion Framework - GRID
   
   Centurion Framework v.2.3
   
@@ -9,19 +9,22 @@
 
   GPL license:
   http://www.gnu.org/licenses/gpl.html
-
+  
 -------------------------------------------------------- */
-/* Desktop/Tablet Fluid Grid Layout - 92% */
+/* ================================================
+    GRID
+================================================== */
+/* Desktop Fixed Grid Layout - 960px */
 .container {
-  width: 92%;
+  width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 .container .grid-1, .container .grid-2, .container .grid-3, .container .grid-4, .container .grid-5, .container .grid-6, .container .grid-7, .container .grid-8, .container .grid-9, .container .grid-10, .container .grid-11, .container .grid-12 {
   display: inline;
   float: left;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .container .centerGrid {
   display: block;
@@ -36,135 +39,135 @@
   margin-right: 0;
 }
 .container .grid-1 {
-  width: 6.667%;
+  width: 60px;
 }
 .container .grid-2 {
-  width: 14.333%;
+  width: 140px;
 }
 .container .grid-3 {
-  width: 22%;
+  width: 220px;
 }
 .container .grid-4 {
-  width: 29.667%;
+  width: 300px;
 }
 .container .grid-5 {
-  width: 37.333%;
+  width: 380px;
 }
 .container .grid-6 {
-  width: 45%;
+  width: 460px;
 }
 .container .grid-7 {
-  width: 52.667%;
+  width: 540px;
 }
 .container .grid-8 {
-  width: 60.333%;
+  width: 620px;
 }
 .container .grid-9 {
-  width: 68%;
+  width: 700px;
 }
 .container .grid-10 {
-  width: 75.667%;
+  width: 780px;
 }
 .container .grid-11 {
-  width: 83.333%;
+  width: 860.0px;
 }
 .container .grid-12 {
-  width: 91%;
+  width: 940px;
 }
 .container .pull-1 {
-  left: -7.667%;
+  left: -80px;
   position: relative;
 }
 .container .pull-2 {
-  left: -15.333%;
+  left: -160px;
   position: relative;
 }
 .container .pull-3 {
-  left: -23%;
+  left: -240px;
   position: relative;
 }
 .container .pull-4 {
-  left: -30.667%;
+  left: -320px;
   position: relative;
 }
 .container .pull-5 {
-  left: -38.333%;
+  left: -400px;
   position: relative;
 }
 .container .pull-6 {
-  left: -46%;
+  left: -480px;
   position: relative;
 }
 .container .pull-7 {
-  left: -53.667%;
+  left: -560px;
   position: relative;
 }
 .container .pull-8 {
-  left: -61.333%;
+  left: -640px;
   position: relative;
 }
 .container .pull-9 {
-  left: -69%;
+  left: -720px;
   position: relative;
 }
 .container .pull-10 {
-  left: -76.667%;
+  left: -800px;
   position: relative;
 }
 .container .pull-11 {
-  left: -84.333%;
+  left: -880.0px;
   position: relative;
 }
 .container .pull-12 {
-  left: -92%;
+  left: -960px;
   position: relative;
 }
 .container .push-1 {
-  left: 7.667%;
+  left: 80px;
   position: relative !important;
 }
 .container .push-2 {
-  left: 15.333%;
+  left: 160px;
   position: relative !important;
 }
 .container .push-3 {
-  left: 23%;
+  left: 240px;
   position: relative !important;
 }
 .container .push-4 {
-  left: 30.667%;
+  left: 320px;
   position: relative !important;
 }
 .container .push-5 {
-  left: 38.333%;
+  left: 400px;
   position: relative !important;
 }
 .container .push-6 {
-  left: 46%;
+  left: 480px;
   position: relative !important;
 }
 .container .push-7 {
-  left: 53.667%;
+  left: 560px;
   position: relative !important;
 }
 .container .push-8 {
-  left: 61.333%;
+  left: 640px;
   position: relative !important;
 }
 .container .push-9 {
-  left: 69%;
+  left: 720px;
   position: relative !important;
 }
 .container .push-10 {
-  left: 76.667%;
+  left: 800px;
   position: relative !important;
 }
 .container .push-11 {
-  left: 84.333%;
+  left: 880.0px;
   position: relative !important;
 }
 .container .push-12 {
-  left: 92%;
+  left: 960px;
   position: relative !important;
 }
 

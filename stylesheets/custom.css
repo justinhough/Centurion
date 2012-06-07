@@ -1,66 +1,38 @@
 /* -------------------------------------------------------
-	
-	Custom Site Styles
-	
+  
+  Custom Site Styles
+  
 -------------------------------------------------------- */
-
 /* ================================================
-		Site Wide Styling
+    Site Wide Styling
 ================================================== */
-
-
-
 /* ================================================
-		Individual Page Styling
+    Individual Page Styling
 ================================================== */
-
-
-
-
 /* ================================================
-		Custom Media Queries
+    Custom Media Queries
 ================================================== */
-
 /* Standard Framework
 --------------------------------- */
-@media only screen and (max-width: 959px) {
-	
-}
-
 /* Tablet - Landscape
 --------------------------------- */
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-	
-}
-
 /* Mobile - Landscape
 --------------------------------- */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-	
-}
-
 /* Mobile - Portrait
 --------------------------------- */
-@media only screen and (max-width: 479px) {
-	
-}
-
-
-
 /* ================================================
-		@Font-Face
-		
-		Add your own custom fonts to your theme
-		or design.
+    @Font-Face
+    
+    Add your own custom fonts to your theme
+    or design.
 ================================================== */
-
-/*	@font-face {
-	    font-family: 'FontName';
-	    src: url('../fonts/FontName.eot');
-	    src: url('../fonts/FontName.eot?iefix') format('eot'),
-	         url('../fonts/FontName.woff') format('woff'),
-	         url('../fonts/FontName.ttf') format('truetype'),
-	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
-	    font-weight: normal;
-	    font-style: normal; }
+/*  @font-face {
+      font-family: 'FontName';
+      src: url('../fonts/FontName.eot');
+      src: url('../fonts/FontName.eot?iefix') format('eot'),
+           url('../fonts/FontName.woff') format('woff'),
+           url('../fonts/FontName.ttf') format('truetype'),
+           url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+      font-weight: normal;
+      font-style: normal; }
 */

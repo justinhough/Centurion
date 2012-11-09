@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fluid Centurion - Grid</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<link rel="shortcut icon" href="/images/favicon.jpg" />
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png" />
+
+<link rel="stylesheet" href="/css/reset.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+<!-- Centurion Framework -->
+<link rel="stylesheet" href="/css/centurion.css" />
+<!-- End of Framework -->
+<link rel="stylesheet" href="/css/custom.css" /> 
+
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]--><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.url.js"></script>
+<script type="text/javascript" src="/js/centurion.js"></script>
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<style type="text/css">
+
+    
+  </style>
+
+</head>
+<body>
+ <!-- Navigation -->
+<header>
+  
+    <div class="container">
+      <div class="grid-12">
+          <h1>Centurion Framework</h1>
+          <nav id="main" class="mobile">
+  <span class="openMenu hide-desktop">Open</span>
+  <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/grid/">Grid</a></li>
+    <li><a href="/various/">Features</a></li>
+    <!-- <li><a href="/fluid/">Try Me Fluid!</a></li> -->
+  </ul>
+</nav>
+
+          
+      </div>
+    </div>
+  
+</header>
+<!-- End of Navigation -->  
+  
+  <!-- Content Section -->
+  <section class="layoutGrid">
+    <div class="container">
+        <div class="grid-12">
+    <h1>The Grid</h1>
+    <p class="noStyle">This is a page to show how the grid layout functions.</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-3">
+    <p>Grid 3</p>
+</div>
+<div class="grid-3">
+    <p>Grid 3</p>
+</div>
+<div class="grid-3">
+    <p>Grid 3</p>
+</div>
+<div class="grid-3">
+    <p>Grid 3</p>
+</div>
+<div class="clear"></div>
+
+<!-- Grid layout - 12 column -->
+<div class="grid-1">
+    <p>Grid 1</p>
+</div>
+<div class="grid-11">
+    <p>Grid 11</p>
+</div>
+<!-- 1 x 11 -->
+<div class="clear"></div>
+
+<div class="grid-2">
+    <p>Grid 2</p>
+</div>
+<div class="grid-10">
+    <p>Grid 10</p>
+</div>
+<!-- 2 x 10 -->
+<div class="clear"></div>
+
+<div class="grid-3">
+    <p>Grid 3</p>
+</div>
+<div class="grid-9">
+    <p>Grid 9</p>
+</div>
+<!-- 3 x 9 -->
+<div class="clear"></div>
+
+<div class="grid-4">
+    <p>Grid 4</p>
+</div>
+<div class="grid-8">
+    <p>Grid 8</p>
+</div>
+<!-- 4 x 8 -->
+<div class="clear"></div>
+
+<div class="grid-5">
+    <p>Grid 5</p>
+</div>
+<div class="grid-7">
+    <p>Grid 7</p>
+</div>
+<!-- 5 x 7 -->
+<div class="clear"></div>
+
+<div class="grid-6">
+    <p>Grid 6</p>
+</div>
+<div class="grid-6">
+    <p>Grid 6</p>
+</div>
+<!-- 6 x 6 -->
+<div class="clear"></div>
+
+<div class="grid-7">
+    <p>Grid 7</p>
+</div>
+<div class="grid-5">
+    <p>Grid 5</p>
+</div>
+<!-- 7 x 5 -->
+<div class="clear"></div>
+
+<div class="grid-8">
+    <p>Grid 8</p>
+</div>
+<div class="grid-4">
+    <p>Grid 4</p>
+</div>
+<!-- 8 x 4 -->
+<div class="clear"></div>
+
+<div class="grid-9">
+    <p>Grid 9</p>
+</div>
+<div class="grid-3">
+    <p>Grid 3</p>
+</div>
+<!-- 9 x 3 -->
+<div class="clear"></div>
+
+<div class="grid-10">
+    <p>Grid 10</p>
+</div>
+<div class="grid-2">
+    <p>Grid 2</p>
+</div>
+<!-- 10 x 2 -->
+<div class="clear"></div>
+<div class="grid-11">
+    <p>Grid 11</p>
+</div>
+<div class="grid-1">
+    <p>Grid 1</p>
+</div>
+<!-- 11 x 1 -->
+<div class="clear"></div>
+
+<div class="grid-12">
+    <p>Grid 12</p>
+</div>
+<!-- 12 -->
+<div class="clear"></div>
+
+
+<!-- PUSH GRIDS -->
+<div class="grid-12">
+    <h2>Push the Grid</h2>
+</div>
+<div class="clear"></div>
+
+<div class="grid-4">
+    <p>Grid 4</p>
+</div>
+<div class="clear"></div>
+<div class="grid-4 push-1">
+    <p>Grid 4</p>
+</div>
+<div class="clear"></div>
+<div class="grid-4 push-2">
+    <p>Grid 4</p>
+</div>
+<div class="clear"></div>
+<div class="grid-4 push-3">
+    <p>Grid 4</p>
+</div>
+<div class="clear"></div>
+<div class="grid-4 push-4">
+    <p>Grid 4</p>
+</div>
+<div class="clear"></div>
+<div class="grid-4 push-5">
+    <p>Grid 4</p>
+</div>
+<div class="clear"></div>
+<div class="grid-4 push-6">
+    <p>Grid 4</p>
+</div>
+<div class="clear"></div>
+<div class="grid-4 push-7">
+    <p>Grid 4</p>
+</div>
+<div class="clear"></div>
+<div class="grid-4 push-8">
+    <p>Grid 4</p>
+</div>
+<div class="clear"></div>
+
+
+<!-- <div class="grid-11 push-1">
+    <p>First</p>
+</div>
+<div class="grid-1 pull-11">
+    <p>Last</p>
+</div>
+<div class="clear"></div> -->
+
+
+<div class="grid-10 push-2">
+    <p>First - Grid 10</p>
+</div>
+<div class="grid-2 pull-10">
+    <p>Last - Grid 2</p>
+</div>
+<div class="clear"></div>
+
+
+<div class="grid-9 push-3">
+    <p>First - Grid 9</p>
+</div>
+<div class="grid-3 pull-9">
+    <p>Last - Grid 3</p>
+</div>
+<div class="clear"></div>
+
+
+<!-- MAKE A CENTERED ELEMENT -->
+<div class="grid-12">
+    <h2>Make a Pyramid</h2>
+</div>
+<div class="clear"></div>
+
+
+<div class="grid-1 centerGrid">
+    <p>Grid 1</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-2 centerGrid">
+    <p>Grid 2</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-3 centerGrid">
+    <p>Grid 3</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-4 centerGrid">
+    <p>Grid 4</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-5 centerGrid">
+    <p>Grid 5</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-6 centerGrid">
+    <p>Grid 6</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-7 centerGrid">
+    <p>Grid 7</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-8 centerGrid">
+    <p>Grid 8</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-9 centerGrid">
+    <p>Grid 9</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-10 centerGrid">
+    <p>Grid 10</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-11 centerGrid">
+    <p>Grid 11</p>
+</div>
+<div class="clear"></div>
+
+<div class="grid-12 centerGrid">
+    <p>Grid 12</p>
+</div>
+<div class="clear"></div>
+    </div>
+    <!-- container -->
+    <div class="clear"></div>
+  </section>
+  <!-- End of Content Section --> 
+</div>
+<!-- End of Wrapper -->  
+
+<!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="grid-12">
+        <p>Centurion Framework was created by <a href="http://www.justinhough.com" title="Justin Hough">Justin Hough</a>. Images supplied by <a href="http://placehold.it/">placehold.it</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer --> 
+</body>
+</html>
+

@@ -7,7 +7,7 @@ Centurion is a HTML5 / CSS 3 based framework for rapid prototyping. It comes out
 
 The grid adjusts to the screen proportions that are given by the browser, and that is all there is to it.
 
-Features
+###Features
 
 * Custom CSS buttons, no images required.
 * Grid dimensions from 960 px down to 320 px wide.

@@ -1,0 +1,154 @@
+h1, h2, h3, h4, p, ul li, ol li {
+  font-family: 'Open Sans', sans-serif;
+}
+p {
+  margin: 10px 0;
+}
+img,
+iframe,
+video {
+  width: 100%;
+}
+img.github {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  width: 120px;
+  height: 120px;
+  width: auto;
+}
+
+/* NAV UPDATES 
+============================
+TOP: #FAFAFA;
+BOTTOM: #EAEAEA;
+============================ */
+
+
+/* HEADER
+============================ */
+header {
+  background: url('../graphics/blackorchid.png');
+}
+header h1 {
+  color: #FFF;
+  float:left;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+}
+header h1 a,
+header h1 a:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+header h1 a:hover {
+  color: #FFA84C;
+  text-decoration: none;
+}
+header nav {
+  border: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+header nav ul {}
+header nav ul li {
+  margin-right: 40px;
+}
+header nav ul li a,
+header nav ul li a:visited {
+  color: #FFF;
+  padding: 15px 0;
+}
+header nav ul li a:hover {
+  background: none;
+  color: #FFA84C;
+}
+/*header .button {
+  float: right;
+  margin: 10px 0;
+}*/
+
+/* PRODUCT TOUR 
+============================ */
+#tour {
+  background: url('../graphics/noisy_grid.png');
+  box-shadow: inset -1px 3px 8px #333;
+  margin: 0;
+  padding: 40px 0;
+}
+#tour h1 {
+  font-size: 55px;
+  text-align: center;
+}
+#tour p {
+  text-align: center;
+}
+#tour #download {
+  margin: 20px 0;
+}
+#tour #download .button {
+  padding: 14px 30px;
+}
+
+
+/* PRIMARY
+============================ */
+#primary {
+  background: #FFF;
+  /*background: url('../graphics/grey.png');*/
+  box-shadow: inset -1px 2px 8px #DDD;
+  margin: 0;
+  padding: 70px 0;
+}
+#css3,
+#responsive,
+#what-else {
+  padding-top: 90px;
+  text-align: center;
+}
+#primary p {
+  text-align: center;
+}
+
+#css3 {
+  background: url('http://placehold.it/150x80') top center no-repeat;
+}
+#responsive {
+  background: url('http://placehold.it/150x80') top center no-repeat;
+}
+#what-else {
+  background: url('http://placehold.it/150x80') top center no-repeat;
+}
+
+#primary .cPanel p {
+  text-align: left;
+}
+
+
+#features {
+  padding-bottom: 40px;
+}
+
+
+
+
+#grid {
+  padding-bottom: 40px;
+}
+
+
+/* FOOTER
+============================ */
+footer {
+  /*background: url('../graphics/blackorchid.png');*/
+  background: url('../graphics/wild_oliva.png');
+  padding: 20px 0 20px;
+  margin: 0 0 0 0;
+}
+footer p {
+  color: #FFF;
+  font-size: 12px;
+  text-align: center;
+}

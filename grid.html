@@ -1,0 +1,437 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Grid | Centurion - A CSS Web Framework</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	
+	<link rel="shortcut icon" href="graphics/favicon.jpg" />
+	<link rel="apple-touch-icon" href="graphics/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="graphics/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="graphics/apple-touch-icon-114x114.png" />
+
+	<!-- CENTURION -->
+	<link rel="stylesheet" href="styles/reset.css" />
+	<link rel="stylesheet" href="styles/print.css" />
+	<link rel="stylesheet" href="styles/centurion.css" />
+	<link rel="stylesheet" href="styles/style.css" />
+	<!-- end of CENTURION -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,800,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="styles/demo.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/centurion.js"></script>
+	<!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]>
+	  <style type="text/css">
+	    .gradient {
+	       filter: none;
+	    }
+	  </style>
+	<![endif]-->
+
+	<style type="text/css">
+		code {
+			background:#ccc;
+			border:1px solid #888;
+			display:block;
+			padding: 10px 20px;
+		}
+				
+		section .grid-1 p, 
+		section .grid-2 p, 
+		section .grid-3 p, 
+		section .grid-4 p, 
+		section .grid-5 p, 
+		section .grid-6 p, 
+		section .grid-7 p, 
+		section .grid-8 p, 
+		section .grid-9 p, 
+		section .grid-10 p, 
+		section .grid-11 p, 
+		section .grid-12 p {
+			background:#ededed;
+			border:1px solid #888;
+			color: #333;
+			font-size: 12px;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+		
+		section p.noStyle { 
+			border: none;
+			background: none;
+			color: #333;
+			font-size: 16px;
+			padding: 0;
+		}
+		footer p {
+			border: none !important;
+			background: none !important;
+			color: #FFF !important;
+			padding: 0 !important;
+		}
+	</style>
+
+</head>
+<body>
+	<a href="https://github.com/jhough10/centurion"><img
+        src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" 
+        alt="Fork me on GitHub" class="github"></a>
+
+	<header>
+		<section class="container">
+			<article class="grid-2">
+				<h1><a href="index.html">Centurion</a></h1>
+			</article>
+			<article class="grid-10">
+				<nav>
+					<ul>
+						<li><a href="features.html">Features</a></li>
+						<li><a href="grid.html">The Grid</a></li>
+					</ul>
+				</nav>
+				
+			</article>
+		</section>
+	</header>
+	<section id="grid">
+		<div class="container">
+			<article>
+		
+			<div class="grid-12">
+				<h1>The Grid</h1>
+				<p class="noStyle">This is a page to show how the grid layout functions.</p>
+		    </div>
+			<div class="clear"></div>
+    
+	    	<div class="grid-3">
+	        	<p>Grid 3</p>
+	        </div>
+	        <div class="grid-3">
+	        	<p>Grid 3</p>
+	        </div>
+	        <div class="grid-3">
+	        	<p>Grid 3</p>
+	        </div>
+	        <div class="grid-3">
+	        	<p>Grid 3</p>
+	        </div>
+	    
+	    
+	    	<!-- Grid layout - 12 column -->
+			<div class="grid-1">
+	        	<p>Grid 1</p>
+	        </div>
+	        <div class="grid-11">
+	        	<p>Grid 11</p>
+	        </div>
+	        <!-- 1 x 11 -->
+	        <div class="clear"></div>
+	        
+	        <div class="grid-2">
+	        	<p>Grid 2</p>
+	        </div>
+	        <div class="grid-10">
+	        	<p>Grid 10</p>
+	        </div>
+	        <!-- 2 x 10 -->
+	        <div class="clear"></div>
+	        
+	        <div class="grid-3">
+	        	<p>Grid 3</p>
+	        </div>
+	        <div class="grid-9">
+	        	<p>Grid 9</p>
+	        </div>
+	        <!-- 3 x 9 -->
+	        <div class="clear"></div>
+	        
+	        <div class="grid-4">
+	        	<p>Grid 4</p>
+	        </div>
+	        <div class="grid-8">
+	        	<p>Grid 8</p>
+	        </div>
+	        <!-- 4 x 8 -->
+	        <div class="clear"></div>
+	        
+	        <div class="grid-5">
+	        	<p>Grid 5</p>
+	        </div>
+	        <div class="grid-7">
+	        	<p>Grid 7</p>
+	        </div>
+	        <!-- 5 x 7 -->
+	        <div class="clear"></div>
+	        
+	        <div class="grid-6">
+	        	<p>Grid 6</p>
+	        </div>
+	        <div class="grid-6">
+	        	<p>Grid 6</p>
+	        </div>
+	        <!-- 6 x 6 -->
+	        <div class="clear"></div>
+	        
+	        <div class="grid-7">
+	        	<p>Grid 7</p>
+	        </div>
+	        <div class="grid-5">
+	        	<p>Grid 5</p>
+	        </div>
+	        <!-- 7 x 5 -->
+	        <div class="clear"></div>
+	        
+	        <div class="grid-8">
+	        	<p>Grid 8</p>
+	        </div>
+	        <div class="grid-4">
+	        	<p>Grid 4</p>
+	        </div>
+	        <!-- 8 x 4 -->
+	        <div class="clear"></div>
+	        
+	        <div class="grid-9">
+	        	<p>Grid 9</p>
+	        </div>
+	        <div class="grid-3">
+	        	<p>Grid 3</p>
+	        </div>
+	        <!-- 9 x 3 -->
+	        <div class="clear"></div>
+	        
+	        <div class="grid-10">
+	        	<p>Grid 10</p>
+	        </div>
+	        <div class="grid-2">
+	        	<p>Grid 2</p>
+	        </div>
+	        <!-- 10 x 2 -->
+	        <div class="clear"></div>
+	        <div class="grid-11">
+	        	<p>Grid 11</p>
+	        </div>
+	        <div class="grid-1">
+	        	<p>Grid 1</p>
+	        </div>
+	        <!-- 11 x 1 -->
+	        <div class="clear"></div>
+	        
+	        <div class="grid-12">
+	        	<p>Grid 12</p>
+	        </div>
+	        <!-- 12 -->
+	        <div class="clear"></div>
+
+
+	        <!-- PUSH GRIDS -->
+	        <div class="grid-8">
+	            <h2>Push the Grid</h2>
+	            <p class="noStyle">Pushing and pulling the grid allows you to place content of more important towards the top of the page "code wise" and move it for display purposes. Below I have specified which blocks are first based on its position in the source code, then you can see what this add-on is actually meant to achieve when applied to the display.</p>
+	        </div>
+	        <div class="grid-4 first">
+	            <br><br>
+	            <p class="noStyle"><code>
+	                &lt;div class="grid-3 push-3"&gt;<br>
+	                &lt;/div&gt;
+	            </code></p>
+	            
+	            <p class="noStyle"><code>
+	                &lt;div class="grid-3 pull-3"&gt;<br>
+	                &lt;/div&gt;
+	            </code></p>
+			</div>
+	        <div class="clear"></div>
+
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+	        <div class="grid-1">
+	            <p>Grid 1</p>
+	        </div>
+
+	        <!-- 4 x 8 -->
+	        <div class="clear"></div>
+
+	         <div class="grid-4 push-1">
+	            <p>Grid 4 - pushed 1 over</p>
+	        </div>
+	        <div class="clear"></div>
+	        <div class="grid-4 push-2">
+	            <p>Grid 4 - pushed 2 over</p>
+	        </div>
+	        <div class="clear"></div>
+	        <div class="grid-4 push-3">
+	            <p>Grid 4 - pushed 3 over</p>
+	        </div>
+	        
+	        <!-- <div class="grid-4 push-6">
+	            <p>Grid 4</p>
+	        </div>
+	        <div class="clear"></div>
+	        <div class="grid-4 push-7">
+	            <p>Grid 4</p>
+	        </div>
+	        <div class="clear"></div>
+	        <div class="grid-4 push-8">
+	            <p>Grid 4</p>
+	        </div>
+	        <div class="clear"></div> -->
+
+
+	        <!-- <div class="grid-11 push-1">
+	            <p>First</p>
+	        </div>
+	        <div class="grid-1 pull-11">
+	            <p>Last</p>
+	        </div>
+	        <div class="clear"></div> -->
+
+
+	        <div class="grid-10 push-2">
+	            <p>First - Grid 10</p>
+	        </div>
+	        <div class="grid-2 pull-10">
+	            <p>Last - Grid 2</p>
+	        </div>
+	        <div class="clear"></div>
+
+
+	        <div class="grid-9 push-3">
+	            <p>First - Grid 9</p>
+	        </div>
+	        <div class="grid-3 pull-9">
+	            <p>Last - Grid 3</p>
+	        </div>
+	        <div class="clear"></div>
+
+
+	        <!-- MAKE A CENTERED ELEMENT -->
+	        <div class="grid-8">
+	            <h2>Make a Pyramid</h2>
+	            <p class="noStyle">This is an example test case where you can center a portions of your grid for layout reasons. To do this simply add the class "centerGrid" to the element you want to center.</p>
+	            
+	        </div>
+	        <div class="grid-4 first">
+	            <br><br>
+	            <p class="noStyle"><code>
+	                &lt;div class="grid-3 centerGrid"&gt;<br>
+	                &lt;/div&gt;
+	            </code></p>
+			</div>
+	        <div class="clear"></div>
+
+
+	        <div class="grid-1 centerGrid">
+	            <p>Grid 1</p>
+	        </div>
+	        <div class="clear"></div>
+	        
+	        <div class="grid-2 centerGrid">
+	            <p>Grid 2</p>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="grid-3 centerGrid">
+	            <p>Grid 3</p>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="grid-4 centerGrid">
+	            <p>Grid 4</p>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="grid-5 centerGrid">
+	            <p>Grid 5</p>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="grid-6 centerGrid">
+	            <p>Grid 6</p>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="grid-7 centerGrid">
+	            <p>Grid 7</p>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="grid-8 centerGrid">
+	            <p>Grid 8</p>
+	        </div>
+	        <div class="clear"></div>
+	        
+	        <div class="grid-9 centerGrid">
+	            <p>Grid 9</p>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="grid-10 centerGrid">
+	            <p>Grid 10</p>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="grid-11 centerGrid">
+	            <p>Grid 11</p>
+	        </div>
+	        <div class="clear"></div>
+
+	        <div class="grid-12 centerGrid">
+	            <p>Grid 12</p>
+	        </div>
+	        <div class="clear"></div>
+
+
+
+				<!-- end of content-->
+			</article>
+		</div>
+	</section>
+	
+
+	<footer>
+		<section class="container">
+			<article class="grid-12">
+				<p>Copyright &copy; 2012 Justin Hough</p>
+			</article>
+		</section>
+	</footer>
+</body>
+</html>

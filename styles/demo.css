@@ -93,6 +93,20 @@ header nav ul li a:hover {
 }
 
 
+/* HEADLINE
+============================ */
+#headline {
+  background: url('../graphics/noisy_grid.png');
+  box-shadow: inset -1px 3px 8px #333;
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+#headline h1 {
+  font-size: 45px;
+  text-align: left;
+}
+
+
 /* PRIMARY
 ============================ */
 #primary {
@@ -136,6 +150,16 @@ header nav ul li a:hover {
 
 #grid {
   padding-bottom: 40px;
+}
+
+
+
+code {
+  background: #EDEDED;
+  display: block;
+  font-size: 12px;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 

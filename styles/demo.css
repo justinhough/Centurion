@@ -127,13 +127,13 @@ header nav ul li a:hover {
 }
 
 #css3 {
-  background: url('http://placehold.it/150x80') top center no-repeat;
+  background: url('../graphics/css3.png') top center no-repeat;
 }
 #responsive {
-  background: url('http://placehold.it/150x80') top center no-repeat;
+  background: url('../graphics/responsive.png') top center no-repeat;
 }
-#what-else {
-  background: url('http://placehold.it/150x80') top center no-repeat;
+#prototype {
+  background: url('../graphics/prototype.png') top center no-repeat;
 }
 
 #primary .cPanel p {

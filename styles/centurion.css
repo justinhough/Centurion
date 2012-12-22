@@ -18,7 +18,7 @@
 
 /* line 17, ../sass/centurion.scss */
 .hide-mobile {
-  display: none;
+  display: block;
 }
 
 /* ======================================================

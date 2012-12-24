@@ -1,0 +1,120 @@
+@mixin navReset {
+  margin: 0;
+  padding: 0;
+}
+
+// Navigation - for desktop
+// @include navigation-full;
+@mixin navigation-full {
+    @include float-left;
+    font-size: $text-size;
+    margin-bottom: 10px;
+    width: 100%;
+    ul {
+      display: block;
+      @include float-left;
+      @include navReset;
+      li {
+        display: inline;
+        @include float-left;
+        @include navReset;
+        position: relative;
+        a {
+          color: $white;
+          @include float-left;
+          margin: 0;
+          padding: 15px 20px;
+          text-decoration: none;
+          &:hover,
+          &:visited {
+            background: $white;
+            color: #000;
+          }
+          &.on {
+            background: $white;
+            color: #000;
+          }
+        }
+        
+      }
+
+  }
+
+}
+@mixin navigation-slim($border: #CCC, $link: #333, $hover: #999) {
+  nav {
+    border: 1px solid $border;
+    @include float-left;
+    font-size: $text-size;
+    margin-bottom: 10px;
+    width: 100%;
+    ul {
+      display: block;
+      @include float-left;
+      @include navReset;
+      li {
+        display: inline;
+        @include float-left;
+        @include navReset;
+        position: relative;
+        a {
+          color: $link;
+          @include float-left;
+          margin: 0;
+          padding: 15px 20px;
+          text-decoration: none;
+          &:hover,
+          &:visited {
+            background: $border;
+            color: #000;
+          }
+          &.on {
+            background: $border;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Navigation - for mobile
+// @include navigation-mobile;
+@mixin navigation-mobile {
+
+  nav.mobile {
+    border: none;
+    ul {
+      display: none;
+      width: 100%;
+
+      &.show {
+        display: block;
+      }
+      li {
+        display:block;
+        float: none;
+        padding: 0;
+        width: 100%;
+        a {
+          display: block;
+          float: none;
+          padding:10px 0;
+          text-indent: 10px; 
+          width: 100%;
+        }
+      }
+    }
+
+    span {
+      &.openMenu {
+        border: 1px solid #ededed;
+        padding: 10px 0;
+        text-indent: 10px;
+        width: 100%;
+
+      }
+    }
+  }
+
+}

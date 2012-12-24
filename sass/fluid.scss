@@ -1,0 +1,22 @@
+@import "core/base";
+/* -------------------------------------------------------
+  
+  Centurion Framework - FLUID
+  
+  Centurion Framework v.2.3
+  
+  Created by:  Justin Hough
+  Documentation:  http://www.justinhough.com/centurion
+
+  GPL license:
+  http://www.gnu.org/licenses/gpl.html
+
+-------------------------------------------------------- */
+
+/* Desktop/Tablet Fluid Grid Layout - 92% */
+@include fluid;
+
+@include centerGrid;
+
+/* Clearfix */
+@include clearfix;

@@ -1,0 +1,166 @@
+ @import "compass/css3/border-radius";
+
+// Buttons
+// @include default-button;
+@mixin default-button {
+  border: none;
+  @include border-radius(5px, 5px);
+  @include box-shadow(0, 1px, 2px);
+  @include gradient-two(#7d7e7d, #0e0e0e);
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $text-font;
+  @include text($white);
+  margin: 5px 0 10px 0;
+  outline: 0;
+  padding: 10px 22px;
+  text-decoration: none;
+  vertical-align: middle;
+  zoom: 1;
+}
+
+// @include default-button-hover;
+@mixin default-button-hover {
+  color: $white;
+  @include gradient-two(#9b9b9b, #3d3d3d);
+}
+
+
+// COLOR              TOP     BOTTOM
+
+// Black          -   #7d7e7d   #0e0e0e
+// Black:hover    -   #9b9b9b   #3d3d3d
+
+// grey           -   #ffffff   #e5e5e5
+// grey:hover     -   #ffffff   #b7b7b7
+
+// blue           -   #a7cfdf   #23538a
+// blue:hover     -   #a7cfdf   #004089
+
+// red            -   #ff3019   #cf0404
+// red:hover      -   #ff3819   #aa0303
+
+// yellow         -   #fced62   #febf04
+// yellow:hover   -   #fced62   #ffaa00
+
+// orange         -   #ffa84c   #ff7b0d
+// orange:hover   -   #ffa84c   #fc6000
+
+// green          -   #a4b357   #75890c
+// green:hover    -   #a4b357   #5b7a00
+
+
+@mixin buttons {
+  .button {
+    @include default-button;
+
+    &:hover, 
+    &:active,
+    &:visited {
+      @include default-button-hover;
+    }
+
+    /* Button - Grey */
+    &.grey {
+    color: $text-color;
+    @include gradient-two(#ffffff, #e5e5e5);
+
+      &:hover, 
+      &:active,
+      &:visited {
+        color: $text-color;
+        @include gradient-two(#ffffff, #b7b7b7);
+      }
+    }
+
+    /* Button - Blue */
+    &.blue {
+      @include gradient-two(#a7cfdf, #23538a);
+
+      &:hover, 
+      &:active,
+      &:visited {
+        @include gradient-two(#a7cfdf, #004089);
+      }
+    }
+
+    /* Button - Red */
+    &.red {
+      @include gradient-two(#ff3019, #cf0404);
+
+      &:hover, 
+      &:active,
+      &:visited {
+        @include gradient-two(#ff3819, #aa0303);
+      }
+    }
+
+    /* Button - Yellow */
+    &.yellow {
+      color: $text-color;
+      @include gradient-two(#fced62, #febf04);
+
+      &:hover, 
+      &:active,
+      &:visited {
+        color: $text-color;
+        @include gradient-two(#fced62, #ffaa00);
+      }
+    }
+
+    /* Button - Orange */
+    &.orange {
+      @include gradient-two(#ffa84c, #ff7b0d);
+
+      &:hover, 
+      &:active,
+      &:visited {
+        @include gradient-two(#ffa84c, #fc6000);
+      }
+    }
+
+    /* Button - Green */
+    &.green {
+      @include gradient-two(#a4b357, #75890c);
+
+      &:hover, 
+      &:active,
+      &:visited {
+        @include gradient-two(#a4b357, #5b7a00);
+      }
+    }
+
+
+    /* Different Button Sizes */
+    &.small {
+      @include border-radius(4px, 4px);
+      font-size: 13px;
+      padding: 8px 18px;
+    }
+    &.large {
+      @include border-radius(6px, 6px);
+      font-size: ($text-size)+1;
+      font-weight: bold;
+      padding: 8px 28px;
+    }
+
+    /* Full Width Buttons  - Needs work on this implementation for the grid system */
+    &.full {
+      padding: 10px 0;
+      text-align: center;
+      width: 100%;
+    }
+
+  }
+
+  /* Link reset for underline and color */
+  a.button {
+    color: $white;
+    text-decoration: none;
+
+    &:visited {
+      color: $white;
+    }
+  }
+}

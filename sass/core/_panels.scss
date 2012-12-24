@@ -1,0 +1,18 @@
+ @import "compass/css3/border-radius";
+
+// Breacrumbs
+@mixin panels {
+  .cPanel {
+    padding: 20px 20px 20px 20px;
+    background: #F9F9F9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    margin: 0 0 20px 0;
+    
+    h1,
+    h2,
+    h3 {
+      margin-top:0;
+    }
+  }
+}
+

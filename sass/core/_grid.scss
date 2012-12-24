@@ -1,0 +1,179 @@
+// Clearfix
+// @include clearfix;
+@mixin clearfix {
+  .clearfix,
+  .container {
+    &:after,
+    &:before {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+      clear: both;
+      zoom: 1;
+    }
+    * html & { height: 1px }
+  }
+  .clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+//@include centerGrid;
+@mixin centerGrid {
+  .centerGrid {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+//@include centerMobileGrid;
+@mixin centerMobileGrid {
+  .centerGrid {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+// Desktop Grid Generator
+//@include grid-generator(960px, 20px, 12);
+@mixin grid-generator($width, $space, $rows: 12) {
+  $content-width: $width;
+  .container {
+    width: $content-width;
+    @include auto-center;
+    #{enumerate(".grid", 1, $rows)} {
+         display: inline;
+         @include float-left;
+         margin-left: $space/2;
+         margin-right: $space/2;
+    }
+    @include centerGrid;
+    @include first-last;
+  
+  @for $i from 1 through $rows {
+    .grid-#{$i} { width: $content-width/($rows/$i) - $space; }
+  }
+  @for $i from 1 through $rows {
+    .pull-#{$i} { 
+      left: -($content-width/($rows/$i)); 
+      position: relative;
+    }
+  }
+  @for $i from 1 through $rows {
+    .push-#{$i} { 
+      left: $content-width/($rows/$i);
+      position: relative !important;
+    }
+  }
+  }
+}
+
+@mixin grid-fluid-generator($width, $space, $rows: 12) {
+  $content-width: $width;
+
+  .container {
+    width: $content-width;
+    margin-left: $space*2;
+    margin-right: $space*2;
+    #{enumerate(".grid", 1, $rows)} {
+      display: inline;
+      @include float-left;
+      margin-left: $space/2;
+      margin-right: $space/2;
+      position: relative;
+    }
+    @include centerGrid;
+    @include first-last;
+
+  $fluid-grid-width: 100%;
+  //$fluid-spacing: ($space)*2;
+
+  @for $i from 1 through $rows {
+    .grid-#{$i} { 
+      width: $fluid-grid-width/($rows/$i) - ($space);
+    }
+  }
+  @for $i from 1 through $rows {
+    .pull-#{$i} { 
+      left: -($fluid-grid-width/($rows/$i)); 
+    }
+  }
+  @for $i from 1 through $rows {
+    .push-#{$i} {
+        left: $fluid-grid-width/($rows/$i);
+    }
+  }
+  }
+}
+
+
+// Mobile Grid Generator - NO PUSH OR PULL
+//@include grid-generator(480px, 20px, 12);
+@mixin grid-generator-mobile($width: 92%, $space: 4%, $rows: 12) {
+  $content-width: $width;
+  $grid-width: 98%;
+  $spacing: $space; // margin between elements
+  #wrapper {
+    @include auto-center;
+    width: $width;
+  }
+  .container {
+    width: $content-width;
+    @include auto-center;
+    #{enumerate(".grid", 1, $rows)} {
+         display: inline;
+         @include float-left;
+         margin-left: $spacing;
+         margin-right: $spacing;
+         width: $grid-width;
+    }
+  @include centerMobileGrid;
+  @include first-last;
+
+  @for $i from 1 through $rows {
+    .pull-#{$i} { 
+      left: 0; 
+    }
+  }
+  @for $i from 1 through $rows {
+    .push-#{$i} {
+        left: 0;
+    }
+  }
+
+  }
+} 
+
+
+//@include fixed;
+@mixin fixed($width:960px, $space:20px, $rows:12) {
+    @include grid-generator($width, $space, $rows);
+}
+
+//@include fluid;
+@mixin fluid($width:92%, $space:2%, $rows:12) {
+    @include grid-fluid-generator($width, $space, $rows);
+}
+
+//@include landscape;
+@mixin mobile($width:92%, $space:2%) {
+    @include grid-generator-mobile($width, $space);
+}
+
+
+
+@mixin first-last {
+  .alpha { margin-left: 0; }
+  .omega { margin-right: 0; }
+}

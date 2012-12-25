@@ -18,6 +18,4 @@ The grid adjusts to the screen proportions that are given by the browser, and th
 
 And more...
 
-###Licensed under GPL.
-
-GPL license: http://www.gnu.org/licenses/gpl.html
+###Licensed under GPL and MIT.

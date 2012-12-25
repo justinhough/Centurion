@@ -26,12 +26,12 @@
 @include fixed;
 
 /* Tablet Fluid Grid Layout - 92% */
-@media only screen and (max-width: 920px) {
+@media only screen and (min-width: 521px) and (max-width: 920px) {
   @include fluid;
 }
 
 /* Mobile Grid Layout - 320px and 480px */
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 520px) {
   @include mobile;
   @include navigation-mobile;
   .hide-desktop { display: block; }

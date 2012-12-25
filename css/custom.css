@@ -1,88 +1,17 @@
-/* line 3, ../sass/custom.scss */
-body {
-  background-color: #FEFEFE;
-}
-
-/* line 7, ../sass/custom.scss */
-a {
-  color: blue;
-}
-/* line 10, ../sass/custom.scss */
-a:visited, a:active {
-  color: blue;
-}
-
-/* HEADER
-================================================== */
-/* line 19, ../sass/custom.scss */
-header {
-  background-color: #000;
-}
-/* line 21, ../sass/custom.scss */
-header h1 {
-  color: #FFF;
-}
-/* line 24, ../sass/custom.scss */
-header nav#main {
-  background-color: none;
-  border: none;
-  margin-bottom: 0;
-}
-/* line 30, ../sass/custom.scss */
-header nav#main ul li a {
-  color: #FFF;
-  margin: 0 5px 0 0;
-}
-/* line 35, ../sass/custom.scss */
-header nav#main ul li a:hover, header nav#main ul li a.on {
-  background: #FEFEFE;
-  color: #000;
-}
-
 /* CONTENT
 ================================================== */
-/* line 48, ../sass/custom.scss */
-#mainBanner {
-  background-image: url("http://placehold.it/960x250");
-  background-repeat: no-repeat;
-  height: 230px;
-  padding: 20px;
-  position: relative;
-}
-/* line 56, ../sass/custom.scss */
-#mainBanner h1,
-#mainBanner p {
-  width: 350px;
-}
-/* line 59, ../sass/custom.scss */
-#mainBanner .button {
-  bottom: 40px;
-  font-size: 22px;
-  margin-top: 20px;
-  padding: 8px 40px;
-  position: absolute;
-  right: 30px;
-}
-
-/* line 68, ../sass/custom.scss */
 section {
   margin: 10px 0;
-}
-/* line 71, ../sass/custom.scss */
-section h1 {
-  color: #000;
 }
 
 /* FOOTER
 ================================================== */
-/* line 80, ../sass/custom.scss */
 footer {
   background: black;
   min-height: 50px;
   margin-top: 30px;
   padding: 20px 0 10px 0;
 }
-/* line 85, ../sass/custom.scss */
 footer h2 {
   color: white;
   display: block;
@@ -92,7 +21,6 @@ footer h2 {
   font-weight: bold;
   margin: 10px 0;
 }
-/* line 91, ../sass/custom.scss */
 footer p,
 footer blockquote,
 footer article,
@@ -102,7 +30,6 @@ footer section {
   font-size: 12px;
   line-height: 1.5;
 }
-/* line 50, ../sass/core/_typography.scss */
 footer a {
   color: white;
   white-space: pre;
@@ -114,62 +41,13 @@ footer a {
   white-space: -hp-pre-wrap;
   word-wrap: break-word;
 }
-/* line 53, ../sass/core/_typography.scss */
 footer a:hover {
   color: #999999;
 }
-/* line 54, ../sass/core/_typography.scss */
 footer a:visited {
   color: white;
-}
-
-/* Grid Layout Page
-================================================== */
-/* line 100, ../sass/custom.scss */
-code {
-  background: #ccc;
-  border: 1px solid #888;
-  display: block;
-  padding: 10px 20px;
-}
-
-/* line 120, ../sass/custom.scss */
-section.layoutGrid .grid-1 p,
-section.layoutGrid .grid-2 p,
-section.layoutGrid .grid-3 p,
-section.layoutGrid .grid-4 p,
-section.layoutGrid .grid-5 p,
-section.layoutGrid .grid-6 p,
-section.layoutGrid .grid-7 p,
-section.layoutGrid .grid-8 p,
-section.layoutGrid .grid-9 p,
-section.layoutGrid .grid-10 p,
-section.layoutGrid .grid-11 p,
-section.layoutGrid .grid-12 p {
-  background: #ededed;
-  border: 1px solid #888;
-  color: #333;
-  font-size: 12px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-/* line 129, ../sass/custom.scss */
-section.layoutGrid p.noStyle {
-  border: none;
-  background: none;
-  border: none;
-  color: #333;
-  font-size: 16px;
-  padding: 0;
 }
 
 /* ================================================
     Custom Media Queries
 ================================================== */
-@media screen and (min-width: 320px) and (max-width: 768px) {
-  /* line 150, ../sass/custom.scss */
-  nav#main.mobile {
-    color: #FFF;
-    margin-bottom: 20px;
-  }
-}

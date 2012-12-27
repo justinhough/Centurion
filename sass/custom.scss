@@ -1,17 +1,27 @@
 @import "core/base";
 
+/* TYPOGRAPHY */
+p, ul, ol {
+	margin: 10px 0;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin: 0;
+}
+
+/* NAV */
 nav#main {
 
 }
 
-/* CONTENT
-================================================== */
+/* CONTENT */
 section {
   margin: 10px 0;
 }
 
-/* FOOTER
-================================================== */
+/* FOOTER */
 footer {
   background: $black;
   min-height: 50px;
@@ -35,14 +45,14 @@ footer {
 ================================================== */
 
 @media only screen and (max-width: 920px) {
-  
+
 }
 
 @media screen and (min-width: 521px) and (max-width: 768px) {
-  
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 520px) {
-  
+
 }
 

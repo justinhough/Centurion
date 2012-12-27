@@ -1,20 +1,19 @@
-@import "buttons"; // sizes and options
-
-@import "colors"; // gradients, color values, text colors
-@import "forms"; // input fields
-@import "grid"; // grid system
-
-@import "images"; // sprites, responsive
-@import "navigation"; // sidebar, dropdown, list menu, mobile menu
-
-@import "print"; // only included for print stylesheet
-
-@import "breadcrumbs";
-@import "panels";
-@import "tables";
-@import "typography"; // lists, blockquotes, captions, text, fonts
-@import "various";
-@import "images";
+@import "alerts";					// alert boxes
+@import "breadcrumbs";		// breadcrumbs
+@import "buttons";				// buttons
+@import "colors";					// colors
+@import "dropdowns";			// dropdown menus
+@import "forms";					// forms
+@import "grid";						// fixed, fluid and responsive
+@import "images"; 				// responsive images & sprites
+@import "navigation";			// navigation
+@import "pagination";			// pagination
+@import "panels";					// panels
+@import "print";					// print
+@import "progressbars";		// progress bars
+@import "tables";					// tables
+@import "tabs";						// tabs
+@import "typography";			// basic typography & headings
 
 
 // Center a sized element

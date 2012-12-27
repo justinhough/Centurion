@@ -60,18 +60,18 @@
     }
     @include centerGrid;
     @include first-last;
-  
+
   @for $i from 1 through $rows {
     .grid-#{$i} { width: $content-width/($rows/$i) - $space; }
   }
   @for $i from 1 through $rows {
-    .pull-#{$i} { 
-      left: -($content-width/($rows/$i)); 
+    .pull-#{$i} {
+      left: -($content-width/($rows/$i));
       position: relative;
     }
   }
   @for $i from 1 through $rows {
-    .push-#{$i} { 
+    .push-#{$i} {
       left: $content-width/($rows/$i);
       position: relative !important;
     }
@@ -100,13 +100,13 @@
   //$fluid-spacing: ($space)*2;
 
   @for $i from 1 through $rows {
-    .grid-#{$i} { 
+    .grid-#{$i} {
       width: $fluid-grid-width/($rows/$i) - ($space);
     }
   }
   @for $i from 1 through $rows {
-    .pull-#{$i} { 
-      left: -($fluid-grid-width/($rows/$i)); 
+    .pull-#{$i} {
+      left: -($fluid-grid-width/($rows/$i));
     }
   }
   @for $i from 1 through $rows {
@@ -142,18 +142,18 @@
   @include first-last;
 
   @for $i from 1 through $rows {
-    .pull-#{$i} { 
-      left: 0; 
+    .pull-#{$i} {
+      left: 0;
     }
   }
   @for $i from 1 through $rows {
     .push-#{$i} {
-        left: 0;
+      left: 0;
     }
   }
 
   }
-} 
+}
 
 
 //@include fixed;
@@ -166,7 +166,7 @@
     @include grid-fluid-generator($width, $space, $rows);
 }
 
-//@include landscape;
+//@include mobile;
 @mixin mobile($width:92%, $space:2%) {
     @include grid-generator-mobile($width, $space);
 }

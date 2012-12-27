@@ -5,7 +5,7 @@
     text-align: center;
     font-weight: bold;
   }
-  td, th {padding: 2px}
+  td, th { padding: 2px }
 }
 
 @mixin table-color-generator($class, $color1, $color2, $color3) {
@@ -14,7 +14,7 @@
     tfoot {
       tr {
         th,
-        td { 
+        td {
           background-color: $color1;
         }
       }
@@ -37,13 +37,13 @@
   color: #333;
   margin: 15px 0;
   width: 100%;
-  
+
   thead,
   tfoot {
     font-size: 16px;
     line-height: 1.5;
     text-align: left;
-  
+
     tr th,
     tr td {
       background-color: #999;
@@ -58,7 +58,7 @@
       padding: 5px 10px;
     }
   }
-  
+
   thead {
     padding: 3px 10px;
     text-align: left;
@@ -66,7 +66,7 @@
   tbody {
     padding: 3px 10px;
     text-align: left;
-    
+
     tr {
       &.odd {
         background-color: #FFF; /* Class added by simple table script */
@@ -76,15 +76,15 @@
       }
     }
   }
-  
-  
+
+
   @include table-color-generator(ctOrange, #FB9D23, #FFF, #FCEABB);
   @include table-color-generator(ctBlue, #356AA0, #FFF, #DEEFFF);
   @include table-color-generator(ctYellow, #F8B500, #FFF, #FCEFCF);
   @include table-color-generator(ctRed, #CC0000, #FFF, #FFCECE);
   @include table-color-generator(ctGreen, #299A0B, #FFF, #DDE8C7);
   @include table-color-generator(ctBlack, #000, #FFF, #DBDBDB);
-  
+
   //Additional Table Styles
   &.rounded {
     thead {

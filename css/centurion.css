@@ -767,16 +767,60 @@ nav ul li a.on {
 }
 
 /* Panels */
-.cPanel {
+.panels {
   padding: 20px 20px 20px 20px;
   background: #F9F9F9;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   margin: 0 0 20px 0;
 }
-.cPanel h1,
-.cPanel h2,
-.cPanel h3 {
+.panels h1,
+.panels h2,
+.panels h3 {
   margin-top: 0;
+}
+
+/* Tabs */
+[class*="tabs"]::before, [class*="tabs"]::after {
+  display: block;
+  line-height: 0;
+  content: "";
+}
+[class*="tabs"]::after {
+  clear: both;
+}
+
+.tabs {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.tabs > li {
+  border: 1px solid transparent;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -1px;
+}
+.tabs > li:first-child {
+  margin-left: 0;
+}
+.tabs > li > a {
+  display: block;
+  padding: 6px 18px;
+}
+.tabs > li > a:hover {
+  background: #ededed;
+}
+.tabs > .active {
+  border: none;
+}
+.tabs > .active > a, .tabs > .active > a:hover {
+  background: #FFF;
+  color: #555;
+  border: 1px solid #CCC;
+  border-bottom-color: transparent;
+  text-decoration: none;
 }
 
 /* Tables */

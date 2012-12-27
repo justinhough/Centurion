@@ -1,10 +1,8 @@
 /* TYPOGRAPHY */
-/* line 4, ../sass/custom.scss */
 p, ul, ol {
   margin: 10px 0;
 }
 
-/* line 10, ../sass/custom.scss */
 ul ul,
 ol ol,
 ul ol,
@@ -14,20 +12,17 @@ ol ul {
 
 /* NAV */
 /* CONTENT */
-/* line 20, ../sass/custom.scss */
 section {
   margin: 10px 0;
 }
 
 /* FOOTER */
-/* line 25, ../sass/custom.scss */
 footer {
   background: black;
   min-height: 50px;
   margin-top: 30px;
   padding: 20px 0 10px 0;
 }
-/* line 30, ../sass/custom.scss */
 footer h2 {
   color: white;
   display: block;
@@ -37,7 +32,6 @@ footer h2 {
   font-weight: bold;
   margin: 10px 0;
 }
-/* line 36, ../sass/custom.scss */
 footer p,
 footer blockquote,
 footer article,
@@ -47,7 +41,6 @@ footer section {
   font-size: 12px;
   line-height: 1.5;
 }
-/* line 50, ../sass/core/_typography.scss */
 footer a {
   color: white;
   white-space: pre;
@@ -59,11 +52,9 @@ footer a {
   white-space: -hp-pre-wrap;
   word-wrap: break-word;
 }
-/* line 53, ../sass/core/_typography.scss */
 footer a:hover {
   color: #999999;
 }
-/* line 54, ../sass/core/_typography.scss */
 footer a:visited {
   color: white;
 }

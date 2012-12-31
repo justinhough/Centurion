@@ -8,6 +8,12 @@
   td, th { padding: 2px }
 }
 
+// Table Color Generator
+// #1 - class
+// #2 - header color
+// #3 - even row color
+// #4 - odd row color
+//@include table-color-generator(__#1__ , __#2__, __#3__, __#4__);
 @mixin table-color-generator($class, $color1, $color2, $color3) {
   &.#{$class} {
     thead,

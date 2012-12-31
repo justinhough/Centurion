@@ -10,9 +10,6 @@
 -------------------------------------------------------- */
 .hide-desktop { display: none; }
 .hide-mobile { display: block; }
-//.show-desktop { display: block; }
-//.show-mobile { display: block; }
-
 
 /* ======================================================
     GRID
@@ -64,12 +61,6 @@
 
 /* Tables */
 @include tables;
-// Table Color Generator
-// #1 - class
-// #2 - header color
-// #3 - even row color
-// #4 - odd row color
-//@include table-color-generator(__#1__ , __#2__, __#3__, __#4__);
 
 /*  Typography  */
 @include typography;

@@ -1,3 +1,112 @@
+/* TABS */
+.tabsBottom > li {
+  border: 1px solid transparent;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -1px;
+}
+
+.tabsBottom > li:first-child {
+  margin-left: 0;
+}
+
+.tabsBottom > li > a {
+  display: block;
+  padding: 6px 18px;
+}
+
+.tabs > li > a:hover,
+.tabsBottom > li > a:hover {
+  background: #ededed;
+}
+
+.tabs > .active,
+.tabsBottom > .active {
+  border: none;
+}
+
+.tabs > .active > a,
+.tabs > .active > a:hover {
+  background: #FFF;
+  color: #555;
+  border: 1px solid #CCC;
+  border-bottom-color: transparent;
+  text-decoration: none;
+}
+
+/*  TABS BOTTOM */
+.tabsBottom {
+  border-top: 1px solid #ccc;
+}
+
+.tabsBottom > li {
+  border: 1px solid transparent;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: -1px;
+}
+
+.tabsBottom > li:first-child {
+  margin-left: 0;
+}
+
+.tabsBottom > .active {
+  border: none;
+}
+
+.tabsBottom > li > a {
+  display: block;
+  padding: 6px 18px;
+}
+
+.tabsBottom > .active > a,
+.tabsBottom > .active > a:hover {
+  background: #FFF;
+  color: #555;
+  border: 1px solid #CCC;
+  border-top-color: transparent;
+  text-decoration: none;
+}
+
+/*  TABS STACKED */
+.tabsStacked {
+  margin: 0;
+  padding: 0;
+}
+
+.tabsStacked > li {
+  float: none;
+  list-style: none;
+  margin: 0;
+  margin-bottom: -1px;
+  padding: 0;
+  width: 100%;
+}
+
+.tabsStacked > li > a {
+  background: #FFF;
+  border: 1px solid #CCC;
+  display: block;
+  padding: 4px 0;
+  text-indent: 10px;
+}
+
+.tabsStacked > li > a:hover {
+  background: #EDEDED;
+}
+
+.tabsStacked > .active > a {
+  color: #555;
+}
+
+.tabsStacked > .active > a:hover {
+  background: #FFF;
+}
+
 /* -------------------------------------------------------
 
   Centurion Framework v.3 - FLUID
@@ -13,7 +122,7 @@
   margin-left: 4%;
   margin-right: 4%;
 }
-.container .grid-1, .container .grid-2, .container .grid-3, .container .grid-4, .container .grid-5, .container .grid-6, .container .grid-7, .container .grid-8, .container .grid-9, .container .grid-10, .container .grid-11, .container .grid-12 {
+.container [class*="grid-"] {
   display: inline;
   float: left;
   margin-left: 1%;

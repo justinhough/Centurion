@@ -25,7 +25,8 @@
   }
 }
 
-//@include centerGrid;
+// Center Grid
+// @include centerGrid;
 @mixin centerGrid {
   .centerGrid {
     display: block;
@@ -34,14 +35,27 @@
     margin-right: auto;
   }
 }
-//@include centerMobileGrid;
-@mixin centerMobileGrid {
-  .centerGrid {
-    display: block;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
+
+// Alpha and Omega - for Nested Grids
+@mixin first-last {
+  .alpha { margin-left: 0; }
+  .omega { margin-right: 0; }
+}
+
+// Show and Hide Elements within Grid
+@mixin hide-desktop {
+  .hide-desktop { display: none; }
+  .hide-mobile { display: block; }
+}
+@mixin hide-mobile {
+  .hide-desktop { display: block; }
+  .hide-mobile { display: none; }
+}
+@mixin show-mobile {
+  .show-mobile { display: block;}
+}
+@mixin show-desktop {
+  .show-desktop { display: block;}
 }
 
 
@@ -52,7 +66,7 @@
   .container {
     width: $content-width;
     @include auto-center;
-    #{enumerate(".grid", 1, $rows)} {
+    [class*="grid-"] {
          display: inline;
          @include float-left;
          margin-left: $space/2;
@@ -64,16 +78,18 @@
   @for $i from 1 through $rows {
     .grid-#{$i} { width: $content-width/($rows/$i) - $space; }
   }
+  [class*="pull-"],
+  [class*="push-"] {
+    position: relative;
+  }
   @for $i from 1 through $rows {
     .pull-#{$i} {
       left: -($content-width/($rows/$i));
-      position: relative;
     }
   }
   @for $i from 1 through $rows {
     .push-#{$i} {
       left: $content-width/($rows/$i);
-      position: relative !important;
     }
   }
   }
@@ -86,7 +102,7 @@
     width: $content-width;
     margin-left: $space*2;
     margin-right: $space*2;
-    #{enumerate(".grid", 1, $rows)} {
+    [class*="grid-"] {
       display: inline;
       @include float-left;
       margin-left: $space/2;
@@ -96,24 +112,24 @@
     @include centerGrid;
     @include first-last;
 
-  $fluid-grid-width: 100%;
-  //$fluid-spacing: ($space)*2;
+    $fluid-grid-width: 100%;
+    //$fluid-spacing: ($space)*2;
 
-  @for $i from 1 through $rows {
-    .grid-#{$i} {
-      width: $fluid-grid-width/($rows/$i) - ($space);
+    @for $i from 1 through $rows {
+      .grid-#{$i} {
+        width: $fluid-grid-width/($rows/$i) - ($space);
+      }
     }
-  }
-  @for $i from 1 through $rows {
-    .pull-#{$i} {
-      left: -($fluid-grid-width/($rows/$i));
+    @for $i from 1 through $rows {
+      .pull-#{$i} {
+        left: -($fluid-grid-width/($rows/$i));
+      }
     }
-  }
-  @for $i from 1 through $rows {
-    .push-#{$i} {
-        left: $fluid-grid-width/($rows/$i);
+    @for $i from 1 through $rows {
+      .push-#{$i} {
+          left: $fluid-grid-width/($rows/$i);
+      }
     }
-  }
   }
 }
 
@@ -131,49 +147,47 @@
   .container {
     width: $content-width;
     @include auto-center;
-    #{enumerate(".grid", 1, $rows)} {
+    [class*="grid-"] {
          display: inline;
          @include float-left;
          margin-left: $spacing;
          margin-right: $spacing;
          width: $grid-width;
     }
-  @include centerMobileGrid;
-  @include first-last;
+    @include centerGrid;
+    @include first-last;
 
-  @for $i from 1 through $rows {
-    .pull-#{$i} {
+    [class*="pull-"],
+    [class*="push-"] {
       left: 0;
     }
-  }
-  @for $i from 1 through $rows {
-    .push-#{$i} {
-      left: 0;
-    }
-  }
-
   }
 }
 
-
-//@include fixed;
+// Fixed Grid Generator - with custom create
+// @include fixed;
+// @include gridCreate(1120px,20px,16);
 @mixin fixed($width:960px, $space:20px, $rows:12) {
     @include grid-generator($width, $space, $rows);
 }
 
-//@include fluid;
+// Fluid Grid Generator - with custom create
+// @include fluid;
+// @include gridCreate(92%,2%,16);
 @mixin fluid($width:92%, $space:2%, $rows:12) {
     @include grid-fluid-generator($width, $space, $rows);
 }
 
+// Mobile Grid Generator
 //@include mobile;
 @mixin mobile($width:92%, $space:2%) {
     @include grid-generator-mobile($width, $space);
 }
 
 
-
-@mixin first-last {
-  .alpha { margin-left: 0; }
-  .omega { margin-right: 0; }
+@mixin gridCreate($width, $space, $rows) {
+  @include grid-generator($width, $space, $rows);
 }
+
+
+

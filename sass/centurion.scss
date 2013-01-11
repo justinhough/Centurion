@@ -8,8 +8,8 @@
   Licensed under GPL and MIT.
 
 -------------------------------------------------------- */
-.hide-desktop { display: none; }
-.hide-mobile { display: block; }
+
+@include hide-desktop;
 
 /* ======================================================
     GRID
@@ -27,9 +27,12 @@
 @media screen and (min-width: 320px) and (max-width: 520px) {
   @include mobile;
   @include navigation-mobile;
-  .hide-desktop { display: block; }
-  .hide-mobile { display: none; }
+  @include hide-mobile;
 }
+
+/* Grid Create - Custom Grid */
+//@include gridCreate(1120px,20px,16);
+//@include gridCreate(92%,2%,16);
 
 /* Centering Grid */
 @include centerGrid;
@@ -40,6 +43,10 @@
 /* ======================================================
     Features
 ========================================================= */
+
+/* Show Elements */
+@include show-desktop;
+@include show-mobile;
 
 /* Breadrumbs */
 @include breadcrumbs;

@@ -1,3 +1,112 @@
+/* TABS */
+.tabsBottom > li {
+  border: 1px solid transparent;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -1px;
+}
+
+.tabsBottom > li:first-child {
+  margin-left: 0;
+}
+
+.tabsBottom > li > a {
+  display: block;
+  padding: 6px 18px;
+}
+
+.tabs > li > a:hover,
+.tabsBottom > li > a:hover {
+  background: #ededed;
+}
+
+.tabs > .active,
+.tabsBottom > .active {
+  border: none;
+}
+
+.tabs > .active > a,
+.tabs > .active > a:hover {
+  background: #FFF;
+  color: #555;
+  border: 1px solid #CCC;
+  border-bottom-color: transparent;
+  text-decoration: none;
+}
+
+/*  TABS BOTTOM */
+.tabsBottom {
+  border-top: 1px solid #ccc;
+}
+
+.tabsBottom > li {
+  border: 1px solid transparent;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: -1px;
+}
+
+.tabsBottom > li:first-child {
+  margin-left: 0;
+}
+
+.tabsBottom > .active {
+  border: none;
+}
+
+.tabsBottom > li > a {
+  display: block;
+  padding: 6px 18px;
+}
+
+.tabsBottom > .active > a,
+.tabsBottom > .active > a:hover {
+  background: #FFF;
+  color: #555;
+  border: 1px solid #CCC;
+  border-top-color: transparent;
+  text-decoration: none;
+}
+
+/*  TABS STACKED */
+.tabsStacked {
+  margin: 0;
+  padding: 0;
+}
+
+.tabsStacked > li {
+  float: none;
+  list-style: none;
+  margin: 0;
+  margin-bottom: -1px;
+  padding: 0;
+  width: 100%;
+}
+
+.tabsStacked > li > a {
+  background: #FFF;
+  border: 1px solid #CCC;
+  display: block;
+  padding: 4px 0;
+  text-indent: 10px;
+}
+
+.tabsStacked > li > a:hover {
+  background: #EDEDED;
+}
+
+.tabsStacked > .active > a {
+  color: #555;
+}
+
+.tabsStacked > .active > a:hover {
+  background: #FFF;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

@@ -1045,3 +1045,8 @@ ul li {
 }
 
 /* Print */
+@media print {
+  a[href]:after {
+    content: " (" attr(href) ") ";
+  }
+}

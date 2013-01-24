@@ -24,6 +24,7 @@ Centurion is a HTML5 / CSS 3 based framework for rapid prototyping. It comes out
 * Lists
 * Images (adaptive and sprites)
 * Navigation
+* Pagination
 * Print Styles
 * Tabs
 * [Tables](https://github.com/jhough10/Centurion/wiki/Tables)

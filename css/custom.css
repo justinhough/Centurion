@@ -19,7 +19,7 @@ section {
 /* FOOTER */
 footer {
   background: black;
-  min-height: 50px;
+  min-height: 65px;
   margin-top: 30px;
   padding: 20px 0 10px 0;
 }
@@ -59,6 +59,4 @@ footer a:visited {
   color: white;
 }
 
-/* ================================================
-    Custom Media Queries
-================================================== */
+/*  Custom Media Queries  */

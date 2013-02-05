@@ -1,0 +1,45 @@
+@import "core/base"
+
+/* TYPOGRAPHY */
+p, ul, ol
+	margin: 10px 0
+
+ul ul,
+ol ol,
+ul ol,
+ol ul
+	margin: 0
+
+
+/* NAV */
+//nav#main 
+
+/* CONTENT */
+section
+	margin: 10px 0
+
+/* FOOTER */
+footer 
+	background: $black
+	min-height: 65px
+	margin-top: 30px
+	padding: 20px 0 10px 0
+	h2
+		@include heading($h3-size, 10px, #FFF)
+
+	p,
+	blockquote,
+	article,
+	section
+		@include text(#FFF, 12px)
+
+	@include links(#FFF, #999)
+
+
+/*  Custom Media Queries  */
+
+@media only screen and (max-width: 920px)
+
+@media screen and (min-width: 521px) and (max-width: 768px)
+
+@media screen and (min-width: 320px) and (max-width: 520px)

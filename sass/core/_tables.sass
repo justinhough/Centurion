@@ -1,0 +1,100 @@
+// Tables
+// @include table-base
+@mixin table-base
+  th
+    text-align: center
+    font-weight: bold
+  td, th
+    padding: 2px
+
+
+// Table Color Generator
+// #1 - class
+// #2 - header color
+// #3 - even row color
+// #4 - odd row color
+//@include table-color-generator(__#1__ , __#2__, __#3__, __#4__)
+@mixin table-color-generator($class, $color1, $color2, $color3)
+  // &
+  .#{$class}
+    thead,
+    tfoot
+      tr
+        th,
+        td
+          background-color: $color1
+
+    tbody
+      tr
+        &.odd
+          background-color: $color2
+        &.even
+          background-color: $color3
+
+
+@mixin tables
+  table
+    background: #FFF
+    border-collapse: collapse
+    border-spacing: 0
+    color: #333
+    margin: 15px 0
+    width: 100%
+
+  thead,
+  tfoot
+    font-size: 16px
+    line-height: 1.5
+    text-align: left
+
+    tr th,
+    tr td
+      background-color: #999
+      color: #FFF
+      font-weight: bold
+      padding: 5px 10px
+
+  tbody
+    tr,
+    td
+      padding: 5px 10px
+
+  thead
+    padding: 3px 10px
+    text-align: left
+    
+  tbody
+    padding: 3px 10px
+    text-align: left
+
+    tr
+      &.odd
+        background-color: #FFF /* Class added by simple table script */
+      &.even
+        background-color: #ededed /* Class added by simple table script */
+
+
+  @include table-color-generator(ctOrange, #FB9D23, #FFF, #FCEABB)
+  @include table-color-generator(ctBlue, #356AA0, #FFF, #DEEFFF)
+  @include table-color-generator(ctYellow, #F8B500, #FFF, #FCEFCF)
+  @include table-color-generator(ctRed, #CC0000, #FFF, #FFCECE)
+  @include table-color-generator(ctGreen, #299A0B, #FFF, #DDE8C7)
+  @include table-color-generator(ctBlack, #000, #FFF, #DBDBDB)
+
+  //Additional Table Styles
+  // &
+  .rounded
+    thead
+      th
+        &:first-child
+          @include border-top-left-radius(6px)
+        &:last-child
+          @include border-top-right-radius(6px)
+
+    tfoot
+      th
+        &:first-child
+          @include border-bottom-left-radius(6px)
+        &:last-child
+          @include border-bottom-right-radius(6px)
+

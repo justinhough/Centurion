@@ -1,12 +1,10 @@
 /* -------------------------------------------------------
-
-  Centurion Framework v 3.1
-	Created by: Justin Hough
-
-	Documentation: http://jhough10.github.com/Centurion/documentation.html
-  Licensed under GPL and MIT.
-
--------------------------------------------------------- */
+ *
+ * Centurion Framework v 3.1
+ * Created by: Justin Hough
+ *
+ * Documentation: http://jhough10.github.com/Centurion/documentation.html
+ * Licensed under GPL and MIT. */
 .hide-desktop {
   display: none;
 }
@@ -15,9 +13,7 @@
   display: block;
 }
 
-/* ======================================================
-    GRID
-========================================================= */
+/*   GRID  */
 /* Desktop Fixed Grid Layout - 960px */
 .container {
   width: 960px;
@@ -306,9 +302,9 @@
   .container [class*="grid-"] {
     display: inline;
     float: left;
-    margin-left: 2%;
-    margin-right: 2%;
-    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
   .container .centerGrid {
     display: block;
@@ -338,7 +334,6 @@
     display: block;
   }
   nav.mobile ul li {
-    display: block;
     float: none;
     padding: 0;
     width: 100%;
@@ -400,9 +395,7 @@
   height: 0;
 }
 
-/* ======================================================
-    Features
-========================================================= */
+/*  Features */
 /* Show Elements */
 .show-desktop {
   display: block;
@@ -415,9 +408,9 @@
 /* Breadrumbs */
 ul.cCrumbs {
   display: block;
-  background: #F9F9F9;
+  background: #f9f9f9;
   padding: 7px 10px;
-  border: 1px solid #DDD;
+  border: 1px solid #dddddd;
   border-radius: 2px;
   overflow: hidden;
 }
@@ -434,7 +427,7 @@ ul.cCrumbs li span {
 }
 ul.cCrumbs li:after {
   content: ">";
-  color: #ccc;
+  color: #cccccc;
 }
 ul.cCrumbs li:last-child:after {
   content: "";
@@ -448,7 +441,6 @@ ul.cCrumbs li:last-child:after {
   border-radius: 5px / 5px;
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d7e7d), color-stop(100%, #0e0e0e));
   background-image: -webkit-linear-gradient(#7d7e7d, #0e0e0e);
   background-image: -moz-linear-gradient(#7d7e7d, #0e0e0e);
@@ -617,8 +609,13 @@ img.lfloat {
 img.rfloat.frame,
 img.lfloat.frame,
 img.frame {
-  border: 1px solid #E0E0E0;
+  border: 1px solid #e0e0e0;
   padding: 5px;
+}
+
+img.responsive {
+  height: auto;
+  width: 100%;
 }
 
 /* Navigation */
@@ -651,17 +648,17 @@ nav ul li a {
 }
 nav ul li a:hover, nav ul li a:visited {
   background: #cccccc;
-  color: #000;
+  color: black;
 }
 nav ul li a.on {
   background: #cccccc;
-  color: #000;
+  color: black;
 }
 
 /* Panels */
 .panels {
   padding: 20px 20px 20px 20px;
-  background: #F9F9F9;
+  background: #f9f9f9;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   margin: 0 0 20px 0;
 }
@@ -682,7 +679,7 @@ nav ul li a.on {
 }
 
 .tabs {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc;
   margin-bottom: 20px;
   width: 100%;
 }
@@ -708,16 +705,16 @@ nav ul li a.on {
   border: none;
 }
 .tabs > .active > a, .tabs > .active > a:hover {
-  background: #FFF;
-  color: #555;
-  border: 1px solid #CCC;
+  background: white;
+  color: #555555;
+  border: 1px solid #cccccc;
   border-bottom-color: transparent;
   text-decoration: none;
 }
 
 /*  TABS BOTTOM */
 .tabsBottom {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
 }
 
 .tabsBottom > li {
@@ -744,9 +741,9 @@ nav ul li a.on {
 
 .tabsBottom > .active > a,
 .tabsBottom > .active > a:hover {
-  background: #FFF;
-  color: #555;
-  border: 1px solid #CCC;
+  background: white;
+  color: #555555;
+  border: 1px solid #cccccc;
   border-top-color: transparent;
   text-decoration: none;
 }
@@ -781,9 +778,9 @@ nav ul li a.on {
 
 .tabs > .active > a,
 .tabs > .active > a:hover {
-  background: #FFF;
-  color: #555;
-  border: 1px solid #CCC;
+  background: white;
+  color: #555555;
+  border: 1px solid #cccccc;
   border-bottom-color: transparent;
   text-decoration: none;
 }
@@ -804,157 +801,166 @@ nav ul li a.on {
 }
 
 .tabsStacked > li > a {
-  background: #FFF;
-  border: 1px solid #CCC;
+  background: white;
+  border: 1px solid #cccccc;
   display: block;
   padding: 4px 0;
   text-indent: 10px;
 }
 
 .tabsStacked > li > a:hover {
-  background: #EDEDED;
+  background: #ededed;
 }
 
 .tabsStacked > .active > a {
-  color: #555;
+  color: #555555;
 }
 
 .tabsStacked > .active > a:hover {
-  background: #FFF;
+  background: white;
 }
 
 /* Tables */
 table {
-  background: #FFF;
+  background: white;
   border-collapse: collapse;
   border-spacing: 0;
-  color: #333;
+  color: #333333;
   margin: 15px 0;
   width: 100%;
 }
-table thead,
-table tfoot {
+
+thead,
+tfoot {
   font-size: 16px;
   line-height: 1.5;
   text-align: left;
 }
-table thead tr th,
-table thead tr td,
-table tfoot tr th,
-table tfoot tr td {
-  background-color: #999;
-  color: #FFF;
+thead tr th,
+thead tr td,
+tfoot tr th,
+tfoot tr td {
+  background-color: #999999;
+  color: white;
   font-weight: bold;
   padding: 5px 10px;
 }
-table tbody tr,
-table tbody td {
+
+tbody tr,
+tbody td {
   padding: 5px 10px;
 }
-table thead {
+
+thead {
   padding: 3px 10px;
   text-align: left;
 }
-table tbody {
+
+tbody {
   padding: 3px 10px;
   text-align: left;
 }
-table tbody tr.odd {
-  background-color: #FFF;
-  /* Class added by simple table script */
+tbody tr.odd {
+  background-color: white;
 }
-table tbody tr.even {
+tbody tr.even {
   background-color: #ededed;
-  /* Class added by simple table script */
 }
-table.ctOrange thead tr th,
-table.ctOrange thead tr td,
-table.ctOrange tfoot tr th,
-table.ctOrange tfoot tr td {
+
+.ctOrange thead tr th,
+.ctOrange thead tr td,
+.ctOrange tfoot tr th,
+.ctOrange tfoot tr td {
   background-color: #fb9d23;
 }
-table.ctOrange tbody tr.odd {
+.ctOrange tbody tr.odd {
   background-color: white;
 }
-table.ctOrange tbody tr.even {
+.ctOrange tbody tr.even {
   background-color: #fceabb;
 }
-table.ctBlue thead tr th,
-table.ctBlue thead tr td,
-table.ctBlue tfoot tr th,
-table.ctBlue tfoot tr td {
+
+.ctBlue thead tr th,
+.ctBlue thead tr td,
+.ctBlue tfoot tr th,
+.ctBlue tfoot tr td {
   background-color: #356aa0;
 }
-table.ctBlue tbody tr.odd {
+.ctBlue tbody tr.odd {
   background-color: white;
 }
-table.ctBlue tbody tr.even {
+.ctBlue tbody tr.even {
   background-color: #deefff;
 }
-table.ctYellow thead tr th,
-table.ctYellow thead tr td,
-table.ctYellow tfoot tr th,
-table.ctYellow tfoot tr td {
+
+.ctYellow thead tr th,
+.ctYellow thead tr td,
+.ctYellow tfoot tr th,
+.ctYellow tfoot tr td {
   background-color: #f8b500;
 }
-table.ctYellow tbody tr.odd {
+.ctYellow tbody tr.odd {
   background-color: white;
 }
-table.ctYellow tbody tr.even {
+.ctYellow tbody tr.even {
   background-color: #fcefcf;
 }
-table.ctRed thead tr th,
-table.ctRed thead tr td,
-table.ctRed tfoot tr th,
-table.ctRed tfoot tr td {
+
+.ctRed thead tr th,
+.ctRed thead tr td,
+.ctRed tfoot tr th,
+.ctRed tfoot tr td {
   background-color: #cc0000;
 }
-table.ctRed tbody tr.odd {
+.ctRed tbody tr.odd {
   background-color: white;
 }
-table.ctRed tbody tr.even {
+.ctRed tbody tr.even {
   background-color: #ffcece;
 }
-table.ctGreen thead tr th,
-table.ctGreen thead tr td,
-table.ctGreen tfoot tr th,
-table.ctGreen tfoot tr td {
+
+.ctGreen thead tr th,
+.ctGreen thead tr td,
+.ctGreen tfoot tr th,
+.ctGreen tfoot tr td {
   background-color: #299a0b;
 }
-table.ctGreen tbody tr.odd {
+.ctGreen tbody tr.odd {
   background-color: white;
 }
-table.ctGreen tbody tr.even {
+.ctGreen tbody tr.even {
   background-color: #dde8c7;
 }
-table.ctBlack thead tr th,
-table.ctBlack thead tr td,
-table.ctBlack tfoot tr th,
-table.ctBlack tfoot tr td {
+
+.ctBlack thead tr th,
+.ctBlack thead tr td,
+.ctBlack tfoot tr th,
+.ctBlack tfoot tr td {
   background-color: black;
 }
-table.ctBlack tbody tr.odd {
+.ctBlack tbody tr.odd {
   background-color: white;
 }
-table.ctBlack tbody tr.even {
+.ctBlack tbody tr.even {
   background-color: #dbdbdb;
 }
-table.rounded thead th:first-child {
+
+.rounded thead th:first-child {
   -moz-border-radius-topleft: 6px;
   -webkit-border-top-left-radius: 6px;
   border-top-left-radius: 6px;
 }
-table.rounded thead th:last-child {
+.rounded thead th:last-child {
   -moz-border-radius-topright: 6px;
   -webkit-border-top-right-radius: 6px;
   border-top-right-radius: 6px;
 }
-table.rounded tfoot th:first-child {
+.rounded tfoot th:first-child {
   -moz-border-radius-bottomleft: 6px;
   -webkit-border-bottom-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
-table.rounded tfoot th:last-child {
+.rounded tfoot th:last-child {
   -moz-border-radius-bottomright: 6px;
   -webkit-border-bottom-right-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -1036,7 +1042,6 @@ ul {
   font-family: "Open Sans", sans-serif;
   color: #555555;
 }
-
 ul li {
   font-size: 15px;
   list-style: circle;

@@ -1,0 +1,38 @@
+// @include image-right
+@mixin image-right
+  @include float-right
+  margin: 0 0 15px 15px
+
+// @include image-left
+@mixin image-left
+  @include float-left
+  margin: 0 15px 15px 0
+
+// @include image-frame
+@mixin image-frame
+  border: 1px solid #E0E0E0
+  padding: 5px
+
+// @include image-box
+@mixin image-box
+  padding: 10px
+
+@mixin responsive-images
+  height: auto
+  width: 100%
+
+
+@mixin images
+  img.rfloat
+    @include image-right
+
+  img.lfloat
+    @include image-left
+
+  img.rfloat.frame,
+  img.lfloat.frame,
+  img.frame
+    @include image-frame
+    
+  img.responsive
+    @include responsive-images

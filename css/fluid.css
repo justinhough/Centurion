@@ -17,15 +17,15 @@
  * -------------------------------------------------------- */
 /* Desktop/Tablet Fluid Grid Layout - 92% */
 .container {
-  width: 96%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 .container [class*="grid-"] {
   display: inline;
   float: left;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 2%;
+  margin-right: 2%;
   position: relative;
 }
 .container .centerGrid {
@@ -45,112 +45,112 @@
   position: relative;
 }
 .container .grid-1 {
-  width: 6%;
+  width: 4.33333%;
 }
 .container .grid-2 {
-  width: 14%;
+  width: 12.66667%;
 }
 .container .grid-3 {
-  width: 22%;
+  width: 21%;
 }
 .container .grid-4 {
-  width: 30%;
+  width: 29.33333%;
 }
 .container .grid-5 {
-  width: 38%;
+  width: 37.66667%;
 }
 .container .grid-6 {
   width: 46%;
 }
 .container .grid-7 {
-  width: 54%;
+  width: 54.33333%;
 }
 .container .grid-8 {
-  width: 62%;
+  width: 62.66667%;
 }
 .container .grid-9 {
-  width: 70%;
+  width: 71%;
 }
 .container .grid-10 {
-  width: 78%;
+  width: 79.33333%;
 }
 .container .grid-11 {
-  width: 86%;
+  width: 87.66667%;
 }
 .container .grid-12 {
-  width: 94%;
+  width: 96%;
 }
 .container .pull-1 {
-  left: -8%;
+  left: -8.33333%;
 }
 .container .pull-2 {
-  left: -16%;
+  left: -16.66667%;
 }
 .container .pull-3 {
-  left: -24%;
+  left: -25%;
 }
 .container .pull-4 {
-  left: -32%;
+  left: -33.33333%;
 }
 .container .pull-5 {
-  left: -40%;
+  left: -41.66667%;
 }
 .container .pull-6 {
-  left: -48%;
+  left: -50%;
 }
 .container .pull-7 {
-  left: -56%;
+  left: -58.33333%;
 }
 .container .pull-8 {
-  left: -64%;
+  left: -66.66667%;
 }
 .container .pull-9 {
-  left: -72%;
+  left: -75%;
 }
 .container .pull-10 {
-  left: -80%;
+  left: -83.33333%;
 }
 .container .pull-11 {
-  left: -88%;
+  left: -91.66667%;
 }
 .container .pull-12 {
-  left: -96%;
+  left: -100%;
 }
 .container .push-1 {
-  left: 8%;
+  left: 8.33333%;
 }
 .container .push-2 {
-  left: 16%;
+  left: 16.66667%;
 }
 .container .push-3 {
-  left: 24%;
+  left: 25%;
 }
 .container .push-4 {
-  left: 32%;
+  left: 33.33333%;
 }
 .container .push-5 {
-  left: 40%;
+  left: 41.66667%;
 }
 .container .push-6 {
-  left: 48%;
+  left: 50%;
 }
 .container .push-7 {
-  left: 56%;
+  left: 58.33333%;
 }
 .container .push-8 {
-  left: 64%;
+  left: 66.66667%;
 }
 .container .push-9 {
-  left: 72%;
+  left: 75%;
 }
 .container .push-10 {
-  left: 80%;
+  left: 83.33333%;
 }
 .container .push-11 {
-  left: 88%;
+  left: 91.66667%;
 }
 .container .push-12 {
-  left: 96%;
+  left: 100%;
 }
 
 .centerGrid {

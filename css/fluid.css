@@ -1,21 +1,25 @@
-/* -------------------------------------------------------
+/* --------------------------------------------------------
  *
  *
  *
- * Centurion Framework v.3.1 - FLUID
+ *  Centurion Framework v 3.1 - FLUID
  *
- * Created by: Justin Hough
+ *  Created by: Justin Hough
  *
  *
  *
- * Documentation: http://jhough10.github.com/Centurion/documentation.html
+ *  Documentation: http://jhough10.github.com/Centurion/documentation.html
  *
- * Licensed under GPL and MIT. */
+ *  Licensed under GPL and MIT.
+ *
+ *
+ *
+ * -------------------------------------------------------- */
 /* Desktop/Tablet Fluid Grid Layout - 92% */
 .container {
-  width: 92%;
-  margin-left: 4%;
-  margin-right: 4%;
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .container [class*="grid-"] {
   display: inline;
@@ -36,113 +40,117 @@
 .container .omega {
   margin-right: 0;
 }
+.container [class*="push-"],
+.container [class*="pull-"] {
+  position: relative;
+}
 .container .grid-1 {
-  width: 6.33333%;
+  width: 6%;
 }
 .container .grid-2 {
-  width: 14.66667%;
+  width: 14%;
 }
 .container .grid-3 {
-  width: 23%;
+  width: 22%;
 }
 .container .grid-4 {
-  width: 31.33333%;
+  width: 30%;
 }
 .container .grid-5 {
-  width: 39.66667%;
+  width: 38%;
 }
 .container .grid-6 {
-  width: 48%;
+  width: 46%;
 }
 .container .grid-7 {
-  width: 56.33333%;
+  width: 54%;
 }
 .container .grid-8 {
-  width: 64.66667%;
+  width: 62%;
 }
 .container .grid-9 {
-  width: 73%;
+  width: 70%;
 }
 .container .grid-10 {
-  width: 81.33333%;
+  width: 78%;
 }
 .container .grid-11 {
-  width: 89.66667%;
+  width: 86%;
 }
 .container .grid-12 {
-  width: 98%;
+  width: 94%;
 }
 .container .pull-1 {
-  left: -8.33333%;
+  left: -8%;
 }
 .container .pull-2 {
-  left: -16.66667%;
+  left: -16%;
 }
 .container .pull-3 {
-  left: -25%;
+  left: -24%;
 }
 .container .pull-4 {
-  left: -33.33333%;
+  left: -32%;
 }
 .container .pull-5 {
-  left: -41.66667%;
+  left: -40%;
 }
 .container .pull-6 {
-  left: -50%;
+  left: -48%;
 }
 .container .pull-7 {
-  left: -58.33333%;
+  left: -56%;
 }
 .container .pull-8 {
-  left: -66.66667%;
+  left: -64%;
 }
 .container .pull-9 {
-  left: -75%;
+  left: -72%;
 }
 .container .pull-10 {
-  left: -83.33333%;
+  left: -80%;
 }
 .container .pull-11 {
-  left: -91.66667%;
+  left: -88%;
 }
 .container .pull-12 {
-  left: -100%;
+  left: -96%;
 }
 .container .push-1 {
-  left: 8.33333%;
+  left: 8%;
 }
 .container .push-2 {
-  left: 16.66667%;
+  left: 16%;
 }
 .container .push-3 {
-  left: 25%;
+  left: 24%;
 }
 .container .push-4 {
-  left: 33.33333%;
+  left: 32%;
 }
 .container .push-5 {
-  left: 41.66667%;
+  left: 40%;
 }
 .container .push-6 {
-  left: 50%;
+  left: 48%;
 }
 .container .push-7 {
-  left: 58.33333%;
+  left: 56%;
 }
 .container .push-8 {
-  left: 66.66667%;
+  left: 64%;
 }
 .container .push-9 {
-  left: 75%;
+  left: 72%;
 }
 .container .push-10 {
-  left: 83.33333%;
+  left: 80%;
 }
 .container .push-11 {
-  left: 91.66667%;
+  left: 88%;
 }
 .container .push-12 {
-  left: 100%;
+  left: 96%;
 }
 
 .centerGrid {

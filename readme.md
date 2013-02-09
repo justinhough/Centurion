@@ -52,20 +52,20 @@ Utilizing the grid requires a container wrapper followed by the grid sizes that 
 ### Nesting Grids
 The best part of any grid system is the ability to nest elements to make a grid smaller without having to make the code more complicated.
 
-For example, say that you want to have content in a 'grid-6', but you also want to add three images with captions side-by-side beneath the main block of text.
+For example, say that you want to have content in a ```grid-6```, but you also want to add three images with captions side-by-side beneath the main block of text. So all you have to do is add ```mobile-33```. The number in this case for the grid is the percentage amount of the parent container that each nested grid element will take up. If you wanted to have to even spaced nested elements you would use ```mobile-50``` (or 50%).
 
 ```html
     <div class="grid-6">
         <p>Some text talking about something, which is followed by some awesome images below that sell the point.</p>
-        <div class="grid-2 alpha">
+        <div class="mobile-33 alpha">
             <img src="" alt="" />
             <p>Image caption is written here</p>
         </div>
-        <div class="grid-2">
+        <div class="mobile-33">
             <img src="" alt="" />
             <p>Image caption is written here</p>
         </div>
-        <div class="grid-2 omega">
+        <div class="mobile-33 omega">
             <img src="" alt="" />
             <p>Image caption is written here</p>
         </div>

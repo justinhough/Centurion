@@ -1,30 +1,3 @@
-// Clearfix
-// @include clearfix
-@mixin clearfix
-  .clearfix,
-  .container
-    &:after,
-    &:before
-      content: "."
-      display: block
-      height: 0
-      clear: both
-      visibility: hidden
-      clear: both
-      zoom: 1
-
-    * html &
-      height: 1px
-
-  .clear
-    clear: both
-    display: block
-    overflow: hidden
-    visibility: hidden
-    width: 0
-    height: 0
-
-
 // Center Grid
 // @include centerGrid
 @mixin centerGrid
@@ -33,7 +6,6 @@
     float: none
     margin-left: auto
     margin-right: auto
-
 
 
 // Alpha and Omega

@@ -14,8 +14,8 @@ Centurion is a HTML5 / CSS 3 based framework for rapid prototyping. It comes out
 **Note:** Feature list is based on v3.1. As features exist in the current framework documentation will be provided for use. 
 
 * [The Grid](https://github.com/jhough10/Centurion/wiki/Grid)
-* Alerts
-* Blockquotes
+* [Alerts](https://github.com/jhough10/Centurion/wiki/Alerts)
+* [Blockquotes](https://github.com/jhough10/Centurion/wiki/Blockquotes)
 * [Buttons](https://github.com/jhough10/Centurion/wiki/Buttons)
 * Captions
 * Colors
@@ -24,7 +24,7 @@ Centurion is a HTML5 / CSS 3 based framework for rapid prototyping. It comes out
 * Lists
 * Images (adaptive and sprites)
 * Navigation
-* Pagination
+* [Pagination](https://github.com/jhough10/Centurion/wiki/Pagination)
 * Print Styles
 * Tabs
 * [Tables](https://github.com/jhough10/Centurion/wiki/Tables)
@@ -75,9 +75,52 @@ For example, say that you want to have content in a ```grid-6```, but you also w
 **Alpha and Omega**
 Each grid element has a margin of 10px on either side to give a nice 20px space between each grid, while this provides a nice aesthetic it causes issues when nesting elements causing the last grid element to wrap to a new line. In the code example above there are two classes utilized to fix this problem: ```alpha``` and ```omega```.
 
-The ```alpha``` class removes the left margin on the first element that is nested in another grid. The ```omega``` class does the exact opposite, which removes the right margin from the last element. Notice that the middle ```grid-2``` does not have a second class, this is because it does not need it. Only the first and last elements require this fix for the grid to layout properly. *Note: Do not put use ```alpha``` or ```omega``` on outer grid elements, such as on the ```grid-6``` in the example above. Margins only need be removed on nested elements within another grid.*
+The ```alpha``` class removes the left margin on the first element that is nested in another grid. The ```omega``` class does the exact opposite, which removes the right margin from the last element. Notice that the middle ```grid-2``` does not have a second class, this is because it does not need it. Only the first and last elements require this fix for the grid to layout properly. *Note: Do not put use ```alpha``` or ```omega``` on outer grid elements, such as on the ```grid-6``` in the example above. Margins only need be removed on nested elements when they are within another grid.*
 
 
+## Alerts
+
+Need to display an alert to a user, or warn them about impending work that will be taking place on your site. No matter the option that can help. The default alert box doesn't do much of anything except display information in a grey box.
+
+```html
+<div class="alert">
+    <span href="#" class="close"></span>
+	<p>This is default alert box!</p>
+</div>
+```
+
+However, you might have to alert a user in clear definable ways such as give them an error message, information, warn them of some changes, or tell them that their work has been saved. All these options exist and require only a class change.
+
+**Error Message**
+```html
+<div class="alert error">
+	...
+</div>
+```
+
+**Warning Message**
+```html
+<div class="alert warning">
+	...
+</div>
+```
+
+**Informative Message**
+```html
+<div class="alert info">
+	...
+</div>
+```
+
+**Success Message**
+```html
+<div class="alert success">
+	...
+</div>
+```
+
+## Breadcrumbs
+Documentation coming soon.
 
 ## Buttons
 
@@ -122,6 +165,25 @@ Though if you by chance need a larger button for your page for a possibly "buy" 
 ```
 
 Give the buttons a whirl.
+
+
+## Dropdowns
+Documentation coming soon.
+
+## Images
+Documentation coming soon.
+
+## Navigation
+Documentation coming soon.
+
+## Pagination
+Documentation coming soon.
+
+## Panels
+Documentation coming soon.
+
+## Print
+Documentation coming soon.
 
 ## Tables
 
@@ -184,9 +246,50 @@ To set the color all you have to do is set the class on the table itself, like t
 <table class="ctBlue">
 ```
 
+## Tabs
+
+Tabs can be fun, if they are used in the right context. I believe in simple tabs and some times we all end up writing far to much code to do a simple job. Tabs in general comprise of a wrapper (```tabBox```), a ul list (```tabs```), and then, of course, our tabs. Each tab is labeled with a unique ID that identifies it to one of the tab links found in our ```ul	``` list.
+
+```html
+<div class="tabBox">
+	<ul class="tabs">
+		<li><a href="#tab1">Tab 1</a></li>
+		<li><a href="#tab2">Tab 2</a></li>
+		<li><a href="#tab3">Tab 3</a></li>
+	</ul>
+	<div id="tab1">
+		<p>Text goes here</p>
+	</div>
+	<div id="tab2">
+		<p>Text goes here</p>
+	</div>
+	<div id="tab3">
+		<p>Text goes here</p>
+	</div>
+</div>
+```
+
+However, say that you don't want your tabs to be on top of the content, but below. On occasion this would require massive amounts of re-coding in order to get the display to work. However, through CSS all you need to do is add a new class to the wrapper ```tabBottom```
+
+```html
+<div class="tabBox tabBottom">
+	...
+</div>
+```
+
+## Tooltips
+
+Tooltips are great for displaying information to a user that might be necessary to complete an action. Centurion features two types of tooltips: clickable and coverable.
+
+The functionality changes simply by changing the classes ```tipClick``` or ```tipHover```.
+
+```html
+<a rel="tooltip" class="tipClick" title="tooltip text goes here">
+<a rel="tooltip" class="tipHover" title="tooltip text goes here">
+```
 
 ## Author Note
-Every feature of this framework is tested using a machine that resembles a computer and was built by a man looking strangely like a developer, but not entirely the case. 
+Every feature of this framework is tested using a machine that resembles a computer (I work on a Mac) and was built by a man looking strangely like a developer, but those two options are not always true. 
 
 ## Licensing
 Licensed under [GPL](http://www.gnu.org/licenses/gpl.html) and [MIT](http://www.opensource.org/licenses/mit-license.php).

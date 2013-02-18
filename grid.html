@@ -73,6 +73,17 @@
 			color: #FFF !important;
 			padding: 0 !important;
 		}
+		
+		/* GRID NESTING */
+  		#grid [class*="grid-"] [class*="mobile-"] p {
+  			background: lightblue;
+  		}
+  		#grid [class*="grid-"] [class*="pull-"] p {
+  			background: lightpink;
+  		}
+  		#grid [class*="grid-"] [class*="push-"] p {
+  			background: lightgreen;
+  		}
 	</style>
 
 </head>
@@ -428,7 +439,187 @@
 	        </div>
 	        <div class="clear"></div>
 
+	       
+	       
+	       
+	       <!-- GRID NESTING -->
+<div class="grid-12">
+  <h2>Nesting Grid Elements</h2>
 
+  <p class="noStyle">Elements with green are pulled to the left, pink are pushed to the right, and anything in lightblue is a nested element within the grid element above.</p>
+
+</div>
+
+
+
+<div class="grid-2">
+		<p>Grid 2</p>
+		 <div class="mobile-50 alpha">
+			<p>50%</p>
+		</div>
+		<div class="mobile-50 omega">
+			<p>50%</p>
+		</div>
+	</div>
+	<div class="grid-10">
+		<p>Grid 10</p>
+		<div class="mobile-20 alpha">
+			<p>20%</p>
+		</div>
+		<div class="mobile-20">
+			<p>20%</p>
+		</div>
+		<div class="mobile-20">
+			<p>20%</p>
+		</div>
+		<div class="mobile-20">
+			<p>20%</p>
+		</div>
+		<div class="mobile-20 omega">
+			<p>20%</p>
+		</div>
+
+	</div>
+<div class="clear"></div>
+
+
+	<div class="grid-9">
+		<p>Grid 9</p>
+		<div class="mobile-66 alpha">
+			<p>66%</p>
+		</div>
+		<!--<div class="grid-3 mobile-33">
+			<p>Grid 33</p>
+		</div>-->
+		<div class="mobile-33 omega">
+			<p>33%</p>
+		</div>
+	</div>
+
+	<div class="grid-3">
+		<p>Grid 3</p>
+
+		<div class="mobile-33 alpha">
+			<p>33%</p>
+		</div>
+		<div class="mobile-33">
+			<p>33%</p>
+		</div>
+		<div class="mobile-33 omega">
+			<p>33%</p>
+		</div>
+
+	</div>
+	<div class="clear"></div>
+
+
+
+
+
+	<div class="grid-4">
+		<p>Grid 4</p>
+
+		<div class="mobile-50 alpha">
+			<p>50%</p>
+		</div>
+		<div class="mobile-50 omega">
+			<p>50%</p>
+		</div>
+
+	</div>
+	<div class="grid-8">
+		<p>Grid 8</p>
+
+		<div class="mobile-25 push-75 omega">
+			<p>25%</p>
+		</div>
+		<div class="mobile-75 pull-25 alpha">
+			<p>75%</p>
+		</div>
+	</div>
+	<div class="clear"></div>
+
+
+
+<div class="grid-6">
+		<p>Grid 6</p>
+
+		<div class="mobile-50 alpha">
+			<p>50%</p>
+		</div>
+		<div class="mobile-50 omega">
+			<p>50%</p>
+		</div>
+
+	</div>
+	<div class="grid-6">
+		<p>Grid 6</p>
+
+		<div class="mobile-33 alpha">
+			<p>33%</p>
+		</div>
+		<div class="mobile-33">
+			<p>33%</p>
+		</div>
+		<div class="mobile-33 omega">
+			<p>33%</p>
+		</div>
+	</div>
+
+
+
+
+	<div class="grid-6">
+		<p>Grid 6</p>
+
+		<div class="mobile-10 alpha">
+			<p>10%</p>
+		</div>
+
+		<div class="mobile-10">
+			<p>10%</p>
+		</div>
+		<div class="mobile-10">
+			<p>10%</p>
+		</div>
+		<div class="mobile-10 push-10">
+			<p>10%</p>
+		</div>
+		<div class="mobile-10 pull-10">
+			<p>10%</p>
+		</div>
+		<div class="mobile-10">
+			<p>10%</p>
+		</div>
+		<div class="mobile-10 push-10">
+			<p>10%</p>
+		</div>
+		<div class="mobile-10 pull-10">
+			<p>10%</p>
+		</div>
+		<div class="mobile-10">
+			<p>10%</p>
+		</div>
+
+		<div class="mobile-10 omega">
+			<p>10%</p>
+		</div>
+
+	</div>
+	<div class="grid-6">
+		<p>Grid 6</p>
+
+		<div class="mobile-33 alpha">
+			<p>33%</p>
+		</div>
+		<div class="mobile-33">
+			<p>33%</p>
+		</div>
+		<div class="mobile-33 omega">
+			<p>33%</p>
+		</div>
+	</div>
+	<div class="clear"></div>
 
 				<!-- end of content-->
 			</article>

@@ -5,9 +5,9 @@
   ul
     &.cCrumbs
       display: block
-      background: #F9F9F9
+      background: $lightgrey
       padding: 7px 10px
-      border: 1px solid #DDD
+      border: 1px solid $grey
       border-radius: 2px
       overflow: hidden
       li
@@ -17,12 +17,12 @@
         a,
         span
           text-transform: uppercase
-          font-size: 12px
+          font-size: ($default-font-size - 0.2)
           padding-right: 10px
         
         &:after 
           content: ">"
-          color: #ccc
+          color: $grey
        
         &:last-child:after 
           content: ""

@@ -1,0 +1,101 @@
+@mixin tooltips
+  a.tipClick,
+  a.tipHover 
+    color: $green
+    cursor: pointer
+    text-decoration: underline
+    display: inline-block
+    height: 20px
+    position: relative
+    
+    &:hover
+      color: $black
+      text-decoration: underline
+
+  .tooltip 
+    bottom: 20px
+    color: $green
+    left: 0
+    overflow: hidden
+    position: absolute
+    width: 250px
+    z-index: 9999
+    
+    .tipHeader 
+      height: 10px
+      width: 220px
+      background: $white
+      border: 2px solid $almost-white
+      border-bottom: none
+      border-radius: 6px 6px 0 0
+    
+    .tipFooter 
+      height: 10px
+      width: 220px
+      background: $white
+      border: 2px solid $almost-white
+      border-top: none
+      border-radius: 0 0 6px 6px
+      
+    .toolBodyWidth 
+      width: 220px
+      background: $white
+      border-left: 2px solid $almost-white
+      border-right: 2px solid $almost-white
+    
+    .tipBody
+      color: #000
+      padding: 0 15px
+      
+    .arrow-up
+      display: none
+    
+    .arrow-down 
+      width: 0
+      height: 0
+      border-left: 10px solid transparent
+      border-right: 10px solid transparent
+      border-top: 10px solid $almost-white
+      left: 15px
+      position: relative
+
+  
+  .tipBottom 
+    .tooltip 
+      left: 0
+      bottom: -150px
+    
+      .tipBody 
+        color: #000
+        padding: 0 15px
+
+      .tipHeader 
+        background: $white
+        border: 2px solid $almost-white
+        border-bottom: none
+        border-radius: 6px 6px 0 0
+    
+      .tipFooter 
+        background: $white
+        border: 2px solid $almost-white
+        border-top: none
+        border-radius: 0 0 6px 6px
+      
+      .arrow-down
+        display: none
+      
+      .arrow-up 
+        display: block
+        width: 0
+        height: 0
+        border-left: 10px solid transparent
+        border-right: 10px solid transparent
+        border-bottom: 10px solid $almost-white
+        left: 15px
+        position: relative
+    
+    
+    
+  
+  
+  

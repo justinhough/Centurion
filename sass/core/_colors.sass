@@ -3,20 +3,6 @@
 @import "compass/utilities/general/hacks"
 @import "compass/css3/images"
 
-// Default Colors
-$default: rgba(#333333, 1.0)
-$text-color: rgba(#555555, 1.0)
-
-// Links - RBGA
-$link-color: rgba(#ffa84c, 1.0)
-$link-hover-color: rgba(#000000, 1.0)
-
-// Default color values - RGBA
-$white: rgba(#FFFFFF, 1.0)
-$black: rgba(#000000, 1.0)
-
-// Border - RGBA
-$border-color: rgba(#CCCCCC, 1.0)
 
 // Two color gradient - supplied by compass
 // @include gradient-two(#1, #2)
@@ -35,7 +21,7 @@ $border-color: rgba(#CCCCCC, 1.0)
   background: -o-linear-gradient(top,  $start 0%,$middle 40%,$end 100%)
   background: -ms-linear-gradient(top,  $start 0%,$middle 40%,$end 100%)
   background: linear-gradient(top,  $start 0%,$middle 40%,$end 100%)
-  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 )
+  @include background-image(linear-gradient($start, $end))
 
 
 // Box Shadow - custom with defaults (4 values)
@@ -43,6 +29,6 @@ $border-color: rgba(#CCCCCC, 1.0)
 @mixin box-shadow($top: 0, $bottom: 0, $spread: 5px, $color: rgba(#000, .4))
   -moz-box-shadow: $top $bottom $spread $color
   -webkit-box-shadow: $top $bottom $spread $color
-//  -ms-box-shadow: $top $bottom $spread $color
-//  -o-box-shadow: $top $bottom $spread $color
+  -ms-box-shadow: $top $bottom $spread $color
+  -o-box-shadow: $top $bottom $spread $color
   box-shadow: $top $bottom $spread $color

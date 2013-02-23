@@ -1,29 +1,24 @@
-@mixin navReset
-  margin: 0
-  padding: 0
-
 // Navigation - for desktop
-// @include navigation-full
 @mixin navigation-full
-  @include float-left
-  font-size: $text-size
+  @extend %float-left
+  font-size: $default-font-size
   margin-bottom: 10px
   width: 100%
   ul
-    display: block
-    @include float-left
-    @include navReset
+    @extend %show-block
+    @extend %float-left
+    @extend %noMarPad
     li
       display: inline
-      @include float-left
-      @include navReset
-      position: relative
+      @extend %float-left
+      @extend %noMarPad
+      @extend %relative
       a
         color: $white
-        @include float-left
+        @extend %float-left
         margin: 0
         padding: 15px 20px
-        text-decoration: none
+        @extend %noTextDecoration
         &:hover,
         &:visited
           background: $white
@@ -32,28 +27,28 @@
           background: $white
           color: #000
 
+  
 @mixin navigation-slim($border: #CCC, $link: #333, $hover: #999)
   nav
-    border: 1px solid $border
-    @include float-left
-    font-size: $text-size
+    @extend %float-left
+    font-size: $default-font-size
     margin-bottom: 10px
     width: 100%
     ul
-      display: block
-      @include float-left
-      @include navReset
+      @extend %show-block
+      @extend %float-left
+      @extend %noMarPad
       li
         display: inline
-        @include float-left
-        @include navReset
-        position: relative
+        @extend %float-left
+        @extend %noMarPad
+        @extend %relative
         a
           color: $link
-          @include float-left
+          @extend %float-left
           margin: 0
           padding: 15px 20px
-          text-decoration: none
+          @extend %noTextDecoration
           &:hover,
           &:visited
             background: $border
@@ -61,33 +56,45 @@
           &.on
             background: $border
             color: #000
-
+    // nav stacked
+    &.stacked
+      width: 100%
+      ul
+        float: none
+        li
+          border-bottom: 1px solid $lightgrey
+          width: 100%
+          
+          a
+            padding: $dh-padding
+            text-indent: ($default-font-size)+0.5
+            width: 100%
+            &:hover
+              background: #EDEDED
 
 // Navigation - for mobile
-// @include navigation-mobile
 @mixin navigation-mobile
 
   nav.mobile
     border: none
     ul
-      display: none
+      @extend %hide-block
       width: 100%
 
       &.show
-        display: block
+        @extend %show-block
 
       li
-        display:block
+        @extend %show-block
         float: none
         padding: 0
         width: 100%
         a
-          display: block
+          @extend %show-block
           float: none
           padding: 10px 0
           text-indent: 10px 
           width: 100%
-
 
     span
       &.openMenu

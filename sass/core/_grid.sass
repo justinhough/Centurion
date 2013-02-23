@@ -1,25 +1,31 @@
+@import "compass/css3/box-sizing"
+
 // Center Grid
 // @include centerGrid
 @mixin centerGrid
   .centerGrid
     display: block
     float: none
-    margin-left: auto
-    margin-right: auto
-
+    @include auto-center
 
 // Alpha and Omega
 @mixin first-last
   .alpha
     margin-left: 0
-  .omega
-    margin-right: 0
-
-@mixin first-last-mobile
-  .alpha
     padding-left: 0
   .omega
+    margin-right: 0
     padding-right: 0
+
+// Center a sized element
+@mixin auto-center
+  margin-left: auto
+  margin-right: auto
+
+@mixin float-left
+  float: left
+
+
 
 
 // Show and Hide Elements within Grid
@@ -44,123 +50,85 @@
     display: block
 
 
-// Desktop Grid Generator
-//@include grid-generator(960px, 20px, 12)
-@mixin grid-generator($width, $space, $rows: 12)
-  $content-width: $width
+@mixin grid($content-width: 960px, $width:98%, $space:2%, $rows:10)
   .container
     width: $content-width
     @include auto-center
     [class*="grid-"]
-      display: inline
+      +box-sizing(border-box)
       @include float-left
-      margin-left: $space/2
-      margin-right: $space/2
+      padding: 0 15px
       position: relative
-
-    @include centerGrid
+  
     @include first-last
-
-    [class*="push-"],
-    [class*="pull-"]
-      position: relative
-
+  
+    // Rows by 10
     @for $i from 1 through $rows
-      .grid-#{$i}
-        width: $content-width/($rows/$i) - $space
-
-    @for $i from 1 through $rows
-      .pull-#{$i}
-        left: -($content-width/($rows/$i))
-
-    @for $i from 1 through $rows
-      .push-#{$i}
-        left: $content-width/($rows/$i)
-
-
-
-// Nested Grid Generator
-@mixin grid-nested-generator($rows: 10)
-
-  .container
-    [class*="mobile-"]
-      box-sizing: border-box
-      @include float-left
-      padding: 0 5px
-
-    @include first-last-mobile
-
+      $num: $i * 10
+      .grid-#{$num}
+        width: 1% * $num
+      .pull-#{$num}
+        left: -(1% * $num)
+      .push-#{$num}
+        left: (1% * $num)
+  
+    // Rows in Thirds
     @for $i from 1 through 3
       $num: $i * 25
-
-      .mobile-#{$num}
+  
+      .grid-#{$num}
         width: 1% * $num
-      [class*="mobile-"].pull-#{$num}
+      .pull-#{$num}
         left: -(1% * $num)
-      [class*="mobile-"].push-#{$num}
+      .push-#{$num}
         left: (1% * $num)
-
+  
+    // Rows by 25
     @for $i from 1 through 2
       $num: $i * 33
       $mul: 1/3
       $decimal: $i * $mul
       $percent: ($num + $decimal)
-
-      .mobile-#{$num}
+  
+      .grid-#{$num}
         width: 1% * $percent
-      [class*="mobile-"].pull-#{$num}
+      .pull-#{$num}
         left: -(1% * $percent)
-      [class*="mobile-"].push-#{$num}
+      .push-#{$num}
         left: (1% * $percent)
 
-    @for $i from 1 through $rows
-      $num: $i * 10
-      .mobile-#{$num}
-        width: 1% * $num
-      [class*="mobile-"].pull-#{$num}
-        left: -(1% * $num)
-      [class*="mobile-"].push-#{$num}
-        left: (1% * $num)
+    @include centerGrid
 
 
 // Mobile Grid Generator - NO PUSH OR PULL
 // @include grid-generator(480px, 20px, 12)
-@mixin grid-generator-mobile ($width: 100%, $space: 2%)
-  $grid-width: 96%
+@mixin grid-mobile ($width: 100%, $space: 2%)
+  $grid-width: 100%
   .container
     width: $width
     @include auto-center
     [class*="grid-"]
       display: inline
       @include float-left
-      margin-left: $space
-      margin-right: $space
       width: $grid-width
+      [class*="grid-"]
+        padding: 0
+        margin: 0
     @include centerGrid
     @include first-last
     [class*="pull-"],
     [class*="push-"]
       left: 0
+  @include hide-desktop
 
 
-
-
-
-// Fixed Grid Generator - with custom create
-@mixin fixed($width:960px, $space:20px, $rows:12)
-  @include grid-generator($width, $space, $rows)
-  @include grid-nested-generator
-
-
-// Fluid Grid Generator - with custom create
-@mixin fluid($width:100%, $space:4%, $rows:12)
-  @include grid-generator($width, $space, $rows)
-
-
-// Mobile Grid Generator
-@mixin mobile
-  @include grid-generator-mobile
-
-
-@mixin gridCreate($width, $space, $rows)
-  @include grid-generator($width, $space, $rows)
+// Grid
+@mixin grid-generate($content-width: 960px, $width:98%, $space:2%, $rows:10)
+  @include grid($content-width, $width, $space, $rows)
+  
+  @media screen and (max-width: 920px)
+    .container
+      width: 98%
+  
+  @media screen and (max-width: 768px)
+    @include grid-mobile

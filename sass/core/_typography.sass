@@ -1,49 +1,33 @@
 @import "compass/typography/text/"
-
-// font-family
-$text-font: 'Open Sans', sans-serif
-$heading-font: 'Open Sans', sans-serif
-//$heading-font: 'Open Sans Condensed', sans-serif
-
-// font sizes
-$text-size: 15px
-
-$h1-size: ($text-size) + 14
-$h2-size: ($text-size) + 8
-$h3-size: ($text-size) + 5
-$h-size: ($text-size) + 3
+@import "vars"
 
 
-// basic setup for fonts
-$line-height: 1.5
 
-
-// DEFAULT MIXINS
-// @include default-heading($text-color, $h1-size)
-@mixin default-heading($color, $size)
-  color: $color
-  display: block
-  font-family: $heading-font
-  font-size: $size
-  line-height: $line-height
+//@mixin default-heading($color, $size)
+//  color: $color
+//  display: block
+//  font-family: $heading-font
+//  font-size: $size
+//  line-height: $line-height
 
 
 // Headings
-// @include heading(size, margin)
-@mixin heading($size, $margin-height, $color: $text-color)
-  @include default-heading($color, $size)
-  font-weight: bold
-  margin: $margin-height 0
+//@mixin heading($size, $margin-height, $color: $text-color)
+//  @include default-heading($color, $size)
+//  font-weight: bold
+//  margin: $margin-height 0
 
-// @include header-headings(size, #color)
-@mixin header-headings($size, $color)
-  @include default-heading($color, $size)
-  font-weight: normal
-  margin: 10px 0
+//@mixin header-headings($size, $color)
+//  @include default-heading($color, $size)
+//  font-weight: normal
+//  margin: 10px 0
 
+
+
+body
+  font-size: 15px
 
 // Default links
-// @include links(#color, #hover-color)
 @mixin links($change-link-color: $link-color, $change-hover-color: $link-hover-color)
   a
     color: $change-link-color
@@ -55,49 +39,54 @@ $line-height: 1.5
 
 
 // Text
-// @include text($text-color)
-@mixin text($color: $text-color, $size: $text-size)
-  color: $color
-  font-family: $text-font
-  font-size: $size
-  line-height: $line-height
-
-
-// Lists
-// @include default-list
 @mixin default-list
   ul
-    margin: 0
-    padding: 0
+    @extend %noMarPad
     font-weight: normal
     font-family: $text-font
     color: $text-color
     
     li
-      font-size: $text-size
+      font-size: $default-font-size
       list-style: circle
       margin-left: 20px
 
 
+@mixin typography($color: $text-color, $size: 1em)
+  %text
+    color: $color
+    font-family: $text-font
+    line-height: $line-height
+    margin: $dh-margin
 
-@mixin typography($color: $text-color)
+  %font-weight
+    font-weight: bold
+
   h1
-    @include heading($h1-size, 10px, $color)
-
+    @extend %text
+    font-size: $default-font-size + 0.8
+    @extend %font-weight
+    
   h2
-    @include heading($h2-size, 10px, $color)
-
+    @extend %text
+    font-size: $default-font-size + 0.6
+    @extend %font-weight
+  
   h3
-    @include heading($h3-size, 10px, $color)
-
+    @extend %text
+    font-size: $default-font-size + 0.4
+    @extend %font-weight
+  
   h4, h5, h6
-    @include heading($h-size, 10px, $color)
+    @extend %text
+    font-size: $default-font-size + 0.2
+  
+  p, blockquote, article, section
+    @extend %text
 
-  p,
-  blockquote,
-  article,
-  section
-    @include text($color)
+  strong
+    font-weight: bold
 
   @include links
   @include default-list
+

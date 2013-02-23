@@ -9,13 +9,8 @@
 
 
 // Table Color Generator
-// #1 - class
-// #2 - header color
-// #3 - even row color
-// #4 - odd row color
-//@include table-color-generator(__#1__ , __#2__, __#3__, __#4__)
+//@include table-color-generator($class, $color1, $color2, $color3)
 @mixin table-color-generator($class, $color1, $color2, $color3)
-  // &
   .#{$class}
     thead,
     tfoot
@@ -23,7 +18,6 @@
         th,
         td
           background-color: $color1
-
     tbody
       tr
         &.odd
@@ -34,55 +28,48 @@
 
 @mixin tables
   table
-    background: #FFF
+    background: $white
     border-collapse: collapse
     border-spacing: 0
     color: #333
-    margin: 15px 0
+    margin: $dh-margin
     width: 100%
 
   thead,
   tfoot
-    font-size: 16px
+    font-size: $default-font-size
     line-height: 1.5
+    padding: $table-pad
     text-align: left
 
-    tr th,
-    tr td
-      background-color: #999
-      color: #FFF
-      font-weight: bold
-      padding: 5px 10px
+    tr
+      th,
+      td
+        background-color: $lightgrey
+        color: $white
+        font-weight: bold
+        padding: $table-pad
 
   tbody
     tr,
     td
-      padding: 5px 10px
-
-  thead
-    padding: 3px 10px
-    text-align: left
-    
-  tbody
-    padding: 3px 10px
-    text-align: left
+      padding: $table-pad
 
     tr
       &.odd
-        background-color: #FFF /* Class added by simple table script */
+        background-color: $white
       &.even
-        background-color: #ededed /* Class added by simple table script */
+        background-color: $almost-white
 
 
-  @include table-color-generator(ctOrange, #FB9D23, #FFF, #FCEABB)
-  @include table-color-generator(ctBlue, #356AA0, #FFF, #DEEFFF)
-  @include table-color-generator(ctYellow, #F8B500, #FFF, #FCEFCF)
-  @include table-color-generator(ctRed, #CC0000, #FFF, #FFCECE)
-  @include table-color-generator(ctGreen, #299A0B, #FFF, #DDE8C7)
-  @include table-color-generator(ctBlack, #000, #FFF, #DBDBDB)
+  @include table-color-generator(ctOrange, #FB9D23, $white, #FCEABB)
+  @include table-color-generator(ctBlue, #356AA0, $white, #DEEFFF)
+  @include table-color-generator(ctYellow, #F8B500, $white, #FCEFCF)
+  @include table-color-generator(ctRed, #CC0000, $white, #FFCECE)
+  @include table-color-generator(ctGreen, #299A0B, $white, #DDE8C7)
+  @include table-color-generator(ctBlack, #000, $white, #DBDBDB)
 
   //Additional Table Styles
-  // &
   .rounded
     thead
       th

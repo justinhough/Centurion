@@ -84,7 +84,7 @@ Need to display an alert to a user, or warn them about impending work that will 
 
 ```html
 <div class="alert">
-    <span href="#" class="close"></span>
+	<span href="#" class="close"></span>
 	<p>This is default alert box!</p>
 </div>
 ```
@@ -170,14 +170,77 @@ Give the buttons a whirl.
 ## Dropdowns
 Documentation coming soon.
 
-## Images
+## Labels
 Documentation coming soon.
+
+## Images
+
+Images have a few cool features for making pages pop. By default an image is a good way to show something off, however, without some styles an image can take up more space and look aesthetically unappealing. 
+
+**Portrait**
+Creating a white border around your image only requires one class to activate ```portrait```. Makes it look like an old style photo.
+
+```html
+<img src="http://placehold.it/200" class="portrait" />
+```
+
+**Float an Image**
+Possibly you might need to shift a photo to the left or right and allow the text to flow around it, like a newspaper layout. Adding one of two classes takes care of this job instantly ```push-left``` or ```push-right```. You can take a wild guess as to which direction they both move your image.
+
+```html
+<img src="http://placehold.it/200" class="push-left" />
+
+<img src="http://placehold.it/200" class="push-right" />
+```
+
+
 
 ## Navigation
-Documentation coming soon.
+
+A site needs to move users from one page to another in their site structure. This is a basic feature of any site that can become troublesome when having to rebuild basic functionality over and over again. 
+
+A basic HTML5 navigation structure might look like this:
+```html
+<nav>
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Test 2</a></li>
+		<li><a href="#">Test 3</a></li>
+		<li><a href="#">Test 4</a></li>
+	</ul>
+</nav>
+```
+
+This code produces a basic horizontal navigation that can be used for main navigation or in page for jumping between subpages. Though there is one more flavor that includes stacked navigation. Stacked navigation is essentially vertical navigation where links are designed to flow down the length of a page rather than across it.
+
+```html
+<nav class="stacked">
+	...
+</nav>
+```
 
 ## Pagination
-Documentation coming soon.
+
+Pagination is useful on blogs or sites that have continuous content that they do not want to display on one "long" page. If this is the case then the pagination styles are ready for you to make your site pop.
+
+The basic functionality of pagination is a list of pages. There is no code logic behind this feature since the functionality of pagination should be handled individually on each site that uses it. This is basically a leg up so that you don't have to do the base work to get started.
+
+### Default
+
+```html
+<div class="pagination">
+	<ul>
+		<li><a href="#">&laquo;</a></li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">&raquo;</a></li>
+	</ul>
+</div>
+```
+
+
+
 
 ## Panels
 Documentation coming soon.
@@ -287,6 +350,15 @@ The functionality changes simply by changing the classes ```tipClick``` or ```ti
 <a rel="tooltip" class="tipClick" title="tooltip text goes here">
 <a rel="tooltip" class="tipHover" title="tooltip text goes here">
 ```
+
+## Special Thanks
+I want to take the time to thank a few people for their contributions to this framework
+
+* [Aristeides Stathopoulos](https://github.com/aristath) - for his work on the open source [Elusive Icons](https://github.com/aristath/elusive-iconfont), which made Centurion prettier.
+* [Josh Northcott](http://www.joshnorthcott.com) - for his tireless effort in spreading the word about responsive design and Centurion.
+* [Corey Hadden](https://github.com/craql) - 
+* [Clark Inada](https://github.com/cinada) - 
+
 
 ## Author Note
 Every feature of this framework is tested using a machine that resembles a computer (I work on a Mac) and was built by a man looking strangely like a developer, but those two options are not always true. 

@@ -1,80 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Test New Features</title>
-<meta name="description" content="testing">
-<meta name="author" content="">
-
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<link rel="shortcut icon" href="images/favicon.jpg" />
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
-
-<link rel="stylesheet" href="css/reset.css" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-<!-- Centurion Framework -->
-<link rel="stylesheet" href="css/centurion.css" />
-<!-- End of Framework -->
-<link rel="stylesheet" href="css/custom.css" />
-
-<!--[if gte IE 9]>
+  <meta charset="utf-8">
+  <title>Test New Features</title>
+  <meta name="description" content="testing">
+  <meta name="author" content="">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="shortcut icon" href="images/favicon.jpg" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+  
+  <link rel="stylesheet" href="css/reset.css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <!-- Centurion Framework -->
+  <link rel="stylesheet" href="css/centurion.css" />
+  <!-- End of Framework -->
+  <link rel="stylesheet" href="css/elusive-webfont.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  
+  <!--[if gte IE 9]>
+    <style type="text/css">
+      .gradient {
+         filter: none;
+      }
+    </style>
+  <![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/centurion.js"></script>
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
   <style type="text/css">
-    .gradient {
-       filter: none;
+    header {
+      background: #333;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      color: #FFF;
+    }
+    p.pushDown {
+      margin-bottom: 30px;
+    }
+    code {
+      background: #EDEDED;
+      border: 1px solid #CCC;
+      clear: both;
+      display: block;
+      margin: 20px 0;
+      padding: 20px;
+  
+    }
+    code pre {
+      font-size: 12px;
+      font-family: monaco;
     }
   </style>
-<![endif]--><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.url.js"></script>
-<script type="text/javascript" src="js/centurion.js"></script>
-<!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-<link rel="stylesheet" href="updates.css" />
-
-<style type="text/css">
-  header {
-    background: #333;
-    margin-bottom: 20px;
-  }
-  header h1 {
-    color: #FFF;
-  }
-  p.pushDown {
-    margin-bottom: 30px;
-  }
-  code {
-    background: #EDEDED;
-    border: 1px solid #CCC;
-    display: block;
-    margin: 20px 0;
-    padding: 20px;
-
-  }
-  code pre {
-    font-size: 12px;
-    font-family: monaco;
-  }
-</style>
-
-
-<script type="text/javascript">
-
-$(document).ready(function(){
-	// $('.alert .close').click(function(){
-	// 	$(this).parent().hide();
-	// });
-
-	$('.tabBox div').addClass('innerBox');
-	$('.tabBox .innerBox').hide();
-
-	$('.tabBox').attr('tab1').show();
-});
-
-</script>
+  
+  
+  <script type="text/javascript">
+  
+  $(document).ready(function(){
+  
+  
+  
+  });
+  
+  </script>
 
 
 
@@ -114,59 +109,81 @@ TABS
 
 			<div class="tabBox">
 				<ul class="tabs">
-					<li class="active"><a href="#tab1">Tab 1</a></li>
-					<li><a href="#">Tab 2</a></li>
-					<li><a href="#">Tab 3</a></li>
+            <li><a href="#tab1">Tab 1</a></li>
+            <li><a href="#tab2">Tab 2</a></li>
+            <li><a href="#tab3">Tab 3</a></li>
 				</ul>
 
-				<div rel="tab1">
-					<p>Content goes here. 1.</p>
+				<div id="tab1">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo purus congue sem scelerisque faucibus. Suspendisse imperdiet dolor sed nisi bibendum eget varius purus sollicitudin. Donec sodales semper sapien, nec varius magna molestie vel. Curabitur gravida molestie ante quis lacinia. Aliquam erat volutpat. Proin sagittis pellentesque tellus ac semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 				</div>
-				<div rel="tab2">
-					<p>Content goes here. 2. </p>
+				<div id="tab2">
+					<p>Quisque dapibus posuere ullamcorper. Morbi quis orci leo, ut laoreet neque. Morbi vestibulum, eros a malesuada posuere, lectus arcu sodales libero, eu sollicitudin nunc ipsum sit amet elit. Aenean sit amet vestibulum dui. Donec mollis mi in augue euismod nec dictum nunc pharetra. Nullam vel lacus nibh, sit amet suscipit dui. Cras a nisi vitae neque tempor tempor ac a eros. Sed suscipit commodo arcu at cursus. Suspendisse potenti.</p>
 				</div>
-				<div rel="tab3">
-					<p>Content goes here. 3.</p>
+				<div id="tab3">
+					<p>Sed vehicula, turpis id lobortis pharetra, nibh velit adipiscing augue, non varius nisi enim vulputate magna. Maecenas mauris dui, scelerisque vitae mollis ut, volutpat vel ante. Nullam auctor scelerisque imperdiet. Vivamus orci ipsum, mollis non egestas id, suscipit sit amet ante. In pellentesque lacus adipiscing tellus viverra lacinia. Ut fringilla quam vitae lacus porta molestie. Nullam sem lectus, ultricies a lobortis non, cursus quis purus.</p>
 				</div>
 			</div>
 
 
 <pre><code>
-&lt;ul class="tabs"&gt;
-	&lt;li class="active"&gt;&lt;a href="#"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="#"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="#"&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;div class="tabBox"&gt;
+  &lt;ul class="tabs"&gt;
+    &lt;li&gt;&lt;a href="#tab4"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#tab5"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#tab6"&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;div id="tab1"&gt;
+    &lt;p&gt;Text goes here&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="tab2"&gt;
+    &lt;p&gt;Text goes here&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="tab3"&gt;
+    &lt;p&gt;Text goes here&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
 
 				<p><strong>Tabs on Bottom</strong></p>
-				<ul class="tabsBottom">
-					<li class="active"><a href="">Tab 1</a></li>
-					<li><a href="">Tab 2</a></li>
-					<li><a href="">Tab 3</a></li>
-				</ul>
+				<div class="tabBox tabBottom">
+          <ul class="tabs">
+            <li><a href="#tab4">Tab 4</a></li>
+            <li><a href="#tab5">Tab 5</a></li>
+            <li><a href="#tab6">Tab 6</a></li>
+          </ul>
+  
+          <div id="tab4">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo purus congue sem scelerisque faucibus. Suspendisse imperdiet dolor sed nisi bibendum eget varius purus sollicitudin. Donec sodales semper sapien, nec varius magna molestie vel. Curabitur gravida molestie ante quis lacinia. Aliquam erat volutpat. Proin sagittis pellentesque tellus ac semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div id="tab5">
+					  <p>Quisque dapibus posuere ullamcorper. Morbi quis orci leo, ut laoreet neque. Morbi vestibulum, eros a malesuada posuere, lectus arcu sodales libero, eu sollicitudin nunc ipsum sit amet elit. Aenean sit amet vestibulum dui. Donec mollis mi in augue euismod nec dictum nunc pharetra. Nullam vel lacus nibh, sit amet suscipit dui. Cras a nisi vitae neque tempor tempor ac a eros. Sed suscipit commodo arcu at cursus. Suspendisse potenti.</p>
+          </div>
+          <div id="tab6">
+					  <p>Sed vehicula, turpis id lobortis pharetra, nibh velit adipiscing augue, non varius nisi enim vulputate magna. Maecenas mauris dui, scelerisque vitae mollis ut, volutpat vel ante. Nullam auctor scelerisque imperdiet. Vivamus orci ipsum, mollis non egestas id, suscipit sit amet ante. In pellentesque lacus adipiscing tellus viverra lacinia. Ut fringilla quam vitae lacus porta molestie. Nullam sem lectus, ultricies a lobortis non, cursus quis purus. </p>
+          </div>
+        </div>
 
 <pre><code>
-&lt;ul class="tabsBottom"&gt;
-	&lt;li class="active"&gt;&lt;a href=""&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=""&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=""&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+&lt;div class="tabBox tabBottom"&gt;
+  &lt;ul class="tabs"&gt;
+    &lt;li&gt;&lt;a href="#tab4"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#tab5"&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#tab6"&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 
+  &lt;div id="tab4"&gt;
+    &lt;p&gt;Text goes here&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="tab5"&gt;
+    &lt;p&gt;Text goes here&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="tab6"&gt;
+    &lt;p&gt;Text goes here&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
-				<p><strong>Tabs Stacked</strong></p>
-				<ul class="tabsStacked">
-					<li class="active"><a href="">Tab 1</a></li>
-					<li><a href="">Tab 2</a></li>
-					<li><a href="">Tab 3</a></li>
-				</ul>
-
-<pre><code>
-&lt;ul class="tabsStacked"&gt;
-	&lt;li class="active"&gt;&lt;a href=""&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=""&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=""&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
 
 
 <p class="pushDown">&nbsp;</p>
@@ -181,7 +198,11 @@ TOOLTIPS
 	<h2>Tooltips</h2>
 
 
-	<p>Donec <a rel="tooltip" class="tipClick" title="A paragraph typically consists of a unifying, main point. A paragraph typically consists of a unifying, main point.">pulvinar ante mollis</a> lectus blandit at euismod sapien pretium. Etiam enim sapien, ullamcorper ac imperdiet nec, imperdiet ac leo. Nunc sodales, felis id interdum varius, risus nisl vestibulum diam, vel luctus sem mi ac orci. Aliquam erat volutpat. Donec nunc lorem, porttitor ut aliquam sit amet, placerat ac leo. <a rel="tooltip" class="tipClick" title="A paragraph typically consists of a unifying, main point. A paragraph typically consists of a unifying, main point.">Vestibulum tincidunt</a>, est vel placerat dictum, leo nibh fringilla erat, a vestibulum justo nulla ut nunc. Sed vehicula, tortor eget dictum adipiscing, augue erat aliquet orci, id bibendum purus nisl quis massa. Cras tristique tellus porta ipsum feugiat tristique. In lacus enim, feugiat ac placerat in, pellentesque sit amet est. Nam facilisis consequat tellus, sed fermentum ante tempus ac. Sed et gravida mi. Ut pellentesque diam sed ligula rhoncus vulputate. Proin congue consectetur posuere. Vestibulum ut leo libero, <a rel="tooltip" class="tipClick bottom" title="This tip keeps disappearing if I leave the word. I want it to stay. I want it to stay.">id tincidunt tortor</a>. Donec vel venenatis ante.</p>
+<p><strong>Clickable</strong></p>
+	<p>Donec <a rel="tooltip" class="tipClick" title="A paragraph typically consists of a <strong>unifying,</strong> main point. A paragraph typically consists of a <strong>unifying,</strong> main point.">pulvinar ante mollis</a> lectus blandit at euismod sapien pretium. Etiam enim sapien, ullamcorper ac imperdiet nec, imperdiet ac leo. Nunc sodales, felis id interdum varius, risus nisl vestibulum diam, vel luctus sem mi ac orci. Aliquam erat volutpat. Donec nunc lorem, porttitor ut aliquam sit amet, placerat ac leo. <a rel="tooltip" class="tipClick" title="A paragraph typically consists of a <strong>unifying,</strong> main point. A paragraph typically consists of a <strong>unifying,</strong> main point.">Vestibulum tincidunt</a>, est vel placerat dictum, leo nibh fringilla erat, a vestibulum justo nulla ut nunc. Sed vehicula, tortor eget dictum adipiscing, augue erat aliquet orci, id bibendum purus nisl quis massa. Cras tristique tellus porta ipsum feugiat tristique. In lacus enim, feugiat ac placerat in, pellentesque sit amet est. Nam facilisis consequat tellus, sed fermentum ante tempus ac. Sed et gravida mi. Ut pellentesque diam sed ligula rhoncus vulputate. Proin congue consectetur posuere. Vestibulum ut leo libero, <a rel="tooltip" class="tipClick tipBottom" title="This tip keeps disappearing if I leave the word. I want it to stay. I want it to stay. *SOB*">id tincidunt tortor</a>. Donec vel venenatis ante.</p>
+	
+	<p><strong>Hoverable</strong></p>
+	<p>Donec <a rel="tooltip" class="tipHover" title="A paragraph typically consists of a <strong>unifying,</strong> main point. A paragraph typically consists of a <strong>unifying,</strong> main point.">pulvinar ante mollis</a> lectus blandit at euismod sapien pretium. Etiam enim sapien, ullamcorper ac imperdiet nec, imperdiet ac leo. Nunc sodales, felis id interdum varius, risus nisl vestibulum diam, vel luctus sem mi ac orci. Aliquam erat volutpat. Donec nunc lorem, porttitor ut aliquam sit amet, placerat ac leo. <a rel="tooltip" class="tipHover" title="A paragraph typically consists of a <strong>unifying,</strong> main point. A paragraph typically consists of a <strong>unifying,</strong> main point.">Vestibulum tincidunt</a>, est vel placerat dictum, leo nibh fringilla erat, a vestibulum justo nulla ut nunc. Sed vehicula, tortor eget dictum adipiscing, augue erat aliquet orci, id bibendum purus nisl quis massa. Cras tristique tellus porta ipsum feugiat tristique. In lacus enim, feugiat ac placerat in, pellentesque sit amet est. Nam facilisis consequat tellus, sed fermentum ante tempus ac. Sed et gravida mi. Ut pellentesque diam sed ligula rhoncus vulputate. Proin congue consectetur posuere. Vestibulum ut leo libero, <a rel="tooltip" class="tipHover tipBottom" title="This tip keeps disappearing if I leave the word. I want it to stay. I want it to stay. *SOB*">id tincidunt tortor</a>. Donec vel venenatis ante.</p>
 
 
 <p class="pushDown">&nbsp;</p>
@@ -198,8 +219,19 @@ ALERTS
 			<h2>Alerts</h2>
 
 
+      <div class="alert">
+				<!-- <span href="#" class="close"></span> -->
+				<p>This is default alert box!</p>
+			</div>
+			
+			<pre><code>
+&lt;div class="alert"&gt;
+  &lt;span href="#" class="close"&gt;close&lt;/span&gt;
+  &lt;p&gt;This is default alert box!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
 			<div class="alert error">
-				<span class="close"></span>
+				<!-- <span href="#" class="close"></span> -->
 				<p>This is default alert box!</p>
 			</div>
 
@@ -210,8 +242,9 @@ ALERTS
 &lt;/div&gt;</code></pre>
 
 			<div class="alert warning">
-				<span class="close"></span>
+				<!-- <span href="#" class="close"></span> -->
 				<p>This is default alert box!</p>
+
 			</div>
 
 <pre><code>
@@ -222,7 +255,7 @@ ALERTS
 
 
 			<div class="alert info">
-				<span class="close"></span>
+				<!-- <span href="#" class="close"></span> -->
 				<p>This is default alert box!</p>
 			</div>
 
@@ -233,7 +266,7 @@ ALERTS
 
 
 			<div class="alert success">
-				<span class="close"></span>
+				<!-- <span href="#" class="close"></span> -->
 				<p>This is default alert box!</p>
 			</div>
 
@@ -347,6 +380,7 @@ PAGINATION
 &lt;/div&gt;</code></pre>
 
 
+
 <p class="pushDown">&nbsp;</p>
 <!--
 
@@ -377,25 +411,7 @@ NAVIGATION
 				</ul>
 			</nav>
 
-			<p><strong>Navigation - Top Fixed</strong></p>
-			<nav class=" topFixed">
-				<ul>
-					<li><a href="#" class="active">Home</a></li>
-					<li><a href="#">Test 2</a></li>
-					<li><a href="#">Test 3</a></li>
-					<li><a href="#">Test 4</a></li>
-				</ul>
-			</nav>
-
-			<p><strong>Navigation - Bottom Fixed</strong></p>
-			<nav class="bottomFixed">
-				<ul>
-					<li><a href="#" class="active">Home</a></li>
-					<li><a href="#">Test 2</a></li>
-					<li><a href="#">Test 3</a></li>
-					<li><a href="#">Test 4</a></li>
-				</ul>
-			</nav>
+			
 
 
 
@@ -510,8 +526,6 @@ IMAGES
   </section>
   <!-- End of Content Section -->
 
-<!-- End of Wrapper -->
-
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -525,6 +539,6 @@ IMAGES
   </footer>
   <!-- End of Footer -->
 
-
+  <script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

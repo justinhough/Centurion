@@ -17,6 +17,7 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 <!-- Centurion Framework -->
 <link rel="stylesheet" href="../css/centurion.css" />
+<link rel="stylesheet" href="css/elusive-webfont.css" />
 <!-- End of Framework -->
 <link rel="stylesheet" href="../css/custom.css" />
 
@@ -26,12 +27,29 @@
        filter: none;
     }
   </style>
-<![endif]--><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery.url.js"></script>
+<![endif]-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script type="text/javascript" src="../js/centurion.js"></script>
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<style type="text/css">
+  code {
+    background: #ededed;
+    border: 1px solid #cccccc;
+    display: inline-block;
+    padding: 0 4px;
+    font-size: 12px;
+  }
+  .highlight {
+    background: lightblue;
+    padding: 5px 10px;
+    border: 1px solid #999;
+    word-wrap: break-word;   
+  }
+</style>
+
 
 </head>
 <body>
@@ -39,7 +57,7 @@
 <header>
 
 	<div class="container">
-		<div class="grid-12">
+		<div class="grid-100">
 				<h1>Centurion Framework</h1>
 				<nav id="main" class="mobile">
 				<span class="openMenu hide-desktop">Open</span>
@@ -59,19 +77,355 @@
   <!-- Content Section -->
   <section>
     <div class="container">
-        <div class="grid-8">
+        <div class="grid-60">
   <h1>Documentation</h1>
 
 
 
   <p>Check out the documentation for Centurion on <a href="https://github.com/jhough10/Centurion/wiki">Github</a>.</p>
 
+
+<article class="markdown-body entry-content" itemprop="mainContentOfPage"><h2>
+<a name="what-is-centurion" class="anchor" href="#what-is-centurion"><span class="mini-icon mini-icon-link"></span></a>What is Centurion?</h2>
+
+<p>Centurion is a HTML5 / CSS 3 based framework for rapid prototyping. It comes out of the box, or the Git with pre-built features that help you build sites faster for Desktop and Mobile. The grid adjusts to the screen proportions that are given by the browser, and that is all there is to it.</p>
+
+<p><strong>What it can do</strong></p>
+
+<ul>
+<li>Custom CSS buttons, no images required.</li>
+<li>Grid dimensions from 960 px down to 320 px wide.</li>
+<li>Image scaling.</li>
+<li>Heading scales based on size of browser. (Use em, instead of px)</li>
+<li>Navigation for Desktop and Mobile</li>
+<li>HTML 5 framework with backwards compatibility to IE6</li>
+</ul>
+
+<h2><a name="grid" class="anchor" href="#grid"><span class="mini-icon mini-icon-link"></span></a>Grid</h2>
+
+<p>The Centurion grid system is built using SCSS which makes it highly extensible and customizable for any web project. The default build of Centurion available in the repository uses a 12 grid layout, however, you can adapt the grid to use 16, 18, or a number that you use.</p>
+
+<p>Developed along the same lines as the <a href="http://960.gs">960 grid built by Nathan Smith</a> in its class usage and code structure. The basic setup available on <a href="http://github.com/jhough10/Centurion/">Github</a> features a 12 grid (960px) layout for desktops and using CSS3 media queries is responsive down to smartphones (360px). </p>
+
+<h3>
+<a name="basic-structure" class="anchor" href="#basic-structure"><span class="mini-icon mini-icon-link"></span></a>Basic Structure</h3>
+
+<p>Utilizing the grid requires a container wrapper followed by the grid sizes that you want to use. If using the default <code>grid-12</code> your grids should equal 12, so a <code>grid-4</code> and <code>grid-8</code> equal 12.</p>
+
+<div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid-4"</span><span class="nt">&gt;</span>
+            …
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid-8"</span><span class="nt">&gt;</span>
+            … 
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<h3>
+<a name="nesting-grids" class="anchor" href="#nesting-grids"><span class="mini-icon mini-icon-link"></span></a>Nesting Grids</h3>
+
+<p>The best part of any grid system is the ability to nest elements to make a grid smaller without having to make the code more complicated.</p>
+
+<p>For example, say that you want to have content in a <code>grid-6</code>, but you also want to add three images with captions side-by-side beneath the main block of text. So all you have to do is add <code>mobile-33</code>. The number in this case for the grid is the percentage amount of the parent container that each nested grid element will take up. If you wanted to have to even spaced nested elements you would use <code>mobile-50</code> (or 50%).</p>
+
+<div class="highlight"><pre>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid-6"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Some text talking about something, which is followed by some awesome images below that sell the point.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mobile-33 alpha"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">""</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Image caption is written here<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mobile-33"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">""</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Image caption is written here<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mobile-33 omega"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">""</span> <span class="na">alt=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Image caption is written here<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p><strong>Alpha and Omega</strong>
+Each grid element has a margin of 10px on either side to give a nice 20px space between each grid, while this provides a nice aesthetic it causes issues when nesting elements causing the last grid element to wrap to a new line. In the code example above there are two classes utilized to fix this problem: <code>alpha</code> and <code>omega</code>.</p>
+
+<p>The <code>alpha</code> class removes the left margin on the first element that is nested in another grid. The <code>omega</code> class does the exact opposite, which removes the right margin from the last element. Notice that the middle <code>grid-2</code> does not have a second class, this is because it does not need it. Only the first and last elements require this fix for the grid to layout properly. <em>Note: Do not put use <code>alpha</code> or <code>omega</code> on outer grid elements, such as on the <code>grid-6</code> in the example above. Margins only need be removed on nested elements when they are within another grid.</em></p>
+
+<h2>
+<a name="alerts" class="anchor" href="#alerts"><span class="mini-icon mini-icon-link"></span></a>Alerts</h2>
+
+<p>Need to display an alert to a user, or warn them about impending work that will be taking place on your site. No matter the option that can help. The default alert box doesn't do much of anything except display information in a grey box.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"close"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is default alert box!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p>However, you might have to alert a user in clear definable ways such as give them an error message, information, warn them of some changes, or tell them that their work has been saved. All these options exist and require only a class change.</p>
+
+<p><strong>Error Message</strong></p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert error"</span><span class="nt">&gt;</span>
+    ...
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p><strong>Warning Message</strong></p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert warning"</span><span class="nt">&gt;</span>
+    ...
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p><strong>Informative Message</strong></p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert info"</span><span class="nt">&gt;</span>
+    ...
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p><strong>Success Message</strong></p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert success"</span><span class="nt">&gt;</span>
+    ...
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<h2>
+<a name="breadcrumbs" class="anchor" href="#breadcrumbs"><span class="mini-icon mini-icon-link"></span></a>Breadcrumbs</h2>
+
+<p>Documentation coming soon.</p>
+
+<h2>
+<a name="buttons" class="anchor" href="#buttons"><span class="mini-icon mini-icon-link"></span></a>Buttons</h2>
+
+<p>Sometimes all you really need is a simple button to reformat a link or a form button. Especially when trying to perform rapid prototyping a simple button can slow you down.</p>
+
+<h3>
+<a name="call-in-a-button" class="anchor" href="#call-in-a-button"><span class="mini-icon mini-icon-link"></span></a>Call in a Button</h3>
+
+<p>By default to call a button to an element all you need to do is call the class <code>button</code>, and your done. That's it. This default class performs all the work in padding, sizing, and shaping your element to look like a button. Generally buttons are only used on sites I have worked on in two places: links and forms. Though theoretically you can make anything a button, well, anyways I digress.</p>
+
+<p><strong>Example</strong></p>
+
+<div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button small"</span><span class="nt">&gt;</span>Small Button<span class="nt">&lt;/a&gt;</span>
+</pre></div>
+
+<h3>
+<a name="colors" class="anchor" href="#colors"><span class="mini-icon mini-icon-link"></span></a>Colors</h3>
+
+<p>When you attach the <code>button</code> class you will get a black button. It was better than using grey, since those look like deactivated buttons anyways. However, buttons come in 7 flavors.</p>
+
+<ul>
+<li>Black <code>black</code>
+</li>
+<li>Blue <code>blue</code>
+</li>
+<li>Green <code>green</code>
+</li>
+<li>Grey <code>grey</code>
+</li>
+<li>Red <code>red</code>
+</li>
+<li>Yellow <code>yellow</code>
+</li>
+</ul><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button red"</span><span class="nt">&gt;</span>I'm a Button<span class="nt">&lt;/a&gt;</span>
+</pre></div>
+
+<h3>
+<a name="sizes" class="anchor" href="#sizes"><span class="mini-icon mini-icon-link"></span></a>Sizes</h3>
+
+<p>Colors are not the only feature that you have a your disposal. If the button by default is too large for you tastes you can shrink it with the addition of the class <code>small</code>.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button small red"</span><span class="nt">&gt;</span>I'm a Tiny Button<span class="nt">&lt;/a&gt;</span>
+</pre></div>
+
+<p>Though if you by chance need a larger button for your page for a possibly "buy" button then you can make it larger by adding the class <code>large</code>.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"button large blue"</span><span class="nt">&gt;</span>I'm a Large Button<span class="nt">&lt;/a&gt;</span>
+</pre></div>
+
+<p>Give the buttons a whirl.</p>
+
+<h2>
+<a name="dropdowns" class="anchor" href="#dropdowns"><span class="mini-icon mini-icon-link"></span></a>Dropdowns</h2>
+
+<p>Documentation coming soon.</p>
+
+<h2>
+<a name="images" class="anchor" href="#images"><span class="mini-icon mini-icon-link"></span></a>Images</h2>
+
+<p>Documentation coming soon.</p>
+
+<h2>
+<a name="navigation" class="anchor" href="#navigation"><span class="mini-icon mini-icon-link"></span></a>Navigation</h2>
+
+<p>Documentation coming soon.</p>
+
+<h2>
+<a name="pagination" class="anchor" href="#pagination"><span class="mini-icon mini-icon-link"></span></a>Pagination</h2>
+
+<p>Documentation coming soon.</p>
+
+<h2>
+<a name="panels" class="anchor" href="#panels"><span class="mini-icon mini-icon-link"></span></a>Panels</h2>
+
+<p>Documentation coming soon.</p>
+
+<h2>
+<a name="print" class="anchor" href="#print"><span class="mini-icon mini-icon-link"></span></a>Print</h2>
+
+<p>Documentation coming soon.</p>
+
+<h2>
+<a name="tables" class="anchor" href="#tables"><span class="mini-icon mini-icon-link"></span></a>Tables</h2>
+
+<p>You know you hate building table after table styles. You can now use the default tables built into Centurion to fit your color scheme.</p>
+
+<p>By default the table styles that Centurion uses work out of the box. Create a table and it works with the default grey. To change colors you can specify your own or you can use the ones that come pre-packed.</p>
+
+<h3>
+<a name="basic-table" class="anchor" href="#basic-table"><span class="mini-icon mini-icon-link"></span></a>Basic Table</h3>
+
+<p>I personally prefer to keep my tables structured properly, especially because I enjoy seeing the green check mark when a site validates. </p>
+
+<div class="highlight"><pre>    <span class="nt">&lt;table&gt;</span>
+        <span class="nt">&lt;thead&gt;</span>
+            <span class="nt">&lt;tr&gt;</span>
+                <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>Table Header<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;/thead&gt;</span>
+        <span class="nt">&lt;tbody&gt;</span>
+            <span class="nt">&lt;tr&gt;</span>
+                <span class="nt">&lt;td&gt;</span>Content<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span>This is longer content<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span>Content<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span>Content<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+            <span class="nt">&lt;tr&gt;</span>
+                <span class="nt">&lt;td&gt;</span>Content<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span>This is longer content<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span>Content<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span>Content<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+            <span class="nt">&lt;tr&gt;</span>
+                <span class="nt">&lt;td&gt;</span>Content<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span>This is longer content<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span>Content<span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;td&gt;</span>Content<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;/tbody&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+</pre></div>
+
+<h3>
+<a name="color-schemes" class="anchor" href="#color-schemes"><span class="mini-icon mini-icon-link"></span></a>Color Schemes</h3>
+
+<p>Similar to the usage of buttons, tables come with the same color scheme choices to match. By default Centurion features 7 different colors to choose from. Grey is available by default as long as you do not set a class color choice below.</p>
+
+<ul>
+<li>Blue <code>ctBlue</code>
+</li>
+<li>Green <code>ctGreen</code>
+</li>
+<li>Grey <code>ctGrey</code>
+</li>
+<li>Orange <code>ctOrange</code>
+</li>
+<li>Red <code>ctRed</code>
+</li>
+<li>Yellow <code>ctYellow</code>
+</li>
+</ul><p>However, if you are obverse to colors in general, such as, when you are wire framing a new site you can either stick with basic grey or use black to make a site pop a little.</p>
+
+<p><strong>Set the Color</strong></p>
+
+<p>To set the color all you have to do is set the class on the table itself, like this:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"ctBlue"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<h2>
+<a name="tabs" class="anchor" href="#tabs"><span class="mini-icon mini-icon-link"></span></a>Tabs</h2>
+
+<p>Tabs can be fun, if they are used in the right context. I believe in simple tabs and some times we all end up writing far to much code to do a simple job. Tabs in general comprise of a wrapper (<code>tabBox</code>), a ul list (<code>tabs</code>), and then, of course, our tabs. Each tab is labeled with a unique ID that identifies it to one of the tab links found in our <code>ul</code> list.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tabBox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tabs"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#tab1"</span><span class="nt">&gt;</span>Tab 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#tab2"</span><span class="nt">&gt;</span>Tab 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#tab3"</span><span class="nt">&gt;</span>Tab 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"tab1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Text goes here<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"tab2"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Text goes here<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"tab3"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Text goes here<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p>However, say that you don't want your tabs to be on top of the content, but below. On occasion this would require massive amounts of re-coding in order to get the display to work. However, through CSS all you need to do is add a new class to the wrapper <code>tabBottom</code></p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tabBox tabBottom"</span><span class="nt">&gt;</span>
+    ...
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<h2>
+<a name="tooltips" class="anchor" href="#tooltips"><span class="mini-icon mini-icon-link"></span></a>Tooltips</h2>
+
+<p>Tooltips are great for displaying information to a user that might be necessary to complete an action. Centurion features two types of tooltips: clickable and coverable.</p>
+
+<p>The functionality changes simply by changing the classes <code>tipClick</code> or <code>tipHover</code>.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">rel=</span><span class="s">"tooltip"</span> <span class="na">class=</span><span class="s">"tipClick"</span> <span class="na">title=</span><span class="s">"tooltip text goes here"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">rel=</span><span class="s">"tooltip"</span> <span class="na">class=</span><span class="s">"tipHover"</span> <span class="na">title=</span><span class="s">"tooltip text goes here"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<h2>
+<a name="author-note" class="anchor" href="#author-note"><span class="mini-icon mini-icon-link"></span></a>Author Note</h2>
+
+<p>Every feature of this framework is tested using a machine that resembles a computer (I work on a Mac) and was built by a man looking strangely like a developer, but those two options are not always true. </p>
+
+<h2>
+<a name="licensing" class="anchor" href="#licensing"><span class="mini-icon mini-icon-link"></span></a>Licensing</h2>
+
+<p>Licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL</a> and <a href="http://www.opensource.org/licenses/mit-license.php">MIT</a>.</p></article>
+
+
 </div>
 <!-- end of grid 8 -->
-<div class="grid-4">
+<div class="grid-40">
 
-  <h2>Sidebar</h2>
-  <p>Arrr! There need be content here.</p>
+  <h3><a name="list-of-features" class="anchor" href="#list-of-features"><span class="mini-icon mini-icon-link"></span></a>List of Features</h3>
+
+<p><strong>Note:</strong> Feature list is based on v3.1. As features exist in the current framework documentation will be provided for use. </p>
+
+<ul>
+<li><a href="https://github.com/jhough10/Centurion/wiki/Grid">The Grid</a></li>
+<li><a href="https://github.com/jhough10/Centurion/wiki/Alerts">Alerts</a></li>
+<li><a href="https://github.com/jhough10/Centurion/wiki/Blockquotes">Blockquotes</a></li>
+<li><a href="https://github.com/jhough10/Centurion/wiki/Buttons">Buttons</a></li>
+<li>Captions</li>
+<li>Colors</li>
+<li>Frame boxes</li>
+<li>Font-face</li>
+<li>Lists</li>
+<li>Images (adaptive and sprites)</li>
+<li>Navigation</li>
+<li><a href="https://github.com/jhough10/Centurion/wiki/Pagination">Pagination</a></li>
+<li>Print Styles</li>
+<li>Tabs</li>
+<li><a href="https://github.com/jhough10/Centurion/wiki/Tables">Tables</a></li>
+<li>Tooltips</li>
+<li>Typography</li>
+</ul>
+
 
 </div>
 <div class="clear"></div>
@@ -85,16 +439,16 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="grid-4">
+      <div class="grid-80">
         <p>Centurion Framework was created by <a href="http://www.justinhough.com" title="Justin Hough">Justin Hough</a>. Images supplied by <a href="http://placehold.it/">placehold.it</a></p>
       </div>
-      <div class="grid-4 push-4">
+      <div class="grid-20">
       	<p>Licensed under <a href="http://www.gnu.org/licenses/gpl.html" rel="license">GPL</a> and <a href="http://www.opensource.org/licenses/mit-license.php" rel="license">MIT</a>.</p>
       </div>
     </div>
   </footer>
   <!-- End of Footer -->
 
-
+  <script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

@@ -32,18 +32,18 @@ Centurion is a HTML5 / CSS 3 based framework for rapid prototyping. It comes out
 * Typography
 
 ## Grid
-The Centurion grid system is built using SCSS which makes it highly extensible and customizable for any web project. The default build of Centurion available in the repository uses a 12 grid layout, however, you can adapt the grid to use 16, 18, or a number that you use.
+The Centurion grid system is built using Sass which makes it highly extensible and customizable for any web project. The default build of Centurion available in the repository uses a percentage based grid layout and is highly customizable since the container is the only element that gets a physical pixel width.
 
-Developed along the same lines as the [960 grid built by Nathan Smith](http://960.gs) in its class usage and code structure. The basic setup available on [Github](http://github.com/jhough10/Centurion/) features a 12 grid (960px) layout for desktops and using CSS3 media queries is responsive down to smartphones (360px). 
+Developed along the same lines as the [960 grid built by Nathan Smith](http://960.gs) in its class usage and code structure. The basic setup available on [Github](http://github.com/jhough10/Centurion/) features a percentage grid  layout for desktops (960px and up) and using CSS3 media queries is responsive down to smartphones (360px). 
 
 ### Basic Structure
-Utilizing the grid requires a container wrapper followed by the grid sizes that you want to use. If using the default ```grid-12``` your grids should equal 12, so a ```grid-4``` and ```grid-8``` equal 12.
+Utilizing the grid requires a container wrapper followed by the grid percentage that you want to use. For example, if you want to use the full width, then set ```grid-100``` or you can divide up your grid and use percentages that equal 100%, such as, ```grid-40``` and ```grid-60```. The number correlates to the percentage of the container that you want your content to occupy.
 ```html
     <div class="container">
-        <div class="grid-4">
+        <div class="grid-40">
             …
         </div>
-        <div class="grid-8">
+        <div class="grid-60">
             … 
         </div>
     </div>
@@ -52,7 +52,7 @@ Utilizing the grid requires a container wrapper followed by the grid sizes that 
 ### Nesting Grids
 The best part of any grid system is the ability to nest elements to make a grid smaller without having to make the code more complicated.
 
-For example, say that you want to have content in a ```grid-6```, but you also want to add three images with captions side-by-side beneath the main block of text. So all you have to do is add ```mobile-33```. The number in this case for the grid is the percentage amount of the parent container that each nested grid element will take up. If you wanted to have to even spaced nested elements you would use ```mobile-50``` (or 50%).
+For example, say that you want to have content in a ```grid-60```, but you also want to add three images with captions side-by-side beneath the main block of text. So all you have to do is add ```grid-33```. The number in this case for the grid is the percentage amount of the parent container that each nested grid element will take up. If you wanted to have to even spaced nested elements you would use ```mobile-50``` (or 50%).
 
 ```html
     <div class="grid-6">
@@ -75,7 +75,7 @@ For example, say that you want to have content in a ```grid-6```, but you also w
 **Alpha and Omega**
 Each grid element has a margin of 10px on either side to give a nice 20px space between each grid, while this provides a nice aesthetic it causes issues when nesting elements causing the last grid element to wrap to a new line. In the code example above there are two classes utilized to fix this problem: ```alpha``` and ```omega```.
 
-The ```alpha``` class removes the left margin on the first element that is nested in another grid. The ```omega``` class does the exact opposite, which removes the right margin from the last element. Notice that the middle ```grid-2``` does not have a second class, this is because it does not need it. Only the first and last elements require this fix for the grid to layout properly. *Note: Do not put use ```alpha``` or ```omega``` on outer grid elements, such as on the ```grid-6``` in the example above. Margins only need be removed on nested elements when they are within another grid.*
+The ```alpha``` class removes the left margin on the first element that is nested in another grid. The ```omega``` class does the exact opposite, which removes the right margin from the last element. Notice that the middle ```grid-20``` does not have a second class, this is because it does not need it. Only the first and last elements require this fix for the grid to layout properly. *Note: Do not put use ```alpha``` or ```omega``` on outer grid elements, such as on the ```grid-6``` in the example above. Margins only need be removed on nested elements when they are within another grid.*
 
 
 ## Alerts

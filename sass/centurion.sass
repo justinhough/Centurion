@@ -9,22 +9,21 @@
  *
  * -------------------------------------------------------- */
 
-@include hide-desktop
+%show-block
+  display: block
+
+%hide-block
+  display: none
+
+.hide-desktop
+  @extend %hide-block
+
+.hide-mobile
+  @extend %show-block
+  
 
 /*   GRID  */
-/* Desktop Fixed Grid Layout - 960px */
-@include fixed
-
-/* Tablet Fluid Grid Layout - 92% */
-@media only screen and (min-width: 521px) and (max-width: 920px)
-  @include fluid
-
-/* Mobile Grid Layout - 320px and 480px */
-@media screen and (min-width: 320px) and (max-width: 520px)
-  @include mobile
-  @include navigation-mobile
-  @include hide-mobile
-
+@include grid-generate
 
 /* Centering Grid */
 @include centerGrid
@@ -37,6 +36,9 @@
 /* Show Elements */
 @include show-desktop
 @include show-mobile
+
+/* Alerts */
+@include alerts
 
 /* Breadrumbs */
 @include breadcrumbs
@@ -53,16 +55,24 @@
 /* Panels */
 @include panels
 
+/* Pagination */
+@include pagination
+
 /* Tabs */
 @include tabs-base
 @include tabs-bottom
-@include tabs-stacked
 
 /* Tables */
 @include tables
 
+/* Tooltips */
+@include tooltips
+
 /*  Typography  */
 @include typography
+
+
+@include extendables
 
 /* Print */
 @media print

@@ -2,38 +2,71 @@
 
 /* TYPOGRAPHY */
 p, ul, ol
-	margin: 10px 0
+  margin: $dh-margin
 
-ul ul,
-ol ol,
-ul ol,
-ol ul
-	margin: 0
+ul, ol
+  ol, ul
+    margin: $no-margin
 
+/* HEADER */
+header
+  border-bottom: 1px solid $grey
 
-/* NAV */
-//nav#main
 
 /* CONTENT */
 section
-	margin: 10px 0
+  margin: $dh-margin
+
+code
+  background: $almost-white
+  border: 1px solid $grey
+  display: block
+  padding: 10px 20px
+
+
+/* GRID */
+#grid
+  [class*="grid-"]
+    p
+      background: #EDEDED
+      border: 1px solid #888
+      color: #333
+      font-size: 0.8em
+      padding: 10px
+      margin-bottom: 10px
+      text-align: center
+  p
+    &.noStyle
+      border: none
+      background: none
+      color: #333
+      font-size: 16px
+      padding: 0
+      text-align: left
+  [class*="pull-"]
+    p
+      background: lightpink
+  [class*="push-"]
+    p
+      background: lightgreen
+
 
 /* FOOTER */
 footer
-	background: $black
-	min-height: 65px
-	margin-top: 30px
-	padding: 20px 0 10px 0
-	h2
-		@include heading($h3-size, 10px, #FFF)
+  border-top: 1px solid $grey
+  min-height: 65px
+  margin-top: 30px
+  padding: $dh-padding
+  h2
+    font-size: $default-font-size
+    
+  p,
+  blockquote,
+  article,
+  section
+    font-size: ($default-font-size - 0.2)
 
-	p,
-	blockquote,
-	article,
-	section
-		@include text(#FFF, 12px)
-
-	@include links(#FFF, #999)
+  @include links($lightgrey, $white)
 
 
 /*  Custom Media Queries  */

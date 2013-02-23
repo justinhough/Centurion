@@ -1,3 +1,7 @@
+body {
+  font-size: 15px;
+}
+
 /* --------------------------------------------------------
  *
  *
@@ -17,16 +21,160 @@
  * -------------------------------------------------------- */
 /* Desktop/Tablet Fluid Grid Layout - 92% */
 .container {
-  width: 100%;
+  width: 98%;
   margin-left: auto;
   margin-right: auto;
 }
 .container [class*="grid-"] {
-  display: inline;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   float: left;
-  margin-left: 2%;
-  margin-right: 2%;
+  padding: 0 15px;
   position: relative;
+}
+.container .alpha {
+  margin-left: 0;
+  padding-left: 0;
+}
+.container .omega {
+  margin-right: 0;
+  padding-right: 0;
+}
+.container .grid-10 {
+  width: 10%;
+}
+.container .pull-10 {
+  left: -10%;
+}
+.container .push-10 {
+  left: 10%;
+}
+.container .grid-20 {
+  width: 20%;
+}
+.container .pull-20 {
+  left: -20%;
+}
+.container .push-20 {
+  left: 20%;
+}
+.container .grid-30 {
+  width: 30%;
+}
+.container .pull-30 {
+  left: -30%;
+}
+.container .push-30 {
+  left: 30%;
+}
+.container .grid-40 {
+  width: 40%;
+}
+.container .pull-40 {
+  left: -40%;
+}
+.container .push-40 {
+  left: 40%;
+}
+.container .grid-50 {
+  width: 50%;
+}
+.container .pull-50 {
+  left: -50%;
+}
+.container .push-50 {
+  left: 50%;
+}
+.container .grid-60 {
+  width: 60%;
+}
+.container .pull-60 {
+  left: -60%;
+}
+.container .push-60 {
+  left: 60%;
+}
+.container .grid-70 {
+  width: 70%;
+}
+.container .pull-70 {
+  left: -70%;
+}
+.container .push-70 {
+  left: 70%;
+}
+.container .grid-80 {
+  width: 80%;
+}
+.container .pull-80 {
+  left: -80%;
+}
+.container .push-80 {
+  left: 80%;
+}
+.container .grid-90 {
+  width: 90%;
+}
+.container .pull-90 {
+  left: -90%;
+}
+.container .push-90 {
+  left: 90%;
+}
+.container .grid-100 {
+  width: 100%;
+}
+.container .pull-100 {
+  left: -100%;
+}
+.container .push-100 {
+  left: 100%;
+}
+.container .grid-25 {
+  width: 25%;
+}
+.container .pull-25 {
+  left: -25%;
+}
+.container .push-25 {
+  left: 25%;
+}
+.container .grid-50 {
+  width: 50%;
+}
+.container .pull-50 {
+  left: -50%;
+}
+.container .push-50 {
+  left: 50%;
+}
+.container .grid-75 {
+  width: 75%;
+}
+.container .pull-75 {
+  left: -75%;
+}
+.container .push-75 {
+  left: 75%;
+}
+.container .grid-33 {
+  width: 33.33333%;
+}
+.container .pull-33 {
+  left: -33.33333%;
+}
+.container .push-33 {
+  left: 33.33333%;
+}
+.container .grid-66 {
+  width: 66.66667%;
+}
+.container .pull-66 {
+  left: -66.66667%;
+}
+.container .push-66 {
+  left: 66.66667%;
 }
 .container .centerGrid {
   display: block;
@@ -34,125 +182,54 @@
   margin-left: auto;
   margin-right: auto;
 }
-.container .alpha {
-  margin-left: 0;
-}
-.container .omega {
-  margin-right: 0;
-}
-.container [class*="push-"],
-.container [class*="pull-"] {
-  position: relative;
-}
-.container .grid-1 {
-  width: 4.33333%;
-}
-.container .grid-2 {
-  width: 12.66667%;
-}
-.container .grid-3 {
-  width: 21%;
-}
-.container .grid-4 {
-  width: 29.33333%;
-}
-.container .grid-5 {
-  width: 37.66667%;
-}
-.container .grid-6 {
-  width: 46%;
-}
-.container .grid-7 {
-  width: 54.33333%;
-}
-.container .grid-8 {
-  width: 62.66667%;
-}
-.container .grid-9 {
-  width: 71%;
-}
-.container .grid-10 {
-  width: 79.33333%;
-}
-.container .grid-11 {
-  width: 87.66667%;
-}
-.container .grid-12 {
-  width: 96%;
-}
-.container .pull-1 {
-  left: -8.33333%;
-}
-.container .pull-2 {
-  left: -16.66667%;
-}
-.container .pull-3 {
-  left: -25%;
-}
-.container .pull-4 {
-  left: -33.33333%;
-}
-.container .pull-5 {
-  left: -41.66667%;
-}
-.container .pull-6 {
-  left: -50%;
-}
-.container .pull-7 {
-  left: -58.33333%;
-}
-.container .pull-8 {
-  left: -66.66667%;
-}
-.container .pull-9 {
-  left: -75%;
-}
-.container .pull-10 {
-  left: -83.33333%;
-}
-.container .pull-11 {
-  left: -91.66667%;
-}
-.container .pull-12 {
-  left: -100%;
-}
-.container .push-1 {
-  left: 8.33333%;
-}
-.container .push-2 {
-  left: 16.66667%;
-}
-.container .push-3 {
-  left: 25%;
-}
-.container .push-4 {
-  left: 33.33333%;
-}
-.container .push-5 {
-  left: 41.66667%;
-}
-.container .push-6 {
-  left: 50%;
-}
-.container .push-7 {
-  left: 58.33333%;
-}
-.container .push-8 {
-  left: 66.66667%;
-}
-.container .push-9 {
-  left: 75%;
-}
-.container .push-10 {
-  left: 83.33333%;
-}
-.container .push-11 {
-  left: 91.66667%;
-}
-.container .push-12 {
-  left: 100%;
-}
 
+@media screen and (max-width: 920px) {
+  .container {
+    width: 98%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container [class*="grid-"] {
+    display: inline;
+    float: left;
+    width: 100%;
+  }
+  .container [class*="grid-"] [class*="grid-"] {
+    padding: 0;
+    margin: 0;
+  }
+  .container .centerGrid {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container .alpha {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .container .omega {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .container [class*="pull-"],
+  .container [class*="push-"] {
+    left: 0;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+
+  .hide-mobile {
+    display: block;
+  }
+}
 .centerGrid {
   display: block;
   float: none;

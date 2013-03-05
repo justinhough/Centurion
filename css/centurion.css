@@ -183,12 +183,7 @@ body {
   margin-right: auto;
 }
 
-@media screen and (max-width: 920px) {
-  .container {
-    width: 98%;
-  }
-}
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 200px) and (max-width: 768px) {
   .container {
     width: 100%;
     margin-left: auto;
@@ -223,11 +218,21 @@ body {
   }
 
   .hide-desktop {
-    display: none;
+    display: block;
   }
 
   .hide-mobile {
-    display: block;
+    display: none;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 920px) {
+  .container {
+    width: 98%;
+  }
+}
+@media screen and (min-width: 1120px) {
+  .container {
+    width: 1120px;
   }
 }
 /* Centering Grid */

@@ -119,16 +119,21 @@
     [class*="pull-"],
     [class*="push-"]
       left: 0
-  @include hide-desktop
+  @include hide-mobile
 
 
 // Grid
 @mixin grid-generate($content-width: 960px, $width:98%, $space:2%, $rows:10)
+  
   @include grid($content-width, $width, $space, $rows)
   
-  @media screen and (max-width: 920px)
+  @media screen and (min-width: 200px) and (max-width: 768px)
+    @include grid-mobile
+  
+  @media screen and (min-width: 769px) and (max-width: 920px)
     .container
       width: 98%
   
-  @media screen and (max-width: 768px)
-    @include grid-mobile
+  @media screen and (min-width: 1120px)
+    .container
+      width: 1120px 

@@ -4,7 +4,7 @@ body {
 
 /* TYPOGRAPHY */
 p, ul, ol {
-  margin: 15px 0;
+  margin: 0 0 15px 0;
 }
 
 ul ol, ul ul, ol ol, ol ul {
@@ -88,3 +88,44 @@ footer a:visited {
 }
 
 /*  Custom Media Queries  */
+.mobile span {
+  display: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 520px) {
+  .mobile {
+    position: relative;
+  }
+  .mobile span {
+    background: #ededed;
+    cursor: pointer;
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    padding: 15px 0;
+    text-indent: 10px;
+  }
+  .mobile .menuIcon {
+    background: #cccccc;
+    display: block;
+    height: 35px;
+    padding: 0;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 35px;
+  }
+  .mobile ul {
+    display: none;
+    width: 100%;
+  }
+  .mobile ul li {
+    display: block;
+    width: 100%;
+  }
+  .mobile ul li a {
+    padding: 15px 0;
+    text-indent: 20px;
+    width: 100%;
+  }
+}

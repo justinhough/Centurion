@@ -122,6 +122,29 @@
   @include hide-mobile
 
 
+
+// Semantic Grid
+@mixin sem-container($total-width)
+  width: $total-width
+  @include auto-center
+
+@mixin sem-grid($col-width)
+  +box-sizing(border-box)
+  @include float-left
+  padding: 0 15px
+  position: relative
+  width: 1% * $col-width
+
+@mixin sem-push($offset-push)
+  left: (1% * $offset-push)
+
+@mixin sem-pull($offset-pull)
+  left: -(1% * $offset-pull)
+
+
+
+
+
 // Grid
 @mixin grid-generate($content-width: 960px, $width:98%, $space:2%, $rows:10)
   

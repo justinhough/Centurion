@@ -114,11 +114,13 @@
         
         // Style resets in case browser window is adjusted
         function screenAdapt(width) {
-          width = parseInt(width);
-          if (width > 760) {
+          //width = parseInt(width);
+          width = $(document).width();
+          if (width > 500) {
             // Show on Desktop
             // Hide main menu
-            $($obj).hide();
+            //$($obj + ' ul').show();
+            $('#'+ $o.subMenuToggle).show();
           }
           else {
             // Catch all mobile
@@ -127,6 +129,7 @@
             $($obj).removeClass($o.menuActive);
             // Hide children
             $('ul ul', $obj).hide();
+            $('#'+ $o.subMenuToggle).hide();
             $('.'+ $o.subDropIcon).removeClass($o.subDropActive);
           }
         }
@@ -134,7 +137,7 @@
         $(function() {
             screenAdapt($(this).width());
             $(window).resize(function() {
-                screenAdapt($(this).width());
+              screenAdapt($(this).width());
             });
         });
         // End of resize window function
@@ -249,6 +252,7 @@
   $(document).ready(function(){
     $('table').tables();
     $('nav').navigation();
+    $('#main').mobileNav();
     $(this).tooltip();
     $('.alert').alerts();
   });

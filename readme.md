@@ -356,9 +356,7 @@ I want to take the time to thank a few people for their contributions to this fr
 
 * [Aristeides Stathopoulos](https://github.com/aristath) - for his work on the open source [Elusive Icons](https://github.com/aristath/elusive-iconfont), which made Centurion prettier.
 * [Josh Northcott](http://www.joshnorthcott.com) - for his tireless effort in spreading the word about responsive design and Centurion.
-* [Corey Hadden](https://github.com/craql) - 
-* [Clark Inada](https://github.com/cinada) - 
-
+* [Corey Hadden](https://github.com/craql) - For lending his knowledge of jQuery to get navigation link detection working. Now everyone knows where they are.
 
 ## Author Note
 Every feature of this framework is tested using a machine that resembles a computer (I work on a Mac) and was built by a man looking strangely like a developer, but those two options are not always true. 

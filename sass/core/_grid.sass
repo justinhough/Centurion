@@ -1,0 +1,162 @@
+@import "compass/css3/box-sizing"
+
+// Center Grid
+// @include centerGrid
+@mixin centerGrid
+  .centerGrid
+    display: block
+    float: none
+    @include auto-center
+
+// Alpha and Omega
+@mixin first-last
+  .alpha
+    margin-left: 0
+    padding-left: 0
+  .omega
+    margin-right: 0
+    padding-right: 0
+
+// Center a sized element
+@mixin auto-center
+  margin-left: auto
+  margin-right: auto
+
+@mixin float-left
+  float: left
+
+
+
+
+// Show and Hide Elements within Grid
+@mixin hide-desktop
+  .hide-desktop
+    display: none
+  .hide-mobile
+    display: block
+
+@mixin hide-mobile
+  .hide-desktop
+    display: block
+  .hide-mobile
+    display: none
+
+@mixin show-mobile
+  .show-mobile
+    display: block
+
+@mixin show-desktop
+  .show-desktop
+    display: block
+
+
+@mixin grid($content-width: 960px, $width:98%, $space:2%, $rows:10)
+  .container
+    width: $content-width
+    @include auto-center
+    [class*="grid-"]
+      +box-sizing(border-box)
+      @include float-left
+      padding: 0 15px
+      position: relative
+  
+    @include first-last
+  
+    // Rows by 10
+    @for $i from 1 through $rows
+      $num: $i * 10
+      .grid-#{$num}
+        width: 1% * $num
+      .pull-#{$num}
+        left: -(1% * $num)
+      .push-#{$num}
+        left: (1% * $num)
+  
+    // Rows in Thirds
+    @for $i from 1 through 3
+      $num: $i * 25
+  
+      .grid-#{$num}
+        width: 1% * $num
+      .pull-#{$num}
+        left: -(1% * $num)
+      .push-#{$num}
+        left: (1% * $num)
+  
+    // Rows by 25
+    @for $i from 1 through 2
+      $num: $i * 33
+      $mul: 1/3
+      $decimal: $i * $mul
+      $percent: ($num + $decimal)
+  
+      .grid-#{$num}
+        width: 1% * $percent
+      .pull-#{$num}
+        left: -(1% * $percent)
+      .push-#{$num}
+        left: (1% * $percent)
+
+    @include centerGrid
+
+
+// Mobile Grid Generator - NO PUSH OR PULL
+// @include grid-generator(480px, 20px, 12)
+@mixin grid-mobile ($width: 100%, $space: 2%)
+  $grid-width: 100%
+  .container
+    width: $width
+    @include auto-center
+    [class*="grid-"]
+      display: inline
+      @include float-left
+      width: $grid-width
+      [class*="grid-"]
+        padding: 0
+        margin: 0
+    @include centerGrid
+    @include first-last
+    [class*="pull-"],
+    [class*="push-"]
+      left: 0
+  @include hide-mobile
+
+
+
+// Semantic Grid
+@mixin sem-container($total-width)
+  width: $total-width
+  @include auto-center
+
+@mixin sem-grid($col-width)
+  +box-sizing(border-box)
+  @include float-left
+  padding: 0 15px
+  position: relative
+  width: 1% * $col-width
+
+@mixin sem-push($offset-push)
+  left: (1% * $offset-push)
+
+@mixin sem-pull($offset-pull)
+  left: -(1% * $offset-pull)
+
+
+
+
+
+// Grid
+@mixin grid-generate($content-width: 960px, $width:98%, $space:2%, $rows:10)
+  
+  @include grid($content-width, $width, $space, $rows)
+  
+  @media screen and (min-width: 200px) and (max-width: 768px)
+    @include grid-mobile
+  
+  @media screen and (min-width: 769px) and (max-width: 920px)
+    .container
+      width: 98%
+  
+  @media screen and (min-width: 1120px)
+    .container
+      width: 1120px 

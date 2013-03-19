@@ -1,0 +1,154 @@
+// Center Grid
+@mixin centerGrid
+  .centerGrid
+    display: block
+    float: none
+    margin-left: auto
+    margin-right: auto
+
+// Alpha and Omega
+@mixin first-last
+  .alpha
+    margin-left: 0
+  .omega
+    margin-right: 0
+
+@mixin first-last-mobile
+  .alpha
+    padding-left: 0
+  .omega
+    padding-right: 0
+
+// Show and Hide Elements within Grid
+@mixin hide-desktop
+  .hide-desktop
+    display: none
+  .hide-mobile
+    display: block
+
+@mixin hide-mobile
+  .hide-desktop
+    display: block
+  .hide-mobile
+    display: none
+
+@mixin show-mobile
+  .show-mobile
+    display: block
+
+@mixin show-desktop
+  .show-desktop
+    display: block
+
+
+// Desktop Grid Generator
+//@include grid-generator(960px, 20px, 12)
+@mixin grid-generator($width, $space, $rows: 12)
+  $content-width: $width
+  .container
+    width: $content-width
+    @include auto-center
+    [class*="grid-"]
+      display: inline
+      @include float-left
+      margin-left: $space/2
+      margin-right: $space/2
+      position: relative
+
+    @include centerGrid
+    @include first-last
+
+    [class*="push-"],
+    [class*="pull-"]
+      position: relative
+
+    @for $i from 1 through $rows
+      .grid-#{$i}
+        width: $content-width/($rows/$i) - $space
+
+    @for $i from 1 through $rows
+      .pull-#{$i}
+        left: -($content-width/($rows/$i))
+
+    @for $i from 1 through $rows
+      .push-#{$i}
+        left: $content-width/($rows/$i)
+
+
+// Nested Grid Generator
+@mixin grid-nested-generator($rows: 10)
+  .container
+    [class*="mobile-"]
+      box-sizing: border-box
+      @include float-left
+      padding: 0 5px
+
+    @include first-last-mobile
+
+    @for $i from 1 through 3
+      $num: $i * 25
+
+      .mobile-#{$num}
+        width: 1% * $num
+      [class*="mobile-"].pull-#{$num}
+        left: -(1% * $num)
+      [class*="mobile-"].push-#{$num}
+        left: (1% * $num)
+
+    @for $i from 1 through 2
+      $num: $i * 33
+      $mul: 1/3
+      $decimal: $i * $mul
+      $percent: ($num + $decimal)
+
+      .mobile-#{$num}
+        width: 1% * $percent
+      [class*="mobile-"].pull-#{$num}
+        left: -(1% * $percent)
+      [class*="mobile-"].push-#{$num}
+        left: (1% * $percent)
+
+    @for $i from 1 through $rows
+      $num: $i * 10
+      .mobile-#{$num}
+        width: 1% * $num
+      [class*="mobile-"].pull-#{$num}
+        left: -(1% * $num)
+      [class*="mobile-"].push-#{$num}
+        left: (1% * $num)
+
+
+// Mobile Grid Generator - NO PUSH OR PULL
+@mixin grid-generator-mobile ($width: 100%, $space: 2%)
+  $grid-width: 96%
+  .container
+    width: $width
+    @include auto-center
+    [class*="grid-"]
+      display: inline
+      @include float-left
+      margin-left: $space
+      margin-right: $space
+      width: $grid-width
+    @include centerGrid
+    @include first-last
+    [class*="pull-"],
+    [class*="push-"]
+      left: 0
+
+
+// Fixed Grid Generator - with custom create
+@mixin fixed($width:960px, $space:20px, $rows:12)
+  @include grid-generator($width, $space, $rows)
+  @include grid-nested-generator
+
+// Fluid Grid Generator - with custom create
+@mixin fluid($width:100%, $space:4%, $rows:12)
+  @include grid-generator($width, $space, $rows)
+
+// Mobile Grid Generator
+@mixin mobile
+  @include grid-generator-mobile
+
+@mixin gridCreate($width, $space, $rows)
+  @include grid-generator($width, $space, $rows)

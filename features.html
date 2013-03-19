@@ -70,16 +70,16 @@
 
 	<section id="features">
 		<div class="container">
-			<article>
+			<article class="grid-66">
 
 
 		       <!-- FEATURE 1 -->
 				<section>
-					<article class="grid-33">
+					<article class="grid-50">
 						<h2>Self Contained</h2>
 						<p>Centurion is built with fewer files and packaged to be all inclusive.</p>
 					</article>
-		    	<article class="grid-33">
+		    	<article class="grid-50">
 						<p class="icon-folder-open featurePage"></p>
 					</article>
 				</section>
@@ -87,10 +87,10 @@
 
 		    <!-- FEATURE 2 -->
 		    <section>
-		    	<article class="grid-33">
+		    	<article class="grid-50">
 						<p class="icon-leaf featurePage"></p>
 					</article>
-					<article class="grid-33">
+					<article class="grid-50">
 						<h2>Semantic</h2>
 						<p>With HTML5 and CSS 3 in mind everything has been scaled to leverage modern media queries, gradients, and other features that give Centurion a unique look and feel with less.</p>
 					</article>
@@ -100,11 +100,11 @@
 
 				<!-- FEATURE 3 -->
 				<section>
-					<article class="grid-33">
+					<article class="grid-50">
 						<h2>Easy to Learn</h2>
 						<p>Classes and ID's make sense. Finding it hard to learn a new framework? Centurion features easy to read markup, stylying elements makes sense based on what the usage is and it even comes fully documented (coming soon) so you can find what you need fast.</p>
 					</article>
-		    	<article class="grid-33">
+		    	<article class="grid-50">
 						<p class="icon-glasses featurePage"></p>
 					</article>
 				</section>
@@ -112,10 +112,10 @@
 
 		    <!-- FEATURE 4 -->
 		    <section>
-		    	<article class="grid-33">
+		    	<article class="grid-50">
 						<p class="icon-dashboard featurePage"></p>
 					</article>
-					<article class="grid-33">
+					<article class="grid-50">
 						<h2>Optimized</h2>
 						<p>The code has been optimized for a minimal footprint on web development projects. No more bloated code that is hard to understand and slows your browser down.</p>
 					</article>
@@ -125,12 +125,12 @@
 
 				<!-- FEATURE 5 -->
 				<section>
-					<article class="grid-33">
+					<article class="grid-50">
 						<h2>Responsive</h2>
 						<p>A responsive grid layout makes scaling a web layout for smaller devices a breeze. Take a seat, build your desktop version and watch it scale for your phone instantly.</p>
 					</article>
 
-		    	<article class="grid-33">
+		    	<article class="grid-50">
 						<p class="icon-fullscreen featurePage"></p>
 					</article>
 				</section>
@@ -138,10 +138,10 @@
 
 		    <!-- FEATURE 6 -->
 		    <section>
-		    	<article class="grid-33">
+		    	<article class="grid-50">
 						<p class="icon-cogs featurePage"></p>
 					</article>
-					<article class="grid-33">
+					<article class="grid-50">
 						<h2>Customizable</h2>
 						<p>Custom scripts for navigation, tables, and tabbed elements were built using coffeescript and are easily modifiable for flexibiliy. Even the CSS was built using Sass making it easy to include or exclude any portions of the code you may or may not want.</p>
 					</article>
@@ -150,12 +150,12 @@
 
 				<!-- FEATURE 7 -->
 				<section>
-					<article class="grid-33">
+					<article class="grid-50">
 						<h2>Integrated</h2>
 						<p>Comes integrated with several JavaScript libraries, such as, jQuery, Coffeescript, Craydent and more. </p>
 					</article>
 
-		    	<article class="grid-33">
+		    	<article class="grid-50">
 						<p class="icon-arrow-up featurePage"></p>
 					</article>
 				</section>
@@ -165,8 +165,30 @@
 
 				<!-- end of content -->
 			</article>
-			<aside class="grid-4">
+			<aside class="grid-33">
+  			 <h2>List of Features</h2>
 
+          <p><strong>Note:</strong> Feature list is based on v3.1.</p>
+          
+          <ul>
+            <li><a href="https://github.com/jhough10/Centurion/wiki/Grid">The Grid</a></li>
+            <li><a href="https://github.com/jhough10/Centurion/wiki/Alerts">Alerts</a></li>
+            <li>Blockquotes</li>
+            <li><a href="https://github.com/jhough10/Centurion/wiki/Buttons">Buttons</a></li>
+            <li>Captions</li>
+            <li>Colors</li>
+            <li>Frame boxes</li>
+            <li>Font-face</li>
+            <li>Lists</li>
+            <li>Images (adaptive and sprites)</li>
+            <li><a href="https://github.com/jhough10/Centurion/wiki/Navigation">Navigation</a></li>
+            <li><a href="https://github.com/jhough10/Centurion/wiki/Pagniation">Pagination</a></li>
+            <li>Print Styles</li>
+            <li><a href="https://github.com/jhough10/Centurion/wiki/Tabs">Tabs</a></li>
+            <li><a href="https://github.com/jhough10/Centurion/wiki/Tables">Tables</a></li>
+            <li><a href="https://github.com/jhough10/Centurion/wiki/Tooltips">Tooltips</a></li>
+            <li>Typography</li>
+          </ul>
 			</aside>
 		</div>
 	</section>
@@ -184,7 +206,27 @@
 </footer>
 
 
-        
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
       
 </body>
 </html>

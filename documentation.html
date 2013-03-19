@@ -63,7 +63,7 @@
 	<section id="headline">
 		<div class="container">
 			<article class="grid-100">
-				<h1>Docs</h1>
+				<h1>The Docs</h1>
 			</article>
 		</div>
 	</section>
@@ -71,10 +71,32 @@
 	<section id="features">
 		<div class="container">
 			<article class="grid-66">
-				<h2>Wiki on Github</h2>
 
-		      		<p>The <a href="https://github.com/jhough10/Centurion/wiki/">documentation for Centurion</a> is currently being written using Github. Please refer to that documentation for any information that you might need in utlizing Centurion on your next web project.</p>
+<h2>Full Wiki on Github</h2>
 
+<p>The <a href="https://github.com/jhough10/Centurion/wiki/">documentation for Centurion</a> is currently being written using Github. Please refer to that documentation for any information that you might need in utlizing Centurion on your next web project.</p>
+
+
+<h2>A Small List of What It Can Do</h2>
+
+<ul>
+  <li>Custom CSS buttons, no images required.</li>
+  <li>Grid dimensions from 960 px down to 320 px wide.</li>
+  <li>Image scaling.</li>
+  <li>Heading scales based on size of browser. (Use em, instead of px)</li>
+  <li>Navigation for Desktop and Mobile</li>
+  <li>HTML 5 framework with backwards compatibility to IE6</li>
+</ul>
+
+<h2>List of Features</h2>
+
+<p><strong>Note:</strong> Feature list is based on v3.1.</p>
+<p><a href="features.html">See Features page</a> for full list of features</p>
+
+
+
+
+				
 				<!-- end of content -->
 			</article>
 			<aside class="grid-33">
@@ -82,8 +104,7 @@
 				<ul>
 					<li><a href="tables.html">Tables</a></li>
 					<li><a href="buttons.html">Buttons</a></li>
-					<!--<li><a href="various.html">Various</a></li> -->
-				</ul>
+				</ul>				
 			</aside>
 		</div>
 	</section>
@@ -101,7 +122,27 @@
 </footer>
 
 
-        
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
       
 </body>
 </html>

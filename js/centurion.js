@@ -74,7 +74,7 @@
         $o = options;
         $obj = $(this);
         // HTML for menu button
-        $mobileBtn = '<span>'+ $o.mobileMenu +'</span><span class="'+ $o.menuIcon +'"></span>';
+        $mobileBtn = '<span>'+ $o.mobileMenu +'</span><span class="'+ $o.menuIcon + '"></span>';
         // HTML for plus icon for submenu
         $subDropBtn = '<span class="'+ $o.subDropIcon +'"></span>';
   
@@ -180,55 +180,103 @@
       var defaults = {
         rel: 'tooltip',
         hover: 'tipHover',
-        click: 'tipClick',
-        speed: 'slow'
+        //click: 'tipClick',
+        speed: 'slow',
+        active: 'on',
+        left: 'ttLeft',
+        right: 'ttRight',
+        ttContainer: 'theTooltip'
       };
   
       options = $.extend(defaults, options);
       
       return this.each(function() {				
-        var $o, $obj, $tooltipHead, $tooltipFoot, $tipClick, $tipHover;
+        var $o, $obj;
         
         $o = options;
         $obj = $(this);
-      
-        // tooltip header
-        $tooltipHead = '<div class="' + $o.rel + '"><div class="arrow-up"></div><div class="tipHeader"></div><div class="toolBodyWidth"><div class="tipBody">';
-        // tooltip footer
-        $tooltipFoot = '</div></div><div class="tipFooter"></div><div class="arrow-down"></div></div>';
         
-        // Clickable Tooltip - gets data from title tag
-        $tipClick = $('a.' + $o.click).attr('title');	
-        $('a[rel=' + $o.rel + '].' + $o.click).append($tooltipHead + $tipClick + $tooltipFoot);
-        // Hover Tooltip - gets data from title tag
-        $tipHover = $('a.' + $o.hover).attr('title');	
-        $('a[rel=' + $o.rel + '].' + $o.hover).append($tooltipHead + $tipHover + $tooltipFoot);
         
-        // Tooltip content is grabbed from title tag
-        $('a[rel=' + $o.rel + ']').attr('title','');
-        // hides tooltips
-        $('.' + $o.rel).hide();
-        
-        // clickable tooltip 
-        $('a.' + $o.click).click(function(e) {
-          $(this).stop().children('a[rel=' + $o.rel + '] .' + $o.rel).fadeToggle($o.speed);
-          //$(this).children('a[rel=tooltip] .tooltip').mouseleave().fadeToggle("slow");
-        })
-        // hoveable tooltip 
-        $('a.' + $o.hover).hover(
-          function() {
-            $(this).children('a[rel=' + $o.rel + '] .' + $o.rel).stop(true, true).fadeIn($o.speed);
-          },
-          function() {
-            $(this).children('a[rel=' + $o.rel + '] .' + $o.rel).delay(800).fadeOut($o.speed);
+        $('a.'+ $o.rel).each(function(){ 
+          var addon = $o.left;
+          var titleContent = $(this).data('title');
+          if($(this).position().left > ($(this).parents().width()/2) ){
+            addon = $o.right;
+          } 
+          $(this).append('<div class="'+$o.ttContainer+'"><div class="arrow-up"></div><div class="tipBody '+addon+'">'+titleContent+'</div><div class="arrow-down"></div></div>');
+         
+          $(this).click(function() {
+            $(this).toggleClass($o.active);
+            //$('.tooltip.on').not(this).removeClass($o.active);
+            $('.'+$o.rel + '.'+$o.active).not(this).removeClass($o.active);
+          });
+          
+          $('.'+$o.hover).hover(
+            function() {
+              $(this).children('.'+$o.ttContainer).stop(true, true).fadeIn($o.speed);
+            },
+            function() {
+              $(this).children('.'+$o.ttContainer).delay(200).fadeOut($o.speed);
+          });
+          
         });
+        
       });
     }
   });
   
-
+  $.fn.extend({
+    tabs: function(options) {
+      var defaults = {
+        // default options
+      };
+   
+      options = $.extend(defaults, options);
+   
+      return this.each(function() {				
+        var $o, $obj;
   
-  // Plugin Stripped Down
+        $o = options;
+        $obj = $(this);
+        // Plugin code
+        
+        $('div', $obj).addClass('innerBox');
+        $('.tabs', $obj).each(function(){
+            var $active, $content, $links = $(this).find('a');
+            
+            $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+            $active.parent('li').addClass('active');
+            $content = $($active.attr('href'));
+        
+            // Hide tab content
+            $links.not($active).each(function () {
+                $($(this).attr('href')).hide();
+            });
+        
+            // Bind the click event handler
+            $(this).on('click', 'a', function(e){
+                // Old tab inactive
+                $active.parent('li').removeClass('active');
+                $content.hide();
+        
+                // Update variables
+                $active = $(this);
+                $content = $($(this).attr('href'));
+        
+                // Activate new tab
+                $active.parent('li').addClass('active');
+                $content.show();
+        
+                // Stop anchor default action
+                e.preventDefault();
+            });
+        });
+        
+        });
+      }
+  });
+  
+     // Plugin Stripped Down
 //   $.fn.extend({
 //     _plugin_name_: function(options) {
 //       var defaults = {
@@ -238,7 +286,7 @@
 //       options = $.extend(defaults, options);
 //       
 //       return this.each(function() {				
-//         var $o, $obj, $tooltipHead, $tooltipFoot, $tipClick, $tipHover;
+//         var $o, $obj;
 //       
 //         $o = options;
 //         $obj = $(this);
@@ -254,49 +302,8 @@
     $('nav').navigation();
     $('#main').mobileNav();
     $(this).tooltip();
+    $('.tabBox').tabs();
     $('.alert').alerts();
   });
 
 })(jQuery);
-
-
-// Activate the individual plugins
-
-$(document).ready(function(){
-  
-  //$('.tabBox.bottom div').addClass('innerBox');
-  
-  $('.tabBox div').addClass('innerBox');
-  $('.tabBox .tabs').each(function(){
-      var $active, $content, $links = $(this).find('a');
-      
-      $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
-      $active.parent('li').addClass('active');
-      $content = $($active.attr('href'));
-  
-      // Hide tab content
-      $links.not($active).each(function () {
-          $($(this).attr('href')).hide();
-      });
-  
-      // Bind the click event handler
-      $(this).on('click', 'a', function(e){
-          // Old tab inactive
-          $active.parent('li').removeClass('active');
-          $content.hide();
-  
-          // Update variables
-          $active = $(this);
-          $content = $($(this).attr('href'));
-  
-          // Activate new tab
-          $active.parent('li').addClass('active');
-          $content.show();
-  
-          // Stop anchor default action
-          e.preventDefault();
-      });
-  });
-  
-});
-

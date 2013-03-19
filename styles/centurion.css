@@ -183,7 +183,7 @@ body {
   margin-right: auto;
 }
 
-@media screen and (min-width: 200px) and (max-width: 768px) {
+@media screen and (min-width: 200px) and (max-width: 600px) {
   .container {
     width: 100%;
     margin-left: auto;
@@ -225,7 +225,7 @@ body {
     display: none;
   }
 }
-@media screen and (min-width: 769px) and (max-width: 920px) {
+@media screen and (min-width: 601px) and (max-width: 920px) {
   .container {
     width: 98%;
   }

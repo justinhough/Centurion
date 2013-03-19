@@ -108,9 +108,11 @@ footer a:visited {
   .mobile .menuIcon {
     background: #cccccc;
     display: block;
+    font-size: 1.8em;
     height: 35px;
     padding: 0;
     position: absolute;
+    text-indent: 3px;
     top: 5px;
     right: 5px;
     width: 35px;
@@ -127,5 +129,9 @@ footer a:visited {
     padding: 15px 0;
     text-indent: 20px;
     width: 100%;
+  }
+  .mobile.down span.menuIcon {
+    background: #cccccc;
+    box-shadow: inset 0 0 10px #555555;
   }
 }

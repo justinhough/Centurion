@@ -297,6 +297,9 @@ body {
   margin: 15px 0;
   padding: 10px 20px;
 }
+.alert p {
+  margin-bottom: 0;
+}
 .alert .close {
   cursor: pointer;
   font-size: 1em;
@@ -633,6 +636,8 @@ nav.stacked ul li a:hover {
 }
 .tabBox .tabs .active {
   border: none;
+  bottom: -1px;
+  position: relative;
 }
 .tabBox .tabs .active a, .tabBox .tabs .active a:hover {
   background: white;
@@ -662,7 +667,7 @@ nav.stacked ul li a:hover {
   left: 0;
 }
 .tabBottom .tabs .active {
-  margin-top: -1px;
+  top: -1px;
 }
 .tabBottom .tabs .active a,
 .tabBottom .tabs .active a:hover {
@@ -812,7 +817,7 @@ tbody tr.even {
 }
 
 /* Tooltips */
-a.tipClick,
+a.tooltip,
 a.tipHover {
   color: #a4b357;
   cursor: pointer;
@@ -821,51 +826,32 @@ a.tipHover {
   height: 20px;
   position: relative;
 }
-a.tipClick:hover,
+a.tooltip:hover,
 a.tipHover:hover {
   color: black;
   text-decoration: underline;
 }
 
-.tooltip {
+.theTooltip {
   bottom: 20px;
   color: #a4b357;
+  display: none;
   left: 0;
   overflow: hidden;
   position: absolute;
   width: 250px;
   z-index: 9999;
 }
-.tooltip .tipHeader {
-  height: 10px;
-  width: 220px;
+.theTooltip .tipBody {
   background: white;
   border: 2px solid #ededed;
-  border-bottom: none;
-  border-radius: 6px 6px 0 0;
-}
-.tooltip .tipFooter {
-  height: 10px;
-  width: 220px;
-  background: white;
-  border: 2px solid #ededed;
-  border-top: none;
-  border-radius: 0 0 6px 6px;
-}
-.tooltip .toolBodyWidth {
-  width: 220px;
-  background: white;
-  border-left: 2px solid #ededed;
-  border-right: 2px solid #ededed;
-}
-.tooltip .tipBody {
   color: black;
-  padding: 0 15px;
+  padding: 15px;
 }
-.tooltip .arrow-up {
+.theTooltip .arrow-up {
   display: none;
 }
-.tooltip .arrow-down {
+.theTooltip .arrow-down {
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -875,30 +861,14 @@ a.tipHover:hover {
   position: relative;
 }
 
-.tipBottom .tooltip {
+.tipBottom .theTooltip {
   left: 0;
-  bottom: -150px;
+  bottom: -110px;
 }
-.tipBottom .tooltip .tipBody {
-  color: black;
-  padding: 0 15px;
-}
-.tipBottom .tooltip .tipHeader {
-  background: white;
-  border: 2px solid #ededed;
-  border-bottom: none;
-  border-radius: 6px 6px 0 0;
-}
-.tipBottom .tooltip .tipFooter {
-  background: white;
-  border: 2px solid #ededed;
-  border-top: none;
-  border-radius: 0 0 6px 6px;
-}
-.tipBottom .tooltip .arrow-down {
+.tipBottom .theTooltip .arrow-down {
   display: none;
 }
-.tipBottom .tooltip .arrow-up {
+.tipBottom .theTooltip .arrow-up {
   display: block;
   width: 0;
   height: 0;
@@ -907,6 +877,10 @@ a.tipHover:hover {
   border-bottom: 10px solid #ededed;
   left: 15px;
   position: relative;
+}
+
+.tooltip.on .theTooltip {
+  display: block;
 }
 
 /*  Typography  */

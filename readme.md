@@ -309,6 +309,66 @@ To set the color all you have to do is set the class on the table itself, like t
 <table class="ctBlue">
 ```
 
+<<<<<<< HEAD
+=======
+## Tabs
+
+Tabs can be fun, if they are used in the right context. I believe in simple tabs and some times we all end up writing far to much code to do a simple job. Tabs in general comprise of a wrapper (```tabBox```), a ul list (```tabs```), and then, of course, our tabs. Each tab is labeled with a unique ID that identifies it to one of the tab links found in our ```ul	``` list.
+
+```html
+<div class="tabBox">
+	<ul class="tabs">
+		<li><a href="#tab1">Tab 1</a></li>
+		<li><a href="#tab2">Tab 2</a></li>
+		<li><a href="#tab3">Tab 3</a></li>
+	</ul>
+	<div id="tab1">
+		<p>Text goes here</p>
+	</div>
+	<div id="tab2">
+		<p>Text goes here</p>
+	</div>
+	<div id="tab3">
+		<p>Text goes here</p>
+	</div>
+</div>
+```
+
+However, say that you don't want your tabs to be on top of the content, but below. On occasion this would require massive amounts of re-coding in order to get the display to work. However, through CSS all you need to do is add a new class to the wrapper ```tabBottom```
+
+```html
+<div class="tabBox tabBottom">
+	...
+</div>
+```
+
+## Tooltips
+
+Tooltips are great for displaying information to a user that might be necessary to complete an action. Centurion features two types of tooltips: clickable and hoverable.
+
+The functionality changes simply by adding the class ```tipHover```.
+
+```html
+<a class="tooltip" data-title="tooltip text goes here">...</a>
+<a class="tooltip tipHover" data-title="tooltip text goes here">...</a>
+```
+
+## Special Thanks
+I want to take the time to thank a few people for their contributions to this framework
+
+* [Aristeides Stathopoulos](https://github.com/aristath) - for his work on the open source [Elusive Icons](https://github.com/aristath/elusive-iconfont), which made Centurion prettier.
+* [Josh Northcott](http://www.joshnorthcott.com) - for his tireless effort in spreading the word about responsive design and Centurion.
+* [Corey Hadden](https://github.com/craql) - for his assistance in making jQuery play nice and for sheer inspiration.
+
+
+## Author Note
+Every feature of this framework is tested using a machine that resembles a computer (I work on a Mac) and was built by a man looking strangely like a developer, but those two options are not always true. 
+
+## Licensing
+Licensed under [GPL](http://www.gnu.org/licenses/gpl.html) and [MIT](http://www.opensource.org/licenses/mit-license.php).
+ that resembles a computer and was built by a man looking strangely like a developer, but not entirely the case. 
+=======
+>>>>>>> fixed minor issues with merge
 ## Tabs
 
 Tabs can be fun, if they are used in the right context. I believe in simple tabs and some times we all end up writing far to much code to do a simple job. Tabs in general comprise of a wrapper (```tabBox```), a ul list (```tabs```), and then, of course, our tabs. Each tab is labeled with a unique ID that identifies it to one of the tab links found in our ```ul	``` list.

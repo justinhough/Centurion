@@ -87,27 +87,6 @@ footer a:visited {
   color: #999999;
 }
 
-<<<<<<< HEAD
-/*  GRID LAYOUT  */
-.layoutGrid [class*="grid-"] p {
-	background: #EDEDED;
-	border: 1px solid #555;
-	font-size: 13px;
-	margin-bottom: 20px;
-	padding: 10px;
-}
-.layoutGrid p.noStyle {
-	background: none;
-	border: none;
-	padding: 0;
-}
-
-
-
-/* ================================================
-    Custom Media Queries
-================================================== */
-=======
 /*  Custom Media Queries  */
 .mobile span {
   display: none;
@@ -156,4 +135,3 @@ footer a:visited {
     box-shadow: inset 0 0 10px #555555;
   }
 }
->>>>>>> v3.1

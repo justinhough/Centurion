@@ -3,50 +3,66 @@
 <head>
 	<title>Docs | Centurion - A CSS Web Framework</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-	<link rel="shortcut icon" href="graphics/favicon.jpg" />
-	<link rel="apple-touch-icon" href="graphics/apple-touch-icon.png" />
-	<link rel="apple-touch-icon" sizes="72x72" href="graphics/apple-touch-icon-72x72.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="graphics/apple-touch-icon-114x114.png" />
+<link rel="shortcut icon" href="graphics/favicon.jpg" />
+<link rel="apple-touch-icon" href="graphics/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="graphics/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="graphics/apple-touch-icon-114x114.png" />
 
-	<!-- CENTURION -->
-	<link rel="stylesheet" href="styles/reset.css" />
-	<link rel="stylesheet" href="styles/print.css" />
-	<link rel="stylesheet" href="styles/centurion.css" />
-	<link rel="stylesheet" href="styles/style.css" />
-	<!-- end of CENTURION -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,800,300' rel='stylesheet' type='text/css'>
+<!-- CENTURION -->
+<link rel='stylesheet' href='styles/reset.css'>
+<link rel='stylesheet' href='styles/centurion.css'>
+<link rel='stylesheet' href='styles/elusive-webfont.css'>
+<!-- end of CENTURION -->
 
-	<link rel="stylesheet" href="styles/demo.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,800,300' rel='stylesheet' type='text/css'>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!-- @scripts centurion -->
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+
+<link rel='stylesheet' href='styles/demo.css'>
+
+  <style type="text/css">
+		article { margin: 0; }
+	</style>
+	
 </head>
 <body>
-	<a href="https://github.com/jhough10/centurion"><img
-        src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
-        alt="Fork me on GitHub" class="github"></a>
+	<a href="https://github.com/jhough10/centurion" class="github"><!--github fork--></a>
 
-	<header>
-		<section class="container">
-			<article class="grid-3">
-				<h1><a href="index.html">Centurion</a></h1>
-			</article>
-			<article class="grid-9">
-				<nav>
-					<ul>
-						<li><a href="features.html">Features</a></li>
-						<li><a href="grid.html">The Grid</a></li>
-						<li><a href="documentation.html">Docs</a></li>
-					</ul>
-				</nav>
+<header>
+	<section class="container">
+		<article class="grid-20">
+			<h1><a href="index.html">Centurion</a></h1>
+		</article>
+		<article class="grid-80">
+			<nav>
+				<ul>
+					<li><a href="features.html">Features</a></li>
+					<li><a href="grid.html">The Grid</a></li>
+					<li class='current'><a class='current' href="documentation.html">Docs</a></li>
+				</ul>
+			</nav>
 
-			</article>
-		</section>
-	</header>
+		</article>
+	</section>
+</header>
 
 	<section id="headline">
 		<div class="container">
-			<article class="grid-12">
+			<article class="grid-100">
 				<h1>Docs</h1>
 			</article>
 		</div>
@@ -54,14 +70,14 @@
 
 	<section id="features">
 		<div class="container">
-			<article class="grid-8">
+			<article class="grid-66">
 				<h2>Wiki on Github</h2>
 
 		      		<p>The <a href="https://github.com/jhough10/Centurion/wiki/">documentation for Centurion</a> is currently being written using Github. Please refer to that documentation for any information that you might need in utlizing Centurion on your next web project.</p>
 
 				<!-- end of content -->
 			</article>
-			<aside class="grid-4">
+			<aside class="grid-33">
 				<h2>Areas of Interest</h2>
 				<ul>
 					<li><a href="tables.html">Tables</a></li>
@@ -74,14 +90,38 @@
 
 
 	<footer>
-		<section class="container">
-			<article class="grid-4">
-				<p>Site content &copy; 2012 Room 316 Studios.</p>
-			</article>
-			<article class="grid-4 push-4">
-				<p>Licensed under <a href="http://www.gnu.org/licenses/gpl.html" rel="license">GPL</a> and <a href="http://www.opensource.org/licenses/mit-license.php" rel="license">MIT</a>.</p>
-			</article>
-		</section>
-	</footer>
+	<section class="container">
+		<article class="grid-33">
+			<p>Site content &copy; 2012 Room 316 Studios.</p>
+		</article>
+		<article class="grid-33 push-33">
+			<p>Licensed under <a href="http://www.gnu.org/licenses/gpl.html" rel="license">GPL</a> and <a href="http://www.opensource.org/licenses/mit-license.php" rel="license">MIT</a>.</p>
+		</article>
+	</section>
+</footer>
+
+
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
 </body>
 </html>

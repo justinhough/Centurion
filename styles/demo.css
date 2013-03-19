@@ -9,14 +9,15 @@ iframe,
 video {
   width: 100%;
 }
-img.github {
-  position: absolute;
+a.github {
+  background: url('https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png');
+  display: block;
+  position: absolute; 
   top: 0;
   right: 0;
   border: 0;
-  width: 120px;
-  height: 120px;
-  width: auto;
+  width: 149px;
+  height: 149px;
 }
 
 /* NAV UPDATES 
@@ -29,7 +30,14 @@ BOTTOM: #EAEAEA;
 /* HEADER
 ============================ */
 header {
-  background: url('../graphics/blackorchid.png');
+  background: url(../graphics/blackorchid.png);
+}
+header section {
+  margin: 0;
+}
+header article {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 header h1 {
   color: #FFF;
@@ -73,7 +81,7 @@ header nav ul li a:hover {
 /* PRODUCT TOUR 
 ============================ */
 #tour {
-  background: url('../graphics/noisy_grid.png');
+  background: url(../graphics/noisy_grid.png);
   box-shadow: inset -1px 3px 8px #333;
   margin: 0;
   padding: 40px 0;
@@ -96,9 +104,10 @@ header nav ul li a:hover {
 /* HEADLINE
 ============================ */
 #headline {
-  background: url('../graphics/noisy_grid.png');
+  background: url(../graphics/noisy_grid.png);
   box-shadow: inset -1px 3px 8px #333;
   margin-bottom: 20px;
+  margin-top: 0;
   padding: 20px 0;
 }
 #headline h1 {
@@ -111,48 +120,26 @@ header nav ul li a:hover {
 ============================ */
 #primary {
   background: #FFF;
-  /*background: url('../graphics/grey.png');*/
+  /*background: url(../graphics/grey.png);*/
   box-shadow: inset -1px 2px 8px #DDD;
   margin: 0;
-  padding: 70px 0;
-}
-#css3,
-#responsive,
-#prototype {
-  padding-top: 90px;
-  text-align: center;
-}
-#primary .grid-4 p {
-  text-align: center;
+  padding: 20px 0 0 0;
 }
 
-#css3 {
-  background: url('../graphics/css3.png') top center no-repeat;
-}
-#responsive {
-  background: url('../graphics/responsive.png') top center no-repeat;
-}
-#prototype {
-  background: url('../graphics/prototype.png') top center no-repeat;
+#primary .grid-4 p {
+  text-align: center;
 }
 
 #primary .cPanel p {
   text-align: left;
 }
-
-
 #features {
   padding-bottom: 40px;
 }
 
-
-
-
 #grid {
   padding-bottom: 40px;
 }
-
-
 
 code {
   background: #EDEDED;
@@ -162,12 +149,49 @@ code {
   margin: 10px 0;
 }
 
+/* GRID */
+#grid [class*="grid-"] p {
+  background: #ededed;
+  border: 1px solid #888888;
+  color: #333333;
+  font-size: 0.8em;
+  padding: 5px;
+  margin-bottom: 0;
+  text-align: center;
+}
+#grid p.noStyle {
+  border: none;
+  background: none;
+  color: #333333;
+  font-size: 16px;
+  padding: 0;
+  text-align: left;
+}
+#grid [class*="pull-"] p {
+  background: lightpink;
+}
+#grid [class*="push-"] p {
+  background: lightgreen;
+}
+
+.feature {
+  color: #5b7a00;
+  font-size: 5em;
+  text-align: center;
+  text-shadow: 0 0 2px #555;
+}
+.featurePage {
+  color: #5b7a00;
+  font-size: 7.5em;
+  text-align: center;
+  text-shadow: 2px 2px 6px #888;
+}
 
 /* FOOTER
 ============================ */
 footer {
-  /*background: url('../graphics/blackorchid.png');*/
-  background: url('../graphics/wild_oliva.png');
+  /*background: url(../graphics/blackorchid.png);*/
+  background: url(../graphics/wild_oliva.png);
   padding: 20px 0 20px;
   margin: 0 0 0 0;
 }

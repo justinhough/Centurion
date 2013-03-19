@@ -342,13 +342,13 @@ However, say that you don't want your tabs to be on top of the content, but belo
 
 ## Tooltips
 
-Tooltips are great for displaying information to a user that might be necessary to complete an action. Centurion features two types of tooltips: clickable and coverable.
+Tooltips are great for displaying information to a user that might be necessary to complete an action. Centurion features two types of tooltips: clickable and hoverable.
 
-The functionality changes simply by changing the classes ```tipClick``` or ```tipHover```.
+The functionality changes simply by adding the class ```tipHover```.
 
 ```html
-<a rel="tooltip" class="tipClick" title="tooltip text goes here">
-<a rel="tooltip" class="tipHover" title="tooltip text goes here">
+<a class="tooltip" data-title="tooltip text goes here">...</a>
+<a class="tooltip tipHover" data-title="tooltip text goes here">...</a>
 ```
 
 ## Special Thanks
@@ -356,7 +356,8 @@ I want to take the time to thank a few people for their contributions to this fr
 
 * [Aristeides Stathopoulos](https://github.com/aristath) - for his work on the open source [Elusive Icons](https://github.com/aristath/elusive-iconfont), which made Centurion prettier.
 * [Josh Northcott](http://www.joshnorthcott.com) - for his tireless effort in spreading the word about responsive design and Centurion.
-* [Corey Hadden](https://github.com/craql) - For lending his knowledge of jQuery to get navigation link detection working. Now everyone knows where they are.
+* [Corey Hadden](https://github.com/craql) - for his assistance in making jQuery play nice and for sheer inspiration.
+
 
 ## Author Note
 Every feature of this framework is tested using a machine that resembles a computer (I work on a Mac) and was built by a man looking strangely like a developer, but those two options are not always true. 

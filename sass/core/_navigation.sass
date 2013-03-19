@@ -75,30 +75,67 @@
 // Navigation - for mobile
 @mixin navigation-mobile
 
-  nav.mobile
-    border: none
+  .mobile
+    position: relative
+    span
+      background: #EDEDED
+      cursor: pointer
+      display: block
+      font-family: "Open Sans", sans-serif
+      font-size: 1em
+      padding: $dh-padding
+      text-indent: 10px
+    
+    .menuIcon
+      background: #CCC
+      display: block
+      font-size: 1.8em
+      height: 35px
+      padding: 0
+      position: absolute
+      text-indent: 3px
+      top: 5px
+      right: 5px      
+      width: 35px
     ul
-      @extend %hide-block
+      display: none
       width: 100%
-
-      &.show
-        @extend %show-block
-
-      li
-        @extend %show-block
-        float: none
-        padding: 0
+      li 
+        display: block
         width: 100%
         a
-          @extend %show-block
-          float: none
-          padding: 10px 0
-          text-indent: 10px 
+          padding: $dh-padding
+          text-indent: 20px
           width: 100%
+    &.down
+      span.menuIcon
+        background: #CCC
+        box-shadow: inset 0 0 10px #555
 
-    span
-      &.openMenu
-        border: 1px solid #ededed
-        padding: 10px 0
-        text-indent: 10px
-        width: 100%
+//  nav.mobile
+//    border: none
+//    ul
+//      @extend %hide-block
+//      width: 100%
+//
+//      &.show
+//        @extend %show-block
+//
+//      li
+//        @extend %show-block
+//        float: none
+//        padding: 0
+//        width: 100%
+//        a
+//          @extend %show-block
+//          float: none
+//          padding: 10px 0
+//          text-indent: 10px 
+//          width: 100%
+//
+//    span
+//      &.openMenu
+//        border: 1px solid #ededed
+//        padding: 10px 0
+//        text-indent: 10px
+//        width: 100%

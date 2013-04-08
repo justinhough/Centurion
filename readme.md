@@ -1,11 +1,10 @@
 ## What is Centurion?
-
 Centurion is a HTML5 / CSS 3 based framework for rapid prototyping. It comes out of the box, or the Git with pre-built features that help you build sites faster for Desktop and Mobile. The grid adjusts to the screen proportions that are given by the browser, and that is all there is to it.
 
 ## Current Version
 Centruion is currently at version 3.1
 
-**What it can do**
+## What it can do
 * Custom CSS buttons, no images required.
 * Grid dimensions from 960 px down to 320 px wide.
 * Image scaling.

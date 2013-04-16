@@ -1,3 +1,5 @@
 .DS_store
 .project
 *.scssc
+
+*.sassc

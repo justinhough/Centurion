@@ -50,7 +50,7 @@
     display: block
 
 
-@mixin grid($content-width: 960px, $width:98%, $space:2%, $rows:10)
+@mixin grid($content-width: 960px, $width:98%, $space:2%, $rows:20)
   .container
     width: $content-width
     @include auto-center
@@ -62,20 +62,9 @@
   
     @include first-last
   
-    // Rows by 10
+    // Rows by 5
     @for $i from 1 through $rows
-      $num: $i * 10
-      .grid-#{$num}
-        width: 1% * $num
-      .pull-#{$num}
-        left: -(1% * $num)
-      .push-#{$num}
-        left: (1% * $num)
-  
-    // Rows in Thirds
-    @for $i from 1 through 3
-      $num: $i * 25
-  
+      $num: $i * 5
       .grid-#{$num}
         width: 1% * $num
       .pull-#{$num}
@@ -146,7 +135,7 @@
 
 
 // Grid
-@mixin grid-generate($content-width: 960px, $width:98%, $space:2%, $rows:10)
+@mixin grid-generate($content-width: 960px, $width:98%, $space:2%, $rows:20)
   
   @include grid($content-width, $width, $space, $rows)
   

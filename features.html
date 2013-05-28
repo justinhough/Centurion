@@ -31,6 +31,7 @@
     }
   </style>
 <![endif]-->
+<!--[if lte IE 7]><script src="scripts/lte-ie7.js"></script><![endif]-->
 
 <link rel='stylesheet' href='styles/demo.css'>
 
@@ -44,18 +45,15 @@
 
 <header>
 	<section class="container">
-		<article class="grid-20">
-			<h1><a href="index.html">Centurion</a></h1>
-		</article>
-		<article class="grid-80">
+		<article class="grid-100">
 			<nav>
 				<ul>
-					<li class='current'><a class='current' href="features.html">Features</a></li>
+					<li><a href="index.html" id="logo">Centurion</a></li>
+					<li><a class="current" href="features.html">Features</a></li>
 					<li><a href="grid.html">The Grid</a></li>
 					<li><a href="documentation.html">Docs</a></li>
 				</ul>
 			</nav>
-
 		</article>
 	</section>
 </header>
@@ -205,28 +203,6 @@
 	</section>
 </footer>
 
-
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
       
 </body>
 </html>

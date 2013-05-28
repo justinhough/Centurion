@@ -39,20 +39,16 @@ header article {
   margin-top: 0;
   margin-bottom: 0;
 }
-header h1 {
+header #logo {
   color: #FFF;
   float:left;
   font-size: 22px;
   font-weight: bold;
-  margin: 10px 0 0 0;
+  line-height: 1;
+  margin: 0;
 }
-header h1 a,
-header h1 a:visited {
-  color: #FFF;
-  text-decoration: none;
-}
-header h1 a:hover {
-  color: #FFA84C;
+header #logo:hover {
+  color: #5b7a00;
   text-decoration: none;
 }
 header nav {
@@ -71,7 +67,7 @@ header nav ul li a:visited {
 }
 header nav ul li a:hover {
   background: none;
-  color: #FFA84C;
+  color: #5b7a00;
 }
 /*header .button {
   float: right;

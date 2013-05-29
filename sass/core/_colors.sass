@@ -8,6 +8,7 @@
 // @include gradient-two(#1, #2)
 @mixin gradient-two($start, $end)
   $experimental-support-for-svg: false
+  background-color: $end
   @include background-image(linear-gradient($start, $end))
 
 

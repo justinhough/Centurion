@@ -32,30 +32,26 @@
   nav
     @extend %float-left
     font-size: $default-font-size
-    margin-bottom: 10px
     width: 100%
     ul
       @extend %show-block
-      @extend %float-left
+      display: inline
       @extend %noMarPad
       li
         display: inline
-        @extend %float-left
         @extend %noMarPad
         @extend %relative
         a
           color: $link
-          @extend %float-left
+          display: inline-block
           margin: 0
-          padding: 15px 20px
+          padding: 5px
           @extend %noTextDecoration
-          &:hover,
           &:visited
-            background: $border
             color: #000
+          &:hover,
           &.on
-            background: $border
-            color: #000
+            color: $green
     // nav stacked
     &.stacked
       width: 100%
@@ -102,11 +98,16 @@
       width: 100%
       li 
         display: block
+        padding: 0
         width: 100%
         a
-          padding: $dh-padding
-          text-indent: 20px
+          padding: 10px 0
+          text-indent: 10px
           width: 100%
+          &.on,
+          &:hover
+            background: $grey
+            color: $white
     &.down
       span.menuIcon
         background: #CCC

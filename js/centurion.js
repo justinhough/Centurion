@@ -98,7 +98,7 @@
         }
 
         // Mobile Navigation
-        $($obj).click(function(){	
+        $('span', $obj).click(function(){	
           $('.'+ $o.subDropIcon).removeClass($o.subDropActive);
           $('ul ul', $obj).hide();
           $('#'+ $o.subMenuToggle).toggle();
@@ -116,7 +116,7 @@
         function screenAdapt(width) {
           //width = parseInt(width);
           width = $(document).width();
-          if (width > 500) {
+          if (width > 520) {
             // Show on Desktop
             // Hide main menu
             //$($obj + ' ul').show();

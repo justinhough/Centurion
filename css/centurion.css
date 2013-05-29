@@ -418,9 +418,9 @@ ul.cCrumbs li:last-child:after {
 /* Buttons */
 .button {
   border: none;
-  -webkit-border-radius: 5px 5px;
-  -moz-border-radius: 5px / 5px;
-  border-radius: 5px / 5px;
+  -webkit-border-radius: 4px 4px;
+  -moz-border-radius: 4px / 4px;
+  border-radius: 4px / 4px;
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -434,11 +434,12 @@ ul.cCrumbs li:last-child:after {
   background-image: linear-gradient(#7d7e7d, #0e0e0e);
   color: white;
   display: inline-block;
+  font-family: "Open Sans", sans-serif;
   font-size: 1em;
   font-weight: bold;
   margin: 15px 0;
   outline: 0;
-  padding: 10px 22px;
+  padding: 0.5em 1.2em;
   vertical-align: middle;
   zoom: 1;
 }
@@ -470,6 +471,7 @@ ul.cCrumbs li:last-child:after {
   background-image: linear-gradient(#ffffff, #b7b7b7);
 }
 .button.blue {
+  color: white;
   background-color: #23538a;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a7cfdf), color-stop(100%, #23538a));
   background-image: -webkit-linear-gradient(#a7cfdf, #23538a);
@@ -478,6 +480,7 @@ ul.cCrumbs li:last-child:after {
   background-image: linear-gradient(#a7cfdf, #23538a);
 }
 .button.blue:hover, .button.blue:active, .button.blue:visited {
+  color: white;
   background-color: #004089;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a7cfdf), color-stop(100%, #004089));
   background-image: -webkit-linear-gradient(#a7cfdf, #004089);
@@ -486,6 +489,7 @@ ul.cCrumbs li:last-child:after {
   background-image: linear-gradient(#a7cfdf, #004089);
 }
 .button.red {
+  color: white;
   background-color: #cf0404;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff3019), color-stop(100%, #cf0404));
   background-image: -webkit-linear-gradient(#ff3019, #cf0404);
@@ -494,6 +498,7 @@ ul.cCrumbs li:last-child:after {
   background-image: linear-gradient(#ff3019, #cf0404);
 }
 .button.red:hover, .button.red:active, .button.red:visited {
+  color: white;
   background-color: #aa0303;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff3819), color-stop(100%, #aa0303));
   background-image: -webkit-linear-gradient(#ff3819, #aa0303);
@@ -520,6 +525,7 @@ ul.cCrumbs li:last-child:after {
   background-image: linear-gradient(#fced62, #ffaa00);
 }
 .button.orange {
+  color: white;
   background-color: #ff7b0d;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffa84c), color-stop(100%, #ff7b0d));
   background-image: -webkit-linear-gradient(#ffa84c, #ff7b0d);
@@ -528,6 +534,7 @@ ul.cCrumbs li:last-child:after {
   background-image: linear-gradient(#ffa84c, #ff7b0d);
 }
 .button.orange:hover, .button.orange:active, .button.orange:visited {
+  color: white;
   background-color: #fc6000;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffa84c), color-stop(100%, #fc6000));
   background-image: -webkit-linear-gradient(#ffa84c, #fc6000);
@@ -536,6 +543,7 @@ ul.cCrumbs li:last-child:after {
   background-image: linear-gradient(#ffa84c, #fc6000);
 }
 .button.green {
+  color: white;
   background-color: #75890c;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a4b357), color-stop(100%, #75890c));
   background-image: -webkit-linear-gradient(#a4b357, #75890c);
@@ -544,6 +552,7 @@ ul.cCrumbs li:last-child:after {
   background-image: linear-gradient(#a4b357, #75890c);
 }
 .button.green:hover, .button.green:active, .button.green:visited {
+  color: white;
   background-color: #5b7a00;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a4b357), color-stop(100%, #5b7a00));
   background-image: -webkit-linear-gradient(#a4b357, #5b7a00);
@@ -555,18 +564,19 @@ ul.cCrumbs li:last-child:after {
   -webkit-border-radius: 4px 4px;
   -moz-border-radius: 4px / 4px;
   border-radius: 4px / 4px;
-  font-size: 0.85em;
-  padding: 8px 18px;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  padding: 0.8em 1.5em;
 }
 .button.large {
-  -webkit-border-radius: 6px 6px;
-  -moz-border-radius: 6px / 6px;
-  border-radius: 6px / 6px;
-  font-size: 1.3em;
-  padding: 8px 28px;
+  -webkit-border-radius: 4px 4px;
+  -moz-border-radius: 4px / 4px;
+  border-radius: 4px / 4px;
+  font-size: 1.4em;
+  padding: 0.4em 1.2em;
 }
 .button.full {
-  padding: 10px 0;
+  padding: 1em 0;
   text-align: center;
   width: 100%;
 }
@@ -1020,6 +1030,11 @@ ul li {
   font-size: 1em;
   list-style: circle;
   margin-left: 20px;
+}
+
+.caption {
+  color: #999999;
+  font-size: 0.8em;
 }
 
 nav ul, nav ul li, .tabBox .tabs li, ul {

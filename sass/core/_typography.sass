@@ -1,8 +1,6 @@
 @import "compass/typography/text/"
 @import "vars"
 
-
-
 //@mixin default-heading($color, $size)
 //  color: $color
 //  display: block
@@ -23,9 +21,8 @@
 //  margin: 10px 0
 
 
-
 body
-  font-size: 15px
+  font-size: $body-font-size
 
 // Default links
 @mixin links($change-link-color: $link-color, $change-hover-color: $link-hover-color)
@@ -89,4 +86,9 @@ body
 
   @include links
   @include default-list
+  
+  .caption
+    color: $lightgrey
+    font-size: $default-font-size - 0.2
+    
 

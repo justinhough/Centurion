@@ -4,7 +4,7 @@ body {
 
 /* TYPOGRAPHY */
 p, ul, ol {
-  margin: 0 0 15px 0;
+  margin: 0 0 1em 0;
 }
 
 ul ol, ul ul, ol ol, ol ul {
@@ -14,15 +14,11 @@ ul ol, ul ul, ol ol, ol ul {
 /* HEADER */
 header {
   border-bottom: 1px solid #cccccc;
-  padding-bottom: 20px;
-}
-header nav ul li {
-  padding: 15px 20px 15px 0;
 }
 
 /* CONTENT */
 section {
-  margin: 15px 0;
+  margin: 1em 0;
 }
 
 code {
@@ -62,7 +58,7 @@ footer {
   border-top: 1px solid #cccccc;
   min-height: 65px;
   margin-top: 30px;
-  padding: 15px 0;
+  padding: 1em 0;
 }
 footer h2 {
   font-size: 1em;
@@ -106,7 +102,7 @@ footer a:visited {
     display: block;
     font-family: "Open Sans", sans-serif;
     font-size: 1em;
-    padding: 15px 0;
+    padding: 1em 0;
     text-indent: 10px;
   }
   .mobile .menuIcon {
@@ -127,17 +123,12 @@ footer a:visited {
   }
   .mobile ul li {
     display: block;
-    padding: 0;
     width: 100%;
   }
   .mobile ul li a {
-    padding: 10px 0;
-    text-indent: 10px;
+    padding: 1em 0;
+    text-indent: 20px;
     width: 100%;
-  }
-  .mobile ul li a.on, .mobile ul li a:hover {
-    background: #cccccc;
-    color: white;
   }
   .mobile.down span.menuIcon {
     background: #cccccc;

@@ -1,5 +1,9 @@
 @import "compass/css3/box-sizing"
 
+$ie7-support: false
+$lang-front: left
+$lang-back: right
+
 // Center Grid
 // @include centerGrid
 @mixin centerGrid
@@ -23,9 +27,7 @@
   margin-right: auto
 
 @mixin float-left
-  float: left
-
-
+  float: $lang-front
 
 
 // Show and Hide Elements within Grid
@@ -50,27 +52,62 @@
     display: block
 
 
-@mixin grid($content-width: 960px, $width:98%, $space:2%, $rows:20)
+// IE Specific Hacks - Border Box Fix
+@mixin ie7-grid-element($decimal)
+  @if $ie7-support
+    /* IE7 */
+    *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+    /* IE7 */
+  
+@mixin ie7-push($decimal)
+  @if $ie7-support
+    /* IE7 */
+    *#{$lang-front}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+    /* IE7 */
+  
+@mixin ie7-pull($decimal)
+  @if $ie7-support
+    /* IE7 */
+    *#{$lang-front}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+    /* IE7 */
+
+
+@mixin grid($content-width: 960px, $width:98%, $space:2%, $rows:20, $direction:$lang-front)
   .container
     width: $content-width
     @include auto-center
     [class*="grid-"]
       +box-sizing(border-box)
-      @include float-left
+      float: $direction
       padding: 0 15px
+      @if $ie7-support
+        /* IE7 */
+        *padding-left: 0
+        *padding-right: 0
+        /* IE7 */
+        & > *
+        /* IE7 */
+        *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+        *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+        /* IE7 */
       position: relative
+      
   
     @include first-last
   
     // Rows by 5
     @for $i from 1 through $rows
       $num: $i * 5
+      $decimal: $num / 100
       .grid-#{$num}
         width: 1% * $num
+        @include ie7-grid-element($decimal)
       .pull-#{$num}
-        left: -(1% * $num)
+        #{$direction}: -(1% * $num)
+        @include ie7-pull($decimal)
       .push-#{$num}
-        left: (1% * $num)
+        #{$direction}: (1% * $num)
+        @include ie7-push($decimal)
   
     // Rows by 25
     @for $i from 1 through 2
@@ -81,33 +118,48 @@
   
       .grid-#{$num}
         width: 1% * $percent
+        @include ie7-grid-element($decimal)
       .pull-#{$num}
-        left: -(1% * $percent)
+        #{$direction}: -(1% * $percent)
+        @include ie7-pull($decimal)
       .push-#{$num}
-        left: (1% * $percent)
+        #{$direction}: (1% * $percent)
+        @include ie7-push($decimal)
 
     @include centerGrid
 
 
 // Mobile Grid Generator - NO PUSH OR PULL
 // @include grid-generator(480px, 20px, 12)
-@mixin grid-mobile ($width: 100%, $space: 2%)
+@mixin grid-mobile ($width: 100%, $space: 2%, $direction: $lang-front)
   $grid-width: 100%
   .container
     width: $width
     @include auto-center
-    [class*="grid-"]
+    [class*="grid-"],
+    [class*="mobile-grid-"]
       display: inline
-      @include float-left
+      float: $direction
       width: $grid-width
       [class*="grid-"]
         padding: 0
         margin: 0
+    
+    // Mobile Grid
+    @for $i from 1 through 3
+      $num: $i * 25
+      .grid-#{$num}
+        width: 1% * $num
+      .pull-#{$num}
+        #{$direction}: -(1% * $num)
+      .push-#{$num}
+        #{$direction}: (1% * $num)
+    
     @include centerGrid
     @include first-last
     [class*="pull-"],
     [class*="push-"]
-      left: 0
+      #{$direction}: 0
   @include hide-mobile
 
 
@@ -125,10 +177,10 @@
   width: 1% * $col-width
 
 @mixin sem-push($offset-push)
-  left: (1% * $offset-push)
+  $direction: (1% * $offset-push)
 
 @mixin sem-pull($offset-pull)
-  left: -(1% * $offset-pull)
+  $direction: -(1% * $offset-pull)
 
 
 

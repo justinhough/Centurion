@@ -43,14 +43,14 @@
 
 // Desktop Grid Generator
 //@include grid-generator(960px, 20px, 12)
-@mixin grid-generator($width, $space, $rows: 12)
+@mixin grid-generator($width, $space, $rows: 12, $direction:$lang-front)
   $content-width: $width
   .container
     width: $content-width
     @include auto-center
     [class*="grid-"]
       display: inline
-      @include float-left
+      float: $direction
       margin-left: $space/2
       margin-right: $space/2
       position: relative
@@ -68,11 +68,11 @@
 
     @for $i from 1 through $rows
       .pull-#{$i}
-        left: -($content-width/($rows/$i))
+        #{$direction}: -($content-width/($rows/$i))
 
     @for $i from 1 through $rows
       .push-#{$i}
-        left: $content-width/($rows/$i)
+        #{$direction}: $content-width/($rows/$i)
 
 
 // Nested Grid Generator
@@ -91,9 +91,9 @@
       .mobile-#{$num}
         width: 1% * $num
       [class*="mobile-"].pull-#{$num}
-        left: -(1% * $num)
+        #{$direction}: -(1% * $num)
       [class*="mobile-"].push-#{$num}
-        left: (1% * $num)
+        #{$direction}: (1% * $num)
 
     @for $i from 1 through 2
       $num: $i * 33
@@ -104,29 +104,29 @@
       .mobile-#{$num}
         width: 1% * $percent
       [class*="mobile-"].pull-#{$num}
-        left: -(1% * $percent)
+        #{$direction}: -(1% * $percent)
       [class*="mobile-"].push-#{$num}
-        left: (1% * $percent)
+        #{$direction}: (1% * $percent)
 
     @for $i from 1 through $rows
       $num: $i * 10
       .mobile-#{$num}
         width: 1% * $num
       [class*="mobile-"].pull-#{$num}
-        left: -(1% * $num)
+        #{$direction}: -(1% * $num)
       [class*="mobile-"].push-#{$num}
-        left: (1% * $num)
+        #{$direction}: (1% * $num)
 
 
 // Mobile Grid Generator - NO PUSH OR PULL
-@mixin grid-generator-mobile ($width: 100%, $space: 2%)
+@mixin grid-generator-mobile ($width: 100%, $space: 2%, $direction:$lang-front)
   $grid-width: 96%
   .container
     width: $width
     @include auto-center
     [class*="grid-"]
       display: inline
-      @include float-left
+      float: $direction
       margin-left: $space
       margin-right: $space
       width: $grid-width
@@ -134,7 +134,7 @@
     @include first-last
     [class*="pull-"],
     [class*="push-"]
-      left: 0
+      #{$direction}: 0
 
 
 // Fixed Grid Generator - with custom create

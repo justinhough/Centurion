@@ -14,6 +14,10 @@ ul ol, ul ul, ol ol, ol ul {
 /* HEADER */
 header {
   border-bottom: 1px solid #cccccc;
+  padding-bottom: 20px;
+}
+header nav ul li {
+  padding: 15px 20px 15px 0;
 }
 
 /* CONTENT */
@@ -123,12 +127,17 @@ footer a:visited {
   }
   .mobile ul li {
     display: block;
+    padding: 0;
     width: 100%;
   }
   .mobile ul li a {
-    padding: 1em 0;
-    text-indent: 20px;
+    padding: 10px 0;
+    text-indent: 10px;
     width: 100%;
+  }
+  .mobile ul li a.on, .mobile ul li a:hover {
+    background: #cccccc;
+    color: white;
   }
   .mobile.down span.menuIcon {
     background: #cccccc;

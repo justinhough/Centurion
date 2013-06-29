@@ -1,30 +1,17 @@
-@import "compass/css3/border-radius"
-
-@mixin button-gradient($offStart, $offEnd, $onStart, $onEnd, $colorText:$white)
-  color: $colorText
-  @include gradient-two($offStart, $offEnd)
-  &:hover, 
-  &:active,
-  &:visited
-    color: $colorText
-    @include gradient-two($onStart, $onEnd)
-
-
 // Buttons
 @mixin default-button
   border: none
-  @include border-radius(4px, 4px)
+  @include border-radius(5px, 5px)
   @include box-shadow(0, 1px, 2px)
   @include gradient-two(#7d7e7d, #0e0e0e)
   color: $white
   @extend %cursor
   display: inline-block
-  font-family: $text-font
   font-size: $default-font-size
   font-weight: bold
   margin: $dh-margin
   outline: 0
-  padding: 0.5em 1.2em
+  padding: 10px 22px
   @extend %noTextDecoration
   vertical-align: middle
   zoom: 1
@@ -43,36 +30,70 @@
       @include default-button-hover
 
     &.grey
-      @include button-gradient(#ffffff, #e5e5e5, #ffffff, #b7b7b7, $text-color)
+      color: $text-color
+      @include gradient-two(#ffffff, #e5e5e5)
+
+      &:hover, 
+      &:active,
+      &:visited
+        color: $text-color
+        @include gradient-two(#ffffff, #b7b7b7)
 
     &.blue
-      @include button-gradient(#a7cfdf, #23538a, #a7cfdf, #004089)
-      
+      @include gradient-two(#a7cfdf, #23538a)
+
+      &:hover, 
+      &:active,
+      &:visited
+        @include gradient-two(#a7cfdf, #004089)
+
     &.red
-      @include button-gradient(#ff3019, #cf0404, #ff3819, #aa0303)
+      @include gradient-two(#ff3019, #cf0404)
+
+      &:hover, 
+      &:active,
+      &:visited
+        @include gradient-two(#ff3819, #aa0303)
 
     &.yellow
-      @include button-gradient(#fced62, #febf04, #fced62, #ffaa00, $text-color)
-      
+      color: $text-color
+      @include gradient-two(#fced62, #febf04)
+
+      &:hover, 
+      &:active,
+      &:visited
+        color: $text-color
+        @include gradient-two(#fced62, #ffaa00)
+
     &.orange
-      @include button-gradient(#ffa84c, #ff7b0d, #ffa84c, #fc6000)
+      @include gradient-two(#ffa84c, #ff7b0d)
+
+      &:hover, 
+      &:active,
+      &:visited
+        @include gradient-two(#ffa84c, #fc6000)
 
     &.green
-      @include button-gradient(#a4b357, #75890c, #a4b357, #5b7a00)
+      @include gradient-two(#a4b357, #75890c)
+
+      &:hover, 
+      &:active,
+      &:visited
+        @include gradient-two(#a4b357, #5b7a00)
+
 
     &.small
       @include border-radius(4px, 4px)
-      font-size: ($default-font-size - 0.3)
-      letter-spacing: 0.1em
-      padding: 0.8em 1.5em
+      font-size: ($default-font-size - 0.15)
+      padding: 8px 18px
 
     &.large
-      @include border-radius(4px, 4px)
-      font-size: ($default-font-size + 0.4)
-      padding: 0.4em 1.2em
+      @include border-radius(6px, 6px)
+      font-size: ($default-font-size + 0.3)
+      padding: 8px 28px
 
     &.full
-      padding: 1em 0
+      padding: 10px 0
       text-align: center
       width: 100%
 

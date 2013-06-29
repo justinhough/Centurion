@@ -1,0 +1,5 @@
+// Print
+@mixin print
+  @media print
+    a[href]:after
+      content: " (" attr(href) ") "

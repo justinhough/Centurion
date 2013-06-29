@@ -1,0 +1,66 @@
+body
+  font-size: 15px
+
+// Default links
+@mixin links($change-link-color: $link-color, $change-hover-color: $link-hover-color)
+  a
+    color: $change-link-color
+    @include force-wrap
+    &:hover
+      color: $change-hover-color
+    &:visited
+      color: $change-link-color
+
+
+// Text
+@mixin default-list
+  ul
+    @extend %noMarPad
+    font-weight: normal
+    font-family: $text-font
+    color: $text-color
+    
+    li
+      font-size: $default-font-size
+      list-style: circle
+      margin-left: 20px
+
+
+@mixin typography($color: $text-color, $size: 1em)
+  %text
+    color: $color
+    font-family: $text-font
+    line-height: $line-height
+    margin: $dh-margin
+
+  %font-weight
+    font-weight: bold
+
+  h1
+    @extend %text
+    font-size: $default-font-size + 0.8
+    @extend %font-weight
+    
+  h2
+    @extend %text
+    font-size: $default-font-size + 0.6
+    @extend %font-weight
+  
+  h3
+    @extend %text
+    font-size: $default-font-size + 0.4
+    @extend %font-weight
+  
+  h4, h5, h6
+    @extend %text
+    font-size: $default-font-size + 0.2
+  
+  p, blockquote, article, section
+    @extend %text
+
+  strong
+    font-weight: bold
+
+  @include links
+  @include default-list
+

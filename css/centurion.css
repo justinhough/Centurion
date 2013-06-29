@@ -4,7 +4,7 @@ body {
 
 /* --------------------------------------------------------
  *
- *  Centurion Framework v 3.2
+ *  Centurion Framework v 3.3
  *  Created by: Justin Hough
  *
  *  Documentation: http://jhough10.github.com/Centurion/documentation.html
@@ -379,14 +379,14 @@ body {
 .alert {
   background: #cccccc;
   border: 1px solid #cccccc;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 4px 4px;
+  -moz-border-radius: 4px 4px;
+  -ms-border-radius: 4px 4px;
+  -o-border-radius: 4px 4px;
+  border-radius: 4px 4px;
   box-shadow: 2px 2px 5px #cccccc;
   color: white;
-  margin: 1em 0;
+  margin: 15px 0;
   padding: 10px 20px;
 }
 .alert p {
@@ -447,151 +447,175 @@ ul.cCrumbs li:last-child:after {
 /* Buttons */
 .button {
   border: none;
-  -webkit-border-radius: 4px 4px;
-  -moz-border-radius: 4px / 4px;
-  border-radius: 4px / 4px;
+  -webkit-border-radius: 5px 5px;
+  -moz-border-radius: 5px 5px;
+  -ms-border-radius: 5px 5px;
+  -o-border-radius: 5px 5px;
+  border-radius: 5px 5px;
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7d7e7d), color-stop(100%, #0e0e0e));
-  background-image: -webkit-linear-gradient(#7d7e7d, #0e0e0e);
-  background-image: -moz-linear-gradient(#7d7e7d, #0e0e0e);
-  background-image: -o-linear-gradient(#7d7e7d, #0e0e0e);
-  background-image: linear-gradient(#7d7e7d, #0e0e0e);
+  background: #7d7e7d;
+  background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7d7e7d), color-stop(100%, #0e0e0e));
+  background: -webkit-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%);
+  background: -o-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%);
+  background: -ms-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%);
+  background: linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%);
   color: white;
   display: inline-block;
-  font-family: "Open Sans", sans-serif;
   font-size: 1em;
   font-weight: bold;
-  margin: 1em 0;
+  margin: 15px 0;
   outline: 0;
-  padding: 0.5em 1.2em;
+  padding: 10px 22px;
   vertical-align: middle;
   zoom: 1;
 }
 .button:hover, .button:active, .button:visited {
   color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9b9b9b), color-stop(100%, #3d3d3d));
-  background-image: -webkit-linear-gradient(#9b9b9b, #3d3d3d);
-  background-image: -moz-linear-gradient(#9b9b9b, #3d3d3d);
-  background-image: -o-linear-gradient(#9b9b9b, #3d3d3d);
-  background-image: linear-gradient(#9b9b9b, #3d3d3d);
+  background: #9b9b9b;
+  background: -moz-linear-gradient(top, #9b9b9b 0%, #3d3d3d 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9b9b9b), color-stop(100%, #3d3d3d));
+  background: -webkit-linear-gradient(top, #9b9b9b 0%, #3d3d3d 100%);
+  background: -o-linear-gradient(top, #9b9b9b 0%, #3d3d3d 100%);
+  background: -ms-linear-gradient(top, #9b9b9b 0%, #3d3d3d 100%);
+  background: linear-gradient(top, #9b9b9b 0%, #3d3d3d 100%);
 }
 .button.grey {
   color: #555555;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e5e5e5));
-  background-image: -webkit-linear-gradient(#ffffff, #e5e5e5);
-  background-image: -moz-linear-gradient(#ffffff, #e5e5e5);
-  background-image: -o-linear-gradient(#ffffff, #e5e5e5);
-  background-image: linear-gradient(#ffffff, #e5e5e5);
+  background: white;
+  background: -moz-linear-gradient(top, white 0%, #e5e5e5 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e5e5e5));
+  background: -webkit-linear-gradient(top, white 0%, #e5e5e5 100%);
+  background: -o-linear-gradient(top, white 0%, #e5e5e5 100%);
+  background: -ms-linear-gradient(top, white 0%, #e5e5e5 100%);
+  background: linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
 }
 .button.grey:hover, .button.grey:active, .button.grey:visited {
   color: #555555;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #b7b7b7));
-  background-image: -webkit-linear-gradient(#ffffff, #b7b7b7);
-  background-image: -moz-linear-gradient(#ffffff, #b7b7b7);
-  background-image: -o-linear-gradient(#ffffff, #b7b7b7);
-  background-image: linear-gradient(#ffffff, #b7b7b7);
+  background: white;
+  background: -moz-linear-gradient(top, white 0%, #b7b7b7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #b7b7b7));
+  background: -webkit-linear-gradient(top, white 0%, #b7b7b7 100%);
+  background: -o-linear-gradient(top, white 0%, #b7b7b7 100%);
+  background: -ms-linear-gradient(top, white 0%, #b7b7b7 100%);
+  background: linear-gradient(top, #ffffff 0%, #b7b7b7 100%);
 }
 .button.blue {
-  color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a7cfdf), color-stop(100%, #23538a));
-  background-image: -webkit-linear-gradient(#a7cfdf, #23538a);
-  background-image: -moz-linear-gradient(#a7cfdf, #23538a);
-  background-image: -o-linear-gradient(#a7cfdf, #23538a);
-  background-image: linear-gradient(#a7cfdf, #23538a);
+  background: #a7cfdf;
+  background: -moz-linear-gradient(top, #a7cfdf 0%, #23538a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a7cfdf), color-stop(100%, #23538a));
+  background: -webkit-linear-gradient(top, #a7cfdf 0%, #23538a 100%);
+  background: -o-linear-gradient(top, #a7cfdf 0%, #23538a 100%);
+  background: -ms-linear-gradient(top, #a7cfdf 0%, #23538a 100%);
+  background: linear-gradient(top, #a7cfdf 0%, #23538a 100%);
 }
 .button.blue:hover, .button.blue:active, .button.blue:visited {
-  color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a7cfdf), color-stop(100%, #004089));
-  background-image: -webkit-linear-gradient(#a7cfdf, #004089);
-  background-image: -moz-linear-gradient(#a7cfdf, #004089);
-  background-image: -o-linear-gradient(#a7cfdf, #004089);
-  background-image: linear-gradient(#a7cfdf, #004089);
+  background: #a7cfdf;
+  background: -moz-linear-gradient(top, #a7cfdf 0%, #004089 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a7cfdf), color-stop(100%, #004089));
+  background: -webkit-linear-gradient(top, #a7cfdf 0%, #004089 100%);
+  background: -o-linear-gradient(top, #a7cfdf 0%, #004089 100%);
+  background: -ms-linear-gradient(top, #a7cfdf 0%, #004089 100%);
+  background: linear-gradient(top, #a7cfdf 0%, #004089 100%);
 }
 .button.red {
-  color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff3019), color-stop(100%, #cf0404));
-  background-image: -webkit-linear-gradient(#ff3019, #cf0404);
-  background-image: -moz-linear-gradient(#ff3019, #cf0404);
-  background-image: -o-linear-gradient(#ff3019, #cf0404);
-  background-image: linear-gradient(#ff3019, #cf0404);
+  background: #ff3019;
+  background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff3019), color-stop(100%, #cf0404));
+  background: -webkit-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+  background: -o-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+  background: -ms-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+  background: linear-gradient(top, #ff3019 0%, #cf0404 100%);
 }
 .button.red:hover, .button.red:active, .button.red:visited {
-  color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff3819), color-stop(100%, #aa0303));
-  background-image: -webkit-linear-gradient(#ff3819, #aa0303);
-  background-image: -moz-linear-gradient(#ff3819, #aa0303);
-  background-image: -o-linear-gradient(#ff3819, #aa0303);
-  background-image: linear-gradient(#ff3819, #aa0303);
+  background: #ff3819;
+  background: -moz-linear-gradient(top, #ff3819 0%, #aa0303 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff3819), color-stop(100%, #aa0303));
+  background: -webkit-linear-gradient(top, #ff3819 0%, #aa0303 100%);
+  background: -o-linear-gradient(top, #ff3819 0%, #aa0303 100%);
+  background: -ms-linear-gradient(top, #ff3819 0%, #aa0303 100%);
+  background: linear-gradient(top, #ff3819 0%, #aa0303 100%);
 }
 .button.yellow {
   color: #555555;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fced62), color-stop(100%, #febf04));
-  background-image: -webkit-linear-gradient(#fced62, #febf04);
-  background-image: -moz-linear-gradient(#fced62, #febf04);
-  background-image: -o-linear-gradient(#fced62, #febf04);
-  background-image: linear-gradient(#fced62, #febf04);
+  background: #fced62;
+  background: -moz-linear-gradient(top, #fced62 0%, #febf04 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fced62), color-stop(100%, #febf04));
+  background: -webkit-linear-gradient(top, #fced62 0%, #febf04 100%);
+  background: -o-linear-gradient(top, #fced62 0%, #febf04 100%);
+  background: -ms-linear-gradient(top, #fced62 0%, #febf04 100%);
+  background: linear-gradient(top, #fced62 0%, #febf04 100%);
 }
 .button.yellow:hover, .button.yellow:active, .button.yellow:visited {
   color: #555555;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fced62), color-stop(100%, #ffaa00));
-  background-image: -webkit-linear-gradient(#fced62, #ffaa00);
-  background-image: -moz-linear-gradient(#fced62, #ffaa00);
-  background-image: -o-linear-gradient(#fced62, #ffaa00);
-  background-image: linear-gradient(#fced62, #ffaa00);
+  background: #fced62;
+  background: -moz-linear-gradient(top, #fced62 0%, #ffaa00 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fced62), color-stop(100%, #ffaa00));
+  background: -webkit-linear-gradient(top, #fced62 0%, #ffaa00 100%);
+  background: -o-linear-gradient(top, #fced62 0%, #ffaa00 100%);
+  background: -ms-linear-gradient(top, #fced62 0%, #ffaa00 100%);
+  background: linear-gradient(top, #fced62 0%, #ffaa00 100%);
 }
 .button.orange {
-  color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffa84c), color-stop(100%, #ff7b0d));
-  background-image: -webkit-linear-gradient(#ffa84c, #ff7b0d);
-  background-image: -moz-linear-gradient(#ffa84c, #ff7b0d);
-  background-image: -o-linear-gradient(#ffa84c, #ff7b0d);
-  background-image: linear-gradient(#ffa84c, #ff7b0d);
+  background: #ffa84c;
+  background: -moz-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffa84c), color-stop(100%, #ff7b0d));
+  background: -webkit-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%);
+  background: -o-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%);
+  background: -ms-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%);
+  background: linear-gradient(top, #ffa84c 0%, #ff7b0d 100%);
 }
 .button.orange:hover, .button.orange:active, .button.orange:visited {
-  color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffa84c), color-stop(100%, #fc6000));
-  background-image: -webkit-linear-gradient(#ffa84c, #fc6000);
-  background-image: -moz-linear-gradient(#ffa84c, #fc6000);
-  background-image: -o-linear-gradient(#ffa84c, #fc6000);
-  background-image: linear-gradient(#ffa84c, #fc6000);
+  background: #ffa84c;
+  background: -moz-linear-gradient(top, #ffa84c 0%, #fc6000 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffa84c), color-stop(100%, #fc6000));
+  background: -webkit-linear-gradient(top, #ffa84c 0%, #fc6000 100%);
+  background: -o-linear-gradient(top, #ffa84c 0%, #fc6000 100%);
+  background: -ms-linear-gradient(top, #ffa84c 0%, #fc6000 100%);
+  background: linear-gradient(top, #ffa84c 0%, #fc6000 100%);
 }
 .button.green {
-  color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a4b357), color-stop(100%, #75890c));
-  background-image: -webkit-linear-gradient(#a4b357, #75890c);
-  background-image: -moz-linear-gradient(#a4b357, #75890c);
-  background-image: -o-linear-gradient(#a4b357, #75890c);
-  background-image: linear-gradient(#a4b357, #75890c);
+  background: #a4b357;
+  background: -moz-linear-gradient(top, #a4b357 0%, #75890c 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a4b357), color-stop(100%, #75890c));
+  background: -webkit-linear-gradient(top, #a4b357 0%, #75890c 100%);
+  background: -o-linear-gradient(top, #a4b357 0%, #75890c 100%);
+  background: -ms-linear-gradient(top, #a4b357 0%, #75890c 100%);
+  background: linear-gradient(top, #a4b357 0%, #75890c 100%);
 }
 .button.green:hover, .button.green:active, .button.green:visited {
-  color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a4b357), color-stop(100%, #5b7a00));
-  background-image: -webkit-linear-gradient(#a4b357, #5b7a00);
-  background-image: -moz-linear-gradient(#a4b357, #5b7a00);
-  background-image: -o-linear-gradient(#a4b357, #5b7a00);
-  background-image: linear-gradient(#a4b357, #5b7a00);
+  background: #a4b357;
+  background: -moz-linear-gradient(top, #a4b357 0%, #5b7a00 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a4b357), color-stop(100%, #5b7a00));
+  background: -webkit-linear-gradient(top, #a4b357 0%, #5b7a00 100%);
+  background: -o-linear-gradient(top, #a4b357 0%, #5b7a00 100%);
+  background: -ms-linear-gradient(top, #a4b357 0%, #5b7a00 100%);
+  background: linear-gradient(top, #a4b357 0%, #5b7a00 100%);
 }
 .button.small {
   -webkit-border-radius: 4px 4px;
-  -moz-border-radius: 4px / 4px;
-  border-radius: 4px / 4px;
-  font-size: 0.7em;
-  letter-spacing: 0.1em;
-  padding: 0.8em 1.5em;
+  -moz-border-radius: 4px 4px;
+  -ms-border-radius: 4px 4px;
+  -o-border-radius: 4px 4px;
+  border-radius: 4px 4px;
+  font-size: 0.85em;
+  padding: 8px 18px;
 }
 .button.large {
-  -webkit-border-radius: 4px 4px;
-  -moz-border-radius: 4px / 4px;
-  border-radius: 4px / 4px;
-  font-size: 1.4em;
-  padding: 0.4em 1.2em;
+  -webkit-border-radius: 6px 6px;
+  -moz-border-radius: 6px 6px;
+  -ms-border-radius: 6px 6px;
+  -o-border-radius: 6px 6px;
+  border-radius: 6px 6px;
+  font-size: 1.3em;
+  padding: 8px 28px;
 }
 .button.full {
-  padding: 1em 0;
+  padding: 10px 0;
   text-align: center;
   width: 100%;
 }
@@ -658,7 +682,7 @@ nav.stacked ul li {
   width: 100%;
 }
 nav.stacked ul li a {
-  padding: 1em 0;
+  padding: 15px 0;
   text-indent: 1.5em;
   width: 100%;
 }
@@ -788,7 +812,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   color: #333333;
-  margin: 1em 0;
+  margin: 15px 0;
   width: 100%;
 }
 
@@ -820,103 +844,95 @@ tbody tr.even {
   background-color: #ededed;
 }
 
-.ctOrange thead tr th,
-.ctOrange thead tr td,
-.ctOrange tfoot tr th,
-.ctOrange tfoot tr td {
+.orange-table thead tr th,
+.orange-table thead tr td,
+.orange-table tfoot tr th,
+.orange-table tfoot tr td {
   background-color: #fb9d23;
 }
-.ctOrange tbody tr.odd {
+.orange-table tbody tr.odd {
   background-color: white;
 }
-.ctOrange tbody tr.even {
+.orange-table tbody tr.even {
   background-color: #fceabb;
 }
 
-.ctBlue thead tr th,
-.ctBlue thead tr td,
-.ctBlue tfoot tr th,
-.ctBlue tfoot tr td {
+.blue-table thead tr th,
+.blue-table thead tr td,
+.blue-table tfoot tr th,
+.blue-table tfoot tr td {
   background-color: #356aa0;
 }
-.ctBlue tbody tr.odd {
+.blue-table tbody tr.odd {
   background-color: white;
 }
-.ctBlue tbody tr.even {
+.blue-table tbody tr.even {
   background-color: #deefff;
 }
 
-.ctYellow thead tr th,
-.ctYellow thead tr td,
-.ctYellow tfoot tr th,
-.ctYellow tfoot tr td {
+.yellow-table thead tr th,
+.yellow-table thead tr td,
+.yellow-table tfoot tr th,
+.yellow-table tfoot tr td {
   background-color: #f8b500;
 }
-.ctYellow tbody tr.odd {
+.yellow-table tbody tr.odd {
   background-color: white;
 }
-.ctYellow tbody tr.even {
+.yellow-table tbody tr.even {
   background-color: #fcefcf;
 }
 
-.ctRed thead tr th,
-.ctRed thead tr td,
-.ctRed tfoot tr th,
-.ctRed tfoot tr td {
+.red-table thead tr th,
+.red-table thead tr td,
+.red-table tfoot tr th,
+.red-table tfoot tr td {
   background-color: #cc0000;
 }
-.ctRed tbody tr.odd {
+.red-table tbody tr.odd {
   background-color: white;
 }
-.ctRed tbody tr.even {
+.red-table tbody tr.even {
   background-color: #ffcece;
 }
 
-.ctGreen thead tr th,
-.ctGreen thead tr td,
-.ctGreen tfoot tr th,
-.ctGreen tfoot tr td {
+.green-table thead tr th,
+.green-table thead tr td,
+.green-table tfoot tr th,
+.green-table tfoot tr td {
   background-color: #299a0b;
 }
-.ctGreen tbody tr.odd {
+.green-table tbody tr.odd {
   background-color: white;
 }
-.ctGreen tbody tr.even {
+.green-table tbody tr.even {
   background-color: #dde8c7;
 }
 
-.ctBlack thead tr th,
-.ctBlack thead tr td,
-.ctBlack tfoot tr th,
-.ctBlack tfoot tr td {
+.black-table thead tr th,
+.black-table thead tr td,
+.black-table tfoot tr th,
+.black-table tfoot tr td {
   background-color: black;
 }
-.ctBlack tbody tr.odd {
+.black-table tbody tr.odd {
   background-color: white;
 }
-.ctBlack tbody tr.even {
+.black-table tbody tr.even {
   background-color: #dbdbdb;
 }
 
 .rounded thead th:first-child {
-  -moz-border-radius-topleft: 6px;
-  -webkit-border-top-left-radius: 6px;
-  border-top-left-radius: 6px;
+  border-radius: 6px 0 0 0;
 }
 .rounded thead th:last-child {
-  -moz-border-radius-topright: 6px;
-  -webkit-border-top-right-radius: 6px;
-  border-top-right-radius: 6px;
+  border-radius: 0 6px 0 0;
 }
 .rounded tfoot th:first-child {
-  -moz-border-radius-bottomleft: 6px;
-  -webkit-border-bottom-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+  border-radius: 0 0 6px 0;
 }
 .rounded tfoot th:last-child {
-  -moz-border-radius-bottomright: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-radius: 0 0 0 6px;
 }
 
 /* Tooltips */
@@ -991,7 +1007,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, article, section {
   color: #555555;
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
-  margin: 1em 0;
+  margin: 15px 0;
 }
 
 h1, h2, h3 {

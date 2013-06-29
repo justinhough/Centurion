@@ -11,9 +11,9 @@
 <link rel="apple-touch-icon" sizes="114x114" href="graphics/apple-touch-icon-114x114.png" />
 
 <!-- CENTURION -->
-<link rel='stylesheet' href='styles/reset.css'>
-<link rel='stylesheet' href='styles/centurion.css'>
-<link rel='stylesheet' href='styles/elusive-webfont.css'>
+<link rel='stylesheet' href='css/reset.css'>
+<link rel='stylesheet' href='css/centurion.css'>
+<link rel='stylesheet' href='css/elusive-webfont.css'>
 <!-- end of CENTURION -->
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,800,300' rel='stylesheet' type='text/css'>
@@ -33,7 +33,7 @@
 <![endif]-->
 <!--[if lte IE 7]><script src="scripts/lte-ie7.js"></script><![endif]-->
 
-<link rel='stylesheet' href='styles/demo.css'>
+<link rel='stylesheet' href='css/demo.css'>
 
 </head>
 <body>
@@ -64,37 +64,33 @@
 					<p>Want to test Centurion out simply fork or download the repository on Github to get started and see the power a responsive framework can have on your next web project.</p>
 
 					<p id="download">
-						<a href="https://github.com/jhough10/Centurion/archive/master.zip" class="button large green">Download Centurion</a>
+						<a href="https://github.com/jhough10/Centurion/archive/master.zip" class="button large rust">Download Centurion</a>
 					</p>
 
 				</div>
 			</article>
-			<article class="grid-50">
-				<img src="graphics/centurion_tour_devices.png" alt="picture of mobile devices" />
+			<article class="grid-50 ">
+				<img class="hide-mobile" src="graphics/centurion_tour_devices.png" alt="picture of mobile devices" />
 			</article>
 		</div>
 	</section>
 	<section id="primary">
 		<div class="container">
 			<article class="grid-33">
-			  <div class="icon-css feature"></div>
-				<h2>CSS3/HTML 5</h2>
+				<h2 class="icon-css feature">CSS3/HTML 5</h2>
 				<p>Built-on CSS3 and HTML5 semantics to allow you to start captializing on a next generation standard.</p>
 			</article>
 
 			<article class="grid-33">
-				<div class="icon-resize-small feature"></div>
-				<h2>Responsive</h2>
+				<h2 class="icon-resize-small feature">Responsive</h2>
 				<p>No matter the device: Mac, PC, iPhone, iPad, iPad mini, or Android tablet, Centurion does the work of making your web project responsive and viewable on multiple devices</p>
 			</article>
 
 			<article class="grid-33">
-				<div class="icon-website feature"></div>
-				<h2>Prototype Quick</h2>
+				<h2 class="icon-website feature">Prototype Quick</h2>
 				<p>Need to built a web wireframe quick, look no further than Centurion. Scalable and easy to learn syntax makes building a prototype simple.</p>
 			</article>
 
-			<p>&nbsp;</p>
 			<div class="clear"></div>
 
 			<article class="grid-100">
@@ -120,29 +116,6 @@
 	</section>
 </footer>
 
-
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
 	
 </body>
 </html>

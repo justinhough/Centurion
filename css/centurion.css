@@ -11,14 +11,6 @@ body {
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
-.hide-mobile, nav ul, .tabBox [class*="tabs"]::before, .tabBox [class*="tabs"]::after, .tabBox .tabs li a, .tabBox .innerBox {
-  display: block;
-}
-
-.hide-desktop {
-  display: none;
-}
-
 /*   GRID  */
 .container {
   width: 960px;
@@ -1097,4 +1089,11 @@ img.rfloat {
   a[href]:after {
     content: " (" attr(href) ") ";
   }
+}
+nav ul, .tabBox [class*="tabs"]::before, .tabBox [class*="tabs"]::after, .tabBox .tabs li a, .tabBox .innerBox, .hide-mobile {
+  display: block;
+}
+
+.hide-desktop {
+  display: none;
 }

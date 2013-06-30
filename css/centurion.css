@@ -1021,8 +1021,74 @@ h4, h5, h6 {
   font-size: 1.2em;
 }
 
+blockquote {
+  border-left: 5px solid #999999;
+  text-align: left;
+}
+blockquote.right {
+  text-align: right;
+}
+blockquote.right small {
+  text-align: right;
+}
+blockquote p {
+  text-color: #333333;
+}
+blockquote small {
+  text-align: left;
+}
+
 strong {
   font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+big, .big {
+  font-size: 1.7em;
+}
+
+small, .small {
+  font-size: 0.7em;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.right-text {
+  text-align: right;
+}
+
+.mute-text {
+  color: #999999;
+}
+
+.warning-text {
+  color: #febf04;
+}
+
+.error-text {
+  color: #ff3019;
+}
+
+.success-text {
+  color: #a4b357;
+}
+
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+
+cite {
+  font-style: normal;
 }
 
 a {
@@ -1048,10 +1114,42 @@ ul {
   font-family: "Open Sans", sans-serif;
   color: #555555;
 }
+ul.no-style li {
+  list-style: none;
+}
+ul.inline li {
+  display: inline-block;
+}
 ul li {
   font-size: 1em;
   list-style: circle;
   margin-left: 20px;
+}
+
+code, pre {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 0.8em;
+  padding: 0.1em 0.2em;
+}
+
+code {
+  border: 1px solid #999999;
+  color: #a7cfdf;
+  white-space: nowrap;
+}
+
+pre {
+  background: #cccccc;
+  display: block;
+  font-size: 0.95em;
+  line-height: 1.5;
+  padding: 0.8em;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 nav ul, nav ul li, .tabBox .tabs li, ul {

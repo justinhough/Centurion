@@ -19,7 +19,13 @@ body
     font-weight: normal
     font-family: $text-font
     color: $text-color
-    
+    &.no-style
+      li
+        list-style: none
+    &.inline
+      li
+        display: inline-block
+      
     li
       font-size: $default-font-size
       list-style: circle
@@ -58,9 +64,89 @@ body
   p, blockquote, article, section
     @extend %text
 
+
+  // Blockquotes
+  blockquote
+    border-left: 5px solid $lightgrey
+    text-align: left
+    &.right
+      text-align: right
+      small
+        text-align: right
+    p
+      text-color: $default
+    small
+      text-align: left
+    
+    
+  // Bold
   strong
     font-weight: bold
 
+  // Emphasis
+  em
+    font-style: italic
+
+  // Larger Font
+  big, .big
+    font-size: 1.7em  
+
+  // Smaller Font
+  small, .small
+    font-size: 0.7em
+
+
+  // Text Alignment
+  .left-text
+    text-align: left
+  .center-text
+    text-align: center
+  .right-text
+    text-align: right
+  
+  // Text Types
+  .mute-text
+    color: $lightgrey
+  .warning-text
+    color: $yellow
+  .error-text
+    color: $red
+  .success-text
+    color: $green
+    
+  // Abbreviations and Citations
+  abbr[title]
+    cursor: help
+    border-bottom: 1px dotted $lightgrey
+  
+  cite
+    font-style: normal
+  
   @include links
   @include default-list
+  @include code-markup
 
+
+
+@mixin code-markup
+  code, pre
+    -webkit-border-radius: 4px
+    -moz-border-radius: 4px
+    border-radius: 4px
+    font-family: "Lucida Console", Monaco, monospace
+    font-size: 0.8em
+    padding: 0.1em 0.2em
+    
+  code
+    border: 1px solid $lightgrey
+    color: $blue
+    white-space: nowrap
+  pre
+    background: $grey
+    display: block
+    font-size: 0.95em
+    line-height: 1.5
+    padding: 0.8em
+    word-break: break-all
+    word-wrap: break-word
+    white-space: pre-wrap

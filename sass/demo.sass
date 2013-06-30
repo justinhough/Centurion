@@ -56,19 +56,17 @@ header
     margin-bottom: 0
     padding: 0
     ul li
-      margin-right: 3em
+      margin-right: 0
       a
         color: $white !important
-        padding: 15px 0
-        &:hover
+        padding: 15px
+        &.on
+          background: url('../graphics/brick.png')
           color: $rust !important
+        &:hover
+          background: url('../graphics/brick.png')
+          color: $dark-grey !important
 
-@media screen and (max-width: 600px)
-  header 
-    nav 
-      ul 
-        li
-          margin-right: 1.2em
 
 /* PRODUCT TOUR  */
 /* ============================ */
@@ -85,7 +83,6 @@ header
     line-height: 1
     margin-top: 0
     text-align: center
-    text-shadow: 0 0 8px #DEDEDE
   h2
     color: #888
     font-size: 1.3em
@@ -142,10 +139,22 @@ hr.headline-line
   /* top: -45px */
   z-index: 0
 
+.works-with
+  text-align: center
+  .main-headline
+    font-size: 1.8em
+  img
+    display: inline
+    margin: 0.5em 1em
+    width: auto
+
 
 @media screen and (max-width: 600px)
   .main-headline
     font-size: 1.8em
+  .works-with
+    img
+      width: 40%
 
 /* HEADLINE */
 /* ============================ */
@@ -204,6 +213,7 @@ code
 #documentation
   text-align: center
   h1
+    float: left
     font-size: 8em
   h2
     font-size: 1.5em

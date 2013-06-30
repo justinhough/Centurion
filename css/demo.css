@@ -54,21 +54,21 @@ header nav {
   padding: 0;
 }
 header nav ul li {
-  margin-right: 3em;
+  margin-right: 0;
 }
 header nav ul li a {
   color: white !important;
-  padding: 15px 0;
+  padding: 15px;
 }
-header nav ul li a:hover {
+header nav ul li a.on {
+  background: url("../graphics/brick.png");
   color: #cc6400 !important;
 }
-
-@media screen and (max-width: 600px) {
-  header nav ul li {
-    margin-right: 1.2em;
-  }
+header nav ul li a:hover {
+  background: url("../graphics/brick.png");
+  color: #333333 !important;
 }
+
 /* PRODUCT TOUR  */
 /* ============================ */
 #tour {
@@ -84,7 +84,6 @@ header nav ul li a:hover {
   line-height: 1;
   margin-top: 0;
   text-align: center;
-  text-shadow: 0 0 8px #dedede;
 }
 #tour h2 {
   color: #888888;
@@ -158,9 +157,25 @@ hr.headline-line {
   z-index: 0;
 }
 
+.works-with {
+  text-align: center;
+}
+.works-with .main-headline {
+  font-size: 1.8em;
+}
+.works-with img {
+  display: inline;
+  margin: 0.5em 1em;
+  width: auto;
+}
+
 @media screen and (max-width: 600px) {
   .main-headline {
     font-size: 1.8em;
+  }
+
+  .works-with img {
+    width: 40%;
   }
 }
 /* HEADLINE */
@@ -228,6 +243,7 @@ code {
   text-align: center;
 }
 #documentation h1 {
+  float: left;
   font-size: 8em;
 }
 #documentation h2 {

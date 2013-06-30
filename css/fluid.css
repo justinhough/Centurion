@@ -7,7 +7,7 @@ body {
  *  Centurion Framework v 3.1 - FLUID
  *  Created by: Justin Hough
  *
- *  Documentation: http://jhough10.github.com/Centurion/documentation.html
+ *  Documentation: http://jhough10.github.com/Centurion/get-started.html
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
@@ -231,7 +231,7 @@ body {
 .container .push-66 {
   left: 66.66667%;
 }
-.container .centerGrid {
+.container .center-grid {
   display: block;
   float: none;
   margin-left: auto;
@@ -255,7 +255,7 @@ body {
     padding: 0;
     margin: 0;
   }
-  .container .centerGrid {
+  .container .center-grid {
     display: block;
     float: none;
     margin-left: auto;
@@ -292,7 +292,7 @@ body {
     width: 1120px;
   }
 }
-.centerGrid {
+.center-grid {
   display: block;
   float: none;
   margin-left: auto;

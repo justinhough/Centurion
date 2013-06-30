@@ -7,7 +7,7 @@ body {
  *  Centurion Framework v 3.3 - IE Stylesheet
  *  Created by: Justin Hough
  *
- *  Documentation: http://jhough10.github.com/Centurion/documentation.html
+ *  Documentation: http://jhough10.github.com/Centurion/get-started.html
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
@@ -445,7 +445,7 @@ body {
   *left: expression(Math.floor(0.66667 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
   /* IE7 */
 }
-.container .centerGrid {
+.container .center-grid {
   display: block;
   float: none;
   margin-left: auto;
@@ -469,7 +469,7 @@ body {
     padding: 0;
     margin: 0;
   }
-  .container .centerGrid {
+  .container .center-grid {
     display: block;
     float: none;
     margin-left: auto;
@@ -507,7 +507,7 @@ body {
   }
 }
 /* Centering Grid */
-.centerGrid {
+.center-grid {
   display: block;
   float: none;
   margin-left: auto;

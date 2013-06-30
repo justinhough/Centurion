@@ -1,3 +1,20 @@
+body {
+  font-size: 15px;
+}
+
+/* --------------------------------------------------------
+ *
+ *  Centurion Framework - Demo Stylesheet
+ *  Created by: Justin Hough
+ *
+ *  Documentation: http://jhough10.github.com/Centurion/get-started.html
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
+body {
+  background-color: #fefefe;
+}
+
 h1, h2, h3, h4, p, ul li, ol li {
   font-family: "Open Sans", sans-serif;
 }
@@ -27,9 +44,10 @@ img, iframe, video {
  * right: 0
  * border: 0
  * width: 149px
- * height: 149px */
-/* HEADER
- *============================ */
+ * height: 149px
+ */
+/* HEADER */
+/* ============================ */
 header {
   background-color: #333333;
 }
@@ -39,18 +57,6 @@ header section {
 header article {
   margin-top: 0;
   margin-bottom: 0;
-}
-header #logo {
-  color: white;
-  float: left;
-  font-size: 22px;
-  font-weight: bold;
-  line-height: 1;
-  margin: 0;
-}
-header #logo:hover {
-  color: #cc6400;
-  text-decoration: none;
 }
 header nav {
   border: none;
@@ -68,52 +74,105 @@ header nav ul li a:hover {
   color: #cc6400 !important;
 }
 
-/* PRODUCT TOUR
- *============================ */
+/* PRODUCT TOUR  */
+/* ============================ */
 #tour {
-  background: url("../graphics/rusty-brick.jpg");
-  box-shadow: inset -1px 3px 8px #333333;
+  background: url("../graphics/brick.png");
+  border-bottom: 1px solid #dedede;
   margin: 0;
-  padding: 40px 0;
+  padding: 1.5em 0 0 0;
 }
 #tour h1 {
-  color: #ededed;
-  font-size: 3.5em;
+  color: #cc6400;
+  font-family: "Text Me One", sans-serif;
+  font-size: 5em;
+  line-height: 1;
+  margin-top: 0;
   text-align: center;
-  text-shadow: 0 0 8px #555555;
+  text-shadow: 0 0 8px #dedede;
+}
+#tour h2 {
+  color: #888888;
+  font-size: 1.3em;
+  text-align: center;
 }
 #tour p {
-  color: #ededed;
+  color: #333333;
   text-align: center;
 }
 #tour #download {
-  margin: 1em 0;
+  margin: 1em 0 1.5em;
 }
 #tour #download .button {
-  padding: 14px 30px;
+  padding: 0.5em 3em;
+}
+#tour .rust {
+  -webkit-border-radius: 8px 8px;
+  -moz-border-radius: 8px 8px;
+  -ms-border-radius: 8px 8px;
+  -o-border-radius: 8px 8px;
+  border-radius: 8px 8px;
+  color: white;
+  background: #cc6400;
+  background: -moz-linear-gradient(top, #cc6400 0%, #aa5401 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cc6400), color-stop(100%, #aa5401));
+  background: -webkit-linear-gradient(top, #cc6400 0%, #aa5401 100%);
+  background: -o-linear-gradient(top, #cc6400 0%, #aa5401 100%);
+  background: -ms-linear-gradient(top, #cc6400 0%, #aa5401 100%);
+  background: linear-gradient(top, #cc6400 0%, #aa5401 100%);
+}
+#tour .rust:hover, #tour .rust:active, #tour .rust:visited {
+  color: white;
+  background: #cc6400;
+  background: -moz-linear-gradient(top, #cc6400 0%, #8b4501 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cc6400), color-stop(100%, #8b4501));
+  background: -webkit-linear-gradient(top, #cc6400 0%, #8b4501 100%);
+  background: -o-linear-gradient(top, #cc6400 0%, #8b4501 100%);
+  background: -ms-linear-gradient(top, #cc6400 0%, #8b4501 100%);
+  background: linear-gradient(top, #cc6400 0%, #8b4501 100%);
 }
 
-/* HEADLINE
- *============================ */
+/* FEATURE TOUR */
+/* ============================ */
+.main-headline {
+  font-size: 2.2em;
+  position: relative;
+  text-align: center;
+  z-index: 100;
+}
+
+hr.headline-line {
+  border: none;
+  border-bottom: 1px solid #dedede;
+  position: relative;
+  /* top: -45px */
+  z-index: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .main-headline {
+    font-size: 1.8em;
+  }
+}
+/* HEADLINE */
+/* ============================ */
 #headline {
-  background: url(../graphics/rusty-brick.jpg);
-  box-shadow: inset -1px 3px 8px #333333;
+  background: url("../graphics/brick.png");
+  border-bottom: 1px solid #dedede;
   margin-bottom: 1em;
   margin-top: 0;
   padding: 0.5em 0;
 }
 #headline h1 {
-  color: #ededed;
+  color: #333333;
   font-size: 38px;
   text-align: left;
 }
 
-/* PRIMARY
- *============================ */
+/* PRIMARY */
+/* ============================ */
 #primary {
-  background: white;
-  /*background: url(../graphics/grey.png); */
-  box-shadow: inset -1px 2px 8px #dddddd;
+  box-shadow: inset -1px 2px 8px #dedede;
   margin: 0;
   padding: 1em 0 0 0;
 }
@@ -137,6 +196,7 @@ code {
 }
 
 /* GRID */
+/* ============================ */
 #grid [class*="grid-"] p {
   background: #ededed;
   border: 1px solid #888888;
@@ -194,12 +254,13 @@ code {
   text-shadow: 2px 2px 6px #888888;
 }
 
-/* FOOTER
- *============================ */
+/* FOOTER */
+/* ============================ */
 footer {
   background-color: #333333;
-  padding: 1em 0 1em;
-  margin: 0 0 0 0;
+  height: 85px;
+  padding: 1em 0;
+  margin: 0;
 }
 footer article,
 footer section {
@@ -207,6 +268,14 @@ footer section {
 }
 footer p {
   color: white;
-  font-size: 12px;
-  text-align: center;
+  font-size: 0.8em;
+}
+footer [class*="push"] p {
+  text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+  footer p {
+    text-align: center !important;
+  }
 }

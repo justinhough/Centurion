@@ -203,18 +203,26 @@ hr.headline-line
     left: 0
     top: 0
 
-code
+/*code
   background: #EDEDED
   display: block
   font-size: 0.8em
   padding: 10px
-  margin: 10px 0
+  margin: 10px 0*/
 
 #documentation
   text-align: center
   h1
     float: left
-    font-size: 8em
+    text-align: left
+    vertical-align: middle
+    &:before
+      font-size: 4em
+      float: left
+      position: relative
+      right: 0.1em
+      top: -0.25em
+      vertical-align: middle
   h2
     font-size: 1.5em
 
@@ -222,7 +230,9 @@ code
 @media screen and (max-width: 600px)
   #documentation
     h1
-      font-size: 6em
+      font-size: 1.6em
+      &:before
+        font-size: 3em
     h2
       font-size: 1.3em
   .feature
@@ -266,6 +276,39 @@ code
   [class*="push-"] p
     background: $light-blue
 
+
+/* ICONS LIST */
+/* ============================ */
+.icon-listing
+  margin-left: 2em
+  li
+    float: left
+    line-height: 2
+    list-style: none
+    margin: 0
+    padding: 0
+    width: 33%
+    span
+      display: inline-block
+      font-size: 1.1em
+      padding-right: 0.5em
+      text-align: center
+      -webkit-transition: all 100ms ease
+      -moz-transition: all 100ms ease
+      transition: all 100ms ease
+      vertical-align: center
+    &:hover span
+      color: $rust
+      -webkit-transform: scale(2,2)
+      -moz-transform: scale(2,2)
+      transform: scale(2,2)
+
+@media screen and (max-width: 600px)
+  .icon-listing
+    margin-left: 1em
+    li
+      font-size: 0.85em
+      width: 50%
 
 /* FOOTER */
 /* ============================ */

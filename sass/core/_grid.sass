@@ -3,9 +3,9 @@ $lang-front: left
 $lang-back: right
 
 // Center Grid
-// @include centerGrid
-@mixin centerGrid
-  .centerGrid
+// @include center-grid
+@mixin center-grid
+  .center-grid
     display: block
     float: none
     @include auto-center
@@ -124,7 +124,7 @@ $lang-back: right
         #{$direction}: (1% * $percent)
         @include ie7-push($decimal)
 
-    @include centerGrid
+    @include center-grid
 
 
 // Mobile Grid Generator - NO PUSH OR PULL
@@ -153,7 +153,7 @@ $lang-back: right
       .push-#{$num}
         #{$direction}: (1% * $num)
     
-    @include centerGrid
+    @include center-grid
     @include first-last
     [class*="pull-"],
     [class*="push-"]

@@ -124,11 +124,11 @@ $lang-back: right
     // Mobile Grid
     @for $i from 1 through 3
       $num: $i * 25
-      .grid-#{$num}
+      .mobile-grid-#{$num}
         width: 1% * $num
-      .pull-#{$num}
+      .mobile-pull-#{$num}
         #{$direction}: -(1% * $num)
-      .push-#{$num}
+      .mobile-push-#{$num}
         #{$direction}: (1% * $num)
     
     @include center-grid

@@ -113,14 +113,24 @@ $lang-back: right
   .container
     width: $width
     @include auto-center
-    [class*="grid-"],
-    [class*="mobile-grid-"]
+    [class*="grid-"]
       display: inline
       float: $direction
       width: $grid-width
-      [class*="grid-"]
+      [class*="grid-"],
+      [class*="mobile-grid-"]
         padding: 0
         margin: 0
+    
+    // Mobile Grid
+    @for $i from 1 through 3
+      $num: $i * 25
+      .mobile-grid-#{$num}
+        width: 1% * $num
+      .mobile-pull-#{$num}
+        #{$direction}: -(1% * $num)
+      .mobile-push-#{$num}
+        #{$direction}: (1% * $num)
     
     @include centerGrid
     @include first-last

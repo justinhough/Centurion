@@ -11,14 +11,6 @@ body {
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
-.hide-mobile, nav ul, .tabBox [class*="tabs"]::before, .tabBox [class*="tabs"]::after, .tabBox .tabs li a, .tabBox .innerBox {
-  display: block;
-}
-
-.hide-desktop {
-  display: none;
-}
-
 /*   GRID  */
 .container {
   width: 960px;
@@ -283,11 +275,11 @@ body {
   }
 
   .hide-desktop {
-    display: block;
+    display: block !important;
   }
 
   .hide-mobile {
-    display: none;
+    display: none !important;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 920px) {
@@ -337,11 +329,11 @@ body {
 /*  Features */
 /* Show Elements */
 .show-desktop {
-  display: block;
+  display: block !important;
 }
 
 .show-mobile {
-  display: block;
+  display: block !important;
 }
 
 /* Alerts */
@@ -1070,4 +1062,11 @@ img.rfloat {
   a[href]:after {
     content: " (" attr(href) ") ";
   }
+}
+nav ul, .tabBox [class*="tabs"]::before, .tabBox [class*="tabs"]::after, .tabBox .tabs li a, .tabBox .innerBox, .hide-mobile {
+  display: block;
+}
+
+.hide-desktop {
+  display: none;
 }

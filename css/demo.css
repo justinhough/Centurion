@@ -36,16 +36,6 @@ img, iframe, video {
   width: 100%;
 }
 
-/*a.github
- * background: url('https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png')
- * display: block
- * position: absolute
- * top: 0
- * right: 0
- * border: 0
- * width: 149px
- * height: 149px
- */
 /* HEADER */
 /* ============================ */
 header {
@@ -64,7 +54,7 @@ header nav {
   padding: 0;
 }
 header nav ul li {
-  margin-right: 40px;
+  margin-right: 3em;
 }
 header nav ul li a {
   color: white !important;
@@ -74,6 +64,11 @@ header nav ul li a:hover {
   color: #cc6400 !important;
 }
 
+@media screen and (max-width: 600px) {
+  header nav ul li {
+    margin-right: 1.2em;
+  }
+}
 /* PRODUCT TOUR  */
 /* ============================ */
 #tour {
@@ -104,7 +99,9 @@ header nav ul li a:hover {
   margin: 1em 0 1.5em;
 }
 #tour #download .button {
-  padding: 0.5em 3em;
+  margin: 0 auto;
+  padding: 0.5em 0;
+  width: 60%;
 }
 #tour .rust {
   -webkit-border-radius: 8px 8px;
@@ -132,6 +129,18 @@ header nav ul li a:hover {
   background: linear-gradient(top, #cc6400 0%, #8b4501 100%);
 }
 
+@media screen and (max-width: 600px) {
+  #tour h1 {
+    font-size: 4em;
+  }
+  #tour h2 {
+    font-size: 1.2em;
+  }
+  #tour #download .button {
+    font-size: 1em;
+    font-weight: normal;
+  }
+}
 /* FEATURE TOUR */
 /* ============================ */
 .main-headline {
@@ -165,11 +174,17 @@ hr.headline-line {
 }
 #headline h1 {
   color: #333333;
-  font-size: 38px;
+  font-size: 2.2em;
   text-align: left;
 }
 
-/* PRIMARY */
+@media screen and (max-width: 600px) {
+  #headline h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+}
+/* CONTENT */
 /* ============================ */
 #primary {
   box-shadow: inset -1px 2px 8px #dedede;
@@ -184,17 +199,56 @@ hr.headline-line {
 }
 
 #features, #grid {
-  padding-bottom: 40px;
+  padding-bottom: 2em;
+}
+
+.feature {
+  font-size: 1.5em;
+  padding-left: 2em;
+  position: relative;
+}
+.feature:before {
+  color: #cc6400;
+  font-size: 1.5em;
+  padding-right: 0.5em;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 code {
   background: #ededed;
   display: block;
-  font-size: 12px;
+  font-size: 0.8em;
   padding: 10px;
   margin: 10px 0;
 }
 
+#documentation {
+  text-align: center;
+}
+#documentation h1 {
+  font-size: 8em;
+}
+#documentation h2 {
+  font-size: 1.5em;
+}
+
+@media screen and (max-width: 600px) {
+  #documentation h1 {
+    font-size: 6em;
+  }
+  #documentation h2 {
+    font-size: 1.3em;
+  }
+
+  .feature {
+    font-size: 1.3em;
+  }
+  .feature:before {
+    font-size: 1.3em;
+  }
+}
 /* GRID */
 /* ============================ */
 #grid [class*="grid-"] p {
@@ -231,27 +285,6 @@ code {
 }
 #grid [class*="push-"] p {
   background: #3367ff;
-}
-
-.feature {
-  font-size: 1.5em;
-  padding-left: 2em;
-  position: relative;
-}
-.feature:before {
-  color: #cc6400;
-  font-size: 1.5em;
-  padding-right: 0.5em;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.featurePage {
-  color: #cc6400;
-  font-size: 7.5em;
-  text-align: center;
-  text-shadow: 2px 2px 6px #888888;
 }
 
 /* FOOTER */

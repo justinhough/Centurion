@@ -11,6 +11,17 @@
 
 $ie7-support: true
 
+/*   GRID  */
+@include grid-generate
+
+/* Centering Grid */
+@include center-grid
+
+/* Clearfix */
+@include clearfix
+
+@include extendables
+
 %show-block
   display: block
 
@@ -22,15 +33,3 @@ $ie7-support: true
 
 .hide-mobile
   @extend %show-block
-  
-
-/*   GRID  */
-@include grid-generate
-
-/* Centering Grid */
-@include center-grid
-
-/* Clearfix */
-@include clearfix
-
-@include extendables

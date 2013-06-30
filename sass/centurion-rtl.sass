@@ -12,19 +12,6 @@
 $lang-front: right
 $lang-back: left
 
-%show-block
-  display: block
-
-%hide-block
-  display: none
-
-.hide-desktop
-  @extend %hide-block
-
-.hide-mobile
-  @extend %show-block
-  
-
 /*   GRID  */
 @include grid-generate
 
@@ -77,6 +64,18 @@ $lang-back: left
 @include extendables
 
 /* Print */
-@media print
-  a[href]:after
-    content: " (" attr(href) ") "
+@include print
+
+
+%show-block
+  display: block
+
+%hide-block
+  display: none
+
+.hide-desktop
+  @extend %hide-block
+
+.hide-mobile
+  @extend %show-block
+  

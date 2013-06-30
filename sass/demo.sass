@@ -1,3 +1,30 @@
+@import "core/base"
+// VARS
+$dark-grey: #333
+$light-blue: #3367FF
+$blue: #1A54FF
+$dark-blue: #0934B2
+
+$rust: #CC6400
+$rust-dark: #AA5401
+$rust-darker: #8B4501
+
+$gold: #FFBF1A
+$dark-gold: #B28100
+
+/* --------------------------------------------------------
+ *
+ *  Centurion Framework - Demo Stylesheet
+ *  Created by: Justin Hough
+ *
+ *  Documentation: http://jhough10.github.com/Centurion/get-started.html
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
+
+body
+  background-color: #FEFEFE
+  
 h1, h2, h3, h4, p, ul li, ol li
   font-family: 'Open Sans', sans-serif
 
@@ -6,9 +33,9 @@ p
 
 a,
 a:visited
-  color: #CC6400
+  color: $rust
   &:hover
-    color: #000
+    color: $black
   
 img, iframe, video
   width: 100%
@@ -21,29 +48,20 @@ img, iframe, video
   right: 0
   border: 0
   width: 149px
-  height: 149px*/
+  height: 149px
+  */
 
 
-/* HEADER
- *============================
+/* HEADER */
+/* ============================ */
 
 header
-  background-color: #333
+  background-color: $dark-grey
   section
     margin: 0
   article
     margin-top: 0
     margin-bottom: 0
-  #logo
-    color: #FFF
-    float: left
-    font-size: 22px
-    font-weight: bold
-    line-height: 1
-    margin: 0
-    &:hover
-      color: #CC6400
-      text-decoration: none
   nav
     border: none
     margin-bottom: 0
@@ -51,55 +69,93 @@ header
     ul li
       margin-right: 40px
       a
-        color: #FFF !important
+        color: $white !important
         padding: 15px 0
         &:hover
-          color: #CC6400 !important
+          color: $rust !important
 
 
-/* PRODUCT TOUR 
- *============================
+/* PRODUCT TOUR  */
+/* ============================ */
 
 #tour
-  background: url('../graphics/rusty-brick.jpg')
-  box-shadow: inset -1px 3px 8px #333333
+  background: url('../graphics/brick.png')
+  border-bottom: 1px solid #DEDEDE
   margin: 0
-  padding: 40px 0
+  padding: 1.5em 0 0 0
   h1
-    color: #EDEDED
-    font-size: 3.5em
+    color: $rust
+    font-family: 'Text Me One', sans-serif
+    font-size: 5em
+    line-height: 1
+    margin-top: 0
     text-align: center
-    text-shadow: 0 0 8px #555
-    
+    text-shadow: 0 0 8px #DEDEDE
+  h2
+    color: #888
+    font-size: 1.3em
+    text-align: center
   p
-    color: #EDEDED
+    color: $dark-grey
     text-align: center
   #download
-    margin: 1em 0
+    margin: 1em 0 1.5em
     .button
-      padding: 14px 30px
+      padding: 0.5em 3em
+  
+  .rust
+    @include border-radius(8px)
+    color: $white
+    @include gradient-two($rust, $rust-dark)
 
-/* HEADLINE
- *============================
+    &:hover, 
+    &:active,
+    &:visited
+      color: $white
+      @include gradient-two($rust, $rust-darker)
+  
+  
+/* FEATURE TOUR */
+/* ============================ */  
+  
+.main-headline
+  font-size: 2.2em
+  position: relative
+  text-align: center
+  z-index: 100
+  
+
+hr.headline-line
+  border: none
+  border-bottom: 1px solid #DEDEDE
+  position: relative
+  /* top: -45px */
+  z-index: 0
+
+
+@media screen and (max-width: 600px)
+  .main-headline
+    font-size: 1.8em
+
+/* HEADLINE */
+/* ============================ */
 
 #headline
-  background: url(../graphics/rusty-brick.jpg)
-  box-shadow: inset -1px 3px 8px #333333
+  background: url('../graphics/brick.png')
+  border-bottom: 1px solid #DEDEDE
   margin-bottom: 1em
   margin-top: 0
   padding: 0.5em 0
   h1
-    color: #EDEDED
+    color: $dark-grey
     font-size: 38px
     text-align: left
 
-/* PRIMARY
- *============================
+/* PRIMARY */
+/* ============================ */
 
 #primary
-  background: #FFF
-  /*background: url(../graphics/grey.png);
-  box-shadow: inset -1px 2px 8px #dddddd
+  box-shadow: inset -1px 2px 8px #DEDEDE
   margin: 0
   padding: 1em 0 0 0
   .grid-4 p
@@ -117,14 +173,15 @@ code
   padding: 10px
   margin: 10px 0
 
-/* GRID
+/* GRID */
+/* ============================ */
 
 #grid
   [class*="grid-"] 
     p
       background: #ededed
       border: 1px solid #888
-      color: #333
+      color: $dark-grey
       font-size: 0.8em
       padding: 5px
       margin-bottom: 0
@@ -133,23 +190,23 @@ code
     [class*="grid-"] p
       background: #FFBF1A
     [class*="pull-"] p
-      background: #CC6400
+      background: $rust
     [class*="push-"] p
-      background: #3367FF
+      background: $light-blue
       
   p.noStyle
     border: none
     background: none
-    color: #333
+    color: $dark-grey
     font-size: 16px
     padding: 0
     text-align: left
   article
     margin: 0
   [class*="pull-"] p
-    background: #CC6400
+    background: $rust
   [class*="push-"] p
-    background: #3367FF
+    background: $light-blue
     
 
 .feature
@@ -157,7 +214,7 @@ code
   padding-left: 2em
   position: relative
   &:before
-    color: #CC6400
+    color: $rust
     font-size: 1.5em
     padding-right: 0.5em
     position: absolute
@@ -165,22 +222,30 @@ code
     top: 0
 
 .featurePage
-  color: #CC6400
+  color: $rust
   font-size: 7.5em
   text-align: center
   text-shadow: 2px 2px 6px #888
 
-/* FOOTER
- *============================
+/* FOOTER */
+/* ============================ */
 
 footer
-  background-color: #333
-  padding: 1em 0 1em
-  margin: 0 0 0 0
+  background-color: $dark-grey
+  height: 85px
+  padding: 1em 0
+  margin: 0
   article,
   section
     margin: 0
   p
-    color: #FFF
-    font-size: 12px
-    text-align: center
+    color: $white
+    font-size: 0.8em
+  [class*="push"]
+    p
+      text-align: right
+
+@media screen and (max-width: 600px)
+  footer
+    p
+      text-align: center !important

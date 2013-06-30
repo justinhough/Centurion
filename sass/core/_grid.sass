@@ -28,27 +28,6 @@ $lang-back: right
   float: $lang-front
 
 
-// Show and Hide Elements within Grid
-@mixin hide-desktop
-  .hide-desktop
-    display: none
-  .hide-mobile
-    display: block
-
-@mixin hide-mobile
-  .hide-desktop
-    display: block
-  .hide-mobile
-    display: none
-
-@mixin show-mobile
-  .show-mobile
-    display: block
-
-@mixin show-desktop
-  .show-desktop
-    display: block
-
 
 // IE Specific Hacks - Border Box Fix
 @mixin ie7-grid-element($decimal)

@@ -255,31 +255,31 @@ body {
     padding: 0;
     margin: 0;
   }
-  .container .grid-25 {
+  .container .mobile-grid-25 {
     width: 25%;
   }
-  .container .pull-25 {
+  .container .mobile-pull-25 {
     right: -25%;
   }
-  .container .push-25 {
+  .container .mobile-push-25 {
     right: 25%;
   }
-  .container .grid-50 {
+  .container .mobile-grid-50 {
     width: 50%;
   }
-  .container .pull-50 {
+  .container .mobile-pull-50 {
     right: -50%;
   }
-  .container .push-50 {
+  .container .mobile-push-50 {
     right: 50%;
   }
-  .container .grid-75 {
+  .container .mobile-grid-75 {
     width: 75%;
   }
-  .container .pull-75 {
+  .container .mobile-pull-75 {
     right: -75%;
   }
-  .container .push-75 {
+  .container .mobile-push-75 {
     right: 75%;
   }
   .container .center-grid {

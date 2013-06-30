@@ -1,88 +1,36 @@
-@font-face 
+@font-face
   font-family: 'Elusive-Icons'
   src: url('font/Elusive-Icons.eot')
-  src: url('font/Elusive-Icons.eot?#iefix') format('embedded-opentype')
-  src: url('font/Elusive-Icons.svg#Elusive-Icons') format('svg')
-  src: url('font/Elusive-Icons.woff') format('woff')
-  src: url('font/Elusive-Icons.ttf') format('truetype')
+  src: url('font/Elusive-Icons.eot?#iefix') format("embedded-opentype"), url('font/Elusive-Icons.woff') format("woff"), url('font/Elusive-Icons.ttf') format("truetype"), url('font/Elusive-Icons.svg#Elusive-Icons') format("svg")
   font-weight: normal
   font-style: normal
 
+/* Use the following CSS code if you want to use data attributes for inserting your icons*/
+[data-icon]:before
+  font-family: 'Elusive-Icons'
+  content: attr(data-icon)
+  speak: none
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+  -webkit-font-smoothing: antialiased
 
-[data-icon]
-  &:before  
-    font-family: 'Elusive-Icons'  
-    content: attr(data-icon)  
-    speak: none  
-    font-weight: normal  
-    line-height: 1  
-    -webkit-font-smoothing: antialiased  
-  
+/* Use the following CSS code if you want to have a class per icon
+/*
+ *Instead of a list of all class selectors,
+ *you can use the generic selector below, but it's slower:
+ *[class*="icon-"] {*/
 
-[class^="icon-"],
-[class*=" icon-"]
-  &:before
-    font-family: 'Elusive-Icons'  
-    font-weight: normal  
-    font-style: normal  
-    speak: none  
-    line-height: 1  
-    display: inline-block  
-    text-decoration: inherit  
-    -webkit-font-smoothing: antialiased  
-  
-
-a
-  [class^="icon-"],
-  [class*=" icon-"]   
-    display: inline-block  
-    text-decoration: inherit  
-  
-.icon-large:before   
-  vertical-align: middle  
-  font-size: 1.33em  
-  
-
-.btn, .nav-tabs   
-  [class^="icon-"],
-  [class*=" icon-"]
-    line-height: .9em
-    
-
-li   
-  [class^="icon-"],
-  [class*=" icon-"]   
-    display: inline-block  
-    width: 1.25em  
-    text-align: center  
-    
-  .icon-large:before,
-  .icon-large:before   
-    /* 1.5 increased font size for icon-large * 1.25 width */
-    width: 1.5*1.25em  
-    
-  
-
-ul.icons   
-  list-style-type: none  
-  margin-left: 2em  
-  text-indent: -.8em  
-
-  li   
-    [class^="icon-"],
-    [class*=" icon-"]   
-      width: .8em  
-      
-    .icon-large:before,
-    .icon-large:before   
-      /* 1.5 increased font size for icon-large * 1.25 width */
-      vertical-align: initial  
-
-
-.btn-large [class^="icon-"],
-.btn-large [class*=" icon-"]  
-  margin-top: 0  
-  
+.icon-move, .icon-music, .icon-network, .icon-off, .icon-ok, .icon-ok-circle, .icon-ok-sign, .icon-paper-clip, .icon-paper-clip-alt, .icon-path, .icon-plus-sign, .icon-print, .icon-qrcode, .icon-question, .icon-question-sign, .icon-quotes, .icon-quotes-alt, .icon-random, .icon-record, .icon-reddit, .icon-refresh, .icon-screenshot, .icon-search, .icon-search-alt, .icon-share, .icon-share-alt, .icon-shopping-cart, .icon-shopping-cart-sign, .icon-signal, .icon-skype, .icon-slideshare, .icon-smiley, .icon-th-large, .icon-th-list, .icon-thumbs-down, .icon-thumbs-up, .icon-time, .icon-time-alt, .icon-tint, .icon-torso, .icon-trash, .icon-trash-alt, .icon-tumblr, .icon-w3c, .icon-warning-sign, .icon-website, .icon-website-alt, .icon-wheelchair, .icon-wordpress, .icon-wrench, .icon-wrench-alt, .icon-youtube, .icon-zoom-in, .icon-zoom-out, .icon-pause-alt, .icon-pencil, .icon-pencil-alt, .icon-person, .icon-phone, .icon-phone-alt, .icon-photo, .icon-photo-alt, .icon-picasa, .icon-picture, .icon-pinterest, .icon-plane, .icon-play-alt, .icon-play-circle, .icon-plus, .icon-remove, .icon-remove-circle, .icon-remove-sign, .icon-repeat, .icon-repeat-alt, .icon-resize-full, .icon-resize-horizontal, .icon-resize-small, .icon-resize-vertical, .icon-retweet, .icon-reverse-alt, .icon-road, .icon-rss, .icon-screen, .icon-screen-alt, .icon-smiley-alt, .icon-speaker, .icon-stackoverflow, .icon-star, .icon-star-alt, .icon-star-empty, .icon-stop-alt, .icon-stumbleupon, .icon-tag, .icon-tags, .icon-tasks, .icon-text-height, .icon-text-width, .icon-th, .icon-twitter, .icon-universal-access, .icon-unlock, .icon-unlock-alt, .icon-upload, .icon-user, .icon-video, .icon-video-alt, .icon-video-chat, .icon-view-mode, .icon-vimeo, .icon-vkontakte, .icon-volume-down, .icon-volume-off, .icon-volume-up, .icon-backward, .icon-fast-backward, .icon-fast-forward, .icon-forward, .icon-play, .icon-step-backward, .icon-step-forward, .icon-briefcase, .icon-bullhorn, .icon-calendar, .icon-calendar-sign, .icon-address-book, .icon-address-book-alt, .icon-adjust, .icon-adult, .icon-align-center, .icon-align-justify, .icon-align-left, .icon-align-right, .icon-arrow-down, .icon-arrow-left, .icon-arrow-right, .icon-arrow-up, .icon-asl, .icon-asterisk, .icon-ban-circle, .icon-barcode, .icon-behance, .icon-bell, .icon-blind, .icon-blogger, .icon-bold, .icon-book, .icon-bookmark, .icon-bookmark-empty, .icon-braille, .icon-camera, .icon-cc, .icon-certificate, .icon-check, .icon-check-empty, .icon-chevron-down, .icon-chevron-left, .icon-chevron-right, .icon-chevron-up, .icon-child, .icon-circle-arrow-down, .icon-circle-arrow-left, .icon-circle-arrow-right, .icon-circle-arrow-up, .icon-cloud, .icon-cloud-alt, .icon-cog, .icon-cog-alt, .icon-cogs, .icon-comment, .icon-comment-alt, .icon-compass, .icon-compass-alt, .icon-credit-card, .icon-css, .icon-dashboard, .icon-delicious, .icon-deviantart, .icon-digg, .icon-download, .icon-download-alt, .icon-dribble, .icon-edit, .icon-eject, .icon-envelope, .icon-envelope-alt, .icon-error, .icon-error-alt, .icon-exclamation-sign, .icon-eye-close, .icon-eye-open, .icon-facebook, .icon-facetime-video, .icon-female, .icon-file, .icon-file-alt, .icon-file-edit, .icon-file-edit-alt, .icon-file-new, .icon-file-new-alt, .icon-film, .icon-filter, .icon-fire, .icon-flag, .icon-flag-alt, .icon-flickr, .icon-folder, .icon-folder-close, .icon-folder-open, .icon-folder-sign, .icon-font, .icon-fontsize, .icon-forward-alt, .icon-foursquare, .icon-friendfeed, .icon-friendfeed-rect, .icon-fullscreen, .icon-gift, .icon-github, .icon-github-text, .icon-glass, .icon-glasses, .icon-globe, .icon-globe-alt, .icon-googleplus, .icon-graph, .icon-graph-alt, .icon-group, .icon-group-alt, .icon-guidedog, .icon-hand-down, .icon-hand-left, .icon-hand-right, .icon-hand-up, .icon-hdd, .icon-headphones, .icon-hearing-impaired, .icon-heart, .icon-heart-alt, .icon-heart-empty, .icon-home, .icon-home-alt, .icon-idea, .icon-idea-alt, .icon-inbox, .icon-inbox-alt, .icon-inbox-box, .icon-indent-left, .icon-indent-right, .icon-info-sign, .icon-instagram, .icon-iphone-home, .icon-italic, .icon-key, .icon-laptop, .icon-laptop-alt, .icon-leaf, .icon-linkedin, .icon-list, .icon-list-alt, .icon-lock, .icon-lock-alt, .icon-magnet, .icon-male, .icon-map-marker, .icon-map-marker-alt, .icon-mic, .icon-mic-alt, .icon-minus, .icon-minus-sign, .icon-pause, .icon-fork, .icon-broom, .icon-return-key, .icon-lastfm, .icon-livejournal, .icon-myspace, .icon-soundcloud, .icon-viadeo, .icon-spotify, .icon-caret-left, .icon-caret-up, .icon-caret-right, .icon-caret-down, .icon-stop
+  font-family: 'Elusive-Icons'
+  speak: none
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+  -webkit-font-smoothing: antialiased
 
 .icon-move:before
   content: "\e074"

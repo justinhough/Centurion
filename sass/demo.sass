@@ -40,17 +40,6 @@ a:visited
 img, iframe, video
   width: 100%
 
-/*a.github
-  background: url('https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png')
-  display: block
-  position: absolute
-  top: 0
-  right: 0
-  border: 0
-  width: 149px
-  height: 149px
-  */
-
 
 /* HEADER */
 /* ============================ */
@@ -67,13 +56,19 @@ header
     margin-bottom: 0
     padding: 0
     ul li
-      margin-right: 40px
+      margin-right: 3em
       a
         color: $white !important
         padding: 15px 0
         &:hover
           color: $rust !important
 
+@media screen and (max-width: 600px)
+  header 
+    nav 
+      ul 
+        li
+          margin-right: 1.2em
 
 /* PRODUCT TOUR  */
 /* ============================ */
@@ -101,7 +96,10 @@ header
   #download
     margin: 1em 0 1.5em
     .button
-      padding: 0.5em 3em
+      margin: 0 auto
+      padding: 0.5em 0
+      width: 60%
+      
   
   .rust
     @include border-radius(8px)
@@ -113,7 +111,19 @@ header
     &:visited
       color: $white
       @include gradient-two($rust, $rust-darker)
-  
+
+@media screen and (max-width: 600px)
+  #tour
+    h1
+      font-size: 4em
+    h2
+      font-size: 1.2em
+    #download
+      .button
+        font-size: 1em
+        font-weight: normal
+        
+
   
 /* FEATURE TOUR */
 /* ============================ */  
@@ -148,12 +158,18 @@ hr.headline-line
   padding: 0.5em 0
   h1
     color: $dark-grey
-    font-size: 38px
+    font-size: 2.2em
     text-align: left
 
-/* PRIMARY */
-/* ============================ */
+@media screen and (max-width: 600px)
+  #headline
+    h1
+      font-size: 2em
+      margin: 0
 
+    
+/* CONTENT */
+/* ============================ */
 #primary
   box-shadow: inset -1px 2px 8px #DEDEDE
   margin: 0
@@ -164,14 +180,46 @@ hr.headline-line
     text-align: left
 
 #features, #grid
-  padding-bottom: 40px
+  padding-bottom: 2em
+
+.feature
+  font-size: 1.5em
+  padding-left: 2em
+  position: relative
+  &:before
+    color: $rust
+    font-size: 1.5em
+    padding-right: 0.5em
+    position: absolute
+    left: 0
+    top: 0
 
 code
   background: #EDEDED
   display: block
-  font-size: 12px
+  font-size: 0.8em
   padding: 10px
   margin: 10px 0
+
+#documentation
+  text-align: center
+  h1
+    font-size: 8em
+  h2
+    font-size: 1.5em
+
+
+@media screen and (max-width: 600px)
+  #documentation
+    h1
+      font-size: 6em
+    h2
+      font-size: 1.3em
+  .feature
+    font-size: 1.3em
+    &:before
+      font-size: 1.3em
+
 
 /* GRID */
 /* ============================ */
@@ -207,25 +255,7 @@ code
     background: $rust
   [class*="push-"] p
     background: $light-blue
-    
 
-.feature
-  font-size: 1.5em
-  padding-left: 2em
-  position: relative
-  &:before
-    color: $rust
-    font-size: 1.5em
-    padding-right: 0.5em
-    position: absolute
-    left: 0
-    top: 0
-
-.featurePage
-  color: $rust
-  font-size: 7.5em
-  text-align: center
-  text-shadow: 2px 2px 6px #888
 
 /* FOOTER */
 /* ============================ */

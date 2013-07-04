@@ -80,7 +80,9 @@ header nav ul li a:hover {
 #tour h1 {
   color: #cc6400;
   font-family: "Text Me One", sans-serif;
-  font-size: 5em;
+  font-size: 6em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
   line-height: 1;
   margin-top: 0;
   text-align: center;

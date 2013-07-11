@@ -63,7 +63,7 @@
           subMenuToggle: 'mobileMenu', // submenu ID to toggle - ul list
           subDrop: 'subMobile', // class to identify elements with children links
           subDropIcon: 'subIcon', // submenu dropdown icon
-          subDropActive: 'on', // submenu dropdown active class
+          subDropActive: 'on' // submenu dropdown active class
       };
   
       options = $.extend(defaults, options);
@@ -151,7 +151,7 @@
     alerts: function(options) {
       var defaults = {
         closeBtn: '.close',
-        icon: 'icon-remove',
+        icon: 'icon-remove'
       };
   
       options = $.extend(defaults, options);

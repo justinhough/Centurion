@@ -63,7 +63,7 @@
           subMenuToggle: 'mobileMenu', // submenu ID to toggle - ul list
           subDrop: 'subMobile', // class to identify elements with children links
           subDropIcon: 'subIcon', // submenu dropdown icon
-          subDropActive: 'on', // submenu dropdown active class
+          subDropActive: 'on' // submenu dropdown active class
       };
   
       options = $.extend(defaults, options);
@@ -98,7 +98,7 @@
         }
 
         // Mobile Navigation
-        $($obj).click(function(){	
+        $('span', $obj).click(function(){	
           $('.'+ $o.subDropIcon).removeClass($o.subDropActive);
           $('ul ul', $obj).hide();
           $('#'+ $o.subMenuToggle).toggle();
@@ -116,7 +116,7 @@
         function screenAdapt(width) {
           //width = parseInt(width);
           width = $(document).width();
-          if (width > 500) {
+          if (width > 520) {
             // Show on Desktop
             // Hide main menu
             //$($obj + ' ul').show();
@@ -151,7 +151,7 @@
     alerts: function(options) {
       var defaults = {
         closeBtn: '.close',
-        icon: 'icon-remove',
+        icon: 'icon-remove'
       };
   
       options = $.extend(defaults, options);

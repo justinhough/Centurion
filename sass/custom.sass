@@ -17,17 +17,27 @@ header
       li
         padding: 15px 20px 15px 0
 
-
 /* CONTENT */
 section
   margin: $dh-margin
 
-code
+code,
+pre
   background: $almost-white
+  color: #777
   border: 1px solid $grey
   display: block
   padding: 10px 20px
+  word-wrap: break-word
 
+.highlight
+  border: 2px solid lightblue
+  code,
+  pre
+    border: none
+    -webkit-border-radius: none
+    -moz-border-radius: none
+    border-radius: none
 
 /* GRID */
 #grid

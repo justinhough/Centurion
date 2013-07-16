@@ -25,11 +25,25 @@ section {
   margin: 15px 0;
 }
 
-code {
+code,
+pre {
   background: #ededed;
+  color: #777777;
   border: 1px solid #cccccc;
   display: block;
   padding: 10px 20px;
+  word-wrap: break-word;
+}
+
+.highlight {
+  border: 2px solid lightblue;
+}
+.highlight code,
+.highlight pre {
+  border: none;
+  -webkit-border-radius: none;
+  -moz-border-radius: none;
+  border-radius: none;
 }
 
 /* GRID */

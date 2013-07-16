@@ -246,6 +246,10 @@ hr.headline-line
 /* GRID */
 /* ============================ */
 
+$pull-color: tint($rust, 60%)
+$push-color: tint($light-blue, 60%)
+$nested-grid-color: tint($gold, 60%)
+
 #grid
   [class*="grid-"] 
     p
@@ -258,11 +262,11 @@ hr.headline-line
       text-align: center
       
     [class*="grid-"] p
-      background: #FFBF1A
+      background: $nested-grid-color
     [class*="pull-"] p
-      background: $rust
+      background: $pull-color
     [class*="push-"] p
-      background: $light-blue
+      background: $push-color
       
   p.noStyle
     border: none
@@ -274,9 +278,9 @@ hr.headline-line
   article
     margin: 0
   [class*="pull-"] p
-    background: $rust
+    background: $pull-color
   [class*="push-"] p
-    background: $light-blue
+    background: $push-color
 
 
 /* ICONS LIST */
@@ -323,6 +327,9 @@ footer
   article,
   section
     margin: 0
+  a
+    &:hover
+      color: $gold !important
   p
     color: $white
     font-size: 0.8em
@@ -332,5 +339,6 @@ footer
 
 @media screen and (max-width: 600px)
   footer
+
     p
       text-align: center !important

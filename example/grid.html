@@ -2,25 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Centurion Framework</title>
+  <title>Grid | Centurion Framework</title>
   <meta name="description" content="Centurion Framework">
-  <meta name="author" content="">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   
-  <link rel="shortcut icon" href="images/favicon.jpg" />
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  <link rel="shortcut icon" href="../images/favicon.jpg" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png" />
   
   <link rel="stylesheet" href="../css/reset.css" />
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <!-- Centurion Framework -->
   <link rel="stylesheet" href="../css/centurion.css" />
-  <!-- End of Framework -->
   <link rel="stylesheet" href="../css/elusive-webfont.css" />
+  <!-- End of Framework -->
   <link rel="stylesheet" href="../css/custom.css" />
-  
   <!--[if gte IE 9]>
     <style type="text/css">
       .gradient {
@@ -28,32 +27,6 @@
       }
     </style>
   <![endif]-->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/centurion.js"></script>
-  <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <!--[if lte IE 7]><script src="scripts/lte-ie7.js"></script><![endif]-->
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-      
-      $('.calculate [class*="grid-"]').append('<p><span class="pixels"><!--px width--></span><br /><span class="percentage"><!--percentage--></span><br /></p>')
-      
-      $('.calculate [class*="grid-"]').each(function(){
-        
-        var el = $(this);
-        var width = el.outerWidth() + 'px';
-        //var per = el.outerWidth();
-        //var percentage = (per * 10)/100 + '%';
-        var gridClass = $(this).attr('class').split('grid-').join('').split(' ')[0];
-        
-        el.find('span.pixels').html(width);
-        el.find('span.percentage').html(gridClass + '%');
-      });
-      
-    });  
-  </script>
 
 </head>
 <body>
@@ -532,6 +505,38 @@
   </footer>
   <!-- End of Footer -->
 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/centurion.js"></script>
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lte IE 7]><script src="scripts/lte-ie7.js"></script><![endif]-->
+  
+  <script type="text/javascript">
+  $(document).ready(function(){
+  
+    $('.calculate [class*="grid-"]').append('<p><span class="pixels"></span><br /><span class="percentage"></span></p>')
+    
+    function gridCalculate() {
+      $('.calculate [class*="grid-"]').each(function(){
+        var el = $(this);
+        var width = el.outerWidth() + 'px';
+        var gridClass = $(this).attr('class').split('grid-').join('').split(' ')[0];
+        el.find('span.pixels').html(width);
+        el.find('span.percentage').html(gridClass + '%');
+      });      
+    }
+    width = $(document).width();
+    
+    $(function() {
+        gridCalculate($(this).width());
+        $(window).resize(function() {
+          gridCalculate($(this).width());
+        });
+    });
+  });  
+  </script>
+  
   
 </body>
 </html>

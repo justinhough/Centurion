@@ -289,13 +289,13 @@ hr.headline-line {
   text-align: center;
 }
 #grid [class*="grid-"] [class*="grid-"] p {
-  background: #ffbf1a;
+  background: #ffe5a3;
 }
 #grid [class*="grid-"] [class*="pull-"] p {
-  background: #cc6400;
+  background: #eac199;
 }
 #grid [class*="grid-"] [class*="push-"] p {
-  background: #3367ff;
+  background: #adc2ff;
 }
 #grid p.noStyle {
   border: none;
@@ -309,10 +309,10 @@ hr.headline-line {
   margin: 0;
 }
 #grid [class*="pull-"] p {
-  background: #cc6400;
+  background: #eac199;
 }
 #grid [class*="push-"] p {
-  background: #3367ff;
+  background: #adc2ff;
 }
 
 /* ICONS LIST */
@@ -365,6 +365,9 @@ footer {
 footer article,
 footer section {
   margin: 0;
+}
+footer a:hover {
+  color: #ffbf1a !important;
 }
 footer p {
   color: white;

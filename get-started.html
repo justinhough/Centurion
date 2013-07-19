@@ -24,6 +24,48 @@
   <link rel="stylesheet" href="css/centurion-ie.css" />
   <script src="js/modernizr-2.6.2-custom-min.js"></script>
   <![endif]-->
+  
+  
+  <!--
+<style type="text/css">
+    #colors {
+      padding: 0 2em 2em 2em;
+      position: relative;
+      top: 2em;
+    }
+    #colors .box {
+      float: left;
+      height: 4em;
+      margin-bottom: 0.5em;
+      width: 4em;
+    }
+    #colors span {
+      float: left;
+      font-size: 1em;
+      padding: 1.5em 0.8em;
+    }
+    
+    
+    .back-black { background: #000000; }
+    .back-lightgrey { background: #CCC; }
+    .back-grey { background: #999; }
+    .back-purple { background: #1136b1; }
+    .back-blue { background: #1136b1; }
+    .back-yellow { background: #e3e616; }
+    .back-red { background: #ea1d28; }
+    .back-rust { background: #ef801e; }
+    
+    .text-black { color: #000000; }
+    .text-lightgrey { color: #CCC; }
+    .text-grey { color: #999; }
+    .text-blue { color: #1136b1; }
+    .text-yellow { color: #e3e616; }
+    .text-red { color: #ea1d28; }
+    .text-rust { color: #ef801e; }
+  
+  </style>
+-->
+  
 
 </head>
 <body>
@@ -64,6 +106,32 @@
           
 				</section>
 				<div class="clear"></div>
+
+				
+				<!--
+<section id="colors" class="grid-100">
+  				<h2 class="main-headline">Colors</h2>
+  				<hr class="headline-line" />
+				
+  				<article class="grid-50">
+				
+  				  <div data-color="black"></div>	  
+  				  <div data-color="lightgrey"></div>
+  				  <div data-color="grey"></div>
+  				  <div data-color="purple"></div>
+  				  
+  				</article>
+  				<article class="grid-50">  
+  				  
+  				  <div data-color="blue"></div>
+  				  <div data-color="yellow"></div>
+  				  <div data-color="red"></div>
+  				  <div data-color="rust"></div>
+  				  
+  				</article>
+				</section>
+-->
+
 
         <section class="grid-100">
           <h2 class="main-headline">Some Spoilers</h2>
@@ -366,8 +434,14 @@
             <li><span class="icon-address-book-alt"></span> icon-address-book-alt</li>
             <li><span class="icon-w3c"></span> icon-w3c</li>
             <li><span class="icon-css"></span> icon-css</li>
-          </ul>       
+          </ul>
           
+          
+          
+          
+          
+        
+        </section>
 				<!-- end of content -->
 			</article>
 			<aside class="grid-25">
@@ -400,6 +474,50 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="js/centurion.js"></script>
+  
+  
+  
+    
+  <script type="text/javascript">
+    $(document).ready(function(){
+      
+      htmlStructure = '<div class="box"></div><span class="color"></span><span class="hex"></span><span class="rgb"></span>';
+      
+      $('#colors div[data-color]').append(htmlStructure);
+  
+      $('#colors div[data-color]').after('<div class="clear"></div>');  
+      $('#colors div[data-color]').each(function(){
+        
+        data = $(this).attr('data-color');
+        cClass = 'text-' + data;
+        bkColorClass = 'back-' + data;
+        
+        $(this).find('.box').addClass(bkColorClass);
+        
+        // Grab background color value for current item - returns RGB
+        cVal = $(this).find('.box').css('backgroundColor');
+  
+        //Convert HEX to RGB
+        var rgbValue = cVal;
+        var parts = rgbValue.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+        delete (parts[0]);
+        for (var i = 1; i <= 3; ++i) {
+            parts[i] = parseInt(parts[i]).toString(16);
+            if (parts[i].length == 1) parts[i] = '0' + parts[i];
+        } 
+        var hexValue ='#'+parts.join('').toUpperCase();
+  
+        // Return HTMl to page      
+        $(this).find('.color').addClass(cClass).html(data);
+        $(this).find('.hex').addClass(cClass).html(hexValue);
+        $(this).find('.rgb').addClass(cClass).html(rgbValue);
+        
+      });
+      
+    });
+  </script>
+  
+  
   <!--[if gte IE 9]>
     <style type="text/css">
       .gradient {

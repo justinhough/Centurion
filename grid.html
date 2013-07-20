@@ -60,6 +60,34 @@
 
 <section class="calculate">
 
+<div class="hide-desktop">
+  <div class="grid-100">
+    <h2>Mobile</h2>
+  </div>
+  
+  <div class="mobile-grid-25"></div>
+  <div class="mobile-grid-25"></div>
+  <div class="mobile-grid-25"></div>
+  <div class="mobile-grid-25"></div>
+  <div class="clear"></div>
+  
+  <div class="mobile-grid-25"></div>
+  <div class="mobile-grid-75"></div>
+  <div class="clear"></div>
+  
+  <div class="mobile-grid-50"></div>
+  <div class="mobile-grid-50"></div>
+  <div class="clear"></div>
+</div>
+
+
+
+<div class="hide-desktop">
+  <div class="grid-100">
+    <h2>Desktop</h2>
+  </div>
+</div> 
+
 <div class="grid-25">
     <!-- grid -->
 </div>
@@ -229,46 +257,28 @@
 </div>
 
 <section class="calculate">
-  <div class="grid-20">
-      <!-- grid -->
-  </div>
+  <div class="grid-20"></div>
   <div class="clear"></div>
   
-  <div class="grid-20 push-20">
-      <!-- grid -->
-  </div>
+  <div class="grid-20 push-20"></div>
   <div class="clear"></div>
   
-  <div class="grid-20 push-40">
-      <!-- grid -->
-  </div>
+  <div class="grid-20 push-40"></div>
   <div class="clear"></div>
   
-  <div class="grid-20 push-60">
-      <!-- grid -->
-  </div>
+  <div class="grid-20 push-60"></div>
   <div class="clear"></div>
   
-  <div class="grid-20 push-80">
-      <!-- grid -->
-  </div>
+  <div class="grid-20 push-80"></div>
   <div class="clear"></div>
   
-  <div class="grid-80 push-20">
-      <!-- grid -->
-  </div>
-  <div class="grid-20 pull-80">
-      <!-- grid -->
-  </div>
+  <div class="grid-80 push-20"></div>
+  <div class="grid-20 pull-80"></div>
   <div class="clear"></div>
   
   
-  <div class="grid-75 push-25">
-      <!-- grid -->
-  </div>
-  <div class="grid-25 pull-75">
-      <!-- grid -->
-  </div>
+  <div class="grid-75 push-25"></div>
+  <div class="grid-25 pull-75"></div>
   <div class="clear"></div>
 </section>
 
@@ -283,45 +293,25 @@
 <div class="clear"></div>
 
 <section class="calculate">
-  <div class="grid-10 center-grid">
-      <!-- grid -->
-  </div>
+  <div class="grid-10 center-grid"></div>
   
-  <div class="grid-20 center-grid">
-      <!-- grid -->
-  </div>
+  <div class="grid-20 center-grid"></div>
   
-  <div class="grid-30 center-grid">
-      <!-- grid -->
-  </div>
+  <div class="grid-30 center-grid"></div>
   
-  <div class="grid-40 center-grid">
-      <!-- grid -->
-  </div>
+  <div class="grid-40 center-grid"></div>
   
-  <div class="grid-50 center-grid">
-      <!-- grid -->
-  </div>
+  <div class="grid-50 center-grid"></div>
   
-  <div class="grid-60 center-grid">
-      <!-- grid -->
-  </div>
+  <div class="grid-60 center-grid"></div>
   
-  <div class="grid-70 center-grid">
-      <!-- grid -->
-  </div>
+  <div class="grid-70 center-grid"></div>
   
-  <div class="grid-80 center-grid">
-      <!-- grid -->
-  </div>
+  <div class="grid-80 center-grid"></div>
   
-  <div class="grid-90 center-grid">
-      <!-- grid -->
-  </div>
+  <div class="grid-90 center-grid"></div>
   
-  <div class="grid-100 center-grid">
-      <!-- grid -->
-  </div>
+  <div class="grid-100 center-grid"></div>
   
   <div class="clear"></div>
 </section>
@@ -528,6 +518,22 @@
           var el = $(this);
           var width = (el.innerWidth()-30) + 'px';
           var gridClass = $(this).attr('class').split('grid-').join('').split(' ')[0];
+          el.find('span.pixels').html(width);
+          el.find('span.percentage').html(gridClass + '%');
+        });
+        
+        $('.calculate [class*="grid-"] [class*="grid-"]').each(function(){
+          var el = $(this);
+          var width = el.innerWidth() + 'px';
+          var gridClass = $(this).attr('class').split('grid-').join('').split(' ')[0];
+          el.find('span.pixels').html(width);
+          el.find('span.percentage').html(gridClass + '%');
+        });
+        
+        $('.calculate [class*="mobile-grid-"]').each(function(){
+          var el = $(this);
+          var width = (el.innerWidth()-30) + 'px';
+          var gridClass = $(this).attr('class').split('mobile-grid-').join('').split(' ')[0];
           el.find('span.pixels').html(width);
           el.find('span.percentage').html(gridClass + '%');
         });      

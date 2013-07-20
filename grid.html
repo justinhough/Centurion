@@ -526,7 +526,7 @@
       function gridCalculate() {
         $('.calculate [class*="grid-"]').each(function(){
           var el = $(this);
-          var width = el.outerWidth() + 'px';
+          var width = (el.innerWidth()-30) + 'px';
           var gridClass = $(this).attr('class').split('grid-').join('').split(' ')[0];
           el.find('span.pixels').html(width);
           el.find('span.percentage').html(gridClass + '%');

@@ -1131,20 +1131,18 @@ code, pre {
   -moz-border-radius: 4px;
   border-radius: 4px;
   font-family: "Lucida Console", Monaco, monospace;
-  font-size: 0.8em;
+  font-size: 0.9em;
   padding: 0.1em 0.2em;
 }
 
 code {
   border: 1px solid #999999;
-  color: #a7cfdf;
+  color: #cccccc;
   white-space: nowrap;
 }
 
 pre {
-  background: #cccccc;
   display: block;
-  font-size: 0.95em;
   line-height: 1.5;
   padding: 0.8em;
   word-break: break-all;

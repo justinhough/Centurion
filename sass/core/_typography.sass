@@ -12,6 +12,28 @@ body
       color: $change-link-color
 
 
+// Code Markup
+@mixin code-markup
+  code, pre
+    -webkit-border-radius: 4px
+    -moz-border-radius: 4px
+    border-radius: 4px
+    font-family: "Lucida Console", Monaco, monospace
+    font-size: 0.9em
+    padding: 0.1em 0.2em
+    
+  code
+    border: 1px solid $lightgrey
+    color: $grey
+    white-space: nowrap
+  pre
+    display: block
+    line-height: 1.5
+    padding: 0.8em
+    word-break: break-all
+    word-wrap: break-word
+    white-space: pre-wrap
+
 // Text
 @mixin default-list
   ul
@@ -125,28 +147,3 @@ body
   @include links
   @include default-list
   @include code-markup
-
-
-
-@mixin code-markup
-  code, pre
-    -webkit-border-radius: 4px
-    -moz-border-radius: 4px
-    border-radius: 4px
-    font-family: "Lucida Console", Monaco, monospace
-    font-size: 0.8em
-    padding: 0.1em 0.2em
-    
-  code
-    border: 1px solid $lightgrey
-    color: $blue
-    white-space: nowrap
-  pre
-    background: $grey
-    display: block
-    font-size: 0.95em
-    line-height: 1.5
-    padding: 0.8em
-    word-break: break-all
-    word-wrap: break-word
-    white-space: pre-wrap

@@ -1,5 +1,18 @@
 @import "core/base"
 
+$dark-grey: #333
+$light-blue: #3367FF
+$blue: #1A54FF
+$dark-blue: #0934B2
+
+$rust: #CC6400
+$rust-dark: #AA5401
+$rust-darker: #8B4501
+
+$gold: #FFBF1A
+$dark-gold: #B28100
+
+
 /* TYPOGRAPHY */
 p, ul, ol
   margin: $b-margin
@@ -11,44 +24,53 @@ ul, ol
 /* HEADER */
 header
   border-bottom: 1px solid $grey
-
+  padding-bottom: 20px
+  nav
+    ul
+      li
+        padding: 15px 20px 15px 0
 
 /* CONTENT */
 section
   margin: $dh-margin
 
-code
-  background: $almost-white
-  border: 1px solid $grey
-  display: block
-  padding: 10px 20px
-
 
 /* GRID */
-#grid
-  [class*="grid-"]
+$pull-color: tint($rust, 60%)
+$push-color: tint($light-blue, 60%)
+$nested-grid-color: tint($gold, 60%)
+
+.calculate
+  [class*="grid-"] 
     p
-      background: #EDEDED
+      background: #ededed
       border: 1px solid #888
-      color: #333
+      color: $dark-grey
       font-size: 0.8em
-      padding: 10px
-      margin-bottom: 10px
+      padding: 5px
+      margin-bottom: 1em
       text-align: center
-  p
-    &.noStyle
-      border: none
-      background: none
-      color: #333
-      font-size: 16px
-      padding: 0
-      text-align: left
-  [class*="pull-"]
-    p
-      background: lightpink
-  [class*="push-"]
-    p
-      background: lightgreen
+      
+    [class*="grid-"] p
+      background: $nested-grid-color
+    [class*="pull-"] p
+      background: $pull-color
+    [class*="push-"] p
+      background: $push-color
+      
+  p.noStyle
+    border: none
+    background: none
+    color: $dark-grey
+    font-size: 1em
+    padding: 0
+    text-align: left
+  article
+    margin: 0
+  [class*="pull-"] p
+    background: $pull-color
+  [class*="push-"] p
+    background: $push-color
 
 
 /* FOOTER */

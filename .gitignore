@@ -1,5 +1,6 @@
 .DS_store
 .project
 *.scssc
-
 *.sassc
+
+compass_app_log.txt

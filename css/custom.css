@@ -25,50 +25,41 @@ section {
   margin: 15px 0;
 }
 
-code,
-pre {
-  background: #ededed;
-  color: #777777;
-  border: 1px solid #cccccc;
-  display: block;
-  padding: 10px 20px;
-  word-wrap: break-word;
-}
-
-.highlight {
-  border: 2px solid lightblue;
-}
-.highlight code,
-.highlight pre {
-  border: none;
-  -webkit-border-radius: none;
-  -moz-border-radius: none;
-  border-radius: none;
-}
-
 /* GRID */
-#grid [class*="grid-"] p {
+.calculate [class*="grid-"] p {
   background: #ededed;
   border: 1px solid #888888;
   color: #333333;
   font-size: 0.8em;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 5px;
+  margin-bottom: 1em;
   text-align: center;
 }
-#grid p.noStyle {
+.calculate [class*="grid-"] [class*="grid-"] p {
+  background: #ffe5a3;
+}
+.calculate [class*="grid-"] [class*="pull-"] p {
+  background: #eac199;
+}
+.calculate [class*="grid-"] [class*="push-"] p {
+  background: #adc2ff;
+}
+.calculate p.noStyle {
   border: none;
   background: none;
   color: #333333;
-  font-size: 16px;
+  font-size: 1em;
   padding: 0;
   text-align: left;
 }
-#grid [class*="pull-"] p {
-  background: lightpink;
+.calculate article {
+  margin: 0;
 }
-#grid [class*="push-"] p {
-  background: lightgreen;
+.calculate [class*="pull-"] p {
+  background: #eac199;
+}
+.calculate [class*="push-"] p {
+  background: #adc2ff;
 }
 
 /* FOOTER */

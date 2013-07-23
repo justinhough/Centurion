@@ -238,7 +238,7 @@ body {
   margin-right: auto;
 }
 
-@media screen and (min-width: 200px) and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .container {
     width: 100%;
     margin-left: auto;
@@ -301,14 +301,14 @@ body {
   }
 
   .hide-desktop {
-    display: block;
+    display: block !important;
   }
 
   .hide-mobile {
-    display: none;
+    display: none !important;
   }
 }
-@media screen and (min-width: 601px) and (max-width: 920px) {
+@media screen and (max-width: 920px) {
   .container {
     width: 98%;
   }
@@ -355,11 +355,11 @@ body {
 /*  Features */
 /* Show Elements */
 .show-desktop {
-  display: block;
+  display: block !important;
 }
 
 .show-mobile {
-  display: block;
+  display: block !important;
 }
 
 /* Alerts */
@@ -1144,10 +1144,16 @@ code {
 pre {
   display: block;
   line-height: 1.5;
-  padding: 0.8em;
+  padding: 0;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre-wrap;
+}
+pre code {
+  background: #ededed;
+  color: #333333;
+  display: block;
+  padding: 1em;
 }
 
 nav ul, nav ul li, .tabBox .tabs li, ul {

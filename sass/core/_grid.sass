@@ -160,17 +160,15 @@ $lang-back: right
 
 
 
-
-
-// Grid
+// Grid Mixin Combined
 @mixin grid-generate($content-width: 960px, $width:98%, $space:2%, $rows:20)
   
   @include grid($content-width, $width, $space, $rows)
   
-  @media screen and (min-width: 200px) and (max-width: 600px)
+  @media screen and (max-width: 600px)
     @include grid-mobile
   
-  @media screen and (min-width: 601px) and (max-width: 920px)
+  @media screen and (max-width: 920px)
     .container
       width: 98%
   

@@ -57,7 +57,7 @@
           bNav: true, // add classes and structure to ul list
           // Sub Menu 
           //subMenuID: '_______',
-          menuIcon: 'menuIcon', // icon for mobile menu
+          menuIcon: 'icon-list', // icon for mobile menu
           menuActive: 'down', // mobile menu open state change
           // Sub Menu Dropdown
           subMenuToggle: 'mobileMenu', // submenu ID to toggle - ul list
@@ -116,7 +116,7 @@
         function screenAdapt(width) {
           //width = parseInt(width);
           width = $(document).width();
-          if (width > 520) {
+          if (width > 600) {
             // Show on Desktop
             // Hide main menu
             //$($obj + ' ul').show();
@@ -135,11 +135,15 @@
         }
         // Executes the screen size check
         $(function() {
-            screenAdapt($(this).width());
-            $(window).resize(function() {
+				  var width = $(window).width();
+					screenAdapt($(this).width());
+					$(window).resize(function() {
+					  if($(this).width() != width){
               screenAdapt($(this).width());
-            });
-        });
+              width = $(this).width();
+            }
+					});
+				});
         // End of resize window function
       });
     }

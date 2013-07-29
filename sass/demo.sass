@@ -55,6 +55,8 @@ header
     border: none
     margin-bottom: 0
     padding: 0
+    span
+      display: none
     ul li
       margin-right: 0
       a
@@ -66,6 +68,39 @@ header
         &:hover
           background: url('../graphics/brick.png')
           color: $dark-grey !important
+
+@media screen and (max-width: 600px)
+  header
+    nav
+      span
+        color: $white
+        cursor: pointer
+        display: block !important
+        font-size: 1em
+        margin: 1em 0
+        position: relative
+        right: 2.5em
+        text-align: right
+        top: 0
+        &.icon-list
+          color: $white
+          font-size: 1.2em
+          margin-left: 0.5em
+          position: absolute
+          right: 1em
+          text-align: center
+          width: 1.5em
+      ul 
+        margin-bottom: 1em
+        li
+          visibitlity: hidden
+          width: 100%
+          a
+            color: $white !important
+            margin-bottom: 0.3em
+            padding: 0.5em 0
+            text-indent: 1em
+            width: 100%
 
 
 /* PRODUCT TOUR  */
@@ -168,13 +203,14 @@ hr.headline-line
   margin-top: 0
   padding: 0.5em 0
   h1
-    color: $dark-grey
+    color: $dark-grey    
     font-size: 2.2em
     text-align: left
 
 @media screen and (max-width: 600px)
   #headline
     h1
+      color: $rust
       font-size: 2em
       margin: 0
 

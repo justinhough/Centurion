@@ -53,6 +53,9 @@ header nav {
   margin-bottom: 0;
   padding: 0;
 }
+header nav span {
+  display: none;
+}
 header nav ul li {
   margin-right: 0;
 }
@@ -69,6 +72,42 @@ header nav ul li a:hover {
   color: #333333 !important;
 }
 
+@media screen and (max-width: 600px) {
+  header nav span {
+    color: white;
+    cursor: pointer;
+    display: block !important;
+    font-size: 1em;
+    margin: 1em 0;
+    position: relative;
+    right: 2.5em;
+    text-align: right;
+    top: 0;
+  }
+  header nav span.icon-list {
+    color: white;
+    font-size: 1.2em;
+    margin-left: 0.5em;
+    position: absolute;
+    right: 1em;
+    text-align: center;
+    width: 1.5em;
+  }
+  header nav ul {
+    margin-bottom: 1em;
+  }
+  header nav ul li {
+    visibitlity: hidden;
+    width: 100%;
+  }
+  header nav ul li a {
+    color: white !important;
+    margin-bottom: 0.3em;
+    padding: 0.5em 0;
+    text-indent: 1em;
+    width: 100%;
+  }
+}
 /* PRODUCT TOUR  */
 /* ============================ */
 #tour {
@@ -197,6 +236,7 @@ hr.headline-line {
 
 @media screen and (max-width: 600px) {
   #headline h1 {
+    color: #cc6400;
     font-size: 2em;
     margin: 0;
   }

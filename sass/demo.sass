@@ -128,11 +128,14 @@ header
     color: $dark-grey
     text-align: center
   #download
-    margin: 1em 0 1.5em
+    color: $dark-grey
+    margin: 2em 0 1.5em
+    text-align: center
     .button
+      font-size: 1.2em
       margin: 0 auto
       padding: 0.5em 0
-      width: 60%
+      width: 100%
       
   
   .rust
@@ -146,6 +149,18 @@ header
       color: $white
       @include gradient-two($rust, $rust-darker)
 
+  .light-blue
+    @include border-radius(8px)
+    color: $white
+    @include gradient-two($light-blue, $blue)
+
+    &:hover, 
+    &:active,
+    &:visited
+      color: $white
+      @include gradient-two($light-blue, $dark-blue)
+
+
 @media screen and (max-width: 600px)
   #tour
     h1
@@ -156,6 +171,7 @@ header
       .button
         font-size: 1em
         font-weight: normal
+        width: 60%
         
 
   

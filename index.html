@@ -1,232 +1,90 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<title>Centurion - A CSS Web Framework</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  
-  <link rel="shortcut icon" href="graphics/favicon.jpg" />
-  <link rel="apple-touch-icon" href="graphics/apple-touch-icon.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="graphics/apple-touch-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="graphics/apple-touch-icon-114x114.png" />
-  
-  <!-- CENTURION -->
-  <link rel='stylesheet' href='css/reset.css'>
-  <link rel='stylesheet' href='css/centurion.css'>
-  <link rel='stylesheet' href='css/elusive-webfont.css'>
-  <!-- end of CENTURION -->
-  
-  
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,800,300' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Text+Me+One' rel='stylesheet' type='text/css'>
-
-  <link rel='stylesheet' href='css/demo.css'>
-  
-  <!--[if (lt IE 9) & (!IEMobile)]>
-  <link rel="stylesheet" href="css/centurion-ie.css" />
-  <![endif]-->
-  
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-42226367-1', 'jhough10.github.io');
-  ga('send', 'pageview');
-  </script>
-
-</head>
-<body>
-
-  <header>
-  	<section class="container">
-  		<article class="grid-100">
-  			<nav id="main">
-  				<ul>
-  					<li><a href="index.html">Home</a></li>
-  					<li><a href="get-started.html">Get Started</a></li>
-  					<li><a href="grid.html">The Grid</a></li>
-  					<!--<li><a href="documentation.html">Docs</a></li>-->
-  				</ul>
-  			</nav>
-  		</article>
-  	</section>
-  </header>
+---
+layout: home
+title: Centurion - Responsive CSS Framework
+section: primary
+---
 	
-	<section id="tour">
-		<div class="container">
-			<article class="grid-55 center-grid">
-				<h1>Centurion</h1>
-				
-				<h2 class="hide-mobile">A streamlined and powerful web framework for responsive web sites.</h2>
-				<h2 class="hide-desktop">A responsive web framework for your mobile device.</h2>
-			</article>
-			<article class="grid-60 center-grid">
-				<div id="download" class="hide-mobile">
-				  <div class="grid-50">
-				    <a href="https://github.com/jhough10/Centurion/archive/master.zip" class="button large rust" onClick="_gaq.push(['_trackEvent', 'Downloads', 'Desktop Download', 'Centurion Framework Download']);">Download</a>
-				  </div>
-				  <div class="grid-50">
-				    <a href="https://github.com/jhough10/Centurion/" class="button large light-blue" onClick="_gaq.push(['_trackEvent', 'Fork Repo', 'Dekstop', 'Centurion Framework Fork Repo']);">Fork the Repo</a>
-				  </div>
-				</div>  
-				  
-				<div id="download" class="hide-desktop">
-				  <!-- mobile button -->
-				  <a href="https://github.com/jhough10/Centurion/" class="button large rust" onClick="_gaq.push(['_trackEvent', 'Fork Repo', 'Mobile', 'Centurion Framework Fork Repo']);">Fork the Repo</a>
-				  </div>
-			</article>
+<section>
+  <h2 class="main-headline">Need a reason to use Centurion?</h2>
+  <hr class="headline-line" />
+  
+  <article class="grid-33 alpha">
+		<h2 class="icon-css feature">Latest Code</h2>
+		<p>Built on CSS3 and HTML5 semantics to allow you to start capitalizing on a next generation standard. If you're worried about browser support we recommend the <a href="https://code.google.com/p/html5shiv/">html5shiv</a> to add the basic support for semantic coding.</p>
+	</article>
 
-		</div>
-	</section>
-	<section id="primary">
-		<div class="container">
+	<article class="grid-33">
+		<h2 class="icon-resize-small feature">It's Responsive</h2>
+		<p>No matter the device: Mac, PC, iPhone, iPad, iPad mini, or Android tablet, Centurion does the work of making your web project responsive and viewable on multiple devices. Using some basic magic it even works in IE7.</p>
+	</article>
+
+	<article class="grid-33 omega">
+		<h2 class="icon-website feature">Quickly Prototype</h2>
+		<p>Need to built a web wireframe quick? Look no further than Centurion with it's scalable and easy syntax to get a new prototype up fast. <a href="https://github.com/jhough10/Centurion/archive/master.zip">Download the code</a> or <a href="http://www.github.com/jhough10/Centurion/">fork the repo</a> on Github to get started.</p>
+	</article>
+  <div class="clear"></div>
+</section>
+
+
+
+<section class="grid-100">
+  <h2 class="main-headline">What can Centurion do?</h2>
+  <hr class="headline-line" />
+
+  <!-- Feature 1 -->
+	<article class="grid-50 alpha">
+		<h3 class="icon-view-mode feature">Responsive</h3>
+		<p>Take a seat, build your desktop or mobile version, and watch your web site scale up or down instantly. A responsive grid built with the same heart as the 960 grid, but conceived using percentages rather than strict columns.</p>
+	</article>
+
+  <!-- Feature 2 -->
+	<article class="grid-50 omega">
+		<h3 class="icon-leaf feature">Semantic or Unsemantic</h3>
+		<p>Since Centurion is built using Sass we've allowed developers to use the baked in grid system or the ability to create their own semantic grid. Whatever your code style Centurion is built to accommodate whatever is thrown at it.</p>
+	</article>
+	<div class="clear"></div>
+
+  <!-- Feature 3 -->
+  <article class="grid-50 alpha">
+		<h3 class="icon-cogs feature">Integration</h3>
+		<p>Most of frameworks only work with one Sass mixin library. However, Centurion has been redesigned to alongside <a href="http://compass-style.org/">Compass</a>, <a href="http://bourbon.io/">Bourbon</a>, and many different libraries. If you have an issue with your mixin library, then <a href="https://github.com/jhough10/Centurion/issues">submit an issue for us</a>.</p>
+	</article>
+  
+  <!-- Feature 4 -->		
+  <article class="grid-50 omega">
+    <h3 class="icon-glasses feature">Easy to Learn</h3>
+		<p>Finding it hard to learn a new framework? Don't worry anymore about a bloated code base with markup you have to override with important tags. Centurion features easy to read markup, classes and ID's that are semantic or unsemantic for your personal web tastes, and provides some basic <a href="get-started.html">documentation</a> to get you up to speed.</p>
+    
+  </article>
+	<div class="clear"></div>
+  
+  <!-- Feature 5 -->
+  <article class="grid-50 alpha">
+		<h3 class="icon-dashboard feature">Optimized</h3>
+		<p>We've spent hours tweaking and fine-tuning the code in Sass to deliver a minimal footprint for web development. No more bloated code that is hard to understand and slows your browser down. If you use a Sass precompiler we've made it easy to remove code that you don't need.</p>
+	</article>
 		
-<!--
-		  <section class="grid-100">
-        
-		    <section class="works-with">
-  		    <h2 class="main-headline">Works with</h2>
-  		    <hr class="headline-line" />
-		    
-		      <img src="http://placehold.it/175x80" alt="______" />
-		      <img src="http://placehold.it/175x80" alt="______" />
-		      <img src="http://placehold.it/175x80" alt="______" />
-		      <img src="http://placehold.it/175x80" alt="______" />
-		    </section>
-		    
-		  </section>
--->
-		
-		
-		  <section class="grid-100">
-        <h2 class="main-headline">Need a reason to use Centurion?</h2>
-		    <hr class="headline-line" />
-        
-  		  <article class="grid-33 alpha">
-  				<h2 class="icon-css feature">Latest Code</h2>
-  				<p>Built on CSS3 and HTML5 semantics to allow you to start capitalizing on a next generation standard. If you're worried about browser support we recommend the <a href="https://code.google.com/p/html5shiv/">html5shiv</a> to add the basic support for semantic coding.</p>
-  			</article>
-  
-  			<article class="grid-33">
-  				<h2 class="icon-resize-small feature">It's Responsive</h2>
-  				<p>No matter the device: Mac, PC, iPhone, iPad, iPad mini, or Android tablet, Centurion does the work of making your web project responsive and viewable on multiple devices. Using some basic magic it even works in IE7.</p>
-  			</article>
-  
-  			<article class="grid-33 omega">
-  				<h2 class="icon-website feature">Quickly Prototype</h2>
-  				<p>Need to built a web wireframe quick? Look no further than Centurion with it's scalable and easy syntax to get a new prototype up fast. <a href="https://github.com/jhough10/Centurion/archive/master.zip">Download the code</a> or <a href="http://www.github.com/jhough10/Centurion/">fork the repo</a> on Github to get started.</p>
-  			</article>
-  		  <div class="clear"></div>
-		  </section>
-		  
-		  
-		  
-		  <section class="grid-100">
-		    <h2 class="main-headline">What can Centurion do?</h2>
-		    <hr class="headline-line" />
-		  
-  		  <!-- Feature 1 -->
-  			<article class="grid-50 alpha">
-  				<h3 class="icon-view-mode feature">Responsive</h3>
-  				<p>Take a seat, build your desktop or mobile version, and watch your web site scale up or down instantly. A responsive grid built with the same heart as the 960 grid, but conceived using percentages rather than strict columns.</p>
-  			</article>
-  
-  		  <!-- Feature 2 -->
-  			<article class="grid-50 omega">
-  				<h3 class="icon-leaf feature">Semantic or Unsemantic</h3>
-  				<p>Since Centurion is built using Sass we've allowed developers to use the baked in grid system or the ability to create their own semantic grid. Whatever your code style Centurion is built to accommodate whatever is thrown at it.</p>
-  			</article>
-  			<div class="clear"></div>
-  
-  		  <!-- Feature 3 -->
-        <article class="grid-50 alpha">
-  				<h3 class="icon-cogs feature">Integration</h3>
-  				<p>Most of frameworks only work with one Sass mixin library. However, Centurion has been redesigned to alongside <a href="http://compass-style.org/">Compass</a>, <a href="http://bourbon.io/">Bourbon</a>, and many different libraries. If you have an issue with your mixin library, then <a href="https://github.com/jhough10/Centurion/issues">submit an issue for us</a>.</p>
-  			</article>
-        
-  		  <!-- Feature 4 -->		
-        <article class="grid-50 omega">
-          <h3 class="icon-glasses feature">Easy to Learn</h3>
-  				<p>Finding it hard to learn a new framework? Don't worry anymore about a bloated code base with markup you have to override with important tags. Centurion features easy to read markup, classes and ID's that are semantic or unsemantic for your personal web tastes, and provides some basic <a href="get-started.html">documentation</a> to get you up to speed.</p>
-          
-        </article>
-  			<div class="clear"></div>
-        
-  		  <!-- Feature 5 -->
-        <article class="grid-50 alpha">
-  				<h3 class="icon-dashboard feature">Optimized</h3>
-  				<p>We've spent hours tweaking and fine-tuning the code in Sass to deliver a minimal footprint for web development. No more bloated code that is hard to understand and slows your browser down. If you use a Sass precompiler we've made it easy to remove code that you don't need.</p>
-  			</article>
-  				
-  		  <!-- Feature 6 -->
-        <article class="grid-50 omega">
-          <h3 class="icon-wrench feature">Customizable</h3>
-  				<p>Comes out of the box with custom jQuery plugins for navigation (desktop and mobile), tables, tab boxes, alerts, and tooltips. Since Centurion was built using Sass you can even customize the core files to fit your needs and make your own custom version.</p>
-        </article>
-  			<div class="clear"></div>
-  
-  		  <!-- Feature 7 -->
-<!--
-  			<article class="grid-50 alpha">
-  				
-  			</article>
--->
-  
-  		  <!-- Feature 8 -->
-<!--
-  			<article class="grid-50 omega">
-  				
-  			</article>
--->
-  
-        <div class="clear"></div>
-		  </section>
+  <!-- Feature 6 -->
+  <article class="grid-50 omega">
+    <h3 class="icon-wrench feature">Customizable</h3>
+		<p>Comes out of the box with custom jQuery plugins for navigation (desktop and mobile), tables, tab boxes, alerts, and tooltips. Since Centurion was built using Sass you can even customize the core files to fit your needs and make your own custom version.</p>
+  </article>
+	<div class="clear"></div>
 
-		
-
-			
-
-			<article class="grid-100">
-				<h2 class="main-headline">Still need convincing?</h2>
-		    <hr class="headline-line" />
-				<p>If you are unfamiliar with the gambit of options, check out our <a href="documentation.html">documentation</a> on Centurion for syntax and class structures.</p>
-
-				<p>We're always interested to see how the community will use Centurion. Drop us a line and let us know how and where you used Centurion so that we can showcase the many ways Centurion is making the web better.</p>
-				<p>&nbsp;</p>
-			</article>
-
-		</div>
-	</section>
+  <div class="clear"></div>
+</section>
 
 
-	<footer>
-  	<section class="container">
-  		<article class="grid-33">
-  			<p>Created by <a href="http://www.justinhough.com">Justin Hough</a>.</p>
-  		</article>
-  		<article class="grid-33 push-33">
-  			<p>Licensed under <a href="http://www.gnu.org/licenses/gpl.html" rel="license">GPL</a> and <a href="http://www.opensource.org/licenses/mit-license.php" rel="license">MIT</a>.</p>
-  		</article>
-  	</section>
-  </footer>
-	
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="js/centurion.js"></script>
-  <!--[if lt IE 9]>
-    <script src="js/modernizr-2.6.2-custom-min.js"></script>
-  <![endif]-->
-  <!--[if gte IE 9]>
-    <style type="text/css">
-      .gradient {
-         filter: none;
-      }
-    </style>
-  <![endif]-->
-  <!--[if lte IE 7]>
-  <script src="js/lte-ie7.js"></script>
-  <![endif]-->
-	
-</body>
-</html>
+
+
+
+<article class="grid-100">
+	<h2 class="main-headline">Still need convincing?</h2>
+  <hr class="headline-line" />
+	<p>If you are unfamiliar with the gambit of options, check out our <a href="documentation.html">documentation</a> on Centurion for syntax and class structures.</p>
+
+	<p>We're always interested to see how the community will use Centurion. Drop us a line and let us know how and where you used Centurion so that we can showcase the many ways Centurion is making the web better.</p>
+	<p>&nbsp;</p>
+</article>
+
+

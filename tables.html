@@ -1,357 +1,266 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<title>Tables | Centurion - A CSS Web Framework</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  
-  <link rel="shortcut icon" href="graphics/favicon.jpg" />
-  <link rel="apple-touch-icon" href="graphics/apple-touch-icon.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="graphics/apple-touch-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="graphics/apple-touch-icon-114x114.png" />
-  
-  <!-- CENTURION -->
-  <link rel='stylesheet' href='css/reset.css'>
-  <link rel='stylesheet' href='css/centurion.css'>
-  <link rel='stylesheet' href='css/elusive-webfont.css'>
-  <!-- end of CENTURION -->
-  
-  
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,800,300' rel='stylesheet' type='text/css'>
-  <link rel='stylesheet' href='css/demo.css'>
-  
-  <!--[if (lt IE 9) & (!IEMobile)]>
-  <link rel="stylesheet" href="css/centurion-ie.css" />
-  <script src="js/modernizr-2.6.2-custom-min.js"></script>
-  <![endif]-->
-  
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-42226367-1', 'jhough10.github.io');
-  ga('send', 'pageview');
-  </script>
-
-	<style type="text/css">
-		article { margin: 0; }
-	</style>
-
-</head>
-<body>
+---
+layout: default
+title: Tables
+section: features
+---
 
 
-<header>
-	<section class="container">
-		<article class="grid-100">
-			<nav id="main">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="get-started.html">Get Started</a></li>
-					<li><a href="grid.html">The Grid</a></li>
-					<!-- <li><a href="documentation.html">Docs</a></li> -->
-				</ul>
-			</nav>
-		</article>
-	</section>
-</header>
+<article class="grid-66">
 
-	<section id="headline">
-		<div class="container">
-			<article class="grid-100">
-				<h1>Tables</h1>
-			</article>
-		</div>
-	</section>
+  <p>You know you hate building table after table styles. You can now use the default tables built into Centurion to fit your color scheme.</p>
+  <p>By default the table styles that Centurion uses work out of the box. Create a table and it works with the default grey. To change colors you can specify your own or you can use the ones that come pre-packed based on the <a href="buttons.html">button</a> color scheme.
 
-	<section id="features">
-		<div class="container">
-			<article class="grid-66">
+  <br>
+  </p><h2>Default Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="4">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="even">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h2>Orange Table</h2>
+  <p><code> &lt;table class="<span class="colorChange">ctOrange</span>"&gt; </code></p>
+  <table class="ctOrange rounded">
+    <thead>
+      <tr>
+        <th colspan="4">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="even">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">Table Footer</th>
+      </tr>
+    </tfoot>
+  </table>
+  <br>
+  <h2>Blue Table</h2>
+  <p><code> &lt;table class="<span class="colorChange">ctBlue</span>"&gt; </code></p>
+  <table class="ctBlue">
+    <thead>
+      <tr>
+        <th colspan="4">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="even">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">Table Footer</th>
+      </tr>
+    </tfoot>
+  </table>
+  <br>
+  <h2>Yellow Table</h2>
+  <p><code> &lt;table class="<span class="colorChange">ctYellow</span>"&gt; </code></p>
+  <table class="ctYellow">
+    <thead>
+      <tr>
+        <th colspan="4">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="even">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h2>Red Table</h2>
+  <p><code> &lt;table class="<span class="colorChange">ctRed</span>"&gt; </code></p>
+  <table class="ctRed">
+    <thead>
+      <tr>
+        <th colspan="4">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="even">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h2>Green Table</h2>
+  <p><code> &lt;table class="<span class="colorChange">ctGreen</span>"&gt; </code></p>
+  <table class="ctGreen">
+    <thead>
+      <tr>
+        <th colspan="4">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="even">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h2>Black Table</h2>
+  <p><code> &lt;table class="<span class="colorChange">ctBlack</span>"&gt; </code></p>
+  <table class="ctBlack">
+    <thead>
+      <tr>
+        <th colspan="4">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="even">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr class="odd">
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+    </tbody>
+  </table>
 
-		        <p>You know you hate building table after table styles. You can now use the default tables built into Centurion to fit your color scheme.</p>
-		        <p>By default the table styles that Centurion uses work out of the box. Create a table and it works with the default grey. To change colors you can specify your own or you can use the ones that come pre-packed based on the <a href="buttons.html">button</a> color scheme.
+<!-- end of content -->
+</article>
+<aside class="grid-33">
 
-		        <br>
-		        </p><h2>Default Table</h2>
-		        <table>
-		          <thead>
-		            <tr>
-		              <th colspan="4">Table Header</th>
-		            </tr>
-		          </thead>
-		          <tbody>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="even">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		          </tbody>
-		        </table>
-		        <br>
-		        <h2>Orange Table</h2>
-		        <p><code> &lt;table class="<span class="colorChange">ctOrange</span>"&gt; </code></p>
-		        <table class="ctOrange rounded">
-		          <thead>
-		            <tr>
-		              <th colspan="4">Table Header</th>
-		            </tr>
-		          </thead>
-		          <tbody>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="even">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		          </tbody>
-		          <tfoot>
-		            <tr>
-		              <th colspan="4">Table Footer</th>
-		            </tr>
-		          </tfoot>
-		        </table>
-		        <br>
-		        <h2>Blue Table</h2>
-		        <p><code> &lt;table class="<span class="colorChange">ctBlue</span>"&gt; </code></p>
-		        <table class="ctBlue">
-		          <thead>
-		            <tr>
-		              <th colspan="4">Table Header</th>
-		            </tr>
-		          </thead>
-		          <tbody>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="even">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		          </tbody>
-		          <tfoot>
-		            <tr>
-		              <th colspan="4">Table Footer</th>
-		            </tr>
-		          </tfoot>
-		        </table>
-		        <br>
-		        <h2>Yellow Table</h2>
-		        <p><code> &lt;table class="<span class="colorChange">ctYellow</span>"&gt; </code></p>
-		        <table class="ctYellow">
-		          <thead>
-		            <tr>
-		              <th colspan="4">Table Header</th>
-		            </tr>
-		          </thead>
-		          <tbody>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="even">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		          </tbody>
-		        </table>
-		        <br>
-		        <h2>Red Table</h2>
-		        <p><code> &lt;table class="<span class="colorChange">ctRed</span>"&gt; </code></p>
-		        <table class="ctRed">
-		          <thead>
-		            <tr>
-		              <th colspan="4">Table Header</th>
-		            </tr>
-		          </thead>
-		          <tbody>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="even">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		          </tbody>
-		        </table>
-		        <br>
-		        <h2>Green Table</h2>
-		        <p><code> &lt;table class="<span class="colorChange">ctGreen</span>"&gt; </code></p>
-		        <table class="ctGreen">
-		          <thead>
-		            <tr>
-		              <th colspan="4">Table Header</th>
-		            </tr>
-		          </thead>
-		          <tbody>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="even">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		          </tbody>
-		        </table>
-		        <br>
-		        <h2>Black Table</h2>
-		        <p><code> &lt;table class="<span class="colorChange">ctBlack</span>"&gt; </code></p>
-		        <table class="ctBlack">
-		          <thead>
-		            <tr>
-		              <th colspan="4">Table Header</th>
-		            </tr>
-		          </thead>
-		          <tbody>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="even">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		            <tr class="odd">
-		              <td>Content</td>
-		              <td>This is longer content</td>
-		              <td>Content</td>
-		              <td>Content</td>
-		            </tr>
-		          </tbody>
-		        </table>
+  <h2>Areas of Interest</h2>
+<ul>
+<li class='current'><a class='current' href="tables.html">Tables</a></li>
+<li><a href="buttons.html">Buttons</a></li>
+</ul>
 
-				<!-- end of content -->
-			</article>
-			<aside class="grid-33">
+  <br>
 
-		        <h2>Areas of Interest</h2>
-				<ul>
-					<li class='current'><a class='current' href="tables.html">Tables</a></li>
-					<li><a href="buttons.html">Buttons</a></li>
-				</ul>
-
-		        <br>
-
-		        <h3>Example Table</h3>
+  <h3>Example Table</h3>
 <pre><code>&lt;table class="<span class="colorChange">ctOrange</span>"&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Table Header&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content&lt;/td&gt;
-      &lt;td&gt;This is longer content&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Table Footer&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Header&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Content&lt;/td&gt;
+&lt;td&gt;This is longer content&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;
+&lt;th&gt;Table Footer&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/tfoot&gt;
 &lt;/table&gt;
 </code></pre>
 
-			</aside>
-		</div>
-	</section>
-
-
-	<footer>
-  	<section class="container">
-  		<article class="grid-33">
-  			<p>Created by <a href="http://www.justinhough.com">Justin Hough</a>.</p>
-  		</article>
-  		<article class="grid-33 push-33">
-  			<p>Licensed under <a href="http://www.gnu.org/licenses/gpl.html" rel="license">GPL</a> and <a href="http://www.opensource.org/licenses/mit-license.php" rel="license">MIT</a>.</p>
-  		</article>
-  	</section>
-  </footer>
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="js/centurion.js"></script>
-  <!--[if gte IE 9]>
-    <style type="text/css">
-      .gradient {
-         filter: none;
-      }
-    </style>
-  <![endif]-->
-  <!--[if lte IE 7]><script src="scripts/lte-ie7.js"></script><![endif]-->
-      
-</body>
-</html>
+</aside>

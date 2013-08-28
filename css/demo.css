@@ -346,6 +346,85 @@ hr.headline-line {
     font-size: 1.3em;
   }
 }
+/* CUSTOM GENERATOR */
+/* ============================ */
+h2.generate-header {
+  margin: 0;
+}
+
+.toggle-all {
+  cursor: pointer;
+  font-size: 0.8em;
+  font-weight: normal;
+  margin: 1em 0;
+  text-decoration: underline;
+  vertical-align: middle;
+}
+
+#css-download,
+#js-download {
+  display: none;
+}
+
+#generator {
+  margin: 0;
+}
+
+.generate {
+  padding-right: 2em;
+  position: relative;
+}
+.generate input[type=checkbox] {
+  -webkit-appearance: none;
+  background-color: #ededed;
+  border: 1px solid #dedede;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  font-size: 1.2em;
+  margin-right: 0.4em;
+  padding: 8px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+.generate input[type=checkbox]:active,
+.generate input[type=checkbox]:checked:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.generate input[type=checkbox]:checked:after {
+  content: "\2714";
+  color: #cc6400;
+  font-size: 0.6em;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+}
+.generate label {
+  display: block;
+  font-size: 1em;
+  margin: 0.8em 0;
+  vertical-align: middle;
+}
+.generate input[type="submit"]:disabled,
+.generate input[type="submit"]:disabled:hover {
+  background: #dedede;
+  color: white;
+  cursor: default;
+}
+.generate .button.small {
+  padding: 0.5em 0.8em;
+}
+.generate textarea {
+  border: 1px solid #cccccc;
+  box-shadow: inset 0 0 5px #dedede;
+  color: #999999;
+  height: 200px;
+  font-size: 0.7em;
+  margin: 1em 0 2em 0;
+  padding: 1em;
+  width: 100%;
+}
+
 /* GRID */
 /* ============================ */
 #grid [class*="grid-"] p {

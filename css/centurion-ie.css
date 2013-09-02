@@ -27,11 +27,13 @@ body {
   *padding-left: 0;
   *padding-right: 0;
   /* IE7 */
+  position: relative;
+}
+.container [class*="grid-"] > * {
   /* IE7 */
   *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "2%");
   *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "2%");
   /* IE7 */
-  position: relative;
 }
 .container .alpha {
   margin-left: 0;

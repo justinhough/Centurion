@@ -6,19 +6,157 @@ section: features
 
 
 
-<section id="get-started" class="grid-60 center-grid">
+<article id="get-started" class="grid-60 center-grid">
 	<h1 class="icon-file-edit">We're still cleaning up our documentation.</h1>
+<!--
 	<div class="clear"></div>
 	<p>Until we release Centurion 3.3 from its dirty cage, please refer to our <a href="https://github.com/jhough10/Centurion/wiki/">wiki documentation page on Github</a> for the latest and greatest features for Centurion 3.2.</p>
+-->
   
-</section>
+</article>
 <div class="clear"></div>
 
 
+<article id="documentation" class="grid-75 alpha">
+
+<p>Centurion is built on CSS3 and HTML5 semantics to allow you to start capitalizing on a next generation standard. If you're worried about browser support we recommend the <a href="https://code.google.com/p/html5shiv/">html5shiv</a> or <a href="http://modernizr.com/">Modernizr</a> to add the basic support for semantic coding.</p>
+
+<h2 class="no-margin">Version</h2>
+
+<p>Current version of Centurion is 3.3</p>
+
+
+<h2>Structure</h2>
+
+<p>When you download and extract Centurion you'll notice the main files that make up the framework broken down like so. Depending on the usage and requirements for your website you can easily remove files that you don't need.</p>
+
+<pre><code>centurion/
+|__ css/
+|  |__ centurion-ie-rtl.css
+|  |__ centurion-ie.css
+|  |__ centurion-rtl.css
+|  |__ centurion.css
+|  |__ custom.css
+|  |__ elusive-webfont.css
+|  |__ reset.css
+|  |__ compressed/
+|  |  |__ [minified css versions]
+|  |__ font/
+|  |  |__ Elusive-Icons.eot
+|  |  |__ Elusive-Icons.svg
+|  |  |__ Elusive-Icons.ttf
+|  |  |__ Elusive-Icons.woff
+|__ js/
+|  |__ centurion.js
+|  |__ lte-ie7.js
+|  |__ modernizr-2.6.2-custom-min.js
+</code></pre>
+
+<p><strong>Note:</strong> Any files with <code>-rtl</code> are for right-to-left language support and anything marked with <code>-ie</code> are stylesheets meant to fix some minor issues with IE7.</p>
+
+<p><a name="grid"></a></p>
+
+<h2>The Grid</h2>
+
+<p>Originaly Centurion was built only a responsive grid, so at its core Centurion is built to be responsive. Developed along the same lines as the <a href="http://960.gs">960 Grid</a> built by Nathan Smith. The grid is built using a Sass mixin, which makes it highly customizable. The only portion of the grid system that uses a pixel width is the container. For desktops the default container is set to <code>1100px</code> wide and is fully fluid below <code>768px</code> for tablets and smartphones.</p>
+
+<h3>Basic Structure</h3>
+
+<p>Utilizing the grid requires a container wrapper followed by the grid size that you want to use. For example, if you want to use the full width, then set <code>grid-100</code>. If you want to divide up your page based into two columns then you can do this: <code>grid-40</code> and <code>grid-60</code>. The number correlates to the percentage of the container that you want your content to occupy.</p>
+
+<pre><code>&lt;div class="container"&gt;
+    &lt;div class="grid-40"&gt;
+          ...
+    &lt;/div&gt;
+    &lt;div class="grid-60"&gt;
+        ... 
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><strong>Note:</strong> For each row make sure that you elements add up to 100 across in order to utilize the full row. However, if you want to center one grid element on each row then you will want to use Centering Grids below.</p>
+
+<h3>Nesting Grids</h3>
+
+<p>The best part of any grid system is the ability to nest elements within a single grid element to break down the space into smaller, manageable spaces.</p>
+
+<p>For example, say that you want to have content in a <code>grid-60</code>, but you also want to add three images with captions side-by-side beneath the main block of text. In order to create this layout will need to put three <code>grid-33</code> grid elements inside the parent grid element.</p>
+
+<pre><code>&lt;div class="grid-60"&gt;
+    &lt;p&gt;Some text talking about something.&lt;/p&gt;
+    &lt;div class="grid-33 alpha"&gt;
+        &lt;img src="" alt="" /&gt;
+        &lt;p&gt;Image caption is written here&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-33"&gt;
+        &lt;img src="" alt="" /&gt;
+        &lt;p&gt;Image caption is written here&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-33 omega"&gt;
+        &lt;img src="" alt="" /&gt;
+        &lt;p&gt;Image caption is written here&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>For a mobile layout, you can add <code>mobile-grid-50</code> to leave the main content divided in two when it reaches a mobile phone screen size. So if you had</p>
+
+<pre><code>&lt;div class="grid-80"&gt;
+    &lt;p&gt;Some text talking about something.&lt;/p&gt;
+    &lt;div class="grid-25 mobile-grid-50 alpha"&gt;
+        &lt;img src="" alt="" /&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-25 mobile-grid-50"&gt;
+        &lt;img src="" alt="" /&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-25 mobile-grid-50"&gt;
+        &lt;img src="" alt="" /&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-25 mobile-grid-50 omega"&gt;
+        &lt;img src="" alt="" /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Alpha and Omega Each grid element has a margin of 15px on either side to give a nice 30px space between each grid, while this provides a nice aesthetic it causes issues when nesting elements causing the last grid element to wrap to a new line. To fix the issue with this extra margin causing the last nested grid element to wrap there are two classes added into the grid core <code>alpha</code> and <code>omega</code>.</p>
+
+<h3>Alpha and Omega</h3>
+
+<p>The alpha class removes the left margin on the first element that is nested in another grid. The omega class does the exact opposite, which removes the right margin from the last element. Notice that the middle <code>grid-25</code> does not have a second class. Only the first and last elements require this fix for the grid to layout properly.</p>
+
+<p><strong>Note:</strong> Do not put use alpha or omega on outer grid elements, such as on the grid-6 in the example above. Margins only need be removed on nested elements when they are within another grid.</p>
+
+<h3>Centering Grids</h3>
+
+<p>Centering grid elements is as easy as adding <code>center-grid</code> to your grid element. This will evenly space your element in the center of your grid container.</p>
+
+<pre><code>&lt;div class="grid-60 center-grid"&gt;
+    &lt;p&gt;Centered Grid&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="clear"&gt;&lt;/div&gt;
+</code></pre>
+
+<h3>Semantic Grid</h3>
+
+<p>If you're not font of column based grid systems then you can use Centurion Sass to build a custom semantic grid framework. You only have to specify what html element will be your grid container and what <code>aside</code> and <code>article</code> will receive in terms of width (size).</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code>&lt;section&gt;
+    &lt;aside id="left-bar"&gt;
+        ...
+    &lt;/aside&gt;
+    &lt;article id="content"&gt;
+        ...
+    &lt;/article&gt;
+&lt;/section&gt;
+</code></pre>
+
+
+
+
 <!--
-<section id="colors" class="grid-100">
-	<h2 class="main-headline">Colors</h2>
-	<hr class="headline-line" />
+	<h2>Colors</h2>
 
 	<article class="grid-50">
 
@@ -36,14 +174,16 @@ section: features
 	  <div data-color="rust"></div>
 	  
 	</article>
-</section>
--->
 
 
-<section class="grid-100">
+
+
+<!--
   <h2 class="main-headline">Some Spoilers</h2>
   <hr class="headline-line" />
+-->
   <h2>Elusive Icon Font</h2>
+  
   <p><a href="https://github.com/aristath/elusive-iconfont">Elusive Icon Font</a> is a webfont created by <a href="http://aristeides.com/">Aristeides Stathopoulos</a>.</p>
   
   <h3>Default Icons</h3>
@@ -342,4 +482,4 @@ section: features
     <li><span class="icon-w3c"></span> icon-w3c</li>
     <li><span class="icon-css"></span> icon-css</li>
   </ul>
-</section>
+</article>

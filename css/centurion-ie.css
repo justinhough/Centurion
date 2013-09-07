@@ -35,11 +35,13 @@ body {
   *padding-left: 0;
   *padding-right: 0;
   /* IE7 */
+  position: relative;
+}
+.container [class*="grid-"] > * {
   /* IE7 */
   *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "2%");
   *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "2%");
   /* IE7 */
-  position: relative;
 }
 .container .alpha {
   margin-left: 0;
@@ -452,7 +454,7 @@ body {
   margin-right: auto;
 }
 
-@media screen and (min-width: 200px) and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .container {
     width: 100%;
     margin-left: auto;
@@ -522,7 +524,7 @@ body {
     display: none !important;
   }
 }
-@media screen and (min-width: 601px) and (max-width: 920px) {
+@media screen and (max-width: 920px) {
   .container {
     width: 98%;
   }

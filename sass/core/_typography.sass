@@ -11,6 +11,7 @@ body
     &:visited
       color: $change-link-color
 
+
 // Code Markup
 @mixin code-markup
   code, pre
@@ -22,16 +23,30 @@ body
     padding: 0.1em 0.2em
     
   code
-    border: 1px solid $lightgrey
+    background: #333
+    border: 1px solid #333
     color: $grey
+    font-size: 0.8em
+    padding: 0.3em 0.5em 0.2em 0.5em
     white-space: nowrap
+    
   pre
     display: block
     line-height: 1.5
-    padding: 0.8em
+    padding: 0
     word-break: break-all
     word-wrap: break-word
     white-space: pre-wrap
+    code
+      background: #333
+      border: 1px solid #333
+      color: $grey
+      display: block
+      padding: 1em
+      word-break: break-all
+      word-wrap: break-word
+      white-space: pre-wrap
+  
 
 
 // Text

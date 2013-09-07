@@ -257,14 +257,8 @@ hr.headline-line
     left: 0
     top: 0
 
-/*code
-  background: #EDEDED
-  display: block
-  font-size: 0.8em
-  padding: 10px
-  margin: 10px 0*/
 
-#documentation
+#get-started
   text-align: center
   h1
     float: left
@@ -278,7 +272,29 @@ hr.headline-line
       top: -0.25em
       vertical-align: middle
   h2
+    color: $rust
     font-size: 1.5em
+
+#documentation
+  h2
+    color: $rust
+    font-size: 1.5em
+    margin-top: 2em
+    &.no-margin
+      margin-top: 0
+  h3
+    font-size: 1.2em
+  
+  code
+    background: $gold
+    border-color: $gold
+    color: #FFF
+  
+  pre
+    code
+      border-color: $dark-grey
+      background: $dark-grey
+
 
 
 @media screen and (max-width: 600px)

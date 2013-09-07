@@ -3,8 +3,8 @@ $lang-front: left
 $lang-back: right
 
 // Center Grid
-// @include centerGrid
-@mixin centerGrid
+// @include center-grid
+@mixin center-grid
   .center-grid
     display: block
     float: none
@@ -26,7 +26,6 @@ $lang-back: right
 
 @mixin float-left
   float: $lang-front
-
 
 
 // IE Specific Hacks - Border Box Fix
@@ -63,10 +62,10 @@ $lang-back: right
         *padding-right: 0
         /* IE7 */
         & > *
-        /* IE7 */
-        *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
-        *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
-        /* IE7 */
+          /* IE7 */
+          *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+          *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+          /* IE7 */
       position: relative
       
   
@@ -103,7 +102,7 @@ $lang-back: right
         #{$direction}: (1% * $percent)
         @include ie7-push($decimal)
 
-    @include centerGrid
+    @include center-grid
 
 
 // Mobile Grid Generator - NO PUSH OR PULL
@@ -132,7 +131,7 @@ $lang-back: right
       .mobile-push-#{$num}
         #{$direction}: (1% * $num)
     
-    @include centerGrid
+    @include center-grid
     @include first-last
     [class*="pull-"],
     [class*="push-"]
@@ -146,30 +145,74 @@ $lang-back: right
   width: $total-width
   @include auto-center
 
-@mixin sem-grid($col-width)
+@mixin sem-grid($col-width, $padding: 15px)
   +box-sizing(border-box)
   @include float-left
-  padding: 0 15px
+  padding: 0 $padding
   position: relative
   width: 1% * $col-width
 
-@mixin sem-push($offset-push)
-  $direction: (1% * $offset-push)
+@mixin sem-push($offset-push, $direction: $lang-front)
+  #{$direction}: (1% * $offset-push)
 
-@mixin sem-pull($offset-pull)
-  $direction: -(1% * $offset-pull)
+@mixin sem-pull($offset-pull, $direction: $lang-front)
+  #{$direction}: -(1% * $offset-pull)
 
 
 
-// Grid
+// IE7 Support for Semantic Grids
+
+@mixin sem-ie-grid($num, $space:2%)
+  $decimal: $num / 100
+  @include ie7-grid-element($decimal)
+  @if $ie7-support
+    *padding-left: 0
+    *padding-right: 0
+    & > *
+      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+
+@mixin sem-ie-push($num, $space:2%)
+  $decimal: $num / 100
+  @include ie7-push($decimal)
+
+@mixin sem-ie-pull($num)
+  $decimal: $num / 100
+  @include ie7-pull($decimal)
+
+
+@mixin sem-ie-grid-thirds($num, $space:2%)
+  $mul: 1/3
+  $decimal: $num * $mul
+  @include ie7-grid-element($decimal)
+  @if $ie7-support
+    *padding-left: 0
+    *padding-right: 0
+    & > *
+      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+
+@mixin sem-ie-push-thirds($num)
+  $mul: 1/3
+  $decimal: $num * $mul
+  @include ie7-push($decimal)
+
+@mixin sem-ie-pull-thirds($num)
+  $mul: 1/3
+  $decimal: $num * $mul
+  @include ie7-pull($decimal)
+
+
+
+// Grid Mixin Combined
 @mixin grid-generate($content-width: 960px, $width:98%, $space:2%, $rows:20)
   
   @include grid($content-width, $width, $space, $rows)
   
-  @media screen and (min-width: 200px) and (max-width: 600px)
+  @media screen and (max-width: 600px)
     @include grid-mobile
   
-  @media screen and (min-width: 601px) and (max-width: 920px)
+  @media screen and (max-width: 920px)
     .container
       width: 98%
   

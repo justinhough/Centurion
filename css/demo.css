@@ -302,21 +302,15 @@ hr.headline-line {
   top: 0;
 }
 
-/*code
- * background: #EDEDED
- * display: block
- * font-size: 0.8em
- * padding: 10px
- * margin: 10px 0 */
-#documentation {
+#get-started {
   text-align: center;
 }
-#documentation h1 {
+#get-started h1 {
   float: left;
   text-align: left;
   vertical-align: middle;
 }
-#documentation h1:before {
+#get-started h1:before {
   font-size: 4em;
   float: left;
   position: relative;
@@ -324,8 +318,30 @@ hr.headline-line {
   top: -0.25em;
   vertical-align: middle;
 }
-#documentation h2 {
+#get-started h2 {
+  color: #cc6400;
   font-size: 1.5em;
+}
+
+#documentation h2 {
+  color: #cc6400;
+  font-size: 1.5em;
+  margin-top: 2em;
+}
+#documentation h2.no-margin {
+  margin-top: 0;
+}
+#documentation h3 {
+  font-size: 1.2em;
+}
+#documentation code {
+  background: #ffbf1a;
+  border-color: #ffbf1a;
+  color: white;
+}
+#documentation pre code {
+  border-color: #333333;
+  background: #333333;
 }
 
 @media screen and (max-width: 600px) {

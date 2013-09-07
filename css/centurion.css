@@ -238,7 +238,7 @@ body {
   margin-right: auto;
 }
 
-@media screen and (min-width: 200px) and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .container {
     width: 100%;
     margin-left: auto;
@@ -308,7 +308,7 @@ body {
     display: none !important;
   }
 }
-@media screen and (min-width: 601px) and (max-width: 920px) {
+@media screen and (max-width: 920px) {
   .container {
     width: 98%;
   }
@@ -1136,15 +1136,28 @@ code, pre {
 }
 
 code {
-  border: 1px solid #999999;
+  background: #333333;
+  border: 1px solid #333333;
   color: #cccccc;
+  font-size: 0.8em;
+  padding: 0.3em 0.5em 0.2em 0.5em;
   white-space: nowrap;
 }
 
 pre {
   display: block;
   line-height: 1.5;
-  padding: 0.8em;
+  padding: 0;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+pre code {
+  background: #333333;
+  border: 1px solid #333333;
+  color: #cccccc;
+  display: block;
+  padding: 1em;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre-wrap;

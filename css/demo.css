@@ -335,8 +335,8 @@ hr.headline-line {
   font-size: 1.2em;
 }
 #documentation code {
-  background: #ffbf1a;
-  border-color: #ffbf1a;
+  background: #cc6400;
+  border-color: #cc6400;
   color: white;
 }
 #documentation pre code {

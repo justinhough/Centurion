@@ -541,9 +541,9 @@ Every feature of this framework is tested using a machine that resembles a compu
 
 I want to take the time to thank a few people for their contributions to this framework
 
-[Aristeides Stathopoulos](https://github.com/aristath) - for his work on the open source [Elusive Icons](https://github.com/aristath/elusive-iconfont), which made Centurion prettier.
-[Josh Northcott](http://www.joshnorthcott.com/) - for his tireless effort in spreading the word about responsive design and Centurion.
-[Corey Hadden](https://github.com/craql) - for his assistance in making jQuery play nice and for sheer inspiration.
+* [Aristeides Stathopoulos](https://github.com/aristath) - for his work on the open source [Elusive Icons](https://github.com/aristath/elusive-iconfont), which made Centurion prettier.
+* [Josh Northcott](http://www.joshnorthcott.com/) - for his tireless effort in spreading the word about responsive design and Centurion.
+* [Corey Hadden](https://github.com/craql) - for his assistance in making jQuery play nice and for sheer inspiration.
 
 
 <a name="licensing"></a>

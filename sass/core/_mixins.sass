@@ -44,8 +44,36 @@
   float: right
 
 
+// Media Queries
+@mixin media-query($media) 
+  @if $media == phones
+    @media only screen and (max-width: $breakpoint-small)
+      @content
+
+  @else if $media == tablets
+    @media only screen and (min-width: $breakpoint-small + 1) and (max-width: $breakpoint-medium)
+      @content
+
+  @else if $media == desktops
+    @media only screen and (min-width: $breakpoint-medium+ 1) and (max-width: $breakpoint-large)
+      @content
+
+
 
 // Show and Hide Elements within Grid
+@mixin mobile-view
+  %show-block
+    display: block
+  
+  %hide-block
+    display: none
+  
+  .hide-desktop
+    @extend %hide-block
+  
+  .hide-mobile
+    @extend %show-block
+
 @mixin hide-desktop
   .hide-desktop
     display: none !important

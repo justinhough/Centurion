@@ -1,16 +1,16 @@
-body {
-  font-size: 15px;
-}
-
 /* --------------------------------------------------------
  *
- *  Centurion Framework v 3.3 - Right-to-Left Stylesheet
- *  Created by: Justin Hough
+ *  Centurion Framework v 3.4 - Right-to-Left Stylesheet
+ *  Created by: Justin Hough (http://justinhough.com/)
  *
  *  Documentation: http://jhough10.github.com/Centurion/get-started.html
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
+body {
+  font-size: 15px;
+}
+
 /*   GRID  */
 .container {
   width: 960px;
@@ -238,7 +238,7 @@ body {
   margin-right: auto;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .container {
     width: 100%;
     margin-left: auto;
@@ -308,12 +308,12 @@ body {
     display: none !important;
   }
 }
-@media screen and (max-width: 920px) {
+@media only screen and (min-width: 601px) and (max-width: 920px) {
   .container {
     width: 98%;
   }
 }
-@media screen and (min-width: 1120px) {
+@media only screen and (min-width: 921px) and (max-width: 1120px) {
   .container {
     width: 1120px;
   }
@@ -375,6 +375,10 @@ body {
   -ms-border-radius: 4px 4px;
   -o-border-radius: 4px 4px;
   border-radius: 4px 4px;
+  -moz-box-shadow: 2px 2px 5px #cccccc;
+  -webkit-box-shadow: 2px 2px 5px #cccccc;
+  -ms-box-shadow: 2px 2px 5px #cccccc;
+  -o-box-shadow: 2px 2px 5px #cccccc;
   box-shadow: 2px 2px 5px #cccccc;
   color: white;
   margin: 15px 0;
@@ -413,19 +417,23 @@ ul.cCrumbs {
   background: #999999;
   padding: 7px 10px;
   border: 1px solid #cccccc;
-  border-radius: 2px;
+  -webkit-border-radius: 2px 2px;
+  -moz-border-radius: 2px 2px;
+  -ms-border-radius: 2px 2px;
+  -o-border-radius: 2px 2px;
+  border-radius: 2px 2px;
   overflow: hidden;
 }
 ul.cCrumbs li {
   margin: 0;
-  padding: 0 10px 0 0;
+  padding: 0 15px 0 0;
   display: inline-block;
 }
 ul.cCrumbs li a,
 ul.cCrumbs li span {
   text-transform: uppercase;
   font-size: 0.8em;
-  padding-right: 10px;
+  padding-right: 15px;
 }
 ul.cCrumbs li:after {
   content: ">";

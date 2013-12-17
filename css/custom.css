@@ -101,7 +101,7 @@ footer a:visited {
   display: none;
 }
 
-@media screen and (min-width: 320px) and (max-width: 520px) {
+@media only screen and (max-width: 600px) {
   .mobile {
     position: relative;
   }

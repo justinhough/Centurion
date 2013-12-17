@@ -29,23 +29,28 @@ $lang-back: right
 
 
 // IE Specific Hacks - Border Box Fix
+@mixin ie-percentage-width-fix($decimal)
+  *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+  
+@mixin ie-percentage-push-fix($lang-front, $decimal)
+  *#{$lang-front}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+  
+@mixin ie-percentage-pull-fix($lang-front, $decimal)
+  *#{$lang-front}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+  
+@mixin ie-percentage-direction-fix($decimal)
+
 @mixin ie7-grid-element($decimal)
   @if $ie7-support
-    /* IE7 */
-    *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-    /* IE7 */
+    @include ie-percentage-width-fix($decimal)
   
 @mixin ie7-push($decimal)
   @if $ie7-support
-    /* IE7 */
-    *#{$lang-front}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-    /* IE7 */
+    @include ie-percentage-push-fix($lang-front, $decimal)
   
 @mixin ie7-pull($decimal)
   @if $ie7-support
-    /* IE7 */
-    *#{$lang-front}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
-    /* IE7 */
+    @include ie-percentage-pull-fix($lang-front, $decimal)
 
 
 @mixin grid($content-width: 960px, $width:98%, $space:2%, $rows:20, $direction:$lang-front)
@@ -57,15 +62,10 @@ $lang-back: right
       float: $direction
       padding: 0 15px
       @if $ie7-support
-        /* IE7 */
         *padding-left: 0
         *padding-right: 0
-        /* IE7 */
         & > *
-          /* IE7 */
-          *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
-          *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
-          /* IE7 */
+          @include ie-after-margin-fix ($space)
       position: relative
       
   
@@ -161,6 +161,10 @@ $lang-back: right
 
 
 // IE7 Support for Semantic Grids
+@mixin ie-after-margin-fix ($space)
+  *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+  *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+
 
 @mixin sem-ie-grid($num, $space:2%)
   $decimal: $num / 100
@@ -169,8 +173,7 @@ $lang-back: right
     *padding-left: 0
     *padding-right: 0
     & > *
-      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
-      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+      @include ie-after-margin-fix ($space)
 
 @mixin sem-ie-push($num, $space:2%)
   $decimal: $num / 100
@@ -189,8 +192,7 @@ $lang-back: right
     *padding-left: 0
     *padding-right: 0
     & > *
-      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
-      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+      @include ie-after-margin-fix ($space)
 
 @mixin sem-ie-push-thirds($num)
   $mul: 1/3
@@ -205,17 +207,18 @@ $lang-back: right
 
 
 // Grid Mixin Combined
+
 @mixin grid-generate($content-width: 960px, $width:98%, $space:2%, $rows:20)
   
   @include grid($content-width, $width, $space, $rows)
   
-  @media screen and (max-width: 600px)
+  @include media-query(phones)
     @include grid-mobile
   
-  @media screen and (max-width: 920px)
+  @include media-query(tablets)
     .container
       width: 98%
   
-  @media screen and (min-width: 1120px)
+  @include media-query(desktops)
     .container
       width: 1120px 

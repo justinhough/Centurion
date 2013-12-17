@@ -98,11 +98,10 @@ footer
     display: none
 
 
-@media screen and (min-width: 320px) and (max-width: 520px)
+@include media-query(phones)
   @include navigation-mobile
-        
 
-@media screen and (min-width: 521px) and (max-width: 768px)
+@include media-query(tablets)
+  
+@include media-query(desktops)
 
-
-@media only screen and (max-width: 920px)

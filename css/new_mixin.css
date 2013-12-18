@@ -8,11 +8,8 @@
 
 .border-class {
   -webkit-border-radius: 0 4px 0 6px;
-  border-radius: 0 4px 0 6px;
   -moz-border-radius: 0 4px 0 6px;
-  border-radius: 0 4px 0 6px;
   -ms-border-radius: 0 4px 0 6px;
-  border-radius: 0 4px 0 6px;
   -o-border-radius: 0 4px 0 6px;
   border-radius: 0 4px 0 6px;
 }

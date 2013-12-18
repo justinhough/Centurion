@@ -1,3 +1,12 @@
+/* --------------------------------------------------------
+ *
+ *  Centurion Framework v 3.4 - Semantic Example
+ *  Created by: Justin Hough (http://justinhough.com/)
+ *
+ *  Documentation: http://jhough10.github.com/Centurion/get-started.html
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
 body {
   font-size: 15px;
 }
@@ -13,11 +22,8 @@ header {
 }
 header section {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -ms-box-sizing: border-box;
-  box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
@@ -33,11 +39,8 @@ section {
 }
 section article {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -ms-box-sizing: border-box;
-  box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
@@ -47,11 +50,8 @@ section article {
 }
 section aside {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -ms-box-sizing: border-box;
-  box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
@@ -67,11 +67,8 @@ footer {
 }
 footer article {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -ms-box-sizing: border-box;
-  box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;

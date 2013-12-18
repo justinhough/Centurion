@@ -13,7 +13,12 @@ header {
 }
 header section {
   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
   padding: 0 15px;
@@ -28,7 +33,12 @@ section {
 }
 section article {
   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
   padding: 0 15px;
@@ -37,7 +47,12 @@ section article {
 }
 section aside {
   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
   padding: 0 15px;
@@ -52,7 +67,12 @@ footer {
 }
 footer article {
   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
   padding: 0 15px;

@@ -1,3 +1,5 @@
+$prefixes: webkit moz ms o
+
 body
   font-size: $font-size-default
 
@@ -15,8 +17,8 @@ body
 // Code Markup
 @mixin code-markup
   code, pre
-    -webkit-border-radius: 4px
-    -moz-border-radius: 4px
+    @each $prefix in $prefixes
+      -#{$prefix}-radius: 4px
     border-radius: 4px
     font-family: "Lucida Console", Monaco, monospace
     font-size: 0.9em
@@ -30,12 +32,10 @@ body
     display: block
     line-height: 1.5
     padding: 0
-    word-break: break-all
-    word-wrap: break-word
-    white-space: pre-wrap
+    @extend force-wrap
     code
-      background: #EDEDED
-      color: #333
+      background: $lightgrey
+      color: $darkgrey
       display: block
       padding: 1em
   

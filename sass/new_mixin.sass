@@ -1,6 +1,4 @@
-$default-prefixes: webkit moz ms o
-$prefixes: $default-prefixes
-
+$prefixes: webkit moz ms o
 
 // Clearfix
 @mixin clearfix
@@ -61,39 +59,39 @@ $prefixes: $default-prefixes
   @if $corner == all
     @each $prefix in $prefixes
       -#{$prefix}-border-radius: $radius $radius2
-      border-radius: $radius $radius2
+    border-radius: $radius $radius2
   @if $corner == left
     @each $prefix in $prefixes
       -#{$prefix}-border-radius: $radius 0 0 $radius2
-      border-radius: $radius 0 0 $radius2
+    border-radius: $radius 0 0 $radius2
   @if $corner == right
     @each $prefix in $prefixes
       -#{$prefix}-border-radius: 0 $radius $radius2 0
-      border-radius: 0 $radius $radius2 0
+    border-radius: 0 $radius $radius2 0
   @if $corner == top-left
     @each $prefix in $prefixes
       -#{$prefix}-border-radius: $radius 0 0 0
-      border-radius: $radius 0 0 0
+    border-radius: $radius 0 0 0
   @if $corner == top-right
     @each $prefix in $prefixes
       -#{$prefix}-border-radius: 0 $radius 0 0
-      border-radius: 0 $radius 0 0
+    border-radius: 0 $radius 0 0
   @if $corner == bottom-right
     @each $prefix in $prefixes
       -#{$prefix}-border-radius: 0 0 $radius 0
-      border-radius: 0 0 $radius 0
+    border-radius: 0 0 $radius 0
   @if $corner == bottom-left
     @each $prefix in $prefixes
       -#{$prefix}-border-radius: 0 0 0 $radius
-      border-radius: 0 0 0 $radius
+    border-radius: 0 0 0 $radius
   @if $corner == opp-left
     @each $prefix in $prefixes
       -#{$prefix}-border-radius: $radius 0 $radius2 0
-      border-radius: $radius 0 $radius2 0
+    border-radius: $radius 0 $radius2 0
   @if $corner == opp-right
     @each $prefix in $prefixes
       -#{$prefix}-border-radius: 0 $radius 0 $radius2
-      border-radius: 0 $radius 0 $radius2
+    border-radius: 0 $radius 0 $radius2
 
 
 

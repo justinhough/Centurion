@@ -1,17 +1,16 @@
-body {
-  font-size: 15px;
-}
-
 /* --------------------------------------------------------
  *
- *  Centurion Framework v 3.1 - FLUID
+ *  Centurion Framework v 3.4 - FLUID
  *  Created by: Justin Hough
  *
  *  Documentation: http://jhough10.github.com/Centurion/get-started.html
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
-/* Desktop/Tablet Fluid Grid Layout - 92% */
+body {
+  font-size: 15px;
+}
+
 .container {
   width: 98%;
   margin-left: auto;
@@ -19,24 +18,13 @@ body {
 }
 .container [class*="grid-"] {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -ms-box-sizing: border-box;
-  box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
   padding: 0 15px;
   position: relative;
-}
-.container .alpha {
-  margin-left: 0;
-  padding-left: 0;
-}
-.container .omega {
-  margin-right: 0;
-  padding-right: 0;
 }
 .container .grid-5 {
   width: 5%;
@@ -236,6 +224,14 @@ body {
 .container .push-66 {
   left: 66.66667%;
 }
+.container .alpha {
+  margin-left: 0;
+  padding-left: 0;
+}
+.container .omega {
+  margin-right: 0;
+  padding-right: 0;
+}
 .container .center-grid {
   display: block;
   float: none;
@@ -248,6 +244,8 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    /* Mobile Grid */
+    /* Rows for Mobile */
   }
   .container [class*="grid-"] {
     display: inline;
@@ -286,12 +284,6 @@ body {
   .container .mobile-push-75 {
     left: 75%;
   }
-  .container .center-grid {
-    display: block;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
   .container .alpha {
     margin-left: 0;
     padding-left: 0;
@@ -299,6 +291,12 @@ body {
   .container .omega {
     margin-right: 0;
     padding-right: 0;
+  }
+  .container .center-grid {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
   }
   .container [class*="pull-"],
   .container [class*="push-"] {
@@ -320,7 +318,7 @@ body {
 }
 @media only screen and (min-width: 921px) and (max-width: 1120px) {
   .container {
-    width: 1120px;
+    width: 100%;
   }
 }
 .center-grid {

@@ -19,11 +19,8 @@ body {
 }
 .container [class*="grid-"] {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -ms-box-sizing: border-box;
-  box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
@@ -35,14 +32,6 @@ body {
 .container [class*="grid-"] > * {
   *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "2%");
   *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "2%");
-}
-.container .alpha {
-  margin-left: 0;
-  padding-left: 0;
-}
-.container .omega {
-  margin-right: 0;
-  padding-right: 0;
 }
 .container .grid-5 {
   width: 5%;
@@ -308,6 +297,14 @@ body {
   left: 66.66667%;
   *left: expression(Math.floor(0.66667 * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px");
 }
+.container .alpha {
+  margin-left: 0;
+  padding-left: 0;
+}
+.container .omega {
+  margin-right: 0;
+  padding-right: 0;
+}
 .container .center-grid {
   display: block;
   float: none;
@@ -320,6 +317,8 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    /* Mobile Grid */
+    /* Rows for Mobile */
   }
   .container [class*="grid-"] {
     display: inline;
@@ -358,12 +357,6 @@ body {
   .container .mobile-push-75 {
     left: 75%;
   }
-  .container .center-grid {
-    display: block;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
   .container .alpha {
     margin-left: 0;
     padding-left: 0;
@@ -371,6 +364,12 @@ body {
   .container .omega {
     margin-right: 0;
     padding-right: 0;
+  }
+  .container .center-grid {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
   }
   .container [class*="pull-"],
   .container [class*="push-"] {

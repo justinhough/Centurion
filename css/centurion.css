@@ -19,7 +19,12 @@ body {
 }
 .container [class*="grid-"] {
   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
   padding: 0 15px;
@@ -375,9 +380,12 @@ body {
   -ms-border-radius: 4px 4px;
   -o-border-radius: 4px 4px;
   border-radius: 4px 4px;
-  -moz-box-shadow: 2px 2px 5px #cccccc;
   -webkit-box-shadow: 2px 2px 5px #cccccc;
+  box-shadow: 2px 2px 5px #cccccc;
+  -moz-box-shadow: 2px 2px 5px #cccccc;
+  box-shadow: 2px 2px 5px #cccccc;
   -ms-box-shadow: 2px 2px 5px #cccccc;
+  box-shadow: 2px 2px 5px #cccccc;
   -o-box-shadow: 2px 2px 5px #cccccc;
   box-shadow: 2px 2px 5px #cccccc;
   color: white;
@@ -451,9 +459,12 @@ ul.cCrumbs li:last-child:after {
   -ms-border-radius: 5px 5px;
   -o-border-radius: 5px 5px;
   border-radius: 5px 5px;
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   background: #7d7e7d;

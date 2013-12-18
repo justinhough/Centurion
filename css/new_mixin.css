@@ -1,0 +1,28 @@
+.example-float {
+  float: right;
+}
+
+.example-float-2 {
+  float: left;
+}
+
+.border-class {
+  -webkit-border-radius: 0 4px 0 6px;
+  border-radius: 0 4px 0 6px;
+  -moz-border-radius: 0 4px 0 6px;
+  border-radius: 0 4px 0 6px;
+  -ms-border-radius: 0 4px 0 6px;
+  border-radius: 0 4px 0 6px;
+  -o-border-radius: 0 4px 0 6px;
+  border-radius: 0 4px 0 6px;
+}
+
+.gradient {
+  background: black;
+  background: -moz-linear-gradient(top, black 0%, #ededed 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, #ededed));
+  background: -webkit-linear-gradient(top, black 0%, #ededed 100%);
+  background: -o-linear-gradient(top, black 0%, #ededed 100%);
+  background: -ms-linear-gradient(top, black 0%, #ededed 100%);
+  background: linear-gradient(top, #000000 0%, #ededed 100%);
+}

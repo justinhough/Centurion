@@ -236,22 +236,4 @@ $mobile-grid-class: mobile-grid
 
 @mixin sem-pull($offset-pull, $direction: $lang-front)
   #{$direction}: -(1% * $offset-pull)
-  
-  
-  
-// Final Combined Grid Mixin
-@mixin grid-generate($width:$grid-size)
-  
-  @include grid($width)
-  
-  @include media-query(phones)
-    @include grid-mobile
-  
-  @include media-query(tablets)
-    .container
-      width: 98%
-  
-  @include media-query(desktops)
-    .container
-      width: $max-grid-size
 

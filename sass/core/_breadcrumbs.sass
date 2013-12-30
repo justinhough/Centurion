@@ -1,0 +1,24 @@
+// Breadcrumbs
+@mixin breadcrumbs
+  ul
+    &.breadcrumbs
+      background: $lightgrey
+      border: 1px solid $grey
+      display: block
+      @include border-radius(2px)
+      @include element-spacing(two, padding, 0.4em, 0.667em)      
+      overflow: hidden
+      li
+        display: inline-block 
+        @include element-spacing(none, margin)
+        @include element-spacing(right, padding, 1em)
+        a,
+        span
+          text-transform: uppercase
+          font-size: ($default-font-size - 0.2)
+          @include element-spacing(right, padding, 1em)
+        &:after 
+          content: ">"
+          color: $grey
+        &:last-child:after 
+          content: ""

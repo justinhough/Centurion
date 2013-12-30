@@ -7,10 +7,6 @@
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
-body {
-  font-size: 15px;
-}
-
 /*   GRID  */
 .container {
   width: 960px;
@@ -312,126 +308,10 @@ body {
   margin-right: auto;
 }
 
-@media only screen and (max-width: 600px) {
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    /* Mobile Grid */
-    /* Rows for Mobile */
-  }
-  .container [class*="grid-"] {
-    display: inline;
-    float: left;
-    width: 100%;
-  }
-  .container [class*="grid-"] [class*="grid-"],
-  .container [class*="grid-"] [class*="mobile-grid-"] {
-    padding: 0;
-    margin: 0;
-  }
-  .container .mobile-grid-25 {
-    width: 25%;
-  }
-  .container .mobile-pull-25 {
-    left: -25%;
-  }
-  .container .mobile-push-25 {
-    left: 25%;
-  }
-  .container .mobile-grid-50 {
-    width: 50%;
-  }
-  .container .mobile-pull-50 {
-    left: -50%;
-  }
-  .container .mobile-push-50 {
-    left: 50%;
-  }
-  .container .mobile-grid-75 {
-    width: 75%;
-  }
-  .container .mobile-pull-75 {
-    left: -75%;
-  }
-  .container .mobile-push-75 {
-    left: 75%;
-  }
-  .container .alpha {
-    margin-left: 0;
-    padding-left: 0;
-  }
-  .container .omega {
-    margin-right: 0;
-    padding-right: 0;
-  }
-  .container .center-grid {
-    display: block;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .container [class*="pull-"],
-  .container [class*="push-"] {
-    left: 0;
-  }
-
-  .hide-desktop {
-    display: block !important;
-  }
-
-  .hide-mobile {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 601px) and (max-width: 920px) {
-  .container {
-    width: 98%;
-  }
-}
-@media only screen and (min-width: 921px) and (max-width: 1120px) {
-  .container {
-    width: 1120px;
-  }
-}
 /* Centering Grid */
 .center-grid {
   display: block;
   float: none;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* Clearfix */
-.clearfix:after, .clearfix:before,
-.container:after,
-.container:before {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-  clear: both;
-  zoom: 1;
-}
-* html .clearfix, * html
-.container {
-  height: 1px;
-}
-
-.clear {
-  clear: both;
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0;
-}
-
-.hide-mobile {
-  display: block;
-}
-
-.hide-desktop {
-  display: none;
 }

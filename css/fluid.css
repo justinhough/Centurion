@@ -7,10 +7,6 @@
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
-body {
-  font-size: 15px;
-}
-
 .container {
   width: 98%;
   margin-left: auto;
@@ -316,7 +312,7 @@ body {
     width: 98%;
   }
 }
-@media only screen and (min-width: 921px) and (max-width: 1120px) {
+@media only screen and (min-width: 1120px) {
   .container {
     width: 100%;
   }

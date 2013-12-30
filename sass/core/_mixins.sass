@@ -167,3 +167,21 @@ $prefixes: $default-prefixes
   white-space: -moz-pre-wrap
   white-space: -hp-pre-wrap
   word-wrap: break-word
+
+
+
+// Grid Mixin
+@mixin grid-generate($width:$grid-size)
+  @include grid($width)
+
+
+// Mobile Grid Mixin (with Media Queries)
+@mixin mobile-grid-generate($width:$grid-size)
+  @include media-query(phones)
+    @include grid-mobile
+  @include media-query(tablets)
+    .container
+      width: 98%
+  @include media-query(desktops)
+    .container
+      width: $max-grid-size

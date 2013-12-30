@@ -3,4 +3,6 @@
 *.scssc
 *.sassc
 
+_fix_before_putting_back
+
 compass_app_log.txt

@@ -17,16 +17,14 @@ header
   @include sem-container(1280px)
   section
     @include sem-grid(100)
-
-
+    
 section
   @include sem-container(1280px)
   article
     @include sem-grid(60)
   aside
     @include sem-grid(40)
-      
-
+    
 footer
   @include sem-container(1280px)
   article
@@ -36,6 +34,28 @@ footer
     &.second
       @include sem-push(40)
 
+
+.rtl
+  header
+    @include sem-container(1280px)
+    section
+      @include sem-grid(100, right)
+      
+  section
+    @include sem-container(1280px)
+    article
+      @include sem-grid(60, right)
+    aside
+      @include sem-grid(40, right)
+      
+  footer
+    @include sem-container(1280px)
+    article
+      @include sem-grid(40, right)
+      // Resized font based on custom override
+      font-size: 1.2em
+      &.second
+        @include sem-push(40, right)
 
 
 // Semantic Grid

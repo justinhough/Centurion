@@ -237,74 +237,75 @@ body {
   margin: 0 auto;
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  /* Rows for Mobile */
-}
-.container [class*="grid-"] {
-  display: inline;
-  float: left;
-  width: 100%;
-}
-.container [class*="grid-"] [class*="grid-"],
-.container [class*="grid-"] [class*="mobile-grid-"] {
-  padding: 0;
-  margin: 0;
-}
-.container .mobile-25 {
-  width: 25%;
-}
-.container .mobile-pull-25 {
-  left: -25%;
-}
-.container .mobile-push-25 {
-  left: 25%;
-}
-.container .mobile-50 {
-  width: 50%;
-}
-.container .mobile-pull-50 {
-  left: -50%;
-}
-.container .mobile-push-50 {
-  left: 50%;
-}
-.container .mobile-75 {
-  width: 75%;
-}
-.container .mobile-pull-75 {
-  left: -75%;
-}
-.container .mobile-push-75 {
-  left: 75%;
-}
-.container .alpha {
-  margin-left: 0;
-  padding-left: 0;
-}
-.container .omega {
-  margin-right: 0;
-  padding-right: 0;
-}
-.container .center-grid {
-  display: block;
-  float: none;
-  margin: 0 auto;
-}
-.container [class*="pull-"],
-.container [class*="pull-"] {
-  left: 0;
-}
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    /* Rows for Mobile */
+  }
+  .container [class*="grid-"] {
+    display: inline;
+    float: left;
+    width: 100%;
+  }
+  .container [class*="grid-"] [class*="grid-"],
+  .container [class*="grid-"] [class*="mobile-grid-"] {
+    padding: 0;
+    margin: 0;
+  }
+  .container .mobile-25 {
+    width: 25%;
+  }
+  .container .mobile-pull-25 {
+    left: -25%;
+  }
+  .container .mobile-push-25 {
+    left: 25%;
+  }
+  .container .mobile-50 {
+    width: 50%;
+  }
+  .container .mobile-pull-50 {
+    left: -50%;
+  }
+  .container .mobile-push-50 {
+    left: 50%;
+  }
+  .container .mobile-75 {
+    width: 75%;
+  }
+  .container .mobile-pull-75 {
+    left: -75%;
+  }
+  .container .mobile-push-75 {
+    left: 75%;
+  }
+  .container .alpha {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .container .omega {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .container .center-grid {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+  .container [class*="pull-"],
+  .container [class*="pull-"] {
+    left: 0;
+  }
 
-.hide-desktop {
-  display: block !important;
-}
+  .hide-desktop {
+    display: block !important;
+  }
 
-.hide-mobile {
-  display: none !important;
+  .hide-mobile {
+    display: none !important;
+  }
 }
-
 @media only screen and (min-width: 601px) and (max-width: 920px) {
   .container {
     width: 98%;
@@ -541,70 +542,72 @@ body {
   float: none;
   margin: 0 auto;
 }
-.rtl .container {
-  width: 100%;
-  margin: 0 auto;
-  /* Rows for Mobile */
-}
-.rtl .container [class*="grid-"] {
-  display: inline;
-  float: right;
-  width: 100%;
-}
-.rtl .container [class*="grid-"] [class*="grid-"],
-.rtl .container [class*="grid-"] [class*="mobile-grid-"] {
-  padding: 0;
-  margin: 0;
-}
-.rtl .container .mobile-25 {
-  width: 25%;
-}
-.rtl .container .mobile-pull-25 {
-  right: -25%;
-}
-.rtl .container .mobile-push-25 {
-  right: 25%;
-}
-.rtl .container .mobile-50 {
-  width: 50%;
-}
-.rtl .container .mobile-pull-50 {
-  right: -50%;
-}
-.rtl .container .mobile-push-50 {
-  right: 50%;
-}
-.rtl .container .mobile-75 {
-  width: 75%;
-}
-.rtl .container .mobile-pull-75 {
-  right: -75%;
-}
-.rtl .container .mobile-push-75 {
-  right: 75%;
-}
-.rtl .container .alpha {
-  margin-right: 0;
-  padding-right: 0;
-}
-.rtl .container .omega {
-  margin-left: 0;
-  padding-left: 0;
-}
-.rtl .container .center-grid {
-  display: block;
-  float: none;
-  margin: 0 auto;
-}
-.rtl .container [class*="pull-"],
-.rtl .container [class*="pull-"] {
-  right: 0;
-}
-.rtl .hide-desktop {
-  display: block !important;
-}
-.rtl .hide-mobile {
-  display: none !important;
+@media only screen and (max-width: 600px) {
+  .rtl .container {
+    width: 100%;
+    margin: 0 auto;
+    /* Rows for Mobile */
+  }
+  .rtl .container [class*="grid-"] {
+    display: inline;
+    float: right;
+    width: 100%;
+  }
+  .rtl .container [class*="grid-"] [class*="grid-"],
+  .rtl .container [class*="grid-"] [class*="mobile-grid-"] {
+    padding: 0;
+    margin: 0;
+  }
+  .rtl .container .mobile-25 {
+    width: 25%;
+  }
+  .rtl .container .mobile-pull-25 {
+    right: -25%;
+  }
+  .rtl .container .mobile-push-25 {
+    right: 25%;
+  }
+  .rtl .container .mobile-50 {
+    width: 50%;
+  }
+  .rtl .container .mobile-pull-50 {
+    right: -50%;
+  }
+  .rtl .container .mobile-push-50 {
+    right: 50%;
+  }
+  .rtl .container .mobile-75 {
+    width: 75%;
+  }
+  .rtl .container .mobile-pull-75 {
+    right: -75%;
+  }
+  .rtl .container .mobile-push-75 {
+    right: 75%;
+  }
+  .rtl .container .alpha {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .rtl .container .omega {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .rtl .container .center-grid {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+  .rtl .container [class*="pull-"],
+  .rtl .container [class*="pull-"] {
+    right: 0;
+  }
+  .rtl .hide-desktop {
+    display: block !important;
+  }
+  .rtl .hide-mobile {
+    display: none !important;
+  }
 }
 @media only screen and (min-width: 601px) and (max-width: 920px) {
   .rtl .container {

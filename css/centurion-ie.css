@@ -7,11 +7,14 @@
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
+body {
+  font-size: 15px;
+}
+
 /*   GRID  */
 .container {
   width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 .container [class*="grid-"] {
   -webkit-box-sizing: border-box;
@@ -304,14 +307,12 @@
 .container .center-grid {
   display: block;
   float: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 /* Centering Grid */
 .center-grid {
   display: block;
   float: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }

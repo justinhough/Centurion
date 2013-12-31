@@ -11,11 +11,13 @@
 @import "core/base"
 
 @include grid
-@include grid-mobile
+@include media-query(phones)
+  @include grid-mobile
 @include grid-media-query
 
 /* RTL Support */
 .rtl
   @include grid(right)
-  @include grid-mobile(right)
+  @include media-query(phones)
+    @include grid-mobile(right)
   @include grid-media-query

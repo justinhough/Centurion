@@ -1,0 +1,21 @@
+/* --------------------------------------------------------
+ *
+ *  Centurion Framework v 3.4 - GRID ONLY
+ *  Created by: Justin Hough (http://justinhough.com/)
+ *
+ *  Documentation: http://jhough10.github.com/Centurion/get-started.html
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
+
+@import "core/base"
+
+@include grid
+@include grid-mobile
+@include grid-media-query
+
+/* RTL Support */
+.rtl
+  @include grid(right)
+  @include grid-mobile(right)
+  @include grid-media-query

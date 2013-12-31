@@ -15,11 +15,11 @@ $dark-gold: #B28100
 
 /* TYPOGRAPHY */
 p, ul, ol
-  margin: $b-margin
+  @include element-spacing(topbottom, margin, 1em)
 
 ul, ol
   ol, ul
-    margin: $no-margin
+    @include element-spacing(none, margin, 0)
 
 /* HEADER */
 header
@@ -32,7 +32,7 @@ header
 
 /* CONTENT */
 section
-  margin: $dh-margin
+  @include element-spacing(topbottom, margin, 1em)
 
 
 /* GRID */
@@ -78,7 +78,7 @@ footer
   border-top: 1px solid $grey
   min-height: 65px
   margin-top: 30px
-  padding: $dh-padding
+  @include element-spacing(topbottom, padding, 1em)
   h2
     font-size: $default-font-size
     
@@ -88,7 +88,7 @@ footer
   section
     font-size: ($default-font-size - 0.2)
 
-  @include links($lightgrey, $white)
+  //@include links($lightgrey, $white)
 
 
 /*  Custom Media Queries  */
@@ -99,7 +99,7 @@ footer
 
 
 @include media-query(phones)
-  @include navigation-mobile
+  //@include navigation-mobile
 
 @include media-query(tablets)
   

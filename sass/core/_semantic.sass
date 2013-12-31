@@ -1,11 +1,11 @@
 // Semantic Grid
 @mixin sem-container($total-width)
+  @include element-spacing(auto, margin)
   width: $total-width
-  @include auto-center
 
-@mixin sem-grid($col-width, $padding: 15px)
+@mixin sem-grid($col-width, $direction: $lang-front, $padding: 1em)
   +box-sizing(border-box)
-  @include float-direction
+  @include float-direction($direction)
   padding: 0 $padding
   position: relative
   width: 1% * $col-width
@@ -15,6 +15,9 @@
 
 @mixin sem-pull($offset-pull, $direction: $lang-front)
   #{$direction}: -(1% * $offset-pull)
+
+
+
 
 
 // Semantic Grid - IE7 Support

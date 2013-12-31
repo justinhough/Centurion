@@ -7,10 +7,14 @@
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
+body {
+  font-size: 15px;
+}
+
+/* Fluid Grid */
 .container {
   width: 98%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 .container [class*="grid-"] {
   -webkit-box-sizing: border-box;
@@ -231,16 +235,13 @@
 .container .center-grid {
   display: block;
   float: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 600px) {
   .container {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    /* Mobile Grid */
+    margin: 0 auto;
     /* Rows for Mobile */
   }
   .container [class*="grid-"] {
@@ -253,7 +254,7 @@
     padding: 0;
     margin: 0;
   }
-  .container .mobile-grid-25 {
+  .container .mobile-25 {
     width: 25%;
   }
   .container .mobile-pull-25 {
@@ -262,7 +263,7 @@
   .container .mobile-push-25 {
     left: 25%;
   }
-  .container .mobile-grid-50 {
+  .container .mobile-50 {
     width: 50%;
   }
   .container .mobile-pull-50 {
@@ -271,7 +272,7 @@
   .container .mobile-push-50 {
     left: 50%;
   }
-  .container .mobile-grid-75 {
+  .container .mobile-75 {
     width: 75%;
   }
   .container .mobile-pull-75 {
@@ -291,11 +292,10 @@
   .container .center-grid {
     display: block;
     float: none;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
   .container [class*="pull-"],
-  .container [class*="push-"] {
+  .container [class*="pull-"] {
     left: 0;
   }
 
@@ -320,8 +320,7 @@
 .center-grid {
   display: block;
   float: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 /* Clearfix */

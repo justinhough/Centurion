@@ -26,8 +26,6 @@
     @include grid-center
     
 
-
-
 // Mobile Grid Generator - NO PUSH OR PULL - @include grid-mobile($direction)
 @mixin grid-mobile ($direction:$lang-front, $content-width: $max-resp-width, $space: $max-resp-space)
   $grid-width: 100%
@@ -54,15 +52,13 @@
   @include hide-mobile
   
 
-
-
 // IE 7 Support
 @mixin ie-7-support($space)
   @if $ie7-support
     *padding-left: 0
     *padding-right: 0
     & > *
-      @include ie-after-margin-fix ($space)
+      @include ie-after-margin-fix($space)
 
 
 // IE Specific Hacks - Border Box Fix
@@ -88,8 +84,6 @@
 @mixin ie7-pull($decimal)
   @if $ie7-support
     @include ie-percentage-pull-fix($lang-front, $decimal)
-
-
 
 
 

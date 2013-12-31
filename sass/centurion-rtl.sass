@@ -9,11 +9,12 @@
  * -------------------------------------------------------- */
 
 @import "core/base"
-$lang-front: right
-$lang-back: left
 
 /*   GRID  */
-@include grid-generate
+@include grid(right)
+@include media-query(phones)
+  @include grid-mobile(right)
+@include grid-media-query
 
 /* Centering Grid */
 @include grid-center
@@ -22,51 +23,50 @@ $lang-back: left
 @include clearfix
 
 /*  Features */
-
 /* Show Elements */
-//@include show-desktop
-//@include show-mobile
+@include show-desktop
+@include show-mobile
 
 /* Alerts */
-//@include alerts
+@include alerts
 
 /* Breadrumbs */
-//@include breadcrumbs
+@include breadcrumbs
 
 /* Buttons */
-//@include buttons
+@include buttons
 
 /* Images */
-//@include images
+@include images
 
 /* Navigation */
-//@include navigation-slim
+@include navigation-slim
 
 /* Panels */
-//@include panels
+@include panels
 
 /* Pagination */
-//@include pagination
+@include pagination
 
 /* Tabs */
-//@include tabs-base
-//@include tabs-bottom
+@include tabs-base
+@include tabs-bottom
 
 /* Tables */
-//@include tables
+@include tables
 
 /* Tooltips */
-//@include tooltips
+@include tooltips
 
 /*  Typography  */
-//@include typography
+@include typography
 
-//@include extendables
+@include extendables
 
 /* Print */
-//@include print
+@include print
 
-//@include mobile-view
+@include mobile-view
 
-
+@import custom
 @import elusive-webfont

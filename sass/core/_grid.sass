@@ -1,96 +1,59 @@
-// Grid Vars
-
-// LTR or RTL Support
-$ie7-support: false
-$lang-front: left
-$lang-back: right
-
-// Desktop
-$max-grid-size: 1120px
-$grid-size: 960px
-$max-space: 2%
-$max-rows: 20
-
-// Mobile
-$max-resp-width: 100%
-$max-resp-space: $max-space
-
-// Classes
-$grid-class: grid
-$mobile-grid-class: mobile-grid
-
-
-// Alpha, Omega, and Marging
-@mixin alpha-omega
-  .alpha
-    margin-left: 0
-    padding-left: 0
-  .omega
-    margin-right: 0
-    padding-right: 0
-
-@mixin margin($value)
-  margin-left: $value
-  margin-right: $value
-
-
-// Center Grid - @include center-grid
-@mixin grid-center
-  .center-grid
-    display: block
-    float: none
-    @include margin(auto)
-
+// Grid
 
 // Direction (LTR or RTL)
-@mixin float-direction
-  float: $lang-front
+@mixin float-direction($direction)
+  @if ($direction == left)
+    float: left
+  @else if ($direction == right)
+    float: right
 
 
-// Semantic Grid - IE7 Support
-@mixin ie-after-margin-fix ($space)
-  *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
-  *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+// Default Grid Generator - @include grid($direction)
+@mixin grid($direction:$lang-front, $content-width: $grid-size, $space:$max-space, $rows:$max-rows)
+  .container
+    width: $content-width
+    @include element-spacing(auto, margin)
+    [class*="#{$grid-class}-"]
+      +box-sizing(border-box)
+      @include float-direction($direction)
+      padding: 0 15px
+      @include ie-7-support($space)
+      position: relative
+    
+    @include grid-rows(normal, $direction)
+    @include grid-rows(thirds, $direction)
+    @include alpha-omega($direction)
+    @include grid-center
+    
 
 
-@mixin sem-ie-grid($num, $space:2%)
-  $decimal: $num / 100
-  @include ie7-grid-element($decimal)
-  @if $ie7-support
-    *padding-left: 0
-    *padding-right: 0
-    & > *
-      @include ie-after-margin-fix ($space)
 
-@mixin sem-ie-push($num, $space:2%)
-  $decimal: $num / 100
-  @include ie7-push($decimal)
+// Mobile Grid Generator - NO PUSH OR PULL - @include grid-mobile($direction)
+@mixin grid-mobile ($direction:$lang-front, $content-width: $max-resp-width, $space: $max-resp-space)
+  $grid-width: 100%
+  .container
+    width: $content-width
+    @include element-spacing(auto, margin)
+    [class*="#{$grid-class}-"]
+      display: inline
+      @include float-direction($direction)
+      width: $grid-width
+      [class*="#{$grid-class}-"], 
+      [class*="#{$mobile-class}-#{$grid-class}-"]
+        padding: 0
+        margin: 0
 
-@mixin sem-ie-pull($num)
-  $decimal: $num / 100
-  @include ie7-pull($decimal)
+    @include grid-rows(mobile, $direction)
+    @include alpha-omega($direction)
+    @include grid-center
+    
+    [class*="#{$pull-class}-"],
+    [class*="#{$pull-class}-"]
+      #{$direction}: 0
+  
+  @include hide-mobile
+  
 
-
-// Semantic Grid - IE Fix for Grid Percentage Converter
-@mixin sem-ie-grid-thirds($num, $space:2%)
-  $mul: 1/3
-  $decimal: $num * $mul
-  @include ie7-grid-element($decimal)
-  @if $ie7-support
-    *padding-left: 0
-    *padding-right: 0
-    & > *
-      @include ie-after-margin-fix ($space)
-
-@mixin sem-ie-push-thirds($num)
-  $mul: 1/3
-  $decimal: $num * $mul
-  @include ie7-push($decimal)
-
-@mixin sem-ie-pull-thirds($num)
-  $mul: 1/3
-  $decimal: $num * $mul
-  @include ie7-pull($decimal)
 
 
 // IE 7 Support
@@ -127,113 +90,6 @@ $mobile-grid-class: mobile-grid
     @include ie-percentage-pull-fix($lang-front, $decimal)
 
 
-// Grid Rows
-@mixin grid-rows($value, $direction, $rows: $max-rows)
-  @if $value == normal
-    // Rows by 5
-    @for $i from 1 through $rows
-      $num: $i * 5
-      $decimal: $num / 100
-      .grid-#{$num}
-        width: 1% * $num
-        @include ie7-grid-element($decimal)
-      .pull-#{$num}
-        #{$direction}: -(1% * $num)
-        @include ie7-pull($decimal)
-      .push-#{$num}
-        #{$direction}: (1% * $num)
-        @include ie7-push($decimal)
-
-  @else if $value == thirds
-    // Rows by 1/3
-    @for $i from 1 through 2
-      $num: $i * 33
-      $mul: 1/3
-      $decimal: $i * $mul
-      $percent: ($num + $decimal)
-  
-      .grid-#{$num}
-        width: 1% * $percent
-        @include ie7-grid-element($decimal)
-      .pull-#{$num}
-        #{$direction}: -(1% * $percent)
-        @include ie7-pull($decimal)
-      .push-#{$num}
-        #{$direction}: (1% * $percent)
-        @include ie7-push($decimal)
-
-  @else if $value == mobile
-    /* Rows for Mobile */
-    @for $i from 1 through 3
-      $num: $i * 25
-      .mobile-grid-#{$num}
-        width: 1% * $num
-      .mobile-pull-#{$num}
-        #{$direction}: -(1% * $num)
-      .mobile-push-#{$num}
-        #{$direction}: (1% * $num)
 
 
-// Desktop / Tablet Grid Generator - @include grid
-@mixin grid($content-width: $grid-size, $space:$max-space, $rows:$max-rows, $direction:$lang-front)
-  .container
-    width: $content-width
-    @include margin(auto)
-    [class*="grid-"]
-      +box-sizing(border-box)
-      @include float-direction
-      padding: 0 15px
-      @include ie-7-support($space)
-      position: relative
-    
-    @include grid-rows(normal, $direction)
-    @include grid-rows(thirds, $direction)
-    @include alpha-omega
-    @include grid-center
-    
-
-// Mobile Grid Generator - NO PUSH OR PULL - @include grid-mobile
-@mixin grid-mobile ($content-width: $max-resp-width, $space: $max-resp-space, $direction:$lang-front)
-  $grid-width: 100%
-  .container
-    width: $content-width
-    @include margin(auto)
-    [class*="grid-"]
-      display: inline
-      @include float-direction
-      width: $grid-width
-      [class*="grid-"], 
-      [class*="mobile-grid-"]
-        padding: 0
-        margin: 0
-    
-    /* Mobile Grid */
-    @include grid-rows(mobile, $direction)
-    @include alpha-omega
-    @include grid-center
-    
-    [class*="pull-"],
-    [class*="push-"]
-      #{$direction}: 0
-  
-  @include hide-mobile
-  
-
-// Semantic Grid
-@mixin sem-container($total-width)
-  width: $total-width
-  @include auto-center
-
-@mixin sem-grid($col-width, $padding: 15px)
-  +box-sizing(border-box)
-  @include float-direction
-  padding: 0 $padding
-  position: relative
-  width: 1% * $col-width
-
-@mixin sem-push($offset-push, $direction: $lang-front)
-  #{$direction}: (1% * $offset-push)
-
-@mixin sem-pull($offset-pull, $direction: $lang-front)
-  #{$direction}: -(1% * $offset-pull)
 

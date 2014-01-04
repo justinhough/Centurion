@@ -236,6 +236,7 @@
       $num: $i * 5
       $decimal: $num / 100
       .#{$grid-class}-#{$num}
+        @extend %grid-column
         width: 1% * $num
         @include ie7-grid-element($decimal)
       .#{$pull-class}-#{$num}
@@ -254,6 +255,7 @@
       $percent: ($num + $decimal)
   
       .#{$grid-class}-#{$num}
+        @extend %grid-column
         width: 1% * $percent
         @include ie7-grid-element($decimal)
       .#{$pull-class}-#{$num}

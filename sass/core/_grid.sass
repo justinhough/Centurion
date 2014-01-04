@@ -13,7 +13,7 @@
   .container
     width: $content-width
     @include element-spacing(auto, margin)
-    [class*="#{$grid-class}-"]
+    %grid-column
       +box-sizing(border-box)
       @include float-direction($direction)
       padding: 0 15px
@@ -32,12 +32,12 @@
   .container
     width: $content-width
     @include element-spacing(auto, margin)
-    [class*="#{$grid-class}-"]
+    [class^="#{$grid-class}-"]
       display: inline
       @include float-direction($direction)
       width: $grid-width
-      [class*="#{$grid-class}-"], 
-      [class*="#{$mobile-class}-#{$grid-class}-"]
+      [class^="#{$grid-class}-"], 
+      [class^="#{$mobile-class}-#{$grid-class}-"]
         padding: 0
         margin: 0
 
@@ -45,8 +45,8 @@
     @include alpha-omega($direction)
     @include grid-center
     
-    [class*="#{$pull-class}-"],
-    [class*="#{$pull-class}-"]
+    [class^="#{$pull-class}-"],
+    [class^="#{$pull-class}-"]
       #{$direction}: 0
   
   @include hide-mobile

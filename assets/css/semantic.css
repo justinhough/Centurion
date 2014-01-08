@@ -1,0 +1,140 @@
+/* --------------------------------------------------------
+ *
+ *  Centurion Framework v 3.4 - Semantic Example
+ *  Created by: Justin Hough (http://justinhough.com/)
+ *
+ *  Documentation: http://jhough10.github.com/Centurion/get-started.html
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
+body {
+  font-size: 15px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+header {
+  margin: 0 auto;
+  width: 1280px;
+}
+header section {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 1em;
+  position: relative;
+  width: 100%;
+}
+
+section {
+  margin: 0 auto;
+  width: 1280px;
+}
+section article {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 1em;
+  position: relative;
+  width: 60%;
+}
+section aside {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 1em;
+  position: relative;
+  width: 40%;
+}
+
+footer {
+  margin: 0 auto;
+  width: 1280px;
+}
+footer article {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 1em;
+  position: relative;
+  width: 40%;
+  font-size: 1.2em;
+}
+footer article.second {
+  left: 40%;
+}
+
+.rtl header {
+  margin: 0 auto;
+  width: 1280px;
+}
+.rtl header section {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: right;
+  padding: 0 1em;
+  position: relative;
+  width: 100%;
+}
+.rtl section {
+  margin: 0 auto;
+  width: 1280px;
+}
+.rtl section article {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: right;
+  padding: 0 1em;
+  position: relative;
+  width: 60%;
+}
+.rtl section aside {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: right;
+  padding: 0 1em;
+  position: relative;
+  width: 40%;
+}
+.rtl footer {
+  margin: 0 auto;
+  width: 1280px;
+}
+.rtl footer article {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: right;
+  padding: 0 1em;
+  position: relative;
+  width: 40%;
+  font-size: 1.2em;
+}
+.rtl footer article.second {
+  right: 40%;
+}

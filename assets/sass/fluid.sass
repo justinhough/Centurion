@@ -1,0 +1,31 @@
+/* --------------------------------------------------------
+ *
+ *  Centurion Framework v 3.4 - FLUID
+ *  Created by: Justin Hough
+ *
+ *  Documentation: http://jhough10.github.com/Centurion/get-started.html
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
+
+@import "core/base"
+
+/* Fluid Grid */
+@include grid(left, 98%)
+  
+@include media-query(phones)
+  @include grid-mobile
+
+@include media-query(tablets)
+  .container
+    width: 98%
+
+@include media-query(desktops)
+  .container
+    width: 100%
+
+
+@include grid-center
+
+/* Clearfix */
+@include clearfix

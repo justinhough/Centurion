@@ -1,0 +1,343 @@
+// Mixins
+
+// Clearfix
+// @include clearfix
+@mixin clearfix
+  .clearfix,
+  .container
+    &:after,
+    &:before
+      content: "."
+      display: block
+      height: 0
+      clear: both
+      visibility: hidden
+      clear: both
+      zoom: 1
+    * html &
+      height: 1px
+  .clear
+    clear: both
+    display: block
+    overflow: hidden
+    visibility: hidden
+    width: 0
+    height: 0
+
+
+// Box Sizing
+// @include box-sizing
+@mixin box-sizing($value:border-box)
+  @each $prefix in $prefixes
+    -#{$prefix}-box-sizing: $value
+  box-sizing: $value
+
+
+// Box Shadow - custom with defaults (4 values)
+// @include box-shadow
+@mixin box-shadow($top: 0, $bottom: 0, $spread: 5px, $color: rgba(#000, .4))
+  @each $prefix in $prefixes
+    -#{$prefix}-box-shadow: $top $bottom $spread $color
+  box-shadow: $top $bottom $spread $color
+    
+
+
+  
+
+// Floating elements
+// replace @include float-left
+// replace @include float-right
+@mixin float-left
+  float: left  
+@mixin float-right
+  float: right
+
+
+// Media Queries
+// @include media-query(phones)
+// @include media-query(tablets)
+// @include media-query(desktops)
+@mixin media-query($media) 
+  @if $media == phones
+    @media only screen and (max-width: $breakpoint-small)
+      @content
+  @else if $media == tablets
+    @media only screen and (min-width: $breakpoint-small + 1) and (max-width: $breakpoint-medium)
+      @content
+  @else if $media == desktops
+    @media only screen and (min-width: $breakpoint-large)
+      @content
+
+
+// Margin and Padding
+
+// Alpha, Omega, and Margin
+@mixin alpha-omega($direction: $lang-front)
+  .alpha
+    margin-#{$direction}: 0
+    padding-#{$direction}: 0
+  @if ($direction == left)
+    .omega
+      margin-right: 0
+      padding-right: 0
+  @else if ($direction == right)
+    .omega
+      margin-left: 0
+      padding-left: 0
+
+// Center Grid - @include center-grid
+@mixin grid-center
+  .center-grid
+    display: block
+    float: none
+    @include element-spacing(auto, margin)
+
+
+// Margin or Padding Mixin
+// @include element-spacing(top-bottom, margin, 10px)
+@mixin element-spacing($direction, $spacing, $value: null, $value2: $value)
+  @if $direction == vertical
+    #{$spacing}: $value 0
+  @else if $direction == horizontal
+    #{$spacing}: 0 $value
+  @else if $direction == top
+    #{$spacing}-top: $value
+  @else if $direction == right
+    #{$spacing}-right: $value
+  @else if $direction == bottom
+    #{$spacing}-bottom: $value
+  @else if $direction == left
+    #{$spacing}-left: $value
+  @else if $direction == all
+    #{$spacing}: $value
+  @else if $direction == two
+    #{$spacing}: $value $value2
+  @else if $direction == auto
+    #{$spacing}: 0 auto
+  @else if $direction == none
+    #{$spacing}: 0
+
+
+
+//@mixin margin($value)
+//  margin-left: $value
+//  margin-right: $value
+
+// Center a sized element
+// @include element-spacing(auto)
+//@mixin auto-center
+//  margin-left: auto
+//  margin-right: auto
+
+
+// Margin
+//$dh-margin: 15px 0
+//$dw-margin: 0 15px
+//$d-margin: 15px
+//$no-margin: 0
+//$t-margin: 15px 0 0 0
+//$b-margin: 0 0 15px 0
+
+
+// Padding
+//$dh-padding: 15px 0
+//$dw-padding: 0 15px
+//$d-padding: 15px
+//$no-padding: 0
+//$t-padding: 15px 0 0 0
+//$b-padding: 0 0 15px 0
+
+//$table-pad: 5px 10px
+
+
+// Two color gradient
+// @include gradient(two, start, end)
+// @include gradient(three, start, end, middle)
+@mixin gradient($amount, $start, $end, $middle: null)
+  @if $amount == two
+    background: $start
+    background: -moz-linear-gradient(top,  $start 0%, $end 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(100%,$end))
+    background: -webkit-linear-gradient(top,  $start 0%,$end 100%)
+    background: -o-linear-gradient(top,  $start 0%,$end 100%)
+    background: -ms-linear-gradient(top,  $start 0%,$end 100%)
+    background: linear-gradient(top,  $start 0%,$end 100%)
+  @else if $amount == three
+    background: $start
+    background: -moz-linear-gradient(top, $start 0%, $middle 40%, $end 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(40%,$middle), color-stop(100%,$end))
+    background: -webkit-linear-gradient(top, $start 0%, $middle 40%, $end 100%)
+    background: -o-linear-gradient(top, $start 0%, $middle 40%, $end 100%)
+    background: -ms-linear-gradient(top, $start 0%, $middle 40%, $end 100%)
+    background: linear-gradient(top,  $start 0%, $middle 40%, $end 100%)
+
+
+// Grid Mixin
+@mixin grid-generate($width:$grid-size)
+  @include grid($width)
+
+// Mobile Grid Mixin (with Media Queries)
+@mixin mobile-grid-generate($width:$grid-size)
+  @include media-query(phones)
+    @include grid-mobile
+    
+
+
+@mixin grid-media-query
+  @include media-query(tablets)
+    .container
+      width: 98%
+  @include media-query(desktops)
+    .container
+      width: $max-grid-size
+      
+
+
+// Border Radius Mixins
+@mixin border-radius($radius, $radius2:$radius)
+  -webkit-border-radius: $radius $radius2
+  -moz-border-radius: $radius $radius2
+  -ms-border-radius: $radius $radius2
+  -o-border-radius: $radius $radius2
+  border-radius: $radius $radius2
+  
+@mixin border-top-left-radius($radius)
+  border-radius: $radius 0 0 0
+  
+@mixin border-top-right-radius($radius)
+  border-radius: 0 $radius 0 0
+  
+@mixin border-bottom-left-radius($radius)
+  border-radius: 0 0 $radius 0
+  
+@mixin border-bottom-right-radius($radius)
+  border-radius: 0 0 0 $radius
+  
+  
+  
+// Typography
+@mixin force-wrap
+  white-space: pre
+  white-space: pre-wrap
+  white-space: pre-line
+  white-space: -pre-wrap
+  white-space: -o-pre-wrap
+  white-space: -moz-pre-wrap
+  white-space: -hp-pre-wrap
+  word-wrap: break-word
+
+
+
+// Grid Rows
+@mixin grid-rows($value, $direction, $rows: $max-rows)
+  @if $value == normal
+    // Rows by 5
+    @for $i from 1 through $rows
+      $num: $i * 5
+      $decimal: $num / 100
+      .#{$grid-class}-#{$num}
+        @extend %grid-column
+        width: 1% * $num
+        @include ie7-grid-element($decimal)
+      .#{$pull-class}-#{$num}
+        #{$direction}: -(1% * $num)
+        @include ie7-pull($decimal)
+      .#{$push-class}-#{$num}
+        #{$direction}: (1% * $num)
+        @include ie7-push($decimal)
+
+  @else if $value == thirds
+    // Rows by 1/3
+    @for $i from 1 through 2
+      $num: $i * 33
+      $mul: 1/3
+      $decimal: $i * $mul
+      $percent: ($num + $decimal)
+  
+      .#{$grid-class}-#{$num}
+        @extend %grid-column
+        width: 1% * $percent
+        @include ie7-grid-element($decimal)
+      .#{$pull-class}-#{$num}
+        #{$direction}: -(1% * $percent)
+        @include ie7-pull($decimal)
+      .#{$push-class}-#{$num}
+        #{$direction}: (1% * $percent)
+        @include ie7-push($decimal)
+
+  @else if $value == mobile
+    /* Rows for Mobile */
+    @for $i from 1 through 3
+      $num: $i * 25
+      .#{$mobile-class}-#{$num}
+        width: 1% * $num
+      .mobile-#{$pull-class}-#{$num}
+        #{$direction}: -(1% * $num)
+      .mobile-#{$push-class}-#{$num}
+        #{$direction}: (1% * $num)
+
+
+
+// Show and Hide Elements within Grid
+@mixin mobile-view
+  %show-block
+    display: block
+  
+  %hide-block
+    display: none
+  
+  .hide-desktop
+    @extend %hide-block
+  
+  .hide-mobile
+    @extend %show-block
+
+@mixin hide-desktop
+  .hide-desktop
+    display: none !important
+  .hide-mobile
+    display: block !important
+
+@mixin hide-mobile
+  .hide-desktop
+    display: block !important
+  .hide-mobile
+    display: none !important
+
+@mixin show-mobile
+  .show-mobile
+    display: block !important
+
+@mixin show-desktop
+  .show-desktop
+    display: block !important
+
+
+
+// Extendable Mixin
+@mixin extendables  
+  %noMarPad
+    margin: 0
+    padding: 0
+  
+  %absolute
+    position: absolute
+    
+  %relative
+    position: relative
+
+  %noTextDecoration
+    text-decoration: none
+  
+  %cursor
+    cursor: pointer
+  
+  %auto-center
+    margin-left: auto
+    margin-right: auto
+    
+  %float-left
+    float: left
+  
+  %float-right
+    float: right

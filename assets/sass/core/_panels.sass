@@ -1,0 +1,11 @@
+// Panels
+@mixin panels
+	.panels
+		@include element-spacing(all, padding, 1.333em)
+		background: $almost-white
+		@include box-shadow(0, 2px, 5px, rgba(#000, .15)) //box-shadow: 0 2px 5px rgba(0,0,0,0.15)
+		@include element-spacing(bottom, margin, 1.333em)
+		h1,
+		h2,
+		h3
+			margin-top: 0

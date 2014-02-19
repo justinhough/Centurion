@@ -4,16 +4,24 @@
   background: $value
   border: 1px solid $value2
 
-@mixin alerts
+@mixin create-alert($value1, $border: $value1 )
+  background-color: $value1
+  border-color: $border
+
+  hr
+    border-top-color: darken($border, 5%)
+  .alert-link
+    color: darken($value1, 10%)
+
+
+
+@mixin default-alert
   %text-white
     p
       color: $white
   .alert
-    background: $grey
-    border: 1px solid $grey
     @include border-radius(4px)
     @include box-shadow(2px,2px,5px,$grey)
-    @extend %text-white
     @include element-spacing(vertical, margin, 1em)
     @include element-spacing(two, padding, 10px, 20px)
     @extend %relative
@@ -26,12 +34,23 @@
       @extend %absolute
       top: 5px
       right: 10px
-    &.error
-      @include alert-colors($red)
-      @extend %text-white
-    &.warning
-      @include alert-colors($yellow)
-    &.info
-      @include alert-colors($blue)
-    &.success
-      @include alert-colors($green)
+
+
+@mixin alert-options
+  .alert-error
+    @extend .alert
+    @include create-alert($red)
+    @extend %text-white
+  
+  .alert-warning
+    @extend .alert
+    @include create-alert($yellow)
+    
+  .alert-info
+    @extend .alert
+    @include create-alert($blue)
+
+  .alert-success
+    @extend .alert
+    @include create-alert($green)
+

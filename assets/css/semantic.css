@@ -7,18 +7,22 @@
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
+/* line 1, ../sass/core/_typography.sass */
 body {
   font-size: 15px;
 }
 
+/* line 13, ../sass/semantic.sass */
 h1 {
   margin-top: 0;
 }
 
+/* line 16, ../sass/semantic.sass */
 header {
   margin: 0 auto;
   width: 1280px;
 }
+/* line 18, ../sass/semantic.sass */
 header section {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -31,10 +35,12 @@ header section {
   width: 100%;
 }
 
+/* line 21, ../sass/semantic.sass */
 section {
   margin: 0 auto;
   width: 1280px;
 }
+/* line 23, ../sass/semantic.sass */
 section article {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -46,6 +52,7 @@ section article {
   position: relative;
   width: 60%;
 }
+/* line 25, ../sass/semantic.sass */
 section aside {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -58,10 +65,12 @@ section aside {
   width: 40%;
 }
 
+/* line 28, ../sass/semantic.sass */
 footer {
   margin: 0 auto;
   width: 1280px;
 }
+/* line 30, ../sass/semantic.sass */
 footer article {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -74,14 +83,17 @@ footer article {
   width: 40%;
   font-size: 1.2em;
 }
+/* line 34, ../sass/semantic.sass */
 footer article.second {
   left: 40%;
 }
 
+/* line 39, ../sass/semantic.sass */
 .rtl header {
   margin: 0 auto;
   width: 1280px;
 }
+/* line 41, ../sass/semantic.sass */
 .rtl header section {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -93,10 +105,12 @@ footer article.second {
   position: relative;
   width: 100%;
 }
+/* line 44, ../sass/semantic.sass */
 .rtl section {
   margin: 0 auto;
   width: 1280px;
 }
+/* line 46, ../sass/semantic.sass */
 .rtl section article {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -108,6 +122,7 @@ footer article.second {
   position: relative;
   width: 60%;
 }
+/* line 48, ../sass/semantic.sass */
 .rtl section aside {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -119,10 +134,12 @@ footer article.second {
   position: relative;
   width: 40%;
 }
+/* line 51, ../sass/semantic.sass */
 .rtl footer {
   margin: 0 auto;
   width: 1280px;
 }
+/* line 53, ../sass/semantic.sass */
 .rtl footer article {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -135,6 +152,7 @@ footer article.second {
   width: 40%;
   font-size: 1.2em;
 }
+/* line 57, ../sass/semantic.sass */
 .rtl footer article.second {
   right: 40%;
 }

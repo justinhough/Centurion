@@ -1,6 +1,9 @@
+//
 // Mixins
+// --------------------------------------------------
 
 // Clearfix
+// ----------------------------
 // @include clearfix
 @mixin clearfix
   .clearfix,
@@ -26,6 +29,7 @@
 
 
 // Box Sizing
+// ----------------------------
 // @include box-sizing
 @mixin box-sizing($value:border-box)
   @each $prefix in $prefixes
@@ -34,6 +38,7 @@
 
 
 // Box Shadow - custom with defaults (4 values)
+// ----------------------------
 // @include box-shadow
 @mixin box-shadow($top: 0, $bottom: 0, $spread: 5px, $color: rgba(#000, .4))
   @each $prefix in $prefixes
@@ -45,6 +50,7 @@
   
 
 // Floating elements
+// ----------------------------
 // replace @include float-left
 // replace @include float-right
 @mixin float-left
@@ -54,6 +60,7 @@
 
 
 // Media Queries
+// ----------------------------
 // @include media-query(phones)
 // @include media-query(tablets)
 // @include media-query(desktops)
@@ -69,9 +76,9 @@
       @content
 
 
-// Margin and Padding
 
 // Alpha, Omega, and Margin
+// ----------------------------
 @mixin alpha-omega($direction: $lang-front)
   .alpha
     margin-#{$direction}: 0
@@ -93,7 +100,8 @@
     @include element-spacing(auto, margin)
 
 
-// Margin or Padding Mixin
+// Margin or Padding
+// ----------------------------
 // @include element-spacing(top-bottom, margin, 10px)
 @mixin element-spacing($direction, $spacing, $value: null, $value2: $value)
   @if $direction == vertical
@@ -119,38 +127,8 @@
 
 
 
-//@mixin margin($value)
-//  margin-left: $value
-//  margin-right: $value
-
-// Center a sized element
-// @include element-spacing(auto)
-//@mixin auto-center
-//  margin-left: auto
-//  margin-right: auto
-
-
-// Margin
-//$dh-margin: 15px 0
-//$dw-margin: 0 15px
-//$d-margin: 15px
-//$no-margin: 0
-//$t-margin: 15px 0 0 0
-//$b-margin: 0 0 15px 0
-
-
-// Padding
-//$dh-padding: 15px 0
-//$dw-padding: 0 15px
-//$d-padding: 15px
-//$no-padding: 0
-//$t-padding: 15px 0 0 0
-//$b-padding: 0 0 15px 0
-
-//$table-pad: 5px 10px
-
-
 // Two color gradient
+// ----------------------------
 // @include gradient(two, start, end)
 // @include gradient(three, start, end, middle)
 @mixin gradient($amount, $start, $end, $middle: null)
@@ -172,28 +150,8 @@
     background: linear-gradient(top,  $start 0%, $middle 40%, $end 100%)
 
 
-// Grid Mixin
-@mixin grid-generate($width:$grid-size)
-  @include grid($width)
-
-// Mobile Grid Mixin (with Media Queries)
-@mixin mobile-grid-generate($width:$grid-size)
-  @include media-query(phones)
-    @include grid-mobile
-    
-
-
-@mixin grid-media-query
-  @include media-query(tablets)
-    .container
-      width: 98%
-  @include media-query(desktops)
-    .container
-      width: $max-grid-size
-      
-
-
 // Border Radius Mixins
+// ----------------------------
 @mixin border-radius($radius, $radius2:$radius)
   -webkit-border-radius: $radius $radius2
   -moz-border-radius: $radius $radius2
@@ -216,6 +174,7 @@
   
   
 // Typography
+// ----------------------------
 @mixin force-wrap
   white-space: pre
   white-space: pre-wrap
@@ -228,7 +187,11 @@
 
 
 
+// Grid
+// --------------------------------------------------------
+
 // Grid Rows
+// ----------------------------
 @mixin grid-rows($value, $direction, $rows: $max-rows)
   @if $value == normal
     // Rows by 5
@@ -266,7 +229,7 @@
         @include ie7-push($decimal)
 
   @else if $value == mobile
-    /* Rows for Mobile */
+    // Rows for Mobile
     @for $i from 1 through 3
       $num: $i * 25
       .#{$mobile-class}-#{$num}
@@ -277,45 +240,261 @@
         #{$direction}: (1% * $num)
 
 
+// Default Grid Generator
+// ----------------------------
+// @include grid($direction)
+@mixin grid($direction:$lang-front, $content-width: $grid-size, $space:$max-space, $rows:$max-rows)
+  .container
+    width: $content-width
+    @include element-spacing(auto, margin)
+    %grid-column
+      +box-sizing(border-box)
+      @include float-direction($direction)
+      padding: 0 15px
+      @include ie-7-support($space)
+      position: relative
+    
+    @include grid-rows(normal, $direction)
+    @include grid-rows(thirds, $direction)
+    @include alpha-omega($direction)
+    @include grid-center
+    
 
-// Show and Hide Elements within Grid
-@mixin mobile-view
+// Mobile Grid Generator - NO PUSH OR PULL
+// ----------------------------
+// @include grid-mobile($direction)
+
+@mixin grid-mobile ($direction:$lang-front, $content-width: $max-resp-width, $space: $max-resp-space)
+  $grid-width: 100%
+  .container
+    width: $content-width
+    @include element-spacing(auto, margin)
+    [class^="#{$grid-class}-"]
+      display: inline
+      @include float-direction($direction)
+      width: $grid-width
+      [class^="#{$grid-class}-"], 
+      [class^="#{$mobile-class}-#{$grid-class}-"]
+        padding: 0
+        margin: 0
+
+    @include grid-rows(mobile, $direction)
+    @include alpha-omega($direction)
+    @include grid-center
+    
+    [class^="#{$pull-class}-"],
+    [class^="#{$pull-class}-"]
+      #{$direction}: 0
+  
+  @include hide-view(mobile)
+  
+
+// IE 7 Support
+// ----------------------------
+@mixin ie-7-support($space)
+  @if $ie7-support
+    *padding-left: 0
+    *padding-right: 0
+    & > *
+      @include ie-after-margin-fix($space)
+
+@mixin ie-percentage-width-fix($decimal)
+  *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+  
+@mixin ie-percentage-push-fix($lang-front, $decimal)
+  *#{$lang-front}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+  
+@mixin ie-percentage-pull-fix($lang-front, $decimal)
+  *#{$lang-front}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+  
+@mixin ie-percentage-direction-fix($decimal)
+
+@mixin ie7-grid-element($decimal)
+  @if $ie7-support
+    @include ie-percentage-width-fix($decimal)
+  
+@mixin ie7-push($decimal)
+  @if $ie7-support
+    @include ie-percentage-push-fix($lang-front, $decimal)
+  
+@mixin ie7-pull($decimal)
+  @if $ie7-support
+    @include ie-percentage-pull-fix($lang-front, $decimal)
+
+
+// Grid Float Direction (LTR or RTL)
+// ----------------------------
+@mixin float-direction($direction)
+  @if ($direction == left)
+    float: left
+  @else if ($direction == right)
+    float: right
+    
+
+
+
+
+
+// Show and Hide Elements
+// ----------------------------
+@mixin hide-view($view)
+  @if $view == desktop
+    .hide-desktop,
+    .hide-tablet
+      display: none !important
+    .hide-mobile
+      display: block !important
+    
+  @if $view == tablet
+    .hide-desktop,
+    .hide-mobile
+      display: none !important
+    .hide-tablet
+      display: block !important
+  
+  @if $view == mobile
+    .hide-desktop,
+    .hide-tablet
+      display: none !important
+    .hide-mobile
+      display: block !important
+
+
+@mixin show-block($element)
+  .show-#{$element}
+    display: block !important
+      
+//@mixin hide-desktop
+//  .hide-desktop
+//    display: none !important
+//  .hide-mobile
+//    display: block !important
+
+//@mixin hide-mobile
+//  .hide-desktop
+//    display: block !important
+//  .hide-mobile
+//    display: none !important
+
+//@mixin show-mobile
+//  .show-mobile
+//    display: block !important
+
+//@mixin show-desktop
+//  .show-desktop
+//    display: block !important
+
+
+
+// Tables
+// ----------------------------
+// @include table-base
+@mixin table-base
+  th
+    text-align: center
+    font-weight: bold
+  td, th
+    padding: 2px
+
+
+// Table Color Generator
+// ----------------------------
+//@include table-color-generator($class, $color1, $color2, $color3)
+@mixin table-color-generator($class, $color1, $color2, $color3)
+  .#{$class}
+    thead,
+    tfoot
+      th,
+      td
+        background-color: $color1
+    tbody
+      &.odd
+        background-color: $color2
+      &.even
+        background-color: $color3
+
+
+
+// Buttons
+// ----------------------------
+@mixin default-button
+  border: none
+  @include border-radius(5px, 5px)
+  @include box-shadow(0, 1px, 2px)
+  color: $white
+  @extend %cursor
+  display: inline-block
+  font-size: $default-font-size
+  font-weight: bold
+  @include element-spacing(vertical, margin, 1em) //  margin: 15px 0
+  outline: 0
+  @include element-spacing(two, padding, 0.667em, 1.333em) //  padding: 10px 22px
+  @extend %noTextDecoration
+  vertical-align: middle
+  zoom: 1
+
+@mixin default-button-hover
+  color: $white
+
+
+// Buttons with Gradients
+@mixin default-gradient-button
+  border: none
+  @include border-radius(5px, 5px)
+  @include box-shadow(0, 1px, 2px)
+  @include gradient(two, #7d7e7d, #0e0e0e)
+  color: $white
+  @extend %cursor
+  display: inline-block
+  font-size: $default-font-size
+  font-weight: bold
+  @include element-spacing(vertical, margin, 1em) //  margin: 15px 0
+  outline: 0
+  @include element-spacing(two, padding, 0.667em, 1.333em) //  padding: 10px 22px
+  @extend %noTextDecoration
+  vertical-align: middle
+  zoom: 1
+
+@mixin default-gradient-button-hover
+  color: $white
+  @include gradient(two, #9b9b9b, #3d3d3d)
+
+
+// Button Create (Flat)
+// @include button(class, color1, color2, text-color)
+@mixin create-button($class, $color1, $color2, $text-color: $white)
+  .#{$class}
+    color: $text-color
+    background-color: $color1
+    &:hover, 
+    &:active,
+    &:visited
+      background-color: $color2
+      color: $text-color
+
+// Button Create (Gradient)
+// @include button(class, color1, color2, text-color)
+@mixin create-button-gradient($class, $color1, $color2, $color3, $text-color: $white)
+  .#{$class}
+    color: $text-color
+    @include gradient(two, $color1, $color2)
+    &:hover, 
+    &:active,
+    &:visited
+      color: $text-color
+      @include gradient(two, $color1, $color3)
+
+
+
+// Extendable Mixin
+// ----------------------------
+@mixin extendables  
   %show-block
     display: block
   
   %hide-block
     display: none
   
-  .hide-desktop
-    @extend %hide-block
-  
-  .hide-mobile
-    @extend %show-block
-
-@mixin hide-desktop
-  .hide-desktop
-    display: none !important
-  .hide-mobile
-    display: block !important
-
-@mixin hide-mobile
-  .hide-desktop
-    display: block !important
-  .hide-mobile
-    display: none !important
-
-@mixin show-mobile
-  .show-mobile
-    display: block !important
-
-@mixin show-desktop
-  .show-desktop
-    display: block !important
-
-
-
-// Extendable Mixin
-@mixin extendables  
   %noMarPad
     margin: 0
     padding: 0

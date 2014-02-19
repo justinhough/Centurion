@@ -1,75 +1,77 @@
-// Buttons
-@mixin default-button
-  border: none
-  @include border-radius(5px, 5px)
-  @include box-shadow(0, 1px, 2px)
-  @include gradient(two, #7d7e7d, #0e0e0e)
-  color: $white
-  @extend %cursor
-  display: inline-block
-  font-size: $default-font-size
-  font-weight: bold
-  @include element-spacing(vertical, margin, 1em) //  margin: 15px 0
-  outline: 0
-  @include element-spacing(two, padding, 0.667em, 1.333em) //  padding: 10px 22px
-  @extend %noTextDecoration
-  vertical-align: middle
-  zoom: 1
+@mixin buttons-gradient
+  .btn-gradient
+    color: $white
+    @include default-gradient-button
+    @extend %noTextDecoration
 
-@mixin default-button-hover
-  color: $white
-  @include gradient(two, #9b9b9b, #3d3d3d)
-
-// Button Create
-// @include button(class, color1, color2)
-@mixin button($class, $color1, $color2, $color3, $text-color: $white)
-  &.#{$class}
-    color: $text-color
-    @include gradient(two, $color1, $color2)
-    &:hover, 
+    &:hover,
     &:active,
     &:visited
-      color: $text-color
-      @include gradient(two, $color1, $color3)
+      @include default-gradient-button-hover
+      color: $white
 
-@mixin buttons
-  .button
+    &.small-btn
+      @include border-radius(4px, 4px)
+      font-size: ($default-font-size - 0.15)
+      @include element-spacing(two, padding, 0.533em, 1.2em) //padding: 8px 18px
+
+    &.large-btn
+      @include border-radius(6px, 6px)
+      font-size: ($default-font-size + 0.3)
+      @include element-spacing(two, padding, 0.533em, 1.6em)
+
+    &.full-btn
+      @include element-spacing(vertical, padding, 0.667em) //padding: 10px 0
+      text-align: center
+      width: 100%
+      
+  @include create-button-gradient(grey-btn, $white, #e5e5e5, #b7b7b7)
+  
+  @include create-button-gradient(blue-btn, #a7cfdf, #23538a, #004089)
+  
+  @include create-button-gradient(red-btn, #ff3019, #cf0404, #aa0303)
+  
+  @include create-button-gradient(yellow-btn, #fced62, #febf04, #ffaa00, $text-color)
+  
+  @include create-button-gradient(orange-btn, #ffa84c, #ff7b0d, #fc6000)
+  
+  @include create-button-gradient(green-btn, #a4b357, #75890c, #5b7a00)
+
+
+
+@mixin buttons-flat
+  .btn
+    color: $white
     @include default-button
+    @extend %noTextDecoration
 
     &:hover,
     &:active,
     &:visited
       @include default-button-hover
-      
-    @include button(grey, $white, #e5e5e5, #b7b7b7)
+      color: $white
     
-    @include button(blue, #a7cfdf, #23538a, #004089)
-    
-    @include button(red, #ff3019, #cf0404, #aa0303)
-    
-    @include button(yellow, #fced62, #febf04, #ffaa00, $text-color )
-    
-    @include button(orange, #ffa84c, #ff7b0d, #fc6000)
-    
-    @include button(green, #a4b357, #75890c, #5b7a00)
-
-    &.small
-      @include border-radius(4px, 4px)
+    &.small-btn
       font-size: ($default-font-size - 0.15)
       @include element-spacing(two, padding, 0.533em, 1.2em) //padding: 8px 18px
 
-    &.large
-      @include border-radius(6px, 6px)
+    &.large-btn
       font-size: ($default-font-size + 0.3)
       @include element-spacing(two, padding, 0.533em, 1.6em)
 
-    &.full
+    &.full-btn
       @include element-spacing(vertical, padding, 0.667em) //padding: 10px 0
       text-align: center
       width: 100%
-
-  a.button
-    color: $white
-    @extend %noTextDecoration
-    &:visited
-      color: $white
+    
+  @include create-button(grey-btn-flat, $white, #e5e5e5, #b7b7b7)
+  
+  @include create-button(blue-btn-flat, #a7cfdf, #23538a, #004089)
+  
+  @include create-button(red-btn-flat, #ff3019, #cf0404, #aa0303)
+  
+  @include create-button(yellow-btn-flat, #fced62, #febf04, #ffaa00)
+  
+  @include create-button(orange-btn-flat, #ffa84c, #ff7b0d, #fc6000)
+  
+  @include create-button(green-btn-flat, #a4b357, #75890c, #5b7a00)

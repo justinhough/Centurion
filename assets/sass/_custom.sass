@@ -12,6 +12,9 @@ $rust-darker: #8B4501
 $gold: #FFBF1A
 $dark-gold: #B28100
 
+/* ---------------------------------
+ *  Custom Options
+ --------------------------------- */
 
 /* TYPOGRAPHY */
 p, ul, ol
@@ -88,18 +91,13 @@ footer
   section
     font-size: ($default-font-size - 0.2)
 
-  //@include links($lightgrey, $white)
-
 
 /*  Custom Media Queries  */
-
 .mobile
   span
     display: none
 
-
 @include media-query(phones)
-  //@include navigation-mobile
 
 @include media-query(tablets)
   

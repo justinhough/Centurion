@@ -1,29 +1,4 @@
-// Tables
-// @include table-base
-@mixin table-base
-  th
-    text-align: center
-    font-weight: bold
-  td, th
-    padding: 2px
 
-
-// Table Color Generator
-//@include table-color-generator($class, $color1, $color2, $color3)
-@mixin table-color-generator($class, $color1, $color2, $color3)
-  .#{$class}
-    thead,
-    tfoot
-      tr
-        th,
-        td
-          background-color: $color1
-    tbody
-      tr
-        &.odd
-          background-color: $color2
-        &.even
-          background-color: $color3
 
 
 @mixin tables
@@ -42,13 +17,13 @@
     @include element-spacing(two, padding, 0.4em, 0.667em)
     text-align: left
 
-    tr
-      th,
-      td
-        background-color: $lightgrey
-        color: $white
-        font-weight: bold
-        @include element-spacing(two, padding, 0.4em, 0.667em)
+
+    th,
+    td
+      background-color: $lightgrey
+      color: $white
+      font-weight: bold
+      @include element-spacing(two, padding, 0.4em, 0.667em)
 
   tbody
     tr,

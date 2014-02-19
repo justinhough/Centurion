@@ -19,19 +19,22 @@
 /* Clearfix */
 @include clearfix
 
-/*  Features */
+/* Features */
 /* Show Elements */
-@include show-desktop
-@include show-mobile
+@include hide-view(desktop)
+
+@include show-block(desktop)
 
 /* Alerts */
-@include alerts
+@include default-alert
+@include alert-options
 
 /* Breadrumbs */
 @include breadcrumbs
 
 /* Buttons */
-@include buttons
+//@include buttons-gradient
+@include buttons-flat
 
 /* Images */
 @include images
@@ -55,7 +58,7 @@
 /* Tooltips */
 @include tooltips
 
-/*  Typography  */
+/* Typography */
 @include typography
 
 @include extendables
@@ -63,7 +66,7 @@
 /* Print */
 @include print
 
-@include mobile-view
-  
+/* Elusive Icon Webfont */
+@include elusive-webfont
+
 @import custom
-@import elusive-webfont

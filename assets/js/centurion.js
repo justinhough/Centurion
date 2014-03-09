@@ -233,42 +233,40 @@ function centurionTabs(tab) {
   o = options;
   obj = $(tab);
   
-      $('div', obj).addClass('innerBox');
-        $('.tabs', obj).each(function(){
-            var active, content, links = $(this).find('a');
-            
-            active = $(links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
-            //active = links.filter('[href="'+location.hash+'"]')[0] || links[0]);
-            active.parent('li').addClass('active');
-            content = $(active.attr('href'));
+  $('div', obj).addClass('innerBox');
+    $('.tabs', obj).each(function(){
+        var active, content, links = $(this).find('a');
         
-            // Hide tab content
-            links.not(active).each(function () {
-                $($(this).attr('href')).hide();
-            });
-        
-            // Bind the click event handler
-            $(this).on('click', 'a', function(e){
-                // Old tab inactive
-                active.parent('li').removeClass('active');
-                content.hide();
-        
-                // Update variables
-                active = $(this);
-                content = $($(this).attr('href'));
-        
-                // Activate new tab
-                active.parent('li').addClass('active');
-                content.show();
-        
-                // Stop anchor default action
-                e.preventDefault();
-            });
+        active = $(links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+        //active = links.filter('[href="'+location.hash+'"]')[0] || links[0]);
+        active.parent('li').addClass('active');
+        content = $(active.attr('href'));
+    
+        // Hide tab content
+        links.not(active).each(function () {
+            $($(this).attr('href')).hide();
         });
-  
-  
-}
+    
+        // Bind the click event handler
+        $(this).on('click', 'a', function(e){
+            // Old tab inactive
+            active.parent('li').removeClass('active');
+            content.hide();
+    
+            // Update variables
+            active = $(this);
+            content = $($(this).attr('href'));
+    
+            // Activate new tab
+            active.parent('li').addClass('active');
+            content.show();
+    
+            // Stop anchor default action
+            e.preventDefault();
+        });
+    });
 
+}
 
 // Run all of Centurion at once
 function centurion(options) {
@@ -295,3 +293,8 @@ function centurion(options) {
   // Mobile Navigation - activate last
   centurionResponsiveNav(mobile);
 }
+
+$(document).ready(function() { 
+  // Activate with defaults
+  centurion();
+)};

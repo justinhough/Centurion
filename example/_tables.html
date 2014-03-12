@@ -3,6 +3,8 @@
 <head>
 
 <title></title>
+<link rel="stylesheet" href="../assets/css/grid.css" />
+
 <style>
   body {
     font-size: 15px;
@@ -167,12 +169,13 @@
 
 
 </style>
-  
-  <!-- http://css-tricks.com/row-and-column-highlighting/  -->
 
 </head>
 
 <body>
+  
+<div class="container">
+  <div class="grid-100">
   
   <h2>Row Striping</h2>
   <table class='table-orange row-stripe'>
@@ -376,11 +379,15 @@
     </tbody>
   </table>
 
+</div>
+</div>
+
+
+
 
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
 <script>
-(function($){
- 
+
  // Table Row Striping
  $.fn.tableRows = function(options) {
    var defaults = {
@@ -449,9 +456,7 @@
       });
     });
   };
-})(jQuery);
-
-
+  
 // Centurion Defaults
 function centurion(){
   $('.row-stripe').tableRows();
@@ -460,85 +465,9 @@ function centurion(){
 }
 
 // Initialize Centurion Defaults 
-$(function(){ centurion(); });
+centurion();
  
- 
- 
-/* OLD METHOD
-(function($){
-$.fn.extend({
-    tableRows: function(options) {
-      var defaults = {
-        hoverClass: 'striped-row'
-      };
-      options = $.extend(defaults, options);
-      
-      return this.each(function() {				
-        var $o, $obj;
-        
-        $o = options;
-        $obj = $(this);
-        $($obj).each(function(){
-          $('tbody tr:nth-child(odd)', this).addClass($o.hoverClass);
-        });
-      });
-    }
-  });
 
-  $.fn.extend({
-    tableColumns: function(options) {
-      var defaults = {
-        hoverClass: 'striped-col'
-      };
-      options = $.extend(defaults, options);
-      
-      return this.each(function() {				
-        var $o, $obj;
-        
-        $o = options;
-        $obj = $(this);
-        $($obj).each(function(){
-          $('tbody td:nth-child(even):not(:first-child)', this).addClass($o.hoverClass);
-        });
-      });
-    }
-  });
-
- $.fn.extend({
-    tableHighlight: function(options) {
-      var defaults = {
-        hoverClass: 'hover'
-      };
-      options = $.extend(defaults, options);
-      
-      return this.each(function() {				
-        var $o, $obj;
-        
-        $o = options;
-        $obj = $(this);
-        
-        $($obj).delegate('td','mouseover mouseleave', function(e) {
-          $table = $(this).closest('table');
-          $column = $(this).parent().children().index($(this));
-          $hover = 'tr td:nth-child('+($column+1)+')';
-          $active = 'active';
-          
-          if (e.type == 'mouseover') {
-            $(this).addClass($active);
-            $(this).parent().addClass($o.hoverClass);
-            $($hover, $table).addClass($o.hoverClass);
-          } 
-          else {
-            $(this).removeClass($active);
-            $(this).parent().removeClass($o.hoverClass);
-      			$($hover, $table).removeClass($o.hoverClass);
-          }
-        });
-      });
-    }
-  });
-})(jQuery);
-*/
 
 
 

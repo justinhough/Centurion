@@ -10,12 +10,13 @@
 @mixin mobile-grid-generate($width:$grid-size)
   @include media-query(phones)
     @include grid-mobile
-    @include phone-hide-view
     
 @mixin grid-media-query
   @include media-query(tablets)
     .container
       width: 98%
+    @include hide-view(tablet)
+    
   @include media-query(desktops)
     .container
       width: $max-grid-size

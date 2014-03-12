@@ -158,7 +158,26 @@
   -ms-border-radius: $radius $radius2
   -o-border-radius: $radius $radius2
   border-radius: $radius $radius2
-  
+
+@mixin border-radius-dir($radius, $dir)
+  @if $dir == top-left
+    @each $prefix in $prefixes
+      -#{$prefix}-border-radius: $radius 0 0 0
+    border-radius: $radius 0 0 0
+  @else if $dir == top-right
+    @each $prefix in $prefixes
+      -#{$prefix}-border-radius: 0 $radius 0 0
+    border-radius: 0 $radius 0 0
+  @else if $dir == top-left
+    @each $prefix in $prefixes
+      -#{$prefix}-border-radius: 0 0 $radius 0
+    border-radius: 0 0 $radius 0
+  @else if $dir == top-right
+    @each $prefix in $prefixes
+      -#{$prefix}-border-radius: 0 0 0 $radius
+    border-radius: 0 0 0 $radius
+
+
 @mixin border-top-left-radius($radius)
   border-radius: $radius 0 0 0
   

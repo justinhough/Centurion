@@ -276,7 +276,7 @@ function centurion(options) {
   var navDetect = options.navDetect || '.navigation';
   var mobile = options.mobile || '.navigation';
   var alerts = options.alerts || '.alert';
-  var tables = options.tables || '.table';
+  var tables = options.tables || 'table';
   var tooltips = options.tooltips || '.tooltip';
   var tabs = options.tabs || '.tabBox';
 
@@ -296,5 +296,5 @@ function centurion(options) {
 
 $(document).ready(function() { 
   // Activate with defaults
-  centurion();
-)};
+  centurion()
+});

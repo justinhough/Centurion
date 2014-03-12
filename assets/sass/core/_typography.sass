@@ -32,7 +32,7 @@ body
     @extend force-wrap
     code
       background: $lightgrey
-      color: $darkgrey
+      color: $white
       display: block
       @include element-spacing(all, padding, 1em) //padding: 1em
 
@@ -40,9 +40,7 @@ body
 @mixin default-list
   ul
     @extend %noMarPad
-    font-weight: normal
-    font-family: $text-font
-    color: $text-color
+    @extend %text
     &.no-style
       li
         list-style: none

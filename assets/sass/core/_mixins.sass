@@ -438,10 +438,11 @@
 // Buttons
 // ----------------------------
 @mixin default-button
+  background: #DEDEDE
   border: none
   @include border-radius(5px, 5px)
   @include box-shadow(0, 1px, 2px)
-  color: $white
+  color: $white !important
   @extend %cursor
   display: inline-block
   font-size: $default-font-size
@@ -454,7 +455,9 @@
   zoom: 1
 
 @mixin default-button-hover
-  color: $white
+  background-color: #d3d3d3
+  color: $white !important
+  
 
 
 // Buttons with Gradients
@@ -484,24 +487,20 @@
 // @include button(class, color1, color2, text-color)
 @mixin create-button($class, $color1, $color2, $text-color: $white)
   .#{$class}
-    color: $text-color
     background-color: $color1
-    &:hover, 
-    &:active,
-    &:visited
+    color: $text-color !important
+    &:hover
       background-color: $color2
-      color: $text-color
+      color: $text-color !important
 
 // Button Create (Gradient)
 // @include button(class, color1, color2, text-color)
 @mixin create-button-gradient($class, $color1, $color2, $color3, $text-color: $white)
   .#{$class}
-    color: $text-color
+    color: $text-color !important
     @include gradient(two, $color1, $color2)
-    &:hover, 
-    &:active,
-    &:visited
-      color: $text-color
+    &:hover
+      color: $text-color !important
       @include gradient(two, $color1, $color3)
 
 

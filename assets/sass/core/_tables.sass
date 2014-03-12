@@ -41,20 +41,3 @@
   @include table-color-generator(red-table, #CC0000, $white, #FFCECE)
   @include table-color-generator(green-table, #299A0B, $white, #DDE8C7)
   @include table-color-generator(black-table, #000, $white, #DBDBDB)
-
-  //Additional Table Styles
-  .rounded
-    thead
-      th
-        &:first-child
-          @include border-top-left-radius(6px)
-        &:last-child
-          @include border-top-right-radius(6px)
-
-    tfoot
-      th
-        &:first-child
-          @include border-bottom-left-radius(6px)
-        &:last-child
-          @include border-bottom-right-radius(6px)
-

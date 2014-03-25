@@ -298,8 +298,8 @@ body {
     float: none;
     margin: 0 auto;
   }
-  .rtl .container [class^="pull-"],
-  .rtl .container [class^="push-"] {
+  .rtl .container [class*="pull-"],
+  .rtl .container [class*="push-"] {
     right: 0;
   }
   .rtl .container .hide-desktop,

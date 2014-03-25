@@ -302,8 +302,8 @@
     @include alpha-omega($direction)
     @include grid-center
     
-    [class^="#{$pull-class}-"],
-    [class^="#{$push-class}-"]
+    [class*="#{$pull-class}-"],
+    [class*="#{$push-class}-"]
       #{$direction}: 0
       
     @include hide-view(mobile)

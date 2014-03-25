@@ -300,8 +300,8 @@ body {
     float: none;
     margin: 0 auto;
   }
-  .container [class^="pull-"],
-  .container [class^="push-"] {
+  .container [class*="pull-"],
+  .container [class*="push-"] {
     left: 0;
   }
   .container .hide-desktop,

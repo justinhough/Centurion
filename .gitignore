@@ -3,3 +3,5 @@
 *.scssc
 *.sassc
 compass_app_log.txt
+npm_modules/*
+_old-build/*

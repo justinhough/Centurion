@@ -1,40 +1,55 @@
-## What is Centurion?
-Centurion is built on CSS3 and HTML5 semantics to allow you to start capitalizing on a next generation standard. If you're worried about browser support we recommend the [html5shiv](https://code.google.com/p/html5shiv/) or [Modernizr](http://modernizr.com/) to add the basic support for semantic coding.
+# Centurion
 
+Centurion is a responsive web framework built for speed and simplicity with it's scalable and easy syntax to get a new prototype up quickly, as well as, support browsers as far back as IE7 to ensure your website works from the grid up. It is built on CSS3 with HTML5 in mind to allow you to start capitalizing on the next web standard (that has been around for a decade).
+
+If you're worried about browser support we recommend using [html5shiv](https://code.google.com/p/html5shiv/) to add fallback for HTML5 or [Modernizr](http://modernizr.com/) to provide basic support for CSS3 and other feature detection to keep your design from falling flat, unless you designed it that way.
+
+
+![image](http://cdn.centurionframework.com/graphics/centurion_200.png)
 
 
 ## Version
-Current version of Centurion is 3.3
+Current version of Centurion is 3.5 (beta)
+
+### Enhancements Since Last Release (v.3.4)
+
+* Grid rebuilt from ground up to take advantage of a column-based design approach 
+* Simplified color scheme (baked in)
+* 
 
 
+## List of Current Features
+- [The Grid](#grid)
+    - [IE 7 Support](#ie7-support)
+    - [RTL Language Support](#rtl-support)
+- [Badges & Labels](#labels)
+- [Breadcrumbs](#breadcrumbs)
+- [Buttons](#buttons)
+- Callouts
+    - [Alerts](#alerts)
+    - [Blockquotes](#blockquotes)
+    - [Frame boxes](#frame-boxes)
+    - [Panels](#panels)
+    - [Tooltips](#tooltips)
+- [Captions](#captions)
+- [Colors](#colors)
+- Fonts
+    - Icon Font
+- [Images](#images) (adaptive and sprites)
+- [Navigation](#navigation) - MOVED TO CARRIEJS
+    - [Dropdowns](#dropdowns) - MOVED TO CARRIEJS
+- [Pagination](#pagination)
+- [Print Styles](#print)
+- [Tables](#tables)
+- [Typography](#typography)
+    - [Lists](#lists)
+- [Tabs](#tabs)
 
-## List of Features
-* [The Grid](#grid)
-* [Alerts](#alerts)
-* [Blockquotes](#blockquotes)
-* [Breadcrumbs](#breadcrumbs)
-* [Buttons](#buttons)
-* [Captions](#captions)
-* [Colors](#colors)
-* [Dropdowns](#dropdowns)
-* [Frame boxes](#frame-boxes)
-* [Font](#elusive-font)
-* [Labels](#labels)
-* [Lists](#lists)
-* [Images](#images) (adaptive and sprites)
-* [Navigation](#navigation)
-* [Pagination](#pagination)
-* [Panels](#panels)
-* [Print Styles](#print)
-* [Tables](#tables)
-* [Tabs](#tabs)
-* [Tooltips](#tooltips)
-* [Typography](#typography)
-* [Custom Sass Mixins](#custom-mixins)
-* [IE 7 Support](#ie7-support)
-* [RTL Language Support](#rtl-support)
 
+### Sass Supported
+Centurion is built using vanilla Sass (basically no library dependencies) and comes with some custom [Sass Mixins](#custom-mixins) that you can attach to create your own custom blend for your site. Remove what you don't need and move on.
 
+----- 
 
 ## File Structure
 
@@ -60,6 +75,8 @@ When you download and extract Centurion for the first time you'll notice the mai
 
 **Note:** Any files with `-rtl` are for right-to-left language support and anything marked with `-ie` are stylesheets meant to fix some minor issues with IE7.
 
+
+----- 
 
 
 <a name="grid"></a>

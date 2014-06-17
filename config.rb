@@ -1,8 +1,8 @@
 http_path = "/"
-css_dir = "build/css"
-sass_dir = "src/assets/sass"
-javascripts_dir = "src/assets/js"
-images_dir = "src/assets/img"
+css_dir = "public/css"
+sass_dir = "source/assets/sass"
+javascripts_dir = "source/assets/js"
+images_dir = "source/assets/img"
 
 line_comments = true # set to true for debugging
 

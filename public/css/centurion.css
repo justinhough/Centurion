@@ -1,0 +1,1800 @@
+/* ==================================
+ *
+ * Centurion v.3.5 - Alpha Release
+ * 
+ * ================================= */
+/* line 5, ../../source/assets/sass/core/_badges.sass */
+.badge {
+  display: inline-block;
+  background-color: #cccccc;
+  color: #555555;
+  cursor: pointer;
+  font-size: 0.8em;
+  line-height: 1.5;
+  margin: 0.5em 0;
+  padding: 0.2em 0.6em;
+}
+/* line 19, ../../source/assets/sass/core/_badges.sass */
+.badge.red {
+  background-color: #ebbfb4;
+  color: #7f3421;
+}
+/* line 22, ../../source/assets/sass/core/_badges.sass */
+.badge.blue {
+  background-color: #6d74d2;
+  color: #272d7f;
+}
+/* line 25, ../../source/assets/sass/core/_badges.sass */
+.badge.purple {
+  background-color: #c5a0c2;
+  color: #7f4d7b;
+}
+/* line 28, ../../source/assets/sass/core/_badges.sass */
+.badge.green {
+  background-color: #6dd27d;
+  color: #277f35;
+}
+/* line 31, ../../source/assets/sass/core/_badges.sass */
+.badge.orange {
+  background-color: #ffd498;
+  color: #fe9300;
+}
+/* line 34, ../../source/assets/sass/core/_badges.sass */
+.badge.light {
+  color: white;
+}
+/* line 36, ../../source/assets/sass/core/_badges.sass */
+.badge.light.orange {
+  color: #555555;
+}
+/* line 38, ../../source/assets/sass/core/_badges.sass */
+.badge.dark {
+  color: #333333;
+}
+/* line 41, ../../source/assets/sass/core/_badges.sass */
+.badge.rounded {
+  /* Task: Figure out better BEM class convention */
+  border-radius: 3px;
+}
+/* line 45, ../../source/assets/sass/core/_badges.sass */
+.badge.border {
+  background-color: transparent;
+  border: 1px solid #dddddd;
+}
+/* line 48, ../../source/assets/sass/core/_badges.sass */
+.badge.border.red {
+  border-color: #cc583a;
+  color: #cc583a;
+}
+/* line 51, ../../source/assets/sass/core/_badges.sass */
+.badge.border.blue {
+  border-color: #272d7f;
+  color: #272d7f;
+}
+/* line 54, ../../source/assets/sass/core/_badges.sass */
+.badge.border.purple {
+  border-color: #7f4d7b;
+  color: #7f4d7b;
+}
+/* line 57, ../../source/assets/sass/core/_badges.sass */
+.badge.border.green {
+  border-color: #277f35;
+  color: #277f35;
+}
+/* line 60, ../../source/assets/sass/core/_badges.sass */
+.badge.border.orange {
+  border-color: #fe9300;
+  color: #fe9300;
+}
+
+/* line 66, ../../source/assets/sass/core/_badges.sass */
+[class*="icon-"]:before {
+  content: "";
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+  margin-right: 0.5em;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 1, ../../source/assets/sass/core/_callouts.sass */
+.callout {
+  display: block;
+  background-color: #ededed;
+  border-left: 5px solid #cccccc;
+  margin: 1em 0;
+  padding: 0 1.5em;
+  /* Red Callout - Alert or Danger */
+  /* Blue Callout - Informational */
+  /* Purple Callout - Play Koi */
+  /* Green Callout - Success or Whoohoo! */
+  /* Orange Callout - Warning or Caution */
+}
+/* line 8, ../../source/assets/sass/core/_callouts.sass */
+.callout h1, .callout h2, .callout h3 {
+  color: #777777;
+}
+/* line 10, ../../source/assets/sass/core/_callouts.sass */
+.callout p {
+  color: #555555;
+}
+/* line 13, ../../source/assets/sass/core/_callouts.sass */
+.callout.red {
+  background-color: #ffe3e1;
+  border-left-color: #cc583a;
+}
+/* line 16, ../../source/assets/sass/core/_callouts.sass */
+.callout.red h1, .callout.red h2, .callout.red h3 {
+  color: #cc583a;
+}
+/* line 19, ../../source/assets/sass/core/_callouts.sass */
+.callout.blue {
+  background-color: #dddfff;
+  border-left-color: #272d7f;
+}
+/* line 22, ../../source/assets/sass/core/_callouts.sass */
+.callout.blue h1, .callout.blue h2, .callout.blue h3 {
+  color: #272d7f;
+}
+/* line 25, ../../source/assets/sass/core/_callouts.sass */
+.callout.purple {
+  background-color: #ffdcfc;
+  border-left-color: #7f4d7b;
+}
+/* line 28, ../../source/assets/sass/core/_callouts.sass */
+.callout.purple h1, .callout.purple h2, .callout.purple h3 {
+  color: #7f4d7b;
+}
+/* line 31, ../../source/assets/sass/core/_callouts.sass */
+.callout.green {
+  background-color: #dfffe4;
+  border-left-color: #277f35;
+}
+/* line 34, ../../source/assets/sass/core/_callouts.sass */
+.callout.green h1, .callout.green h2, .callout.green h3 {
+  color: #277f35;
+}
+/* line 37, ../../source/assets/sass/core/_callouts.sass */
+.callout.orange {
+  background-color: #ffefdd;
+  border-left-color: #fe9300;
+}
+/* line 40, ../../source/assets/sass/core/_callouts.sass */
+.callout.orange h1, .callout.orange h2, .callout.orange h3 {
+  color: #fe9300;
+}
+/* line 43, ../../source/assets/sass/core/_callouts.sass */
+.callout.alert {
+  border-left: none;
+  border-radius: 4px;
+  box-shadow: 0 0 8px #cccccc;
+  padding: 0.5em 1.5em;
+  position: relative;
+}
+/* line 51, ../../source/assets/sass/core/_callouts.sass */
+.callout.alert .btn-close:after {
+  content: "x";
+}
+/* line 56, ../../source/assets/sass/core/_callouts.sass */
+.callout.alert .btn-expand:after {
+  content: "expand";
+}
+/* line 60, ../../source/assets/sass/core/_callouts.sass */
+.callout.alert .alert-expand {
+  background: white;
+  border-left: 1px solid #dddddd;
+  margin-bottom: 1em;
+  padding: 0 1em;
+}
+
+/* line 68, ../../source/assets/sass/core/_callouts.sass */
+.callout.alert .btn-close, .callout.alert .btn-expand {
+  background-color: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+/* line 73, ../../source/assets/sass/core/_callouts.sass */
+.callout.alert .btn-close:after, .callout.alert .btn-expand:after {
+  color: blue;
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  text-align: center;
+}
+/* line 79, ../../source/assets/sass/core/_callouts.sass */
+.callout.alert .btn-close:hover:after, .callout.alert .btn-expand:hover:after {
+  color: hotpink;
+}
+
+/* line 122, ../../source/assets/sass/core/_grid.sass */
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 1280px;
+}
+/* line 45, ../../source/assets/sass/core/_grid.sass */
+.container .grid-1, .container .grid-2, .container .grid-3, .container .grid-4, .container .grid-5, .container .grid-6, .container .grid-7, .container .grid-8, .container .grid-9, .container .grid-10, .container .grid-11, .container .grid-12, .container .grid-13, .container .grid-14, .container .grid-15, .container .grid-16, .container .grid-17, .container .grid-18, .container .grid-19, .container .grid-20, .container .grid-21, .container .grid-22, .container .grid-23, .container .grid-24 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 5px;
+  position: relative;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-1 {
+  width: 4.16667%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-1 {
+  left: 4.16667%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-1 {
+  left: -4.16667%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-2 {
+  width: 8.33333%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-2 {
+  left: 8.33333%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-2 {
+  left: -8.33333%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-3 {
+  width: 12.5%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-3 {
+  left: 12.5%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-3 {
+  left: -12.5%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-4 {
+  width: 16.66667%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-4 {
+  left: 16.66667%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-4 {
+  left: -16.66667%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-5 {
+  width: 20.83333%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-5 {
+  left: 20.83333%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-5 {
+  left: -20.83333%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-6 {
+  width: 25%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-6 {
+  left: 25%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-6 {
+  left: -25%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-7 {
+  width: 29.16667%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-7 {
+  left: 29.16667%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-7 {
+  left: -29.16667%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-8 {
+  width: 33.33333%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-8 {
+  left: 33.33333%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-8 {
+  left: -33.33333%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-9 {
+  width: 37.5%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-9 {
+  left: 37.5%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-9 {
+  left: -37.5%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-10 {
+  width: 41.66667%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-10 {
+  left: 41.66667%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-10 {
+  left: -41.66667%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-11 {
+  width: 45.83333%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-11 {
+  left: 45.83333%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-11 {
+  left: -45.83333%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-12 {
+  width: 50%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-12 {
+  left: 50%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-12 {
+  left: -50%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-13 {
+  width: 54.16667%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-13 {
+  left: 54.16667%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-13 {
+  left: -54.16667%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-14 {
+  width: 58.33333%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-14 {
+  left: 58.33333%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-14 {
+  left: -58.33333%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-15 {
+  width: 62.5%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-15 {
+  left: 62.5%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-15 {
+  left: -62.5%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-16 {
+  width: 66.66667%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-16 {
+  left: 66.66667%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-16 {
+  left: -66.66667%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-17 {
+  width: 70.83333%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-17 {
+  left: 70.83333%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-17 {
+  left: -70.83333%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-18 {
+  width: 75%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-18 {
+  left: 75%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-18 {
+  left: -75%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-19 {
+  width: 79.16667%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-19 {
+  left: 79.16667%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-19 {
+  left: -79.16667%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-20 {
+  width: 83.33333%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-20 {
+  left: 83.33333%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-20 {
+  left: -83.33333%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-21 {
+  width: 87.5%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-21 {
+  left: 87.5%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-21 {
+  left: -87.5%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-22 {
+  width: 91.66667%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-22 {
+  left: 91.66667%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-22 {
+  left: -91.66667%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-23 {
+  width: 95.83333%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-23 {
+  left: 95.83333%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-23 {
+  left: -95.83333%;
+}
+/* line 58, ../../source/assets/sass/core/_grid.sass */
+.container .grid-24 {
+  width: 100%;
+}
+/* line 64, ../../source/assets/sass/core/_grid.sass */
+.container .push-24 {
+  left: 100%;
+}
+/* line 66, ../../source/assets/sass/core/_grid.sass */
+.container .pull-24 {
+  left: -100%;
+}
+/* line 24, ../../source/assets/sass/core/_grid.sass */
+.container [class^="grid-"] [class^="grid-"]:first-of-type {
+  padding-left: 0;
+}
+/* line 28, ../../source/assets/sass/core/_grid.sass */
+.container [class^="grid-"] [class^="grid-"]:last-of-type {
+  padding-right: 0;
+}
+/* line 34, ../../source/assets/sass/core/_grid.sass */
+.container .grid-center {
+  float: none;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1280px) {
+  /* line 134, ../../source/assets/sass/core/_grid.sass */
+  .container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 961px) {
+  /* line 45, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-1, .container .grid-2, .container .grid-3, .container .grid-4, .container .grid-5, .container .grid-6, .container .grid-7, .container .grid-8, .container .grid-9, .container .grid-10, .container .grid-11, .container .grid-12, .container .grid-13, .container .grid-14, .container .grid-15, .container .grid-16, .container .grid-17, .container .grid-18, .container .grid-19, .container .grid-20, .container .grid-21, .container .grid-22, .container .grid-23, .container .grid-24 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding: 0 5px;
+    position: relative;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-1 {
+    width: 4.16667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-1 {
+    left: 4.16667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-1 {
+    left: -4.16667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-2 {
+    width: 8.33333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-2 {
+    left: 8.33333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-2 {
+    left: -8.33333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-3 {
+    width: 12.5%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-3 {
+    left: 12.5%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-3 {
+    left: -12.5%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-4 {
+    width: 16.66667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-4 {
+    left: 16.66667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-4 {
+    left: -16.66667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-5 {
+    width: 20.83333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-5 {
+    left: 20.83333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-5 {
+    left: -20.83333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-6 {
+    width: 25%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-6 {
+    left: 25%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-6 {
+    left: -25%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-7 {
+    width: 29.16667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-7 {
+    left: 29.16667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-7 {
+    left: -29.16667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-8 {
+    width: 33.33333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-8 {
+    left: 33.33333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-8 {
+    left: -33.33333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-9 {
+    width: 37.5%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-9 {
+    left: 37.5%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-9 {
+    left: -37.5%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-10 {
+    width: 41.66667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-10 {
+    left: 41.66667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-10 {
+    left: -41.66667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-11 {
+    width: 45.83333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-11 {
+    left: 45.83333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-11 {
+    left: -45.83333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-12 {
+    width: 50%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-12 {
+    left: 50%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-12 {
+    left: -50%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-13 {
+    width: 54.16667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-13 {
+    left: 54.16667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-13 {
+    left: -54.16667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-14 {
+    width: 58.33333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-14 {
+    left: 58.33333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-14 {
+    left: -58.33333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-15 {
+    width: 62.5%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-15 {
+    left: 62.5%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-15 {
+    left: -62.5%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-16 {
+    width: 66.66667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-16 {
+    left: 66.66667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-16 {
+    left: -66.66667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-17 {
+    width: 70.83333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-17 {
+    left: 70.83333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-17 {
+    left: -70.83333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-18 {
+    width: 75%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-18 {
+    left: 75%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-18 {
+    left: -75%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-19 {
+    width: 79.16667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-19 {
+    left: 79.16667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-19 {
+    left: -79.16667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-20 {
+    width: 83.33333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-20 {
+    left: 83.33333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-20 {
+    left: -83.33333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-21 {
+    width: 87.5%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-21 {
+    left: 87.5%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-21 {
+    left: -87.5%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-22 {
+    width: 91.66667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-22 {
+    left: 91.66667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-22 {
+    left: -91.66667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-23 {
+    width: 95.83333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-23 {
+    left: 95.83333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-23 {
+    left: -95.83333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-24 {
+    width: 100%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-24 {
+    left: 100%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-24 {
+    left: -100%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-1 {
+    width: 8.33333%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-1 {
+    left: 8.33333%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-1 {
+    left: -8.33333%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-2 {
+    width: 16.66667%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-2 {
+    left: 16.66667%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-2 {
+    left: -16.66667%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-3 {
+    width: 25%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-3 {
+    left: 25%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-3 {
+    left: -25%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-4 {
+    width: 33.33333%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-4 {
+    left: 33.33333%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-4 {
+    left: -33.33333%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-5 {
+    width: 41.66667%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-5 {
+    left: 41.66667%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-5 {
+    left: -41.66667%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-6 {
+    width: 50%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-6 {
+    left: 50%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-6 {
+    left: -50%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-7 {
+    width: 58.33333%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-7 {
+    left: 58.33333%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-7 {
+    left: -58.33333%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-8 {
+    width: 66.66667%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-8 {
+    left: 66.66667%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-8 {
+    left: -66.66667%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-9 {
+    width: 75%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-9 {
+    left: 75%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-9 {
+    left: -75%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-10 {
+    width: 83.33333%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-10 {
+    left: 83.33333%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-10 {
+    left: -83.33333%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-11 {
+    width: 91.66667%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-11 {
+    left: 91.66667%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-11 {
+    left: -91.66667%;
+  }
+  /* line 77, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-12 {
+    width: 100%;
+  }
+  /* line 85, ../../source/assets/sass/core/_grid.sass */
+  .container .push-12 {
+    left: 100%;
+  }
+  /* line 87, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-12 {
+    left: -100%;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-13 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-13,
+  .container .pull-13 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-14 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-14,
+  .container .pull-14 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-15 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-15,
+  .container .pull-15 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-16 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-16,
+  .container .pull-16 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-17 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-17,
+  .container .pull-17 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-18 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-18,
+  .container .pull-18 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-19 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-19,
+  .container .pull-19 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-20 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-20,
+  .container .pull-20 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-21 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-21,
+  .container .pull-21 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-22 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-22,
+  .container .pull-22 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-23 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-23,
+  .container .pull-23 {
+    left: 0;
+  }
+  /* line 80, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-24 {
+    width: 100%;
+  }
+  /* line 90, ../../source/assets/sass/core/_grid.sass */
+  .container .push-24,
+  .container .pull-24 {
+    left: 0;
+  }
+  /* line 96, ../../source/assets/sass/core/_grid.sass */
+  .container [class^="grid-"] [class^="grid-"] {
+    padding: 0;
+  }
+  /* line 24, ../../source/assets/sass/core/_grid.sass */
+  .container [class^="grid-"] [class^="grid-"]:first-of-type {
+    padding-left: 0;
+  }
+  /* line 28, ../../source/assets/sass/core/_grid.sass */
+  .container [class^="grid-"] [class^="grid-"]:last-of-type {
+    padding-right: 0;
+  }
+  /* line 34, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-center {
+    float: none;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 481px) {
+  /* line 45, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-1, .container .grid-2, .container .grid-3, .container .grid-4, .container .grid-5, .container .grid-6, .container .grid-7, .container .grid-8, .container .grid-9, .container .grid-10, .container .grid-11, .container .grid-12, .container .grid-13, .container .grid-14, .container .grid-15, .container .grid-16, .container .grid-17, .container .grid-18, .container .grid-19, .container .grid-20, .container .grid-21, .container .grid-22, .container .grid-23, .container .grid-24 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding: 0 5px;
+    position: relative;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-1 {
+    width: 4.16667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-1 {
+    left: 4.16667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-1 {
+    left: -4.16667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-2 {
+    width: 8.33333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-2 {
+    left: 8.33333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-2 {
+    left: -8.33333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-3 {
+    width: 12.5%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-3 {
+    left: 12.5%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-3 {
+    left: -12.5%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-4 {
+    width: 16.66667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-4 {
+    left: 16.66667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-4 {
+    left: -16.66667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-5 {
+    width: 20.83333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-5 {
+    left: 20.83333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-5 {
+    left: -20.83333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-6 {
+    width: 25%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-6 {
+    left: 25%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-6 {
+    left: -25%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-7 {
+    width: 29.16667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-7 {
+    left: 29.16667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-7 {
+    left: -29.16667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-8 {
+    width: 33.33333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-8 {
+    left: 33.33333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-8 {
+    left: -33.33333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-9 {
+    width: 37.5%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-9 {
+    left: 37.5%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-9 {
+    left: -37.5%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-10 {
+    width: 41.66667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-10 {
+    left: 41.66667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-10 {
+    left: -41.66667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-11 {
+    width: 45.83333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-11 {
+    left: 45.83333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-11 {
+    left: -45.83333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-12 {
+    width: 50%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-12 {
+    left: 50%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-12 {
+    left: -50%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-13 {
+    width: 54.16667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-13 {
+    left: 54.16667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-13 {
+    left: -54.16667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-14 {
+    width: 58.33333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-14 {
+    left: 58.33333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-14 {
+    left: -58.33333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-15 {
+    width: 62.5%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-15 {
+    left: 62.5%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-15 {
+    left: -62.5%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-16 {
+    width: 66.66667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-16 {
+    left: 66.66667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-16 {
+    left: -66.66667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-17 {
+    width: 70.83333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-17 {
+    left: 70.83333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-17 {
+    left: -70.83333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-18 {
+    width: 75%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-18 {
+    left: 75%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-18 {
+    left: -75%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-19 {
+    width: 79.16667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-19 {
+    left: 79.16667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-19 {
+    left: -79.16667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-20 {
+    width: 83.33333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-20 {
+    left: 83.33333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-20 {
+    left: -83.33333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-21 {
+    width: 87.5%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-21 {
+    left: 87.5%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-21 {
+    left: -87.5%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-22 {
+    width: 91.66667%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-22 {
+    left: 91.66667%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-22 {
+    left: -91.66667%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-23 {
+    width: 95.83333%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-23 {
+    left: 95.83333%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-23 {
+    left: -95.83333%;
+  }
+  /* line 58, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-24 {
+    width: 100%;
+  }
+  /* line 64, ../../source/assets/sass/core/_grid.sass */
+  .container .push-24 {
+    left: 100%;
+  }
+  /* line 66, ../../source/assets/sass/core/_grid.sass */
+  .container .pull-24 {
+    left: -100%;
+  }
+  /* line 106, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-1 {
+    width: 16.66667%;
+  }
+  /* line 106, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-2 {
+    width: 33.33333%;
+  }
+  /* line 106, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-3 {
+    width: 50%;
+  }
+  /* line 106, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-4 {
+    width: 66.66667%;
+  }
+  /* line 106, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-5 {
+    width: 83.33333%;
+  }
+  /* line 106, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-6 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-7 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-8 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-9 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-10 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-11 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-12 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-13 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-14 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-15 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-16 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-17 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-18 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-19 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-20 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-21 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-22 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-23 {
+    width: 100%;
+  }
+  /* line 109, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-24 {
+    width: 100%;
+  }
+  /* line 24, ../../source/assets/sass/core/_grid.sass */
+  .container [class^="grid-"] [class^="grid-"]:first-of-type {
+    padding-left: 0;
+  }
+  /* line 28, ../../source/assets/sass/core/_grid.sass */
+  .container [class^="grid-"] [class^="grid-"]:last-of-type {
+    padding-right: 0;
+  }
+  /* line 34, ../../source/assets/sass/core/_grid.sass */
+  .container .grid-center {
+    float: none;
+    margin: 0 auto;
+  }
+  /* line 153, ../../source/assets/sass/core/_grid.sass */
+  .container [class*="push-"],
+  .container [class*="pull-"] {
+    left: 0 !important;
+  }
+}
+/* line 1, ../../source/assets/sass/core/_typography.sass */
+.badge, h1, h2, h3, h4, h5, h6, p, li {
+  color: #333333;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  margin-top: 0;
+  text-align: left;
+}
+
+/* line 9, ../../source/assets/sass/core/_typography.sass */
+strong, h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+/* line 11, ../../source/assets/sass/core/_typography.sass */
+em {
+  font-style: italics;
+}
+
+/* line 14, ../../source/assets/sass/core/_typography.sass */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* line 20, ../../source/assets/sass/core/_typography.sass */
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+/* line 26, ../../source/assets/sass/core/_typography.sass */
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+/* line 32, ../../source/assets/sass/core/_typography.sass */
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+/* line 38, ../../source/assets/sass/core/_typography.sass */
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+/* line 44, ../../source/assets/sass/core/_typography.sass */
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+/* line 50, ../../source/assets/sass/core/_typography.sass */
+p, li {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+/* line 55, ../../source/assets/sass/core/_typography.sass */
+.text-large {
+  font-size: 1.2em;
+}
+
+/* line 58, ../../source/assets/sass/core/_typography.sass */
+.text-small {
+  font-size: 0.8em;
+}
+
+/* line 61, ../../source/assets/sass/core/_typography.sass */
+.text-muted {
+  color: #cccccc !important;
+}
+
+/* line 17, ../../source/assets/sass/centurion.sass */
+.callout:before, .callout.alert .alert-expand:before, .container:before, .container .grid-1:before, .container .grid-2:before, .container .grid-3:before, .container .grid-4:before, .container .grid-5:before, .container .grid-6:before, .container .grid-7:before, .container .grid-8:before, .container .grid-9:before, .container .grid-10:before, .container .grid-11:before, .container .grid-12:before, .container .grid-13:before, .container .grid-14:before, .container .grid-15:before, .container .grid-16:before, .container .grid-17:before, .container .grid-18:before, .container .grid-19:before, .container .grid-20:before, .container .grid-21:before, .container .grid-22:before, .container .grid-23:before, .container .grid-24:before, .clearfix:before,
+.cf:before, .section-headline:before, .section-break:before, .callout:after, .callout.alert .alert-expand:after, .container:after, .container .grid-1:after, .container .grid-2:after, .container .grid-3:after, .container .grid-4:after, .container .grid-5:after, .container .grid-6:after, .container .grid-7:after, .container .grid-8:after, .container .grid-9:after, .container .grid-10:after, .container .grid-11:after, .container .grid-12:after, .container .grid-13:after, .container .grid-14:after, .container .grid-15:after, .container .grid-16:after, .container .grid-17:after, .container .grid-18:after, .container .grid-19:after, .container .grid-20:after, .container .grid-21:after, .container .grid-22:after, .container .grid-23:after, .container .grid-24:after, .clearfix:after,
+.cf:after, .section-headline:after, .section-break:after {
+  content: " ";
+  display: table;
+}
+/* line 21, ../../source/assets/sass/centurion.sass */
+.callout:after, .callout.alert .alert-expand:after, .container:after, .container .grid-1:after, .container .grid-2:after, .container .grid-3:after, .container .grid-4:after, .container .grid-5:after, .container .grid-6:after, .container .grid-7:after, .container .grid-8:after, .container .grid-9:after, .container .grid-10:after, .container .grid-11:after, .container .grid-12:after, .container .grid-13:after, .container .grid-14:after, .container .grid-15:after, .container .grid-16:after, .container .grid-17:after, .container .grid-18:after, .container .grid-19:after, .container .grid-20:after, .container .grid-21:after, .container .grid-22:after, .container .grid-23:after, .container .grid-24:after, .clearfix:after,
+.cf:after, .section-headline:after, .section-break:after {
+  clear: both;
+}
+
+/* line 28, ../../source/assets/sass/centurion.sass */
+.clear, .badge, .container .grid-center {
+  clear: both;
+}
+
+/* line 33, ../../source/assets/sass/centurion.sass */
+.not-visible {
+  /* Hides an element from view but displaces content */
+  visibility: hidden;
+}
+
+/* line 37, ../../source/assets/sass/centurion.sass */
+.show-element {
+  display: block !important;
+}
+
+/* line 40, ../../source/assets/sass/centurion.sass */
+.hide-element {
+  display: none !important;
+}
+
+/* Color Swatches */
+/* line 46, ../../source/assets/sass/centurion.sass */
+.color-box, .color-swatch, .color-code, .color-name {
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* line 51, ../../source/assets/sass/centurion.sass */
+.color-box {
+  float: left;
+  margin: 1em 2em 1em 0;
+  position: relative;
+  width: 100px;
+}
+
+/* line 58, ../../source/assets/sass/centurion.sass */
+.color-swatch {
+  background-color: transparent;
+  border: none;
+  height: 100px;
+}
+/* line 63, ../../source/assets/sass/centurion.sass */
+.color-swatch.black {
+  background-color: black;
+}
+/* line 65, ../../source/assets/sass/centurion.sass */
+.color-swatch.grey {
+  background-color: #999999;
+}
+/* line 67, ../../source/assets/sass/centurion.sass */
+.color-swatch.dark-grey {
+  background-color: #555555;
+}
+/* line 69, ../../source/assets/sass/centurion.sass */
+.color-swatch.light-grey {
+  background-color: #dddddd;
+}
+/* line 71, ../../source/assets/sass/centurion.sass */
+.color-swatch.red {
+  background-color: #cc583a;
+}
+/* line 73, ../../source/assets/sass/centurion.sass */
+.color-swatch.dark-red {
+  background-color: none;
+}
+/* line 75, ../../source/assets/sass/centurion.sass */
+.color-swatch.light-red {
+  background-color: #ffe3e1;
+}
+/* line 77, ../../source/assets/sass/centurion.sass */
+.color-swatch.blue {
+  background-color: #272d7f;
+}
+/* line 79, ../../source/assets/sass/centurion.sass */
+.color-swatch.dark-blue {
+  background-color: none;
+}
+/* line 81, ../../source/assets/sass/centurion.sass */
+.color-swatch.light-blue {
+  background-color: #dddfff;
+}
+/* line 83, ../../source/assets/sass/centurion.sass */
+.color-swatch.purple {
+  background-color: #7f4d7b;
+}
+/* line 85, ../../source/assets/sass/centurion.sass */
+.color-swatch.dark-purple {
+  background-color: none;
+}
+/* line 87, ../../source/assets/sass/centurion.sass */
+.color-swatch.light-purple {
+  background-color: #ffdcfc;
+}
+/* line 89, ../../source/assets/sass/centurion.sass */
+.color-swatch.green {
+  background-color: #277f35;
+}
+/* line 91, ../../source/assets/sass/centurion.sass */
+.color-swatch.dark-green {
+  background-color: none;
+}
+/* line 93, ../../source/assets/sass/centurion.sass */
+.color-swatch.light-green {
+  background-color: #dfffe4;
+}
+/* line 95, ../../source/assets/sass/centurion.sass */
+.color-swatch.orange {
+  background-color: #fe9300;
+}
+/* line 97, ../../source/assets/sass/centurion.sass */
+.color-swatch.dark-orange {
+  background-color: none;
+}
+/* line 99, ../../source/assets/sass/centurion.sass */
+.color-swatch.light-orange {
+  background-color: #ffefdd;
+}
+
+/* line 102, ../../source/assets/sass/centurion.sass */
+.color-code {
+  border: none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: white;
+  font-size: 14px;
+  padding: 2px 3px;
+  text-align: center;
+}
+
+/* line 113, ../../source/assets/sass/centurion.sass */
+.color-name {
+  border: none;
+  font-size: 14px;
+  padding: 5px 3px;
+  text-align: center;
+}
+
+/* line 120, ../../source/assets/sass/centurion.sass */
+.section-headline {
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 0.35em;
+}
+
+/* line 125, ../../source/assets/sass/centurion.sass */
+.section-break {
+  border-bottom: 3px solid #dddddd;
+  margin: 2em 0;
+  width: 100%;
+}
+
+/* For Example Grid elements */
+/* line 133, ../../source/assets/sass/centurion.sass */
+span.box-grid {
+  background-color: #dedede;
+  border: 1px solid #efefef;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  font-family: helevtica neue, sans-serif;
+  font-size: 0.8em;
+  font-weight: 200;
+  margin-top: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  text-align: center;
+  width: 100%;
+}
+
+/* Show Nested Elements - Demo */
+/* line 153, ../../source/assets/sass/centurion.sass */
+[class^="grid-"] [class^="grid-"]:first-of-type .box-grid {
+  background: hotpink;
+}
+/* line 157, ../../source/assets/sass/centurion.sass */
+[class^="grid-"] [class^="grid-"]:last-of-type .box-grid {
+  background: cyan;
+}
+/* line 163, ../../source/assets/sass/centurion.sass */
+[class^="grid-"] [class^="grid-"] [class^="grid-"]:first-child .box-grid {
+  background: cyan;
+}
+
+/* line 169, ../../source/assets/sass/centurion.sass */
+.first .box-grid {
+  background: hotpink;
+}
+
+/* line 172, ../../source/assets/sass/centurion.sass */
+.last .box-grid {
+  background: cyan;
+}

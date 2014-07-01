@@ -1,0 +1,79 @@
+// Colors
+
+
+/* Color Swatches */
+@mixin color-swatches
+
+  %color-box-all
+    border: 1px solid #DDD
+    box-sizing: border-box
+    display: block
+
+  .color-box
+    @extend %color-box-all
+    float: left
+    margin: 1em 2em 1em 0
+    position: relative
+    width: 100px
+
+  .color-swatch
+    @extend %color-box-all
+    background-color: transparent
+    border: none
+    height: 100px
+    &.black
+      background-color: #000
+    &.grey
+      background-color: #999
+    &.dark-grey
+      background-color: #555
+    &.light-grey
+      background-color: #DDD
+    &.red
+      background-color: #CC583A
+    &.dark-red
+      background-color: none
+    &.light-red
+      background-color: #FFE3E1
+    &.blue
+      background-color: #272D7F
+    &.dark-blue
+      background-color: none
+    &.light-blue
+      background-color: #DDDFFF
+    &.purple
+      background-color: #7F4D7B
+    &.dark-purple
+      background-color: none
+    &.light-purple
+      background-color: #FFDCFC
+    &.green
+      background-color: #277F35
+    &.dark-green
+      background-color: none
+    &.light-green
+      background-color: #DFFFE4
+    &.orange
+      background-color: #FE9300
+    &.dark-orange
+      background-color: none
+    &.light-orange
+      background-color: #FFEFDD
+
+  .color-code
+    @extend %color-box-all
+    border: none
+    position: absolute
+    top: 5px
+    left: 5px
+    color: #FFF
+    font-size: 14px
+    padding: 2px 3px
+    text-align: center
+
+  .color-name
+    @extend %color-box-all
+    border: none
+    font-size: 14px
+    padding: 5px 3px
+    text-align: center

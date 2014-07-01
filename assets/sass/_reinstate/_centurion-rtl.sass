@@ -1,0 +1,62 @@
+/* --------------------------------------------------------
+ *
+ *  Centurion Framework v 3.5 - Right-to-Left Stylesheet
+ *  Created by: Justin Hough (http://justinhough.com/)
+ *
+ *  Documentation: http://centurionframework.com/
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
+
+@import "core/base"
+
+/* GRID */
+@include grid
+
+/*  Features */
+/* Show Elements */
+@include hide-view(desktop)
+@include show-block(desktop)
+
+/* Alerts */
+@include default-alert
+@include alert-options
+
+/* Breadrumbs */
+@include breadcrumbs
+
+/* Buttons */
+//@include buttons-gradient
+@include buttons-flat
+
+/* Images */
+@include images
+
+/* Navigation */
+@include navigation-slim
+
+/* Panels */
+@include panels
+
+/* Pagination */
+@include pagination
+
+/* Tabs */
+@include tabs-base
+@include tabs-bottom
+
+/* Tables */
+@include tables
+
+/* Tooltips */
+@include tooltips
+
+/*  Typography  */
+@include typography
+
+@include extendables
+
+/* Print */
+@include print
+
+@import custom

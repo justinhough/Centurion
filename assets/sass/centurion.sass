@@ -6,13 +6,19 @@
 
 
 @import "core/config"
-@import "core/colors"
-@import "core/badges"
-@import "core/callouts"
-@import "core/grid"
-@import "core/typography"
+@import "core/mixin"
 
 @import "core/normalize"
+@import "core/grid"
+
+@import "core/colors"
+@import "core/buttons"
+@import "core/badges"
+@import "core/callouts"
+@import "core/tables"
+@import "core/typography"
+
+
 
 // Clearfix
 %clearfix
@@ -30,13 +36,6 @@
 .clear
   clear: both
 
-
-    
-@include color-swatches
-    
-    
-    
-    
 // Visible and Show/Hide Classes
 .visible
   visibility: display
@@ -51,76 +50,24 @@
 .hide-element,
 .hide-desktop
   display: none !important
-  
 
-.section-headline
-  @extend %clearfix
-  border-bottom: 1px solid #DDD
-  padding-bottom: 0.35em
 
-.section-break
-  @extend %clearfix
-  border-bottom: 3px solid #DDD
-  margin: 2em 0
-  width: 100%
-  
 
-/* For Example Grid elements */
-span.box-grid
-  background-color: #DEDEDE
-  border: 1px solid #EFEFEF
-  @include box-sizing(border-box)
-  display: block
-  font-family: helevtica neue, sans-serif
-  font-size: 0.8em
-  font-weight: 200
-  margin-top: 1em
-  padding-top: 2em
-  padding-bottom: 2em
-  text-align: center
-  width: 100%
-  
-
-/* Show Nested Elements - Demo */
-[class^="grid-"]
-  [class^="grid-"]
+@include color-swatches
     
-    &:first-of-type
-      .box-grid
-        background: hotpink
     
-    &:last-of-type
-      .box-grid
-        background: aqua
     
-    [class^="grid-"]
-      
-      &:first-child
-        .box-grid
-          background: aqua
-
-
-// IE Fallback - Script Required - Demo 
-.first
-  .box-grid
-    background: hotpink
-.last
-  .box-grid
-    background: aqua
-
-
-
-      
-      
-/* Main Page Fixes */
+    
+// CUSTOM FOR PREVIEW
+// ----------------------------
 a
   color: $orange
   &:hover
     color: $black
+    
 
 header
   background: $light-grey
-  border-bottom: 1px solid $grey
     
 nav
   ul
@@ -139,14 +86,39 @@ nav
         text-decoration: none
         
         &:hover,
+        &.current,
         &.nav-current
           background: $orange
-          color: $black
-    
+          color: $white
+
+#banner
+  @extend %clearfix
+  background: $orange
+  border-bottom: 1px solid $orange
+  h1
+    color: $white
+
+.section-break
+  @extend %clearfix
+  border-bottom: 3px solid #DDD
+  margin: 2em 0
+  width: 100%
+
 footer
   background: $light-grey
   border-top: 1px solid $grey
-  margin-top: 1em
+  font-size: 0.8em
+  margin-top: 4em
+
+
+pre
+  background: #444
+  border: 1px solid #444
+  color: #FFF
+  font-size: 0.8em
+  line-height: 1
+  padding: 0.8em 1em
+  
 
 .lfloat
   float: left
@@ -157,10 +129,54 @@ footer
   margin: 0 1.2em 1.2em 0
   padding: 0.5em
 
-pre
-  background: #444
-  border: 1px solid #444
-  color: #FFF
-  font-size: 0.9em
-  line-height: 1
-  padding: 0.8em 0
+
+
+
+
+
+// For Example Grid elements
+// ----------------------------
+span.box-grid
+  background-color: #DEDEDE
+  border: 1px solid #EFEFEF
+  @include box-sizing(border-box)
+  display: block
+  font-family: helevtica neue, sans-serif
+  font-size: 0.8em
+  font-weight: 200
+  margin-top: 1em
+  padding-top: 2em
+  padding-bottom: 2em
+  text-align: center
+  width: 100%
+  
+
+
+// Show Nested Elements - Demo
+// ----------------------------
+[class^="grid-"]
+  [class^="grid-"]
+    
+    &:first-of-type
+      .box-grid
+        background: hotpink
+    
+    &:last-of-type
+      .box-grid
+        background: aqua
+    
+    [class^="grid-"]
+      
+      &:first-child
+        .box-grid
+          background: aqua
+
+
+// IE Fallback - Demo
+// ----------------------------
+.first
+  .box-grid
+    background: hotpink
+.last
+  .box-grid
+    background: aqua

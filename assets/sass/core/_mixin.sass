@@ -1,0 +1,160 @@
+//
+// Mixins
+// --------------------------------------------------
+
+
+// Box Sizing
+// ----------------------------
+// @include box-sizing
+@mixin box-sizing($value:border-box)
+  @each $prefix in $prefixes
+    -#{$prefix}-box-sizing: $value
+  box-sizing: $value
+
+
+// Box Shadow - custom with defaults (4 values)
+// ----------------------------
+// @include box-shadow
+@mixin box-shadow($top: 0, $bottom: 0, $spread: 5px, $color: rgba(#000, .4))
+  @each $prefix in $prefixes
+    -#{$prefix}-box-shadow: $top $bottom $spread $color
+  box-shadow: $top $bottom $spread $color
+
+
+// Media Queries
+// ----------------------------
+// @include media-query(phones)
+// @include media-query(tablets)
+// @include media-query(desktops)
+@mixin media-query($media) 
+  @if $media == phones
+    @media only screen and (max-width: $breakpoint-small)
+      @content
+  @else if $media == tablets
+    @media only screen and (min-width: $breakpoint-small + 1) and (max-width: $breakpoint-medium)
+      @content
+  @else if $media == desktops
+    @media only screen and (min-width: $breakpoint-large)
+      @content
+
+
+
+// Two color gradient
+// ----------------------------
+// @include gradient(two, start, end)
+// @include gradient(three, start, end, middle)
+@mixin gradient($amount, $start, $end, $middle: null)
+  @if $amount == two
+    background: $start
+    background: -moz-linear-gradient(top,  $start 0%, $end 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(100%,$end))
+    background: -webkit-linear-gradient(top,  $start 0%,$end 100%)
+    background: -o-linear-gradient(top,  $start 0%,$end 100%)
+    background: -ms-linear-gradient(top,  $start 0%,$end 100%)
+    background: linear-gradient(top,  $start 0%,$end 100%)
+  @else if $amount == three
+    background: $start
+    background: -moz-linear-gradient(top, $start 0%, $middle 40%, $end 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(40%,$middle), color-stop(100%,$end))
+    background: -webkit-linear-gradient(top, $start 0%, $middle 40%, $end 100%)
+    background: -o-linear-gradient(top, $start 0%, $middle 40%, $end 100%)
+    background: -ms-linear-gradient(top, $start 0%, $middle 40%, $end 100%)
+    background: linear-gradient(top,  $start 0%, $middle 40%, $end 100%)
+
+
+
+// Border Radius Mixins
+// ----------------------------
+@mixin border-radius($radius, $radius2:$radius)
+  -webkit-border-radius: $radius $radius2
+  -moz-border-radius: $radius $radius2
+  -ms-border-radius: $radius $radius2
+  -o-border-radius: $radius $radius2
+  border-radius: $radius $radius2
+
+@mixin border-radius-dir($radius, $dir)
+  @if $dir == top-left
+    @each $prefix in $prefixes
+      -#{$prefix}-border-radius: $radius 0 0 0
+    border-radius: $radius 0 0 0
+  @else if $dir == top-right
+    @each $prefix in $prefixes
+      -#{$prefix}-border-radius: 0 $radius 0 0
+    border-radius: 0 $radius 0 0
+  @else if $dir == top-left
+    @each $prefix in $prefixes
+      -#{$prefix}-border-radius: 0 0 $radius 0
+    border-radius: 0 0 $radius 0
+  @else if $dir == top-right
+    @each $prefix in $prefixes
+      -#{$prefix}-border-radius: 0 0 0 $radius
+    border-radius: 0 0 0 $radius
+
+@mixin border-top-left-radius($radius)
+  border-radius: $radius 0 0 0
+  
+@mixin border-top-right-radius($radius)
+  border-radius: 0 $radius 0 0
+  
+@mixin border-bottom-left-radius($radius)
+  border-radius: 0 0 $radius 0
+  
+@mixin border-bottom-right-radius($radius)
+  border-radius: 0 0 0 $radius
+  
+
+
+
+// Margin or Padding
+// ----------------------------
+// @include element-spacing(top-bottom, margin, 10px)
+@mixin element-spacing($direction, $spacing, $value: null, $value2: $value)
+  @if $direction == vertical
+    #{$spacing}: $value 0
+  @else if $direction == horizontal
+    #{$spacing}: 0 $value
+  @else if $direction == top
+    #{$spacing}-top: $value
+  @else if $direction == right
+    #{$spacing}-right: $value
+  @else if $direction == bottom
+    #{$spacing}-bottom: $value
+  @else if $direction == left
+    #{$spacing}-left: $value
+  @else if $direction == all
+    #{$spacing}: $value
+  @else if $direction == two
+    #{$spacing}: $value $value2
+  @else if $direction == auto
+    #{$spacing}: 0 auto
+  @else if $direction == none
+    #{$spacing}: 0
+
+
+// Show and Hide Elements
+// ----------------------------
+@mixin hide-view($view)
+  @if $view == desktop
+    .hide-desktop,
+    .hide-tablet
+      display: none !important
+    .hide-mobile
+      display: block !important
+    
+  @if $view == tablet
+    .hide-desktop,
+    .hide-mobile
+      display: none !important
+    .hide-tablet
+      display: block !important
+  
+  @if $view == mobile
+    .hide-desktop,
+    .hide-tablet
+      display: none !important
+    .hide-mobile
+      display: block !important
+
+@mixin show-block($element)
+  .show-#{$element}
+    display: block !important

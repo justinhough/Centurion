@@ -20,11 +20,6 @@
   line-height: 1.5
   margin-top: 0
   text-align: left
-  
-strong
-  font-weight: bold
-em
-  font-style: italics
 
 h1
   @extend %typography
@@ -75,12 +70,32 @@ li
   font-size: 1em
   margin: 0
   padding-left: 0.5em
-  
-.text-large
-  font-size: 1.2em
 
+
+
+strong
+  font-weight: bold
+em
+  font-style: italics
+
+big,
+.text-large
+  font-size: 150%
+
+small,
 .text-small
-  font-size: 0.8em
+  font-size: 50%
+
+p
+  big,
+  &.text-large
+    margin-bottom: 0.5em
+  
+  small,
+  &.text-small
+    font-size: 80%
+
 
 .text-muted
   color: #CCC !important
+  

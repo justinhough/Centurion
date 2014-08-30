@@ -1,7 +1,36 @@
-// ----
-// Bourbon (v4.0.2)
-// ----
+// Badge Mixins
+// ----------------------------
 
+// Badge Backgrounds
+// @include badge-bk-colors(class, color, textColor)
+// Task: Optimize with BEM method for fewer class declarations
+@mixin badge-bk-colors($class, $color, $text-color)
+  &.#{$class}
+    background-color: $color
+    color: $text-color
+
+// Badges with Borders
+// @include badge-bk-colors(class, color)
+// Task: Optimize with BEM method for fewer class declarations
+@mixin badge-w-borders($class, $color)
+  &.#{$class}
+    border-color: $color
+    color: $color
+
+
+%badge-icons
+  content: ''
+  display: inline-block
+  font-size: 1em
+  font-weight: bold
+  line-height: 1
+  margin-right: 0.5em
+  text-decoration: inherit
+  -webkit-font-smoothing: antialiased
+
+
+// Badges
+// ----------------------------
 .badge
   @extend .clear
   @extend %typography
@@ -9,28 +38,17 @@
   background-color: #CCC
   color: #555
   cursor: pointer
-  //float: left
-  font-size: 0.8em
+  font-size: 0.7em
   line-height: 1.5
   margin: 0.5em 0
   padding: 0.2em 0.6em
-  //&:hover
-    //font-weight: 800
-  &.red
-    background-color: $light-red
-    color: $dark-red
-  &.blue
-    background-color: $light-blue
-    color: $blue
-  &.purple
-    background-color: $light-purple
-    color: $purple
-  &.green
-    background-color: $light-green
-    color: $green
-  &.orange
-    background-color: $light-orange
-    color: $orange
+  
+  @include badge-bk-colors(red, $light-red, $dark-red)
+  @include badge-bk-colors(blue, $light-blue, $dark-blue)
+  @include badge-bk-colors(purple, $light-purple, $dark-purple)
+  @include badge-bk-colors(orange, $light-orange, $dark-orange)
+  @include badge-bk-colors(green, $light-green, $dark-green)
+
   &.light
     color: $white
     &.orange
@@ -39,48 +57,29 @@
     color: $darker-grey
   
   &.rounded
-    /* Task: Figure out better BEM class convention */
+    // Task: Figure out better BEM class convention
     border-radius: 3px
   
   &.border
     background-color: transparent
     border: 1px solid $light-grey
-    &.red
-      border-color: $red
-      color: $red
-    &.blue
-      border-color: $blue
-      color: $blue
-    &.purple
-      border-color: $purple
-      color: $purple
-    &.green
-      border-color: $green
-      color: $green
-    &.orange
-      border-color: $orange
-      color: $orange
-  
-[class*="icon-"]
-  
-  &:before
-    content: ''
-    display: inline-block
-    font-size: 1em
-    font-weight: bold
-    line-height: 1
-    margin-right: 0.5em
-    text-decoration: inherit
-    -webkit-font-smoothing: antialiased
 
-.icon
-  // Add icons to badges
-//  &#{-h}:before
-//    content: '⇝'
-//  &#{-e}:before
-//    content: '◎'
-//  &#{-l}:before
-//    content: '▨'
-//  &#{-o}:before
-//    content: '⊗'*/
-    
+    @include badge-w-borders(red, $red)
+    @include badge-w-borders(blue, $blue)
+    @include badge-w-borders(purple, $purple)
+    @include badge-w-borders(orange, $orange)
+    @include badge-w-borders(green, $green)
+
+.icon-h:before
+  content: '⇝'
+  @extend %badge-icons
+.icon-e:before
+  content: '◎'
+  @extend %badge-icons
+.icon-l:before
+  content: '▨'
+  @extend %badge-icons
+.icon-o:before
+  content: '⊗'
+  @extend %badge-icons
+  

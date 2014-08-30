@@ -1,8 +1,12 @@
-// Prefixes
-$prefixes: -webkit -moz -o
+// Fonts
+$font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+$default-font-size: 16px
+$default-line-height: 1
+
+$ie7-support: false
 
 // Centurion - Grid Config
-$content-width: 1280
+$content-width: 1100
 $inner-width: 98
 $gutter: 20
 
@@ -13,16 +17,30 @@ $desktop-columns: 24
 $tablet-columns: 12
 $mobile-columns: 6
 
-$lang-front: left
-$direction: $lang-front
-$value: px
-
 $grid-class: grid
 $tablet-grid-class: tablet
 $mobile-grid-class: mobile
 
-$push-grid: push
-$pull-grid: pull
+$push-class: push
+$pull-class: pull
+
+
+// Centurion - Language Support
+$lang-front: left
+$direction: $lang-front
+$value: px
+
+
+// Centurion Layout
+$margin-top: helmet
+$margin-bottom: sandal
+$margin-both: armor
+
+$padding-top: pad-helmet
+$padding-bottom: pad-sandal
+$padding-both: pad-armor
+
+
 
 // Centurion Colors
 $white: #FFF
@@ -31,9 +49,10 @@ $black: #000
 $off-white: #EFEFEF
 
 $grey: #999
-$darker-grey: #333
+$light-grey: #CCC
+$lighter-grey: #DDD
 $dark-grey: #555
-$light-grey: #DDD
+$darker-grey: #333
 
 $red: #CC583A
 $dark-red: darken($red, 20%)
@@ -54,3 +73,7 @@ $light-green: lighten($green, 30%)
 $orange: #FE9300
 $dark-orange: darken($orange, 20%)
 $light-orange: lighten($orange, 30%)
+
+
+// Prefixes
+$prefixes: -webkit -moz -o

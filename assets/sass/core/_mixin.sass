@@ -21,6 +21,15 @@
   box-shadow: $top $bottom $spread $color
 
 
+// Transitions
+// ----------------------------
+// @include css3-transition(transition, time)
+@mixin css3-transition($option, $time: 1s)
+  @each $prefix in $prefixes
+    -#{$prefix}-transition: $time $option
+  transition: $time $option
+
+
 // Media Queries
 // ----------------------------
 // @include media-query(phones)
@@ -133,28 +142,55 @@
 
 // Show and Hide Elements
 // ----------------------------
+// @include hide-view(option)
 @mixin hide-view($view)
   @if $view == desktop
-    .hide-desktop,
-    .hide-tablet
+    .hide-desktop
       display: none !important
+    .hide-tablet
+      display: block !important
     .hide-mobile
       display: block !important
     
   @if $view == tablet
-    .hide-desktop,
-    .hide-mobile
-      display: none !important
+    .hide-desktop
+      display: block !important
     .hide-tablet
+      display: none !important
+    .hide-mobile
       display: block !important
   
   @if $view == mobile
-    .hide-desktop,
-    .hide-tablet
-      display: none !important
-    .hide-mobile
+    .hide-desktop
       display: block !important
+    .hide-tablet
+      display: block !important
+    .hide-mobile
+      display: none !important
 
-@mixin show-block($element)
-  .show-#{$element}
-    display: block !important
+
+// @include show-view(option)
+@mixin show-view($view)
+  @if $view == desktop
+    .show-desktop
+      display: block !important
+    .show-tablet
+      display: none !important
+    .show-mobile
+      display: none !important
+    
+  @if $view == tablet
+    .show-desktop
+      display: none !important
+    .show-tablet
+      display: block !important
+    .show-mobile
+      display: none !important
+  
+  @if $view == mobile
+    .show-desktop
+      display: none !important
+    .show-tablet
+      display: none !important
+    .show-mobile
+      display: block !important

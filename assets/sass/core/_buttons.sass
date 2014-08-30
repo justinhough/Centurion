@@ -1,4 +1,4 @@
-// Buttons
+// Button Mixins
 // ----------------------------
 @mixin default-button
   background: #DEDEDE
@@ -26,6 +26,7 @@
 // @include button(class, color1, color2, text-color)
 @mixin create-button($class, $color1, $color2, $text-color: $white)
   .#{$class}
+    @extend .btn
     background-color: $color1
     color: $text-color !important
     &:hover
@@ -33,7 +34,8 @@
       color: $text-color !important
 
 
-
+// Buttons
+// ----------------------------
 .btn
   color: $grey
   @include default-button
@@ -42,19 +44,24 @@
   &:hover
     @include default-button-hover
   
-  &.small-btn
-    font-size: (1em - 0.3)
-    @include element-spacing(two, padding, 0.533em, 1.2em) //padding: 8px 18px
+.small-btn
+  font-size: (1em - 0.3)
+  @include element-spacing(two, padding, 0.533em, 1.2em) //padding: 8px 18px
+  @extend .btn
 
-  &.large-btn
-    font-size: (1em + 0.3)
-    @include element-spacing(two, padding, 0.333em, 1.6em)
+.large-btn
+  font-size: (1em + 0.3)
+  @include element-spacing(two, padding, 0.333em, 1.6em)
+  @extend .btn
 
-  &.full-btn
-    @include element-spacing(vertical, padding, 0.667em) //padding: 10px 0
-    text-align: center
-    width: 100%
-    
+.full-btn
+  @include element-spacing(vertical, padding, 0.667em) //padding: 10px 0
+  text-align: center
+  width: 100%
+  @extend .btn
+
+.inline-btn
+  margin: 0  
 
 @include create-button(blue-btn, $blue, $dark-blue)
 

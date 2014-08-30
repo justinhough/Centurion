@@ -1,69 +1,16 @@
-.callout
-  @extend %clearfix
-  display: block
-  background-color: #EDEDED
-  border-left: 5px solid #CCC
-  margin: 1em 0
-  padding: 0 1.5em
-  h1, h2, h3
-    color: #777
-  p
-    color: #555
-  /* Red Callout - Alert or Danger */
-  &.red
-    background-color: #FFE3E1
-    border-left-color: #CC583A
+// Callout Mixins
+// ----------------------------
+
+// @include callout(class, bkColor, borderColor, textColor)
+@mixin callout($class, $bk-color, $border-color, $text-color)
+  .#{$class}-callout
+    @extend .callout
+    background-color: $bk-color
+    border-left-color: $border-color    
     h1, h2, h3
-      color: #CC583A
-  /* Blue Callout - Informational */
-  &.blue
-    background-color: #DDDFFF
-    border-left-color: #272D7F
-    h1, h2, h3
-      color: #272D7F
-  /* Purple Callout - Play Koi */
-  &.purple
-    background-color: #FFDCFC
-    border-left-color: #7F4D7B
-    h1, h2, h3
-      color: #7F4D7B
-  /* Green Callout - Success or Whoohoo! */
-  &.green
-    background-color: #DFFFE4
-    border-left-color: #277F35
-    h1, h2, h3
-      color: #277F35
-  /* Orange Callout - Warning or Caution */
-  &.orange
-    background-color: #FFEFDD
-    border-left-color: #FE9300
-    h1, h2, h3
-      color: #FE9300
-  
-  &.alert
-    border-left: none
-    border-radius: 4px
-    box-shadow: 0 0 8px #CCC
-    padding: 0.5em 1.5em
-    position: relative
-    .btn-close
-      @extend %callout-icons
-      &:after
-        content: "x"
-        @extend %alert-btn
-    .btn-expand
-      @extend %callout-icons
-      &:after
-        content: "expand"
-        @extend %alert-btn
-  
-    .alert-expand
-      @extend %clearfix
-      // display: none
-      background: #FFF
-      border-left: 1px solid #DDD
-      margin-bottom: 1em
-      padding: 0 1em
+      color: $text-color
+    @content
+
 
 %callout-icons
   background-color: transparent
@@ -71,11 +18,84 @@
   display: block
   
 %alert-btn
-  color: blue
+  color: $black
+  background: $white
+  border: 1px solid $light-grey
+  border-radius: 25px
+  font-weight: bold
+  line-height: 1
+  padding: 2px 6px 3px 6px
   position: absolute
   top: 0.5em
   right: 1em
   text-align: center
+  @include css3-transition(ease-in-out, 0.5s)
+  
   &:hover
-    color: hotpink
+    background: $white
+    color: $grey
+    
 
+
+
+// Callouts
+// ----------------------------
+.callout
+  @extend %clearfix
+  display: block
+  background-color: #EDEDED
+  border-left: 5px solid #CCC
+  margin: 1em 0
+  padding: 1.5em
+  h1, h2, h3
+    color: #777
+    margin-top: 0
+    margin-bottom: 0.2em
+  p
+    color: #555
+    margin: 0.5em 0
+  
+/* Red Callout - Alert or Danger */
+@include callout(red, #FFE3E1, #CC583A, #CC583A)
+/* Blue Callout - Informational */
+@include callout(blue, #DDDFFF, #272D7F, #272D7F)
+/* Purple Callout - Play Koi */
+@include callout(purple, #FFDCFC, #7F4D7B, #7F4D7B)
+/* Green Callout - Success or Whoohoo! */
+@include callout(green, #DFFFE4, #277F35, #277F35)
+/* Orange Callout - Warning or Caution */
+@include callout(orange, #FFEFDD, #FE9300, #FE9300)
+
+.alert
+  border-left: none
+  border-radius: 4px
+  box-shadow: 0 0 8px #CCC
+  padding: 0.5em 1.5em
+  position: relative
+
+  .btn-expand
+    @extend %callout-icons
+    &:after
+      content: "+"
+      @extend %alert-btn
+    &.open
+      &:after
+        -webkit-transform: rotate(45deg)
+        -moz-transform: rotate(45deg)
+        transform: rotate(45deg)
+        @include css3-transition(ease-in-out, 0.5s)
+      &:hover
+        &:after
+          color: $red
+
+.alert-expand
+  @extend %clearfix
+  display: none
+  background: #FFF
+  border-left: 1px solid #DDD
+  margin-bottom: 1em
+  padding: 0 1em
+  
+  &.expanded
+    display: block
+    

@@ -1,7 +1,7 @@
-// ----
-// Sass (v3.3.7)
-// Compass (v1.0.0.alpha.18)
-// ----
+@import "core/mixin"
+
+// Grid Mixins
+// ----------------------------
 
 // Centurion - Grid Reset for Smaller Screens
 @mixin grid-reset($grid-class)
@@ -27,7 +27,7 @@
     //[class^="#{$class}-"]:last-child,
     [class^="#{$class}-"]:last-of-type
       padding-right: 0
-
+  
 
 // Grid Center
 @mixin center-grid-elements($class: $grid-class)
@@ -38,8 +38,42 @@
     
 
 
+// IE Specific Hacks - Border Box Fix
+@mixin ie7-grid-fix($decimal)
+  @if $ie7-support
+    /* IE7 */
+    *padding-left: 0
+    *padding-right: 0
+    /* IE7 */
+    & > *
+      /* IE7 */
+      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$space}")
+      /* IE7 */
+
+@mixin ie7-grid-element($decimal)
+  @if $ie7-support
+    /* IE7 */
+    *width: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+    /* IE7 */
+  
+@mixin ie7-push($decimal)
+  @if $ie7-support
+    /* IE7 */
+    *#{$lang-front}: expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+    /* IE7 */
+  
+@mixin ie7-pull($decimal)
+  @if $ie7-support
+    /* IE7 */
+    *#{$lang-front}: expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + "px")
+    /* IE7 */
+
+
+
 
 // Grid Column Generator
+// ----------------------------
 @mixin grid($columns: 24, $class: $grid-class, $exclude: false, $respond: none)    
 
   %column-base
@@ -48,49 +82,57 @@
     padding: 0 ($gutter / 2) + $value
     position: relative
 
+
   // Base Grid Builder
-  @for $i from 1 through $columns
-    $column-num: $i
-    $column-width: $content-width / $columns
-    $percent: (100 / $columns) * $i * 1%
-    //$column-max: $column-num * $column-width + $value
-
-    .#{$class}-#{$i}
-      // turn off if nested within media query
-      @if $exclude
-        @extend %clearfix
-        @extend %column-base
-      width: $percent
-    .#{$push-grid}-#{$i}
-      left: $percent
-    .#{$pull-grid}-#{$i}
-      left: -($percent)
-
+  @if $respond == desktop
+    @for $i from 1 through $columns
+      $column-num: $i
+      $column-width: $content-width / $columns
+      $percent: (100 / $columns) * $i * 1%
+      $decimal: $column-num * ($content-width / $columns)
+      //$column-max: $column-num * $column-width + $value
+  
+      .#{$class}-#{$i}
+        // turn off if nested within media query
+        @if $exclude
+          @extend %clearfix
+          @extend %column-base
+        width: $percent
+        @include ie7-grid-element($decimal)
+      .#{$push-class}-#{$i}
+        left: $percent
+      .#{$pull-class}-#{$i}
+        left: -($percent)
+      
 
 
   // Adjust 24 columns to work for tablet
   @if $respond == tablet
+
     @for $i from 1 through $desktop-columns
       $column-num: $i
       $percent: (100 / $tablet-columns) * $i * 1%
+      // Tablet Grid
       @if $i < $tablet-columns + 1
         .#{$class}-#{$i}
           width: $percent
       @if $i > $tablet-columns
         .#{$class}-#{$i}
-          //padding: 0
-          width: 100%
-      
+          @extend %full-width
+      // Tablet Push Pull
       @if $i < $tablet-columns + 1
-        .#{$push-grid}-#{$i}
+        .#{$push-class}-#{$i}
           left: $percent
-        .#{$pull-grid}-#{$i}
+        .#{$pull-class}-#{$i}
           left: -($percent)
       @if $i > $tablet-columns
-        .#{$push-grid}-#{$i},
-        .#{$pull-grid}-#{$i}
-          left: 0
+        .#{$push-class}-#{$i}, .#{$pull-class}-#{$i}
+          @extend %no-push-pull
       
+    %full-width
+      width: 100%
+    %no-push-pull
+      left: 0
     // Reset nested elements fix for tablet
     [class^="#{$class}-"]
       [class^="#{$class}-"]
@@ -102,55 +144,88 @@
     @for $i from 1 through $desktop-columns
       $column-num: $i
       $percent: (100 / $mobile-columns) * $i * 1%
+      // Mobile Grid
       @if $i < $mobile-columns + 1
         .#{$class}-#{$i}
           width: $percent
       @if $i > $mobile-columns
         .#{$class}-#{$i}
-          //padding: 0
-          width: 100%
-      
+          @extend %full-width
+      // Push and Pull
+      @if $i < $mobile-columns + 1
+        .#{$push-class}-#{$i}
+          left: $percent
+        .#{$pull-class}-#{$i}
+          left: -($percent)
+      @if $i > $mobile-columns
+        .#{$push-class}-#{$i}, .#{$pull-class}-#{$i}
+          @extend %no-push-pull
+    %full-width
+      width: 100%
+    %no-push-pull
+      left: 0
 
   @include nested-grid-elements($class)
   @include center-grid-elements($class)
       
 
-
-
-
-// Large Destkop Grid
-.container
-  @extend %clearfix
-  margin: 0 auto
-  padding: 0
-  width: $content-width + $value
-  // initial grid
-  @include grid($desktop-columns, $grid-class, true)
-
-
-
-// Small Desktop Grid
-@media screen and (max-width: $content-width + $value)
+@if $ie7-support == false
+  // Large Destkop Grid
+  // ----------------------------
   .container
-    width: 100%
-    //@include grid($desktop-columns, $grid-class, false, 'tablet')
+    @extend %clearfix
+    margin: 0 auto
+    padding: 0
+    width: $content-width + $value
+    // initial grid
+    @include grid($desktop-columns, $grid-class, true, 'desktop')
+  
+  @include hide-view(desktop)
+  @include show-view(desktop)
+  
+  
+  // Small Desktop Grid
+  // ----------------------------
+  @media screen and (max-width: $content-width + $value)
+    .container
+      width: 100%
+      //@include grid($desktop-columns, $grid-class, false, 'tablet')
+    @include hide-view(desktop)
+    @include show-view(desktop)
+  
+  
+  // Tablet Grid
+  // ----------------------------
+  @media screen and (max-width: $tablet-content-width + $value)
+    .container
+      @include grid($desktop-columns, $grid-class, false, 'tablet')
+    @include hide-view(tablet)
+    @include show-view(tablet)
+      
+      
+  // Mobile Grid
+  @media screen and (max-width: $mobile-content-width + $value)
+    .container
+      @include grid($desktop-columns, $grid-class, false, 'mobile')
+      [class*="#{$push-class}-"],
+      [class*="#{$pull-class}-"]
+        left: 0 !important
+    @include hide-view(mobile)
+    @include show-view(mobile)
+      
 
 
+@if $ie7-support == true
 
-// Tablet Grid
-@media screen and (max-width: $tablet-content-width + $value)
+  // Large Destkop Grid
+  // ----------------------------
   .container
-    @include grid($desktop-columns, $grid-class, false, 'tablet')
-    //@include grid($tablet-columns, $tablet-grid-class)
-    
-    
-    
-// Mobile Grid
-@media screen and (max-width: $mobile-content-width + $value)
-  .container
-    @include grid($desktop-columns, $grid-class, false, 'mobile')
-    //@include grid($mobile-columns, $mobile-grid-class)
-    [class*="#{$push-grid}-"],
-    [class*="#{$pull-grid}-"]
-      left: 0 !important
-    
+    @extend %clearfix
+    margin: 0 auto
+    padding: 0
+    width: $content-width + $value
+    // initial grid
+    @include grid($desktop-columns, $grid-class, true, 'desktop')
+  
+  @include hide-view(desktop)
+  @include show-view(desktop)

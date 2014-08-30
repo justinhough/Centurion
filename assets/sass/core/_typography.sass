@@ -14,12 +14,15 @@
 
 %typography
   color: #333
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-family: $font-family
   -webkit-font-smoothing: antialiased
+  font-style: normal
   font-weight: 300
   line-height: 1.5
   margin-top: 0
   text-align: left
+  text-rendering: optimizeLegibility
+
 
 h1
   @extend %typography
@@ -97,5 +100,5 @@ p
 
 
 .text-muted
-  color: #CCC !important
+  color: $light-grey !important
   

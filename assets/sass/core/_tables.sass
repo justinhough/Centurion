@@ -13,7 +13,7 @@
 // ----------------------------
 //@include table-color-generator($class, $color1, $color2, $color3)
 @mixin table-color-generator($class, $color1, $color2, $color3)
-  .#{$class}
+  .#{$class}-table
     thead,
     tfoot
       th,
@@ -59,9 +59,9 @@ tbody
       background-color: $off-white
 
 
-@include table-color-generator(black-table, $black, $white, $dark-grey)
-@include table-color-generator(red-table, $red, $white, $dark-red)
-@include table-color-generator(orange-table, $orange, $white, $dark-orange)
-@include table-color-generator(blue-table, $blue, $white, $dark-blue)
-@include table-color-generator(green-table, $green, $white, $dark-green)
-
+@include table-color-generator(black, $black, $white, $dark-grey)
+@include table-color-generator(red, $red, $white, $dark-red)
+@include table-color-generator(blue, $blue, $white, $dark-blue)
+@include table-color-generator(green, $green, $white, $dark-green)
+@include table-color-generator(purple, $purple, $white, $dark-purple)
+@include table-color-generator(orange, $orange, $white, $dark-orange)

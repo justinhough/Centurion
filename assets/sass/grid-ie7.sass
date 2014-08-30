@@ -1,0 +1,33 @@
+/* --------------------------------------------------------
+ *
+ *  Centurion Framework v 3.5 - IE7 GRID SUPPORT ONLY
+ *  Created by: Justin Hough (http://justinhough.com/)
+ *
+ *  Documentation: http://centurionframework.com/
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
+
+
+
+@import "core/config"
+$ie7-support: true
+@import "core/grid"
+
+// Clearfix
+%clearfix
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+.clearfix,
+.cf
+  @extend %clearfix
+
+.clear
+  clear: both
+
+

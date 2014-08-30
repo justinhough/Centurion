@@ -1,12 +1,19 @@
-/* ==================================   
+/* --------------------------------------------------------
  *
- * Centurion v.3.5 - Alpha Release
- * 
- ================================= */
-
+ *  Centurion Framework v 3.5 - ALPHA RELEASE
+ *  Created by: Justin Hough (http://justinhough.com/)
+ *
+ *  Documentation: http://centurionframework.com/
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
 
 @import "core/config"
 @import "core/mixin"
+
+body
+  font-size: $default-font-size
+  line-height: $default-line-height
 
 @import "core/normalize"
 @import "core/grid"
@@ -15,9 +22,9 @@
 @import "core/buttons"
 @import "core/badges"
 @import "core/callouts"
+@import "core/layout"
 @import "core/tables"
 @import "core/typography"
-
 
 
 // Clearfix
@@ -40,143 +47,12 @@
 .visible
   visibility: display
 .not-visible
-  /* Hides an element from view but displaces content */
-  visibility: hidden
+  visibility: hidden /* Hides an element from view but displaces content */
 
-.show-element,
-.show-desktop
-  display: block !important
+//.show-element,
+//.show-desktop
+//  display: block !important
 
-.hide-element,
-.hide-desktop
-  display: none !important
-
-
-
-@include color-swatches
-    
-    
-    
-    
-// CUSTOM FOR PREVIEW
-// ----------------------------
-a
-  color: $orange
-  &:hover
-    color: $black
-    
-
-header
-  background: $light-grey
-    
-nav
-  ul
-    margin: 0
-    padding: 0
-    li
-      display: inline-block
-      list-style: none
-      margin: 0
-      padding: 0
-      
-      a
-        color: $black
-        display: block
-        padding: 1em
-        text-decoration: none
-        
-        &:hover,
-        &.current,
-        &.nav-current
-          background: $orange
-          color: $white
-
-#banner
-  @extend %clearfix
-  background: $orange
-  border-bottom: 1px solid $orange
-  h1
-    color: $white
-
-.section-break
-  @extend %clearfix
-  border-bottom: 3px solid #DDD
-  margin: 2em 0
-  width: 100%
-
-footer
-  background: $light-grey
-  border-top: 1px solid $grey
-  font-size: 0.8em
-  margin-top: 4em
-
-
-pre
-  background: #444
-  border: 1px solid #444
-  color: #FFF
-  font-size: 0.8em
-  line-height: 1
-  padding: 0.8em 1em
-  
-
-.lfloat
-  float: left
-.rfloat
-  float: right
-.frame
-  border: 1px solid $light-grey
-  margin: 0 1.2em 1.2em 0
-  padding: 0.5em
-
-
-
-
-
-
-// For Example Grid elements
-// ----------------------------
-span.box-grid
-  background-color: #DEDEDE
-  border: 1px solid #EFEFEF
-  @include box-sizing(border-box)
-  display: block
-  font-family: helevtica neue, sans-serif
-  font-size: 0.8em
-  font-weight: 200
-  margin-top: 1em
-  padding-top: 2em
-  padding-bottom: 2em
-  text-align: center
-  width: 100%
-  
-
-
-// Show Nested Elements - Demo
-// ----------------------------
-[class^="grid-"]
-  [class^="grid-"]
-    
-    &:first-of-type
-      .box-grid
-        background: hotpink
-    
-    &:last-of-type
-      .box-grid
-        background: aqua
-    
-    [class^="grid-"]
-      
-      &:first-child
-        .box-grid
-          background: aqua
-
-
-// IE Fallback - Demo
-// ----------------------------
-.first
-  .box-grid
-    background: hotpink
-.last
-  .box-grid
-    background: aqua
+//.hide-element,
+//.hide-desktop
+//  display: none !important

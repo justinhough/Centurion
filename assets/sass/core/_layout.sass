@@ -1,0 +1,31 @@
+
+
+// Layout Mixin - Margin
+// @include margin-block-layout
+@mixin margin-block-layout($layout-rows: 5)
+  @for $i from 1 through $layout-rows
+    $num: $i
+    $value: $i * $default-font-size
+    .#{$margin-top}-#{$num}
+      margin-top: $value
+    .#{$margin-bottom}-#{$num}
+      margin-bottom: $value
+    .#{$margin-both}-#{$num}
+      margin: $value 0
+
+// Layout Mixin - Padding
+//@include padding-block-layout
+@mixin padding-block-layout($layout-rows: 5)
+  @for $i from 1 through $layout-rows
+    $num: $i
+    $value: $i * $default-font-size  
+    .#{$padding-top}-#{$num}
+      padding-top: $value
+    .#{$padding-bottom}-#{$num}
+      padding-bottom: $value
+    .#{$padding-both}-#{$num}
+      padding: $value 0
+
+
+@include margin-block-layout
+@include padding-block-layout

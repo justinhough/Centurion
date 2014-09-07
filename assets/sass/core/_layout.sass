@@ -7,11 +7,14 @@
     $num: $i
     $value: $i * $default-font-size
     .#{$margin-top}-#{$num}
-      margin-top: $value
+      +rem(margin-top, $value)
+      //margin-top: $value
     .#{$margin-bottom}-#{$num}
-      margin-bottom: $value
+      +rem(margin-bottom, $value)
+      //margin-bottom: $value
     .#{$margin-both}-#{$num}
-      margin: $value 0
+      +rem(margin, $value 0)
+      //margin: $value 0
 
 // Layout Mixin - Padding
 //@include padding-block-layout
@@ -20,11 +23,14 @@
     $num: $i
     $value: $i * $default-font-size  
     .#{$padding-top}-#{$num}
-      padding-top: $value
+      +rem(padding-top, $value)
+      //padding-top: $value
     .#{$padding-bottom}-#{$num}
-      padding-bottom: $value
+      +rem(padding-bottom, $value)
+      //padding-bottom: $value
     .#{$padding-both}-#{$num}
-      padding: $value 0
+      +rem(padding, $value 0)
+      //padding: $value 0
 
 
 @include margin-block-layout

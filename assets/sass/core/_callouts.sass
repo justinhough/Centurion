@@ -45,15 +45,16 @@
   display: block
   background-color: #EDEDED
   border-left: 5px solid #CCC
-  margin: 1em 0
-  padding: 1.5em
+  +rem(margin, 16 0)
+  +rem(padding, 16)
   h1, h2, h3
     color: #777
-    margin-top: 0
-    margin-bottom: 0.2em
+    +rem(margin-top, 0)
+    +rem(margin-bottom, 10)
+    
   p
     color: #555
-    margin: 0.5em 0
+    +rem(margin, 10 0)
   
 /* Red Callout - Alert or Danger */
 @include callout(red, #FFE3E1, #CC583A, #CC583A)
@@ -70,7 +71,7 @@
   border-left: none
   border-radius: 4px
   box-shadow: 0 0 8px #CCC
-  padding: 0.5em 1.5em
+  +rem(padding, 10 18)
   position: relative
 
   .btn-expand
@@ -93,8 +94,8 @@
   display: none
   background: #FFF
   border-left: 1px solid #DDD
-  margin-bottom: 1em
-  padding: 0 1em
+  +rem(margin-bottom, 16)
+  +rem(padding, 0 16)
   
   &.expanded
     display: block

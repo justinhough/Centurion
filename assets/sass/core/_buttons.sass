@@ -8,7 +8,7 @@
   color: $white !important
   @extend %cursor
   display: inline-block
-  font-size: 1em
+  +rem(font-size, 16)
   font-weight: bold
   @include element-spacing(vertical, margin, 1em) //  margin: 15px 0
   outline: 0
@@ -45,12 +45,12 @@
     @include default-button-hover
   
 .small-btn
-  font-size: (1em - 0.3)
+  +rem(font-size, 12)
   @include element-spacing(two, padding, 0.533em, 1.2em) //padding: 8px 18px
   @extend .btn
 
 .large-btn
-  font-size: (1em + 0.3)
+  +rem(font-size, 22)
   @include element-spacing(two, padding, 0.333em, 1.6em)
   @extend .btn
 

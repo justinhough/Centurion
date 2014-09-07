@@ -27,42 +27,42 @@
 h1
   @extend %typography
   @extend strong
-  font-size: 2em
+  +rem(font-size, 32)
   margin: 0.67em 0
 
 h2
   @extend %typography
   @extend strong
-  font-size: 1.5em
+  +rem(font-size, 26)
   margin: 0.83em 0
 
 h3
   @extend %typography
   @extend strong
-  font-size: 1.17em
+  +rem(font-size, 22)
   margin: 1em 0
 
 h4
   @extend %typography
   @extend strong
-  font-size: 1em
+  +rem(font-size, 18)
   margin: 1.33em 0
 
 h5
   @extend %typography
   @extend strong
-  font-size: 0.83em
+  +rem(font-size, 16)
   margin: 1.67em 0
 
 h6
   @extend %typography
   @extend strong
-  font-size: 0.75em
+  +rem(font-size, 14)
   margin: 2.33em 0
 
 p
   @extend %typography
-  font-size: 1em
+  +rem(font-size, 16)
   margin: 1.33em 0
 
 ul
@@ -83,20 +83,11 @@ em
 
 big,
 .text-large
-  font-size: 150%
+  font-size: 120%
 
 small,
 .text-small
-  font-size: 50%
-
-p
-  big,
-  &.text-large
-    margin-bottom: 0.5em
-  
-  small,
-  &.text-small
-    font-size: 80%
+  font-size: 80%
 
 
 .text-muted

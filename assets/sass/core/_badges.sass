@@ -24,7 +24,7 @@
   font-size: 1em
   font-weight: bold
   line-height: 1
-  margin-right: 0.5em
+  +rem(margin-right, 5)
   text-decoration: inherit
   -webkit-font-smoothing: antialiased
 
@@ -38,10 +38,12 @@
   background-color: #CCC
   color: #555
   cursor: pointer
-  font-size: 0.7em
+  +rem(font-size, 10)
   line-height: 1.5
-  margin: 0.5em 0
-  padding: 0.2em 0.6em
+  +rem(margin, 10px 0)
+  //margin: 0.5em 0
+  +rem(padding, 5px 8px)
+  //padding: 0.2em 0.6em
   
   @include badge-bk-colors(red, $light-red, $dark-red)
   @include badge-bk-colors(blue, $light-blue, $dark-blue)

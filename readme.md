@@ -56,24 +56,42 @@ Centurion is built using vanilla Sass (basically no library dependencies) and co
 When you download and extract Centurion for the first time you'll notice the main files broken down in the following structure. Depending on the usage and requirements for your website you can easily remove files that you don't need.
 
     centurion/
-    |__ css/
-    |  |__ centurion-ie-rtl.css
-    |  |__ centurion-ie.css
-    |  |__ centurion-rtl.css
-    |  |__ centurion.css
-    |  |__ custom.css
-    |  |__ elusive-webfont.css
-    |  |__ reset.css
-    |  |__ compressed/
-    |  |  |__ [minified css versions]
-    |  |__ font/
-    |  |  |__ []Elusive Icons]
-    |__ js/
-    |  |__ centurion.js
-    |  |__ lte-ie7.js
-    |  |__ modernizr-2.6.2-custom-min.js
+    |__ assets
+        |__ img
+            |__ apple-touch-icon-114x114.png
+            |__ apple-touch-icon-72x72.png
+            |__ apple-touch-icon.png
+            |__ favicon.jpg
+        |__ js
+            |__ libs
+                |__ jquery-1.11.0.min.js
+                |__ jquery-migrate-1.2.1.min.js
+                |__ modernizr.2.8.3.js
+            |__ centurion.js
+            |__ grid-calculate.js
+        |__ sass
+            |__ core
+                |__ badges
+                |__ buttons
+                |__ callouts
+                |__ colors
+                |__ config
+                |__ grid
+                |__ layout
+                |__ mixin
+                |__ normalize
+                |__ tables
+                |__ typography
+            |__ centurion.sass
+            |__ custom.sass
+            |__ grid-ie7.sass
+            |__ grid.sass
+        |__ favicon.ico
+    |__ includes (partial files for Build)
+    |__ licenses
 
-**Note:** Any files with `-rtl` are for right-to-left language support and anything marked with `-ie` are stylesheets meant to fix some minor issues with IE7.
+
+**Note:** Any files with `-rtl` are for right-to-left language support and anything marked with `-ie7` are stylesheets meant to fix some minor issues with IE7.
 
 
 ----- 
@@ -82,77 +100,56 @@ When you download and extract Centurion for the first time you'll notice the mai
 <a name="grid"></a>
 ## The Grid
 
-Originally Centurion was built only a responsive grid, so at its core Centurion is built to be responsive. Developed along the same lines as the [960 Grid](http://960.gs) built by Nathan Smith. The grid is built using a Sass mixin, which makes it highly customizable. The only portion of the grid system that uses a pixel width is the container. For desktops the default container is set to `1100px` wide and is fully fluid below `768px` for tablets and smartphones.
+Originally Centurion was built only a responsive grid, so at its core Centurion is built to be responsive. The grid is built using a Sass mixin, which makes it highly customizable. The only portion of the grid system that uses a pixel width is the container. For desktops the default container is set to `1100px` wide and is fully fluid below `768px` for tablets and smartphones.
 
 
 ### Basic Structure
 
-Utilizing the grid requires a container wrapper followed by the grid size that you want to use. For example, if you want to use the full width, then set `grid-100`. If you want to divide up your page based into two columns then you can do this: `grid-40` and `grid-60`. The number correlates to the percentage of the container that you want your content to occupy.
+Utlizing the grid in your your project requires a container wrapper to set the main size of the area with grid elements inside to divide the space of the content area as needed. For example, if you want to use the full width for a banner that spans the page, then you would specify a `grid-24`. 24 columns is the full width of the default grid and is easily divisible in any design pattern. If you want to divide the page in two columns (a main body and a sidebar) you could use a `grid-18` and a `grid-8`. The number corresponds the amount of columns that the grid will occupy within the container. 
 
     <div class="container">
-        <div class="grid-40">
+        <div class="grid-18">
             …
         </div>
-        <div class="grid-60">
+        <div class="grid-8">
             … 
         </div>
     </div>
 
-**Note:** For each row make sure that you elements add up to 100 across in order to utilize the full row. However, if you want to center one grid element on each row then you will want to use Centering Grids below.
+**Note:** For each row make sure that you elements add up to 24 columns across in order to utilize the full row. However, if you want to center one grid element on each row then you will want to use Centering Grids below.
 
 ### Nesting Grids
 
 The best part of any grid system is the ability to nest elements within a single grid element to break down the space into smaller, manageable spaces.
 
-For example, say that you want to have content in a `grid-60`, but you also want to add three images with captions side-by-side beneath the main block of text. In order to create this layout will need to put three `grid-33` grid elements inside the parent grid element.
+For example, say that you want to have content in a `grid-18`, but you also want to add three images with captions side-by-side beneath the main block of text. In order to create this layout will need to put three `grid-8` grid elements inside the parent grid element.
 
-    <div class="grid-60">
+    <div class="grid-18">
         <p>Some text talking about something.</p>
-        <div class="grid-33 alpha">
+        <div class="grid-8">
             <img src="" alt="" />
             <p>Image caption is written here</p>
         </div>
-        <div class="grid-33">
+        <div class="grid-8">
             <img src="" alt="" />
             <p>Image caption is written here</p>
         </div>
-        <div class="grid-33 omega">
+        <div class="grid-8">
             <img src="" alt="" />
             <p>Image caption is written here</p>
         </div>
     </div>
     
-For a mobile layout, you can add `mobile-grid-50` to leave the main content divided in two when it reaches a mobile phone screen size. So if you had 
-
-    <div class="grid-80">
-        <p>Some text talking about something.</p>
-        <div class="grid-25 mobile-grid-50 alpha">
-            <img src="" alt="" />
-        </div>
-        <div class="grid-25 mobile-grid-50">
-            <img src="" alt="" />
-        </div>
-        <div class="grid-25 mobile-grid-50">
-            <img src="" alt="" />
-        </div>
-        <div class="grid-25 mobile-grid-50 omega">
-            <img src="" alt="" />
-        </div>
-    </div>
-
-Alpha and Omega Each grid element has a margin of 15px on either side to give a nice 30px space between each grid, while this provides a nice aesthetic it causes issues when nesting elements causing the last grid element to wrap to a new line. To fix the issue with this extra margin causing the last nested grid element to wrap there are two classes added into the grid core `alpha` and `omega`.
 
 ### Alpha and Omega
 
-The alpha class removes the left margin on the first element that is nested in another grid. The omega class does the exact opposite, which removes the right margin from the last element. Notice that the middle `grid-25` does not have a second class. Only the first and last elements require this fix for the grid to layout properly. 
-
-**Note:** Do not put use alpha or omega on outer grid elements, such as on the grid-6 in the example above. Margins only need be removed on nested elements when they are within another grid.
+The `.alpha` and `.omega` classes are no longer required within the grid. There are still oddities within IE 7 when it comes to the grid, but in those cases it is best to target children grid elements with JavaScript and add appropriate classes as needed to remove the extra padding around the first and last elements within a row.
 
 ### Centering Grids
 
-Centering grid elements is as easy as adding `center-grid` to your grid element. This will evenly space your element in the center of your grid container. 
+Centering grid elements is as easy as adding `grid-center` to your grid element. This will evenly space your element in the center of your grid container. 
 
-    <div class="grid-60 center-grid">
+    <div class="grid-18 grid-center">
         <p>Centered Grid</p>
     </div>
     <div class="clear"></div>
@@ -160,27 +157,22 @@ Centering grid elements is as easy as adding `center-grid` to your grid element.
 
 ### Semantic Grid
 
-If you're not font of column based grid systems then you can use Centurion Sass to build a custom semantic grid framework. You only have to specify what html element will be your grid container and what `aside` and `article` will receive in terms of width (size).
-
-**Example**
-
-    <section>
-        <aside id="left-bar">
-            ...
-        </aside>
-        <article id="content">
-            ...
-        </article>
-    </section>
-
+This feature has been deprecated in the current 3.5 branch, but will be brought back in a future release if the community wants this feature.
 
 
 <a name="alerts"></a>
-## Alerts
+## Callouts
 
-Need to display an alert to a user, or warn them about impending work that will be taking place on your site. No matter the option that can help. The default alert box doesn't do much of anything except display information in a grey box.
+Need to display a callout or an alert to a user warning or informing them of some information. Callouts are now designed to contain alerts as well, so they are no longer separate options. The different between a callout and an alert is that an alert contains more information that can be shown or hidden via JavaScript.
 
-    <div class="alert">
+To create a callout you can call the default with `.callout` or you can prepend any of the six color options, like so: `.purple-callout` to change the color. 
+
+To create an alert simply add the class aler to the same `<div>`, like so: `.red-callout alert`.
+
+
+Need to display an alert to a user, or warn them about impending work that will be taking place on your site. No matter the option that can help. The default callout box doesn't do much of anything except display information in a grey box.
+
+    <div class="callout">
         <p>This is default alert box!</p>
     </div>
     
@@ -189,19 +181,19 @@ However, you might have to alert a user in clear definable ways such as give the
 
 ### Error
 
-    <div class="alert error"></div>
+    <div class="red-callout alert"></div>
 
 ### Warning
 
-    <div class="alert warning"></div>
+    <div class="orange-callout alert"></div>
 
 ### Information
     
-    <div class="alert info"></div>
+    <div class="blue-callout alert"></div>
 
 ### Success
 
-    <div class="alert success"></div>
+    <div class="green-callout alert"></div>
 
 
 
@@ -242,27 +234,27 @@ Colors can be attached to breadcrumbs to affect links and text colors using the 
 <a name="buttons"></a>
 ## Buttons
 
-To activate the button styles use the `button` class. This default class performs all the work in padding, sizing, and shaping your element to look like a button. Generally buttons are only used on sites I have worked on in two places: call to action links and forms, however, you can use a button on any element that you feel needs to look like a button
+To activate the button styles use the `btn` class. This default class performs all the work in padding, sizing, and shaping your element to look like a button. Generally buttons are only used on sites I have worked on in two places: call to action links and forms, however, you can use a button on any element that you feel needs to look like a button
 
 **Example**
 
-    <a href="#" class="button small">Small Button</a>
+    <a href="#" class="btn">Button</a>
 
 **Colored Buttons**
     
-    <a href="#" class="button black">I'm a Button</a>
+    <a href="#" class="blue-btn">I'm a Button</a>
     
-    <a href="#" class="button orange">I'm a Button</a>
+    <a href="#" class="orange-btn">I'm a Button</a>
 
 ### Sizes
 
-Colors are not the only feature that you have a your disposal. If the button by default is too large for you tastes you can shrink it with the addition of the class `small`.
+Colors are not the only feature that you have a your disposal. If the button by default is too large for you tastes you can shrink it with the addition of the class `small-btn`.
 
-    <a href="#" class="button small">I'm a Tiny Button</a>
+    <a href="#" class="small-btn">I'm a Tiny Button</a>
     
-Though if you by chance need a larger button for your page for a possibe "buy" button then you can make it larger by adding the class `large`.
+Though if you by chance need a larger button for your page for a possibe "buy" button then you can make it larger by adding the class `large-btn`.
 
-    <a href="#" class="button large">I'm a Large Button</a>
+    <a href="#" class="large-btn">I'm a Large Button</a>
 
 
 
@@ -279,11 +271,11 @@ Documentation coming soon.
 Colors can be attached to buttons to change the background colors. By default, the `button` class is a grey button, but since those look like deactivated buttons, so we have added 7 color flavors for your choosing.
 
 * Black `black`
-* Blue `blue`
-* Green `green`
-* Grey `grey`
 * Red `red`
-* Yellow `yellow`
+* Blue `blue`
+* Purple `purple`
+* Green `green`
+* Orange `orange`
 
     
 
@@ -292,17 +284,6 @@ Colors can be attached to buttons to change the background colors. By default, t
 ## Dropdowns
 
 Documentation coming soon.
-
-
-
-
-
-<a name="elusive-font"></a>
-## Font - Elusive Icons
-[Elusive Icon Font](https://github.com/aristath/elusive-iconfont) is a webfont created by [Aristeides Stathopoulos](http://aristeides.com/).
-
-To get started you need to prefix `icon-` to every icon that you wish to use. For a full list of icons that you can use please refer to the [Elusive Web Font site](http://shoestrap.org/downloads/elusive-icons-webfont/).
-
 
 
 
@@ -347,11 +328,11 @@ Portrait creates a one pixel border around the image to make it look like a phot
 
     <img src="http://placehold.it/200" class="portrait" />
     
-To position an image left or right of content and make the content wrap around the image then use the `push-left` or `push-right` to position the graphic appropriately. You can take a wild guess as to which direction they both move your image.
+To position an image left or right of content and make the content wrap around the image then use the `left-push` or `right-push` to position the graphic appropriately. You can take a wild guess as to which direction they both move your image.
 
-    <img src="http://placehold.it/200" class="push-left" />
+    <img src="http://placehold.it/200" class="left-push" />
 
-    <img src="http://placehold.it/200" class="push-right" />
+    <img src="http://placehold.it/200" class="right-push" />
 
 
 
@@ -455,44 +436,43 @@ I personally prefer to keep my tables structured properly, especially because I 
     
 ### Color Schemes
 
-Similar to the usage of buttons, tables come with the same color scheme choices to match. By default Centurion features 7 different colors to choose from. Grey is available by default as long as you do not set a class color choice below.
+Similar to the usage of buttons, tables come with the same color scheme choices to match.
 
-* Blue `ctBlue`
-* Green `ctGreen`
-* Grey `ctGrey`
-* Orange `ctOrange`
-* Red `ctRed`
-* Yellow `ctYellow`
+* Blue `blue-table`
+* Green `green-table`
+* Orange `orange-table`
+* Red `red-table`
+* Yellow `yellow-table`
 
-However, if you are obverse to colors in general, such as, when you are wire framing a new site you can either stick with basic grey or use black to make a site pop a little. To set the color all you have to do is set the class on the table itself, like this: `<table class="ctBlue">`
+However, if you are obverse to colors in general, such as, when you are wire framing a new site you can either stick with basic grey or use black to make a site pop a little. To set the color all you have to do is set the class on the table itself, like this: `<table class="blue-table">`
 
 
 
 <a name="tabs"></a>
 ## Tabs
 
-Tabs can be fun, if they are used in the right context. I believe in simple tabs and some times we all end up writing far to much code to do a simple job. Tabs in general comprise of a wrapper (tabBox), a ul list (tabs), and then, of course, our tabs. Each tab is labeled with a unique ID that identifies it to one of the tab links found in our ul list.
+Tabs can be fun, if they are used in the right context. I believe in simple tabs and some times we all end up writing far to much code to do a simple job. Tabs in general comprise of a wrapper `.tabs`, a ul list `.tab-nav`, and then, of course, our `.tab`. Each tab is labeled with a unique ID that identifies it to one of the tab links found in our ul list.
 
-    <div class="tabBox">
-        <ul class="tabs">
+    <div class="tabs">
+        <ul class="tab-nav">
             <li><a href="#tab1">Tab 1</a></li>
             <li><a href="#tab2">Tab 2</a></li>
             <li><a href="#tab3">Tab 3</a></li>
         </ul>
-        <div id="tab1">
+        <div id="tab1" class="tab">
             <p>Text goes here</p>
         </div>
-        <div id="tab2">
+        <div id="tab2" class="tab">
             <p>Text goes here</p>
         </div>
-        <div id="tab3">
+        <div id="tab3" class="tab">
             <p>Text goes here</p>
         </div>
     </div>
 
 However, say that you don't want your tabs to be on top of the content, but below. On occasion this would require massive amounts of re-coding in order to get the display to work. However, through CSS all you need to do is add a new class to the wrapper tabBottom
 
-    <div class="tabBox tabBottom">
+    <div class="bottom-tabs">
         ...
     </div>
 
@@ -507,7 +487,7 @@ Tooltips are great for displaying information to a user that might be necessary 
 The functionality changes simply by adding the class tipHover.
 
     <a class="tooltip" data-title="tooltip text goes here">...</a>
-    <a class="tooltip tipHover" data-title="tooltip text goes here">...</a>
+    <a class="tooltip hover-tip" data-title="tooltip text goes here">...</a>
 
 
 
@@ -558,7 +538,6 @@ Every feature of this framework is tested using a machine that resembles a compu
 
 I want to take the time to thank a few people for their contributions to this framework
 
-* [Aristeides Stathopoulos](https://github.com/aristath) - for his work on the open source [Elusive Icons](https://github.com/aristath/elusive-iconfont), which made Centurion prettier.
 * [Josh Northcott](http://www.joshnorthcott.com/) - for his tireless effort in spreading the word about responsive design and Centurion.
 * [Corey Hadden](https://github.com/craql) - for his assistance in making jQuery play nice and for sheer inspiration.
 

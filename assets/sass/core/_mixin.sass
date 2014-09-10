@@ -175,50 +175,61 @@
   @if $view == desktop
     .hide-desktop
       display: none !important
-    .hide-tablet
-      display: block !important
+    .hide-tablet,
     .hide-mobile
       display: block !important
     
   @if $view == tablet
-    .hide-desktop
-      display: block !important
     .hide-tablet
       display: none !important
+    .hide-desktop,
     .hide-mobile
       display: block !important
   
   @if $view == mobile
-    .hide-desktop
-      display: block !important
-    .hide-tablet
-      display: block !important
     .hide-mobile
       display: none !important
-
+    .hide-desktop,
+    .hide-tablet
+      display: block !important
+    
 
 // @include show-view(option)
 @mixin show-view($view)
   @if $view == desktop
     .show-desktop
       display: block !important
-    .show-tablet
-      display: none !important
+    .show-tablet,
     .show-mobile
       display: none !important
     
   @if $view == tablet
-    .show-desktop
-      display: none !important
     .show-tablet
       display: block !important
+    .show-desktop,
     .show-mobile
       display: none !important
   
   @if $view == mobile
-    .show-desktop
-      display: none !important
-    .show-tablet
-      display: none !important
     .show-mobile
       display: block !important
+    .show-desktop,
+    .show-tablet
+      display: none !important
+    
+
+
+// Float Elements
+// ----------------------------
+// @include float-elements
+@mixin float-elements
+  .left-float
+    float: left
+  .right-float
+    float: right
+
+@mixin float-left
+  float: left
+  
+@mixin float-left
+  float: left

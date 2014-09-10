@@ -103,7 +103,10 @@
         left: $percent
       .#{$pull-class}-#{$i}
         left: -($percent)
-      
+      //.#{$pre-class}-#{$i}
+        //margin-left: $percent
+      //.#{$post-class}-#{$i}
+        //margin-right: $percent
 
 
   // Adjust 24 columns to work for tablet
@@ -169,63 +172,97 @@
   @include center-grid-elements($class)
       
 
-@if $ie7-support == false
-  // Large Destkop Grid
-  // ----------------------------
-  .container
-    @extend %clearfix
-    margin: 0 auto
-    padding: 0
-    width: $content-width + $value
-    // initial grid
-    @include grid($desktop-columns, $grid-class, true, 'desktop')
-  
-  @include hide-view(desktop)
-  @include show-view(desktop)
-  
-  
-  // Small Desktop Grid
-  // ----------------------------
-  @media screen and (max-width: $content-width + $value)
+@mixin column-grid
+  @if $ie7-support == false
+    // Large Destkop Grid
+    // ----------------------------
     .container
-      width: 100%
-      //@include grid($desktop-columns, $grid-class, false, 'tablet')
+      @extend %clearfix
+      margin: 0 auto
+      padding: 0
+      width: $content-width + $value
+      // initial grid
+      @include grid($desktop-columns, $grid-class, true, 'desktop')
+    
+    @include hide-view(desktop)
+    @include show-view(desktop)
+    
+    
+    // Small Desktop Grid
+    // ----------------------------
+    @media screen and (max-width: $content-width + $value)
+      .container
+        width: 100%
+        //@include grid($desktop-columns, $grid-class, false, 'tablet')
+      @include hide-view(desktop)
+      @include show-view(desktop)
+    
+    
+    // Tablet Grid
+    // ----------------------------
+    @media screen and (max-width: $tablet-content-width + $value)
+      .container
+        @include grid($desktop-columns, $grid-class, false, 'tablet')
+      @include hide-view(tablet)
+      @include show-view(tablet)
+        
+        
+    // Mobile Grid
+    @media screen and (max-width: $mobile-content-width + $value)
+      .container
+        @include grid($desktop-columns, $grid-class, false, 'mobile')
+        [class*="#{$push-class}-"],
+        [class*="#{$pull-class}-"]
+          left: 0 !important
+      @include hide-view(mobile)
+      @include show-view(mobile)
+        
+  
+  
+  @if $ie7-support == true
+  
+    // Large Destkop Grid
+    // ----------------------------
+    .container
+      @extend %clearfix
+      margin: 0 auto
+      padding: 0
+      width: $content-width + $value
+      // initial grid
+      @include grid($desktop-columns, $grid-class, true, 'desktop')
+    
     @include hide-view(desktop)
     @include show-view(desktop)
   
   
-  // Tablet Grid
-  // ----------------------------
-  @media screen and (max-width: $tablet-content-width + $value)
-    .container
-      @include grid($desktop-columns, $grid-class, false, 'tablet')
-    @include hide-view(tablet)
-    @include show-view(tablet)
-      
-      
-  // Mobile Grid
-  @media screen and (max-width: $mobile-content-width + $value)
-    .container
-      @include grid($desktop-columns, $grid-class, false, 'mobile')
-      [class*="#{$push-class}-"],
-      [class*="#{$pull-class}-"]
-        left: 0 !important
-    @include hide-view(mobile)
-    @include show-view(mobile)
-      
-
-
-@if $ie7-support == true
-
-  // Large Destkop Grid
-  // ----------------------------
-  .container
-    @extend %clearfix
-    margin: 0 auto
-    padding: 0
-    width: $content-width + $value
-    // initial grid
-    @include grid($desktop-columns, $grid-class, true, 'desktop')
   
-  @include hide-view(desktop)
-  @include show-view(desktop)
+  
+// Semantic Grid
+// ----------------------------
+// Numbers are in pixel's
+// @include semantic-grid(container, 1100)
+// @include semantic-grid(grid, 25)
+
+%semantic-container
+  /* Containers */
+  @extend %clearfix
+  margin: 0 auto
+  padding: 0
+
+%semantic-grid
+  /* Grids */
+  @include box-sizing(border-box)
+  float: $direction
+  padding: 0 ($gutter / 2) + $value
+  position: relative
+
+
+@mixin semantic-grid($type, $width: $content-width)
+
+  @if $type == "container"
+    @extend %semantic-container
+    +rem(width, $width)
+    
+  @if $type == "grid"
+    @extend %semantic-grid
+    +rem(width, $width)

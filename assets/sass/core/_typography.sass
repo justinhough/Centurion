@@ -28,53 +28,88 @@ h1
   @extend %typography
   @extend strong
   +rem(font-size, 32)
-  margin: 0.67em 0
+  +rem(margin, 16 0)
 
 h2
   @extend %typography
   @extend strong
   +rem(font-size, 26)
-  margin: 0.83em 0
+  +rem(margin, 16 0)
 
 h3
   @extend %typography
   @extend strong
   +rem(font-size, 22)
-  margin: 1em 0
+  +rem(margin, 16 0)
 
 h4
   @extend %typography
   @extend strong
   +rem(font-size, 18)
-  margin: 1.33em 0
+  +rem(margin, 16 0)
 
 h5
   @extend %typography
   @extend strong
   +rem(font-size, 16)
-  margin: 1.67em 0
+  +rem(margin, 16 0)
 
 h6
   @extend %typography
   @extend strong
   +rem(font-size, 14)
-  margin: 2.33em 0
+  +rem(margin, 16 0)
 
 p
   @extend %typography
   +rem(font-size, 16)
-  margin: 1.33em 0
+  +rem(margin, 18 0)
 
-ul
-  padding-left: 1.5em
+ul,
+ol
+  +rem(margin-left, 16)
+  +rem(padding-left, 16)
   
 li
   @extend %typography
-  font-size: 1em
+  +rem(font-size, 16)
   margin: 0
-  padding-left: 0.5em
+  +rem(padding-left, 8)
 
 
+blockquote
+  @extend %typography
+  border-left: 5px solid #DEDEDE
+  +rem(margin-left, 18)
+  +rem(padding-left, 16)
+  position: relative
+
+  .byline
+    display: block
+    font-weight: bold
+    text-align: right
+    &:before
+      content: "-"
+      display: inline-block
+      +rem(margin-right, 8)
+
+  &.quote
+    border-left: none
+    margin-left: 0
+    +rem(padding-left, 32)
+    &:before,
+    &:after
+      content: '"'
+      +rem(font-size, 72)
+      line-height: 0
+      position: absolute
+    &:before
+      top: 20px
+      left: 0
+    &:after
+      bottom: -20px
+      right: -20px
+    
 
 strong
   font-weight: bold

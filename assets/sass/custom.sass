@@ -115,17 +115,17 @@ span.box-grid
     
     &:first-of-type
       .box-grid
-        background: hotpink
+        background: $light-orange
     
     &:last-of-type
       .box-grid
-        background: aqua
+        background: $orange
     
     [class^="grid-"]
       
       &:first-child
         .box-grid
-          background: aqua
+          background: $orange
 
 
 
@@ -134,17 +134,17 @@ span.box-grid
 [class^="grid-"]
   &[class*="push-"]
     .box-grid
-      background-color: hotpink
+      background-color: $light-orange
   &[class*="pull-"]
     .box-grid
-      background-color: aqua
+      background-color: $orange
 
 
 // IE Fallback - Demo
 // ----------------------------
 .first
   .box-grid
-    background: hotpink
+    background: $light-orange
 .last
   .box-grid
-    background: aqua
+    background: $orange

@@ -9,28 +9,16 @@
  * -------------------------------------------------------- */
 
 @import "core/config"
-$lang-front: left
+$lang-front: right
 @import "core/mixin"
 
 body
   font-size: 100%
   line-height: $default-line-height
 
-@import "core/normalize"
 @import "core/grid"
 
 @include column-grid
-
-@import "core/colors"
-@import "core/buttons"
-@import "core/badges"
-@import "core/callouts"
-@import "core/layout"
-@import "core/tables"
-@import "core/typography"
-@import "core/navigation"
-
-@include float-elements
 
 // Clearfix
 %clearfix
@@ -53,11 +41,3 @@ body
   visibility: display
 .not-visible
   visibility: hidden /* Hides an element from view but displaces content */
-
-//.show-element,
-//.show-desktop
-//  display: block !important
-
-//.hide-element,
-//.hide-desktop
-//  display: none !important

@@ -20,11 +20,9 @@
 @mixin nested-grid-elements($class: $grid-class)
   [class^="#{$class}-"],
 
-    //[class^="#{$class}-"]:first-child,
     [class^="#{$class}-"]:first-of-type
       padding-left: 0
       
-    //[class^="#{$class}-"]:last-child,
     [class^="#{$class}-"]:last-of-type
       padding-right: 0
   
@@ -32,7 +30,6 @@
 // Grid Center
 @mixin center-grid-elements($class: $grid-class)
   .#{$class}-center
-    //@extend .clear
     float: none
     margin: 0 auto
     
@@ -78,7 +75,7 @@
 
   %column-base
     @include box-sizing(border-box)
-    float: $direction
+    float: $lang-front
     padding: 0 ($gutter / 2) + $value
     position: relative
 
@@ -100,9 +97,9 @@
         width: $percent
         @include ie7-grid-element($decimal)
       .#{$push-class}-#{$i}
-        left: $percent
+        #{$lang-front}: $percent
       .#{$pull-class}-#{$i}
-        left: -($percent)
+        #{$lang-front}: -($percent)
       //.#{$pre-class}-#{$i}
         //margin-left: $percent
       //.#{$post-class}-#{$i}
@@ -125,9 +122,9 @@
       // Tablet Push Pull
       @if $i < $tablet-columns + 1
         .#{$push-class}-#{$i}
-          left: $percent
+          #{$lang-front}: $percent
         .#{$pull-class}-#{$i}
-          left: -($percent)
+          #{$lang-front}: -($percent)
       @if $i > $tablet-columns
         .#{$push-class}-#{$i}, .#{$pull-class}-#{$i}
           @extend %no-push-pull
@@ -135,7 +132,7 @@
     %full-width
       width: 100%
     %no-push-pull
-      left: 0
+      #{$lang-front}: 0
     // Reset nested elements fix for tablet
     [class^="#{$class}-"]
       [class^="#{$class}-"]
@@ -157,9 +154,9 @@
       // Push and Pull
       @if $i < $mobile-columns + 1
         .#{$push-class}-#{$i}
-          left: $percent
+          #{$lang-front}: $percent
         .#{$pull-class}-#{$i}
-          left: -($percent)
+          #{$lang-front}: -($percent)
       @if $i > $mobile-columns
         .#{$push-class}-#{$i}, .#{$pull-class}-#{$i}
           @extend %no-push-pull
@@ -252,7 +249,7 @@
 %semantic-grid
   /* Grids */
   @include box-sizing(border-box)
-  float: $direction
+  float: $lang-front
   padding: 0 ($gutter / 2) + $value
   position: relative
 

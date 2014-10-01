@@ -1,0 +1,43 @@
+/* --------------------------------------------------------
+ *
+ *  Centurion Framework v 3.5 - ALPHA RELEASE
+ *  Created by: Justin Hough (http://justinhough.com/)
+ *
+ *  Documentation: http://centurionframework.com/
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
+
+@import "core/config"
+$lang-front: right
+@import "core/mixin"
+
+body
+  font-size: 100%
+  line-height: $default-line-height
+
+@import "core/grid"
+
+@include column-grid
+
+// Clearfix
+%clearfix
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+.clearfix,
+.cf
+  @extend %clearfix
+
+.clear
+  clear: both
+
+// Visible and Show/Hide Classes
+.visible
+  visibility: display
+.not-visible
+  visibility: hidden /* Hides an element from view but displaces content */

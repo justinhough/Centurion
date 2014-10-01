@@ -1,0 +1,87 @@
+// Badge Mixins
+// ----------------------------
+
+// Badge Backgrounds
+// @include badge-bk-colors(class, color, textColor)
+// Task: Optimize with BEM method for fewer class declarations
+@mixin badge-bk-colors($class, $color, $text-color)
+  &.#{$class}
+    background-color: $color
+    color: $text-color
+
+// Badges with Borders
+// @include badge-bk-colors(class, color)
+// Task: Optimize with BEM method for fewer class declarations
+@mixin badge-w-borders($class, $color)
+  &.#{$class}
+    border-color: $color
+    color: $color
+
+
+%badge-icons
+  content: ''
+  display: inline-block
+  font-size: 1em
+  font-weight: bold
+  line-height: 1
+  +rem(margin-right, 5)
+  text-decoration: inherit
+  -webkit-font-smoothing: antialiased
+
+
+// Badges
+// ----------------------------
+.badge
+  @extend .clear
+  @extend %typography
+  display: inline-block
+  background-color: #CCC
+  color: #555
+  cursor: pointer
+  +rem(font-size, 10)
+  line-height: 1.5
+  +rem(margin, 10px 0)
+  //margin: 0.5em 0
+  +rem(padding, 5px 8px)
+  //padding: 0.2em 0.6em
+  
+  @include badge-bk-colors(red, $light-red, $dark-red)
+  @include badge-bk-colors(blue, $light-blue, $dark-blue)
+  @include badge-bk-colors(purple, $light-purple, $dark-purple)
+  @include badge-bk-colors(orange, $light-orange, $dark-orange)
+  @include badge-bk-colors(green, $light-green, $dark-green)
+
+  &.light
+    color: $white
+    &.orange
+      color: $dark-grey
+  &.dark
+    color: $darker-grey
+  
+  &.rounded
+    // Task: Figure out better BEM class convention
+    border-radius: 3px
+  
+  &.border
+    background-color: transparent
+    border: 1px solid $light-grey
+
+    @include badge-w-borders(red, $red)
+    @include badge-w-borders(blue, $blue)
+    @include badge-w-borders(purple, $purple)
+    @include badge-w-borders(orange, $orange)
+    @include badge-w-borders(green, $green)
+
+.icon-h:before
+  content: '⇝'
+  @extend %badge-icons
+.icon-e:before
+  content: '◎'
+  @extend %badge-icons
+.icon-l:before
+  content: '▨'
+  @extend %badge-icons
+.icon-o:before
+  content: '⊗'
+  @extend %badge-icons
+  

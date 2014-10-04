@@ -1,0 +1,48 @@
+/* --------------------------------------------------------
+ *
+ *  Centurion Framework v 3.5
+ *  Created by: Justin Hough (http://justinhough.com/)
+ *
+ *  Documentation: http://centurionframework.com/
+ *  Licensed under GPL and MIT.
+ *
+ * -------------------------------------------------------- */
+@import "centurion";
+$lang-front: right;
+
+body {
+  font-size: 100%;
+  line-height: $default-line-height;
+}
+
+@include column-grid;
+
+// Clearfix
+%clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.clearfix,
+.cf {
+  @extend %clearfix;
+}
+
+.clear {
+  clear: both;
+}
+
+// Visible and Show/Hide Classes
+.visible {
+  visibility: display;
+}
+
+.not-visible {
+  visibility: hidden;
+}

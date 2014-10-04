@@ -1,35 +1,33 @@
 /* --------------------------------------------------------
  *
- *  Centurion Framework v 3.5 - IE7 GRID SUPPORT ONLY
+ *  Centurion Framework v 3.5 - GRID ONLY
  *  Created by: Justin Hough (http://justinhough.com/)
  *
  *  Documentation: http://centurionframework.com/
  *  Licensed under GPL and MIT.
  *
  * -------------------------------------------------------- */
-
-@import "core/config"
-$ie7-support: true
-$lang-front: left
-@import "core/grid"
-
-
-@include column-grid
+@import "centurion";
+$lang-front: left;
+@include column-grid;
 
 // Clearfix
-%clearfix
+%clearfix {
   &:before,
-  &:after
-    content: " "
-    display: table
-  &:after
-    clear: both
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
 
 .clearfix,
-.cf
-  @extend %clearfix
+.cf {
+  @extend %clearfix;
+}
 
-.clear
-  clear: both
-
-
+.clear {
+  clear: both;
+}

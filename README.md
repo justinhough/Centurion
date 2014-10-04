@@ -9,13 +9,9 @@ If you're worried about browser support we recommend using [html5shiv](https://c
 
 
 ## Version
-Current version of Centurion is 3.5 (beta)
+Current version of Centurion is 3.5
 
-### Enhancements Since Last Release (v.3.4)
-
-* Grid rebuilt from ground up to take advantage of a column-based design approach 
-* Simplified color scheme (baked in)
-* 
+Refer to CHANGELOG for more information about enhancements.
 
 
 ## List of Current Features

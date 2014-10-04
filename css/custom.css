@@ -1,0 +1,243 @@
+/* --------------------------------------------------------
+ *
+ *  Custom Preview
+ *
+ * -------------------------------------------------------- */
+/* Color Swatches */
+.color-box, .color-swatch, .color-code, .color-name {
+  border: 1px solid #DDD;
+  --webkit-box-sizing: border-box;
+  --moz-box-sizing: border-box;
+  --o-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+}
+
+.color-box {
+  float: left;
+  margin: 1em 1em 1em 0;
+  position: relative;
+  width: 100px;
+}
+
+.color-swatch {
+  background-color: transparent;
+  border: none;
+  height: 60px;
+}
+.color-swatch.black {
+  background-color: #000;
+}
+.color-swatch.grey {
+  background-color: #999;
+}
+.color-swatch.light-grey {
+  background-color: #CCC;
+}
+.color-swatch.dark-grey {
+  background-color: #555;
+}
+.color-swatch.red {
+  background-color: #CC583A;
+}
+.color-swatch.light-red {
+  background-color: #ebbfb4;
+}
+.color-swatch.dark-red {
+  background-color: #7f3421;
+}
+.color-swatch.blue {
+  background-color: #272D7F;
+}
+.color-swatch.light-blue {
+  background-color: #6d74d2;
+}
+.color-swatch.dark-blue {
+  background-color: #0f1131;
+}
+.color-swatch.purple {
+  background-color: #7F4D7B;
+}
+.color-swatch.light-purple {
+  background-color: #c5a0c2;
+}
+.color-swatch.dark-purple {
+  background-color: #40273d;
+}
+.color-swatch.green {
+  background-color: #277F35;
+}
+.color-swatch.light-green {
+  background-color: #6dd27d;
+}
+.color-swatch.dark-green {
+  background-color: #0f3114;
+}
+.color-swatch.orange {
+  background-color: #FE9300;
+}
+.color-swatch.light-orange {
+  background-color: #ffd498;
+}
+.color-swatch.dark-orange {
+  background-color: #cb7500;
+}
+
+.color-code {
+  border: none;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: #FFF;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}
+.color-code .color-code-rgb {
+  display: block;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.color-name {
+  border: none;
+  font-size: 12px;
+  padding: 5px 3px;
+  text-align: center;
+}
+
+a {
+  color: #FE9300;
+}
+a:hover {
+  color: #000;
+}
+
+header {
+  background: #CCC;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  color: #000;
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+}
+nav ul li a:hover, nav ul li a.current, nav ul li a.nav-current {
+  background: #FE9300;
+  color: #FFF;
+}
+
+#banner {
+  background: #FE9300;
+  border-bottom: 1px solid #FE9300;
+}
+#banner h1 {
+  color: #FFF;
+}
+
+.section-break {
+  border-bottom: 3px solid #DDD;
+  margin: 2em 0;
+  width: 100%;
+}
+
+footer {
+  background: #CCC;
+  border-top: 1px solid #999;
+  font-size: 0.8em;
+  margin-top: 4em;
+}
+
+pre {
+  background: #444;
+  border: 1px solid #444;
+  color: #FFF;
+  font-size: 0.8em;
+  line-height: 1;
+  padding: 0.8em 1em;
+}
+
+.lfloat {
+  float: left;
+}
+
+.rfloat {
+  float: right;
+}
+
+.frame {
+  border: 1px solid #CCC;
+  margin: 0 1.2em 1.2em 0;
+  padding: 0.5em;
+}
+
+span.box-grid {
+  background-color: #DEDEDE;
+  border: 1px solid #EFEFEF;
+  --webkit-box-sizing: border-box;
+  --moz-box-sizing: border-box;
+  --o-box-sizing: border-box;
+  box-sizing: border-box;
+  clear: both;
+  display: block;
+  font-family: helevtica neue, sans-serif;
+  font-size: 0.8em;
+  font-weight: 200;
+  margin-top: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  text-align: center;
+  width: 100%;
+}
+
+[class^="grid-"] [class^="grid-"]:first-of-type .box-grid {
+  background: #ffd498;
+}
+[class^="grid-"] [class^="grid-"]:last-of-type .box-grid {
+  background: #FE9300;
+}
+[class^="grid-"] [class^="grid-"] [class^="grid-"]:first-child .box-grid {
+  background: #FE9300;
+}
+
+[class^="grid-"][class*="push-"] .box-grid {
+  background-color: #ffd498;
+}
+[class^="grid-"][class*="pull-"] .box-grid {
+  background-color: #FE9300;
+}
+
+.first .box-grid {
+  background: #ffd498;
+}
+
+.last .box-grid {
+  background: #FE9300;
+}
+
+#banner:before, .section-break:before, .clearfix:before,
+.cf:before, #banner:after, .section-break:after, .clearfix:after,
+.cf:after {
+  content: " ";
+  display: table;
+}
+#banner:after, .section-break:after, .clearfix:after,
+.cf:after {
+  clear: both;
+}
+
+.clear {
+  clear: both;
+}

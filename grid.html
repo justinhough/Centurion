@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>
-	  Centurion Framework 
+Grid
+    | Centurion Framework 
     | A CSS Web Framework
   </title>
 
@@ -76,56 +77,137 @@
         <article class="post-content">
         <!-- content -->
 
+	  
 
-<div class="grid-18">
-    <h1>The Framework</h1>
 
-    <img src="https://placeimg.com/250/320/tech/grayscale" alt="" class="lfloat frame visible hide-mobile">
-    <p>Centurion is a intuitive responsive framework that works out of the box with added features to hep build your next web project quickly.</p>
-    <p>Centurion is a resposive, media query driven HTML5 and CSS3 framework. It is designed to be used on any website out of the box. Unlilke some other frameworks, Centurion is designed for mobile devices and desktop. Using CSS media queries the Centurion is able to conform to the screen and shift the content as necessary so that the content is not obscured.</p>
-    <p>Centurion offers the basic 960 grid with a twist. Using a 12 column container, the framework can size down from 960 to 768, 480, and 320 pixel screen sizes. Centurion does all its work in the browser, and allows for one template to auto-resize to the device without the need to detect devices through either JavaScript or PHP.</p>
+<div class="grid-24 no-display-grid">
+  <h1>The Grid</h1>
+  <p>This is a page to show how the grid layout functions.</p>
+</div>
+
+
+<section class="calculate clearfix">
+
+  <div class="grid-24"></div>
+  
+<!--
+  <div class="grid-1"></div>
+  <div class="grid-23"></div>
+-->
+  
+  <div class="grid-2"></div>
+  <div class="grid-22"></div>
+  
+  <div class="grid-3"></div>
+  <div class="grid-21"></div>
+  
+  <div class="grid-4"></div>
+  <div class="grid-20"></div>
+  
+  <div class="grid-5"></div>
+  <div class="grid-19"></div>
+  
+  <div class="grid-6"></div>
+  <div class="grid-18"></div>
+  
+  <div class="grid-7"></div>
+  <div class="grid-17"></div>
+  
+  <div class="grid-8"></div>
+  <div class="grid-16"></div>
+  
+  <div class="grid-9"></div>
+  <div class="grid-15"></div>
+  
+  <div class="grid-10"></div>
+  <div class="grid-14"></div>
+  
+  <div class="grid-11"></div>
+  <div class="grid-13"></div>
+  
+  <div class="grid-12"></div>
+  <div class="grid-12"></div>
+</section>
+
+<div class="grid-24">
+  <h2>Nested Grids</h2>
+</div>
+
+<section class="calculate clearfix">  
+
+  <div class="grid-24">
+    <div class="grid-2"></div>
+    <div class="grid-22"></div>
   </div>
-
-
-  <div class="grid-6">
-    <h2>Features</h2>
-    <ul>
-      <li>Responsive grid system
-        <ul>
-          <li>Desktop</li>
-          <li>Tablet</li>
-          <li>Mobile Landscape</li>
-          <li>Mobile Portrait</li>
-        </ul>
-      </li>
-      <li>Buttons</li>
-    </ul>
-
-    <h2>Documentation</h2>
-    <p>Check out the documentation for Centurion on <a href="http://www.centurionframework.com/documentation.html">Github</a>.</p>
-  </div>
-
-
+  
   <div class="grid-12">
-    <h2>Code</h2>
-    <pre><code>&lt;div class="container"&gt;<br>
-&nbsp;&nbsp;&nbsp;&lt;div class="grid-16"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
-&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&lt;div class="grid-8"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
-&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
-&lt;/div&gt;</code></pre>
+    <div class="grid-8"></div>
+    <div class="grid-16"></div>
   </div>
-
-
   <div class="grid-12">
-    <h2>Out of the Box</h2>
-    <p>Ideally, Centurion wasn't meant to be the end of a theme, but rather it was meant to be beginning of a better one. Most of the features that exist within Centurion I have personally had to rebuild on most of the themes that I have worked on each time a new theme was created. I started working on Centurion to be the bridge between having to build mobile features into a theme, or even to have to build basic features, such as buttons, and text formats. Out of the box, Centurion is meant to speed up the development process.</p>
+    <div class="grid-16"></div>
+    <div class="grid-8"></div>
   </div>
 
+</section>
 
+  
+<div class="grid-24">
+  <h2>Centered Grids</h2>
+</div>
+
+<section class="calculate clearfix">
+  
+  <div class="grid-2 grid-center"></div>
+  <div class="grid-4 grid-center"></div>
+  <div class="grid-6 grid-center"></div>
+  <div class="grid-8 grid-center"></div>
+  <div class="grid-10 grid-center"></div>
+  <div class="grid-12 grid-center"></div>
+  
+</section>
+
+<div class="grid-24">
+  <h2>Nested Grids</h2>
+  <p>_____</p>
+</div>
+
+
+<div class="grid-24">
+  <h3>Push the Grid</h3>
+</div>
+
+<section class="calculate clearfix">  
+
+  <div class="grid-6"></div>
   <div class="clear"></div>
+  
+  <div class="grid-6 push-6"></div>
+  <div class="clear"></div>
+  
+  <div class="grid-6 push-12"></div>
+  <div class="clear"></div>
+  
+  <div class="grid-6 push-18"></div>
+  <div class="clear"></div>
+
+</section>
+
+
+<div class="grid-24">
+  <h3>Push and Pull the Grid</h3>
+</div>
+
+<section class="calculate clearfix">  
+
+  <div class="grid-6 push-6"></div>  
+  <div class="grid-6 pull-6"></div>
+  <div class="grid-6 push-6"></div>
+  <div class="grid-6 pull-6"></div>
+
+</section>
+
+  
 
 
 

@@ -1,0 +1,71 @@
+// Colors
+
+
+// @include single-color-swatch(class, color, lightColor, darkColor)
+@mixin single-color-swatch($class, $color, $light-color, $dark-color) {
+  $class-alt: "."+ $class;
+  &#{$class-alt} {
+    background-color: $color;
+  }
+  &.light-#{$class} {
+    background-color: $light-color;
+  }
+  &.dark-#{$class} {
+    background-color: $dark-color;
+  }
+}
+
+// Color Swatches
+@mixin color-swatches {
+  %color-box-all {
+    border: 1px solid $lighter-grey;
+    @extend box-sizing;
+    display: block;
+  }
+  .color-box {
+    @extend %color-box-all;
+    float: left;
+    margin: 1em 1em 1em 0;
+    position: relative;
+    width: 100px;
+  }
+  .color-swatch {
+    @extend %color-box-all;
+    background-color: transparent;
+    border: none;
+    height: 60px;
+    &.black {
+      background-color: $black;
+    }
+    @include single-color-swatch('grey', $grey, $light-grey, $dark-grey);
+    @include single-color-swatch('red', $red, $light-red, $dark-red);
+    @include single-color-swatch('blue', $blue, $light-blue, $dark-blue);
+    @include single-color-swatch('purple', $purple, $light-purple, $dark-purple);
+    @include single-color-swatch('green', $green, $light-green, $dark-green);
+    @include single-color-swatch('orange', $orange, $light-orange, $dark-orange);
+  }
+  .color-code {
+    @extend %color-box-all;
+    border: none;
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    .color-code-rgb {
+      display: block;
+      font-size: 10px;
+      margin-top: 5px;
+    }
+  }
+  .color-name {
+    @extend %color-box-all;
+    border: none;
+    font-size: 12px;
+    padding: 5px 3px;
+    text-align: center;
+  }
+}

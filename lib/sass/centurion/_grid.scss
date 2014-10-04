@@ -1,0 +1,303 @@
+// Grid Mixins
+// ----------------------------
+
+// Centurion - Grid Reset for Smaller Screens
+@mixin grid-reset($grid-class) {
+  [class*="grid-"] {
+    width: 100%;
+  }
+}
+
+// Box Sizing
+@mixin box-sizing($value) {
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+  box-sizing: $value;
+}
+
+// Nested Children
+@mixin nested-grid-elements($class: $grid-class) {
+  [class*="grid-"] {
+    [class*="grid-"]:first-of-type {
+      padding-left: 0;
+    }
+    [class*="grid-"]:last-of-type {
+      padding-right: 0;
+    }
+  }
+}
+
+// Grid Center
+@mixin center-grid-elements($class: $grid-class) {
+  .#{$class}-center {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+// IE Specific Hacks - Border Box Fix
+@mixin ie7-grid-fix($decimal) {
+
+  $ie-val: unquote("expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && \"#{$margin}\")");
+
+  @if $ie7-support {
+    /* IE7 */
+    *padding-left: 0;
+    *padding-right: 0;
+    /* IE7 */
+    & > * {
+      /* IE7 */
+      *margin-left: $val;
+      *margin-right: $val;
+      /* IE7 */
+    }
+  }
+}
+
+@mixin ie7-grid-element($decimal) {
+  @if $ie7-support {
+    /* IE7 */
+    *width: unquote("expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')");
+    /* IE7 */
+  }
+}
+
+@mixin ie7-push($decimal) {
+  @if $ie7-support {
+    /* IE7 */
+    *#{$lang-front}: unquote("expression(Math.floor(#{$decimal} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')");
+    /* IE7 */
+  }
+}
+
+@mixin ie7-pull($decimal) {
+  @if $ie7-support {
+    /* IE7 */
+    *#{$lang-front}: unquote("expression(Math.floor(#{$decimal * -1} * (this.parentNode.offsetWidth - parseFloat(this.parentNode.currentStyle.paddingLeft) - parseFloat(this.parentNode.currentStyle.paddingRight))) + 'px')");
+    /* IE7 */
+  }
+}
+
+// Grid Column Generator
+// ----------------------------
+@mixin grid($columns: 24, $class: $grid-class, $exclude: false, $respond: none) {
+  
+  // Base Grid Builder
+  @if $respond == desktop {
+    @for $i from 1 through $columns {
+      $column-num: $i;
+      $column-width: $content-width / $columns;
+      $percent: 100 / $columns * $i * 1%;
+      $decimal: $column-num * $content-width / $columns;
+      //$column-max: $column-num * $column-width + $value
+      .#{$class}-#{$i} {
+        // turn off if nested within media query
+        @if $exclude {
+          @extend %clearfix;
+          @extend %column-base;
+        }
+        width: $percent;
+        @include ie7-grid-element($decimal);
+      }
+      .#{$push-class}-#{$i} {
+        #{$lang-front}: $percent;
+      }
+      .#{$pull-class}-#{$i} {
+        #{$lang-front}: -$percent;
+      }
+      //.#{$pre-class}-#{$i}
+      // //margin-left: $percent
+      //.#{$post-class}-#{$i}
+      // //margin-right: $percent
+    }
+  }
+  // Adjust 24 columns to work for tablet
+  @if $respond == tablet {
+    @for $i from 1 through $desktop-columns {
+      $column-num: $i;
+      $percent: 100 / $tablet-columns * $i * 1%;
+      // Tablet Grid
+      @if $i < $tablet-columns + 1 {
+        .#{$class}-#{$i} {
+          width: $percent;
+        }
+      }
+      @if $i > $tablet-columns {
+        .#{$class}-#{$i} {
+          @extend %full-width-tablet;
+        }
+      }
+      // Tablet Push Pull
+      @if $i < $tablet-columns + 1 {
+        .#{$push-class}-#{$i} {
+          #{$lang-front}: $percent;
+        }
+        .#{$pull-class}-#{$i} {
+          #{$lang-front}: -$percent;
+        }
+      }
+      @if $i > $tablet-columns {
+        .#{$push-class}-#{$i}, .#{$pull-class}-#{$i} {
+          @extend %no-push-pull-tablet;
+        }
+      }
+    }
+    // Reset nested elements fix for tablet
+    [class*="grid-"] {
+      [class*="grid-"] {
+        padding: 0;
+      }
+    }
+  }
+  // Adjust 24 columns to work for mobile
+  @if $respond == mobile {
+    @for $i from 1 through $desktop-columns {
+      $column-num: $i;
+      $percent: 100 / $mobile-columns * $i * 1%;
+      // Mobile Grid
+      @if $i < $mobile-columns + 1 {
+        .#{$class}-#{$i} {
+          width: $percent;
+        }
+      }
+      @if $i > $mobile-columns {
+        .#{$class}-#{$i} {
+          @extend %full-width-mobile;
+        }
+      }
+      // Push and Pull
+      @if $i < $mobile-columns + 1 {
+        .#{$push-class}-#{$i} {
+          #{$lang-front}: $percent;
+        }
+        .#{$pull-class}-#{$i} {
+          #{$lang-front}: -$percent;
+        }
+      }
+      @if $i > $mobile-columns {
+        .#{$push-class}-#{$i}, .#{$pull-class}-#{$i} {
+          @extend %no-push-pull-mobile;
+        }
+      }
+    }
+
+  }
+  @include nested-grid-elements($class);
+  @include center-grid-elements($class);
+}
+
+@mixin column-grid {
+  %column-base {
+    @include box-sizing(border-box);
+    float: $lang-front;
+    padding: 0 $gutter / 2 + $value;
+    position: relative;
+  }
+  
+  @if $ie7-support == false {
+    // Large Destkop Grid
+    // ----------------------------
+    .container {
+      @extend %clearfix;
+      margin: 0 auto;
+      padding: 0;
+      width: $content-width + $value;
+      // initial grid
+      @include grid($desktop-columns, $grid-class, true, "desktop");
+    }
+    @include hide-view(desktop);
+    @include show-view(desktop);
+    // Small Desktop Grid
+    // ----------------------------
+    @media screen and (max-width: $content-width + $value) {
+      .container {
+        width: 100%;
+      }
+      @include hide-view(desktop);
+      @include show-view(desktop);
+    }
+    // Tablet Grid
+    // ----------------------------
+    @media screen and (max-width: $tablet-content-width + $value) {
+      .container {
+        @include grid($desktop-columns, $grid-class, false, "tablet");
+      }
+      
+      %full-width-tablet {
+        width: 100%;
+      }
+      %no-push-pull-tablet {
+        left: 0;
+      }
+      
+      @include hide-view(tablet);
+      @include show-view(tablet);
+    }
+    // Mobile Grid
+    @media screen and (max-width: $mobile-content-width + $value) {
+      .container {
+        @include grid($desktop-columns, $grid-class, false, "mobile");
+        [class*="push-"],
+        [class*="pull-"] {
+          left: 0 !important;
+        }
+      }
+      
+      %full-width-mobile {
+        width: 100%;
+      }
+      %no-push-pull-mobile {
+        left: 0;
+      }
+      
+      @include hide-view(mobile);
+      @include show-view(mobile);
+    }
+  }
+  @if $ie7-support == true {
+    // Large Destkop Grid
+    // ----------------------------
+    .container {
+      @extend %clearfix;
+      margin: 0 auto;
+      padding: 0;
+      width: $content-width + $value;
+      // initial grid
+      @include grid($desktop-columns, $grid-class, true, "desktop");
+    }
+    @include hide-view(desktop);
+    @include show-view(desktop);
+  }
+}
+
+// Semantic Grid
+// ----------------------------
+// Numbers are in pixel's
+// @include semantic-grid(container, 1100)
+// @include semantic-grid(grid, 25)
+
+%semantic-container {
+  /* Containers */
+  @extend %clearfix;
+  margin: 0 auto;
+  padding: 0;
+}
+
+%semantic-grid {
+  /* Grids */
+  @include box-sizing(border-box);
+  float: $lang-front;
+  padding: 0 $gutter / 2 + $value;
+  position: relative;
+}
+
+@mixin semantic-grid($type, $width: $content-width) {
+  @if $type == "container" {
+    @extend %semantic-container;
+    @include rem(width, $width);
+  }
+  @if $type == "grid" {
+    @extend %semantic-grid;
+    @include rem(width, $width);
+  }
+}

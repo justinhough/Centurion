@@ -1,0 +1,33 @@
+// Breadcrumbs
+//
+@mixin breadcrumbs {
+  .breadcrumb {
+    @extend %clearfix;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    li {
+      display: inline-block;
+      list-style: none;
+      &:after {
+        content: "/";
+        display: inline-block;
+        margin-left: 10px;
+      }
+      &:last-of-type {
+        &:after {
+          content: "";
+        }
+      }
+    }
+  }
+  
+  .breadcrumb-awesome {
+    @extend .breadcrumb;
+  }
+}
+
+
+@mixin navigation {
+  @include breadcrumbs;
+}

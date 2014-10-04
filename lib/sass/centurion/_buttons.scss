@@ -1,0 +1,82 @@
+// Button Mixins
+// ----------------------------
+@mixin default-button {
+  background: #dedede;
+  border: none;
+  @include border-radius(5px, 5px);
+  @include box-shadow(0, 1px, 2px);
+  color: $white !important;
+  @extend %cursor;
+  display: inline-block;
+  @include rem(font-size, 16);
+  font-weight: bold;
+  @include element-spacing(vertical, margin, 1em);
+  outline: 0;
+  @include element-spacing(two, padding, 0.667em, 1.333em);
+  text-decoration: none;
+  vertical-align: middle;
+  zoom: 1;
+}
+
+@mixin default-button-hover {
+  background-color: lightgrey;
+  color: $white !important;
+}
+
+// Button Create (Flat)
+// @include button(class, color1, color2, text-color)
+@mixin create-button($class, $color1, $color2, $text-color: $white) {
+  .#{$class} {
+    @extend .btn;
+    background-color: $color1;
+    color: $text-color !important;
+    &:hover {
+      background-color: $color2;
+      color: $text-color !important;
+    }
+  }
+}
+
+// Buttons
+// ----------------------------
+@mixin buttons {
+  .btn {
+    color: $grey;
+    @include default-button;
+    @extend %noTextDecoration;
+    &:hover {
+      @include default-button-hover;
+    }
+  }
+  
+  .small-btn {
+    @include rem(font-size, 12);
+    @include element-spacing(two, padding, 0.533em, 1.2em);
+    @extend .btn;
+  }
+  
+  .large-btn {
+    @include rem(font-size, 22);
+    @include element-spacing(two, padding, 0.333em, 1.6em);
+    @extend .btn;
+  }
+  
+  .full-btn {
+    @include element-spacing(vertical, padding, 0.667em);
+    text-align: center;
+    width: 100%;
+    @extend .btn;
+  }
+  
+  .inline-btn {
+    margin: 0;
+  }
+  
+  @include create-button(blue-btn, $blue, $dark-blue);
+  
+  @include create-button(red-btn, $red, $dark-red);
+  
+  @include create-button(orange-btn, $orange, $dark-orange);
+  
+  @include create-button(green-btn, $green, $dark-green);
+}

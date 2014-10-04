@@ -21,17 +21,36 @@ module.exports = function (grunt) {
         app: 'Safari'
       }
     },
-    
-    compass: {
-      options: {
-        config: 'lib/config.rb'
-      },
-      sass: {
+
+    'sass': {
+      expanded: {
         options: {
-          sassDir: 'lib/sass/',
-          cssDir: 'build/css/'
-        }
+          style: 'expanded',
+          sourcemap: 'none'
+        },
+        files: [{
+          expand: true,
+          cwd: 'lib/sass',
+          src: ['*.scss'],
+          dest: 'build/css',
+          ext: '.css'
+        }]
       },
+      minified: {
+        options: {
+          style: 'compressed',
+          sourcemap: 'none',
+          compass: true,
+          trace: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'lib/sass',
+          src: ['*.scss'],
+          dest: 'build/css',
+          ext: '.css'
+        }]
+      }
     },
 
     watch: {    
@@ -43,8 +62,8 @@ module.exports = function (grunt) {
         tasks: ['copy', 'html', 'watch:sass', 'watch:scripts']
       },
       sass: {
-        files: ['lib/sass/*.sass'],
-        tasks: ['compass:sass', 'html', 'watch:scripts', 'copy']
+        files: ['lib/sass/*.scss'],
+        tasks: ['sass:expanded', 'html', 'watch:scripts', 'copy']
       },
       scripts: {
         files: ['lib/**/*.js'],
@@ -54,6 +73,7 @@ module.exports = function (grunt) {
         },
       },
     },
+    
     copy: {
       dist: {
         files: [
@@ -62,6 +82,7 @@ module.exports = function (grunt) {
         ]
       }
     },
+    
     processhtml: {
       dist: {
         options: {
@@ -85,6 +106,17 @@ module.exports = function (grunt) {
         }
       },
     },
+    
+    // Deploy to gh-pages
+    'gh-pages': {
+      options: {
+        base: 'build',
+        repo: 'https://github.com/jhough10/Centurion/'
+      },
+      src: ['**']
+    },
+    
+    
   });
   
   
@@ -95,6 +127,9 @@ module.exports = function (grunt) {
   grunt.registerTask('serve', ['connect:local']);
   
   // Default Task
-  grunt.registerTask('default', ['html', 'compass', 'copy', 'serve', 'open', 'watch']);
+  grunt.registerTask('default', ['html', 'sass:expanded', 'copy', 'serve', 'open', 'watch']);
+
+  // Release deploy to gh-pages
+  grunt.registerTask('page-release', ['gh-pages']);
 
 };

@@ -1,6 +1,29 @@
-.DS_store
-.project
+### Node ###
+# Logs
+logs
+*.log
+.grunt
+node_modules
+
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Misc Files ###
+compass_app_log.txt
+_reinstate/*
+_old*
 *.scssc
 *.sassc
-
-compass_app_log.txt
+Build

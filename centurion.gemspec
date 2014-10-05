@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version     = package["version"]
   s.summary     = "Centurion is a framework built with Sass"
   s.description = package["description"]
-  s.authors     = ["Justin Hough"]
+  s.authors     = package["author"]["name"]
   s.email       = package["author"]["email"]
   s.files       = ["lib/centurion.rb"]
   s.homepage    = package["homepage"]

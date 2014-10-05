@@ -1,5 +1,6 @@
 # Centurion
 
+[![NPM version](https://badge.fury.io/js/centurion-framework.svg)](http://badge.fury.io/js/centurion-framework)
 [![Gem Version](https://badge.fury.io/rb/centurion-framework.svg)](http://badge.fury.io/rb/centurion-framework)
 
 Centurion is a responsive web framework built for speed and simplicity with it's scalable and easy syntax to get a new prototype up quickly, as well as, support browsers as far back as IE7 to ensure your website works from the grid up. It is built on CSS3 with HTML5 in mind to allow you to start capitalizing on the next web standard (that has been around for a decade).

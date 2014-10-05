@@ -276,22 +276,23 @@
 // @include semantic-grid(container, 1100)
 // @include semantic-grid(grid, 25)
 
-%semantic-container {
-  /* Containers */
-  @extend %clearfix;
-  margin: 0 auto;
-  padding: 0;
-}
-
-%semantic-grid {
-  /* Grids */
-  @include box-sizing(border-box);
-  float: $lang-front;
-  padding: 0 $gutter / 2 + $value;
-  position: relative;
-}
-
 @mixin semantic-grid($type, $width: $content-width) {
+
+  %semantic-container {
+    /* Containers */
+    @extend %clearfix;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  %semantic-grid {
+    /* Grids */
+    @include box-sizing(border-box);
+    float: $lang-front;
+    padding: 0 $gutter / 2 + $value;
+    position: relative;
+  }
+
   @if $type == "container" {
     @extend %semantic-container;
     @include rem(width, $width);

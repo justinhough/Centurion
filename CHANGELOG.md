@@ -1,13 +1,12 @@
-## v3.5.0
-Begin foundational Sass for the framework.
+## v3.5.1
+- bugfix for semantic grid and %clearfix
 
-	### Updated
+## v3.5.0
 - attached build process to default Grunt command `$ grunt`
 - enhanced Sass compile speed and size
 	- new mixin support for buttons, colors, and callouts
 	- configuration options
 	- layout support added based on typography and line-height
-	- 
 - grid now utilizes `rems` with fallback for `px` based browser support
 - using normalize instead of reset
 

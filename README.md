@@ -8,7 +8,7 @@ Centurion is a responsive web framework built for speed and simplicity with it's
 If you're worried about browser support we recommend using [html5shiv](https://code.google.com/p/html5shiv/) to add fallback for HTML5 or [Modernizr](http://modernizr.com/) to provide basic support for CSS3 and other feature detection to keep your design from falling flat, unless you designed it that way.
 
 
-![image](http://cdn.centurionframework.com/graphics/centurion_200.png)
+![image](http://www.centurionframework.com/graphics/centurion_200.png)
 
 
 ## Version

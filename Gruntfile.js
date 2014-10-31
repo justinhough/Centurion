@@ -18,7 +18,7 @@ module.exports = function (grunt) {
     open: {
       server: {
         url: 'http://centurion-framework.dev:9001',
-        app: 'Safari'
+        app: 'Google Chrome'
       }
     },
 

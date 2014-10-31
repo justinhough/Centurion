@@ -197,7 +197,7 @@
   @if $ie7-support == false {
     // Large Destkop Grid
     // ----------------------------
-    .container {
+    .#{$container-class} {
       @extend %clearfix;
       margin: 0 auto;
       padding: 0;
@@ -210,7 +210,7 @@
     // Small Desktop Grid
     // ----------------------------
     @media screen and (max-width: $content-width + $value) {
-      .container {
+      .#{$container-class} {
         width: 100%;
       }
       @include hide-view(desktop);
@@ -219,7 +219,7 @@
     // Tablet Grid
     // ----------------------------
     @media screen and (max-width: $tablet-content-width + $value) {
-      .container {
+      .#{$container-class} {
         @include grid($desktop-columns, $grid-class, false, "tablet");
       }
       
@@ -235,7 +235,7 @@
     }
     // Mobile Grid
     @media screen and (max-width: $mobile-content-width + $value) {
-      .container {
+      .#{$container-class} {
         @include grid($desktop-columns, $grid-class, false, "mobile");
         [class*="push-"],
         [class*="pull-"] {
@@ -257,7 +257,7 @@
   @if $ie7-support == true {
     // Large Destkop Grid
     // ----------------------------
-    .container {
+    .#{$container-class} {
       @extend %clearfix;
       margin: 0 auto;
       padding: 0;

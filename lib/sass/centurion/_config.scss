@@ -17,12 +17,13 @@ $desktop-columns: 24;
 $tablet-columns: 12;
 $mobile-columns: 6;
 
-$grid-class: "grid";
-$tablet-grid-class: "tablet";
-$mobile-grid-class: "mobile";
+$container-class: "ctn-container";
+$grid-class: "ctn-grid";
+$tablet-grid-class: "ctn-tablet";
+$mobile-grid-class: "ctn-mobile";
 
-$push-class: "push";
-$pull-class: "pull";
+$push-class: "ctn-push";
+$pull-class: "ctn-pull";
 
 //$pre-class: pre
 //$post-class: post

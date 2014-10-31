@@ -197,7 +197,7 @@
   @if $ie7-support == false {
     // Large Destkop Grid
     // ----------------------------
-    .container {
+    .#{$container-class} {
       @extend %clearfix;
       margin: 0 auto;
       padding: 0;

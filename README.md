@@ -32,11 +32,8 @@ Refer to CHANGELOG for more information about enhancements.
     - [Tooltips](#tooltips)
 - [Captions](#captions)
 - [Colors](#colors)
-- Fonts
-    - Icon Font
 - [Images](#images) (adaptive and sprites)
-- [Navigation](#navigation) - MOVED TO CARRIEJS
-    - [Dropdowns](#dropdowns) - MOVED TO CARRIEJS
+- [Navigation](#navigation) - Moved to CarrieJS (https://github.com/justinhough/CarrieJS)
 - [Pagination](#pagination)
 - [Print Styles](#print)
 - [Tables](#tables)

@@ -1,6 +1,7 @@
 // Grid Column Generator
 // ----------------------------
 
+// Column Grid
 @mixin column-grid {
   %column-base {
     @include box-sizing(border-box);
@@ -16,13 +17,8 @@
     margin: 0 auto;
     padding: 0;
     width: $desktop-width + $value;
-    // initial grid
-    @include grid-generate($desktop-columns, $desktop-width, $grid-class, true);
     
-    // @TODO: make class construction better, possibly global classes for push and pull
-    $push-elem: $prefix-class+'-'+$push-class;
-    $pull-elem: $prefix-class+'-'+$pull-class;
-    @include push-pull-elements($desktop-columns, $push-elem, $pull-elem);
+    @include grid-creator(desktop);
   }
   
   /* Small Desktop Grid */
@@ -37,40 +33,61 @@
   /* Tablet Grid */
   /* ---------------------------- */
   @media screen and (max-width: $tablet-width + $value) {
-    @include adjust-grid($tablet-columns, $desktop-columns, $grid-class, tablet);
-    %full-width-tablet {
-      width: 100%;
-    }
-    .#{$container-class} {
-      @include grid-generate($tablet-columns, $tablet-width, $tablet-grid-class);
-      
-      $push-elem: $tablet-grid-class+'-'+$push-class;
-      $pull-elem: $tablet-grid-class+'-'+$pull-class;
-      @include push-pull-elements($tablet-columns, $push-elem, $pull-elem);
-      //@include push-pull-elements(tablet);
-      %no-push-pull-tablet {
-        left: 0;
-      }
-    }
-    @include show-hide(tablet);
+    @include grid-creator(tablet);
   }
     
   /* Mobile Grid */
   /* ---------------------------- */
   @media screen and (max-width: $mobile-width + $value) {
-    @include adjust-grid($mobile-columns, $desktop-columns, $grid-class, mobile);
-    @include adjust-grid($mobile-columns, $tablet-columns, $tablet-grid-class, mobile);
-    %full-width-mobile {
-      width: 100%;
-    }
+    @include grid-creator(mobile);
+  }
+  @include center-grid-elements();
+}
+
+// Grid Creator - stitches the magic together
+@mixin grid-creator($type) {
+  
+  $push-elem-desktop: $prefix-class+'-'+$push-class;
+  $pull-elem-desktop: $prefix-class+'-'+$pull-class;
+  
+  $push-elem-tablet: $tablet-grid-class+'-'+$push-class;
+  $pull-elem-tablet: $tablet-grid-class+'-'+$pull-class;
+  
+  $push-elem-mobile: $mobile-grid-class+'-'+$push-class;
+  $pull-elem-mobile: $mobile-grid-class+'-'+$pull-class;
+
+  @if $type == desktop {
+    @include grid-generate($desktop-columns, $desktop-width, $grid-class, true);    
+    @include push-pull-elements($desktop-columns, $push-elem-desktop, $pull-elem-desktop);
+  }
+  
+  @if $type == tablet {
+    @include adjust-grid($tablet-columns, $desktop-columns, $grid-class, tablet);
+    @include adjust-push-pull($tablet-columns, $desktop-columns, $push-elem-desktop, $pull-elem-desktop, tablet);
     .#{$container-class} {
+      %full-width-tablet {
+        width: 100%;
+      }
+      %no-push-pull-tablet {
+        left: 0;
+      }      
+      @include grid-generate($tablet-columns, $tablet-width, $tablet-grid-class);
+      @include push-pull-elements($tablet-columns, $push-elem-tablet, $pull-elem-tablet);
+    }
+    @include show-hide(tablet);
+  }
+  
+  @if $type == mobile {
+    @include adjust-grid($mobile-columns, $desktop-columns, $grid-class, mobile);
+    @include adjust-push-pull($mobile-columns, $desktop-columns, $push-elem-desktop, $pull-elem-desktop, mobile);
+    @include adjust-grid($mobile-columns, $tablet-columns, $tablet-grid-class, mobile);
+    @include adjust-push-pull($mobile-columns, $tablet-columns, $push-elem-tablet, $pull-elem-tablet, mobile);
+    .#{$container-class} {
+      %full-width-mobile {
+        width: 100%;
+      }
       @include grid-generate($mobile-columns, $mobile-width, $mobile-grid-class);
-      
-      $push-elem: $mobile-grid-class+'-'+$push-class;
-      $pull-elem: $mobile-grid-class+'-'+$pull-class;
-      @include push-pull-elements($mobile-columns, $push-elem, $pull-elem);
-      //@include adjust-push-pull(desktop);
-      //@include adjust-push-pull(tablet);
+      @include push-pull-elements($mobile-columns, $push-elem-mobile, $pull-elem-mobile);
       %no-push-pull-mobile {
         #{$lang-front}: 0;
       }
@@ -79,6 +96,7 @@
   }
 }
 
+// Generate grid columns
 @mixin grid-generate($columns, $width, $class, $exclude: false) {
   @for $i from 1 through $columns {
     $num: $i;
@@ -98,20 +116,15 @@
   }
 
   @include nested-grid-elements($class);
-  @include center-grid-elements($class);
 }
 
-
 // Adjust Grid for Responsive
-// @TODO: how to extend within media query on matching grid #'s
 @mixin adjust-grid($columns, $column-count, $class, $respond) {
   @for $i from 1 through $column-count {
     $percent: 100 / $columns * $i * 1%;
-    
     @if $i < $columns + 1 {
       .#{$class}-#{$i} {
         width: $percent;
-        //@extend .#{$prefix-class}-#{$respond}-#{$i};
       }
     }
     @if $i > $columns {
@@ -122,13 +135,10 @@
   }
 } 
 
-
-
 // Push & Pull Grid Element
 @mixin push-pull-elements($columns, $push-elem, $pull-elem) {
   @for $i from 1 through $columns {
     $percent: 100 / $columns * $i * 1%;
-    
     @if $i < $columns + 1 {
       .#{$push-elem}-#{$i} {
         #{$lang-front}: $percent;
@@ -141,41 +151,23 @@
 }
 
 // Adjust Push and Pull for Responsive
-// @TODO: how to extend within media query on matching push or pull #'s
-@mixin adjust-push-pull($respond) {
-  @if $respond == awesome {
-    @for $i from 1 through $column-count {
-      $percent: 100 / $columns * $i * 1%;
-      
-      @if $i < $columns + 1 {
-        .#{$push-elem}-#{$i} {
-          #{$lang-front}: $percent;
-        }
-        .#{$pull-elem}-#{$i} {
-          #{$lang-front}: -$percent;
-        }
+@mixin adjust-push-pull($columns, $column-count, $push-elem, $pull-elem, $respond) {
+  @for $i from 1 through $column-count {
+    $percent: 100 / $columns * $i * 1%;
+    @if $i < $columns + 1 {
+      .#{$push-elem}-#{$i} {
+        #{$lang-front}: $percent;
       }
-      
-      @if $i > $columns {
-        .#{$push-elem}-#{$i},
-        .#{$pull-elem}-#{$i} {
-          //#{$lang-front}: 0;
-          @extend %no-push-pull-#{$respond};
-        }
+      .#{$pull-elem}-#{$i} {
+        #{$lang-front}: -$percent;
       }
-      
     }
-  }
-  @if $respond == desktop {}
-  @if $respond == tablet {} 
-}
-
-
-
-// Grid Reset for Smaller Screens
-@mixin grid-reset($class: $grid-class) {
-  [class*=#{$class}] {
-    width: 100%;
+    @if $i > $columns {
+      .#{$push-elem}-#{$i},
+      .#{$pull-elem}-#{$i} {
+        @extend %no-push-pull-#{$respond};
+      }
+    }
   }
 }
 
@@ -186,6 +178,7 @@
       padding-left: 0;
     }
     [class*=#{$class}]:last-of-type {
+      padding-left: 0;
       padding-right: 0;
     }
   }
@@ -194,7 +187,7 @@
 // Grid Center
 @mixin center-grid-elements($class: $grid-class) {
   .#{$class}-center {
-    float: none;
+    float: none !important;
     margin: 0 auto;
   }
 }

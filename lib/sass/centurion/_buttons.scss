@@ -1,6 +1,6 @@
 // Button Mixins
 // ----------------------------
-@mixin default-button {
+@mixin default-button() {
   background: #dedede;
   border: none;
   @include border-radius(5px, 5px);
@@ -18,7 +18,7 @@
   zoom: 1;
 }
 
-@mixin default-button-hover {
+@mixin default-button-hover() {
   background-color: lightgrey;
   color: $white !important;
 }
@@ -39,7 +39,7 @@
 
 // Buttons
 // ----------------------------
-@mixin buttons {
+@mixin buttons() {
   .btn {
     color: $grey;
     @include default-button;

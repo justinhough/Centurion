@@ -266,19 +266,19 @@
 // Float Elements
 // ----------------------------
 // @include float-elements
-@mixin float-elements {
+@mixin float-elements() {
   .left-float {
-    float: left;
+    @include float-left;
   }
   .right-float {
-    float: right;
+     @include float-right;
   }
 }
 
-@mixin float-left {
+@mixin float-left() {
   float: left;
 }
 
-@mixin float-left {
-  float: left;
+@mixin float-right() {
+  float: right;
 }

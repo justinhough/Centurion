@@ -1,6 +1,6 @@
 // Typography
 // ----------------------------
-@mixin force-wrap {
+@mixin force-wrap() {
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
@@ -11,7 +11,7 @@
   word-wrap: break-word;
 }
 
-@mixin typography {
+@mixin typography() {
   %noTextDecoration {
     text-decoration: none;
   }

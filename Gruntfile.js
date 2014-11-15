@@ -89,7 +89,7 @@ module.exports = function (grunt) {
           process: true,
           data: {
             site_title: 'Centurion Framework',
-            version: '3.5.0',
+            version: '3.5.2',
             page_title: 'Page Title',
             meta_description: '_______',
             meta_keywords: '_______',

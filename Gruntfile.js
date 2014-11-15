@@ -8,7 +8,7 @@ module.exports = function (grunt) {
       local: {
         options: {
           livereload: true,
-          hostname: 'centurion-framework.dev',
+          hostname: 'localhost',
           port: 9001,
           base: 'build'
         }
@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     
     open: {
       server: {
-        url: 'http://centurion-framework.dev:9001',
+        url: 'http://localhost:9001',
         app: 'Google Chrome'
       }
     },
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
         tasks: ['copy', 'html', 'watch:sass', 'watch:scripts']
       },
       sass: {
-        files: ['lib/sass/*.scss'],
+        files: ['lib/sass/**/*.scss'],
         tasks: ['sass:expanded', 'html', 'watch:scripts', 'copy']
       },
       scripts: {

@@ -1,6 +1,6 @@
 // Breadcrumbs
 //
-@mixin breadcrumbs {
+@mixin breadcrumbs() {
   .breadcrumb {
     @extend %clearfix;
     margin: 0;
@@ -28,6 +28,6 @@
 }
 
 
-@mixin navigation {
+@mixin navigation() {
   @include breadcrumbs;
 }

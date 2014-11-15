@@ -17,6 +17,9 @@ body {
 
 @include normalize;
 @include column-grid;
+
+@include typography;
+
 @include buttons;
 @include badges;
 @include callouts;
@@ -26,7 +29,6 @@ body {
 
 @include tables;
 
-@include typography;
 @include navigation;
 
 @include float-elements;

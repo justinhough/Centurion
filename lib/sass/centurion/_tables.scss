@@ -1,7 +1,7 @@
 // Tables
 // ----------------------------
 // @include table-base
-@mixin table-base {
+@mixin table-base() {
   th {
     text-align: center;
     font-weight: bold;
@@ -36,7 +36,7 @@
 
 
 
-@mixin tables {
+@mixin tables() {
   table {
     background: $white;
     border-collapse: collapse;

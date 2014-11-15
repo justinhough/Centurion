@@ -1,7 +1,13 @@
 @import "centurion/config";
 @import "centurion/mixin";
 @import "centurion/normalize";
+
+// Centurion Grid
 @import "centurion/grid";
+@import "centurion/grid-legacy";
+@import "centurion/grid-semantic";
+
+// Centurion Libraries
 @import "centurion/colors";
 @import "centurion/buttons";
 @import "centurion/badges";

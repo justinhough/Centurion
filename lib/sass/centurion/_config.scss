@@ -6,31 +6,31 @@ $default-line-height: 1;
 $ie7-support: false;
 
 // Centurion - Grid Config
-$content-width: 1100;
+$desktop-width: 1100;
+$tablet-width: 961;
+$mobile-width: 481;
+
 $inner-width: 98;
 $gutter: 20;
-
-$tablet-content-width: 961;
-$mobile-content-width: 481;
+$value: px;
 
 $desktop-columns: 24;
 $tablet-columns: 12;
 $mobile-columns: 6;
 
-$container-class: "ctn-container";
-$grid-class: "ctn-grid";
-$tablet-grid-class: "ctn-tablet";
-$mobile-grid-class: "ctn-mobile";
+$prefix-class: "ctn";
+$container-class: $prefix-class+"-container";
+$grid-class: $prefix-class+"-grid";
+$tablet-grid-class: $prefix-class+"-tablet";
+$mobile-grid-class: $prefix-class+"-mobile";
 
-$push-class: "ctn-push";
-$pull-class: "ctn-pull";
-
-//$pre-class: pre
-//$post-class: post
+$push-class: "push";
+$pull-class: "pull";
+$pre-class: "pre";
+$post-class: "post";
 
 // Centurion - Language Support
 $lang-front: left;
-$value: px;
 
 // Centurion Layout
 $margin-top: "helmet";
@@ -42,8 +42,8 @@ $padding-bottom: "pad-sandal";
 $padding-both: "pad-armor";
 
 // Centurion Colors
-$white: white;
-$black: black;
+$white: #FFF;
+$black: #000;
 
 $off-white: #efefef;
 

@@ -18,7 +18,7 @@
   border: none;
   height: 60px; }
   .color-swatch.black {
-    background-color: black; }
+    background-color: #000; }
   .color-swatch.grey {
     background-color: #999999; }
   .color-swatch.light-grey {
@@ -80,7 +80,7 @@
 a {
   color: #fe9300; }
   a:hover {
-    color: black; }
+    color: #000; }
 
 header {
   background: #cccccc; }
@@ -94,19 +94,19 @@ nav ul {
     margin: 0;
     padding: 0; }
     nav ul li a {
-      color: black;
+      color: #000;
       display: block;
       padding: 1em;
       text-decoration: none; }
       nav ul li a:hover, nav ul li a.current, nav ul li a.nav-current {
         background: #fe9300;
-        color: white; }
+        color: #FFF; }
 
 #banner {
   background: #fe9300;
   border-bottom: 1px solid #fe9300; }
   #banner h1 {
-    color: white; }
+    color: #FFF; }
 
 .section-break {
   border-bottom: 3px solid #dddddd;
@@ -143,6 +143,7 @@ span.box-grid {
   border: 1px solid #efefef;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
   box-sizing: border-box;
   clear: both;
   display: block;

@@ -1,4 +1,35 @@
 // Colors
+// Centurion Colors
+$white: #FFF;
+$black: #000;
+
+$off-white: #efefef;
+
+$grey: #999999;
+$light-grey: #cccccc;
+$lighter-grey: #dddddd;
+$dark-grey: #555555;
+$darker-grey: #333333;
+
+$red: #cc583a;
+$dark-red: darken($red, 20%);
+$light-red: lighten($red, 30%);
+
+$blue: #272d7f;
+$dark-blue: darken($blue, 20%);
+$light-blue: lighten($blue, 30%);
+
+$purple: #7f4d7b;
+$dark-purple: darken($purple, 20%);
+$light-purple: lighten($purple, 30%);
+
+$green: #277f35;
+$dark-green: darken($green, 20%);
+$light-green: lighten($green, 30%);
+
+$orange: #fe9300;
+$dark-orange: darken($orange, 10%);
+$light-orange: lighten($orange, 30%);
 
 
 // @include single-color-swatch(class, color, lightColor, darkColor)

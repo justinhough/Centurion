@@ -54,35 +54,17 @@ When you download and extract Centurion for the first time you'll notice the mai
     centurion/
     |__ assets
         |__ img
-            |__ apple-touch-icon-114x114.png
-            |__ apple-touch-icon-72x72.png
-            |__ apple-touch-icon.png
-            |__ favicon.jpg
         |__ js
-            |__ libs
-                |__ jquery-1.11.0.min.js
-                |__ jquery-migrate-1.2.1.min.js
-                |__ modernizr.2.8.3.js
+            |__ libs (JavaScript libraries)
             |__ centurion.js
             |__ grid-calculate.js
         |__ sass
-            |__ core
-                |__ badges
-                |__ buttons
-                |__ callouts
-                |__ colors
-                |__ config
-                |__ grid
-                |__ layout
-                |__ mixin
-                |__ normalize
-                |__ tables
-                |__ typography
+            |__ core (Sass mixin libraries)
             |__ centurion.sass
             |__ custom.sass
             |__ grid-ie7.sass
+						|__ grid-rtl.sass
             |__ grid.sass
-        |__ favicon.ico
     |__ includes (partial files for Build)
     |__ licenses
 
@@ -101,16 +83,28 @@ Originally Centurion was built only a responsive grid, so at its core Centurion 
 
 ### Basic Structure
 
-Utlizing the grid in your your project requires a container wrapper to set the main size of the area with grid elements inside to divide the space of the content area as needed. For example, if you want to use the full width for a banner that spans the page, then you would specify a `grid-24`. 24 columns is the full width of the default grid and is easily divisible in any design pattern. If you want to divide the page in two columns (a main body and a sidebar) you could use a `grid-18` and a `grid-8`. The number corresponds the amount of columns that the grid will occupy within the container. 
+Utilizing the grid in your your project requires a container wrapper to set the main size of the area with grid elements inside to divide the space of the content area as needed. For example, if you want to use the full width for a banner that spans the page, then you would specify a `ctn-grid-24`. 24 columns is the full width of the default grid and is easily divisible in any design pattern. If you want to divide the page in two columns (a main body and a sidebar) you could use a `ctn-grid-18` and a `ctn-grid-8`. The number corresponds the amount of columns that the grid will occupy within the container. 
 
-    <div class="container">
-        <div class="grid-18">
+    <div class="ctn-container">
+        <div class=“ctn-grid-18">
             …
         </div>
-        <div class="grid-8">
+        <div class="ctn-grid-8">
             … 
         </div>
     </div>
+
+Centurion even includes adjustment grids for tablet and mobile experiences in case there is a special need to change the width of a grid element on a specific size.
+
+    <div class="ctn-container">
+        <div class=“ctn-grid-18 ctn-tablet-6 ctn-mobile-3”>
+            …
+        </div>
+        <div class="ctn-grid-8 ctn-tablet-6 ctn-mobile-3">
+            … 
+        </div>
+    </div>
+
 
 **Note:** For each row make sure that you elements add up to 24 columns across in order to utilize the full row. However, if you want to center one grid element on each row then you will want to use Centering Grids below.
 
@@ -118,19 +112,19 @@ Utlizing the grid in your your project requires a container wrapper to set the m
 
 The best part of any grid system is the ability to nest elements within a single grid element to break down the space into smaller, manageable spaces.
 
-For example, say that you want to have content in a `grid-18`, but you also want to add three images with captions side-by-side beneath the main block of text. In order to create this layout will need to put three `grid-8` grid elements inside the parent grid element.
+For example, say that you want to have content in a `ctn-grid-18`, but you also want to add three images with captions side-by-side beneath the main block of text. In order to create this layout will need to put three `ctn-grid-8` grid elements inside the parent grid element.
 
-    <div class="grid-18">
+    <div class=“ctn-grid-18">
         <p>Some text talking about something.</p>
-        <div class="grid-8">
+        <div class="ctn-grid-8">
             <img src="" alt="" />
             <p>Image caption is written here</p>
         </div>
-        <div class="grid-8">
+        <div class="ctn-grid-8">
             <img src="" alt="" />
             <p>Image caption is written here</p>
         </div>
-        <div class="grid-8">
+        <div class="ctn-grid-8">
             <img src="" alt="" />
             <p>Image caption is written here</p>
         </div>
@@ -145,7 +139,7 @@ The `.alpha` and `.omega` classes are no longer required within the grid. There 
 
 Centering grid elements is as easy as adding `grid-center` to your grid element. This will evenly space your element in the center of your grid container. 
 
-    <div class="grid-18 grid-center">
+    <div class="ctn-grid-18 grid-center">
         <p>Centered Grid</p>
     </div>
     <div class="clear"></div>

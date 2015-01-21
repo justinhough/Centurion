@@ -503,9 +503,3 @@ body {
 
 .clear {
   clear: both; }
-
-.visible {
-  visibility: display; }
-
-.not-visible {
-  visibility: hidden; }

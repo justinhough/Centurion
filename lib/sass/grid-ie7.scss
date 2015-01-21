@@ -11,24 +11,3 @@
 $ie7-support: true;
 $lang-front: left;
 @include column-grid;
-
-// Clearfix
-%clearfix {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
-
-.clearfix,
-.cf {
-  @extend %clearfix;
-}
-
-.clear {
-  clear: both;
-}

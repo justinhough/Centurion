@@ -2,7 +2,7 @@
 // ----------------------------
 
 // Column Grid
-@mixin column-grid {
+@mixin column-grid {  
   %column-base {
     @include box-sizing(border-box);
     float: $lang-front;
@@ -47,6 +47,8 @@
     @include grid-creator(mobile);
   }
   @include center-grid-elements();
+  
+  @include clearfix();
 }
 
 // Grid Creator - stitches the magic together

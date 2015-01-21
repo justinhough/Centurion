@@ -104,7 +104,6 @@ module.exports = function (grunt) {
     'gh-pages': {
       options: {
         base: 'build',
-        repo: 'https://github.com/jhough10/Centurion/'
       },
       src: ['**']
     },

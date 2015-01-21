@@ -96,6 +96,7 @@ nav ul {
     nav ul li a {
       color: #000;
       display: block;
+      font-size: 0.9em;
       padding: 1em;
       text-decoration: none; }
       nav ul li a:hover, nav ul li a.current, nav ul li a.nav-current {
@@ -114,10 +115,11 @@ nav ul {
   width: 100%; }
 
 footer {
-  background: #cccccc;
+  background: #dddddd;
   border-top: 1px solid #999999;
-  font-size: 0.8em;
   margin-top: 4em; }
+  footer p {
+    font-size: 0.8em; }
 
 pre {
   background: #444444;
@@ -139,15 +141,14 @@ pre {
   padding: 0.5em; }
 
 span.box-grid {
-  background-color: #dedede;
-  border: 1px solid #efefef;
+  background-color: #cccccc;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
   clear: both;
   display: block;
-  font-family: helevtica neue, sans-serif;
+  font-family: helevtica neue, helvetica, sans-serif;
   font-size: 0.8em;
   font-weight: 200;
   margin-top: 1em;
@@ -156,16 +157,16 @@ span.box-grid {
   text-align: center;
   width: 100%; }
 
-[class^="grid-"] [class^="grid-"]:first-of-type .box-grid {
+[class^="ctn-grid-"] [class^="ctn-grid-"]:first-of-type .box-grid {
   background: #ffd298; }
-[class^="grid-"] [class^="grid-"]:last-of-type .box-grid {
+[class^="ctn-grid-"] [class^="ctn-grid-"]:last-of-type .box-grid {
   background: #fe9300; }
-[class^="grid-"] [class^="grid-"] [class^="grid-"]:first-child .box-grid {
+[class^="ctn-grid-"] [class^="ctn-grid-"] [class^="ctn-grid-"]:first-child .box-grid {
   background: #fe9300; }
 
-[class^="grid-"][class*="push-"] .box-grid {
+[class^="ctn-grid-"][class*="push-"] .box-grid {
   background-color: #ffd298; }
-[class^="grid-"][class*="pull-"] .box-grid {
+[class^="ctn-grid-"][class*="pull-"] .box-grid {
   background-color: #fe9300; }
 
 .first .box-grid {

@@ -171,6 +171,12 @@
     left: 100%; }
   .ctn-container .ctn-pull-24 {
     left: -100%; }
+  .ctn-container .ctn-no-margin {
+    padding: 0; }
+
+/* Full Width Container */
+.ctn-container-full {
+  width: 100%; }
 
 /* Small Desktop Grid */
 /* ---------------------------- */

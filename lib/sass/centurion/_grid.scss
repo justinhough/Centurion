@@ -21,6 +21,11 @@
     @include grid-creator(desktop);
   }
   
+  /* Full Width Container */
+  .#{$container-class}-full {
+    width: 100%;
+  }
+  
   /* Small Desktop Grid */
   /* ---------------------------- */
   @media screen and (max-width: $desktop-width + $value) {
@@ -59,6 +64,7 @@
   @if $type == desktop {
     @include grid-generate($desktop-columns, $desktop-width, $grid-class, true);    
     @include push-pull-elements($desktop-columns, $push-elem-desktop, $pull-elem-desktop);
+    @include no-margin();
   }
   
   @if $type == tablet {
@@ -189,6 +195,13 @@
   .#{$class}-center {
     float: none !important;
     margin: 0 auto;
+  }
+}
+
+// No Margin - Strip Padding / Margin from Grid
+@mixin no-margin() {
+  .#{$prefix-class}-no-margin {
+    padding: 0;
   }
 }
 

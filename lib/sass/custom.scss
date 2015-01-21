@@ -34,6 +34,7 @@ nav {
       a {
         color: $black;
         display: block;
+        font-size: 0.9em;
         padding: 1em;
         text-decoration: none;
         &:hover,
@@ -64,10 +65,12 @@ nav {
 }
 
 footer {
-  background: $light-grey;
-  border-top: 1px solid $grey;
-  font-size: 0.8em;
+  background: $lighter-grey;
+  border-top: 1px solid $grey;  
   margin-top: 4em;
+  p {
+    font-size: 0.8em;
+  }
 }
 
 pre {
@@ -96,12 +99,11 @@ pre {
 // For Example Grid elements
 // ----------------------------
 span.box-grid {
-  background-color: #dedede;
-  border: 1px solid #efefef;
+  background-color: $light-grey;
   @include box-sizing(border-box);
   clear: both;
   display: block;
-  font-family: helevtica neue, sans-serif;
+  font-family: helevtica neue, helvetica, sans-serif;
   font-size: 0.8em;
   font-weight: 200;
   margin-top: 1em;
@@ -113,8 +115,8 @@ span.box-grid {
 
 // Show Nested Elements - Demo
 // ----------------------------
-[class^="grid-"] {
-  [class^="grid-"] {
+[class^="ctn-grid-"] {
+  [class^="ctn-grid-"] {
     &:first-of-type {
       .box-grid {
         background: $light-orange;
@@ -125,7 +127,7 @@ span.box-grid {
         background: $orange;
       }
     }
-    [class^="grid-"] {
+    [class^="ctn-grid-"] {
       &:first-child {
         .box-grid {
           background: $orange;
@@ -137,7 +139,7 @@ span.box-grid {
 
 // Push and Pull - Demo
 // ----------------------------
-[class^="grid-"] {
+[class^="ctn-grid-"] {
   &[class*="push-"] {
     .box-grid {
       background-color: $light-orange;

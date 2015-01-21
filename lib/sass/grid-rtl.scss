@@ -16,33 +16,3 @@ body {
 }
 
 @include column-grid;
-
-// Clearfix
-%clearfix {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
-
-.clearfix,
-.cf {
-  @extend %clearfix;
-}
-
-.clear {
-  clear: both;
-}
-
-// Visible and Show/Hide Classes
-.visible {
-  visibility: display;
-}
-
-.not-visible {
-  visibility: hidden;
-}

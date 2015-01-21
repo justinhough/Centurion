@@ -9,16 +9,9 @@ module.exports = function (grunt) {
         options: {
           livereload: true,
           hostname: 'localhost',
-          port: 9001,
+          port: 5316,
           base: 'build'
         }
-      }
-    },
-    
-    open: {
-      server: {
-        url: 'http://localhost:9001',
-        app: 'Google Chrome'
       }
     },
 
@@ -127,7 +120,7 @@ module.exports = function (grunt) {
   grunt.registerTask('serve', ['connect:local']);
   
   // Default Task
-  grunt.registerTask('default', ['html', 'sass:expanded', 'copy', 'serve', 'open', 'watch']);
+  grunt.registerTask('default', ['html', 'sass:expanded', 'copy', 'serve', 'watch']);
 
   // Release deploy to gh-pages
   grunt.registerTask('page-release', ['gh-pages']);

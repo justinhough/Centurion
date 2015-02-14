@@ -26,78 +26,65 @@
     -webkit-font-smoothing: antialiased;
     font-style: normal;
     font-weight: 300;
-    line-height: 1.5;
-    margin-top: 0;
+    line-height: $default-line-height;
+    @include rem(margin, $default-font-size 0);
     text-align: left;
     text-rendering: optimizeLegibility;
   }
   
   h1 {
     @extend %typography;
-    @extend strong;
-    @include rem(font-size, 32);
-    @include rem(margin, 16 0);
+    @include rem(font-size, $default-font-size + 20);
   }
   
   h2 {
     @extend %typography;
-    @extend strong;
-    @include rem(font-size, 26);
-    @include rem(margin, 16 0);
+    @include rem(font-size, $default-font-size + 16);
   }
   
   h3 {
     @extend %typography;
-    @extend strong;
-    @include rem(font-size, 22);
-    @include rem(margin, 16 0);
+    @include rem(font-size, $default-font-size + 12);
   }
   
   h4 {
     @extend %typography;
-    @extend strong;
-    @include rem(font-size, 18);
-    @include rem(margin, 16 0);
+    @include rem(font-size, $default-font-size + 6);
   }
   
   h5 {
     @extend %typography;
-    @extend strong;
-    @include rem(font-size, 16);
-    @include rem(margin, 16 0);
+    @include rem(font-size, $default-font-size + 4);
   }
   
   h6 {
     @extend %typography;
-    @extend strong;
-    @include rem(font-size, 14);
-    @include rem(margin, 16 0);
+    @include rem(font-size, $default-font-size + 2);
   }
   
   p {
     @extend %typography;
-    @include rem(font-size, 16);
-    @include rem(margin, 18 0);
+    @include rem(font-size, $default-font-size);
   }
   
   ul,
   ol {
-    @include rem(margin-left, 16);
-    @include rem(padding-left, 16);
+    @include rem(margin-left, $default-font-size);
+    @include rem(padding-left, $default-font-size);
   }
   
   li {
     @extend %typography;
-    @include rem(font-size, 16);
+    @include rem(font-size, $default-font-size);
     margin: 0;
-    @include rem(padding-left, 8);
+    @include rem(padding-left, $default-font-size - 8);
   }
   
   blockquote {
     @extend %typography;
     border-left: 5px solid #dedede;
     @include rem(margin-left, 18);
-    @include rem(padding-left, 16);
+    @include rem(padding-left, $default-font-size);
     position: relative;
     .byline {
       display: block;
@@ -112,7 +99,7 @@
     &.quote {
       border-left: none;
       margin-left: 0;
-      @include rem(padding-left, 32);
+      @include rem(padding-left, $default-font-size + 16);
       &:before,
       &:after {
         content: '"';

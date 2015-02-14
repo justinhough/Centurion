@@ -46,17 +46,24 @@ module.exports = function (grunt) {
       }
     },
 
-    watch: {    
+    watch: {
       options: {
         livereload: true,
-      },      
+      },
+      configFiles: {
+        files: [ 'Gruntfile.js', 'package.js' ],
+        tasks: ['html', 'sass:expanded', 'copy'],
+        options: {
+          reload: true
+        }
+      },
       html: {
-        files: ['source/layouts/**/*.html'],
-        tasks: ['copy', 'html', 'watch:sass', 'watch:scripts']
+        files: ['*.html', '_partials/**/*.html'],
+        tasks: ['html']
       },
       sass: {
         files: ['lib/sass/**/*.scss'],
-        tasks: ['sass:expanded', 'html', 'watch:scripts', 'copy']
+        tasks: ['sass:expanded', 'html', 'copy']
       },
       scripts: {
         files: ['lib/**/*.js'],
@@ -66,7 +73,7 @@ module.exports = function (grunt) {
         },
       },
     },
-    
+
     copy: {
       dist: {
         files: [
@@ -76,52 +83,43 @@ module.exports = function (grunt) {
       }
     },
     
-    processhtml: {
+    includereplace: {
       dist: {
         options: {
-          process: true,
-          data: {
-            site_title: 'Centurion Framework',
+          globals: {
+            projectName: 'Centurion Framework',
+            projectDescription: 'A CSS Web Framework',
+            meta_keyword: '',
+            meta_description: '',
             version: '3.5.2',
-            page_title: 'Page Title',
-            meta_description: '_______',
-            meta_keywords: '_______',
-            message: 'A web framework'
           },
-          customBlockTypes: ['source/change-text.js'],
-          recursive: true
+          prefix: '<!--##',
+          suffix: '-->',
+          includesDir: '_partials/'
         },
-        files: {
-          'build/index.html': ['source/layouts/index.html'],
-          'build/components.html': ['source/layouts/components.html'],
-          'build/features.html': ['source/layouts/features.html'],
-          'build/grid.html': ['source/layouts/grid.html']
-        }
-      },
+        src: '*.html',
+        dest: 'build/'
+      }
     },
-    
-    // Deploy to gh-pages
+
     'gh-pages': {
       options: {
         base: 'build',
       },
       src: ['**']
     },
-    
-    
-  });
-  
-  
-  require('load-grunt-tasks')(grunt);
-  // grunt.file.setBase('../');
 
-  grunt.registerTask('html', ['processhtml:dist']);
-  grunt.registerTask('serve', ['connect:local']);
+  });
+
+  require('load-grunt-tasks')(grunt);
   
+  grunt.registerTask('html', ['includereplace:dist']);
+  grunt.registerTask('serve', ['connect:local']);
+
   // Default Task
   grunt.registerTask('default', ['html', 'sass:expanded', 'copy', 'serve', 'watch']);
 
-  // Release deploy to gh-pages
+  // Release updates to Github Pages
   grunt.registerTask('page-release', ['gh-pages']);
 
 };

@@ -168,94 +168,72 @@
 // @include element-spacing(top-bottom, margin, 10px)
 @mixin element-spacing($direction, $spacing, $value: null, $value2: $value) {
   @if $direction == vertical {
-    #{$spacing}: $value 0;
+    @include rem(#{$spacing}, $value 0);
   }
   @else if $direction == horizontal {
-    #{$spacing}: 0 $value;
+    @include rem(#{$spacing}, 0 $value);
   }
   @else if $direction == top {
-    #{$spacing}-top: $value;
+    @include rem(#{$spacing}-top, $value);
   }
   @else if $direction == right {
-    #{$spacing}-right: $value;
+    @include rem(#{$spacing}-right, $value);
   }
   @else if $direction == bottom {
-    #{$spacing}-bottom: $value;
+    @include rem(#{$spacing}-bottom, $value);
   }
   @else if $direction == left {
-    #{$spacing}-left: $value;
+    @include rem(#{$spacing}-left, $value);
   }
   @else if $direction == all {
-    #{$spacing}: $value;
+    @include rem(#{$spacing}, $value);
   }
   @else if $direction == two {
-    #{$spacing}: $value $value2;
+    @include rem(#{$spacing}, $value $value2);
   }
   @else if $direction == auto {
-    #{$spacing}: 0 auto;
+    @include rem(#{$spacing}, 0 auto);
   }
   @else if $direction == none {
-    #{$spacing}: 0;
+    @include rem(#{$spacing}, 0);
   }
 }
 
 // Show and Hide Elements
 // ----------------------------
-// @include hide-view(option)
-@mixin hide-view($view) {
+// @include show-hide-view(option)
+@mixin show-hide-view($view) {
   @if $view == desktop {
-    .hide-desktop {
-      display: none !important;
-    }
+    .show-desktop,
     .hide-tablet,
     .hide-mobile {
       display: block !important;
     }
-  }
-  @if $view == tablet {
-    .hide-tablet {
-      display: none !important;
-    }
     .hide-desktop,
-    .hide-mobile {
-      display: block !important;
-    }
-  }
-  @if $view == mobile {
-    .hide-mobile {
-      display: none !important;
-    }
-    .hide-desktop,
-    .hide-tablet {
-      display: block !important;
-    }
-  }
-}
-
-// @include show-view(option)
-@mixin show-view($view) {
-  @if $view == desktop {
-    .show-desktop {
-      display: block !important;
-    }
     .show-tablet,
     .show-mobile {
       display: none !important;
     }
   }
   @if $view == tablet {
-    .show-tablet {
+    .show-tablet,
+    .hide-desktop,
+    .hide-mobile {
       display: block !important;
     }
+    .hide-tablet,
     .show-desktop,
     .show-mobile {
       display: none !important;
     }
   }
   @if $view == mobile {
-    .show-mobile {
+    .show-mobile,
+    .hide-desktop,
+    .hide-tablet {
       display: block !important;
     }
+    .hide-mobile,
     .show-desktop,
     .show-tablet {
       display: none !important;

@@ -1,23 +1,36 @@
-// Fonts
-$font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$default-font-size: 16;
-$default-line-height: 1;
+// Browser Prefixes
+$prefixes: webkit, moz, o;
 
+// Default Font, Font Size, and Line Height
+$font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$default-font-size: 15;
+$margin: $default-font-size; 
+$padding: $default-font-size;
+$default-line-height: 1.5;
+
+// Support IE7 or Not?
 $ie7-support: false;
 
-// Centurion - Grid Config
+// Grid Config & Media Query Widths
 $desktop-width: 1100;
 $tablet-width: 961;
 $mobile-width: 481;
 
-$inner-width: 98;
-$gutter: 20;
-$value: px;
-
+// Grid Columns
 $desktop-columns: 24;
 $tablet-columns: 12;
 $mobile-columns: 6;
 
+// Inner Width for Grid
+$inner-width: 98;
+
+// Grid Gutter Size (px)
+$gutter: 10;
+
+// Default Value for Browser Fallback
+$value: px;
+
+// Grid, Push / Pull, and Post Classes (includes Tablet and Mobile Grids)
 $prefix-class: "ctn";
 $container-class: $prefix-class+"-container";
 $grid-class: $prefix-class+"-grid";
@@ -32,7 +45,7 @@ $post-class: "post";
 // Centurion - Language Support
 $lang-front: left;
 
-// Centurion Layout
+// Layout Classes for (Top/Bottom) Margin and Padding for Elements
 $margin-top: "helmet";
 $margin-bottom: "sandal";
 $margin-both: "armor";
@@ -40,6 +53,3 @@ $margin-both: "armor";
 $padding-top: "pad-helmet";
 $padding-bottom: "pad-sandal";
 $padding-both: "pad-armor";
-
-// Prefixes
-$prefixes: webkit, moz, o;

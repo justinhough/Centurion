@@ -8,9 +8,9 @@
   color: $white !important;
   @extend %cursor;
   display: inline-block;
-  @include rem(font-size, 16);
+  @include rem(font-size, $default-font-size);
   font-weight: bold;
-  @include element-spacing(vertical, margin, 1em);
+  @include element-spacing(vertical, margin, $default-font-size);
   outline: 0;
   @include element-spacing(two, padding, 0.667em, 1.333em);
   text-decoration: none;

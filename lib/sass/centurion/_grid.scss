@@ -209,6 +209,5 @@
 
 // Show & Hide
 @mixin show-hide($value) {
-  @include hide-view($value);
-  @include show-view($value);
+  @include show-hide-view($value);
 }

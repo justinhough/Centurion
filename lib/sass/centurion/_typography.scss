@@ -113,7 +113,7 @@
       }
       &:after {
         bottom: -20px;
-        right: -20px;
+        right: 0;
       }
     }
   }
@@ -133,7 +133,7 @@
   
   small,
   .text-small {
-    font-size: 80%;
+    font-size: 75%;
   }
   
   .text-muted {

@@ -11,6 +11,26 @@ $lang-front: left;
 
 // CUSTOM FOR PREVIEW
 // ----------------------------
+code, pre {
+  @include rem(font-size, 14);
+}
+.code-inline {
+  top: -12px;
+  position: relative;
+}
+
+
+hr {
+  background: $grey;
+  background-image: -webkit-linear-gradient(left, $lighter-grey, $grey, $lighter-grey);
+  background-image: -moz-linear-gradient(left, $lighter-grey, $grey, $lighter-grey);
+  background-image: -ms-linear-gradient(left, $lighter-grey, $grey, $lighter-grey);
+  background-image: -o-linear-gradient(left, $lighter-grey, $grey, $lighter-grey);
+  border: 0;
+  height: 1px;
+  @include rem(margin, 48 0 16 0);
+}
+
 a {
   color: $orange;
   &:hover {
@@ -20,125 +40,91 @@ a {
 
 header {
   background: $light-grey;
+  border-bottom: 4px solid $orange;
 }
 
 nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    li {
-      display: inline-block;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      a {
-        color: $black;
-        display: block;
-        font-size: 0.9em;
-        padding: 1em;
-        text-decoration: none;
-        &:hover,
-        &.current,
-        &.nav-current {
-          background: $orange;
-          color: $white;
-        }
-      }
+  a {
+    color: $black;
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: 100;
+    padding: 1em;
+    text-decoration: none;
+    &:hover,
+    &.nav-current {
+      background: $orange;
+      color: $white;
     }
   }
 }
 
-#banner {
-  @extend %clearfix;
-  background: $orange;
-  border-bottom: 1px solid $orange;
-  h1 {
-    color: $white;
-  }
-}
-
+/*
 .section-break {
   @extend %clearfix;
   border-bottom: 3px solid #dddddd;
   margin: 2em 0;
   width: 100%;
 }
+*/
 
 footer {
   background: $lighter-grey;
-  border-top: 1px solid $grey;  
+  border-top: 1px solid $grey;
   margin-top: 4em;
   p {
     font-size: 0.8em;
   }
 }
 
-pre {
-  background: #444444;
-  border: 1px solid #444444;
-  color: white;
-  font-size: 0.8em;
-  line-height: 1;
-  padding: 0.8em 1em;
-}
-
-.lfloat {
-  float: left;
-}
-
-.rfloat {
-  float: right;
-}
-
-.frame {
-  border: 1px solid $light-grey;
-  margin: 0 1.2em 1.2em 0;
-  padding: 0.5em;
-}
 
 // For Example Grid elements
 // ----------------------------
+.calculate {
+  @include rem(margin-bottom, 32);
+}
 span.box-grid {
-  background-color: $light-grey;
+  background-color: $lighter-grey;
   @include box-sizing(border-box);
-  clear: both;
   display: block;
-  font-family: helevtica neue, helvetica, sans-serif;
-  font-size: 0.8em;
-  font-weight: 200;
-  margin-top: 1em;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  @include rem(font-size, 12);
+  font-weight: 100;
+  @include rem(margin-top, 10);
+  @include rem(padding, 8 0);
   text-align: center;
   width: 100%;
 }
 
-// Show Nested Elements - Demo
+
+// Grid Demo
 // ----------------------------
+// Show Nested Elements
 [class^="ctn-grid-"] {
   [class^="ctn-grid-"] {
+    .first,
     &:first-of-type {
       .box-grid {
         background: $light-orange;
       }
     }
+    .last,
     &:last-of-type {
       .box-grid {
         background: $orange;
+        @include rem('margin-bottom', 8);
       }
     }
     [class^="ctn-grid-"] {
       &:first-child {
         .box-grid {
           background: $orange;
+          @include rem('margin-bottom', 8);
         }
       }
     }
   }
 }
-
-// Push and Pull - Demo
-// ----------------------------
+// Push and Pull
 [class^="ctn-grid-"] {
   &[class*="push-"] {
     .box-grid {
@@ -149,20 +135,6 @@ span.box-grid {
     .box-grid {
       background-color: $orange;
     }
-  }
-}
-
-// IE Fallback - Demo
-// ----------------------------
-.first {
-  .box-grid {
-    background: $light-orange;
-  }
-}
-
-.last {
-  .box-grid {
-    background: $orange;
   }
 }
 

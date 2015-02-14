@@ -47,8 +47,8 @@
     display: block;
     background-color: #ededed;
     border-left: 5px solid #cccccc;
-    @include rem(margin, 16 0);
-    @include rem(padding, 16);
+    @include rem(margin, $default-font-size 0);
+    @include rem(padding, $default-font-size);
     h1, h2, h3 {
       color: #777777;
       @include rem(margin-top, 0);
@@ -108,8 +108,8 @@
     display: none;
     background: white;
     border-left: 1px solid #dddddd;
-    @include rem(margin-bottom, 16);
-    @include rem(padding, 0 16);
+    @include rem(margin-bottom, $default-font-size);
+    @include rem(padding, 0 $default-font-size);
     &.expanded {
       display: block;
     }

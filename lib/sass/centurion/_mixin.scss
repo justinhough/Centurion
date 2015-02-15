@@ -13,19 +13,18 @@
   $total: length($values);
   $px-value: "";
   $rem-value: "";
+  
   @for $i from 1 through $total {
     $value: remove-unit(nth($values, $i));
+    // PX value
     $px-value: #{$px-value + $value}px;
-    @if $i < $total {
-      $px-value: #{$px-value + " "};
-    }
-  }
-  @for $i from 1 through $total {
-    //$font-size: remove-unit(nth($default-font-size))
-    $value: remove-unit(nth($values, $i));
+    // REM value
     $rem-value: #{$rem-value + $value / $default-font-size}rem;
     @if $i < $total {
+      // Set PX
       $rem-value: #{$rem-value + " "};
+      // Set REM
+      $px-value: #{$px-value + " "};
     }
   }
   #{$property}: $px-value;

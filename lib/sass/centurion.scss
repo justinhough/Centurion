@@ -12,7 +12,7 @@ $lang-front: left;
 
 body {
   font-size: 100%;
-  line-height: $default-line-height;
+  line-height: 1;
 }
 
 @include normalize;

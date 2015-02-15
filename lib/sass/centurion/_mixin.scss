@@ -156,29 +156,20 @@
   @else if $direction == horizontal {
     @include rem(#{$spacing}, 0 $value);
   }
-  @else if $direction == top {
-    @include rem(#{$spacing}-top, $value);
-  }
-  @else if $direction == right {
-    @include rem(#{$spacing}-right, $value);
-  }
-  @else if $direction == bottom {
-    @include rem(#{$spacing}-bottom, $value);
-  }
-  @else if $direction == left {
-    @include rem(#{$spacing}-left, $value);
-  }
   @else if $direction == all {
     @include rem(#{$spacing}, $value);
   }
   @else if $direction == two {
     @include rem(#{$spacing}, $value $value2);
   }
-  @else if $direction == auto {
+  @else if $direction == center {
     @include rem(#{$spacing}, 0 auto);
   }
   @else if $direction == none {
     @include rem(#{$spacing}, 0);
+  }
+  @else {
+    @include rem(#{$spacing}-#{$direction}, $value);
   }
 }
 
@@ -235,11 +226,9 @@
      @include float-right;
   }
 }
-
 @mixin float-left() {
   float: left;
 }
-
 @mixin float-right() {
   float: right;
 }

@@ -1,6 +1,8 @@
 {
   "name": "centurion-framework",
-  "version": "3.5.2",
+  "projectName": "Centurion Framework",
+  "version": "3.5.3",
+  "simpleDescription": "A Web Framework",
   "description": "Centurion is a web-based framework for rapid prototyping and provides a core for building larger web projects",
   "homepage": "http://www.centurionframework.com",
   "author": {
@@ -18,7 +20,10 @@
   },
   "keywords": [
     "centurion",
-    "framework"
+    "framework",
+    "web",
+    "responsive",
+    "awesome"
   ],
   "license": "GPL",
   "bugs": {
@@ -35,6 +40,7 @@
     "grunt-gh-pages": "^0.9.1",
     "grunt-include-replace": "^3.0.0",
     "grunt-processhtml": "^0.3.7",
+    "grunt-prompt": "^1.3.0",
     "grunt-sass": "^0.17.0",
     "load-grunt-tasks": "^3.1.0"
   }

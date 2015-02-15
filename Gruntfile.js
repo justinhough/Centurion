@@ -1,8 +1,8 @@
 module.exports = function (grunt) {
-
-  pkg: grunt.file.readJSON('package.json'),
- 
+  
   grunt.initConfig({
+  
+    pkg: grunt.file.readJSON('./package.json'),
     
     connect: {
       local: {
@@ -87,11 +87,13 @@ module.exports = function (grunt) {
       dist: {
         options: {
           globals: {
-            projectName: 'Centurion Framework',
-            projectDescription: 'A CSS Web Framework',
-            meta_keyword: '',
-            meta_description: '',
-            version: '3.5.2',
+            projectName: '<%= pkg.projectName %>',
+            projectDescription: '<%= pkg.simpleDescription %>',
+            meta_keyword: '<%= pkg.keywords.toString() %>',
+            meta_description: '<%= pkg.description %>',
+            version: '<%= pkg.version %>',
+            author_name: '<%= pkg.author.name %>',
+            author_url: '<%= pkg.author.url %>',
           },
           prefix: '<!--##',
           suffix: '-->',
@@ -108,7 +110,7 @@ module.exports = function (grunt) {
       },
       src: ['**']
     },
-
+    
   });
 
   require('load-grunt-tasks')(grunt);

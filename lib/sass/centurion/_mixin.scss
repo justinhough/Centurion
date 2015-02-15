@@ -112,10 +112,9 @@
 // Border Radius Mixins
 // ----------------------------
 @mixin border-radius($radius, $radius2: $radius) {
-  -webkit-border-radius: $radius $radius2;
-  -moz-border-radius: $radius $radius2;
-  -ms-border-radius: $radius $radius2;
-  -o-border-radius: $radius $radius2;
+  @each $prefix in $prefixes {
+    -#{$prefix}-border-radius: $radius $radius2;
+  }
   border-radius: $radius $radius2;
 }
 
@@ -146,25 +145,10 @@
   }
 }
 
-@mixin border-top-left-radius($radius) {
-  border-radius: $radius 0 0 0;
-}
-
-@mixin border-top-right-radius($radius) {
-  border-radius: 0 $radius 0 0;
-}
-
-@mixin border-bottom-left-radius($radius) {
-  border-radius: 0 0 $radius 0;
-}
-
-@mixin border-bottom-right-radius($radius) {
-  border-radius: 0 0 0 $radius;
-}
 
 // Margin or Padding
 // ----------------------------
-// @include element-spacing(top-bottom, margin, 10px)
+// @include element-spacing(vertical, margin, 10px)
 @mixin element-spacing($direction, $spacing, $value: null, $value2: $value) {
   @if $direction == vertical {
     @include rem(#{$spacing}, $value 0);

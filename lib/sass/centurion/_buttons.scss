@@ -7,12 +7,13 @@
   @include box-shadow(0, 1px, 2px);
   color: $white !important;
   @extend %cursor;
+  @extend %typography;
   display: inline-block;
   @include rem(font-size, $default-font-size);
   font-weight: bold;
   @include element-spacing(vertical, margin, $default-font-size);
   outline: 0;
-  @include element-spacing(two, padding, 0.667em, 1.333em);
+  @include element-spacing(two, padding, 8, 10);
   text-decoration: none;
   vertical-align: middle;
   zoom: 1;
@@ -51,18 +52,18 @@
   
   .small-btn {
     @include rem(font-size, 12);
-    @include element-spacing(two, padding, 0.533em, 1.2em);
+    @include element-spacing(two, padding, 8, 18);
     @extend .btn;
   }
   
   .large-btn {
     @include rem(font-size, 22);
-    @include element-spacing(two, padding, 0.333em, 1.6em);
+    @include element-spacing(two, padding, 12, 20);
     @extend .btn;
   }
   
   .full-btn {
-    @include element-spacing(vertical, padding, 0.667em);
+    @include element-spacing(vertical, padding, 10);
     text-align: center;
     width: 100%;
     @extend .btn;

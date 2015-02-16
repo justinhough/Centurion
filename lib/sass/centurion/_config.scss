@@ -12,14 +12,14 @@ $default-line-height: 1.5;
 $ie7-support: false;
 
 // Grid Config & Media Query Widths
-$desktop-width: 1100;
-$tablet-width: 961;
-$mobile-width: 481;
+$d-width: 1100;
+$t-width: 961;
+$m-width: 481;
 
 // Grid Columns
-$desktop-columns: 24;
-$tablet-columns: 12;
-$mobile-columns: 6;
+$d-columns: 24;
+$t-columns: 12;
+$m-columns: 6;
 
 // Inner Width for Grid
 $inner-width: 98;
@@ -33,14 +33,22 @@ $value: px;
 // Grid, Push / Pull, and Post Classes (includes Tablet and Mobile Grids)
 $prefix-class: "ctn";
 $container-class: $prefix-class+"-container";
-$grid-class: $prefix-class+"-grid";
-$tablet-grid-class: $prefix-class+"-tablet";
-$mobile-grid-class: $prefix-class+"-mobile";
 
-$push-class: "push";
-$pull-class: "pull";
-$pre-class: "pre";
-$post-class: "post";
+$grid-class: $prefix-class+"-grid";
+$push-class: $prefix-class+"-push";
+$pull-class: $prefix-class+"-pull";
+//$pre-class: $prefix-class+"-pre";
+//$post-class: $prefix-class+"-post";
+
+$t-grid-class: $prefix-class+"-tablet";
+$t-push-class: $prefix-class+"-t-push";
+$t-pull-class: $prefix-class+"-t-pull";
+
+
+$m-grid-class: $prefix-class+"-mobile";
+$m-push-class: $prefix-class+"-m-push";
+$m-pull-class: $prefix-class+"-m-pull";
+
 
 // Centurion - Language Support
 $lang-front: left;

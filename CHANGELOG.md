@@ -1,3 +1,16 @@
+## 3.5.3
+- Grid / Push & Pull fixes for responsive
+- Refactor of Sass `_grid.scss` file to fix craziness
+- Removed IE7 support
+
+## 3.5.2
+- `ctn-` added to grid and other elements to prevent collisions with other libraries.
+- Added features for full-width container and no margin grid
+- CSS compile streamlined with better `@extend` usage
+- Grunt:
+	- localhost preview port changed `5316`
+	- watch functions optimized
+
 ## v3.5.1
 - bugfix for semantic grid and %clearfix
 

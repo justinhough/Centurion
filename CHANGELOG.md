@@ -2,6 +2,7 @@
 - Grid / Push & Pull fixes for responsive
 - Refactor of Sass `_grid.scss` file to fix craziness
 - Removed IE7 support
+- Improved semantic grid `@include ctn-grid`
 
 ## 3.5.2
 - `ctn-` added to grid and other elements to prevent collisions with other libraries.
@@ -30,6 +31,9 @@
 ## v3.3.0
 - Stable release of Centurion with Sass support.
 - Semantic grid generator and IE7 grid support
+
+## 3.2.0
+- Lots of fun and cool stuff was added (mostly wierd and unnecessary).
 
 ## v3.0.0
 - Centurion public release.

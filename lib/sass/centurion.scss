@@ -1,12 +1,3 @@
-/* --------------------------------------------------------
- *
- *  Centurion Framework v 3.5.3
- *  Created by: Justin Hough (http://justinhough.com/)
- *
- *  Documentation: http://centurionframework.com/
- *  Licensed under GPL and MIT.
- *
- * -------------------------------------------------------- */
 @import "centurion-framework";
 $lang-front: left;
 
@@ -37,9 +28,8 @@ body {
 .visible {
   visibility: display;
 }
-  
 .not-visible {
-  visibility: hidden /* Hides an element from view but displaces content */
+  visibility: hidden;
 }
 
 

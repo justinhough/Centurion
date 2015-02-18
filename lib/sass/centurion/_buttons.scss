@@ -1,27 +1,26 @@
 // Button Mixins
 // ----------------------------
 @mixin default-button() {
-  background: #dedede;
+  background: $lighter-grey;
   border: none;
-  @include border-radius(5px, 5px);
+  color: $black;
   @include box-shadow(0, 1px, 2px);
-  color: $white !important;
   @extend %cursor;
   @extend %typography;
   display: inline-block;
   @include rem(font-size, $default-font-size);
-  font-weight: bold;
+  font-weight: normal;
   @include element-spacing(vertical, margin, $default-font-size);
   outline: 0;
-  @include element-spacing(two, padding, 8, 10);
+  @include element-spacing(two, padding, 8, 20);
   text-decoration: none;
   vertical-align: middle;
   zoom: 1;
 }
 
 @mixin default-button-hover() {
-  background-color: lightgrey;
-  color: $white !important;
+  background-color: $light-grey;
+  color: $black;
 }
 
 // Button Create (Flat)
@@ -30,10 +29,10 @@
   .#{$class} {
     @extend .btn;
     background-color: $color1;
-    color: $text-color !important;
+    color: $text-color;
     &:hover {
       background-color: $color2;
-      color: $text-color !important;
+      color: $text-color;
     }
   }
 }
@@ -42,7 +41,6 @@
 // ----------------------------
 @mixin buttons() {
   .btn {
-    color: $grey;
     @include default-button;
     @extend %noTextDecoration;
     &:hover {
@@ -52,13 +50,13 @@
   
   .small-btn {
     @include rem(font-size, 12);
-    @include element-spacing(two, padding, 8, 18);
+    @include element-spacing(two, padding, 6, 16);
     @extend .btn;
   }
   
   .large-btn {
-    @include rem(font-size, 22);
-    @include element-spacing(two, padding, 12, 20);
+    @include rem(font-size, 18);
+    @include element-spacing(two, padding, 12, 28);
     @extend .btn;
   }
   
@@ -77,7 +75,11 @@
   
   @include create-button(red-btn, $red, $dark-red);
   
+  @include create-button(purple-btn, $purple, $dark-purple);
+  
   @include create-button(orange-btn, $orange, $dark-orange);
   
   @include create-button(green-btn, $green, $dark-green);
+  
+  @include create-button(dark-grey-btn, $dark-grey, $black);
 }

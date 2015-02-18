@@ -1,32 +1,31 @@
 // Semantic Grid
 // ----------------------------
 // Numbers are in pixel's
-// @include semantic-grid(container, 1100)
-// @include semantic-grid(grid, 25)
+// @include ctn-container(1100);
+// @include ctn-grid(25);
+// @include ctn-push(25);
+// @include ctn-pull(25);
 
-@mixin semantic-grid($type, $width: $content-width) {
+@mixin ctn-container ($width: $content-width) {
+  @extend %clearfix;
+  margin: 0 auto;
+  padding: 0;
+  width: $width + $value;
+}
 
-  %semantic-container {
-    /* Containers */
-    @extend %clearfix;
-    margin: 0 auto;
-    padding: 0;
-  }
-  
-  %semantic-grid {
-    /* Grids */
-    @include box-sizing(border-box);
-    float: $lang-front;
-    padding: 0 $gutter / 2 + $value;
-    position: relative;
-  }
+@mixin ctn-grid ($width) {
+  @extend %clearfix;
+  @include box-sizing(border-box);
+  float: $lang-front;
+  padding: 0 $gutter / 2 + $value;
+  position: relative;
+  width: $width * 1%;
+}
 
-  @if $type == "container" {
-    @extend %semantic-container;
-    @include rem(width, $width);
-  }
-  @if $type == "grid" {
-    @extend %semantic-grid;
-    @include rem(width, $width);
-  }
+@mixin ctn-push ($width) {
+  #{$lang-front}: $width * 1%;
+}
+
+@mixin ctn-pull ($width) {
+  #{$lang-front}: $width * -1%;
 }

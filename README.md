@@ -83,9 +83,7 @@ If you find a bug or have a feature request you would like added to Centurion. P
 
 ## Contributing
 
-Interested in contributing to Centurion? Simply open an issue on Github labeled `contribute` and what you tell us what you want to contribute.
-
-
+If you're interested in contributing to Centurion simply open an issue labeled `contribute` and tell us what you would like to contribute. Alternatively, you can fork Centurion and submit a pull request explaining what you are contributing.
 
 ## Community
 

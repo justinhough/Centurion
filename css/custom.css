@@ -1,10 +1,14 @@
-/* --------------------------------------------------------
- *
- *  Custom Preview
- *
+/* -------------------------------------------------------- 
+ * 
+ *  Centurion Framework v3.5.3 
+ *  Created by: Justin Hough (http://www.justinhough.com/) 
+ * 
+ *  Documentation: http://www.centurionframework.com 
+ *  Licensed under GPL and MIT. 
+ * 
  * -------------------------------------------------------- */
 .color-box, .color-swatch, .color-code, .color-name {
-  border: 1px solid #dddddd;
+  border: 1px solid #EDEDED;
   display: block; }
 
 .color-box {
@@ -22,7 +26,7 @@
   .color-swatch.grey {
     background-color: #999999; }
   .color-swatch.light-grey {
-    background-color: #cccccc; }
+    background-color: #CCCCCC; }
   .color-swatch.dark-grey {
     background-color: #555555; }
   .color-swatch.red {
@@ -30,31 +34,31 @@
   .color-swatch.light-red {
     background-color: #ebbfb4; }
   .color-swatch.dark-red {
-    background-color: #7f3421; }
+    background-color: #a8452b; }
   .color-swatch.blue {
-    background-color: #272d7f; }
+    background-color: #1F468D; }
   .color-swatch.light-blue {
-    background-color: #6d75d2; }
+    background-color: #6791de; }
   .color-swatch.dark-blue {
-    background-color: #0f1231; }
+    background-color: #163163; }
   .color-swatch.purple {
     background-color: #7f4d7b; }
   .color-swatch.light-purple {
-    background-color: #c5a0c3; }
+    background-color: #c5a0c2; }
   .color-swatch.dark-purple {
-    background-color: #40273e; }
+    background-color: #5f3a5c; }
   .color-swatch.green {
     background-color: #277f35; }
   .color-swatch.light-green {
-    background-color: #6dd27c; }
+    background-color: #6dd27d; }
   .color-swatch.dark-green {
-    background-color: #0f3114; }
+    background-color: #1b5825; }
   .color-swatch.orange {
     background-color: #fe9300; }
   .color-swatch.light-orange {
-    background-color: #ffd298; }
+    background-color: #ffd498; }
   .color-swatch.dark-orange {
-    background-color: #cb7300; }
+    background-color: #cb7500; }
 
 .color-code {
   border: none;
@@ -77,110 +81,102 @@
   padding: 5px 3px;
   text-align: center; }
 
+code, pre {
+  font-size: 14px;
+  font-size: 0.93333rem; }
+
+.code-inline {
+  top: -12px;
+  position: relative; }
+
+hr {
+  background: #999999;
+  background-image: -webkit-linear-gradient(left, #EDEDED, #999999, #EDEDED);
+  background-image: -moz-linear-gradient(left, #EDEDED, #999999, #EDEDED);
+  background-image: -ms-linear-gradient(left, #EDEDED, #999999, #EDEDED);
+  background-image: -o-linear-gradient(left, #EDEDED, #999999, #EDEDED);
+  border: 0;
+  height: 1px;
+  margin: 48px 0px 16px 0px;
+  margin: 3.2rem 0rem 1.06667rem 0rem; }
+
 a {
   color: #fe9300; }
   a:hover {
     color: #000; }
 
 header {
-  background: #cccccc; }
+  background: #CCCCCC;
+  border-bottom: 4px solid #fe9300; }
 
-nav ul {
-  margin: 0;
-  padding: 0; }
-  nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-    nav ul li a {
-      color: #000;
-      display: block;
-      font-size: 0.9em;
-      padding: 1em;
-      text-decoration: none; }
-      nav ul li a:hover, nav ul li a.current, nav ul li a.nav-current {
-        background: #fe9300;
-        color: #FFF; }
-
-#banner {
-  background: #fe9300;
-  border-bottom: 1px solid #fe9300; }
-  #banner h1 {
+nav a {
+  color: #000;
+  display: inline-block;
+  font-size: 0.9em;
+  font-weight: 100;
+  padding: 1em;
+  text-decoration: none; }
+  nav a:hover, nav a.nav-current {
+    background: #fe9300;
     color: #FFF; }
 
+/*
 .section-break {
+  @extend %clearfix;
   border-bottom: 3px solid #dddddd;
   margin: 2em 0;
-  width: 100%; }
-
+  width: 100%;
+}
+*/
 footer {
-  background: #dddddd;
+  background: #EDEDED;
   border-top: 1px solid #999999;
   margin-top: 4em; }
   footer p {
     font-size: 0.8em; }
 
-pre {
-  background: #444444;
-  border: 1px solid #444444;
-  color: white;
-  font-size: 0.8em;
-  line-height: 1;
-  padding: 0.8em 1em; }
-
-.lfloat {
-  float: left; }
-
-.rfloat {
-  float: right; }
-
-.frame {
-  border: 1px solid #cccccc;
-  margin: 0 1.2em 1.2em 0;
-  padding: 0.5em; }
+.calculate {
+  margin-bottom: 32px;
+  margin-bottom: 2.13333rem; }
 
 span.box-grid {
-  background-color: #cccccc;
+  background-color: #EDEDED;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  clear: both;
   display: block;
-  font-family: helevtica neue, helvetica, sans-serif;
-  font-size: 0.8em;
-  font-weight: 200;
-  margin-top: 1em;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  font-size: 12px;
+  font-size: 0.8rem;
+  font-weight: 100;
+  margin-top: 10px;
+  margin-top: 0.66667rem;
+  padding: 8px 0px;
+  padding: 0.53333rem 0rem;
   text-align: center;
   width: 100%; }
 
-[class^="ctn-grid-"] [class^="ctn-grid-"]:first-of-type .box-grid {
-  background: #ffd298; }
-[class^="ctn-grid-"] [class^="ctn-grid-"]:last-of-type .box-grid {
-  background: #fe9300; }
+[class^="ctn-grid-"] [class^="ctn-grid-"] .first .box-grid, [class^="ctn-grid-"] [class^="ctn-grid-"]:first-of-type .box-grid {
+  background: #ffd498; }
+[class^="ctn-grid-"] [class^="ctn-grid-"] .last .box-grid, [class^="ctn-grid-"] [class^="ctn-grid-"]:last-of-type .box-grid {
+  background: #fe9300;
+  margin-bottom: 8px;
+  margin-bottom: 0.53333rem; }
 [class^="ctn-grid-"] [class^="ctn-grid-"] [class^="ctn-grid-"]:first-child .box-grid {
-  background: #fe9300; }
+  background: #fe9300;
+  margin-bottom: 8px;
+  margin-bottom: 0.53333rem; }
 
 [class^="ctn-grid-"][class*="push-"] .box-grid {
-  background-color: #ffd298; }
+  background-color: #ffd498; }
 [class^="ctn-grid-"][class*="pull-"] .box-grid {
   background-color: #fe9300; }
 
-.first .box-grid {
-  background: #ffd298; }
-
-.last .box-grid {
-  background: #fe9300; }
-
-#banner:before, .section-break:before, .clearfix:before, .cf:before, #banner:after, .section-break:after, .clearfix:after, .cf:after {
+.clearfix:before, .cf:before, .clearfix:after, .cf:after {
   content: " ";
   display: table; }
-#banner:after, .section-break:after, .clearfix:after, .cf:after {
+.clearfix:after, .cf:after {
   clear: both; }
-
 
 .clear {
   clear: both; }

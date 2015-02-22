@@ -77,6 +77,20 @@
     }
   }
   
+  
+  // Responsive Table
+  @include media-query(phones) {
+    .#{$prefix-class}-table-wrapper {
+      position: relative;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      .#{$prefix-class}-responsive-table {
+        overflow: scroll;
+        overflow-y: hidden;
+      }
+    }
+  }
+
   @include table-color-generator("black", $black, $white, $dark-grey);
   
   @include table-color-generator("red", $red, $white, $dark-red);

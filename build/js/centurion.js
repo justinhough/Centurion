@@ -14,7 +14,6 @@ function centurionCurrent(elem) {
     }
   });
 }
-
 centurionCurrent('#main');
 
 //@todo: rewrite all functions into one centurion class based function.
@@ -45,5 +44,8 @@ function centurionTables() {
 		//$('tbody tr:odd', this).addClass("odd");
 		$('tbody tr:even', this).addClass("even");
 	});
+	
+	//@TODO: rewrite into a more useful and streamlined function without jQuery
+	$('table').wrap('<div class="ctn-table-wrapper"><div class="ctn-responsive-table"></div></div>');	
 }
 centurionTables();

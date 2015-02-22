@@ -1141,6 +1141,16 @@ tbody tr.odd {
 tbody tr.even {
   background-color: #efefef; }
 
+@media only screen and (max-width: 481px) {
+  .ctn-table-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+    overflow: hidden; }
+    .ctn-table-wrapper .ctn-responsive-table {
+      overflow: scroll;
+      overflow-y: hidden; }
+ }
+
 .black-table thead th, .black-table thead td, .black-table tfoot th, .black-table tfoot td {
   background-color: #000; }
 .black-table tbody.odd {

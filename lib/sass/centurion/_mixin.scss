@@ -68,17 +68,17 @@
 // @include media-query(desktops)
 @mixin media-query($media) {
   @if $media == phones {
-    @media only screen and (max-width: $breakpoint-small) {
+    @media only screen and (max-width: $m-width + px) {
       @content;
     }
   }
   @else if $media == tablets {
-    @media only screen and (min-width: $breakpoint-small + 1) and (max-width: $breakpoint-medium) {
+    @media only screen and (min-width: ($m-width + 1) + px) and (max-width: $t-width + px) {
       @content;
     }
   }
   @else if $media == desktops {
-    @media only screen and (min-width: $breakpoint-large) {
+    @media only screen and (min-width: $d-width + px) {
       @content;
     }
   }

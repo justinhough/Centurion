@@ -1,10 +1,19 @@
-// Button Mixins
+// Buttons
+// ----------------------------
+
+// Buttons are an important way to call out a user action and are highly customizable within Centurion. The first step is to include the default button specifications with `@include buttons` and you can either start creating custom versions for a specific design or add the default custom buttons included by including: `@include custom-buttons`.
+
+// Creating custom buttons allows for unique colors and specifications to fit any design. (All buttons are flat colors by default and don't include gradients.) Text color for the create-button mixin is defaulted to white.
+
+// `@include create-button($class, $color1, $color2, $text-color: $white);`
+
+// Default Buttons
 // ----------------------------
 @mixin default-button() {
   background: $lighter-grey;
   border: none;
   color: $black;
-  @include box-shadow(0, 1px, 2px);
+  //@include box-shadow(0, 1px, 2px);
   @extend %cursor;
   @extend %typography;
   display: inline-block;
@@ -23,8 +32,8 @@
   color: $black;
 }
 
-// Button Create (Flat)
-// @include button(class, color1, color2, text-color)
+// Button Create
+// @include button(class, color1, color2, text-color: $white)
 @mixin create-button($class, $color1, $color2, $text-color: $white) {
   .#{$class} {
     @extend .btn;
@@ -71,6 +80,10 @@
     margin: 0;
   }
   
+}
+
+@mixin custom-buttons() {
+
   @include create-button(blue-btn, $blue, $dark-blue);
   
   @include create-button(red-btn, $red, $dark-red);
@@ -82,4 +95,5 @@
   @include create-button(green-btn, $green, $dark-green);
   
   @include create-button(dark-grey-btn, $dark-grey, $black);
+
 }

@@ -1,53 +1,24 @@
-// Badge Mixins
-// ----------------------------
-
-// Badge Backgrounds
-// @include badge-bk-colors(class, color, textColor)
-// Task: Optimize with BEM method for fewer class declarations
-@mixin badge-bk-colors($class, $color, $text-color) {
-  &#{$class} {
-    background-color: $color;
-    color: $text-color;
-  }
-}
-
-// Badges with Borders
-// @include badge-bk-colors(class, color)
-// Task: Optimize with BEM method for fewer class declarations
-@mixin badge-w-borders($class, $color) {
-  &#{$class} {
-    border-color: $color;
-    color: $color;
-  }
-}
-
 // Badges
 // ----------------------------
-@mixin badges {
-  %badge-icons {
-    content: "";
-    display: inline-block;
-    font-size: 1em;
-    font-weight: bold;
-    line-height: 1;
-    @include rem(margin-right, 5);
-    text-decoration: inherit;
-    -webkit-font-smoothing: antialiased;
-  }
 
+// Badges are a simple way to highlight items that don't have an important call to action, such as, blog categories, unread email items, etc. Badges are included in Centurion as a base feature that can be included or not. 
+
+// To include add the following: `@include badges`
+
+// Default Badges
+// ----------------------------
+@mixin badges {
   .badge {
     @extend .clear;
     @extend %typography;
     display: inline-block;
-    background-color: #cccccc;
-    color: #555555;
+    background-color: $grey;
+    color: $light-grey;
     cursor: pointer;
     @include rem(font-size, 10);
     line-height: 1.5;
     @include rem(margin, 10px 0);
-    //margin: 0.5em 0
     @include rem(padding, 5px 8px);
-    //padding: 0.2em 0.6em
     @include badge-bk-colors('.red', $light-red, $dark-red);
     @include badge-bk-colors('.blue', $light-blue, $dark-blue);
     @include badge-bk-colors('.purple', $light-purple, $dark-purple);
@@ -62,10 +33,6 @@
     &.dark {
       color: $darker-grey;
     }
-    &.rounded {
-      // Task: Figure out better BEM class convention
-      border-radius: 3px;
-    }
     &.border {
       background-color: transparent;
       border: 1px solid $light-grey;
@@ -76,25 +43,25 @@
       @include badge-w-borders('.green', $green);
     }
   }
-  
-  .icon-h:before {
-    content: "⇝";
-    @extend %badge-icons;
-  }
-  
-  .icon-e:before {
-    content: "◎";
-    @extend %badge-icons;
-  }
-  
-  .icon-l:before {
-    content: "▨";
-    @extend %badge-icons;
-  }
-  
-  .icon-o:before {
-    content: "⊗";
-    @extend %badge-icons;
-  }
+}
 
+// Badge Backgrounds
+// @include badge-bk-colors(class, color, textColor)
+// Task: Optimize with BEM method for fewer class declarations
+@mixin badge-bk-colors($class, $color, $text-color) {
+  &#{$class} {
+    // @extend .badge;
+    background-color: $color;
+    color: $text-color;
+  }
+}
+
+// Badges with Borders
+// @include badge-bk-colors(class, color)
+// Task: Optimize with BEM method for fewer class declarations
+@mixin badge-w-borders($class, $color) {
+  &#{$class} {
+    border-color: $color;
+    color: $color;
+  }
 }

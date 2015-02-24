@@ -1,19 +1,10 @@
-// Callout Mixins
+// Callout
 // ----------------------------
 
-// @include callout(class, bkColor, borderColor, textColor)
-@mixin callout($class, $bk-color, $border-color, $text-color) {
-  .#{$class}-callout {
-    @extend .callout;
-    background-color: $bk-color;
-    border-left-color: $border-color;
-    h1, h2, h3 {
-      color: $text-color;
-    }
-    @content;
-  }
-}
 
+
+// Default Callouts
+// ----------------------------
 @mixin callouts {
   %callout-icons {
     background-color: transparent;
@@ -113,5 +104,20 @@
     &.expanded {
       display: block;
     }
+  }
+}
+
+// Create Callout
+// ----------------------------
+// @include callout(class, bkColor, borderColor, textColor)
+@mixin callout($class, $bk-color, $border-color, $text-color) {
+  .#{$class}-callout {
+    @extend .callout;
+    background-color: $bk-color;
+    border-left-color: $border-color;
+    h1, h2, h3 {
+      color: $text-color;
+    }
+    @content;
   }
 }

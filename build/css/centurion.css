@@ -1,12 +1,3 @@
-/* -------------------------------------------------------- 
- * 
- *  Centurion Framework v3.5.3 
- *  Created by: Justin Hough (http://www.justinhough.com/) 
- * 
- *  Documentation: http://www.centurionframework.com 
- *  Licensed under GPL and MIT. 
- * 
- * -------------------------------------------------------- */
 body {
   font-size: 100%;
   line-height: 1; }
@@ -721,10 +712,6 @@ small, .text-small {
   background: #EDEDED;
   border: none;
   color: #000;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   display: inline-block;
   font-size: 15px;
   font-size: 1rem;
@@ -804,21 +791,10 @@ small, .text-small {
     background-color: #000;
     color: #FFF; }
 
-.icon-h:before, .icon-e:before, .icon-l:before, .icon-o:before {
-  content: "";
-  display: inline-block;
-  font-size: 1em;
-  font-weight: bold;
-  line-height: 1;
-  margin-right: 5px;
-  margin-right: 0.33333rem;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased; }
-
 .badge {
   display: inline-block;
-  background-color: #cccccc;
-  color: #555555;
+  background-color: #999999;
+  color: #CCCCCC;
   cursor: pointer;
   font-size: 10px;
   font-size: 0.66667rem;
@@ -848,8 +824,6 @@ small, .text-small {
       color: #555555; }
   .badge.dark {
     color: #333333; }
-  .badge.rounded {
-    border-radius: 3px; }
   .badge.border {
     background-color: transparent;
     border: 1px solid #CCCCCC; }
@@ -868,18 +842,6 @@ small, .text-small {
     .badge.border.green {
       border-color: #277f35;
       color: #277f35; }
-
-.icon-h:before {
-  content: "⇝"; }
-
-.icon-e:before {
-  content: "◎"; }
-
-.icon-l:before {
-  content: "▨"; }
-
-.icon-o:before {
-  content: "⊗"; }
 
 .alert .btn-expand {
   background-color: transparent;

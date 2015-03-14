@@ -1,3 +1,12 @@
+/* -------------------------------------------------------- 
+ * 
+ *  Centurion Framework v3.5.3 
+ *  Created by: Justin Hough (http://www.justinhough.com/) 
+ * 
+ *  Documentation: http://www.centurionframework.com 
+ *  Licensed under GPL and MIT. 
+ * 
+ * -------------------------------------------------------- */
 .ctn-container .ctn-grid-1, .ctn-container .ctn-grid-2, .ctn-container .ctn-grid-3, .ctn-container .ctn-grid-4, .ctn-container .ctn-grid-5, .ctn-container .ctn-grid-6, .ctn-container .ctn-grid-7, .ctn-container .ctn-grid-8, .ctn-container .ctn-grid-9, .ctn-container .ctn-grid-10, .ctn-container .ctn-grid-11, .ctn-container .ctn-grid-12, .ctn-container .ctn-grid-13, .ctn-container .ctn-grid-14, .ctn-container .ctn-grid-15, .ctn-container .ctn-grid-16, .ctn-container .ctn-grid-17, .ctn-container .ctn-grid-18, .ctn-container .ctn-grid-19, .ctn-container .ctn-grid-20, .ctn-container .ctn-grid-21, .ctn-container .ctn-grid-22, .ctn-container .ctn-grid-23, .ctn-container .ctn-grid-24, .ctn-container .ctn-tablet-1, .ctn-container .ctn-tablet-2, .ctn-container .ctn-tablet-3, .ctn-container .ctn-tablet-4, .ctn-container .ctn-tablet-5, .ctn-container .ctn-tablet-6, .ctn-container .ctn-tablet-7, .ctn-container .ctn-tablet-8, .ctn-container .ctn-tablet-9, .ctn-container .ctn-tablet-10, .ctn-container .ctn-tablet-11, .ctn-container .ctn-tablet-12, .ctn-container .ctn-mobile-1, .ctn-container .ctn-mobile-2, .ctn-container .ctn-mobile-3, .ctn-container .ctn-mobile-4, .ctn-container .ctn-mobile-5, .ctn-container .ctn-mobile-6 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

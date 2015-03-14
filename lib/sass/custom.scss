@@ -45,6 +45,8 @@ nav {
     font-weight: 100;
     padding: 1em;
     text-decoration: none;
+    -webkit-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
     &:hover,
     &.nav-current {
       background: $orange;
@@ -64,7 +66,6 @@ nav {
 
 footer {
   background: $lighter-grey;
-  border-top: 1px solid $grey;
   margin-top: 4em;
   p {
     font-size: 0.8em;
@@ -130,6 +131,18 @@ span.box-grid {
       background-color: $orange;
     }
   }
+}
+
+.rotate{
+  -webkit-transition-duration: 0.75s;
+  transition-duration: 0.75s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+}
+ 
+.rotate:hover {
+  -webkit-transform:rotateY(360deg);
+  transform:rotateY(360deg);
 }
 
 @include clearfix;

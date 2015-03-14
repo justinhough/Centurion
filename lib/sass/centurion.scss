@@ -12,7 +12,6 @@ body {
 @include typography;
 
 @include buttons;
-@include custom-buttons;
 @include badges;
 @include callouts;
 
@@ -21,7 +20,7 @@ body {
 
 @include tables;
 
-@include navigation;
+//@include navigation;
 
 @include float-elements;
 

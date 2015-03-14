@@ -1,56 +1,12 @@
+// Badge Mixins
+// ----------------------------
+
 // Badges
-// ----------------------------
-
-// Badges are a simple way to highlight items that don't have an important call to action, such as, blog categories, unread email items, etc. Badges are included in Centurion as a base feature that can be included or not. 
-
-// To include add the following: `@include badges`
-
-// Default Badges
-// ----------------------------
-@mixin badges {
-  .badge {
-    @extend .clear;
-    @extend %typography;
-    display: inline-block;
-    background-color: $grey;
-    color: $light-grey;
-    cursor: pointer;
-    @include rem(font-size, 10);
-    line-height: 1.5;
-    @include rem(margin, 10px 0);
-    @include rem(padding, 5px 8px);
-    @include badge-bk-colors('.red', $light-red, $dark-red);
-    @include badge-bk-colors('.blue', $light-blue, $dark-blue);
-    @include badge-bk-colors('.purple', $light-purple, $dark-purple);
-    @include badge-bk-colors('.orange', $light-orange, $dark-orange);
-    @include badge-bk-colors('.green', $light-green, $dark-green);
-    &.light {
-      color: $white;
-      &.orange {
-        color: $dark-grey;
-      }
-    }
-    &.dark {
-      color: $darker-grey;
-    }
-    &.border {
-      background-color: transparent;
-      border: 1px solid $light-grey;
-      @include badge-w-borders('.red', $red);
-      @include badge-w-borders('.blue', $blue);
-      @include badge-w-borders('.purple', $purple);
-      @include badge-w-borders('.orange', $orange);
-      @include badge-w-borders('.green', $green);
-    }
-  }
-}
-
-// Badge Backgrounds
-// @include badge-bk-colors(class, color, textColor)
+// @include badges(class, color, textColor)
 // Task: Optimize with BEM method for fewer class declarations
-@mixin badge-bk-colors($class, $color, $text-color) {
+@mixin badge($class, $color, $text-color) {
   &#{$class} {
-    // @extend .badge;
+    @extend %badge;
     background-color: $color;
     color: $text-color;
   }
@@ -61,7 +17,50 @@
 // Task: Optimize with BEM method for fewer class declarations
 @mixin badge-w-borders($class, $color) {
   &#{$class} {
+    @extend %badge;
+    @extend %bordered-badge;
     border-color: $color;
     color: $color;
   }
+}
+
+// Badges
+// ----------------------------
+@mixin badges {
+
+  %badge {
+    @extend .clear;
+    @extend %typography;
+    display: inline-block;
+    background-color: #cccccc;
+    color: #555555;
+    cursor: pointer;
+    @include rem(font-size, 11);
+    line-height: 1.5;
+    @include rem(margin, 10px 0);
+    @include rem(padding, 5px 8px);
+  }
+  %bordered-badge {
+    background-color: transparent;
+    border: 1px solid $light-grey;
+  }
+  
+  @include badge(red-badge, $red, $white);
+  @include badge(blue-badge, $blue, $white);
+  @include badge(purple-badge, $purple, $white);
+  @include badge(orange-badge, $orange, $white);
+  @include badge(green-badge, $green, $white);
+  
+  @include badge(red-badge-lt, $light-red, $darker-grey);
+  @include badge(blue-badge-lt, $light-blue, $darker-grey);
+  @include badge(purple-badge-lt, $light-purple, $darker-grey);
+  @include badge(orange-badge-lt, $light-orange, $darker-grey);
+  @include badge(green-badge-lt, $light-green, $darker-grey);
+  
+  @include badge-w-borders(red-badge-bdr, $red);
+  @include badge-w-borders(blue-badge-bdr, $blue);
+  @include badge-w-borders(purple-badge-bdr, $purple);
+  @include badge-w-borders(orange-badge-bdr, $orange);
+  @include badge-w-borders(green-badge-bdr, $green);
+
 }

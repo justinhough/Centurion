@@ -17,8 +17,12 @@
   <meta name="description" content="Centurion is a web-based framework for rapid prototyping and provides a core for building larger web projects"/>
   
   <!-- Centurion Framework -->
+<!--
   <link rel="stylesheet" href="css/centurion.css">
   <link rel="stylesheet" href="css/custom.css">
+-->
+  <link rel="stylesheet" href="css/minified/centurion.min.css">
+  <link rel="stylesheet" href="css/minified/custom.min.css">
   <!-- End of Framework -->
   
   <!-- GA CODE goes here -->
@@ -61,7 +65,11 @@
 <!-- GRID -->
 <div class="ctn-grid-24 no-display-grid">
   <h1>The Grid</h1>
-  <p>This is a page to show how the grid layout functions.</p>
+  <p>Originally Centurion was built only a responsive grid, so at its core Centurion is built to be responsive. The grid is built using a Sass mixin, which makes it highly customizable. The only portion of the grid system that uses a pixel width is the container. For desktops the default container is set to <code>1100px</code> wide and is fully fluid below <code>768px</code> for tablets and smartphones.</p>
+  
+  <h2>Basic Structure</h2>
+  
+  <p>Utlizing the grid in your your project requires a container wrapper to set the main size of the area with grid elements inside to divide the space of the content area as needed. For example, if you want to use the full width for a banner that spans the page, then you would specify a <code>ctn-grid-24</code>. 24 columns is the full width of the default grid and is easily divisible in any design pattern. If you want to divide the page in two columns (a main body and a sidebar) you could use a <code>ctn-grid-6</code> and a <code>ctn-grid-18</code>. The number corresponds the amount of columns that the grid will occupy within the container.</p>
 </div>
 
 <pre><code class="language-markup">&lt;div class="ctn-container">
@@ -80,6 +88,8 @@
   &lt;div class="ctn-grid-6">&lt;/div>
   &lt;div class="ctn-grid-18">&lt;/div>
 &lt;/div></code></pre>
+
+<p><strong>Note</strong>: For each row make sure that you elements add up to 24 columns across in order to utilize the full row. However, if you want to center one grid element on each row then you will want to use Centering Grids below.</p>
 
 
 <section class="calculate clearfix">
@@ -126,6 +136,11 @@
 </section>
 <div class="ctn-grid-24">
   <h2>Nested Grids</h2>
+
+  <p>The best part of any grid system is the ability to nest elements within a single grid element to break down the space into smaller, manageable spaces.</p>
+
+  <p>For example, say that you want to have content in a <code>ctn-grid-18</code>, but you also want to add three images with captions side-by-side beneath the main block of text. In order to create this layout will need to put three <code>ctn-grid-8</code> grid elements inside the parent grid element.</p>
+
 </div>
 
 
@@ -157,9 +172,11 @@
   </div>
 
 </section>
-  
 <div class="ctn-grid-24">
   <h2>Centered Grids</h2>
+  
+  <p>Centering grid elements is as easy as adding <code>ctn-grid-center</code> to your grid element. This will evenly space your element in the center of your grid container.</p>
+  
 </div>
 
 <pre><code class="language-markup">&lt;div class="ctn-grid-2 ctn-grid-center">&lt;/div></code></pre>
@@ -422,123 +439,40 @@
   
   <div class="ctn-grid-12">
     <h3>Default Badges</h3>
-    <span class="badge">badge</span>
-    <span class="badge red">badge red</span>
-    <span class="badge blue">badge blue</span>
-    <span class="badge purple">badge purple</span>
-    <span class="badge green">badge green</span>
-    <span class="badge orange">badge orange</span>
+    <span class="red-badge">red-badge</span>
+    <span class="blue-badge">blue-badge</span>
+    <span class="purple-badge">purple-badge</span>
+    <span class="green-badge">green-badge</span>
+    <span class="orange-badge">orange-badge</span>
   
     <pre><code class="language-markup">&lt;span class="badge [color]">&lt;/span></code></pre>
   
     <div class="clear"></div>
     
-    <h4>with Light Text</h4>
-    <span class="badge light">badge</span>
-    <span class="badge light red">badge red</span>
-    <span class="badge light blue">badge blue</span>
-    <span class="badge light purple">badge purple</span>
-    <span class="badge light green">badge green</span>
-    <span class="badge light orange">badge orange</span>
+    <h4>Lighter Backgrounds</h4>
+    <span class="red-badge-lt">red-badge</span>
+    <span class="blue-badge-lt">blue-badge</span>
+    <span class="purple-badge-lt">purple-badge</span>
+    <span class="green-badge-lt">green-badge</span>
+    <span class="orange-badge-lt">orange-badge</span>
     
     <pre><code class="language-markup">&lt;span class="badge light [color]">&lt;/span></code></pre>
     
     <div class="clear"></div>
-    
-    <h4>with Dark Text</h4>
-    <span class="badge dark">badge</span>
-    <span class="badge dark red">badge red</span>
-    <span class="badge dark blue">badge blue</span>
-    <span class="badge dark purple">badge purple</span>
-    <span class="badge dark green">badge green</span>
-    <span class="badge dark orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge dark [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
 
-<!--
-    <h3>Rounded Corner Badges</h3>
-    <span class="badge rounded">badge</span>
-    <span class="badge rounded red">badge red</span>
-    <span class="badge rounded blue">badge blue</span>
-    <span class="badge rounded purple">badge purple</span>
-    <span class="badge rounded green">badge green</span>
-    <span class="badge rounded orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge rounded [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
--->
-    
-<!--
-    <h4>with Light Text</h4>
-    <span class="badge rounded light">badge</span>
-    <span class="badge rounded light red">badge red</span>
-    <span class="badge rounded light blue">badge blue</span>
-    <span class="badge rounded light purple">badge purple</span>
-    <span class="badge rounded light green">badge green</span>
-    <span class="badge rounded light orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge rounded light [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
--->
-    
-<!--
-    <h4>with Dark Text</h4>
-    <span class="badge rounded dark">badge</span>
-    <span class="badge rounded dark red">badge red</span>
-    <span class="badge rounded dark blue">badge blue</span>
-    <span class="badge rounded dark purple">badge purple</span>
-    <span class="badge rounded dark green">badge green</span>
-    <span class="badge rounded dark orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge rounded dark [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
--->
   </div>
 
   <div class="ctn-grid-12">
     <h3>Border Only Badges</h3>
-    <span class="badge border">badge</span>
-    <span class="badge border red">badge red</span>
-    <span class="badge border blue">badge blue</span>
-    <span class="badge border purple">badge purple</span>
-    <span class="badge border green">badge green</span>
-    <span class="badge border orange">badge orange</span>
+    <span class="red-badge-bdr">red-badge</span>
+    <span class="blue-badge-bdr">blue-badge</span>
+    <span class="purple-badge-bdr">purple-badge</span>
+    <span class="green-badge-bdr">green-badge</span>
+    <span class="orange-badge-bdr">orange-badge</span>
     
     <pre><code class="language-markup">&lt;span class="badge border [color]">&lt;/span></code></pre>
     
     <div class="clear"></div>
-    
-    <h4>with Dark Text</h4>
-    <span class="badge border dark">badge</span>
-    <span class="badge border dark red">badge red</span>
-    <span class="badge border dark blue">badge blue</span>
-    <span class="badge border dark purple">badge purple</span>
-    <span class="badge border dark green">badge green</span>
-    <span class="badge border dark orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge border dark [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
-    
-<!--
-    <h4>with Rounded Corners</h4>
-    <span class="badge border rounded dark">badge</span>
-    <span class="badge border rounded dark red">badge red</span>
-    <span class="badge border rounded dark blue">badge blue</span>
-    <span class="badge border rounded dark purple">badge purple</span>
-    <span class="badge border rounded dark green">badge green</span>
-    <span class="badge border rounded dark orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge border rounded dark [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
--->
-
 
 <!--
     <h3>Icon Badges</h3>
@@ -550,18 +484,6 @@
     <span class="badge orange icon-o">badge orange</span>
     
     <pre><code class="language-markup">&lt;span class="badge [color] [icon]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
-
-    <h3>Bordered Icon Badges</h3>
-    <span class="badge border icon-h">badge</span>
-    <span class="badge border red icon-e">badge red</span>
-    <span class="badge border blue icon-l">badge blue</span>
-    <span class="badge border purple icon-l">badge purple</span>
-    <span class="badge border green icon-o">badge green</span>
-    <span class="badge border orange icon-o">badge orange</span>
-
-    <pre><code class="language-markup">&lt;span class="badge border [color] [icon]">&lt;/span></code></pre>
 
     <div class="clear"></div>
 -->
@@ -580,46 +502,77 @@
   <h2>Buttons</h2>
   <p>______</p>
 
+  <h4>Default</h4>
   <div class="ctn-grid-8">
-    <h3>Default</h3>
     <p><a href="#" class="small-btn inline-btn">Small Grey</a></p>
-    <pre><code class="language-css">class="small-btn"</code></pre>
-    
-    <p><a href="#" class="btn inline-btn">Regular Grey</a></p>
-    <pre><code class="language-css">class="btn"</code></pre>
-    
-    <p><a href="#" class="large-btn inline-btn">Large Grey</a></p>
-    <pre><code>class="large-btn"</code></pre>
-    <pre><code class="language-css">class="large-btn"</code></pre>
+    <pre style="margin-top:33px"><code class="language-css">class="small-btn"</code></pre>
   </div>
   
   <div class="ctn-grid-8">
-    <h3>Blue</h3>
-    <p><a href="#" class="blue-btn inline-btn">Regular Blue</a></p>
-    <pre><code class="language-css">class="blue-btn"</code></pre>
+    <p><a href="#" class="btn inline-btn">Regular Grey</a></p>
+    <pre style="margin-top:20px"><code class="language-css">class="btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">  
+    <p><a href="#" class="large-btn inline-btn">Large Grey</a></p>
+    <pre><code class="language-css">class="large-btn"</code></pre>
+  </div>
+  <div class="clear"></div>
 
-    <h3>Purple</h3>
-    <p><a href="#" class="purple-btn inline-btn">Regular Purple</a></p>
+  
+  <h4>Colored Buttons</h4>
+  <div class="ctn-grid-8">
+    <p><a href="#" class="dark-grey-btn inline-btn">Dark Grey</a></p>
+    <pre><code class="language-css">class="dark-grey-btn"</code></pre>
+    
+    <p><a href="#" class="purple-btn inline-btn">Purple</a></p>
     <pre><code class="language-css">class="purple-btn"</code></pre>
-
-    <h3>Orange</h3>
-    <p><a href="#" class="orange-btn inline-btn">Regular Orange</a></p>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="red-btn inline-btn">Red</a></p>
+    <pre><code class="language-css">class="red-btn"</code></pre>
+    
+    <p><a href="#" class="green-btn inline-btn">Green</a></p>
+    <pre><code class="language-css">class="green-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="blue-btn inline-btn">Blue</a></p>
+    <pre><code class="language-css">class="blue-btn"</code></pre>
+    
+    <p><a href="#" class="orange-btn inline-btn">Orange</a></p>
+    <pre><code class="language-css">class="orange-btn"</code></pre>
+  </div>
+  <div class="clear"></div>
+  
+  
+  <h4>Bordered Buttons</h4>
+  <div class="ctn-grid-8">
+    <p><a href="#" class="dark-grey-btn-bdr inline-btn">Dark Grey</a></p>
+    <pre><code class="language-css">class="dark-grey-btn"</code></pre>
+    
+    <p><a href="#" class="purple-btn-bdr inline-btn">Purple</a></p>
+    <pre><code class="language-css">class="purple-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="red-btn-bdr inline-btn">Red</a></p>
+    <pre><code class="language-css">class="red-btn"</code></pre>
+    
+    <p><a href="#" class="green-btn-bdr inline-btn">Green</a></p>
+    <pre><code class="language-css">class="green-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="blue-btn-bdr inline-btn">Blue</a></p>
+    <pre><code class="language-css">class="blue-btn"</code></pre>
+    
+    <p><a href="#" class="orange-btn-bdr inline-btn">Orange</a></p>
     <pre><code class="language-css">class="orange-btn"</code></pre>
   </div>
   
-  <div class="ctn-grid-8">
-    <h3>Red</h3>
-    <p><a href="#" class="red-btn inline-btn">Regular Red</a></p>
-    <pre><code class="language-css">class="red-btn"</code></pre>
-    
-    <h3>Green</h3>
-    <p><a href="#" class="green-btn inline-btn">Regular Green</a></p>
-    <pre><code class="language-css">class="green-btn"</code></pre>
-    
-    <h3>Black</h3>
-    <p><a href="#" class="dark-grey-btn inline-btn">Regular Dark Grey</a></p>
-    <pre><code class="language-css">class="dark-grey-btn"</code></pre>
-  </div>
+  
 </article>
 
 

@@ -11,25 +11,25 @@ $lighter-grey: #EDEDED;
 $dark-grey: #555555;
 $darker-grey: #333333;
 
-$red: #cc583a;
+$red: #e04646;
 $dark-red: darken($red, 10%);
-$light-red: lighten($red, 30%);
+$light-red: lighten($red, 20%);
 
-$blue: #1F468D;
+$blue: #2971b2;
 $dark-blue: darken($blue, 10%);
 $light-blue: lighten($blue, 30%);
 
-$purple: #7f4d7b;
+$purple: #553a99 /* #7f4d7b */;
 $dark-purple: darken($purple, 10%);
 $light-purple: lighten($purple, 30%);
 
-$green: #277f35;
+$green: #4a742c /* #277f35 */;
 $dark-green: darken($green, 10%);
 $light-green: lighten($green, 30%);
 
 $orange: #fe9300;
 $dark-orange: darken($orange, 10%);
-$light-orange: lighten($orange, 30%);
+$light-orange: lighten($orange, 20%);
 
 
 // @include single-color-swatch(class, color, lightColor, darkColor)

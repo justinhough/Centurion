@@ -17,8 +17,12 @@
   <meta name="description" content="Centurion is a web-based framework for rapid prototyping and provides a core for building larger web projects"/>
   
   <!-- Centurion Framework -->
+<!--
   <link rel="stylesheet" href="css/centurion.css">
   <link rel="stylesheet" href="css/custom.css">
+-->
+  <link rel="stylesheet" href="css/minified/centurion.min.css">
+  <link rel="stylesheet" href="css/minified/custom.min.css">
   <!-- End of Framework -->
   
   <!-- GA CODE goes here -->
@@ -52,24 +56,23 @@
 <div class="ctn-grid-16">
   <h1>About the Framework</h1>
   
-  <p>Centurion is an intuitive, responsive framework that works out of the box with basic features added to help aid your next web project.</p>
-    
-  <p>Unlike other larger and more prominent web frameworks, Centurion is designed was originally designed for desktop experiences, but has been rebuilt from the ground up to feature to be responsive for mobile, tablet, and desktop experiences. Using CSS3 media queries, Centurion is able to conform easily to any screen and shift the content as necessary (or hide certain elements) to allow for an unobstructed view of the content and elements that matter most for the experience.</p>
-  
-  <p>Centurion offers three basic media breakpoints: 481, 961, and 1100. Even the grid has been optimized to be design friendly with a 24-column grid that is easily divisible for any design project and it even has different columns based on device (6-columns for mobile and 12-columns for tablet). </p>
+  <p><a href="http://badge.fury.io/js/centurion-framework"><img src="https://camo.githubusercontent.com/d73cf939ec7ffc746f32fba14a99073a0ce23249/68747470733a2f2f62616467652e667572792e696f2f6a732f63656e747572696f6e2d6672616d65776f726b2e737667" alt="NPM version" data-canonical-src="https://badge.fury.io/js/centurion-framework.svg" style="max-width:100%;"></a>
+    <a href="http://badge.fury.io/rb/centurion-framework"><img src="https://camo.githubusercontent.com/1c989af65965a78de27d5487a7d8df6ade6bd02a/68747470733a2f2f62616467652e667572792e696f2f72622f63656e747572696f6e2d6672616d65776f726b2e737667" alt="Gem Version" data-canonical-src="https://badge.fury.io/rb/centurion-framework.svg" style="max-width:100%;"></a></p>
 
-  <!-- <h2>Documentation</h2> -->
-  <!-- <p>Full documentation for Centurion can be found on <a href="http://www.centurionframework.com/documentation.html">Github</a>.</p> -->
+  
+  <a href="https://camo.githubusercontent.com/61fded187bd01a851e0ec7d4ac060864f57bca9a/687474703a2f2f7777772e63656e747572696f6e6672616d65776f726b2e636f6d2f67726170686963732f63656e747572696f6e5f3230302e706e67" target="_blank" class="right-float" style="margin: 0 15px;"><img src="https://camo.githubusercontent.com/61fded187bd01a851e0ec7d4ac060864f57bca9a/687474703a2f2f7777772e63656e747572696f6e6672616d65776f726b2e636f6d2f67726170686963732f63656e747572696f6e5f3230302e706e67" alt="image" data-canonical-src="http://www.centurionframework.com/graphics/centurion_200.png" style="max-width:100%;"></a>
+  
+  <p>Centurion is a intuitive framework that offers a responsive grid system out of the box with a few basic features to help setup your next web project easily. Unlike larger and more prominent web frameworks, Centurion doesn't throw everything you don't need into your project and allows for quick customizations using Sass. It is also available as an <a href="https://www.npmjs.com/package/centurion-framework">NPM module</a> or <a href="https://rubygems.org/gems/centurion-framework">RubyGem</a> for those truly custom projects.</p>
+  
+  <p> Centurion offers three basic media breakpoints: 481, 961, and 1100. It was also designed to be design friendly using an easily divisible 24-column based grid that suits most design projects. These columns also adjust to allow for a 12-column view on tablet and a 6-column view on mobile.</p>
 </div>
 
 <div class="ctn-grid-8">  
   <h2>Out of the Box</h2>
   
-  <p>Centurion wasn't meant to be the end of a theme, rather it is the beginning of the next great one. Most of the features exist based on usage and need from the open-source community. Building basic features for typography, tables, and buttons can become tiresome and for a quick web development project you might need the simple features first with the ability to create your own without excessive overrides.</p>
+  <p>We didn't design Centurion to be heavy and with GZIP the entire framework comes in around 6KB. Most of the features built into Centurion were either requests from the open-source community or from general web usage, which is why you will find typography, buttons, tables, badges, and callouts in this framework to name a few.
     
-  <h3>Build for your needs</h3>
-  
-  <p>You can either use the responsive grid at the core of Centurion, or you can extend it with the basic features you need easily with Sass mixins.</p>
+  <p>Either submit a <a href="https://github.com/justinhough/Centurion/issues?q=is%3Aopen+is%3Aissue+label%3A%22feature+request%22">feature request on Github</a> or you can fork and submit a pull request of any new feature that you think Centurion could benefit from.</p>
 
 </div>
 
@@ -80,7 +83,11 @@
 <!-- GRID -->
 <div class="ctn-grid-24 no-display-grid">
   <h1>The Grid</h1>
-  <p>This is a page to show how the grid layout functions.</p>
+  <p>Originally Centurion was built only a responsive grid, so at its core Centurion is built to be responsive. The grid is built using a Sass mixin, which makes it highly customizable. The only portion of the grid system that uses a pixel width is the container. For desktops the default container is set to <code>1100px</code> wide and is fully fluid below <code>768px</code> for tablets and smartphones.</p>
+  
+  <h2>Basic Structure</h2>
+  
+  <p>Utlizing the grid in your your project requires a container wrapper to set the main size of the area with grid elements inside to divide the space of the content area as needed. For example, if you want to use the full width for a banner that spans the page, then you would specify a <code>ctn-grid-24</code>. 24 columns is the full width of the default grid and is easily divisible in any design pattern. If you want to divide the page in two columns (a main body and a sidebar) you could use a <code>ctn-grid-6</code> and a <code>ctn-grid-18</code>. The number corresponds the amount of columns that the grid will occupy within the container.</p>
 </div>
 
 <pre><code class="language-markup">&lt;div class="ctn-container">
@@ -99,6 +106,8 @@
   &lt;div class="ctn-grid-6">&lt;/div>
   &lt;div class="ctn-grid-18">&lt;/div>
 &lt;/div></code></pre>
+
+<p><strong>Note</strong>: For each row make sure that you elements add up to 24 columns across in order to utilize the full row. However, if you want to center one grid element on each row then you will want to use Centering Grids below.</p>
 
 
 <section class="calculate clearfix">
@@ -145,6 +154,11 @@
 </section>
 <div class="ctn-grid-24">
   <h2>Nested Grids</h2>
+
+  <p>The best part of any grid system is the ability to nest elements within a single grid element to break down the space into smaller, manageable spaces.</p>
+
+  <p>For example, say that you want to have content in a <code>ctn-grid-18</code>, but you also want to add three images with captions side-by-side beneath the main block of text. In order to create this layout will need to put three <code>ctn-grid-8</code> grid elements inside the parent grid element.</p>
+
 </div>
 
 
@@ -176,9 +190,11 @@
   </div>
 
 </section>
-  
 <div class="ctn-grid-24">
   <h2>Centered Grids</h2>
+  
+  <p>Centering grid elements is as easy as adding <code>ctn-grid-center</code> to your grid element. This will evenly space your element in the center of your grid container.</p>
+  
 </div>
 
 <pre><code class="language-markup">&lt;div class="ctn-grid-2 ctn-grid-center">&lt;/div></code></pre>
@@ -441,116 +457,42 @@
   
   <div class="ctn-grid-12">
     <h3>Default Badges</h3>
-    <span class="badge">badge</span>
-    <span class="badge red">badge red</span>
-    <span class="badge blue">badge blue</span>
-    <span class="badge purple">badge purple</span>
-    <span class="badge green">badge green</span>
-    <span class="badge orange">badge orange</span>
+    <span class="red-badge">red-badge</span>
+    <span class="blue-badge">blue-badge</span>
+    <span class="purple-badge">purple-badge</span>
+    <span class="green-badge">green-badge</span>
+    <span class="orange-badge">orange-badge</span>
   
     <pre><code class="language-markup">&lt;span class="badge [color]">&lt;/span></code></pre>
   
     <div class="clear"></div>
     
-    <h4>with Light Text</h4>
-    <span class="badge light">badge</span>
-    <span class="badge light red">badge red</span>
-    <span class="badge light blue">badge blue</span>
-    <span class="badge light purple">badge purple</span>
-    <span class="badge light green">badge green</span>
-    <span class="badge light orange">badge orange</span>
+    <h4>Lighter Backgrounds</h4>
+    <span class="red-badge-lt">red-badge</span>
+    <span class="blue-badge-lt">blue-badge</span>
+    <span class="purple-badge-lt">purple-badge</span>
+    <span class="green-badge-lt">green-badge</span>
+    <span class="orange-badge-lt">orange-badge</span>
     
     <pre><code class="language-markup">&lt;span class="badge light [color]">&lt;/span></code></pre>
     
     <div class="clear"></div>
-    
-    <h4>with Dark Text</h4>
-    <span class="badge dark">badge</span>
-    <span class="badge dark red">badge red</span>
-    <span class="badge dark blue">badge blue</span>
-    <span class="badge dark purple">badge purple</span>
-    <span class="badge dark green">badge green</span>
-    <span class="badge dark orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge dark [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
 
-    <h3>Rounded Corner Badges</h3>
-    <span class="badge rounded">badge</span>
-    <span class="badge rounded red">badge red</span>
-    <span class="badge rounded blue">badge blue</span>
-    <span class="badge rounded purple">badge purple</span>
-    <span class="badge rounded green">badge green</span>
-    <span class="badge rounded orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge rounded [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
-    
-    <h4>with Light Text</h4>
-    <span class="badge rounded light">badge</span>
-    <span class="badge rounded light red">badge red</span>
-    <span class="badge rounded light blue">badge blue</span>
-    <span class="badge rounded light purple">badge purple</span>
-    <span class="badge rounded light green">badge green</span>
-    <span class="badge rounded light orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge rounded light [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
-    
-    <h4>with Dark Text</h4>
-    <span class="badge rounded dark">badge</span>
-    <span class="badge rounded dark red">badge red</span>
-    <span class="badge rounded dark blue">badge blue</span>
-    <span class="badge rounded dark purple">badge purple</span>
-    <span class="badge rounded dark green">badge green</span>
-    <span class="badge rounded dark orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge rounded dark [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
   </div>
 
   <div class="ctn-grid-12">
     <h3>Border Only Badges</h3>
-    <span class="badge border">badge</span>
-    <span class="badge border red">badge red</span>
-    <span class="badge border blue">badge blue</span>
-    <span class="badge border purple">badge purple</span>
-    <span class="badge border green">badge green</span>
-    <span class="badge border orange">badge orange</span>
+    <span class="red-badge-bdr">red-badge</span>
+    <span class="blue-badge-bdr">blue-badge</span>
+    <span class="purple-badge-bdr">purple-badge</span>
+    <span class="green-badge-bdr">green-badge</span>
+    <span class="orange-badge-bdr">orange-badge</span>
     
     <pre><code class="language-markup">&lt;span class="badge border [color]">&lt;/span></code></pre>
     
     <div class="clear"></div>
-    
-    <h4>with Dark Text</h4>
-    <span class="badge border dark">badge</span>
-    <span class="badge border dark red">badge red</span>
-    <span class="badge border dark blue">badge blue</span>
-    <span class="badge border dark purple">badge purple</span>
-    <span class="badge border dark green">badge green</span>
-    <span class="badge border dark orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge border dark [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
-    
-    <h4>with Rounded Corners</h4>
-    <span class="badge border rounded dark">badge</span>
-    <span class="badge border rounded dark red">badge red</span>
-    <span class="badge border rounded dark blue">badge blue</span>
-    <span class="badge border rounded dark purple">badge purple</span>
-    <span class="badge border rounded dark green">badge green</span>
-    <span class="badge border rounded dark orange">badge orange</span>
-    
-    <pre><code class="language-markup">&lt;span class="badge border rounded dark [color]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
 
-
+<!--
     <h3>Icon Badges</h3>
     <span class="badge icon-h">badge</span>
     <span class="badge red icon-e">badge red</span>
@@ -560,20 +502,9 @@
     <span class="badge orange icon-o">badge orange</span>
     
     <pre><code class="language-markup">&lt;span class="badge [color] [icon]">&lt;/span></code></pre>
-    
-    <div class="clear"></div>
-
-    <h3>Bordered Icon Badges</h3>
-    <span class="badge border icon-h">badge</span>
-    <span class="badge border red icon-e">badge red</span>
-    <span class="badge border blue icon-l">badge blue</span>
-    <span class="badge border purple icon-l">badge purple</span>
-    <span class="badge border green icon-o">badge green</span>
-    <span class="badge border orange icon-o">badge orange</span>
-
-    <pre><code class="language-markup">&lt;span class="badge border [color] [icon]">&lt;/span></code></pre>
 
     <div class="clear"></div>
+-->
 
   </div>
 
@@ -589,46 +520,77 @@
   <h2>Buttons</h2>
   <p>______</p>
 
+  <h4>Default</h4>
   <div class="ctn-grid-8">
-    <h3>Default</h3>
     <p><a href="#" class="small-btn inline-btn">Small Grey</a></p>
-    <pre><code class="language-css">class="small-btn"</code></pre>
-    
-    <p><a href="#" class="btn inline-btn">Regular Grey</a></p>
-    <pre><code class="language-css">class="btn"</code></pre>
-    
-    <p><a href="#" class="large-btn inline-btn">Large Grey</a></p>
-    <pre><code>class="large-btn"</code></pre>
-    <pre><code class="language-css">class="large-btn"</code></pre>
+    <pre style="margin-top:33px"><code class="language-css">class="small-btn"</code></pre>
   </div>
   
   <div class="ctn-grid-8">
-    <h3>Blue</h3>
-    <p><a href="#" class="blue-btn inline-btn">Regular Blue</a></p>
-    <pre><code class="language-css">class="blue-btn"</code></pre>
+    <p><a href="#" class="btn inline-btn">Regular Grey</a></p>
+    <pre style="margin-top:20px"><code class="language-css">class="btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">  
+    <p><a href="#" class="large-btn inline-btn">Large Grey</a></p>
+    <pre><code class="language-css">class="large-btn"</code></pre>
+  </div>
+  <div class="clear"></div>
 
-    <h3>Purple</h3>
-    <p><a href="#" class="purple-btn inline-btn">Regular Purple</a></p>
+  
+  <h4>Colored Buttons</h4>
+  <div class="ctn-grid-8">
+    <p><a href="#" class="dark-grey-btn inline-btn">Dark Grey</a></p>
+    <pre><code class="language-css">class="dark-grey-btn"</code></pre>
+    
+    <p><a href="#" class="purple-btn inline-btn">Purple</a></p>
     <pre><code class="language-css">class="purple-btn"</code></pre>
-
-    <h3>Orange</h3>
-    <p><a href="#" class="orange-btn inline-btn">Regular Orange</a></p>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="red-btn inline-btn">Red</a></p>
+    <pre><code class="language-css">class="red-btn"</code></pre>
+    
+    <p><a href="#" class="green-btn inline-btn">Green</a></p>
+    <pre><code class="language-css">class="green-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="blue-btn inline-btn">Blue</a></p>
+    <pre><code class="language-css">class="blue-btn"</code></pre>
+    
+    <p><a href="#" class="orange-btn inline-btn">Orange</a></p>
+    <pre><code class="language-css">class="orange-btn"</code></pre>
+  </div>
+  <div class="clear"></div>
+  
+  
+  <h4>Bordered Buttons</h4>
+  <div class="ctn-grid-8">
+    <p><a href="#" class="dark-grey-btn-bdr inline-btn">Dark Grey</a></p>
+    <pre><code class="language-css">class="dark-grey-btn"</code></pre>
+    
+    <p><a href="#" class="purple-btn-bdr inline-btn">Purple</a></p>
+    <pre><code class="language-css">class="purple-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="red-btn-bdr inline-btn">Red</a></p>
+    <pre><code class="language-css">class="red-btn"</code></pre>
+    
+    <p><a href="#" class="green-btn-bdr inline-btn">Green</a></p>
+    <pre><code class="language-css">class="green-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="blue-btn-bdr inline-btn">Blue</a></p>
+    <pre><code class="language-css">class="blue-btn"</code></pre>
+    
+    <p><a href="#" class="orange-btn-bdr inline-btn">Orange</a></p>
     <pre><code class="language-css">class="orange-btn"</code></pre>
   </div>
   
-  <div class="ctn-grid-8">
-    <h3>Red</h3>
-    <p><a href="#" class="red-btn inline-btn">Regular Red</a></p>
-    <pre><code class="language-css">class="red-btn"</code></pre>
-    
-    <h3>Green</h3>
-    <p><a href="#" class="green-btn inline-btn">Regular Green</a></p>
-    <pre><code class="language-css">class="green-btn"</code></pre>
-    
-    <h3>Black</h3>
-    <p><a href="#" class="dark-grey-btn inline-btn">Regular Dark Grey</a></p>
-    <pre><code class="language-css">class="dark-grey-btn"</code></pre>
-  </div>
+  
 </article>
 
 

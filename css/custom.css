@@ -30,33 +30,33 @@
   .color-swatch.dark-grey {
     background-color: #555555; }
   .color-swatch.red {
-    background-color: #cc583a; }
+    background-color: #e04646; }
   .color-swatch.light-red {
-    background-color: #ebbfb4; }
+    background-color: #ef9d9d; }
   .color-swatch.dark-red {
-    background-color: #a8452b; }
+    background-color: #d02323; }
   .color-swatch.blue {
-    background-color: #1F468D; }
+    background-color: #2971b2; }
   .color-swatch.light-blue {
-    background-color: #6791de; }
+    background-color: #8fbce5; }
   .color-swatch.dark-blue {
-    background-color: #163163; }
+    background-color: #1f5789; }
   .color-swatch.purple {
-    background-color: #7f4d7b; }
+    background-color: #553a99; }
   .color-swatch.light-purple {
-    background-color: #c5a0c2; }
+    background-color: #a895d7; }
   .color-swatch.dark-purple {
-    background-color: #5f3a5c; }
+    background-color: #402c74; }
   .color-swatch.green {
-    background-color: #277f35; }
+    background-color: #4a742c; }
   .color-swatch.light-green {
-    background-color: #6dd27d; }
+    background-color: #95c970; }
   .color-swatch.dark-green {
-    background-color: #1b5825; }
+    background-color: #324f1e; }
   .color-swatch.orange {
     background-color: #fe9300; }
   .color-swatch.light-orange {
-    background-color: #ffd498; }
+    background-color: #ffbe65; }
   .color-swatch.dark-orange {
     background-color: #cb7500; }
 
@@ -115,7 +115,9 @@ nav a {
   font-size: 0.9em;
   font-weight: 100;
   padding: 1em;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: background-color 100ms linear;
+  transition: background-color 100ms linear; }
   nav a:hover, nav a.nav-current {
     background: #fe9300;
     color: #FFF; }
@@ -130,7 +132,6 @@ nav a {
 */
 footer {
   background: #EDEDED;
-  border-top: 1px solid #999999;
   margin-top: 4em; }
   footer p {
     font-size: 0.8em; }
@@ -157,7 +158,7 @@ span.box-grid {
   width: 100%; }
 
 [class^="ctn-grid-"] [class^="ctn-grid-"] .first .box-grid, [class^="ctn-grid-"] [class^="ctn-grid-"]:first-of-type .box-grid {
-  background: #ffd498; }
+  background: #ffbe65; }
 [class^="ctn-grid-"] [class^="ctn-grid-"] .last .box-grid, [class^="ctn-grid-"] [class^="ctn-grid-"]:last-of-type .box-grid {
   background: #fe9300;
   margin-bottom: 8px;
@@ -168,9 +169,19 @@ span.box-grid {
   margin-bottom: 0.53333rem; }
 
 [class^="ctn-grid-"][class*="push-"] .box-grid {
-  background-color: #ffd498; }
+  background-color: #ffbe65; }
 [class^="ctn-grid-"][class*="pull-"] .box-grid {
   background-color: #fe9300; }
+
+.rotate {
+  -webkit-transition-duration: 0.75s;
+  transition-duration: 0.75s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform; }
+
+.rotate:hover {
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg); }
 
 .clearfix:before, .cf:before, .clearfix:after, .cf:after {
   content: " ";

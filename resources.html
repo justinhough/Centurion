@@ -17,8 +17,12 @@
   <meta name="description" content="Centurion is a web-based framework for rapid prototyping and provides a core for building larger web projects"/>
   
   <!-- Centurion Framework -->
+<!--
   <link rel="stylesheet" href="css/centurion.css">
   <link rel="stylesheet" href="css/custom.css">
+-->
+  <link rel="stylesheet" href="css/minified/centurion.min.css">
+  <link rel="stylesheet" href="css/minified/custom.min.css">
   <!-- End of Framework -->
   
   <!-- GA CODE goes here -->
@@ -47,7 +51,928 @@
       <article class="post-content">
 
 <h1>Resources</h1>
-<p>More coming soon &hellip;</p>
+
+<p>You can <a href="https://github.com/justinhough/Centurion/blob/3.5.3/DOCUMENTATION.md">read the full documentation</a> on the CSS and Sass components on Github</p>
+
+<p>If you're worried about browser support we recommend using <a href="https://code.google.com/p/html5shiv/">html5shiv</a> to add fallback for HTML5 or <a href="http://modernizr.com/">Modernizr</a> to provide basic support for CSS3 and other feature detection to keep your design from falling flat, unless you designed it that way.</p>
+
+<h2>Sass Supported</h2>
+
+<p>Centurion is built using vanilla Sass (basically no library dependencies) and comes with some custom Sass Mixins that you can attach to create your own custom blend for your site. Remove what you don't need and move on.</p>
+
+<hr />
+
+<!-- GRID -->
+<div class="ctn-grid-24 no-display-grid">
+  <h1>The Grid</h1>
+  <p>Originally Centurion was built only a responsive grid, so at its core Centurion is built to be responsive. The grid is built using a Sass mixin, which makes it highly customizable. The only portion of the grid system that uses a pixel width is the container. For desktops the default container is set to <code>1100px</code> wide and is fully fluid below <code>768px</code> for tablets and smartphones.</p>
+  
+  <h2>Basic Structure</h2>
+  
+  <p>Utlizing the grid in your your project requires a container wrapper to set the main size of the area with grid elements inside to divide the space of the content area as needed. For example, if you want to use the full width for a banner that spans the page, then you would specify a <code>ctn-grid-24</code>. 24 columns is the full width of the default grid and is easily divisible in any design pattern. If you want to divide the page in two columns (a main body and a sidebar) you could use a <code>ctn-grid-6</code> and a <code>ctn-grid-18</code>. The number corresponds the amount of columns that the grid will occupy within the container.</p>
+</div>
+
+<pre><code class="language-markup">&lt;div class="ctn-container">
+  &lt;div class="ctn-grid-2">&lt;/div>
+  &lt;div class="ctn-grid-22">&lt;/div>
+  
+  &lt;div class="ctn-grid-3">&lt;/div>
+  &lt;div class="ctn-grid-21">&lt;/div>
+  
+  &lt;div class="ctn-grid-4">&lt;/div>
+  &lt;div class="ctn-grid-20">&lt;/div>
+  
+  &lt;div class="ctn-grid-5">&lt;/div>
+  &lt;div class="ctn-grid-19">&lt;/div>
+  
+  &lt;div class="ctn-grid-6">&lt;/div>
+  &lt;div class="ctn-grid-18">&lt;/div>
+&lt;/div></code></pre>
+
+<p><strong>Note</strong>: For each row make sure that you elements add up to 24 columns across in order to utilize the full row. However, if you want to center one grid element on each row then you will want to use Centering Grids below.</p>
+
+
+<section class="calculate clearfix">
+
+  <div class="ctn-grid-24"></div>
+  
+<!--
+  <div class="ctn-grid-1"></div>
+  <div class="ctn-grid-23"></div>
+-->
+  
+  <div class="ctn-grid-2"></div>
+  <div class="ctn-grid-22"></div>
+  
+  <div class="ctn-grid-3"></div>
+  <div class="ctn-grid-21"></div>
+  
+  <div class="ctn-grid-4"></div>
+  <div class="ctn-grid-20"></div>
+  
+  <div class="ctn-grid-5"></div>
+  <div class="ctn-grid-19"></div>
+  
+  <div class="ctn-grid-6"></div>
+  <div class="ctn-grid-18"></div>
+  
+  <div class="ctn-grid-7"></div>
+  <div class="ctn-grid-17"></div>
+  
+  <div class="ctn-grid-8"></div>
+  <div class="ctn-grid-16"></div>
+  
+  <div class="ctn-grid-9"></div>
+  <div class="ctn-grid-15"></div>
+  
+  <div class="ctn-grid-10"></div>
+  <div class="ctn-grid-14"></div>
+  
+  <div class="ctn-grid-11"></div>
+  <div class="ctn-grid-13"></div>
+  
+  <div class="ctn-grid-12"></div>
+  <div class="ctn-grid-12"></div>
+</section>
+<div class="ctn-grid-24">
+  <h2>Nested Grids</h2>
+
+  <p>The best part of any grid system is the ability to nest elements within a single grid element to break down the space into smaller, manageable spaces.</p>
+
+  <p>For example, say that you want to have content in a <code>ctn-grid-18</code>, but you also want to add three images with captions side-by-side beneath the main block of text. In order to create this layout will need to put three <code>ctn-grid-8</code> grid elements inside the parent grid element.</p>
+
+</div>
+
+
+<pre><code class="language-markup">&lt;div class="ctn-container">
+  &lt;div class="ctn-grid-12">
+    &lt;div class="ctn-grid-8">&lt;/div>
+    &lt;div class="ctn-grid-16">&lt;/div>
+  &lt;/div>
+  &lt;div class="ctn-grid-12">
+    &lt;div class="ctn-grid-16">&lt;/div>
+    &lt;div class="ctn-grid-8">&lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+
+<section class="calculate clearfix">  
+
+  <div class="ctn-grid-24">
+    <div class="ctn-grid-2"></div>
+    <div class="ctn-grid-22"></div>
+  </div>
+  
+  <div class="ctn-grid-12">
+    <div class="ctn-grid-8"></div>
+    <div class="ctn-grid-16"></div>
+  </div>
+  <div class="ctn-grid-12">
+    <div class="ctn-grid-16"></div>
+    <div class="ctn-grid-8"></div>
+  </div>
+
+</section>
+<div class="ctn-grid-24">
+  <h2>Centered Grids</h2>
+  
+  <p>Centering grid elements is as easy as adding <code>ctn-grid-center</code> to your grid element. This will evenly space your element in the center of your grid container.</p>
+  
+</div>
+
+<pre><code class="language-markup">&lt;div class="ctn-grid-2 ctn-grid-center">&lt;/div></code></pre>
+
+<section class="calculate clearfix">
+  
+  <div class="ctn-grid-2 ctn-grid-center"></div>
+  <div class="ctn-grid-4 ctn-grid-center"></div>
+  <div class="ctn-grid-6 ctn-grid-center"></div>
+  <div class="ctn-grid-8 ctn-grid-center"></div>
+  <div class="ctn-grid-10 ctn-grid-center"></div>
+  <div class="ctn-grid-12 ctn-grid-center"></div>
+  
+</section>
+<div class="ctn-grid-24">
+  <h3>Push the Grid</h3>
+</div>
+
+
+<pre><code class="language-markup">&lt;div class="ctn-container">
+  &lt;div class="ctn-grid-6">&lt;/div>
+  &lt;div class="ctn-grid-6 ctn-push-6">&lt;/div>
+  &lt;div class="ctn-grid-6 ctn-push-12">&lt;/div>
+  &lt;div class="ctn-grid-6 ctn-push-18">&lt;/div>
+&lt;/div></code></pre>
+
+<section class="calculate clearfix">  
+
+  <div class="ctn-grid-6"></div>
+  <div class="clear"></div>
+  
+  <div class="ctn-grid-6 ctn-push-6"></div>
+  <div class="clear"></div>
+  
+  <div class="ctn-grid-6 ctn-push-12"></div>
+  <div class="clear"></div>
+  
+  <div class="ctn-grid-6 ctn-push-18"></div>
+  <div class="clear"></div>
+
+</section>
+
+
+<div class="ctn-grid-24">
+  <h3>Push and Pull the Grid</h3>
+</div>
+
+<pre><code class="language-markup">&lt;div class="ctn-container">
+  &lt;div class="ctn-grid-8 ctn-push-16">&lt;/div>
+  &lt;div class="ctn-grid-16 ctn-pull-8">&lt;/div>
+  &lt;div class="ctn-grid-16 ctn-pull-8">&lt;/div>
+  &lt;div class="ctn-grid-8 ctn-pull-16">&lt;/div>
+&lt;/div></code></pre>
+
+<section class="calculate clearfix">  
+
+  <div class="ctn-grid-6 ctn-push-6"></div>  
+  <div class="ctn-grid-6 ctn-pull-6"></div>
+  <div class="ctn-grid-6 ctn-push-6"></div>
+  <div class="ctn-grid-6 ctn-pull-6"></div>
+
+</section>
+
+<div class="clear"></div>
+<hr />
+
+<!-- TYPOGRAPHY -->
+<a name="typography"></a>
+<article class="ctn-grid-24">
+  
+  <h2>Typography</h2>
+  <p>______</p>
+  
+  <div class="ctn-grid-8">
+    <h1>Standard h1</h1>
+    <code class="code-inline language-markup">&lt;h1> 32px</code>
+    
+    <h2>Standard h2</h2>
+    <code class="code-inline language-markup">&lt;h2> 26px</code>
+    
+    <h3>Standard h3</h3>
+    <code class="code-inline language-markup">&lt;h3> 22px</code>
+    
+    <h4>Standard h4</h4>
+    <code class="code-inline language-markup">&lt;h4> 18px</code>
+    
+    <h5>Standard h5</h5>
+    <code class="code-inline language-markup">&lt;h5> 16px</code>
+    
+    <h6>Standard h6</h6>
+    <code class="code-inline language-markup">&lt;h6> 14px</code>
+  </div>
+
+  <div class="ctn-grid-16">
+
+    <p class="text-large">Lorem ipsum dolor sit amet, emphasis consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+    
+    <pre><code class="language-markup">&lt;p class="text-large"></code></pre>
+    
+    <p>Lorem ipsum dolor sit amet, emphasis consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+    
+    <pre><code class="language-markup">&lt;p></code></pre>
+    
+    <p class="text-small">Turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+    
+    <pre><code class="language-markup">&lt;p class="text-small"></code></pre>
+    
+    <p class="text-muted">Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+    
+    <pre><code class="language-markup">&lt;p class="text-muted"></code></pre>
+    
+  </div>
+
+
+  <div class="ctn-grid-24">
+    <h2>Blockquotes</h2>
+  </div>
+  
+  <div class="ctn-grid-12">
+    
+    <h3>Simple</h3>
+    <blockquote>
+      Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+    </blockquote>
+    
+    <pre><code class="language-markup">&lt;blockquote> ... &lt;/blockquote></code></pre>
+    
+    <h3>With By Line</h3>
+    <blockquote>
+      Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+      <span class="byline">Anonymous</span>
+    </blockquote>
+    
+    <pre><code class="language-markup">&lt;blockquote>
+  ... 
+  &lt;span class="byline">Anonymous&lt;/span>
+&lt;/blockquote></code></pre>
+    
+  </div>
+
+  <div class="ctn-grid-12">
+    
+    <h3>With Quotes</h3>
+    <blockquote class="quote">
+      Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+    </blockquote>
+    
+    <pre><code class="language-markup">&lt;blockquote>
+  ...
+&lt;/blockquote></code></pre>
+    
+  </div>
+
+
+  <div class="ctn-grid-24">
+    <h2>Lists</h2>
+  </div>
+  
+  <div class="ctn-grid-12">
+    
+    <h3>Unordered</h3>
+    <ul>
+      <li>Nulla vel neque mattis, vestibulum nunc et, molestie diam.</li>
+      <li>Donec vitae sapien a elit faucibus venenatis et nec neque.</li>
+      <li>Nulla suscipit massa non neque consectetur, non blandit augue scelerisque.</li>
+      <li>Proin a augue eu neque malesuada cursus ut ac elit.</li>
+      <li>Suspendisse congue arcu vehicula sem imperdiet, quis dictum nulla ultricies.</li>
+    </ul>
+    
+<pre><code class="language-markup">&lt;ul>
+  &lt;li>...&lt;/li>
+  &lt;li>...&lt;/li>  
+&lt;/ul></code></pre>
+    
+  </div>
+
+  <div class="ctn-grid-12">
+  
+    <h3>Ordered</h3>
+    <ol>
+      <li>Nulla vel neque mattis, vestibulum nunc et, molestie diam.</li>
+      <li>Donec vitae sapien a elit faucibus venenatis et nec neque.</li>
+      <li>Nulla suscipit massa non neque consectetur, non blandit augue scelerisque.</li>
+      <li>Proin a augue eu neque malesuada cursus ut ac elit.</li>
+      <li>Suspendisse congue arcu vehicula sem imperdiet, quis dictum nulla ultricies.</li>
+    </ol>
+    
+<pre><code class="language-markup">&lt;ol>
+  &lt;li>...&lt;/li>
+  &lt;li>...&lt;/li>  
+&lt;/ol></code></pre>
+    
+  </div>
+  
+
+</article>
+
+<div class="clear"></div>
+<hr />
+
+<!-- Colors -->
+<a name="colors"></a>
+<article id="colors" class="ctn-grid-24 alpha">
+  <h2>Colors</h2>
+  <p>______</p>
+  
+  <div class="ctn-grid-12">
+
+    <!-- BLACK and GREYS -->
+    <div data-color="black"></div>
+    <div data-color="grey"></div>
+    <div data-color="dark-grey"></div>
+    <div data-color="light-grey"></div>
+    <div class="clear"></div>
+    
+    <!-- RED -->
+    <div data-color="red"></div>
+    <div data-color="dark-red"></div>
+    <div data-color="light-red"></div>
+    <div class="clear"></div>
+
+    <!-- BLUE -->
+    <div data-color="blue"></div>
+    <div data-color="dark-blue"></div>
+    <div data-color="light-blue"></div>
+    <div class="clear"></div>
+    
+  </div>
+
+  <div class="ctn-grid-12">
+    <!-- PURPLE -->
+    <div data-color="purple"></div>
+    <div data-color="dark-purple"></div>
+    <div data-color="light-purple"></div>
+    <div class="clear"></div>
+  
+    <!-- GREEN -->
+    <div data-color="green"></div>
+    <div data-color="dark-green"></div>
+    <div data-color="light-green"></div>
+    <div class="clear"></div>
+  
+    <!-- ORANGE -->
+    <div data-color="orange"></div>
+    <div data-color="dark-orange"></div>
+    <div data-color="light-orange"></div>
+    <div class="clear"></div>
+  </div>
+  
+</article>
+
+<div class="clear"></div>
+<hr />
+
+<!-- BADGES -->
+<a name="badges"></a>
+<article class="ctn-grid-24">
+  <h2>Badges</h2>
+  <p>______</p>
+  
+  <div class="ctn-grid-12">
+    <h3>Default Badges</h3>
+    <span class="red-badge">red-badge</span>
+    <span class="blue-badge">blue-badge</span>
+    <span class="purple-badge">purple-badge</span>
+    <span class="green-badge">green-badge</span>
+    <span class="orange-badge">orange-badge</span>
+  
+    <pre><code class="language-markup">&lt;span class="badge [color]">&lt;/span></code></pre>
+  
+    <div class="clear"></div>
+    
+    <h4>Lighter Backgrounds</h4>
+    <span class="red-badge-lt">red-badge</span>
+    <span class="blue-badge-lt">blue-badge</span>
+    <span class="purple-badge-lt">purple-badge</span>
+    <span class="green-badge-lt">green-badge</span>
+    <span class="orange-badge-lt">orange-badge</span>
+    
+    <pre><code class="language-markup">&lt;span class="badge light [color]">&lt;/span></code></pre>
+    
+    <div class="clear"></div>
+
+  </div>
+
+  <div class="ctn-grid-12">
+    <h3>Border Only Badges</h3>
+    <span class="red-badge-bdr">red-badge</span>
+    <span class="blue-badge-bdr">blue-badge</span>
+    <span class="purple-badge-bdr">purple-badge</span>
+    <span class="green-badge-bdr">green-badge</span>
+    <span class="orange-badge-bdr">orange-badge</span>
+    
+    <pre><code class="language-markup">&lt;span class="badge border [color]">&lt;/span></code></pre>
+    
+    <div class="clear"></div>
+
+<!--
+    <h3>Icon Badges</h3>
+    <span class="badge icon-h">badge</span>
+    <span class="badge red icon-e">badge red</span>
+    <span class="badge blue icon-l">badge blue</span>
+    <span class="badge purple icon-l">badge purple</span>
+    <span class="badge green icon-o">badge green</span>
+    <span class="badge orange icon-o">badge orange</span>
+    
+    <pre><code class="language-markup">&lt;span class="badge [color] [icon]">&lt;/span></code></pre>
+
+    <div class="clear"></div>
+-->
+
+  </div>
+
+</article>
+
+<div class="clear"></div>
+<hr />
+
+<!-- BUTTONS -->
+<a name="buttons"></a>
+<article class="ctn-grid-24">
+
+  <h2>Buttons</h2>
+  <p>______</p>
+
+  <h4>Default</h4>
+  <div class="ctn-grid-8">
+    <p><a href="#" class="small-btn inline-btn">Small Grey</a></p>
+    <pre style="margin-top:33px"><code class="language-css">class="small-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="btn inline-btn">Regular Grey</a></p>
+    <pre style="margin-top:20px"><code class="language-css">class="btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">  
+    <p><a href="#" class="large-btn inline-btn">Large Grey</a></p>
+    <pre><code class="language-css">class="large-btn"</code></pre>
+  </div>
+  <div class="clear"></div>
+
+  
+  <h4>Colored Buttons</h4>
+  <div class="ctn-grid-8">
+    <p><a href="#" class="dark-grey-btn inline-btn">Dark Grey</a></p>
+    <pre><code class="language-css">class="dark-grey-btn"</code></pre>
+    
+    <p><a href="#" class="purple-btn inline-btn">Purple</a></p>
+    <pre><code class="language-css">class="purple-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="red-btn inline-btn">Red</a></p>
+    <pre><code class="language-css">class="red-btn"</code></pre>
+    
+    <p><a href="#" class="green-btn inline-btn">Green</a></p>
+    <pre><code class="language-css">class="green-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="blue-btn inline-btn">Blue</a></p>
+    <pre><code class="language-css">class="blue-btn"</code></pre>
+    
+    <p><a href="#" class="orange-btn inline-btn">Orange</a></p>
+    <pre><code class="language-css">class="orange-btn"</code></pre>
+  </div>
+  <div class="clear"></div>
+  
+  
+  <h4>Bordered Buttons</h4>
+  <div class="ctn-grid-8">
+    <p><a href="#" class="dark-grey-btn-bdr inline-btn">Dark Grey</a></p>
+    <pre><code class="language-css">class="dark-grey-btn"</code></pre>
+    
+    <p><a href="#" class="purple-btn-bdr inline-btn">Purple</a></p>
+    <pre><code class="language-css">class="purple-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="red-btn-bdr inline-btn">Red</a></p>
+    <pre><code class="language-css">class="red-btn"</code></pre>
+    
+    <p><a href="#" class="green-btn-bdr inline-btn">Green</a></p>
+    <pre><code class="language-css">class="green-btn"</code></pre>
+  </div>
+  
+  <div class="ctn-grid-8">
+    <p><a href="#" class="blue-btn-bdr inline-btn">Blue</a></p>
+    <pre><code class="language-css">class="blue-btn"</code></pre>
+    
+    <p><a href="#" class="orange-btn-bdr inline-btn">Orange</a></p>
+    <pre><code class="language-css">class="orange-btn"</code></pre>
+  </div>
+  
+  
+</article>
+
+
+<div class="clear"></div>
+<hr />
+
+<!-- CALLOUTS -->
+<article class="ctn-grid-24">
+  <h2>Callouts</h2>
+  
+  <p>also known as frame boxes, alerts, etc.</p>
+
+
+
+  <div class="ctn-grid-12">
+    <h3>Expandable Callouts</h3>
+    
+  <pre><code class="language-markup">&lt;div class="[color]-callout alert">
+  &lt;span class="btn-expand">&lt;/span>  
+  ...
+  &lt;div class="alert-expand">
+    ...
+  &lt;/div>
+&lt;/div></code></pre>
+    
+    <div class="callout alert">
+      <span class="btn-expand"></span>
+      <h1>Headline 1 for callout</h1>
+      <p>Text for the callout</p>
+      
+      <div class="alert-expand">
+        <h2>Headline 2 for callout</h2>
+        <h3>Headline 3 for callout</h3>
+        <p>Text for the callout</p>
+      </div>
+    </div>
+    
+    <div class="red-callout alert">
+      <span class="btn-expand"></span>
+      <h1>Headline 1 for callout</h1>
+      <p>Text for the callout</p>
+      
+      <div class="alert-expand">
+        <h2>Headline 2 for callout</h2>
+        <h3>Headline 3 for callout</h3>
+        <p>Text for the callout</p>
+      </div>
+    </div>
+    
+    <div class="green-callout alert">
+      <span class="btn-expand"></span>
+      <h1>Headline 1 for callout</h1>
+      <p>Text for the callout</p>
+      
+      <div class="alert-expand">
+        <h2>Headline 2 for callout</h2>
+        <h3>Headline 3 for callout</h3>
+        <p>Text for the callout</p>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="ctn-grid-12">
+    <h3>General Callouts</h3>
+    
+  <pre><code class="language-markup">&lt;div class="callout">
+    ...
+&lt;/div>
+
+&lt;div class="[color]-callout">
+    ...
+&lt;/div></code></pre>
+    
+    <div class="blue-callout">
+      <h1>Headline 1 for callout</h1>
+      <h2>Headline 2 for callout</h2>
+      <h3>Headline 3 for callout</h3>
+  
+      <p>Text for the callout</p>
+    </div>
+  
+    <div class="purple-callout">
+    <h1>Headline 1 for callout</h1>
+    <h2>Headline 2 for callout</h2>
+    <h3>Headline 3 for callout</h3>
+
+    <p>Text for the callout</p>
+  </div>
+  
+    <div class="orange-callout">
+    <h1>Headline 1 for callout</h1>
+    <h2>Headline 2 for callout</h2>
+    <h3>Headline 3 for callout</h3>
+
+    <p>Text for the callout</p>
+  </div>
+  </div>
+  
+</article>
+
+<div class="clear"></div>
+<hr />
+
+<!-- TABLES -->
+<article class="ctn-grid-24">
+  <h2>Tables</h2>
+  
+  <p>You know you hate building table after table styles. You can now use the default tables built into Centurion to fit your color scheme.</p>
+  <p>By default the table styles that Centurion uses work out of the box. Create a table and it works with the default grey. To change colors you can specify your own or you can use the ones that come pre-packed based on the <a href="#colors">color scheme</a> above.</p>
+
+  <div class="ctn-grid-12">
+  
+    <h3>Default Table</h3>
+    <pre><code class="language-markup">&lt;table></code></pre>
+
+    <table>
+    <thead>
+      <tr>
+        <th colspan="4">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr>
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr>
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">Table Footer</th>
+      </tr>
+    </tfoot>
+  </table>
+    <br />
+    
+    <h3>Orange Table</h3>
+    <pre><code class="language-markup">&lt;table class="orange-table striped-table"></code></pre>
+
+    <table class="orange-table striped-table">
+    <thead>
+      <tr>
+        <th colspan="4">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr>
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr>
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">Table Footer</th>
+      </tr>
+    </tfoot>
+  </table>
+    <br />
+    
+    <h3>Blue Table</h3>
+    <pre><code class="language-markup">&lt;table class="blue-table striped-table"></code></pre>
+    
+    <table class="blue-table striped-table">
+    <thead>
+      <tr>
+        <th colspan="4">Table Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr>
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+      <tr>
+        <td>Content</td>
+        <td>This is longer content</td>
+        <td>Content</td>
+        <td>Content</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">Table Footer</th>
+      </tr>
+    </tfoot>
+  </table>
+    
+  </div>
+  
+  <div class="ctn-grid-12">
+  
+    <h3>Red Table</h3>
+    <pre><code class="language-markup">&lt;table class="red-table striped-table"></code></pre>
+    
+    <table class="red-table striped-table">
+      <thead>
+        <tr>
+          <th colspan="4">Table Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Content</td>
+          <td>This is longer content</td>
+          <td>Content</td>
+          <td>Content</td>
+        </tr>
+        <tr>
+          <td>Content</td>
+          <td>This is longer content</td>
+          <td>Content</td>
+          <td>Content</td>
+        </tr>
+        <tr>
+          <td>Content</td>
+          <td>This is longer content</td>
+          <td>Content</td>
+          <td>Content</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">Table Footer</th>
+        </tr>
+      </tfoot>
+    </table>
+    <br />
+    
+    <h3>Green Table</h3>
+    <pre><code class="language-markup">&lt;table class="green-table"></code></pre>
+    
+    <table class="green-table">
+      <thead>
+        <tr>
+          <th colspan="4">Table Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Content</td>
+          <td>This is longer content</td>
+          <td>Content</td>
+          <td>Content</td>
+        </tr>
+        <tr>
+          <td>Content</td>
+          <td>This is longer content</td>
+          <td>Content</td>
+          <td>Content</td>
+        </tr>
+        <tr>
+          <td>Content</td>
+          <td>This is longer content</td>
+          <td>Content</td>
+          <td>Content</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">Table Footer</th>
+        </tr>
+      </tfoot>
+    </table>
+    <br />
+    
+    <h3>Black Table</h3>
+    <pre><code class="language-markup">&lt;table class="black-table"></code></pre>
+    
+    <table class="black-table">
+      <thead>
+        <tr>
+          <th colspan="4">Table Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Content</td>
+          <td>This is longer content</td>
+          <td>Content</td>
+          <td>Content</td>
+        </tr>
+        <tr>
+          <td>Content</td>
+          <td>This is longer content</td>
+          <td>Content</td>
+          <td>Content</td>
+        </tr>
+        <tr>
+          <td>Content</td>
+          <td>This is longer content</td>
+          <td>Content</td>
+          <td>Content</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">Table Footer</th>
+        </tr>
+      </tfoot>
+    </table>
+  
+  </div>
+  
+</article>
+
+<div class="clear"></div>
+<hr />
+
+<!-- NAVIGATION -->
+<!--include('_features/_navigation.html')-->
+
+<!--
+<div class="clear"></div>
+<hr />
+-->
+
+<!-- SHOW / HIDE -->
+<a name="show-hide"></a>
+<article class="ctn-grid-24">
+  <h2>Show / Hide for Desktop, Tablet, and Mobile</h2>
+  <p>______</p>
+  
+  
+<!--
+  <p class="show-mobile">mobile view</p>
+  <p class="show-tablet">tablet view</p>
+  <p class="show-desktop">desktop view</p>
+-->
+  
+  <table class="striped-table">
+
+    <tr>
+      <td>Hide Helper</td>
+      <td>
+        <span class="hide-mobile">hide-mobile</span>
+      </td>
+      <td>
+        <span class="hide-tablet">hide-tablet</span>
+      </td>
+      <td>
+        <span class="hide-desktop">hide-desktop</span>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>Show Helper</td>
+      <td>
+        <span class="show-mobile">show-mobile</span>
+      </td>
+      <td>
+        <span class="show-tablet">show-tablet</span>
+      </td>
+      <td>
+        <span class="show-desktop">show-desktop</span>
+      </td>
+    </tr>
+    
+  </table>
+  
+  
+
+</article>
+
+
 
         <div class="clear"></div>
         </article>

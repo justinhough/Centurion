@@ -600,22 +600,22 @@ td, th {
   float: none !important;
   margin: 0 auto; }
 
-.ctn-container .ctn-grid-1:before, .ctn-container .ctn-grid-2:before, .ctn-container .ctn-grid-3:before, .ctn-container .ctn-grid-4:before, .ctn-container .ctn-grid-5:before, .ctn-container .ctn-grid-6:before, .ctn-container .ctn-grid-7:before, .ctn-container .ctn-grid-8:before, .ctn-container .ctn-grid-9:before, .ctn-container .ctn-grid-10:before, .ctn-container .ctn-grid-11:before, .ctn-container .ctn-grid-12:before, .ctn-container .ctn-grid-13:before, .ctn-container .ctn-grid-14:before, .ctn-container .ctn-grid-15:before, .ctn-container .ctn-grid-16:before, .ctn-container .ctn-grid-17:before, .ctn-container .ctn-grid-18:before, .ctn-container .ctn-grid-19:before, .ctn-container .ctn-grid-20:before, .ctn-container .ctn-grid-21:before, .ctn-container .ctn-grid-22:before, .ctn-container .ctn-grid-23:before, .ctn-container .ctn-grid-24:before, .ctn-container .ctn-tablet-1:before, .ctn-container .ctn-tablet-2:before, .ctn-container .ctn-tablet-3:before, .ctn-container .ctn-tablet-4:before, .ctn-container .ctn-tablet-5:before, .ctn-container .ctn-tablet-6:before, .ctn-container .ctn-tablet-7:before, .ctn-container .ctn-tablet-8:before, .ctn-container .ctn-tablet-9:before, .ctn-container .ctn-tablet-10:before, .ctn-container .ctn-tablet-11:before, .ctn-container .ctn-tablet-12:before, .ctn-container .ctn-mobile-1:before, .ctn-container .ctn-mobile-2:before, .ctn-container .ctn-mobile-3:before, .ctn-container .ctn-mobile-4:before, .ctn-container .ctn-mobile-5:before, .ctn-container .ctn-mobile-6:before, .ctn-container:before, .clearfix:before, .cf:before, .callout:before, .red-callout:before, .blue-callout:before, .purple-callout:before, .green-callout:before, .orange-callout:before, .alert-expand:before, .breadcrumb:before, .breadcrumb-awesome:before, .ctn-container .ctn-grid-1:after, .ctn-container .ctn-grid-2:after, .ctn-container .ctn-grid-3:after, .ctn-container .ctn-grid-4:after, .ctn-container .ctn-grid-5:after, .ctn-container .ctn-grid-6:after, .ctn-container .ctn-grid-7:after, .ctn-container .ctn-grid-8:after, .ctn-container .ctn-grid-9:after, .ctn-container .ctn-grid-10:after, .ctn-container .ctn-grid-11:after, .ctn-container .ctn-grid-12:after, .ctn-container .ctn-grid-13:after, .ctn-container .ctn-grid-14:after, .ctn-container .ctn-grid-15:after, .ctn-container .ctn-grid-16:after, .ctn-container .ctn-grid-17:after, .ctn-container .ctn-grid-18:after, .ctn-container .ctn-grid-19:after, .ctn-container .ctn-grid-20:after, .ctn-container .ctn-grid-21:after, .ctn-container .ctn-grid-22:after, .ctn-container .ctn-grid-23:after, .ctn-container .ctn-grid-24:after, .ctn-container .ctn-tablet-1:after, .ctn-container .ctn-tablet-2:after, .ctn-container .ctn-tablet-3:after, .ctn-container .ctn-tablet-4:after, .ctn-container .ctn-tablet-5:after, .ctn-container .ctn-tablet-6:after, .ctn-container .ctn-tablet-7:after, .ctn-container .ctn-tablet-8:after, .ctn-container .ctn-tablet-9:after, .ctn-container .ctn-tablet-10:after, .ctn-container .ctn-tablet-11:after, .ctn-container .ctn-tablet-12:after, .ctn-container .ctn-mobile-1:after, .ctn-container .ctn-mobile-2:after, .ctn-container .ctn-mobile-3:after, .ctn-container .ctn-mobile-4:after, .ctn-container .ctn-mobile-5:after, .ctn-container .ctn-mobile-6:after, .ctn-container:after, .clearfix:after, .cf:after, .callout:after, .red-callout:after, .blue-callout:after, .purple-callout:after, .green-callout:after, .orange-callout:after, .alert-expand:after, .breadcrumb:after, .breadcrumb-awesome:after {
+.ctn-container .ctn-grid-1:before, .ctn-container .ctn-grid-2:before, .ctn-container .ctn-grid-3:before, .ctn-container .ctn-grid-4:before, .ctn-container .ctn-grid-5:before, .ctn-container .ctn-grid-6:before, .ctn-container .ctn-grid-7:before, .ctn-container .ctn-grid-8:before, .ctn-container .ctn-grid-9:before, .ctn-container .ctn-grid-10:before, .ctn-container .ctn-grid-11:before, .ctn-container .ctn-grid-12:before, .ctn-container .ctn-grid-13:before, .ctn-container .ctn-grid-14:before, .ctn-container .ctn-grid-15:before, .ctn-container .ctn-grid-16:before, .ctn-container .ctn-grid-17:before, .ctn-container .ctn-grid-18:before, .ctn-container .ctn-grid-19:before, .ctn-container .ctn-grid-20:before, .ctn-container .ctn-grid-21:before, .ctn-container .ctn-grid-22:before, .ctn-container .ctn-grid-23:before, .ctn-container .ctn-grid-24:before, .ctn-container .ctn-tablet-1:before, .ctn-container .ctn-tablet-2:before, .ctn-container .ctn-tablet-3:before, .ctn-container .ctn-tablet-4:before, .ctn-container .ctn-tablet-5:before, .ctn-container .ctn-tablet-6:before, .ctn-container .ctn-tablet-7:before, .ctn-container .ctn-tablet-8:before, .ctn-container .ctn-tablet-9:before, .ctn-container .ctn-tablet-10:before, .ctn-container .ctn-tablet-11:before, .ctn-container .ctn-tablet-12:before, .ctn-container .ctn-mobile-1:before, .ctn-container .ctn-mobile-2:before, .ctn-container .ctn-mobile-3:before, .ctn-container .ctn-mobile-4:before, .ctn-container .ctn-mobile-5:before, .ctn-container .ctn-mobile-6:before, .ctn-container:before, .clearfix:before, .cf:before, .callout:before, .red-callout:before, .blue-callout:before, .purple-callout:before, .green-callout:before, .orange-callout:before, .alert-expand:before, .ctn-container .ctn-grid-1:after, .ctn-container .ctn-grid-2:after, .ctn-container .ctn-grid-3:after, .ctn-container .ctn-grid-4:after, .ctn-container .ctn-grid-5:after, .ctn-container .ctn-grid-6:after, .ctn-container .ctn-grid-7:after, .ctn-container .ctn-grid-8:after, .ctn-container .ctn-grid-9:after, .ctn-container .ctn-grid-10:after, .ctn-container .ctn-grid-11:after, .ctn-container .ctn-grid-12:after, .ctn-container .ctn-grid-13:after, .ctn-container .ctn-grid-14:after, .ctn-container .ctn-grid-15:after, .ctn-container .ctn-grid-16:after, .ctn-container .ctn-grid-17:after, .ctn-container .ctn-grid-18:after, .ctn-container .ctn-grid-19:after, .ctn-container .ctn-grid-20:after, .ctn-container .ctn-grid-21:after, .ctn-container .ctn-grid-22:after, .ctn-container .ctn-grid-23:after, .ctn-container .ctn-grid-24:after, .ctn-container .ctn-tablet-1:after, .ctn-container .ctn-tablet-2:after, .ctn-container .ctn-tablet-3:after, .ctn-container .ctn-tablet-4:after, .ctn-container .ctn-tablet-5:after, .ctn-container .ctn-tablet-6:after, .ctn-container .ctn-tablet-7:after, .ctn-container .ctn-tablet-8:after, .ctn-container .ctn-tablet-9:after, .ctn-container .ctn-tablet-10:after, .ctn-container .ctn-tablet-11:after, .ctn-container .ctn-tablet-12:after, .ctn-container .ctn-mobile-1:after, .ctn-container .ctn-mobile-2:after, .ctn-container .ctn-mobile-3:after, .ctn-container .ctn-mobile-4:after, .ctn-container .ctn-mobile-5:after, .ctn-container .ctn-mobile-6:after, .ctn-container:after, .clearfix:after, .cf:after, .callout:after, .red-callout:after, .blue-callout:after, .purple-callout:after, .green-callout:after, .orange-callout:after, .alert-expand:after {
   content: " ";
   display: table; }
-.ctn-container .ctn-grid-1:after, .ctn-container .ctn-grid-2:after, .ctn-container .ctn-grid-3:after, .ctn-container .ctn-grid-4:after, .ctn-container .ctn-grid-5:after, .ctn-container .ctn-grid-6:after, .ctn-container .ctn-grid-7:after, .ctn-container .ctn-grid-8:after, .ctn-container .ctn-grid-9:after, .ctn-container .ctn-grid-10:after, .ctn-container .ctn-grid-11:after, .ctn-container .ctn-grid-12:after, .ctn-container .ctn-grid-13:after, .ctn-container .ctn-grid-14:after, .ctn-container .ctn-grid-15:after, .ctn-container .ctn-grid-16:after, .ctn-container .ctn-grid-17:after, .ctn-container .ctn-grid-18:after, .ctn-container .ctn-grid-19:after, .ctn-container .ctn-grid-20:after, .ctn-container .ctn-grid-21:after, .ctn-container .ctn-grid-22:after, .ctn-container .ctn-grid-23:after, .ctn-container .ctn-grid-24:after, .ctn-container .ctn-tablet-1:after, .ctn-container .ctn-tablet-2:after, .ctn-container .ctn-tablet-3:after, .ctn-container .ctn-tablet-4:after, .ctn-container .ctn-tablet-5:after, .ctn-container .ctn-tablet-6:after, .ctn-container .ctn-tablet-7:after, .ctn-container .ctn-tablet-8:after, .ctn-container .ctn-tablet-9:after, .ctn-container .ctn-tablet-10:after, .ctn-container .ctn-tablet-11:after, .ctn-container .ctn-tablet-12:after, .ctn-container .ctn-mobile-1:after, .ctn-container .ctn-mobile-2:after, .ctn-container .ctn-mobile-3:after, .ctn-container .ctn-mobile-4:after, .ctn-container .ctn-mobile-5:after, .ctn-container .ctn-mobile-6:after, .ctn-container:after, .clearfix:after, .cf:after, .callout:after, .red-callout:after, .blue-callout:after, .purple-callout:after, .green-callout:after, .orange-callout:after, .alert-expand:after, .breadcrumb:after, .breadcrumb-awesome:after {
+.ctn-container .ctn-grid-1:after, .ctn-container .ctn-grid-2:after, .ctn-container .ctn-grid-3:after, .ctn-container .ctn-grid-4:after, .ctn-container .ctn-grid-5:after, .ctn-container .ctn-grid-6:after, .ctn-container .ctn-grid-7:after, .ctn-container .ctn-grid-8:after, .ctn-container .ctn-grid-9:after, .ctn-container .ctn-grid-10:after, .ctn-container .ctn-grid-11:after, .ctn-container .ctn-grid-12:after, .ctn-container .ctn-grid-13:after, .ctn-container .ctn-grid-14:after, .ctn-container .ctn-grid-15:after, .ctn-container .ctn-grid-16:after, .ctn-container .ctn-grid-17:after, .ctn-container .ctn-grid-18:after, .ctn-container .ctn-grid-19:after, .ctn-container .ctn-grid-20:after, .ctn-container .ctn-grid-21:after, .ctn-container .ctn-grid-22:after, .ctn-container .ctn-grid-23:after, .ctn-container .ctn-grid-24:after, .ctn-container .ctn-tablet-1:after, .ctn-container .ctn-tablet-2:after, .ctn-container .ctn-tablet-3:after, .ctn-container .ctn-tablet-4:after, .ctn-container .ctn-tablet-5:after, .ctn-container .ctn-tablet-6:after, .ctn-container .ctn-tablet-7:after, .ctn-container .ctn-tablet-8:after, .ctn-container .ctn-tablet-9:after, .ctn-container .ctn-tablet-10:after, .ctn-container .ctn-tablet-11:after, .ctn-container .ctn-tablet-12:after, .ctn-container .ctn-mobile-1:after, .ctn-container .ctn-mobile-2:after, .ctn-container .ctn-mobile-3:after, .ctn-container .ctn-mobile-4:after, .ctn-container .ctn-mobile-5:after, .ctn-container .ctn-mobile-6:after, .ctn-container:after, .clearfix:after, .cf:after, .callout:after, .red-callout:after, .blue-callout:after, .purple-callout:after, .green-callout:after, .orange-callout:after, .alert-expand:after {
   clear: both; }
 
-.clear, .badge {
+.clear, red-badge, blue-badge, purple-badge, orange-badge, green-badge, red-badge-lt, blue-badge-lt, purple-badge-lt, orange-badge-lt, green-badge-lt, red-badge-bdr, blue-badge-bdr, purple-badge-bdr, orange-badge-bdr, green-badge-bdr {
   clear: both; }
 
-.btn, .small-btn, .large-btn, .full-btn, .blue-btn, .red-btn, .purple-btn, .orange-btn, .green-btn, .dark-grey-btn {
+.btn, .small-btn, .large-btn, .full-btn, .blue-btn, .red-btn, .purple-btn, .orange-btn, .green-btn, .dark-grey-btn, .blue-btn-bdr, .red-btn-bdr, .purple-btn-bdr, .orange-btn-bdr, .green-btn-bdr, .dark-grey-btn-bdr {
   text-decoration: none; }
 
-.btn, .small-btn, .large-btn, .full-btn, .blue-btn, .red-btn, .purple-btn, .orange-btn, .green-btn, .dark-grey-btn {
+.btn, .small-btn, .large-btn, .full-btn, .blue-btn, .red-btn, .purple-btn, .orange-btn, .green-btn, .dark-grey-btn, .blue-btn-bdr, .red-btn-bdr, .purple-btn-bdr, .orange-btn-bdr, .green-btn-bdr, .dark-grey-btn-bdr {
   cursor: pointer; }
 
-h1, h2, h3, h4, h5, h6, p, li, blockquote, .btn, .small-btn, .large-btn, .full-btn, .blue-btn, .red-btn, .purple-btn, .orange-btn, .green-btn, .dark-grey-btn, .badge, table {
+h1, h2, h3, h4, h5, h6, p, li, blockquote, .btn, .small-btn, .large-btn, .full-btn, .blue-btn, .red-btn, .purple-btn, .orange-btn, .green-btn, .dark-grey-btn, .blue-btn-bdr, .red-btn-bdr, .purple-btn-bdr, .orange-btn-bdr, .green-btn-bdr, .dark-grey-btn-bdr, red-badge, blue-badge, purple-badge, orange-badge, green-badge, red-badge-lt, blue-badge-lt, purple-badge-lt, orange-badge-lt, green-badge-lt, red-badge-bdr, blue-badge-bdr, purple-badge-bdr, orange-badge-bdr, green-badge-bdr, table {
   color: #333333;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -632,12 +632,12 @@ h1 {
   font-size: 2.33333rem; }
 
 h2 {
-  font-size: 31px;
-  font-size: 2.06667rem; }
+  font-size: 29px;
+  font-size: 1.93333rem; }
 
 h3 {
-  font-size: 27px;
-  font-size: 1.8rem; }
+  font-size: 25px;
+  font-size: 1.66667rem; }
 
 h4 {
   font-size: 21px;
@@ -667,6 +667,10 @@ li {
   margin: 0;
   padding-left: 7px;
   padding-left: 0.46667rem; }
+
+a {
+  -webkit-transition: color 120ms linear;
+  transition: color 120ms linear; }
 
 blockquote {
   border-left: 5px solid #dedede;
@@ -717,7 +721,7 @@ small, .text-small {
 .text-muted {
   color: #CCCCCC !important; }
 
-.btn, .small-btn, .large-btn, .full-btn, .blue-btn, .red-btn, .purple-btn, .orange-btn, .green-btn, .dark-grey-btn {
+.btn, .small-btn, .large-btn, .full-btn, .blue-btn, .red-btn, .purple-btn, .orange-btn, .green-btn, .dark-grey-btn, .blue-btn-bdr, .red-btn-bdr, .purple-btn-bdr, .orange-btn-bdr, .green-btn-bdr, .dark-grey-btn-bdr {
   background: #EDEDED;
   border: none;
   color: #000;
@@ -732,26 +736,32 @@ small, .text-small {
   margin: 15px 0px;
   margin: 1rem 0rem;
   outline: 0;
-  padding: 8px 20px;
-  padding: 0.53333rem 1.33333rem;
+  padding: 8px 16px;
+  padding: 0.53333rem 1.06667rem;
   text-decoration: none;
   vertical-align: middle;
-  zoom: 1; }
-  .btn:hover, .small-btn:hover, .large-btn:hover, .full-btn:hover, .blue-btn:hover, .red-btn:hover, .purple-btn:hover, .orange-btn:hover, .green-btn:hover, .dark-grey-btn:hover {
+  zoom: 1;
+  -webkit-transition: background 120ms linear;
+  transition: background 120ms linear; }
+  .btn:hover, .small-btn:hover, .large-btn:hover, .full-btn:hover, .blue-btn:hover, .red-btn:hover, .purple-btn:hover, .orange-btn:hover, .green-btn:hover, .dark-grey-btn:hover, .blue-btn-bdr:hover, .red-btn-bdr:hover, .purple-btn-bdr:hover, .orange-btn-bdr:hover, .green-btn-bdr:hover, .dark-grey-btn-bdr:hover {
     background-color: #CCCCCC;
     color: #000; }
 
+.blue-btn-bdr, .red-btn-bdr, .purple-btn-bdr, .orange-btn-bdr, .green-btn-bdr, .dark-grey-btn-bdr {
+  background-color: transparent;
+  border: 2px solid #999999; }
+
 .small-btn {
-  font-size: 12px;
-  font-size: 0.8rem;
-  padding: 6px 16px;
-  padding: 0.4rem 1.06667rem; }
+  font-size: 10px;
+  font-size: 0.66667rem;
+  padding: 6px 12px;
+  padding: 0.4rem 0.8rem; }
 
 .large-btn {
   font-size: 18px;
   font-size: 1.2rem;
-  padding: 12px 28px;
-  padding: 0.8rem 1.86667rem; }
+  padding: 8px 36px;
+  padding: 0.53333rem 2.4rem; }
 
 .full-btn {
   padding: 10px 0px;
@@ -763,24 +773,24 @@ small, .text-small {
   margin: 0; }
 
 .blue-btn {
-  background-color: #1F468D;
+  background-color: #2971b2;
   color: #FFF; }
   .blue-btn:hover {
-    background-color: #163163;
+    background-color: #1f5789;
     color: #FFF; }
 
 .red-btn {
-  background-color: #cc583a;
+  background-color: #e04646;
   color: #FFF; }
   .red-btn:hover {
-    background-color: #a8452b;
+    background-color: #d02323;
     color: #FFF; }
 
 .purple-btn {
-  background-color: #7f4d7b;
+  background-color: #553a99;
   color: #FFF; }
   .purple-btn:hover {
-    background-color: #5f3a5c;
+    background-color: #402c74;
     color: #FFF; }
 
 .orange-btn {
@@ -791,10 +801,10 @@ small, .text-small {
     color: #FFF; }
 
 .green-btn {
-  background-color: #277f35;
+  background-color: #4a742c;
   color: #FFF; }
   .green-btn:hover {
-    background-color: #1b5825;
+    background-color: #324f1e;
     color: #FFF; }
 
 .dark-grey-btn {
@@ -804,82 +814,130 @@ small, .text-small {
     background-color: #000;
     color: #FFF; }
 
-.icon-h:before, .icon-e:before, .icon-l:before, .icon-o:before {
-  content: "";
-  display: inline-block;
-  font-size: 1em;
-  font-weight: bold;
-  line-height: 1;
-  margin-right: 5px;
-  margin-right: 0.33333rem;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased; }
+.blue-btn-bdr {
+  box-shadow: none;
+  border-color: #2971b2;
+  color: #2971b2; }
+  .blue-btn-bdr:hover {
+    background-color: #2971b2;
+    color: #FFF; }
 
-.badge {
+.red-btn-bdr {
+  box-shadow: none;
+  border-color: #e04646;
+  color: #e04646; }
+  .red-btn-bdr:hover {
+    background-color: #e04646;
+    color: #FFF; }
+
+.purple-btn-bdr {
+  box-shadow: none;
+  border-color: #553a99;
+  color: #553a99; }
+  .purple-btn-bdr:hover {
+    background-color: #553a99;
+    color: #FFF; }
+
+.orange-btn-bdr {
+  box-shadow: none;
+  border-color: #fe9300;
+  color: #fe9300; }
+  .orange-btn-bdr:hover {
+    background-color: #fe9300;
+    color: #FFF; }
+
+.green-btn-bdr {
+  box-shadow: none;
+  border-color: #4a742c;
+  color: #4a742c; }
+  .green-btn-bdr:hover {
+    background-color: #4a742c;
+    color: #FFF; }
+
+.dark-grey-btn-bdr {
+  box-shadow: none;
+  border-color: #555555;
+  color: #555555; }
+  .dark-grey-btn-bdr:hover {
+    background-color: #555555;
+    color: #FFF; }
+
+red-badge, blue-badge, purple-badge, orange-badge, green-badge, red-badge-lt, blue-badge-lt, purple-badge-lt, orange-badge-lt, green-badge-lt, red-badge-bdr, blue-badge-bdr, purple-badge-bdr, orange-badge-bdr, green-badge-bdr {
   display: inline-block;
   background-color: #cccccc;
   color: #555555;
   cursor: pointer;
-  font-size: 10px;
-  font-size: 0.66667rem;
+  font-size: 11px;
+  font-size: 0.73333rem;
   line-height: 1.5;
   margin: 10px 0px;
   margin: 0.66667rem 0rem;
   padding: 5px 8px;
   padding: 0.33333rem 0.53333rem; }
-  .badge.red {
-    background-color: #ebbfb4;
-    color: #a8452b; }
-  .badge.blue {
-    background-color: #6791de;
-    color: #163163; }
-  .badge.purple {
-    background-color: #c5a0c2;
-    color: #5f3a5c; }
-  .badge.orange {
-    background-color: #ffd498;
-    color: #cb7500; }
-  .badge.green {
-    background-color: #6dd27d;
-    color: #1b5825; }
-  .badge.light {
-    color: #FFF; }
-    .badge.light.orange {
-      color: #555555; }
-  .badge.dark {
-    color: #333333; }
-  .badge.rounded {
-    border-radius: 3px; }
-  .badge.border {
-    background-color: transparent;
-    border: 1px solid #CCCCCC; }
-    .badge.border.red {
-      border-color: #cc583a;
-      color: #cc583a; }
-    .badge.border.blue {
-      border-color: #1F468D;
-      color: #1F468D; }
-    .badge.border.purple {
-      border-color: #7f4d7b;
-      color: #7f4d7b; }
-    .badge.border.orange {
-      border-color: #fe9300;
-      color: #fe9300; }
-    .badge.border.green {
-      border-color: #277f35;
-      color: #277f35; }
 
-.icon-h:before {
-  content: "⇝"; }
+red-badge-bdr, blue-badge-bdr, purple-badge-bdr, orange-badge-bdr, green-badge-bdr {
+  background-color: transparent;
+  border: 1px solid #CCCCCC; }
 
-.icon-e:before {
-  content: "◎"; }
+red-badge {
+  background-color: #e04646;
+  color: #FFF; }
 
-.icon-l:before {
-  content: "▨"; }
+blue-badge {
+  background-color: #2971b2;
+  color: #FFF; }
 
-.icon-o:before {
-  content: "⊗"; }
+purple-badge {
+  background-color: #553a99;
+  color: #FFF; }
+
+orange-badge {
+  background-color: #fe9300;
+  color: #FFF; }
+
+green-badge {
+  background-color: #4a742c;
+  color: #FFF; }
+
+red-badge-lt {
+  background-color: #ef9d9d;
+  color: #333333; }
+
+blue-badge-lt {
+  background-color: #8fbce5;
+  color: #333333; }
+
+purple-badge-lt {
+  background-color: #a895d7;
+  color: #333333; }
+
+orange-badge-lt {
+  background-color: #ffbe65;
+  color: #333333; }
+
+green-badge-lt {
+  background-color: #95c970;
+  color: #333333; }
+
+red-badge-bdr {
+  border-color: #e04646;
+  color: #e04646; }
+
+blue-badge-bdr {
+  border-color: #2971b2;
+  color: #2971b2; }
+
+purple-badge-bdr {
+  border-color: #553a99;
+  color: #553a99; }
+
+orange-badge-bdr {
+  border-color: #fe9300;
+  color: #fe9300; }
+
+green-badge-bdr {
+  border-color: #4a742c;
+  color: #4a742c; }
 
 .alert .btn-expand {
   background-color: transparent;
@@ -978,7 +1036,7 @@ small, .text-small {
     -o-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out; }
   .alert .btn-expand.open:hover:after {
-    color: #cc583a; }
+    color: #e04646; }
 
 .alert-expand {
   display: none;
@@ -1159,32 +1217,32 @@ tbody tr.even {
   background-color: #555555; }
 
 .red-table thead th, .red-table thead td, .red-table tfoot th, .red-table tfoot td {
-  background-color: #cc583a; }
+  background-color: #e04646; }
 .red-table tbody.odd {
   background-color: #FFF; }
 .red-table tbody.even {
-  background-color: #a8452b; }
+  background-color: #d02323; }
 
 .blue-table thead th, .blue-table thead td, .blue-table tfoot th, .blue-table tfoot td {
-  background-color: #1F468D; }
+  background-color: #2971b2; }
 .blue-table tbody.odd {
   background-color: #FFF; }
 .blue-table tbody.even {
-  background-color: #163163; }
+  background-color: #1f5789; }
 
 .green-table thead th, .green-table thead td, .green-table tfoot th, .green-table tfoot td {
-  background-color: #277f35; }
+  background-color: #4a742c; }
 .green-table tbody.odd {
   background-color: #FFF; }
 .green-table tbody.even {
-  background-color: #1b5825; }
+  background-color: #324f1e; }
 
 .purple-table thead th, .purple-table thead td, .purple-table tfoot th, .purple-table tfoot td {
-  background-color: #7f4d7b; }
+  background-color: #553a99; }
 .purple-table tbody.odd {
   background-color: #FFF; }
 .purple-table tbody.even {
-  background-color: #5f3a5c; }
+  background-color: #402c74; }
 
 .orange-table thead th, .orange-table thead td, .orange-table tfoot th, .orange-table tfoot td {
   background-color: #fe9300; }
@@ -1192,20 +1250,6 @@ tbody tr.even {
   background-color: #FFF; }
 .orange-table tbody.even {
   background-color: #cb7500; }
-
-.breadcrumb, .breadcrumb-awesome {
-  margin: 0;
-  padding: 0;
-  width: 100%; }
-  .breadcrumb li, .breadcrumb-awesome li {
-    display: inline-block;
-    list-style: none; }
-    .breadcrumb li:after, .breadcrumb-awesome li:after {
-      content: "/";
-      display: inline-block;
-      margin-left: 10px; }
-    .breadcrumb li:last-of-type:after, .breadcrumb-awesome li:last-of-type:after {
-      content: ""; }
 
 .left-float {
   float: left; }

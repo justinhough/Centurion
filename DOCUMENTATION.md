@@ -245,43 +245,33 @@ Success: `<div class="green-callout alert"></div>`
 
 
 
-### Grid
-**Sass Location:** `lib/sass/centurion/_grid`
 
-Originally Centurion was built only a responsive grid, so at its core Centurion is built to be responsive. The grid is built using a Sass mixin, which makes it highly customizable. The only portion of the grid system that uses a pixel width is the container. For desktops the default container is set to `1100px` wide and is fully fluid below `768px` for tablets and smartphones.
+## Grid
 
-Utilizing the grid in your your project requires a container wrapper to set the main size of the area with grid elements inside to divide the space of the content area as needed. For example, if you want to use the full width for a banner that spans the page, then you would specify a `ctn-grid-24`. 24 columns is the full width of the default grid and is easily divisible in any design pattern. If you want to divide the page in two columns (a main body and a sidebar) you could use a `ctn-grid-18` and a `ctn-grid-8`. The number corresponds the amount of columns that the grid will occupy within the container.
+The grid system is the basis for Centurion and everything has been built around it. It is meant to be adaptive and responsive and highly customizable to any needs based upon the Sass build functionality. If you would like to build your own custom Centurion grid then please review the NPM or RubyGem sections based upon your needs.
+
+The `.ctn-container` serves as the wrapper for all grid elements and is the only portion of the grid that uses a pixel based width for desktop (it is percentage based for tablets and phones). For desktops the container is set to `1100px` max and is fluid below `768px`.
+
+### Usage
+
+Utilizing the grid comprises of two components the container and the grid element itself. For example, if you want to use the full width, then set the grid element to `.ctn-grid-24`. If you want to divide your page space into two columns for a central content area and with a left bar, then you would add to elements, such as, `.ctn-grid-6` and `.ctn-grid-18`. The number correlates to the amount of columns that you want the area to occupy.
 
     <div class="ctn-container">
-        <div class=“ctn-grid-18">
+        <div class="ctn-grid-6">
             …
         </div>
-        <div class="ctn-grid-8">
-            …
+        <div class="ctn-grid-18">
+            … 
         </div>
     </div>
 
-Centurion even includes adjustment grids for tablet and mobile experiences in case there is a special need to change the width of a grid element on a specific size.
-
-    <div class="ctn-container">
-        <div class=“ctn-grid-18 ctn-tablet-6 ctn-mobile-3”>
-            …
-        </div>
-        <div class="ctn-grid-8 ctn-tablet-6 ctn-mobile-3">
-            …
-        </div>
-    </div>
-
-
-**Note:** For each row make sure that you elements add up to 24 columns across in order to utilize the full row. However, if you want to center one grid element on each row then you will want to use Centering Grids below.
+**Note:** To ensure that content will not wrap below for a particular row you need make sure that one complete row of grid elements adds up to 24 columns. 
 
 ### Nesting Grids
 
-The best part of any grid system is the ability to nest elements within a single grid element to break down the space into smaller, manageable spaces.
+The best part of any grid system is the ability to nest elements within a single grid element or to create complex layouts that allow for the space to become manageable by smaller blocks of content. For example, if you want to have content nested like an image with captions within one `ctn-grid-18` then you would follow the following procedure.
 
-For example, say that you want to have content in a `ctn-grid-18`, but you also want to add three images with captions side-by-side beneath the main block of text. In order to create this layout will need to put three `ctn-grid-8` grid elements inside the parent grid element.
-
-    <div class=“ctn-grid-18">
+    <div class="ctn-grid-18">
         <p>Some text talking about something.</p>
         <div class="ctn-grid-8">
             <img src="" alt="" />
@@ -297,52 +287,92 @@ For example, say that you want to have content in a `ctn-grid-18`, but you also 
         </div>
     </div>
 
-
-### Alpha and Omega
-
-The `.alpha` and `.omega` classes are no longer required within the grid. There are still oddities within IE 7 when it comes to the grid, but in those cases it is best to target children grid elements with JavaScript and add appropriate classes as needed to remove the extra padding around the first and last elements within a row.
-
 ### Centering Grids
 
-Centering grid elements is as easy as adding `grid-center` to your grid element. This will evenly space your element in the center of your grid container.
+Centering grid elements is a great technique if you want to center one grid element in the center of a page. One thing to consider is the you cannot have two grid elements centered side-by-side on the page, because you can only center one grid element at a time. 
 
-    <div class="ctn-grid-18 grid-center">
+    <div class="ctn-grid-18 ctn-grid-center">
         <p>Centered Grid</p>
     </div>
     <div class="clear"></div>
 
-
 ### Semantic Grid
 
-This feature has been deprecated in the current 3.5 branch, but will be brought back in a future release if the community wants this feature.
+If you are not fond of column based grids and tend to lean more towards a semantic grid that you create based on a specific page layout then you can build a custom semantic grid solution using Centurion’s built-in Sass functions. Perhaps you only want to specify elements, such as, `aside` and `article` which will receive a width that you specify.
+
+**Example**
+
+    <section>
+        <aside id="left-bar">
+            ...
+        </aside>
+        <article id="content">
+            ...
+        </article>
+    </section>
 
 
-- @include column-base()
-- @include grid-creator($type)
-- @include grid-generate($columns, $width, $class, $exclude)
-- @include push-pull-elements($columns, $push-elem, $pull-elem)
+### Grid Sass Config
 
-#### Responsive Adjustments to Grid and Push/Pull
-- @include adjust-grid($columns, $column-count, $class, $respond)
-- @include adjust-push-pull($columns, $column-count, $push-elem, $pull-elem, $respond)
+**Partial Location**: `assets/sass/centurion/_grid.scss`
 
-#### Nested and Centered Grid Elements
-- @include nested-grid-elements($class)
-- @include center-grid-elements($class)
+**LTR or RTL Support**
+	$ie7-support: false
+	$lang-front: left
+	$lang-back: right
 
-#### Show and Hide Elements
+**Desktop**
+	$max-grid-size: 1120px
+	$grid-size: 960px
+	$max-space: 2%
+	$max-rows: 20
+
+**Mobile**
+	$max-resp-width: 100%
+	$max-resp-space: $max-space
+
+**Classes for Grid**
+	$grid-class: grid
+	$mobile-class: mobile
+	$pull-class: pull
+	$push-class: push
+
+**Grid Generate**
+	@include column-base()
+	@include grid-creator($type)
+	@include grid-generate($columns, $width, $class, $exclude)
+
+**Nested and Centering**
+	@include nested-grid-elements($class)
+	@include center-grid-elements($class)
+
+**Push and Pull**
+	@include push-pull-elements($columns, $push-elem, $pull-elem)
+	@include adjust-grid($columns, $column-count, $class, $respond)
+	@include adjust-push-pull($columns, $column-count, $push-elem, $pull-elem, $respond)
+
+
+### Semantic Grid Sass
+
+**Partial Location**: `assets/sass/core/_grid-semantic.sass`
+
+**Semantic Grid Container**
+	@include sem-container($total-width)
+
+**Semantic Grid Element**
+	@include semantic-grid($type, $width)
+
+**Semantic Push**
+	@include sem-push($offset-push, $direction: $lang-front)
+
+**Semantic Pull**
+	@include sem-pull($offset-pull, $direction: $lang-front)
+
+
+### Show and Hide Elements
 - @include show-hide($value)
 - @include hide-view($value);
 - @include show-view($value);
-
-
-
-
-
-### Semantic Grid
-**Sass Location**: `lib/sass/centurion/_grid-semantic`
-
-- @include semantic-grid($type, $width)
 
 
 

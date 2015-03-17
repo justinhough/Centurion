@@ -1,8 +1,13 @@
 ## 3.5.3
+- CSS and JS banners added on build (customized via package version)
 - Grid / Push & Pull fixes for responsive
 - Refactor of Sass `_grid.scss` file to fix craziness
 - Removed IE7 support
 - Improved semantic grid `@include ctn-grid`
+- Colors refactored
+- Badges were simplified
+- Tables are now responsive (fixed by issue #23)
+- Reconstructed the grunt build process
 
 ## 3.5.2
 - `ctn-` added to grid and other elements to prevent collisions with other libraries.

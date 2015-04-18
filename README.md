@@ -23,7 +23,7 @@ Centurion no longer supports Internet Explorer 7 as of version `3.5.3`.
 
 ### Getting Started
 
-This plugin requires Grunt `~0.4.0`
+This plugin requires Grunt `^0.4.5`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -35,13 +35,17 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 
 ### Usage
 
-For best results it is recommended to add Centurion to your Sass `loadPath` and include portions of the framework as needed. If you're using `grunt-contrib-sass` you add that like this:
+When using Centurion with Grunt you can use one of two modules: `grunt-contrib-sass` or `grunt-sass`. We recommend the later since it's built on [libsass](http://libsass.org/) and compiles much faster, but it is [missing some features](http://sass-compatibility.github.io/) so the decision is yours. 
+
+For [grunt-sass](https://github.com/sindresorhus/grunt-sass) you can add Centurion to your project using `includePaths` (as in the example below) or with [grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass) you can change it to `loadPath` for the same result. Here is an example:
 
 ```
 'sass': {
   target: {
     options: {
-      loadPath: ‘node_modules/centurion-framework/lib/sass/'
+      precision: 4, // makes all decimals round to 4 places
+      sourcemap: 'auto', // adds a sourcemap to compiled CSS for inspecting
+      includePaths: ['node_modules/centurion-framework/lib/sass/']
     },
     files: {
       'path/to.css': 'path/to.scss'
@@ -86,7 +90,7 @@ If you're interested in contributing to Centurion simply open an issue labeled `
 
 ## Community
 
-We might have a small community in comparison to other open-source projects, but we are only getting started.
+We might have a small community in comparison to other open-source projects, but we're only getting started.
 
 
 ### Special Thanks to Our Community

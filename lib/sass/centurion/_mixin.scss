@@ -15,11 +15,22 @@
   $rem-value: "";
   
   @for $i from 1 through $total {
-    $value: remove-unit(nth($values, $i));
-    // PX value
-    $px-value: #{$px-value + $value}px;
-    // REM value
-    $rem-value: #{$rem-value + $value / $default-font-size}rem;
+    $value: nth($values, $i);
+    
+    // Check if $value is string or not
+    // If not a string make it REM friendly
+    @if type_of($value) != string{
+      $value: remove-unit(nth($values, $i));
+      $px-value: #{$px-value + $value}px;
+      $rem-value: #{$rem-value + $value / $default-font-size}rem;
+    }
+    // If a string make it friendly
+    @else {
+      $value: nth($values, $i);
+      $px-value: #{$px-value + $value};
+      $rem-value: #{$rem-value + $value};
+    }
+    // Combine REM's and PX's together (or string, if present)
     @if $i < $total {
       // Set PX
       $rem-value: #{$rem-value + " "};
@@ -27,6 +38,8 @@
       $px-value: #{$px-value + " "};
     }
   }
+  
+  // Final value
   #{$property}: $px-value;
   #{$property}: $rem-value;
 }

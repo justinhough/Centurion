@@ -2,7 +2,7 @@
 // ----------------------------
 
 // Column Grid
-@mixin column-grid {  
+@mixin column-grid {
 
   %column-base {
     @include box-sizing(border-box);
@@ -23,12 +23,12 @@
     @include grid-generate($d-columns, $d-width, $grid-class);
     @include push-pull($d-columns, $d-width, $push-class, $pull-class);
   }
-  
+
   /* Full Width Container */
   .#{$container-class}-full {
     width: 100%;
   }
-  
+
   /* Small Desktop Grid */
   /* ---------------------------- */
   @media screen and (max-width: $d-width + $value) {
@@ -61,16 +61,25 @@
       %m-no-push-pull {
         left: 0;
       }
+
       @include grid-generate($m-columns, $m-width, $m-grid-class, mobile);
       @include push-pull($m-columns, $m-width, $m-push-class, $m-pull-class, mobile);
     }
   }
-  @include center-grid-elements();  
+  @include center-grid-elements();
   @include clearfix();
 }
 
 // Generate grid
 @mixin grid-generate($columns, $width, $class, $resp:null) {
+  @if $resp == "tablet" {
+    /* adjust desktop  */
+    @include adjust-grid($columns, $d-columns, $grid-class, t-full-width);
+  }
+  @if $resp == "mobile" {
+    @include adjust-grid($columns, $d-columns, $grid-class, m-full-width);
+    @include adjust-grid($columns, $t-columns, $t-grid-class, m-full-width);
+  }
   @for $i from 1 through $columns {
     .#{$class}-#{$i} {
       //@at-root (without: media) {
@@ -80,15 +89,8 @@
       width: grid-percent($columns, $width, $i);
     }
   }
-  @if $resp == "tablet" {
-    /* adjust desktop  */
-    @include adjust-grid($columns, $d-columns, $grid-class, t-full-width);
-  }
-  @if $resp == "mobile" {
-    @include adjust-grid($columns, $d-columns, $grid-class, m-full-width);
-    @include adjust-grid($columns, $t-columns, $t-grid-class, m-full-width);
-  }
-  
+
+
   @include nested-grid-elements();
 }
 
@@ -101,14 +103,14 @@
 // Adjust Grid on Smaller Devices (Tablets and Mobile
 @mixin adjust-grid($columns, $columns-count, $class, $extend:null) {
   @for $i from 1 through $columns-count {
-    @if $i < $columns {
-      .#{$class}-#{$i} {
-        width: grid-percent($columns, $d-width, $i);
-      }
-    }
     @if $i > $columns - 1 {
       .#{$class}-#{$i} {
         @extend %#{$extend};
+      }
+    }
+    @if $i < $columns {
+      .#{$class}-#{$i} {
+        width: grid-percent($columns, $d-width, $i);
       }
     }
   }
@@ -116,6 +118,14 @@
 
 // Push and Pull for Grid Elements
 @mixin push-pull($columns, $width, $push-elem, $pull-elem, $resp:null) {
+
+  @if $resp == "tablet" {
+    @include adjust-push-pull($columns, $d-columns, $push-class, $pull-class, t-no-push-pull);
+  }
+  @if $resp == "mobile" {
+    @include adjust-push-pull($columns, $d-columns, $push-class, $pull-class, m-no-push-pull);
+    @include adjust-push-pull($columns, $t-columns, $t-push-class, $t-pull-class, m-no-push-pull);
+  }
   @for $i from 1 through $columns {
     @if $i < $columns { // to push full columns add +1
       .#{$push-elem}-#{$i} {
@@ -125,13 +135,6 @@
         #{$lang-front}: (grid-percent($columns, $width, $i)) * -1;
       }
     }
-  }
-  @if $resp == "tablet" {
-    @include adjust-push-pull($columns, $d-columns, $push-class, $pull-class, t-no-push-pull);
-  }
-  @if $resp == "mobile" {
-    @include adjust-push-pull($columns, $d-columns, $push-class, $pull-class, m-no-push-pull);
-    @include adjust-push-pull($columns, $t-columns, $t-push-class, $t-pull-class, m-no-push-pull);
   }
 }
 

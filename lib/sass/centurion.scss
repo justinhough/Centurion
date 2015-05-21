@@ -14,6 +14,7 @@ body {
 @include buttons;
 @include badges;
 @include callouts;
+@include forms;
 
 @include margin-block-layout;
 @include padding-block-layout;
@@ -31,5 +32,3 @@ body {
 .not-visible {
   visibility: hidden;
 }
-
-

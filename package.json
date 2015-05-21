@@ -1,7 +1,7 @@
 {
   "name": "centurion-framework",
   "projectName": "Centurion Framework",
-  "version": "3.5.4",
+  "version": "3.5.5",
   "simpleDescription": "A Web Framework",
   "description": "Centurion is a web-based framework for rapid prototyping and provides a core for building larger web projects",
   "homepage": "http://www.centurionframework.com",

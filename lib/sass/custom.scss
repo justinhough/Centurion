@@ -55,15 +55,6 @@ nav {
   }
 }
 
-/*
-.section-break {
-  @extend %clearfix;
-  border-bottom: 3px solid #dddddd;
-  margin: 2em 0;
-  width: 100%;
-}
-*/
-
 footer {
   background: $lighter-grey;
   margin-top: 4em;
@@ -139,7 +130,7 @@ span.box-grid {
   -webkit-transition-property: -webkit-transform;
   transition-property: transform;
 }
- 
+
 .rotate:hover {
   -webkit-transform:rotateY(360deg);
   transform:rotateY(360deg);

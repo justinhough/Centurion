@@ -1,6 +1,6 @@
 /* -------------------------------------------------------- 
  * 
- *  Centurion Framework v3.5.4 
+ *  Centurion Framework v3.5.5 
  *  Created by: Justin Hough (http://www.justinhough.com/) 
  * 
  *  Documentation: http://www.centurionframework.com 
@@ -17,7 +17,7 @@ body {
   -o-box-sizing: border-box;
   box-sizing: border-box;
   float: right;
-  padding: 0 5px;
+  padding: 0 10px;
   position: relative; }
 
 /* Large Destkop Grid */

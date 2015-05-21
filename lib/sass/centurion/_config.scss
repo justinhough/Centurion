@@ -4,7 +4,7 @@ $prefixes: webkit, moz, o;
 // Default Font, Font Size, and Line Height
 $font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $default-font-size: 15;
-$margin: $default-font-size; 
+$margin: $default-font-size;
 $padding: $default-font-size;
 $default-line-height: 1.5;
 
@@ -25,7 +25,7 @@ $m-columns: 6;
 $inner-width: 98;
 
 // Grid Gutter Size (px)
-$gutter: 10;
+$gutter: 20;
 
 // Default Value for Browser Fallback
 $value: px;

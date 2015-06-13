@@ -3,35 +3,43 @@
  * http://www.centurionframework.com
  * @author Justin Hough
  */
- 
+
 'use strict';
 
+var banner = '/* -------------------------------------------------------- \n' +
+             ' *  <%= pkg.projectName %> v<%= pkg.version %> \n' +
+             ' *  <%= pkg.author.name %> (<%= pkg.author.url %>) \n' +
+             ' *  Licensed under GPL and MIT. \n' +
+             ' * -------------------------------------------------------- */\n';
+
+var shortBanner = '/* <%= pkg.projectName %> - v <%= pkg.version %> */\n';
+
+var version = require('./package.json').version;
+
 module.exports = function (grunt) {
-  
+
   grunt.initConfig({
-  
+
     pkg: grunt.file.readJSON('./package.json'),
-    
-    banner: '/* -------------------------------------------------------- \n' +
-            ' * \n' +
-            ' *  <%= pkg.projectName %> v<%= pkg.version %> \n' +
-            ' *  Created by: <%= pkg.author.name %> (<%= pkg.author.url %>) \n' +
-            ' * \n' +
-            ' *  Documentation: <%= pkg.homepage %> \n' +
-            ' *  Licensed under GPL and MIT. \n' +
-            ' * \n' +
-            ' * -------------------------------------------------------- */',
-    
-    shortBanner: '/* <%= pkg.projectName %> - v <%= pkg.version %> */ ',
-            
-    connect: {
-      local: {
-        options: {
-          livereload: true,
-          hostname: 'localhost',
-          port: 5316,
-          base: 'build'
-        }
+
+    clean: {
+      build: {
+        src: ['_build']
+      }
+    },
+
+    'http-server': {
+      'dev': {
+        root: '_build',
+        port: 4000,
+        host: '0.0.0.0',
+        cache: 0,
+        showDir : true,
+        autoIndex: true,
+        ext: 'html',
+        runInBackground: true,
+        // turns off logging in terminal
+        logFn: null
       }
     },
 
@@ -41,22 +49,22 @@ module.exports = function (grunt) {
       },
       configFiles: {
         files: ['Gruntfile.js', 'package.js'],
-        tasks: ['html', 'copy', 'sass', 'usebanner'],
+        tasks: ['uglify'],
         options: {
           reload: true
         }
       },
       html: {
-        files: ['*.html', '_partials/**/*.html'],
-        tasks: ['html', 'copy', 'sass', 'usebanner']
+        files: ['docs/**/*.html'],
+        tasks: ['includereplace']
       },
       sass: {
         files: ['lib/sass/**/*.scss'],
-        tasks: ['html', 'copy', 'sass', 'usebanner']
+        tasks: ['sass', 'usebanner']
       },
       scripts: {
-        files: ['lib/**/*.js'],
-        tasks: ['html', 'copy', 'sass', 'usebanner'],
+        files: ['lib/js/**/*.js'],
+        tasks: ['uglify'],
         options: {
           spawn: false,
         },
@@ -65,23 +73,22 @@ module.exports = function (grunt) {
 
     usebanner: {
       options: {
-        banner: '<%= banner %>',
         linebreak: true
       },
       fullBanner: {
         options: {
-          banner: '<%= banner %>',
+          banner: banner,
         },
         files: {
-          src: [ 'build/css/*.css' ]
+          src: [ '_build/css/*.css' ]
         }
       },
       shortBanner: {
         options: {
-          banner: '<%= shortBanner %>',
+          banner: shortBanner,
         },
         files: {
-          src: [ 'build/css/minified/*.css']
+          src: [ '_build/css/minified/*.css']
         }
       }
     },
@@ -99,7 +106,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'lib/sass',
           src: ['*.scss'],
-          dest: 'build/css',
+          dest: '_build/css',
           ext: '.css'
         }]
       },
@@ -111,23 +118,57 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'lib/sass',
           src: ['*.scss'],
-          dest: 'build/css/minified',
+          dest: '_build/css/minified',
           ext: '.min.css'
         }]
       }
     },
-    
+
+    'uglify': {
+      options: {
+        flatten: false,
+        beautify: false,
+        mangle: false,
+        banner: banner
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'lib/js',
+          src: ['**/*.js'],
+          dest: '_build/js/'
+        }]
+      }
+    },
+
     copy: {
       dist: {
         files: [
-          {expand: true, cwd: 'lib/js', src: ['**'], dest: 'build/js'},
-          {expand: true, cwd: 'lib/img', src: ['**'], dest: 'build/img'},
+          {expand: true, cwd: 'lib/js/libs', src: ['**'], dest: '_build/js/libs'},
+          {expand: true, cwd: 'lib/img', src: ['**'], dest: '_build/img'},
         ]
       }
     },
-    
+
+    'compress': {
+      main: {
+        options: {
+          archive: '_releases/centurion_'+ version +'.zip'
+        },
+        files: [
+          {
+            flatten: true,
+            src: ['_build/**/*.css', '_build/**/*.js', '!_build/libs/**/*.js', '!build/__MACOSX'],
+            dest: './centurion_'+ version
+          },
+        ]
+      }
+    },
+
     includereplace: {
       dist: {
+        flatten: true,
+        expand: true,
         options: {
           globals: {
             projectName: '<%= pkg.projectName %>',
@@ -140,29 +181,36 @@ module.exports = function (grunt) {
           },
           prefix: '<!--##',
           suffix: '-->',
-          includesDir: '_partials/'
+          includesDir: 'docs/_partials/'
         },
-        src: '*.html',
-        dest: 'build/'
+        src: 'docs/*.html',
+        dest: '_build/'
+      }
+    },
+
+    concurrent: {
+      dist: {
+        tasks: ['includereplace', 'copy', 'uglify', 'sass', 'usebanner'],
+        options: {
+          logConcurrentOutput: false
+        }
       }
     },
 
     'gh-pages': {
       options: {
-        base: 'build',
+        base: '_build',
+        //repo: ''
       },
       src: ['**']
     },
-    
+
   });
 
   require('load-grunt-tasks')(grunt);
-  
-  grunt.registerTask('html', ['includereplace:dist']);
-  grunt.registerTask('serve', ['connect:local']);
 
   // Default Task
-  grunt.registerTask('default', ['html', 'copy', 'sass', 'usebanner', 'serve', 'watch']);
+  grunt.registerTask('default', ['clean', 'concurrent:dist', 'http-server', 'watch']);
 
   // Release updates to Github Pages
   grunt.registerTask('page-release', ['gh-pages']);

@@ -1,10 +1,13 @@
+# Project
+_build
+_releases
+
 ### Node ###
 # Logs
 logs
 *.log
 .grunt
 node_modules
-
 
 ### OSX ###
 .DS_Store

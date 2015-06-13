@@ -26,7 +26,7 @@ hr {
 }
 
 a {
-  color: $orange;
+  color: $blue;
   &:hover {
     color: $black;
   }
@@ -34,7 +34,7 @@ a {
 
 header {
   background: $light-grey;
-  border-bottom: 4px solid $orange;
+  border-bottom: 4px solid $blue;
 }
 
 nav {
@@ -49,7 +49,7 @@ nav {
     transition: background-color 100ms linear;
     &:hover,
     &.nav-current {
-      background: $orange;
+      background: $blue;
       color: $white;
     }
   }
@@ -90,20 +90,20 @@ span.box-grid {
     .first,
     &:first-of-type {
       .box-grid {
-        background: $light-orange;
+        background: $light-blue;
       }
     }
     .last,
     &:last-of-type {
       .box-grid {
-        background: $orange;
+        background: $blue;
         @include rem('margin-bottom', 8);
       }
     }
     [class^="ctn-grid-"] {
       &:first-child {
         .box-grid {
-          background: $orange;
+          background: $blue;
           @include rem('margin-bottom', 8);
         }
       }
@@ -114,12 +114,12 @@ span.box-grid {
 [class^="ctn-grid-"] {
   &[class*="push-"] {
     .box-grid {
-      background-color: $light-orange;
+      background-color: $light-blue;
     }
   }
   &[class*="pull-"] {
     .box-grid {
-      background-color: $orange;
+      background-color: $blue;
     }
   }
 }

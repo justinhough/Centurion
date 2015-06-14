@@ -71,7 +71,7 @@ footer {
 }
 span.box-grid {
   background-color: $lighter-grey;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   display: block;
   @include rem(font-size, 12);
   font-weight: 100;

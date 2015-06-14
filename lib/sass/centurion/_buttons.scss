@@ -10,9 +10,9 @@
   display: inline-block;
   @include rem(font-size, $default-font-size);
   font-weight: normal;
-  @include element-spacing(vertical, margin, $default-font-size);
+  @include rem(margin, $default-font-size 0);
   outline: 0;
-  @include element-spacing(two, padding, 8, 16);
+  @include rem(padding, 8px 16px);
   text-decoration: none;
   vertical-align: middle;
   zoom: 1;
@@ -60,7 +60,6 @@
   .btn {
     @include default-button;
     @extend %noTextDecoration;
-    -webkit-transition: background 120ms linear;
     transition: background 120ms linear;
     &:hover {
       @include default-button-hover;
@@ -74,16 +73,16 @@
   .small-btn {
     @extend .btn;
     @include rem(font-size, 10);
-    @include element-spacing(two, padding, 6, 12);
+    @include rem(padding, 6px 12px);
   }
   .large-btn {
     @extend .btn;
     @include rem(font-size, 18);
-    @include element-spacing(two, padding, 8, 36);
+    @include rem(padding, 8px 36px);
   }
   .full-btn {
     @extend .btn;
-    @include element-spacing(vertical, padding, 10);
+    @include rem(padding, 10px 0);
     text-align: center;
     width: 100%;
   }

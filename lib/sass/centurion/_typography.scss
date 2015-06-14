@@ -4,10 +4,10 @@
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -hp-pre-wrap;
+  //white-space: -pre-wrap;
+  //white-space: -o-pre-wrap;
+  //white-space: -moz-pre-wrap;
+  //white-space: -hp-pre-wrap;
   word-wrap: break-word;
 }
 
@@ -15,15 +15,15 @@
   %noTextDecoration {
     text-decoration: none;
   }
-  
+
   %cursor {
     cursor: pointer;
   }
-  
+
   %typography {
     color: #333333;
     font-family: $font-family;
-    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
     font-style: normal;
     font-weight: 300;
     line-height: $default-line-height;
@@ -31,60 +31,60 @@
     text-align: left;
     text-rendering: optimizeLegibility;
   }
-  
+
   h1 {
     @extend %typography;
     @include rem(font-size, $default-font-size + 20);
   }
-  
+
   h2 {
     @extend %typography;
     @include rem(font-size, $default-font-size + 14);
   }
-  
+
   h3 {
     @extend %typography;
     @include rem(font-size, $default-font-size + 10);
   }
-  
+
   h4 {
     @extend %typography;
     @include rem(font-size, $default-font-size + 6);
   }
-  
+
   h5 {
     @extend %typography;
     @include rem(font-size, $default-font-size + 4);
   }
-  
+
   h6 {
     @extend %typography;
     @include rem(font-size, $default-font-size + 2);
   }
-  
+
   p {
     @extend %typography;
     @include rem(font-size, $default-font-size);
   }
-  
+
   ul,
   ol {
     @include rem(margin-left, $default-font-size);
     @include rem(padding-left, $default-font-size);
   }
-  
+
   li {
     @extend %typography;
     @include rem(font-size, $default-font-size);
     margin: 0;
     @include rem(padding-left, $default-font-size - 8);
   }
-  
+
   a {
-    -webkit-transition: color 120ms linear;
+    //-webkit-transition: color 120ms linear;
     transition: color 120ms linear;
   }
-  
+
   blockquote {
     @extend %typography;
     border-left: 5px solid #dedede;
@@ -122,25 +122,25 @@
       }
     }
   }
-  
+
   strong {
     font-weight: bold;
   }
-  
+
   em {
     font-style: italics;
   }
-  
+
   big,
   .text-large {
     font-size: 120%;
   }
-  
+
   small,
   .text-small {
     font-size: 75%;
   }
-  
+
   .text-muted {
     color: $light-grey !important;
   }

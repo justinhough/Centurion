@@ -25,11 +25,9 @@
   width: $width * 1%;
 }
 
-
 // Column Grid
 // ----------------------------
 @mixin column-grid {
-
   %column-base {
     box-sizing: border-box;
     float: $lang-front;
@@ -42,11 +40,7 @@
   /* ---------------------------- */
   .#{$container-class} {
     @include ctn-container($d-width);
-
     @include grid-generate(desktop);
-
-
-    //@include push-pull($d-columns, $d-width, $push-class, $pull-class);
   }
 
   /* Full Width Container */
@@ -69,7 +63,6 @@
     .#{$container-class} {
       @include grid-generate(tablet);
     }
-
   }
 
   /* Mobile Grid */
@@ -79,7 +72,6 @@
       @include grid-generate(mobile);
     }
   }
-
 
   .#{$grid-class}-center {
     float: none !important;

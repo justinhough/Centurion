@@ -1,71 +1,72 @@
 <div class="ctn-grid-24 no-display-grid">
   <h1>The Grid</h1>
   <p>Originally Centurion was built only a responsive grid, so at its core Centurion is built to be responsive. The grid is built using a Sass mixin, which makes it highly customizable. The only portion of the grid system that uses a pixel width is the container. For desktops the default container is set to <code>1100px</code> wide and is fully fluid below <code>768px</code> for tablets and smartphones.</p>
-  
+
   <h2>Basic Structure</h2>
-  
+
   <p>Utlizing the grid in your your project requires a container wrapper to set the main size of the area with grid elements inside to divide the space of the content area as needed. For example, if you want to use the full width for a banner that spans the page, then you would specify a <code>ctn-grid-24</code>. 24 columns is the full width of the default grid and is easily divisible in any design pattern. If you want to divide the page in two columns (a main body and a sidebar) you could use a <code>ctn-grid-6</code> and a <code>ctn-grid-18</code>. The number corresponds the amount of columns that the grid will occupy within the container.</p>
+
+
+  <pre><code class="language-markup">&lt;div class="ctn-container">
+    &lt;div class="ctn-grid-2">&lt;/div>
+    &lt;div class="ctn-grid-22">&lt;/div>
+
+    &lt;div class="ctn-grid-3">&lt;/div>
+    &lt;div class="ctn-grid-21">&lt;/div>
+
+    &lt;div class="ctn-grid-4">&lt;/div>
+    &lt;div class="ctn-grid-20">&lt;/div>
+
+    &lt;div class="ctn-grid-5">&lt;/div>
+    &lt;div class="ctn-grid-19">&lt;/div>
+
+    &lt;div class="ctn-grid-6">&lt;/div>
+    &lt;div class="ctn-grid-18">&lt;/div>
+  &lt;/div></code></pre>
+
+  <p><strong>Note</strong>: For each row make sure that you elements add up to 24 columns across in order to utilize the full row. However, if you want to center one grid element on each row then you will want to use Centering Grids below.</p>
+
 </div>
-
-<pre><code class="language-markup">&lt;div class="ctn-container">
-  &lt;div class="ctn-grid-2">&lt;/div>
-  &lt;div class="ctn-grid-22">&lt;/div>
-  
-  &lt;div class="ctn-grid-3">&lt;/div>
-  &lt;div class="ctn-grid-21">&lt;/div>
-  
-  &lt;div class="ctn-grid-4">&lt;/div>
-  &lt;div class="ctn-grid-20">&lt;/div>
-  
-  &lt;div class="ctn-grid-5">&lt;/div>
-  &lt;div class="ctn-grid-19">&lt;/div>
-  
-  &lt;div class="ctn-grid-6">&lt;/div>
-  &lt;div class="ctn-grid-18">&lt;/div>
-&lt;/div></code></pre>
-
-<p><strong>Note</strong>: For each row make sure that you elements add up to 24 columns across in order to utilize the full row. However, if you want to center one grid element on each row then you will want to use Centering Grids below.</p>
-
 
 <section class="calculate clearfix">
 
   <div class="ctn-grid-24"></div>
-  
+
 <!--
   <div class="ctn-grid-1"></div>
   <div class="ctn-grid-23"></div>
 -->
-  
+
   <div class="ctn-grid-2"></div>
   <div class="ctn-grid-22"></div>
-  
+
   <div class="ctn-grid-3"></div>
   <div class="ctn-grid-21"></div>
-  
+
   <div class="ctn-grid-4"></div>
   <div class="ctn-grid-20"></div>
-  
+
   <div class="ctn-grid-5"></div>
   <div class="ctn-grid-19"></div>
-  
+
   <div class="ctn-grid-6"></div>
   <div class="ctn-grid-18"></div>
-  
+
   <div class="ctn-grid-7"></div>
   <div class="ctn-grid-17"></div>
-  
+
   <div class="ctn-grid-8"></div>
   <div class="ctn-grid-16"></div>
-  
+
   <div class="ctn-grid-9"></div>
   <div class="ctn-grid-15"></div>
-  
+
   <div class="ctn-grid-10"></div>
   <div class="ctn-grid-14"></div>
-  
+
   <div class="ctn-grid-11"></div>
   <div class="ctn-grid-13"></div>
-  
+
   <div class="ctn-grid-12"></div>
   <div class="ctn-grid-12"></div>
 </section>

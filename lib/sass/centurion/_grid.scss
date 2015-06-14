@@ -1,5 +1,7 @@
 // Grid Column Generator
 // ----------------------------
+$gutter-half: 10px;
+
 
 // Function: figure out grid percentage
 @function grid-percent($grid-columns, $container-width, $i) {
@@ -20,7 +22,8 @@
   @extend %clearfix;
   box-sizing: border-box;
   float: $lang-front;
-  padding: 0 $gutter / 2 + $value;
+  @include rem(padding-left, $gutter-half);
+  @include rem(padding-right, $gutter-half);
   position: relative;
   width: $width * 1%;
 }
@@ -126,6 +129,8 @@
 // Adjust Grid on Smaller Devices (Tablets and Mobile
 @mixin adjust-grid($columns, $columns-count, $class, $push, $pull, $full-width, $negate-push-pull) {
   %#{$full-width} {
+    @include rem(padding-left, $gutter-half !important);
+    @include rem(padding-right, $gutter-half !important);
     width: 100%;
   }
   %#{$negate-push-pull} {
@@ -137,11 +142,9 @@
       .#{$class}-#{$i} {
         @extend %#{$full-width};
       }
-      .#{$push}-#{$i} {
-        #{$lang-front}: grid-percent($columns, $d-width, $i);
-      }
+      .#{$push}-#{$i},
       .#{$pull}-#{$i} {
-        #{$lang-front}: (grid-percent($columns, $d-width, $i)) * -1;
+        @extend %#{$negate-push-pull};
       }
     }
     @if $i > $columns - 1 {
@@ -159,12 +162,13 @@
 // Nested Children
 // ----------------------------
 @mixin nested-grid-elements($class: $grid-class) {
+  .#{$row-class},
   [class*=#{$class}] {
     [class*=#{$class}]:first-of-type {
-      padding-left: 0;
+      padding-left: 0px;
     }
     [class*=#{$class}]:last-of-type {
-      padding-right: 0;
+      padding-right: 0px;
     }
   }
 }

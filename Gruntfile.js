@@ -60,7 +60,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['lib/sass/**/*.scss'],
-        tasks: ['sass', 'usebanner']
+        tasks: ['sass', 'postcss', 'usebanner']
       },
       scripts: {
         files: ['lib/js/**/*.js'],
@@ -124,6 +124,18 @@ module.exports = function (grunt) {
       }
     },
 
+    postcss: {
+      options: {
+        //map: true,
+        processors: [
+          require('autoprefixer-core')({browsers: 'last 2 version, > 5%, ie > 8'})
+        ]
+      },
+      dist: {
+        src: '_build/css/*.css'
+      }
+    },
+
     'uglify': {
       options: {
         flatten: false,
@@ -155,13 +167,11 @@ module.exports = function (grunt) {
         options: {
           archive: '_releases/centurion_'+ version +'.zip'
         },
-        files: [
-          {
-            flatten: true,
-            src: ['_build/**/*.css', '_build/**/*.js', '!_build/libs/**/*.js', '!build/__MACOSX'],
-            dest: './centurion_'+ version
-          },
-        ]
+        files: [{
+          flatten: true,
+          src: ['_build/**/*.css', '_build/**/*.js', '!_build/libs/**/*.js', '!build/__MACOSX'],
+          dest: './centurion_'+ version
+        }]
       }
     },
 
@@ -210,7 +220,7 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Default Task
-  grunt.registerTask('default', ['clean', 'concurrent:dist', 'http-server', 'watch']);
+  grunt.registerTask('default', ['clean', 'concurrent:dist', 'postcss', 'http-server', 'watch']);
 
   // Release updates to Github Pages
   grunt.registerTask('page-release', ['gh-pages']);

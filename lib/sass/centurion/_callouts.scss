@@ -20,7 +20,7 @@
     cursor: pointer;
     display: block;
   }
-  
+
   %alert-btn {
     color: $black;
     background: $white;
@@ -33,13 +33,14 @@
     top: 0.5em;
     right: 1em;
     text-align: center;
-    @include css3-transition(ease-in-out, 0.5s);
+    transition: 0.5s ease-in-out;
+
     &:hover {
       background: $white;
       color: $grey;
     }
   }
-  
+
   // Callouts
   // ----------------------------
   .callout {
@@ -59,22 +60,22 @@
       @include rem(margin, 10 0);
     }
   }
-  
+
   /* Red Callout - Alert or Danger */
   @include callout("red", #ffe3e1, #cc583a, #cc583a);
-  
+
   /* Blue Callout - Informational */
   @include callout("blue", #dddfff, #272d7f, #272d7f);
-  
+
   /* Purple Callout - Play Koi */
   @include callout("purple", #ffdcfc, #7f4d7b, #7f4d7b);
-  
+
   /* Green Callout - Success or Whoohoo! */
   @include callout("green", #dfffe4, #277f35, #277f35);
-  
+
   /* Orange Callout - Warning or Caution */
   @include callout("orange", #ffefdd, #fe9300, #fe9300);
-  
+
   .alert {
     border-left: none;
     border-radius: 4px;
@@ -89,10 +90,8 @@
       }
       &.open {
         &:after {
-          -webkit-transform: rotate(45deg);
-          -moz-transform: rotate(45deg);
           transform: rotate(45deg);
-          @include css3-transition(ease-in-out, 0.5s);
+          transition: 0.5s ease-in-out;
         }
         &:hover {
           &:after {
@@ -102,7 +101,7 @@
       }
     }
   }
-  
+
   .alert-expand {
     @extend %clearfix;
     display: none;

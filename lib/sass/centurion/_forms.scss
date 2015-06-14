@@ -5,7 +5,7 @@
 @mixin forms() {
 
   label, input, select, textarea, legend, input[type="search"] {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     @extend %typography;
     outline: none;
     outline-offset: 0;
@@ -36,11 +36,9 @@
 
     @include rem(margin, 8 0 16 0);
     @include rem(padding, 4);
-
     border-radius: 0;
-    -webkit-transition: border-color 150ms linear;
     transition: border-color 150ms linear;
-    -webkit-appearance: textfield;
+    appearance: textfield;
 
     margin: 0;
     width: 100%;
@@ -55,11 +53,11 @@
   }
   input[type="checkbox"] {
     @include rem(margin-right, 4);
-    -webkit-appearance: checkbox;
+    appearance: checkbox;
   }
   input[type="radio"] {
     @include rem(margin-right, 8);
-    -webkit-appearance: radio;
+    appearance: radio;
   }
 
   .ctn-field-required {
@@ -82,7 +80,7 @@
 
   textarea {
     border: 1px solid $light-grey;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     @include rem(padding, 8);
     line-height: 1.2;
     height: auto;
@@ -100,7 +98,7 @@
     display: block;
     padding: 6px 24px 6px 8px;
     width: auto;
-    -webkit-appearance: none;
+    appearance: none;
   }
 
   input[type='button'], input[type='reset'], input[type='submit'], button {
@@ -119,7 +117,7 @@
 
   // Search Form
   input[type="search"] {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     border-right: 0;
     display: inline;
     float: left;
@@ -129,7 +127,7 @@
   .ctn-search-submit {
     background-color: $blue;
     color: $white;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     border: 1px solid $blue;
     border-left: 0;
     box-shadow: none;

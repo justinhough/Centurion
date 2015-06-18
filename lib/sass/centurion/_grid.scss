@@ -94,10 +94,10 @@ $gutter-half: 10px;
       width: grid-percent($columns, $width, $i);
     }
     .#{$push}-#{$i} {
-      #{$lang-front}: grid-percent($columns, $width, $i);
+      margin-#{$lang-front}: grid-percent($columns, $width, $i);
     }
     .#{$pull}-#{$i} {
-      #{$lang-front}: (grid-percent($columns, $width, $i)) * -1;
+      margin-#{$lang-front}: (grid-percent($columns, $width, $i)) * -1;
     }
   }
 }

@@ -4,12 +4,17 @@
 
 // REM Conversion (with PX Fallback)
 // ----------------------------
-// +rem(font-size, 32)
+// REM based on default font size of 16px (set in config)
+// @include rem(font-size, 32)
+
+// for custom REM values you can reset the default by appending the value (no PX value needed)
+// @include rem(font-size, 15px, default: 15)
+// @include rem(padding, 15 14 0 0, $default: 15)
 @function remove-unit($num) {
   @return $num / ($num * 0 + 1);
 }
 
-@mixin rem($property, $values) {
+@mixin rem($property, $values, $default:$default-font-size) {
   $total: length($values);
   $px-value: "";
   $rem-value: "";
@@ -22,7 +27,7 @@
     @if type_of($value) != string{
       $value: remove-unit(nth($values, $i));
       $px-value: #{$px-value + $value}px;
-      $rem-value: #{$rem-value + $value / $default-font-size}rem;
+      $rem-value: #{$rem-value + $value / $default}rem;
     }
     // If a string make it friendly
     @else {

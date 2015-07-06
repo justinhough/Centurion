@@ -1,0 +1,214 @@
+// Grid Column Generator
+// ----------------------------
+$gutter-half: 10px;
+
+// Function: figure out grid percentage
+@function grid-percent($grid-columns, $container-width, $i) {
+  $percent: 100 / $grid-columns * $i * 1%;
+  @return $percent;
+}
+
+// [x] @TODO: use same classes from regular grid
+// [x] @TODO: container and wrapper for flex grid
+// [x] @TODO: 24 column desktop grid (1100px and up)
+// [x] @TODO: 12 column tablet grid (?? to ??)
+// [x] @TODO: 6 column mobile grid (??px and down)
+
+// [x] @TODO: push and pull for desktop
+// [x] @TODO: push and pull for tablet
+// [x] @TODO: push and pull for mobile
+
+// [] @TODO: alpha and omega for nested elements (is it needed?)
+// [] @TODO: visible and hidden for desktop, tablet, and mobile
+
+// Column Grid
+// ----------------------------
+@mixin flex-grid() {
+
+  .#{$container-class} {
+    @extend %clearfix;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    max-width: $d-width + $value;
+
+    %grid-flex-base {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      flex-grow: 0;
+      flex-shrink: 0;
+      @include rem(padding, 0 7.5);
+    }
+    @include grid-flex-generate(desktop);
+  }
+  .#{$row-class} {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  // Small Desktop
+  @media screen and (max-width: $d-width + px) {
+    .#{$container-class} {
+      width: 100%;
+    }
+  }
+  // Tablet
+  @media screen and (max-width: $t-width + px) {
+    .#{$container-class} {
+      @include grid-flex-generate(tablet);
+    }
+  }
+  // Mobile
+  @media screen and (max-width: $m-width + px) {
+    .#{$container-class} {
+      @include grid-flex-generate(mobile);
+    }
+  }
+
+  @include grid-flex-row-adjust();
+  @include clearfix();
+
+}
+
+// Flex Grid Creator
+// ----------------------------
+// @include grid-flex-creator('ctn-grid', 'ctn-push', 'ctn-pull', 24, 1200);
+@mixin grid-flex-creator($class, $push, $pull, $columns, $width) {
+  @for $i from 1 through $columns {
+    .#{$class}-#{$i} {
+      @extend %grid-flex-base;
+      @extend %clearfix;
+      flex-basis: grid-percent($columns, $width, $i);
+      max-width: grid-percent($columns, $width, $i);;
+    }
+    .#{$push}-#{$i} {
+      margin-#{$lang-front}: grid-percent($columns, $width, $i);
+    }
+    .#{$pull}-#{$i} {
+      margin-#{$lang-front}: (grid-percent($columns, $width, $i)) * -1;
+    }
+  }
+}
+
+// Generate grid
+// ----------------------------
+@mixin grid-flex-generate($resp:null) {
+  @if $resp == "tablet" {
+    // adjust grid for tablet
+    @include adjust-flex-grid($t-columns, $d-columns, $grid-class, $push-class, $pull-class, t-full-width, t-no-push-pull);
+    // create tablet grid
+    @include grid-flex-creator($t-grid-class, $t-push-class, $t-pull-class, $t-columns, $t-width);
+  }
+  @if $resp == "mobile" {
+    //adjust grid for mobile
+    @include adjust-flex-grid($m-columns, $d-columns, $grid-class, $push-class, $pull-class, t-full-width, t-no-push-pull);
+    @include adjust-flex-grid($m-columns, $t-columns, $grid-class, $t-push-class, $t-pull-class, m-full-width, m-no-push-pull);
+    // create mobile grid
+    @include grid-flex-creator($m-grid-class, $m-push-class, $m-pull-class, $m-columns, $m-width);
+  }
+  @if $resp == "desktop" {
+    // create desktop grid
+    @include grid-flex-creator($grid-class, $push-class, $pull-class, $d-columns, $d-width);
+  }
+
+  @include nested-flex-grid-elements();
+}
+
+// Adjust Grid on Smaller Devices (Tablets and Mobile
+@mixin adjust-flex-grid($columns, $columns-count, $class, $push, $pull, $full-width, $negate-push-pull) {
+  %#{$full-width} {
+    @include rem(padding-left, $gutter-half !important);
+    @include rem(padding-right, $gutter-half !important);
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  %#{$negate-push-pull} {
+    margin-#{$lang-front}: 0; /* negate */
+  }
+
+  @for $i from 1 through $columns-count {
+    @if $i < $columns {
+      .#{$class}-#{$i} {
+        @extend %grid-flex-base;
+        @extend %#{$full-width};
+      }
+      .#{$push}-#{$i},
+      .#{$pull}-#{$i} {
+        @extend %#{$negate-push-pull};
+      }
+    }
+    @if $i > $columns - 1 {
+      .#{$class}-#{$i} {
+        @extend %#{$full-width};
+      }
+      .#{$push}-#{$i},
+      .#{$pull}-#{$i} {
+        @extend %#{$negate-push-pull};
+      }
+    }
+  }
+}
+
+
+// Flex Grid Row Adjustments
+// ----------------------------
+@mixin grid-flex-row-adjust() {
+  // move grid elment first or last
+  .#{$prefix-class}-first {
+    order: -1;
+  }
+  .#{$prefix-class}-last {
+    order: 1;
+  }
+  // reverse order of row
+  .#{$prefix-class}-reverse {
+    flex-direction: row-reverse;
+  }
+  // shift grid elements based on starting position
+  .#{$prefix-class}-start {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .#{$prefix-class}-end {
+    justify-content: flex-end;
+    text-align: right;
+  }
+  .#{$prefix-class}-center {
+    justify-content: center;
+    text-align: center;
+  }
+  .#{$prefix-class}-full {
+    align-content: stretch;
+  }
+  // align grid elements based on top, middle, or bottom of parent
+  .#{$prefix-class}-top {
+    align-items: flex-start;
+  }
+  .#{$prefix-class}-middle {
+    align-items: center;
+  }
+  .#{$prefix-class}-bottom {
+    align-items: flex-end;
+  }
+  // adjust space around grid elements
+  .#{$prefix-class}-space {
+    justify-content: space-around;
+  }
+  .#{$prefix-class}-between {
+    justify-content: space-between;
+  }
+}
+
+@mixin nested-flex-grid-elements($class: $grid-class) {
+  .#{$row-class} {
+    // [class*=#{$class}]:first-of-type {
+    //   padding-left: 0.5rem;
+    // }
+    // [class*=#{$class}]:last-of-type {
+    //   padding-right: 0.5rem;
+    // }
+  }
+}

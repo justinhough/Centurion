@@ -70,7 +70,7 @@ footer {
   @include rem(margin-bottom, 32);
 }
 span.box-grid {
-  background-color: $lighter-grey;
+  background-color: $light-blue;
   box-sizing: border-box;
   display: block;
   @include rem(font-size, 12);
@@ -80,7 +80,10 @@ span.box-grid {
   text-align: center;
   width: 100%;
 }
-
+.color-row {
+  background-color: $lighter-grey;
+  margin: .5rem 0;
+}
 
 // Grid Demo
 // ----------------------------
@@ -97,6 +100,7 @@ span.box-grid {
     &:last-of-type {
       .box-grid {
         background: $blue;
+        color: #FFF;
         @include rem('margin-bottom', 8);
       }
     }
@@ -104,6 +108,7 @@ span.box-grid {
       &:first-child {
         .box-grid {
           background: $blue;
+          color: #FFF;
           @include rem('margin-bottom', 8);
         }
       }
@@ -120,6 +125,7 @@ span.box-grid {
   &[class*="pull-"] {
     .box-grid {
       background-color: $blue;
+      color: #FFF;
     }
   }
 }

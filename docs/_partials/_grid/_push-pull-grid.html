@@ -2,48 +2,50 @@
   <h3>Push the Grid</h3>
 
   <pre><code class="language-markup">&lt;div class="ctn-container">
-    &lt;div class="ctn-grid-6">&lt;/div>
-    &lt;div class="ctn-grid-6 ctn-push-6">&lt;/div>
-    &lt;div class="ctn-grid-6 ctn-push-12">&lt;/div>
-    &lt;div class="ctn-grid-6 ctn-push-18">&lt;/div>
+    &lt;div class="ctn-row">
+      &lt;div class="ctn-grid-6">&lt;/div>
+      &lt;div class="ctn-grid-6 ctn-push-6">&lt;/div>
+      &lt;div class="ctn-grid-6 ctn-push-3">&lt;/div>
+      &lt;div class="ctn-grid-6 ctn-push-6">&lt;/div>
+    &lt;/div>
   &lt;/div></code></pre>
 </div>
 
 
 <div class="calculate clearfix">
+  <div class="ctn-row">
+    <div class="ctn-grid-6"></div>
+    <div class="ctn-grid-6 ctn-push-6"></div>
 
-  <div class="ctn-grid-6"></div>
-  <div class="clear"></div>
-
-  <div class="ctn-grid-6 ctn-push-6"></div>
-  <div class="clear"></div>
-
-  <div class="ctn-grid-6 ctn-push-12"></div>
-  <div class="clear"></div>
-
-  <div class="ctn-grid-6 ctn-push-18"></div>
-  <div class="clear"></div>
-
+    <div class="ctn-grid-6 ctn-push-3"></div>
+    <div class="ctn-grid-6 ctn-push-6"></div>
+  </div>
 </div>
 
 
 <div class="ctn-grid-24">
-  <h3>Push and Pull the Grid</h3>
+  <h3>Flip Grid Elements in Display</h3>
 
   <pre><code class="language-markup">&lt;div class="ctn-container">
-    &lt;div class="ctn-grid-8 ctn-push-16">&lt;/div>
-    &lt;div class="ctn-grid-16 ctn-pull-8">&lt;/div>
-    &lt;div class="ctn-grid-16 ctn-pull-8">&lt;/div>
-    &lt;div class="ctn-grid-8 ctn-pull-16">&lt;/div>
+    &lt;div class="ctn-row ctn-reverse">
+      &lt;div class="ctn-grid-8">&lt;/div>
+      &lt;div class="ctn-grid-16">&lt;/div>
+    &lt;/div>
+    &lt;div class="ctn-row ctn-reverse">
+      &lt;div class="ctn-grid-16">&lt;/div>
+      &lt;div class="ctn-grid-8">&lt;/div>
+    &lt;/div>
   &lt;/div></code></pre>
 </div>
 
 
 <div class="calculate clearfix">
-
-  <div class="ctn-grid-6 ctn-push-6"></div>
-  <div class="ctn-grid-6 ctn-pull-6"></div>
-  <div class="ctn-grid-6 ctn-push-6"></div>
-  <div class="ctn-grid-6 ctn-pull-6"></div>
-
+  <div class="ctn-row ctn-reverse">
+    <div class="ctn-grid-8"></div>
+    <div class="ctn-grid-16"></div>
+  </div>
+  <div class="ctn-row ctn-reverse">
+    <div class="ctn-grid-16"></div>
+    <div class="ctn-grid-8"></div>
+  </div>
 </div>

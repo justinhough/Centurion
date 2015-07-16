@@ -1,6 +1,7 @@
 # Project
 _build
 _releases
+*.gem
 
 ### Node ###
 # Logs

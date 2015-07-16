@@ -1,3 +1,28 @@
+## 3.5.5
+- Autoprefixer added to Grunt
+- Flex Grid included as default
+- Removed pull from grid markup; only push utilized
+- Original grid layout cleaned up for semantic usage
+- Fixed bug when nesting grid elements
+- Added basic styling for forms
+- Docs moved to subfolder (cleanup)
+- Favicons are now blue along with color scheme (no more orange)!
+- Excluded build folder from repository (cleanup)
+- Docs updated with proper grid usage
+- Code example Prism.js themes updated from dark to line
+- Fix for badge classes not being generated properly
+
+## 3.5.4
+- Grunt package dependencies fixed when installing with NPM
+- Grunt dependency raised to `^0.4.5` from `~0.4.0`
+- README:
+	- Added `grunt-sass` as default
+	- Added precision and sourcemap to Grunt example
+	- Links to both `grunt-sass` and `grunt-contrib-sass`
+- Bug fixes:
+	- Grid fix for tablet and mobile not overriding desktop widths. (Hierarchy is important.)
+	- `@include rem` threw error when strings passed. ([https://github.com/justinhough/Centurion/issues/25](fixed by issue #25)
+
 ## 3.5.3
 - CSS and JS banners added on build (customized via package version)
 - Grid / Push & Pull fixes for responsive
@@ -6,7 +31,7 @@
 - Improved semantic grid `@include ctn-grid`
 - Colors refactored
 - Badges were simplified
-- Tables are now responsive (fixed by issue #23)
+- Tables are now responsive ([https://github.com/justinhough/Centurion/issues/23](fixed by issue #23))
 - Reconstructed the grunt build process
 
 ## 3.5.2

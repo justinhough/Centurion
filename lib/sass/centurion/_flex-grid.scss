@@ -8,16 +8,6 @@ $gutter-half: 10px;
   @return $percent;
 }
 
-// [x] @TODO: use same classes from regular grid
-// [x] @TODO: container and wrapper for flex grid
-// [x] @TODO: 24 column desktop grid (1100px and up)
-// [x] @TODO: 12 column tablet grid (?? to ??)
-// [x] @TODO: 6 column mobile grid (??px and down)
-
-// [x] @TODO: push and pull for desktop
-// [x] @TODO: push and pull for tablet
-// [x] @TODO: push and pull for mobile
-
 // [] @TODO: alpha and omega for nested elements (is it needed?)
 // [] @TODO: visible and hidden for desktop, tablet, and mobile
 
@@ -75,8 +65,8 @@ $gutter-half: 10px;
 
 // Flex Grid Creator
 // ----------------------------
-// @include grid-flex-creator('ctn-grid', 'ctn-push', 'ctn-pull', 24, 1200);
-@mixin grid-flex-creator($class, $push, $pull, $columns, $width) {
+// @include grid-flex-creator('ctn-grid', 'ctn-push', 24, 1200);
+@mixin grid-flex-creator($class, $push, $columns, $width) {
   @for $i from 1 through $columns {
     .#{$class}-#{$i} {
       @extend %grid-flex-base;
@@ -87,9 +77,6 @@ $gutter-half: 10px;
     .#{$push}-#{$i} {
       margin-#{$lang-front}: grid-percent($columns, $width, $i);
     }
-    .#{$pull}-#{$i} {
-      margin-#{$lang-front}: (grid-percent($columns, $width, $i)) * -1;
-    }
   }
 }
 
@@ -98,34 +85,34 @@ $gutter-half: 10px;
 @mixin grid-flex-generate($resp:null) {
   @if $resp == "tablet" {
     // adjust grid for tablet
-    @include adjust-flex-grid($t-columns, $d-columns, $grid-class, $push-class, $pull-class, t-full-width, t-no-push-pull);
+    @include adjust-flex-grid($t-columns, $d-columns, $grid-class, $push-class, t-full-width, t-no-push-pull);
     // create tablet grid
-    @include grid-flex-creator($t-grid-class, $t-push-class, $t-pull-class, $t-columns, $t-width);
+    @include grid-flex-creator($t-grid-class, $t-push-class, $t-columns, $t-width);
   }
   @if $resp == "mobile" {
     //adjust grid for mobile
-    @include adjust-flex-grid($m-columns, $d-columns, $grid-class, $push-class, $pull-class, t-full-width, t-no-push-pull);
-    @include adjust-flex-grid($m-columns, $t-columns, $grid-class, $t-push-class, $t-pull-class, m-full-width, m-no-push-pull);
+    @include adjust-flex-grid($m-columns, $d-columns, $grid-class, $push-class, t-full-width, t-no-push-pull);
+    @include adjust-flex-grid($m-columns, $t-columns, $grid-class, $t-push-class, m-full-width, m-no-push-pull);
     // create mobile grid
-    @include grid-flex-creator($m-grid-class, $m-push-class, $m-pull-class, $m-columns, $m-width);
+    @include grid-flex-creator($m-grid-class, $m-push-class, $m-columns, $m-width);
   }
   @if $resp == "desktop" {
     // create desktop grid
-    @include grid-flex-creator($grid-class, $push-class, $pull-class, $d-columns, $d-width);
+    @include grid-flex-creator($grid-class, $push-class, $d-columns, $d-width);
   }
 
   @include nested-flex-grid-elements();
 }
 
 // Adjust Grid on Smaller Devices (Tablets and Mobile
-@mixin adjust-flex-grid($columns, $columns-count, $class, $push, $pull, $full-width, $negate-push-pull) {
+@mixin adjust-flex-grid($columns, $columns-count, $class, $push, $full-width, $negate-push) {
   %#{$full-width} {
     @include rem(padding-left, $gutter-half !important);
     @include rem(padding-right, $gutter-half !important);
     flex-basis: 100%;
     max-width: 100%;
   }
-  %#{$negate-push-pull} {
+  %#{$negate-push} {
     margin-#{$lang-front}: 0; /* negate */
   }
 
@@ -135,18 +122,16 @@ $gutter-half: 10px;
         @extend %grid-flex-base;
         @extend %#{$full-width};
       }
-      .#{$push}-#{$i},
-      .#{$pull}-#{$i} {
-        @extend %#{$negate-push-pull};
+      .#{$push}-#{$i} {
+        @extend %#{$negate-push};
       }
     }
     @if $i > $columns - 1 {
       .#{$class}-#{$i} {
         @extend %#{$full-width};
       }
-      .#{$push}-#{$i},
-      .#{$pull}-#{$i} {
-        @extend %#{$negate-push-pull};
+      .#{$push}-#{$i} {
+        @extend %#{$negate-push};
       }
     }
   }

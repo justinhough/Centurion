@@ -56,9 +56,10 @@ $light-orange: lighten($orange, 20%);
   .color-box {
     @extend %color-box-all;
     float: left;
-    margin: 1em 1em 1em 0;
+    font-family: $font-family;
+    @include rem(margin, 8px 8px 8px 0);
     position: relative;
-    width: 100px;
+    width: 25%;
   }
   .color-swatch {
     @extend %color-box-all;

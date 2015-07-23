@@ -20,6 +20,7 @@ $gutter-half: 10px;
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0;
+    height: 100%;
     max-width: $d-width + $value;
 
     %grid-flex-base {
@@ -37,6 +38,7 @@ $gutter-half: 10px;
     flex: 0 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 100%;
   }
 
   // Small Desktop

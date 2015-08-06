@@ -5,7 +5,7 @@ $lang-front: left;
 // ----------------------------
 hr {
   background: $grey;
-  background-image: linear-gradient(left, $lighter-grey, $grey, $lighter-grey);
+  background-image: linear-gradient(to left, $lighter-grey, $grey, $lighter-grey);
   border: 0;
   height: 1px;
   @include rem(margin, 48px 0 16px 0);
@@ -110,6 +110,74 @@ span.box-grid {
   color: $white;
   @include rem(margin-bottom, 8);
 }
+
+
+// Custom Layouts 
+
+.show-layout {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  margin: 0;
+
+  #layout-logo {
+    @include rem(margin, 5px 0 0 0);
+  }
+
+  header,
+  footer {
+    background: transparent;
+    @include rem(margin-bottom, 16px);
+  }
+  
+  .layout-box {
+    background: $lighter-grey;
+    margin-bottom: 5px;
+    min-height: 50px;
+    width: 100%;
+  }
+  
+  .layout-blue {
+    @extend .layout-box;
+    background: $blue; 
+  }
+  .layout-green {
+    @extend .layout-box;
+    background: $green;
+  }
+  .layout-red {
+    @extend .layout-box;
+    background: $red;
+  }
+  .layout-black {
+    @extend .layout-box;
+    background: $black;
+  }
+  .layout-orange {
+    @extend .layout-box;
+    background: $orange;
+  }
+  
+  .layout-ex-tall {
+    @extend .layout-box;
+    min-height: 600px;
+  }
+  .layout-tall {
+    @extend .layout-box;
+  	min-height: 400px;
+	}
+	.layout-medium {
+  	@extend .layout-box;
+  	min-height: 200px;
+	}
+	.layout-short {
+  	@extend .layout-box;
+  	min-height: 100px;
+	}
+  
+}
+	
+
 
 @include clearfix;
 

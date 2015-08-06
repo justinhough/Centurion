@@ -142,30 +142,7 @@ $gutter-half: 10px;
 // Flex Grid Row Adjustments
 // ----------------------------
 @mixin grid-flex-row-adjust() {
-  // move grid elment first or last
-  .#{$prefix-class}-first {
-    order: -1;
-  }
-  .#{$prefix-class}-last {
-    order: 1;
-  }
-  // reverse order of row
-  .#{$prefix-class}-reverse {
-    flex-direction: row-reverse;
-  }
-  // shift grid elements based on starting position
-  .#{$prefix-class}-start {
-    justify-content: flex-start;
-    text-align: left;
-  }
-  .#{$prefix-class}-end {
-    justify-content: flex-end;
-    text-align: right;
-  }
-  .#{$prefix-class}-center {
-    justify-content: center;
-    text-align: center;
-  }
+  
   .#{$prefix-class}-full {
     align-content: stretch;
   }
@@ -186,6 +163,79 @@ $gutter-half: 10px;
   .#{$prefix-class}-between {
     justify-content: space-between;
   }
+  
+  
+    
+  //@TODO: [] flex first and last for each media query
+  //@TODO: [] flex reverse for each media query
+  //@TODO: [] flex start, center, end for each media query
+  
+  // move grid elment first or last
+  .#{$prefix-class}-first {
+    order: -1;
+  }
+  .#{$prefix-class}-last {
+    order: 1;
+  }
+  
+  // reverse order of row
+  .#{$prefix-class}-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  // shift grid elements based on starting position
+  .#{$prefix-class}-start {
+    align-self: flex-start;
+  }
+  .#{$prefix-class}-end {
+    align-self: flex-end;
+  }
+  .#{$prefix-class}-center {
+    align-self: center;
+  }
+  
+  @media screen and (max-width: $t-width + px) {
+    .#{$t-grid-class}-first {
+      order: -1;
+    }
+    .#{$t-grid-class}-last {
+      order: 1;
+    }
+    .#{$t-grid-class}-start {
+      align-self: flex-start;
+      order: initial;
+    }
+    .#{$t-grid-class}-end {
+      align-self: flex-end;
+      order: initial;
+    }
+    .#{$t-grid-class}-center {
+      align-self: center;
+      order: initial;
+    }
+  }
+  
+  @media screen and (max-width: $m-width + px) {
+    .#{$m-grid-class}-first {
+      order: -1;
+    }
+    .#{$m-grid-class}-last {
+      order: 1;
+    }
+    .#{$m-grid-class}-start {
+      align-self: flex-start;
+      order: initial;
+    }
+    .#{$m-grid-class}-end {
+      align-self: flex-end;
+      order: initial;
+    }
+    .#{$m-grid-class}-center {
+      align-self: center;
+      order: initial;
+    }
+  }
+  
 }
 
 @mixin nested-flex-grid-elements($class: $grid-class) {

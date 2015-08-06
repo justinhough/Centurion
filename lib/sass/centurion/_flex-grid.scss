@@ -239,12 +239,23 @@ $gutter-half: 10px;
 }
 
 @mixin nested-flex-grid-elements($class: $grid-class) {
+
+  //@TODO: [] nested reset for start, end, first, middle, and last for padding on grid elements
+  //@TODO: [] needs to work with all media query grid layouts
+  
   .#{$row-class} {
-    // [class*=#{$class}]:first-of-type {
-    //   padding-left: 0.5rem;
-    // }
-    // [class*=#{$class}]:last-of-type {
-    //   padding-right: 0.5rem;
-    // }
+    [class*=#{$class}]:first-of-type,
+    .#{$prefix-class}-first,
+    .#{$prefix-class}-start {
+      padding-left: 0;
+    }
+    .ctn-middle {
+      @include rem(padding, 0 7.5);
+    }
+    [class*=#{$class}]:last-of-type,
+    .#{$prefix-class}-last,
+    .#{$prefix-class}-end {
+      padding-right: 0;
+    }
   }
 }

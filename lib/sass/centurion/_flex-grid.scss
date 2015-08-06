@@ -85,6 +85,10 @@ $gutter-half: 10px;
 // Generate grid
 // ----------------------------
 @mixin grid-flex-generate($resp:null) {
+  @if $resp == "desktop" {
+    // create desktop grid
+    @include grid-flex-creator($grid-class, $push-class, $d-columns, $d-width);
+  }
   @if $resp == "tablet" {
     // adjust grid for tablet
     @include adjust-flex-grid($t-columns, $d-columns, $grid-class, $push-class, t-full-width, t-no-push-pull);
@@ -98,11 +102,6 @@ $gutter-half: 10px;
     // create mobile grid
     @include grid-flex-creator($m-grid-class, $m-push-class, $m-columns, $m-width);
   }
-  @if $resp == "desktop" {
-    // create desktop grid
-    @include grid-flex-creator($grid-class, $push-class, $d-columns, $d-width);
-  }
-
   @include nested-flex-grid-elements();
 }
 

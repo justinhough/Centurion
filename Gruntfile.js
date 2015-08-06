@@ -176,25 +176,31 @@ module.exports = function (grunt) {
     },
 
     includereplace: {
+      options: {
+        globals: {
+          projectName: '<%= pkg.projectName %>',
+          projectDescription: '<%= pkg.simpleDescription %>',
+          meta_keyword: '<%= pkg.keywords.toString() %>',
+          meta_description: '<%= pkg.description %>',
+          version: '<%= pkg.version %>',
+          author_name: '<%= pkg.author.name %>',
+          author_url: '<%= pkg.author.url %>',
+        },
+        prefix: '<!--##',
+        suffix: '-->',
+        includesDir: 'docs/_partials/'
+      },
       dist: {
         flatten: true,
         expand: true,
-        options: {
-          globals: {
-            projectName: '<%= pkg.projectName %>',
-            projectDescription: '<%= pkg.simpleDescription %>',
-            meta_keyword: '<%= pkg.keywords.toString() %>',
-            meta_description: '<%= pkg.description %>',
-            version: '<%= pkg.version %>',
-            author_name: '<%= pkg.author.name %>',
-            author_url: '<%= pkg.author.url %>',
-          },
-          prefix: '<!--##',
-          suffix: '-->',
-          includesDir: 'docs/_partials/'
-        },
         src: 'docs/*.html',
         dest: '_build/'
+      },
+      layouts: {
+        flatten: true,
+        expand: true,
+        src: 'docs/layouts/*.html',
+        dest: '_build/layouts/'
       }
     },
 

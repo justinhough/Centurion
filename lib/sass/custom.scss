@@ -1,32 +1,18 @@
 @import "centurion-framework";
 $lang-front: left;
 
-@include color-swatches;
-
 // CUSTOM FOR PREVIEW
 // ----------------------------
-code, pre {
-  @include rem(font-size, 14);
-}
-.code-inline {
-  top: -12px;
-  position: relative;
-}
-
-
 hr {
   background: $grey;
-  background-image: -webkit-linear-gradient(left, $lighter-grey, $grey, $lighter-grey);
-  background-image: -moz-linear-gradient(left, $lighter-grey, $grey, $lighter-grey);
-  background-image: -ms-linear-gradient(left, $lighter-grey, $grey, $lighter-grey);
-  background-image: -o-linear-gradient(left, $lighter-grey, $grey, $lighter-grey);
+  background-image: linear-gradient(to left, $lighter-grey, $grey, $lighter-grey);
   border: 0;
   height: 1px;
-  @include rem(margin, 48 0 16 0);
+  @include rem(margin, 48px 0 16px 0);
 }
 
 a {
-  color: $orange;
+  color: $blue;
   &:hover {
     color: $black;
   }
@@ -34,41 +20,31 @@ a {
 
 header {
   background: $light-grey;
-  border-bottom: 4px solid $orange;
+  border-bottom: 4px solid $blue;
 }
 
 nav {
   a {
     color: $black;
     display: inline-block;
-    font-size: 0.9em;
+    @include rem(font-size, 14px);
     font-weight: 100;
-    padding: 1em;
+    @include rem(padding, 16px);
     text-decoration: none;
-    -webkit-transition: background-color 100ms linear;
     transition: background-color 100ms linear;
     &:hover,
     &.nav-current {
-      background: $orange;
+      background: $blue;
       color: $white;
     }
   }
 }
 
-/*
-.section-break {
-  @extend %clearfix;
-  border-bottom: 3px solid #dddddd;
-  margin: 2em 0;
-  width: 100%;
-}
-*/
-
 footer {
   background: $lighter-grey;
-  margin-top: 4em;
+  @include rem(margin-top, 48px);
   p {
-    font-size: 0.8em;
+    @include rem(font-size, 12px);
   }
 }
 
@@ -76,20 +52,23 @@ footer {
 // For Example Grid elements
 // ----------------------------
 .calculate {
-  @include rem(margin-bottom, 32);
+  @include rem(margin-bottom, 32px);
 }
 span.box-grid {
-  background-color: $lighter-grey;
-  @include box-sizing(border-box);
+  background-color: $light-blue;
+  box-sizing: border-box;
   display: block;
-  @include rem(font-size, 12);
+  @include rem(font-size, 12px);
   font-weight: 100;
-  @include rem(margin-top, 10);
-  @include rem(padding, 8 0);
+  @include rem(margin-top, 10px);
+  @include rem(padding, 8px 0);
   text-align: center;
   width: 100%;
 }
-
+.color-row {
+  background-color: $lighter-grey;
+  @include rem(margin, 8px 0);
+}
 
 // Grid Demo
 // ----------------------------
@@ -99,50 +78,107 @@ span.box-grid {
     .first,
     &:first-of-type {
       .box-grid {
-        background: $light-orange;
+        background: $light-blue;
       }
     }
     .last,
     &:last-of-type {
       .box-grid {
-        background: $orange;
-        @include rem('margin-bottom', 8);
+        @extend %show-grid-default;
       }
     }
     [class^="ctn-grid-"] {
       &:first-child {
         .box-grid {
-          background: $orange;
-          @include rem('margin-bottom', 8);
+          @extend %show-grid-default;
         }
       }
     }
   }
 }
-// Push and Pull
+// Show Push
 [class^="ctn-grid-"] {
   &[class*="push-"] {
     .box-grid {
-      background-color: $light-orange;
-    }
-  }
-  &[class*="pull-"] {
-    .box-grid {
-      background-color: $orange;
+      @extend %show-grid-default;
     }
   }
 }
 
-.rotate{
-  -webkit-transition-duration: 0.75s;
-  transition-duration: 0.75s;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: transform;
+%show-grid-default {
+  background: $blue;
+  color: $white;
+  @include rem(margin-bottom, 8);
 }
- 
-.rotate:hover {
-  -webkit-transform:rotateY(360deg);
-  transform:rotateY(360deg);
+
+
+// Custom Layouts 
+
+.show-layout {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  margin: 0;
+
+  #layout-logo {
+    @include rem(margin, 5px 0 0 0);
+  }
+
+  header,
+  footer {
+    background: transparent;
+    @include rem(margin-bottom, 16px);
+  }
+  
+  .layout-box {
+    background: $lighter-grey;
+    margin-bottom: 5px;
+    min-height: 50px;
+    width: 100%;
+  }
+  
+  .layout-blue {
+    @extend .layout-box;
+    background: $blue; 
+  }
+  .layout-green {
+    @extend .layout-box;
+    background: $green;
+  }
+  .layout-red {
+    @extend .layout-box;
+    background: $red;
+  }
+  .layout-black {
+    @extend .layout-box;
+    background: $black;
+  }
+  .layout-orange {
+    @extend .layout-box;
+    background: $orange;
+  }
+  
+  .layout-ex-tall {
+    @extend .layout-box;
+    min-height: 600px;
+  }
+  .layout-tall {
+    @extend .layout-box;
+  	min-height: 400px;
+	}
+	.layout-medium {
+  	@extend .layout-box;
+  	min-height: 200px;
+	}
+	.layout-short {
+  	@extend .layout-box;
+  	min-height: 100px;
+	}
+  
 }
+	
+
 
 @include clearfix;
+
+@include color-swatches;

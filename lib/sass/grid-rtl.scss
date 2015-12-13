@@ -6,4 +6,5 @@ body {
   line-height: $default-line-height;
 }
 
-@include column-grid;
+//@include column-grid;
+@include flex-grid();

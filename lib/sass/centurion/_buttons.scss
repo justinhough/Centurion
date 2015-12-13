@@ -10,9 +10,9 @@
   display: inline-block;
   @include rem(font-size, $default-font-size);
   font-weight: normal;
-  @include element-spacing(vertical, margin, $default-font-size);
+  @include rem(margin, $default-font-size 0);
   outline: 0;
-  @include element-spacing(two, padding, 8, 16);
+  @include rem(padding, 8px 16px);
   text-decoration: none;
   vertical-align: middle;
   zoom: 1;
@@ -60,53 +60,48 @@
   .btn {
     @include default-button;
     @extend %noTextDecoration;
-    -webkit-transition: background 120ms linear;
     transition: background 120ms linear;
     &:hover {
       @include default-button-hover;
     }
   }
-   
+
   %bordered-btn {
     background-color: transparent;
-    border: 2px solid $grey;
+    border: 1px solid $grey;
   }
-  
   .small-btn {
     @extend .btn;
     @include rem(font-size, 10);
-    @include element-spacing(two, padding, 6, 12);
+    @include rem(padding, 6px 12px);
   }
-  
   .large-btn {
     @extend .btn;
     @include rem(font-size, 18);
-    @include element-spacing(two, padding, 8, 36);
+    @include rem(padding, 8px 36px);
   }
-  
   .full-btn {
     @extend .btn;
-    @include element-spacing(vertical, padding, 10);
+    @include rem(padding, 10px 0);
     text-align: center;
     width: 100%;
   }
-  
   .inline-btn {
     margin: 0;
   }
-  
+
   @include btn(blue-btn, $blue, $dark-blue);
   @include btn(red-btn, $red, $dark-red);
   @include btn(purple-btn, $purple, $dark-purple);
   @include btn(orange-btn, $orange, $dark-orange);
   @include btn(green-btn, $green, $dark-green);
   @include btn(dark-grey-btn, $dark-grey, $black);
-  
+
   @include border-btn(blue-btn-bdr, $blue, $dark-blue);
   @include border-btn(red-btn-bdr, $red, $dark-red);
   @include border-btn(purple-btn-bdr, $purple, $dark-purple);
   @include border-btn(orange-btn-bdr, $orange, $dark-orange);
   @include border-btn(green-btn-bdr, $green, $dark-green);
   @include border-btn(dark-grey-btn-bdr, $dark-grey, $black);
-  
+
 }

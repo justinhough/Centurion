@@ -4,25 +4,30 @@
 
 // REM Conversion (with PX Fallback)
 // ----------------------------
-// +rem(font-size, 32)
+// REM based on default font size of 16px (set in config)
+// @include rem(font-size, 32)
+
+// for custom REM values you can reset the default by appending the value (no PX value needed)
+// @include rem(font-size, 15px, default: 15)
+// @include rem(padding, 15 14 0 0, $default: 15)
 @function remove-unit($num) {
   @return $num / ($num * 0 + 1);
 }
 
-@mixin rem($property, $values) {
+@mixin rem($property, $values, $default:$default-font-size) {
   $total: length($values);
   $px-value: "";
   $rem-value: "";
-  
+
   @for $i from 1 through $total {
     $value: nth($values, $i);
-    
+
     // Check if $value is string or not
     // If not a string make it REM friendly
     @if type_of($value) != string{
       $value: remove-unit(nth($values, $i));
       $px-value: #{$px-value + $value}px;
-      $rem-value: #{$rem-value + $value / $default-font-size}rem;
+      $rem-value: #{$rem-value + $value / $default}rem;
     }
     // If a string make it friendly
     @else {
@@ -38,40 +43,17 @@
       $px-value: #{$px-value + " "};
     }
   }
-  
+
   // Final value
   #{$property}: $px-value;
   #{$property}: $rem-value;
-}
-
-// Box Sizing
-// ----------------------------
-// @include box-sizing
-@mixin box-sizing($value: border-box) {
-  @each $prefix in $prefixes {
-    -#{$prefix}-box-sizing: $value;
-  }
-  box-sizing: $value;
 }
 
 // Box Shadow - custom with defaults (4 values)
 // ----------------------------
 // @include box-shadow
 @mixin box-shadow($top: 0, $bottom: 0, $spread: 5px, $color: rgba(black, 0.4)) {
-  @each $prefix in $prefixes {
-    -#{$prefix}-box-shadow: $top $bottom $spread $color;
-  }
   box-shadow: $top $bottom $spread $color;
-}
-
-// Transitions
-// ----------------------------
-// @include css3-transition(transition, time)
-@mixin css3-transition($option, $time: 1s) {
-  @each $prefix in $prefixes {
-    -#{$prefix}-transition: $time $option;
-  }
-  transition: $time $option;
 }
 
 // Media Queries
@@ -104,85 +86,21 @@
 @mixin gradient($amount, $start, $end, $middle: null) {
   @if $amount == two {
     background: $start;
-    background: -moz-linear-gradient(top, $start 0%, $end 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start), color-stop(100%, $end));
-    background: -webkit-linear-gradient(top, $start 0%, $end 100%);
-    background: -o-linear-gradient(top, $start 0%, $end 100%);
-    background: -ms-linear-gradient(top, $start 0%, $end 100%);
+    //background: -moz-linear-gradient(top, $start 0%, $end 100%);
+    //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start), color-stop(100%, $end));
+    //background: -webkit-linear-gradient(top, $start 0%, $end 100%);
+    //background: -o-linear-gradient(top, $start 0%, $end 100%);
+    //background: -ms-linear-gradient(top, $start 0%, $end 100%);
     background: linear-gradient(top, $start 0%, $end 100%);
   }
   @else if $amount == three {
     background: $start;
-    background: -moz-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start), color-stop(40%, $middle), color-stop(100%, $end));
-    background: -webkit-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
-    background: -o-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
-    background: -ms-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
+    //background: -moz-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
+    //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start), color-stop(40%, $middle), color-stop(100%, $end));
+    //background: -webkit-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
+    //background: -o-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
+    //background: -ms-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
     background: linear-gradient(top, $start 0%, $middle 40%, $end 100%);
-  }
-}
-
-// Border Radius Mixins
-// ----------------------------
-@mixin border-radius($radius, $radius2: $radius) {
-  @each $prefix in $prefixes {
-    -#{$prefix}-border-radius: $radius $radius2;
-  }
-  border-radius: $radius $radius2;
-}
-
-@mixin border-radius-dir($radius, $dir) {
-  @if $dir == top-left {
-    @each $prefix in $prefixes {
-      -#{$prefix}-border-radius: $radius 0 0 0;
-    }
-    border-radius: $radius 0 0 0;
-  }
-  @else if $dir == top-right {
-    @each $prefix in $prefixes {
-      -#{$prefix}-border-radius: 0 $radius 0 0;
-    }
-    border-radius: 0 $radius 0 0;
-  }
-  @else if $dir == top-left {
-    @each $prefix in $prefixes {
-      -#{$prefix}-border-radius: 0 0 $radius 0;
-    }
-    border-radius: 0 0 $radius 0;
-  }
-  @else if $dir == top-right {
-    @each $prefix in $prefixes {
-      -#{$prefix}-border-radius: 0 0 0 $radius;
-    }
-    border-radius: 0 0 0 $radius;
-  }
-}
-
-
-// Margin or Padding
-// ----------------------------
-// @include element-spacing(vertical, margin, 10px)
-@mixin element-spacing($direction, $spacing, $value: null, $value2: $value) {
-  @if $direction == vertical {
-    @include rem(#{$spacing}, $value 0);
-  }
-  @else if $direction == horizontal {
-    @include rem(#{$spacing}, 0 $value);
-  }
-  @else if $direction == all {
-    @include rem(#{$spacing}, $value);
-  }
-  @else if $direction == two {
-    @include rem(#{$spacing}, $value $value2);
-  }
-  @else if $direction == center {
-    @include rem(#{$spacing}, 0 auto);
-  }
-  @else if $direction == none {
-    @include rem(#{$spacing}, 0);
-  }
-  @else {
-    @include rem(#{$spacing}-#{$direction}, $value);
   }
 }
 

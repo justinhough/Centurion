@@ -1,0 +1,86 @@
+<a name="forms"></a>
+<article id="forms" class="ctn-row">
+
+  <div class="ctn-grid-24">
+    <h2>Forms</h2>
+    <p>______</p>
+  </div>
+
+  <div class="ctn-grid-12">
+    <form action="" method="post">
+
+      <label>
+        Full Name<span class="ctn-field-required">*</span>
+        <input type="text" id="fullname" required="" aria-required="true">
+      </label>
+
+      <label>
+        E-mail
+        <input type="email">
+      </label>
+
+      <label>
+        Address
+        <input type="text">
+      </label>
+
+      <label>
+        Select an Option
+        <select>
+          <option value="1">select one</option>
+          <option value="2">select two</option>
+          <option value="3">select three</option>
+          <option value="4">select two</option>
+        </select>
+      </label>
+
+      <fieldset>
+        <legend>How often?</legend>
+        <label>
+          <input type="checkbox"> Hourly
+        </label>
+        <label>
+          <input type="checkbox"> Daily
+        </label>
+        <label>
+          <input type="checkbox"> Every so often
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Select an option</legend>
+        <label>
+          <input type="radio" name="options" value="first">First
+        </label>
+        <label>
+          <input type="radio" name="options" value="second">Second
+        </label>
+      </fieldset>
+
+      <label>
+        Message
+        <textarea rows="10"></textarea>
+      </label>
+
+      <button type="submit" class="ctn-submit-btn">Submit</button>
+      <button type="button">Reset</button>
+      <button type="button" class="ctn-cancel-btn">Cancel</button>
+
+    </form>
+
+  </div>
+
+  <div class="ctn-grid-12">
+
+    <form method="GET" action="/search">
+      <label>Search Field:
+        <div class="ctn-search-block">
+          <input type="search" placeholder="Search">
+          <button type="submit" class="ctn-search-submit">Search</button>
+        </div>
+      </label>
+    </form>
+
+  </div>
+
+</article>

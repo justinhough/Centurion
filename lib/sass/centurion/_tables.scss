@@ -44,10 +44,10 @@
     border-spacing: 0;
     color: $dark-grey;
     @include rem(font-size, $default-font-size);
-    @include element-spacing(vertical, margin, $default-font-size);
+    @include rem(margin, $default-font-size 0);
     width: 100%;
   }
-  
+
   thead,
   tfoot {
     text-align: left;
@@ -57,15 +57,15 @@
       color: $white;
       font-weight: bold;
       line-height: normal;
-      @include element-spacing(two, padding, 10, 12);
+      @include rem(padding, 10px 12px);
       vertical-align: middle;
     }
   }
-  
+
   tbody {
     tr,
     td {
-      @include element-spacing(two, padding, 8, 12);
+      @include rem(padding, 8px 12px);
     }
     tr {
       &.odd {
@@ -76,8 +76,8 @@
       }
     }
   }
-  
-  
+
+
   // Responsive Table
   @include media-query(phones) {
     .#{$prefix-class}-table-wrapper {
@@ -92,14 +92,14 @@
   }
 
   @include table-color-generator("black", $black, $white, $dark-grey);
-  
+
   @include table-color-generator("red", $red, $white, $dark-red);
-  
+
   @include table-color-generator("blue", $blue, $white, $dark-blue);
-  
+
   @include table-color-generator("green", $green, $white, $dark-green);
-  
+
   @include table-color-generator("purple", $purple, $white, $dark-purple);
-  
+
   @include table-color-generator("orange", $orange, $white, $dark-orange);
 }

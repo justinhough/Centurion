@@ -1,0 +1,148 @@
+// Form Mixins
+// ----------------------------
+
+// @include forms()
+@mixin forms() {
+
+  label, input, select, textarea, legend, input[type="search"] {
+    box-sizing: border-box;
+    @extend %typography;
+    outline: none;
+    outline-offset: 0;
+  }
+
+
+  label {
+    display: block;
+    @include rem(margin-bottom, 24);
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    @include rem(margin-bottom, 24);
+    label {
+      margin: 0;
+    }
+  }
+  legend {
+    font-weight: bold;
+    @include rem(margin, 0 0 8 0)
+  }
+
+  input {
+    border: 1px solid $light-grey;
+    display: block;
+
+    @include rem(margin, 8 0 16 0);
+    @include rem(padding, 4);
+    border-radius: 0;
+    transition: border-color 150ms linear;
+    appearance: textfield;
+
+    margin: 0;
+    width: 100%;
+    &:focus {
+      border-color: $blue;
+    }
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    display: inline-block;
+    width: auto;
+  }
+  input[type="checkbox"] {
+    @include rem(margin-right, 4);
+    appearance: checkbox;
+  }
+  input[type="radio"] {
+    @include rem(margin-right, 8);
+    appearance: radio;
+  }
+
+  .ctn-field-required {
+    color: $red;
+    font-weight: bold;
+    line-height: 1;
+    margin-left: 5px;
+  }
+
+  .ctn-field-error {
+    border-color: $red;
+  }
+  .ctn-field-warning {
+    border-color: $orange;
+  }
+  .ctn-field-success {
+    border-color: $green;
+  }
+
+
+  textarea {
+    border: 1px solid $light-grey;
+    box-sizing: border-box;
+    @include rem(padding, 8);
+    line-height: 1.2;
+    height: auto;
+    @include rem(margin, 8 0);
+    width: 100%;
+    &:focus {
+      border-color: $blue;
+    }
+  }
+
+
+  select {
+    border: 1px solid $light-grey;
+    border-radius: 0;
+    display: block;
+    padding: 6px 24px 6px 8px;
+    width: auto;
+    appearance: none;
+  }
+
+  input[type='button'], input[type='reset'], input[type='submit'], button {
+    @include default-button;
+    display: block;
+  }
+
+  .ctn-submit-btn {
+    background-color: $blue;
+    color: #FFF;
+  }
+  .ctn-cancel-btn {
+    background-color: $red;
+    color: #FFF;
+  }
+
+  // Search Form
+  input[type="search"] {
+    box-sizing: border-box;
+    border-right: 0;
+    display: inline;
+    float: left;
+    @include rem(padding, 6);
+    width: 85%;
+  }
+  .ctn-search-submit {
+    background-color: $blue;
+    color: $white;
+    box-sizing: border-box;
+    border: 1px solid $blue;
+    border-left: 0;
+    box-shadow: none;
+    display: inline;
+    float: left;
+    line-height: 1;
+    padding: 10px 0 11px 0;
+    text-align: center;
+    width: 15%;
+    &:hover {
+      background-color: $dark-blue;
+    }
+  }
+
+  // @TODO: select menu background icon
+  // @TODO: search javascript to clear search
+
+}

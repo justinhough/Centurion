@@ -1,0 +1,47 @@
+<div class="ctn-grid-24">
+  <h2>Nested Grids</h2>
+
+  <p>The best part of any grid system is the ability to nest elements within a single grid element to break down the space into smaller, manageable spaces.</p>
+
+  <p>For example, say that you want to have content in a <code>ctn-grid-18</code>, but you also want to add three images with captions side-by-side beneath the main block of text. In order to create this layout will need to put three <code>ctn-grid-8</code> grid elements inside the parent grid element.</p>
+
+<pre><code class="language-markup">&lt;div class="ctn-container">
+  &lt;div class="ctn-grid-12">
+    &lt;div class="ctn-grid-8">&lt;/div>
+    &lt;div class="ctn-grid-16">&lt;/div>
+  &lt;/div>
+  &lt;div class="ctn-grid-12">
+    &lt;div class="ctn-grid-16">&lt;/div>
+    &lt;div class="ctn-grid-8">&lt;/div>
+  &lt;/div>
+&lt;/div></code></pre>
+
+</div>
+
+
+<div class="ctn-row">
+  <div class="ctn-grid-24 calculate">
+    <div class="ctn-row color-row nested-row">
+      <div class="ctn-grid-2"></div>
+      <div class="ctn-grid-22"></div>
+    </div>
+  </div>
+
+  <div class="ctn-grid-12 calculate">
+    <div class="ctn-row color-row nested-row">
+      <div class="ctn-grid-8"></div>
+      <div class="ctn-grid-16"></div>
+    </div>
+  </div>
+  <div class="ctn-grid-12 calculate">
+    <div class="ctn-row color-row nested-row">
+      <div class="ctn-grid-12"></div>
+      <div class="ctn-grid-12"></div>
+    </div>
+
+    <div class="ctn-row color-row nested-row">
+      <div class="ctn-grid-16"></div>
+      <div class="ctn-grid-8"></div>
+    </div>
+  </div>
+</div>

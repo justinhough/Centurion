@@ -1,3 +1,4 @@
 @import "centurion-framework";
 $lang-front: left;
-@include column-grid;
+//@include column-grid();
+@include flex-grid();

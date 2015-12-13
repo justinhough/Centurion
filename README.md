@@ -12,12 +12,14 @@ If you're concerned about browser support then we recommend either [html5shiv](h
 
 ## Versioning
 
+Current version: `4.0.0`
+
 Centurion no longer supports Internet Explorer 7 as of version `3.5.3`.
 
 **Note**: Please read the CHANGELOG for updates to the framework. The latest version of Centurion differs in quite a few ways to previous versions and would require an upgrade to benefit some of the new features.
 
 
-## Install NPM
+## Install with NPM
 
 ### Getting Started
 
@@ -31,7 +33,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 
 `grunt.loadNpmTasks('centurion-framework');`
 
-### Grunt Usage
+#### Grunt Usage
 
 When using Centurion with Grunt you can use one of two modules: `grunt-contrib-sass` or `grunt-sass`. We recommend the later since it's built on [libsass](http://libsass.org/) and compiles much faster, but it is [missing some features](http://sass-compatibility.github.io/) so the decision is yours.
 
@@ -52,7 +54,7 @@ For [grunt-sass](https://github.com/sindresorhus/grunt-sass) you can add Centuri
 }
 ```
 
-### Gulp Usage
+#### Gulp Usage
 
 You can also use Centurion with [Gulp](http://gulpjs.com/). By using the module [`gulp-sass`](https://www.npmjs.com/package/gulp-sass/) add the library module to your `includePaths` found in the example Gulp task below.
 
@@ -73,7 +75,7 @@ If you're interested in using Gulp check out a [simple starter project](https://
 
 
 
-## Install RubyGem
+## Install as a RubyGem
 
 ### Getting Started
 
@@ -108,7 +110,7 @@ If you're interested in contributing to Centurion simply open an issue labeled `
 
 ## Community
 
-We might have a small community in comparison to other open-source projects, but we're only getting started.
+We might have a small community in comparison to other open-source frameworks, but we're only getting started.
 
 
 ### Special Thanks to Our Community

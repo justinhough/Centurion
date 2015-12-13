@@ -1,4 +1,4 @@
-## 3.5.5
+## 3.6.1
 - Autoprefixer added to Grunt
 - Flex Grid included as default
 - Removed pull from grid markup; only push utilized

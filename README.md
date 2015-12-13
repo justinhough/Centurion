@@ -12,7 +12,7 @@ If you're concerned about browser support then we recommend either [html5shiv](h
 
 ## Versioning
 
-Current version: `4.0.0`
+Current version: `3.5.5`
 
 Centurion no longer supports Internet Explorer 7 as of version `3.5.3`.
 

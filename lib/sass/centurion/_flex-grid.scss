@@ -142,7 +142,7 @@ $gutter-half: 10px;
 // Flex Grid Row Adjustments
 // ----------------------------
 @mixin grid-flex-row-adjust() {
-  
+
   .#{$prefix-class}-full {
     align-content: stretch;
   }
@@ -163,13 +163,13 @@ $gutter-half: 10px;
   .#{$prefix-class}-between {
     justify-content: space-between;
   }
-  
-  
-    
+
+
+
   //@TODO: [] flex first and last for each media query
   //@TODO: [] flex reverse for each media query
   //@TODO: [] flex start, center, end for each media query
-  
+
   // move grid elment first or last
   .#{$prefix-class}-first {
     order: -1;
@@ -177,12 +177,12 @@ $gutter-half: 10px;
   .#{$prefix-class}-last {
     order: 1;
   }
-  
+
   // reverse order of row
   .#{$prefix-class}-reverse {
     flex-direction: row-reverse;
   }
-  
+
   // shift grid elements based on starting position
   .#{$prefix-class}-start {
     align-self: flex-start;
@@ -192,8 +192,9 @@ $gutter-half: 10px;
   }
   .#{$prefix-class}-center {
     align-self: center;
+    justify-content: center;
   }
-  
+
   @media screen and (max-width: $t-width + px) {
     .#{$t-grid-class}-first {
       order: -1;
@@ -214,7 +215,7 @@ $gutter-half: 10px;
       order: initial;
     }
   }
-  
+
   @media screen and (max-width: $m-width + px) {
     .#{$m-grid-class}-first {
       order: -1;
@@ -235,14 +236,14 @@ $gutter-half: 10px;
       order: initial;
     }
   }
-  
+
 }
 
 @mixin nested-flex-grid-elements($class: $grid-class) {
 
   //@TODO: [] nested reset for start, end, first, middle, and last for padding on grid elements
   //@TODO: [] needs to work with all media query grid layouts
-  
+
   .#{$row-class} {
     [class*=#{$class}]:first-of-type,
     .#{$prefix-class}-first,

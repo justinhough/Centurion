@@ -1,3 +1,6 @@
+## 3.6.2
+- bug fix #27 when using `.ctn-center` would not center grid elements
+
 ## 3.6.1
 - Autoprefixer added to Grunt
 - Flex Grid included as default

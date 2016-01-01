@@ -1,5 +1,6 @@
 ## 3.6.2
 - bug fix #27 when using `.ctn-center` would not center grid elements
+- Grunt Sass version updated in package.json to `1.1.0` to alleviate compile errors
 
 ## 3.6.1
 - Autoprefixer added to Grunt

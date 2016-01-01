@@ -14,6 +14,7 @@ var banner = '/* -------------------------------------------------------- \n' +
 
 var shortBanner = '/* <%= pkg.projectName %> - v <%= pkg.version %> */\n';
 
+var repoName = require('./package.json').name;
 var version = require('./package.json').version;
 
 module.exports = function (grunt) {
@@ -24,13 +25,13 @@ module.exports = function (grunt) {
 
     clean: {
       build: {
-        src: ['_build']
+        src: ['release']
       }
     },
 
     'http-server': {
       'dev': {
-        root: '_build',
+        root: 'release',
         port: 4000,
         host: '0.0.0.0',
         cache: 0,
@@ -80,7 +81,7 @@ module.exports = function (grunt) {
           banner: banner,
         },
         files: {
-          src: [ '_build/css/*.css' ]
+          src: [ 'release/css/*.css' ]
         }
       },
       shortBanner: {
@@ -88,7 +89,7 @@ module.exports = function (grunt) {
           banner: shortBanner,
         },
         files: {
-          src: [ '_build/css/minified/*.css']
+          src: [ 'release/css/minified/*.css']
         }
       }
     },
@@ -106,7 +107,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'lib/sass',
           src: ['*.scss'],
-          dest: '_build/css',
+          dest: 'release/css',
           ext: '.css'
         }]
       },
@@ -118,7 +119,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'lib/sass',
           src: ['*.scss'],
-          dest: '_build/css/minified',
+          dest: 'release/css/minified',
           ext: '.min.css'
         }]
       }
@@ -132,7 +133,7 @@ module.exports = function (grunt) {
         ]
       },
       dist: {
-        src: '_build/css/*.css'
+        src: 'release/css/*.css'
       }
     },
 
@@ -148,7 +149,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'lib/js',
           src: ['**/*.js'],
-          dest: '_build/js/'
+          dest: 'release/js/'
         }]
       }
     },
@@ -156,22 +157,9 @@ module.exports = function (grunt) {
     copy: {
       dist: {
         files: [
-          {expand: true, cwd: 'lib/js/libs', src: ['**'], dest: '_build/js/libs'},
-          {expand: true, cwd: 'lib/img', src: ['**'], dest: '_build/img'},
+          {expand: true, cwd: 'lib/js/libs', src: ['**'], dest: 'release/js/libs'},
+          {expand: true, cwd: 'lib/img', src: ['**'], dest: 'release/img'},
         ]
-      }
-    },
-
-    'compress': {
-      main: {
-        options: {
-          archive: '_releases/centurion_'+ version +'.zip'
-        },
-        files: [{
-          flatten: true,
-          src: ['_build/**/*.css', '_build/**/*.js', '!_build/libs/**/*.js', '!build/__MACOSX'],
-          dest: './centurion_'+ version
-        }]
       }
     },
 
@@ -194,14 +182,66 @@ module.exports = function (grunt) {
         flatten: true,
         expand: true,
         src: 'docs/*.html',
-        dest: '_build/'
+        dest: 'release/'
       },
       layouts: {
         flatten: true,
         expand: true,
         src: 'docs/layouts/*.html',
-        dest: '_build/layouts/'
+        dest: 'release/layouts/'
       }
+    },
+
+    'compress': {
+      main: {
+        options: {
+          archive: './' + repoName + '.zip'
+        },
+        files: [{
+          flatten: true,
+          src: ['release/**'],
+          dest: './'
+        }]
+      }
+    },
+
+    'github-release': {
+      options: {
+        repository: 'justinhough/Centurion',
+        release: {
+          tag_name: 'v' + version,
+          name: 'v' + version,
+          body: 'Releasing Centurion v' + version + ' into the wild.'
+        },
+        auth: {
+          password: process.env.GITHUB_TERMINAL
+        }
+      },
+      files: {
+        src: ['./' + repoName + '.zip']
+      }
+    },
+
+    prompt: {
+      target: {
+        options: {
+          questions: [
+            {
+              config: 'github-release.options.auth.user',
+              type: 'input',
+              message: 'GitHub username:'
+            }
+          ]
+        }
+      }
+    },
+
+    'gh-pages': {
+      options: {
+        base: 'release',
+        //repo: ''
+      },
+      src: ['**']
     },
 
     concurrent: {
@@ -213,22 +253,26 @@ module.exports = function (grunt) {
       }
     },
 
-    'gh-pages': {
-      options: {
-        base: '_build',
-        //repo: ''
-      },
-      src: ['**']
-    },
-
   });
 
   require('load-grunt-tasks')(grunt);
 
   // Default Task
-  grunt.registerTask('default', ['clean', 'concurrent:dist', 'postcss', 'http-server', 'watch']);
+  grunt.registerTask('default', ['build', 'http-server', 'watch']);
+
+  // Build
+  grunt.registerTask('build', ['clean', 'concurrent:dist', 'postcss'])
 
   // Release updates to Github Pages
-  grunt.registerTask('page-release', ['gh-pages']);
+  grunt.registerTask('pages', ['gh-pages']);
+
+  // Release new version to Github
+  grunt.registerTask('release', [
+    'build',
+    'prompt',
+    'compress',
+    'github-release'
+  ]);
+
 
 };

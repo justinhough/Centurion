@@ -1,6 +1,6 @@
 # Project
-_build
-_releases
+release
+centurion-framework.zip
 *.gem
 
 ### Node ###

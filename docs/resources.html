@@ -1,33 +1,33 @@
 <!--##include('_layout-top.html')-->
 
-<div class="ctn-grid-24">
-  <h1>Resources</h1>
+<div class="ctn-row">
+  <div class="ctn-grid-18">
+    <h1>Resources</h1>
 
-  <p>You can <a href="https://github.com/justinhough/Centurion/blob/3.5.3/DOCUMENTATION.md">read the full documentation</a> on the CSS and Sass components on Github</p>
+    <p>You can <a href="https://github.com/justinhough/Centurion/blob/3.5.3/DOCUMENTATION.md">read the full documentation</a> on the CSS and Sass components on Github</p>
 
-  <p>If you're worried about browser support we recommend using <a href="https://code.google.com/p/html5shiv/">html5shiv</a> to add fallback for HTML5 or <a href="http://modernizr.com/">Modernizr</a> to provide basic support for CSS3 and other feature detection to keep your design from falling flat, unless you designed it that way.</p>
+    <p>If you're worried about browser support we recommend using <a href="https://code.google.com/p/html5shiv/">html5shiv</a> to add fallback for HTML5 or <a href="http://modernizr.com/">Modernizr</a> to provide basic support for CSS3 and other feature detection to keep your design from falling flat, unless you designed it that way.</p>
 
-  <h2>Sass Supported</h2>
+    <h2>Sass Supported</h2>
 
-  <p>Centurion is built using vanilla Sass (basically no library dependencies) and comes with some custom Sass Mixins that you can attach to create your own custom blend for your site. Remove what you don't need and move on.</p>
+    <p>Centurion is built using vanilla Sass (basically no library dependencies) and comes with some custom Sass Mixins that you can attach to create your own custom blend for your site. Remove what you don't need and move on.</p>
 
-  <hr />
+  </div>
+
+  <div class="ctn-grid-6">
+    <h3>Pre-built Layouts</h3>
+
+    <ul>
+      <li><a href="layouts/blog.html">Blog</a></li>
+      <li><a href="layouts/feed.html">Feed</a></li>
+      <li><a href="layouts/crazy.html">Crazy</a></li>
+      <li><a href="layouts/bands.html">Bands</a></li>
+      <!-- <li><a href="layouts/____.html">____</a></li> -->
+    </ul>
+  </div>
+
 </div>
-
-
-<div class="ctn-grid-24">
-  <h2>Pre-built Layouts</h2>
-  
-  <ul>
-    <li><a href="layouts/blog.html">Blog</a></li>
-    <li><a href="layouts/feed.html">Feed</a></li>
-    <li><a href="layouts/crazy.html">Crazy</a></li>
-    <li><a href="layouts/bands.html">Bands</a></li>
-    <li><a href="layouts/____.html">____</a></li>
-<!--   <li><a href="layouts/____.html">____</a></li> -->
-  </ul>
-  <hr />
-</div>
+<hr />
 
 
 <!-- GRID -->
@@ -35,6 +35,9 @@
 <!--##include('_grid/_nested-grid.html')-->
 <!--##include('_grid/_center-grid.html')-->
 <!--##include('_grid/_push-pull-grid.html')-->
+
+<!-- SHOW / HIDE -->
+<!--##include('_grid/_show-hide.html')-->
 
 <div class="clear"></div>
 <hr />
@@ -78,20 +81,11 @@
 <!-- TABLES -->
 <!--##include('_features/_tables.html')-->
 
-<div class="clear"></div>
-<hr />
+<!-- <div class="clear"></div>
+<hr /> -->
 
 <!-- NAVIGATION -->
 <!--include('_features/_navigation.html')-->
-
-<!--
-<div class="clear"></div>
-<hr />
--->
-
-<!-- SHOW / HIDE -->
-<!--##include('_features/_show-hide.html')-->
-
 
 
 <!--##include('_layout-bottom.html')-->

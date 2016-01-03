@@ -10,11 +10,7 @@ Centurion is a responsive framework built for speed, simplicity, and flexibility
 If you're concerned about browser support then we recommend either [html5shiv](https://code.google.com/p/html5shiv/) or [Modernizr](http://modernizr.com/) to your web site or project to help support CSS3 and HTML5.
 
 
-## Versioning
 
-Centurion no longer supports Internet Explorer 7 as of version `3.5.3`.
-
-Review [CHANGELOG](https://github.com/justinhough/Centurion/blob/master/CHANGELOG.md) for updates and changes to the framework.
 
 
 ## Install with NPM
@@ -96,11 +92,19 @@ Then you can include any of the modules from Centurion that you need. For exampl
 ```
 
 
+## Documentation and Examples
+
+Read our [docs](DOCUMENTATION.md) or view examples on our [Github page](http://justinhough.github.io/Centurion/resources.html). We are always trying to improve our documentation and examples, so please submit an issue labeled `docs` with the description of what needs to be updated.
+
+## Versioning
+
+Centurion no longer supports Internet Explorer 7 as of version `3.5.3`.
+
+Review [CHANGELOG](CHANGELOG.md) for updates and changes to the framework.
 
 ## Bugs and feature requests
 
 If you find a bug or have a feature request you would like added to Centurion. Please search for [existing](https://github.com/justinhough/Centurion/issues?q=is%3Aopen+is%3Aissue) and [closed](https://github.com/justinhough/Centurion/issues?q=is%3Aissue+is%3Aclosed) issues to see any similar issues. If you problem or idea is not addressed, please open a [new issue](https://github.com/justinhough/Centurion/issues/new).
-
 
 ## Contributing
 
@@ -110,14 +114,12 @@ If you're interested in contributing to Centurion simply open an issue labeled `
 
 We might have a small community in comparison to other open-source frameworks, but we're only getting started.
 
-
 ### Special Thanks to Our Community
 
 I would also want to thank a few people for their contributions to Centurion.
 
 * [Josh Northcott](https://github.com/jnorthcott22) - for his tireless effort in spreading the word about responsive design and Centurion.
 * [Corey Hadden](https://github.com/craql) - for his assistance in making jQuery play nice and for sheer inspiration.
-
 
 ## Licensing
 

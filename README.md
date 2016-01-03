@@ -12,11 +12,9 @@ If you're concerned about browser support then we recommend either [html5shiv](h
 
 ## Versioning
 
-Current version: `3.6.2`
-
 Centurion no longer supports Internet Explorer 7 as of version `3.5.3`.
 
-**Note**: Please read the CHANGELOG for updates to the framework. The latest version of Centurion differs in quite a few ways to previous versions and would require an upgrade to benefit some of the new features.
+Review [CHANGELOG](https://github.com/justinhough/Centurion/blob/master/CHANGELOG.md) for updates and changes to the framework.
 
 
 ## Install with NPM
@@ -123,4 +121,4 @@ I would also want to thank a few people for their contributions to Centurion.
 
 ## Licensing
 
-Licensed under [GPL](http://www.gnu.org/licenses/gpl.html) and [MIT](http://www.opensource.org/licenses/mit-license.php).
+Licensed under [GPL](http://www.gnu.org/licenses/gpl.html).

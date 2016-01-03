@@ -25,6 +25,7 @@ To get started, check out <http://centurionframework.com/> for more information.
     * [Tables](#tables)
     * [Typography](#typography)
 * [Sass Configurations](#configurations)
+* [Sass Mixins](#sass-mixins)
 
 
 <a name="get-started"></a>
@@ -318,3 +319,50 @@ You can add or adjust top or bottom margin / padding using classes. Values are b
 ### Browser Prefixes
 
 * `$prefixes` - Custom prefix values for internal mixins. **May be deprecated in a future version by using Autoprefixer with Grunt**
+
+<a name="sass-mixins"></a>
+## Sass Mixins
+
+
+#### `@include rem($property, $values)`
+
+Convert pixel values to REM values based on default font size and will automatically include a fallback in pixels for older browsers.
+
+* `$property` - CSS property you want converted to REMs. Example: `font-size`, `margin`, `padding`, or `margin-bottom`.
+* `$values` - Accepts one or multiple values (with or without pixels). Example: `10px 15px` or `10 15`.
+* `$default` - Set automatically in mixin, but can be changed on a case by case basis by appending a third value or globally by changing `$default-font-size`.
+
+
+#### `@include box-shadow($top, $bottom, $spread, $color)`
+
+Create box shadows for any elements more consistently. More features will be added to this for inset and multiple box shadows in the future.
+
+* `$top` - Offset-x in pixels. 
+* `$bottom` - Offset-y in pixels. 
+* `$spread` - Blur radius in pixels, by default is set to 5px.
+* `$color` - Color of the shadow (HEX or RGBA), by default is set to 40% Black.
+
+
+#### `@include gradient($amount, $start, $end, $middle)`
+
+Mixin for generating two and three value gradients from top to bottom.
+
+* `$amount` - Accepts one of 2 values, `two` or `three`
+* `$start` - Start value for gradient in percent. Example: `10%`
+* `$end` - End value for gradient in percent.
+* `$middle` - Middle value for gradient in percent, used for `three` amount gradient. 
+
+
+#### `@include media-query($media)` 
+
+Mixin for media queries that are adjusted to the same breakpoints that the grid utilizes. Custom queries is also an option to keep your Sass structure more streamlined.
+
+* `$media` - Accepts one of 3 values: desktops, tablets, phones
+
+
+#### `@include show-hide-view($view)` - 
+
+Mixin for showing or hiding elements based on media query (uses general grid break points). By selecting `desktop` you are hiding that element on desktop, but will be visible on tablet and mobile.
+
+* `$media` - Values accepted `desktop`, `tablet`, and `mobile`.
+

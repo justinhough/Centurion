@@ -1,9 +1,9 @@
 // Browser Prefixes
-$prefixes: webkit, moz, o;
+// $prefixes: webkit, moz, o;
 
 // Default Font, Font Size, and Line Height
 $font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$default-font-size: 15;
+$default-font-size: 16;
 $margin: $default-font-size;
 $padding: $default-font-size;
 $default-line-height: 1.5;
@@ -29,23 +29,23 @@ $value: px;
 
 // Grid, Push / Pull, and Post Classes (includes Tablet and Mobile Grids)
 $prefix-class: "ctn";
-$container-class: $prefix-class+"-container";
+$container-class: $prefix-class + "-container";
 
-$grid-class: $prefix-class+"-grid";
-$row-class: $prefix-class+"-row";
-$push-class: $prefix-class+"-push";
-$pull-class: $prefix-class+"-pull";
-//$pre-class: $prefix-class+"-pre";
-//$post-class: $prefix-class+"-post";
+$grid-class: $prefix-class + "-grid";
+$row-class: $prefix-class + "-row";
+$push-class: $prefix-class + "-push";
+$pull-class: $prefix-class + "-pull";
+//$pre-class: $prefix-class + "-pre";
+//$post-class: $prefix-class + "-post";
 
-$t-grid-class: $prefix-class+"-tablet";
-$t-push-class: $prefix-class+"-t-push";
-$t-pull-class: $prefix-class+"-t-pull";
+$t-grid-class: $prefix-class + "-tablet";
+$t-push-class: $prefix-class + "-t-push";
+$t-pull-class: $prefix-class + "-t-pull";
 
 
-$m-grid-class: $prefix-class+"-mobile";
-$m-push-class: $prefix-class+"-m-push";
-$m-pull-class: $prefix-class+"-m-pull";
+$m-grid-class: $prefix-class + "-mobile";
+$m-push-class: $prefix-class + "-m-push";
+$m-pull-class: $prefix-class + "-m-pull";
 
 
 // Centurion - Language Support

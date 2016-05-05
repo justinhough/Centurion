@@ -6,16 +6,17 @@
       content: " ";
       display: table;
     }
+
     &:after {
       clear: both;
     }
   }
-  
-  .clearfix,
-  .cf {
+
+  .cf,
+  .clearfix {
     @extend %clearfix;
   }
-  
+
   .clear {
     clear: both;
   }

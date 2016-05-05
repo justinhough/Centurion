@@ -22,7 +22,7 @@ linters:
 
   BorderZero:
     enabled: true
-    convention: zero # or `none`
+    convention: none # or `zero`
 
   ChainedClasses:
     enabled: false
@@ -47,7 +47,7 @@ linters:
     enabled: false
 
   DuplicateProperty:
-    enabled: true
+    enabled: false
 
   ElsePlacement:
     enabled: true
@@ -68,8 +68,8 @@ linters:
     present: true
 
   HexLength:
-    enabled: false
-    style: short # or 'long'
+    enabled: true
+    style: long # or 'short'
 
   HexNotation:
     enabled: true
@@ -97,7 +97,7 @@ linters:
 
   LeadingZero:
     enabled: true
-    style: include_zero # or 'exclude_zero'
+    style: exclude_zero # or 'include_zero'
 
   MergeableSelector:
     enabled: true
@@ -110,18 +110,18 @@ linters:
 
   NestingDepth:
     enabled: true
-    max_depth: 4
+    max_depth: 3
     ignore_parent_selectors: false
 
   PlaceholderInExtend:
-    enabled: false
+    enabled: true
 
   PrivateNamingConvention:
     enabled: false
     prefix: _
 
   PropertyCount:
-    enabled: true
+    enabled: false
     include_nested: false
     max_properties: 10
 
@@ -150,7 +150,7 @@ linters:
     properties: {}
 
   PseudoElement:
-    enabled: true
+    enabled: false
 
   QualifyingElement:
     enabled: true
@@ -160,7 +160,7 @@ linters:
 
   SelectorDepth:
     enabled: true
-    max_depth: 2
+    max_depth: 3
 
   SelectorFormat:
     enabled: true

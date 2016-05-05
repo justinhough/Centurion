@@ -61,7 +61,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['lib/sass/**/*.scss'],
-        tasks: ['sass', 'postcss', 'usebanner']
+        tasks: ['sass', 'postcss', 'usebanner', 'scsslint']
       },
       scripts: {
         files: ['lib/js/**/*.js'],
@@ -123,6 +123,17 @@ module.exports = function (grunt) {
           ext: '.min.css'
         }]
       }
+    },
+
+    scsslint: {
+      allFiles: [
+        'lib/sass/**/*.scss',
+      ],
+      options: {
+        exclude: 'lib/sass/centurion/_normalize.scss',
+        config: '.scss-style.yml',
+        colorizeOutput: true
+      },
     },
 
     postcss: {
@@ -258,7 +269,7 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Default Task
-  grunt.registerTask('default', ['build', 'http-server', 'watch']);
+  grunt.registerTask('default', ['build', 'scsslint', 'http-server', 'watch']);
 
   // Build
   grunt.registerTask('build', ['clean', 'concurrent:dist', 'postcss'])

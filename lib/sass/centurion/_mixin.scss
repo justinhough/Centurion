@@ -14,7 +14,7 @@
   @return $num / ($num * 0 + 1);
 }
 
-@mixin rem($property, $values, $default:$default-font-size) {
+@mixin rem($property, $values, $default: $default-font-size) {
   $total: length($values);
   $px-value: "";
   $rem-value: "";
@@ -24,17 +24,17 @@
 
     // Check if $value is string or not
     // If not a string make it REM friendly
-    @if type_of($value) != string{
+    @if type-of($value) != string {
       $value: remove-unit(nth($values, $i));
       $px-value: #{$px-value + $value}px;
       $rem-value: #{$rem-value + $value / $default}rem;
-    }
-    // If a string make it friendly
-    @else {
+    } @else {
+      // If a string make it friendly
       $value: nth($values, $i);
       $px-value: #{$px-value + $value};
       $rem-value: #{$rem-value + $value};
     }
+
     // Combine REM's and PX's together (or string, if present)
     @if $i < $total {
       // Set PX
@@ -46,13 +46,14 @@
 
   // Final value
   #{$property}: $px-value;
+
   #{$property}: $rem-value;
 }
 
 // Box Shadow - custom with defaults (4 values)
 // ----------------------------
 // @include box-shadow
-@mixin box-shadow($top: 0, $bottom: 0, $spread: 5px, $color: rgba(black, 0.4)) {
+@mixin box-shadow($top: 0, $bottom: 0, $spread: 5px, $color: rgba($black, .4)) {
   box-shadow: $top $bottom $spread $color;
 }
 
@@ -63,19 +64,23 @@
 // @include media-query(desktops)
 @mixin media-query($media) {
   @if $media == phones {
+
     @media only screen and (max-width: $m-width + px) {
       @content;
     }
-  }
-  @else if $media == tablets {
+
+  } @else if $media == tablets {
+
     @media only screen and (min-width: ($m-width + 1) + px) and (max-width: $t-width + px) {
       @content;
     }
-  }
-  @else if $media == desktops {
+
+  } @else if $media == desktops {
+
     @media only screen and (min-width: $d-width + px) {
       @content;
     }
+
   }
 }
 
@@ -86,20 +91,9 @@
 @mixin gradient($amount, $start, $end, $middle: null) {
   @if $amount == two {
     background: $start;
-    //background: -moz-linear-gradient(top, $start 0%, $end 100%);
-    //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start), color-stop(100%, $end));
-    //background: -webkit-linear-gradient(top, $start 0%, $end 100%);
-    //background: -o-linear-gradient(top, $start 0%, $end 100%);
-    //background: -ms-linear-gradient(top, $start 0%, $end 100%);
     background: linear-gradient(top, $start 0%, $end 100%);
-  }
-  @else if $amount == three {
+  } @else if $amount == three {
     background: $start;
-    //background: -moz-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
-    //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $start), color-stop(40%, $middle), color-stop(100%, $end));
-    //background: -webkit-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
-    //background: -o-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
-    //background: -ms-linear-gradient(top, $start 0%, $middle 40%, $end 100%);
     background: linear-gradient(top, $start 0%, $middle 40%, $end 100%);
   }
 }
@@ -112,36 +106,41 @@
     .show-desktop,
     .hide-tablet,
     .hide-mobile {
-      display: block !important;
+      display: block;
     }
+
     .hide-desktop,
     .show-tablet,
     .show-mobile {
-      display: none !important;
+      display: none;
     }
   }
+
   @if $view == tablet {
     .show-tablet,
     .hide-desktop,
     .hide-mobile {
-      display: block !important;
+      display: block;
     }
+
     .hide-tablet,
     .show-desktop,
     .show-mobile {
-      display: none !important;
+      display: none;
     }
   }
+
   @if $view == mobile {
     .show-mobile,
     .hide-desktop,
     .hide-tablet {
-      display: block !important;
+      display: block;
     }
+
     .hide-mobile,
     .show-desktop,
     .show-tablet {
-      display: none !important;
+      display: none;
     }
   }
 }
@@ -153,13 +152,16 @@
   .left-float {
     @include float-left;
   }
+
   .right-float {
-     @include float-right;
+    @include float-right;
   }
 }
+
 @mixin float-left() {
   float: left;
 }
+
 @mixin float-right() {
   float: right;
 }

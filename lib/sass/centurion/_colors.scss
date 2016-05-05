@@ -1,13 +1,13 @@
 // Colors
 // Centurion Colors
-$white: #FFF;
-$black: #000;
+$white: #ffffff;
+$black: #000000;
 
 $off-white: #efefef;
 
 $grey: #999999;
-$light-grey: #CCCCCC;
-$lighter-grey: #EDEDED;
+$light-grey: #cccccc;
+$lighter-grey: #ededed;
 $dark-grey: #555555;
 $darker-grey: #333333;
 
@@ -19,11 +19,11 @@ $blue: #2971b2;
 $dark-blue: darken($blue, 10%);
 $light-blue: lighten($blue, 30%);
 
-$purple: #553a99 /* #7f4d7b */;
+$purple: #553a99; // #7f4d7b
 $dark-purple: darken($purple, 10%);
 $light-purple: lighten($purple, 30%);
 
-$green: #4a742c /* #277f35 */;
+$green: #4a742c; // #277f35
 $dark-green: darken($green, 10%);
 $light-green: lighten($green, 30%);
 
@@ -34,13 +34,16 @@ $light-orange: lighten($orange, 20%);
 
 // @include single-color-swatch(class, color, lightColor, darkColor)
 @mixin single-color-swatch($class, $color, $light-color, $dark-color) {
-  $class-alt: "."+ $class;
+  $class-alt: "." + $class;
+
   &#{$class-alt} {
     background-color: $color;
   }
+
   &.light-#{$class} {
     background-color: $light-color;
   }
+
   &.dark-#{$class} {
     background-color: $dark-color;
   }
@@ -50,49 +53,56 @@ $light-orange: lighten($orange, 20%);
 @mixin color-swatches {
   %color-box-all {
     border: 1px solid $lighter-grey;
-    @extend box-sizing;
+    box-sizing: border-box;
     display: block;
   }
+
   .color-box {
     @extend %color-box-all;
+    @include rem(margin, 8px 8px 8px 0);
     float: left;
     font-family: $font-family;
-    @include rem(margin, 8px 8px 8px 0);
     position: relative;
     width: 25%;
   }
+
   .color-swatch {
     @extend %color-box-all;
+    @include single-color-swatch("grey", $grey, $light-grey, $dark-grey);
+    @include single-color-swatch("red", $red, $light-red, $dark-red);
+    @include single-color-swatch("blue", $blue, $light-blue, $dark-blue);
+    @include single-color-swatch("purple", $purple, $light-purple, $dark-purple);
+    @include single-color-swatch("green", $green, $light-green, $dark-green);
+    @include single-color-swatch("orange", $orange, $light-orange, $dark-orange);
+
     background-color: transparent;
     border: none;
     height: 60px;
+
     &.black {
       background-color: $black;
     }
-    @include single-color-swatch('grey', $grey, $light-grey, $dark-grey);
-    @include single-color-swatch('red', $red, $light-red, $dark-red);
-    @include single-color-swatch('blue', $blue, $light-blue, $dark-blue);
-    @include single-color-swatch('purple', $purple, $light-purple, $dark-purple);
-    @include single-color-swatch('green', $green, $light-green, $dark-green);
-    @include single-color-swatch('orange', $orange, $light-orange, $dark-orange);
   }
+
   .color-code {
     @extend %color-box-all;
     border: none;
+    color: $white;
     display: block;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    color: white;
     font-size: 12px;
+    left: 0;
+    position: absolute;
     text-align: center;
+    top: 10px;
     width: 100%;
+
     .color-code-rgb {
       display: block;
       font-size: 10px;
       margin-top: 5px;
     }
   }
+
   .color-name {
     @extend %color-box-all;
     border: none;

@@ -4,20 +4,21 @@
   @for $i from 1 through $layout-rows {
     $num: $i;
     $value: $i * $default-font-size;
-    .#{$margin-top}-#{$num} {
+
+    $mt: #{$margin-top}-#{$num};
+    $mb: #{$margin-bottom}-#{$num};
+    $mbot: #{$margin-both}-#{$num};
+
+    .#{$mt} {
       @include rem(margin-top, $value);
-      //margin-top: $value
-   
     }
-    .#{$margin-bottom}-#{$num} {
+
+    .#{$mb} {
       @include rem(margin-bottom, $value);
-      //margin-bottom: $value
-   
     }
-    .#{$margin-both}-#{$num} {
+
+    .#{$mbot} {
       @include rem(margin, $value 0);
-      //margin: $value 0
-   
     }
   }
 }
@@ -28,24 +29,24 @@
   @for $i from 1 through $layout-rows {
     $num: $i;
     $value: $i * $default-font-size;
-    .#{$padding-top}-#{$num} {
+
+    $pt: #{$margin-top}-#{$num};
+    $pb: #{$margin-bottom}-#{$num};
+    $pbot: #{$margin-both}-#{$num};
+
+    .#{$pt} {
       @include rem(padding-top, $value);
-      //padding-top: $value
-   
     }
-    .#{$padding-bottom}-#{$num} {
+
+    .#{$pb} {
       @include rem(padding-bottom, $value);
-      //padding-bottom: $value
-   
     }
-    .#{$padding-both}-#{$num} {
+
+    .#{$pbot} {
       @include rem(padding, $value 0);
-      //padding: $value 0
-   
     }
   }
 }
 
 //@include margin-block-layout;
-
 //@include padding-block-layout;

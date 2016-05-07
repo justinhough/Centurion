@@ -1,18 +1,21 @@
 @import "centurion-framework";
 $lang-front: left;
+// scss-lint:disable SelectorDepth
+// scss-lint:disable NestingDepth
 
 // CUSTOM FOR PREVIEW
 // ----------------------------
 hr {
+  @include rem(margin, 48px 0 16px 0);
   background: $grey;
   background-image: linear-gradient(to left, $lighter-grey, $grey, $lighter-grey);
-  border: 0;
+  border: none;
   height: 1px;
-  @include rem(margin, 48px 0 16px 0);
 }
 
 a {
   color: $blue;
+
   &:hover {
     color: $black;
   }
@@ -25,13 +28,14 @@ header {
 
 nav {
   a {
+    @include rem(font-size, 14px);
+    @include rem(padding, 16px);
     color: $black;
     display: inline-block;
-    @include rem(font-size, 14px);
     font-weight: 100;
-    @include rem(padding, 16px);
     text-decoration: none;
     transition: background-color 100ms linear;
+
     &:hover,
     &.nav-current {
       background: $blue;
@@ -41,8 +45,9 @@ nav {
 }
 
 footer {
-  background: $lighter-grey;
   @include rem(margin-top, 48px);
+  background: $lighter-grey;
+
   p {
     @include rem(font-size, 12px);
   }
@@ -54,26 +59,29 @@ footer {
 .calculate {
   @include rem(margin-bottom, 32px);
 }
-span.box-grid {
+
+.box-grid {
+  @include rem(font-size, 12px);
+  @include rem(margin-top, 10px);
+  @include rem(padding, 8px 0);
   background-color: $light-blue;
   box-sizing: border-box;
   display: block;
-  @include rem(font-size, 12px);
   font-weight: 100;
-  @include rem(margin-top, 10px);
-  @include rem(padding, 8px 0);
   text-align: center;
   width: 100%;
 }
+
 .color-row {
-  background-color: $lighter-grey;
   @include rem(margin, 8px 0);
+  background-color: $lighter-grey;
 }
 
 // Grid Demo
 // ----------------------------
-// Show Nested Elements
+// scss-lint:disable BorderZero
 [class^="ctn-grid-"] {
+
   [class^="ctn-grid-"] {
     .first,
     &:first-of-type {
@@ -81,12 +89,14 @@ span.box-grid {
         background: $light-blue;
       }
     }
+
     .last,
     &:last-of-type {
       .box-grid {
         @extend %show-grid-default;
       }
     }
+
     [class^="ctn-grid-"] {
       &:first-child {
         .box-grid {
@@ -95,90 +105,92 @@ span.box-grid {
       }
     }
   }
-}
-// Show Push
-[class^="ctn-grid-"] {
+
   &[class*="push-"] {
     .box-grid {
       @extend %show-grid-default;
     }
   }
+
 }
 
 %show-grid-default {
+  @include rem(margin-bottom, 8);
   background: $blue;
   color: $white;
-  @include rem(margin-bottom, 8);
 }
 
-
-// Custom Layouts 
-
+// Custom Layouts
 .show-layout {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 300;
   margin: 0;
 
-  #layout-logo {
+  .layout-logo {
     @include rem(margin, 5px 0 0 0);
   }
 
   header,
   footer {
-    background: transparent;
     @include rem(margin-bottom, 16px);
+    background: transparent;
   }
-  
-  .layout-box {
+
+  .layout-box,
+  %layout-box {
     background: $lighter-grey;
     margin-bottom: 5px;
     min-height: 50px;
     width: 100%;
   }
-  
+
   .layout-blue {
-    @extend .layout-box;
-    background: $blue; 
+    @extend %layout-box;
+    background: $blue;
   }
+
   .layout-green {
-    @extend .layout-box;
+    @extend %layout-box;
     background: $green;
   }
+
   .layout-red {
-    @extend .layout-box;
+    @extend %layout-box;
     background: $red;
   }
+
   .layout-black {
-    @extend .layout-box;
+    @extend %layout-box;
     background: $black;
   }
+
   .layout-orange {
-    @extend .layout-box;
+    @extend %layout-box;
     background: $orange;
   }
-  
+
   .layout-ex-tall {
-    @extend .layout-box;
+    @extend %layout-box;
     min-height: 600px;
   }
-  .layout-tall {
-    @extend .layout-box;
-  	min-height: 400px;
-	}
-	.layout-medium {
-  	@extend .layout-box;
-  	min-height: 200px;
-	}
-	.layout-short {
-  	@extend .layout-box;
-  	min-height: 100px;
-	}
-  
-}
-	
 
+  .layout-tall {
+    @extend %layout-box;
+    min-height: 400px;
+  }
+
+  .layout-medium {
+    @extend %layout-box;
+    min-height: 200px;
+  }
+
+  .layout-short {
+    @extend %layout-box;
+    min-height: 100px;
+  }
+
+}
 
 @include clearfix;
-
 @include color-swatches;

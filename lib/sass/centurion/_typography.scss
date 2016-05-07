@@ -4,15 +4,11 @@
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
-  //white-space: -pre-wrap;
-  //white-space: -o-pre-wrap;
-  //white-space: -moz-pre-wrap;
-  //white-space: -hp-pre-wrap;
   word-wrap: break-word;
 }
 
 @mixin typography() {
-  %noTextDecoration {
+  %no-text-decoration {
     text-decoration: none;
   }
 
@@ -21,13 +17,13 @@
   }
 
   %typography {
-    color: #333333;
+    @include rem(margin, $default-font-size 0);
+    color: $darker-grey;
     font-family: $font-family;
     font-smoothing: antialiased;
     font-style: normal;
     font-weight: 300;
     line-height: $default-line-height;
-    @include rem(margin, $default-font-size 0);
     text-align: left;
     text-rendering: optimizeLegibility;
   }
@@ -76,46 +72,51 @@
   li {
     @extend %typography;
     @include rem(font-size, $default-font-size);
-    margin: 0;
     @include rem(padding-left, $default-font-size - 8);
+    margin: 0;
   }
 
   a {
-    //-webkit-transition: color 120ms linear;
     transition: color 120ms linear;
   }
 
   blockquote {
     @extend %typography;
-    border-left: 5px solid #dedede;
     @include rem(margin-left, 18);
     @include rem(padding-left, $default-font-size);
+    border-left: 5px solid $lighter-grey;
     position: relative;
+
     .byline {
       display: block;
       font-weight: bold;
       text-align: right;
+
       &:before {
+        @include rem(margin-right, 8);
         content: "-";
         display: inline-block;
-        @include rem(margin-right, 8);
       }
     }
+
     &.quote {
+      @include rem(padding-left, $default-font-size + 16);
       border-left: none;
       margin-left: 0;
-      @include rem(padding-left, $default-font-size + 16);
+
       &:before,
       &:after {
-        content: '"';
         @include rem(font-size, 72);
+        content: '"';
         line-height: 0;
         position: absolute;
       }
+
       &:before {
-        top: 20px;
         left: 0;
+        top: 20px;
       }
+
       &:after {
         bottom: -20px;
         right: 0;
@@ -142,6 +143,6 @@
   }
 
   .text-muted {
-    color: $light-grey !important;
+    color: $light-grey;
   }
 }

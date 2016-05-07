@@ -4,141 +4,171 @@
 // @include forms()
 @mixin forms() {
 
-  label, input, select, textarea, legend, input[type="search"] {
-    box-sizing: border-box;
+  label,
+  input,
+  select,
+  textarea,
+  legend {
     @extend %typography;
+    box-sizing: border-box;
     outline: none;
     outline-offset: 0;
   }
 
-
   label {
-    display: block;
     @include rem(margin-bottom, 24);
+    display: block;
   }
 
   fieldset {
+    @include rem(margin-bottom, 24);
     border: none;
     padding: 0;
-    @include rem(margin-bottom, 24);
+
     label {
       margin: 0;
     }
   }
+
   legend {
+    @include rem(margin, 0 0 8 0);
     font-weight: bold;
-    @include rem(margin, 0 0 8 0)
   }
 
   input {
-    border: 1px solid $light-grey;
-    display: block;
-
     @include rem(margin, 8 0 16 0);
     @include rem(padding, 4);
-    border-radius: 0;
-    transition: border-color 150ms linear;
     appearance: textfield;
-
+    border: 1px solid $light-grey;
+    border-radius: 0;
+    display: block;
     margin: 0;
+    transition: border-color 150ms linear;
     width: 100%;
+
     &:focus {
       border-color: $blue;
     }
+
+    &[type="search"] {
+      @extend %typography;
+      box-sizing: border-box;
+      outline: none;
+      outline-offset: 0;
+    }
+
+    &[type="checkbox"],
+    &[type="radio"] {
+      display: inline-block;
+      width: auto;
+    }
+
+    &[type="checkbox"] {
+      @include rem(margin-right, 4);
+      appearance: checkbox;
+    }
+
+    &[type="radio"] {
+      @include rem(margin-right, 8);
+      appearance: radio;
+    }
+
+    &[type="button"],
+    &[type="reset"],
+    &[type="submit"] {
+      @include default-button;
+      display: block;
+    }
   }
 
-  input[type="checkbox"], input[type="radio"] {
-    display: inline-block;
-    width: auto;
-  }
-  input[type="checkbox"] {
-    @include rem(margin-right, 4);
-    appearance: checkbox;
-  }
-  input[type="radio"] {
-    @include rem(margin-right, 8);
-    appearance: radio;
-  }
+  .#{$prefix-class}-field {
+    &-required {
+      color: $red;
+      font-weight: bold;
+      line-height: 1;
+      margin-left: 5px;
+    }
 
-  .ctn-field-required {
-    color: $red;
-    font-weight: bold;
-    line-height: 1;
-    margin-left: 5px;
-  }
+    &-error {
+      border-color: $red;
+    }
 
-  .ctn-field-error {
-    border-color: $red;
-  }
-  .ctn-field-warning {
-    border-color: $orange;
-  }
-  .ctn-field-success {
-    border-color: $green;
-  }
+    &-warning {
+      border-color: $orange;
+    }
 
+    &-success {
+      border-color: $green;
+    }
+  }
 
   textarea {
+    @include rem(margin, 8 0);
+    @include rem(padding, 8);
     border: 1px solid $light-grey;
     box-sizing: border-box;
-    @include rem(padding, 8);
-    line-height: 1.2;
     height: auto;
-    @include rem(margin, 8 0);
+    line-height: 1.2;
     width: 100%;
+
     &:focus {
       border-color: $blue;
     }
   }
 
-
   select {
+    appearance: none;
     border: 1px solid $light-grey;
     border-radius: 0;
     display: block;
     padding: 6px 24px 6px 8px;
     width: auto;
-    appearance: none;
   }
 
-  input[type='button'], input[type='reset'], input[type='submit'], button {
+  button {
     @include default-button;
     display: block;
   }
 
-  .ctn-submit-btn {
+  .#{$prefix-class}-submit-btn {
     background-color: $blue;
-    color: #FFF;
+    color: $white;
   }
-  .ctn-cancel-btn {
+
+  .#{$prefix-class}-cancel-btn {
     background-color: $red;
-    color: #FFF;
+    color: $white;
   }
 
   // Search Form
-  input[type="search"] {
-    box-sizing: border-box;
-    border-right: 0;
-    display: inline;
-    float: left;
-    @include rem(padding, 6);
-    width: 85%;
-  }
-  .ctn-search-submit {
-    background-color: $blue;
-    color: $white;
-    box-sizing: border-box;
-    border: 1px solid $blue;
-    border-left: 0;
-    box-shadow: none;
-    display: inline;
-    float: left;
-    line-height: 1;
-    padding: 10px 0 11px 0;
-    text-align: center;
-    width: 15%;
-    &:hover {
-      background-color: $dark-blue;
+  .#{$prefix-class}-search-block {
+    input {
+      &[type="search"] {
+        @include rem(padding, 5 5 7 5);
+        border-right: none;
+        display: inline;
+        float: left;
+        width: 85%;
+      }
+    }
+
+    .#{$prefix-class}-search-submit {
+      @include rem(padding, 10 0);
+      background-color: $blue;
+      border: 1px solid $blue;
+      border-left: none;
+      box-shadow: none;
+      box-sizing: border-box;
+      color: $white;
+      display: inline;
+      float: left;
+      line-height: 1;
+      text-align: center;
+      width: 15%;
+
+      &:hover {
+        background-color: $dark-blue;
+      }
     }
   }
 

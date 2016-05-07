@@ -18,20 +18,24 @@ $gutter-half: 10px;
   .#{$container-class} {
     @extend %clearfix;
     box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0;
     height: 100%;
+    margin: 0 auto;
     max-width: $d-width + $value;
+    padding: 0;
 
     %grid-flex-base {
+      @include rem(padding, 0 7.5);
       box-sizing: border-box;
       flex: 0 0 auto;
       flex-grow: 0;
       flex-shrink: 0;
-      @include rem(padding, 0 7.5);
     }
+
+    // scss-lint:disable DeclarationOrder
     @include grid-flex-generate(desktop);
+    // scss-lint:enable DeclarationOrder
   }
+
   .#{$row-class} {
     box-sizing: border-box;
     display: flex;
@@ -47,12 +51,14 @@ $gutter-half: 10px;
       width: 100%;
     }
   }
+
   // Tablet
   @media screen and (max-width: $t-width + px) {
     .#{$container-class} {
       @include grid-flex-generate(tablet);
     }
   }
+
   // Mobile
   @media screen and (max-width: $m-width + px) {
     .#{$container-class} {
@@ -70,12 +76,16 @@ $gutter-half: 10px;
 // @include grid-flex-creator('ctn-grid', 'ctn-push', 24, 1200);
 @mixin grid-flex-creator($class, $push, $columns, $width) {
   @for $i from 1 through $columns {
+
     .#{$class}-#{$i} {
-      @extend %grid-flex-base;
-      @extend %clearfix;
+      @if ($columns == 24) {
+        @extend %grid-flex-base;
+        @extend %clearfix;
+      }
       flex-basis: grid-percent($columns, $width, $i);
-      max-width: grid-percent($columns, $width, $i);;
+      max-width: grid-percent($columns, $width, $i);
     }
+
     .#{$push}-#{$i} {
       margin-#{$lang-front}: grid-percent($columns, $width, $i);
     }
@@ -113,24 +123,30 @@ $gutter-half: 10px;
     flex-basis: 100%;
     max-width: 100%;
   }
+
   %#{$negate-push} {
-    margin-#{$lang-front}: 0; /* negate */
+    margin-#{$lang-front}: 0; // negate
   }
 
   @for $i from 1 through $columns-count {
+
     @if $i < $columns {
+
       .#{$class}-#{$i} {
-        @extend %grid-flex-base;
+        // @extend %grid-flex-base;
         @extend %#{$full-width};
       }
+
       .#{$push}-#{$i} {
         @extend %#{$negate-push};
       }
     }
     @if $i > $columns - 1 {
+
       .#{$class}-#{$i} {
         @extend %#{$full-width};
       }
+
       .#{$push}-#{$i} {
         @extend %#{$negate-push};
       }
@@ -146,25 +162,28 @@ $gutter-half: 10px;
   .#{$prefix-class}-full {
     align-content: stretch;
   }
+
   // align grid elements based on top, middle, or bottom of parent
   .#{$prefix-class}-top {
     align-items: flex-start;
   }
+
   .#{$prefix-class}-middle {
     align-items: center;
   }
+
   .#{$prefix-class}-bottom {
     align-items: flex-end;
   }
+
   // adjust space around grid elements
   .#{$prefix-class}-space {
     justify-content: space-around;
   }
+
   .#{$prefix-class}-between {
     justify-content: space-between;
   }
-
-
 
   //@TODO: [] flex first and last for each media query
   //@TODO: [] flex reverse for each media query
@@ -174,6 +193,7 @@ $gutter-half: 10px;
   .#{$prefix-class}-first {
     order: -1;
   }
+
   .#{$prefix-class}-last {
     order: 1;
   }
@@ -187,9 +207,11 @@ $gutter-half: 10px;
   .#{$prefix-class}-start {
     align-self: flex-start;
   }
+
   .#{$prefix-class}-end {
     align-self: flex-end;
   }
+
   .#{$prefix-class}-center {
     align-self: center;
     justify-content: center;
@@ -199,17 +221,21 @@ $gutter-half: 10px;
     .#{$t-grid-class}-first {
       order: -1;
     }
+
     .#{$t-grid-class}-last {
       order: 1;
     }
+
     .#{$t-grid-class}-start {
       align-self: flex-start;
       order: initial;
     }
+
     .#{$t-grid-class}-end {
       align-self: flex-end;
       order: initial;
     }
+
     .#{$t-grid-class}-center {
       align-self: center;
       order: initial;
@@ -220,17 +246,21 @@ $gutter-half: 10px;
     .#{$m-grid-class}-first {
       order: -1;
     }
+
     .#{$m-grid-class}-last {
       order: 1;
     }
+
     .#{$m-grid-class}-start {
       align-self: flex-start;
       order: initial;
     }
+
     .#{$m-grid-class}-end {
       align-self: flex-end;
       order: initial;
     }
+
     .#{$m-grid-class}-center {
       align-self: center;
       order: initial;
@@ -245,14 +275,17 @@ $gutter-half: 10px;
   //@TODO: [] needs to work with all media query grid layouts
 
   .#{$row-class} {
+
     [class*=#{$class}]:first-of-type,
     .#{$prefix-class}-first,
     .#{$prefix-class}-start {
       padding-left: 0;
     }
+
     .ctn-middle {
       @include rem(padding, 0 7.5);
     }
+
     [class*=#{$class}]:last-of-type,
     .#{$prefix-class}-last,
     .#{$prefix-class}-end {

@@ -3,10 +3,12 @@
 // @include table-base
 @mixin table-base() {
   th {
-    text-align: center;
     font-weight: bold;
+    text-align: center;
   }
-  td, th {
+
+  td,
+  th {
     padding: 2px;
   }
 }
@@ -23,10 +25,12 @@
         background-color: $color1;
       }
     }
+
     tbody {
       &.odd {
         background-color: $color2;
       }
+
       &.even {
         background-color: $color3;
       }
@@ -39,25 +43,26 @@
 @mixin tables() {
   table {
     @extend %typography;
+    @include rem(font-size, $default-font-size);
+    @include rem(margin, $default-font-size 0);
     background: $white;
     border-collapse: collapse;
     border-spacing: 0;
     color: $dark-grey;
-    @include rem(font-size, $default-font-size);
-    @include rem(margin, $default-font-size 0);
     width: 100%;
   }
 
   thead,
   tfoot {
     text-align: left;
+
     th,
     td {
+      @include rem(padding, 10px 12px);
       background-color: $light-grey;
       color: $white;
       font-weight: bold;
       line-height: normal;
-      @include rem(padding, 10px 12px);
       vertical-align: middle;
     }
   }
@@ -67,10 +72,12 @@
     td {
       @include rem(padding, 8px 12px);
     }
+
     tr {
       &.odd {
         background-color: $white;
       }
+
       &.even {
         background-color: $off-white;
       }
@@ -81,9 +88,10 @@
   // Responsive Table
   @include media-query(phones) {
     .#{$prefix-class}-table-wrapper {
-      position: relative;
       margin-bottom: 1rem;
       overflow: hidden;
+      position: relative;
+
       .#{$prefix-class}-responsive-table {
         overflow: scroll;
         overflow-y: hidden;
@@ -92,14 +100,9 @@
   }
 
   @include table-color-generator("black", $black, $white, $dark-grey);
-
   @include table-color-generator("red", $red, $white, $dark-red);
-
   @include table-color-generator("blue", $blue, $white, $dark-blue);
-
   @include table-color-generator("green", $green, $white, $dark-green);
-
   @include table-color-generator("purple", $purple, $white, $dark-purple);
-
   @include table-color-generator("orange", $orange, $white, $dark-orange);
 }

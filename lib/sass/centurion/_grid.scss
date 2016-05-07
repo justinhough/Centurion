@@ -32,44 +32,47 @@ $gutter-half: 10px;
 // ----------------------------
 @mixin column-grid {
   %column-base {
+    @extend %clearfix;
     box-sizing: border-box;
     float: $lang-front;
     padding: 0 $gutter / 2 + $value;
     position: relative;
-    @extend %clearfix;
   }
 
-  /* Large Destkop Grid */
-  /* ---------------------------- */
+  // Large Destkop Grid
+  // ----------------------------
   .#{$container-class} {
     @include ctn-container($d-width);
     @include grid-generate(desktop);
   }
 
-  /* Full Width Container */
+  // Full Width Container
   .#{$container-class}-full {
     width: 100%;
   }
 
-  /* Small Desktop Grid */
-  /* ---------------------------- */
+  // Small Desktop Grid
+  // ----------------------------
   @media screen and (max-width: $d-width + $value) {
     .#{$container-class} {
       width: 100%;
     }
+
+    // scss-lint:disable DeclarationOrder
     @include show-hide-view(desktop);
+    // scss-lint:enable DeclarationOrder
   }
 
-  /* Tablet Grid */
-  /* ---------------------------- */
+  // Tablet Grid
+  // ----------------------------
   @media screen and (max-width: $t-width + $value) {
     .#{$container-class} {
       @include grid-generate(tablet);
     }
   }
 
-  /* Mobile Grid */
-  /* ---------------------------- */
+  // Mobile Grid
+  // ----------------------------
   @media screen and (max-width: $m-width + $value) {
     .#{$container-class} {
       @include grid-generate(mobile);
@@ -77,7 +80,7 @@ $gutter-half: 10px;
   }
 
   .#{$grid-class}-center {
-    float: none !important;
+    float: none;
     margin: 0 auto;
   }
 
@@ -88,14 +91,19 @@ $gutter-half: 10px;
 // ----------------------------
 @mixin grid-creator($class, $push, $pull, $columns, $width) {
   @for $i from 1 through $columns {
+
     .#{$class}-#{$i} {
-      @extend %column-base;
-      @extend %clearfix;
+      @if ($columns == 24) {
+        @extend %column-base;
+        @extend %clearfix;
+      }
       width: grid-percent($columns, $width, $i);
     }
+
     .#{$push}-#{$i} {
       margin-#{$lang-front}: grid-percent($columns, $width, $i);
     }
+
     .#{$pull}-#{$i} {
       margin-#{$lang-front}: (grid-percent($columns, $width, $i)) * -1;
     }
@@ -111,6 +119,7 @@ $gutter-half: 10px;
     // create tablet grid
     @include grid-creator($t-grid-class, $t-push-class, $t-pull-class, $t-columns, $t-width);
   }
+
   @if $resp == "mobile" {
     //adjust grid for mobile
     @include adjust-grid($m-columns, $d-columns, $grid-class, $push-class, $pull-class, t-full-width, t-no-push-pull);
@@ -118,6 +127,7 @@ $gutter-half: 10px;
     // create mobile grid
     @include grid-creator($m-grid-class, $m-push-class, $m-pull-class, $m-columns, $m-width);
   }
+
   @if $resp == "desktop" {
     // create desktop grid
     @include grid-creator($grid-class, $push-class, $pull-class, $d-columns, $d-width);
@@ -133,6 +143,7 @@ $gutter-half: 10px;
     @include rem(padding-right, $gutter-half !important);
     width: 100%;
   }
+
   %#{$negate-push-pull} {
     left: 0;
   }
@@ -142,15 +153,18 @@ $gutter-half: 10px;
       .#{$class}-#{$i} {
         @extend %#{$full-width};
       }
+
       .#{$push}-#{$i},
       .#{$pull}-#{$i} {
         @extend %#{$negate-push-pull};
       }
     }
+
     @if $i > $columns - 1 {
       .#{$class}-#{$i} {
         @extend %#{$full-width};
       }
+
       .#{$push}-#{$i},
       .#{$pull}-#{$i} {
         @extend %#{$negate-push-pull};
@@ -165,10 +179,11 @@ $gutter-half: 10px;
   .#{$row-class},
   [class*=#{$class}] {
     [class*=#{$class}]:first-of-type {
-      padding-left: 0px;
+      padding-left: 0;
     }
+
     [class*=#{$class}]:last-of-type {
-      padding-right: 0px;
+      padding-right: 0;
     }
   }
 }

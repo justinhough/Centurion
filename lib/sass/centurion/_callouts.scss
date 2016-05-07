@@ -4,12 +4,16 @@
 // @include callout(class, bkColor, borderColor, textColor)
 @mixin callout($class, $bk-color, $border-color, $text-color) {
   .#{$class}-callout {
-    @extend .callout;
+    @extend %callout;
     background-color: $bk-color;
     border-left-color: $border-color;
-    h1, h2, h3 {
+
+    h1,
+    h2,
+    h3 {
       color: $text-color;
     }
+
     @content;
   }
 }
@@ -22,18 +26,18 @@
   }
 
   %alert-btn {
-    color: $black;
+    @include rem(padding, 2 6 3 6);
     background: $white;
     border: 1px solid $light-grey;
     border-radius: 25px;
+    color: $black;
     font-weight: bold;
     line-height: 1;
-    padding: 2px 6px 3px 6px;
     position: absolute;
-    top: 0.5em;
     right: 1em;
     text-align: center;
-    transition: 0.5s ease-in-out;
+    top: .5em;
+    transition: .5s ease-in-out;
 
     &:hover {
       background: $white;
@@ -43,72 +47,85 @@
 
   // Callouts
   // ----------------------------
-  .callout {
+  .callout,
+  %callout {
     @extend %clearfix;
-    display: block;
-    background-color: #ededed;
-    border-left: 5px solid #cccccc;
     @include rem(margin, $default-font-size 0);
     @include rem(padding, $default-font-size);
-    h1, h2, h3 {
-      color: #777777;
+    background-color: $off-white;
+    border-left: 5px solid $light-grey;
+    display: block;
+
+    h1,
+    h2,
+    h3 {
       @include rem(margin-top, 0);
       @include rem(margin-bottom, 10);
+      color: $dark-grey;
     }
+
     p {
-      color: #555555;
       @include rem(margin, 10 0);
+      color: $dark-grey;
     }
   }
 
-  /* Red Callout - Alert or Danger */
+  // scss-lint:disable ColorVariable
+  // Red Callout - Alert or Danger
   @include callout("red", #ffe3e1, #cc583a, #cc583a);
 
-  /* Blue Callout - Informational */
+  // Blue Callout - Informational
   @include callout("blue", #dddfff, #272d7f, #272d7f);
 
-  /* Purple Callout - Play Koi */
+  // Purple Callout - Play Koi
   @include callout("purple", #ffdcfc, #7f4d7b, #7f4d7b);
 
-  /* Green Callout - Success or Whoohoo! */
+  // Green Callout - Success or Whoohoo!
   @include callout("green", #dfffe4, #277f35, #277f35);
 
-  /* Orange Callout - Warning or Caution */
+  //Orange Callout - Warning or Caution
   @include callout("orange", #ffefdd, #fe9300, #fe9300);
+  // scss-lint:enable ColorVariable
 
   .alert {
+    @include rem(padding, 10 18);
     border-left: none;
     border-radius: 4px;
-    box-shadow: 0 0 8px #cccccc;
-    @include rem(padding, 10 18);
+    box-shadow: 0 0 8px $light-grey;
     position: relative;
-    .btn-expand {
-      @extend %callout-icons;
+  }
+
+  .btn-expand {
+    @extend %callout-icons;
+
+    &:after {
+      @extend %alert-btn;
+      content: "+";
+    }
+
+    &.open {
+
       &:after {
-        content: "+";
-        @extend %alert-btn;
+        transform: rotate(45deg);
+        transition: .5s ease-in-out;
       }
-      &.open {
-        &:after {
-          transform: rotate(45deg);
-          transition: 0.5s ease-in-out;
-        }
-        &:hover {
-          &:after {
-            color: $red;
-          }
-        }
-      }
+
+      // &:hover {
+      //   &:after {
+      //     color: $red;
+      //   }
+      // }
     }
   }
 
   .alert-expand {
     @extend %clearfix;
-    display: none;
-    background: white;
-    border-left: 1px solid #dddddd;
     @include rem(margin-bottom, $default-font-size);
     @include rem(padding, 0 $default-font-size);
+    background: $white;
+    border-left: 1px solid $light-grey;
+    display: none;
+
     &.expanded {
       display: block;
     }

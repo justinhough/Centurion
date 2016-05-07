@@ -29,17 +29,18 @@
 @mixin badges {
 
   %badge {
-    @extend .clear;
     @extend %typography;
-    display: inline-block;
-    background-color: #cccccc;
-    color: #555555;
-    cursor: pointer;
-    @include rem(font-size, 11);
-    line-height: 1.5;
     @include rem(margin, 10px 0);
     @include rem(padding, 5px 8px);
+    @include rem(font-size, 11);
+    background-color: $light-grey;
+    clear: both;
+    color: $dark-grey;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.5;
   }
+
   %bordered-badge {
     background-color: transparent;
     border: 1px solid $light-grey;

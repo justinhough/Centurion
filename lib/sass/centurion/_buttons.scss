@@ -3,16 +3,16 @@
 @mixin default-button() {
   @extend %cursor;
   @extend %typography;
+  @include box-shadow(0, 1px, 2px);
+  @include rem(font-size, $default-font-size);
+  @include rem(margin, $default-font-size 0);
+  @include rem(padding, 8px 16px);
   background: $lighter-grey;
   border: none;
   color: $black;
-  @include box-shadow(0, 1px, 2px);
   display: inline-block;
-  @include rem(font-size, $default-font-size);
   font-weight: normal;
-  @include rem(margin, $default-font-size 0);
   outline: 0;
-  @include rem(padding, 8px 16px);
   text-decoration: none;
   vertical-align: middle;
   zoom: 1;
@@ -27,9 +27,10 @@
 // @include button(class, color1, color2, text-color)
 @mixin btn($class, $color1, $color2, $text-color: $white) {
   .#{$class} {
-    @extend .btn;
+    @extend %button;
     background-color: $color1;
     color: $text-color;
+
     &:hover {
       background-color: $color2;
       color: $text-color;
@@ -42,11 +43,12 @@
 // @include button(class, color1, text-color)
 @mixin border-btn($class, $color1, $text-color: $color1) {
   .#{$class} {
-    @extend .btn;
+    @extend %button;
     @extend %bordered-btn;
-    box-shadow: none;
     border-color: $color1;
+    box-shadow: none;
     color: $color1;
+
     &:hover {
       background-color: $color1;
       color: $white;
@@ -57,10 +59,12 @@
 // Buttons
 // ----------------------------
 @mixin buttons() {
-  .btn {
+  .btn,
+  %button {
+    @extend %no-text-decoration;
     @include default-button;
-    @extend %noTextDecoration;
     transition: background 120ms linear;
+
     &:hover {
       @include default-button-hover;
     }
@@ -70,22 +74,26 @@
     background-color: transparent;
     border: 1px solid $grey;
   }
+
   .small-btn {
-    @extend .btn;
+    @extend %button;
     @include rem(font-size, 10);
     @include rem(padding, 6px 12px);
   }
+
   .large-btn {
-    @extend .btn;
+    @extend %button;
     @include rem(font-size, 18);
     @include rem(padding, 8px 36px);
   }
+
   .full-btn {
-    @extend .btn;
+    @extend %button;
     @include rem(padding, 10px 0);
     text-align: center;
     width: 100%;
   }
+
   .inline-btn {
     margin: 0;
   }

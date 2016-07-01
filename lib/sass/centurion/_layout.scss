@@ -30,9 +30,9 @@
     $num: $i;
     $value: $i * $default-font-size;
 
-    $pt: #{$margin-top}-#{$num};
-    $pb: #{$margin-bottom}-#{$num};
-    $pbot: #{$margin-both}-#{$num};
+    $pt: #{$padding-top}-#{$num};
+    $pb: #{$padding-bottom}-#{$num};
+    $pbot: #{$padding-both}-#{$num};
 
     .#{$pt} {
       @include rem(padding-top, $value);

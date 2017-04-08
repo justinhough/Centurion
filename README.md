@@ -119,7 +119,7 @@ I would also want to thank a few people for their contributions to Centurion.
 
 ## Licensing
 
-Licensed under [GPL]([license-url]).
+Licensed under [GPL][license-url].
 
 [centurion]: https://github.com/justinhough/Centurion
 [lic-img]: https://img.shields.io/badge/license-apache%202.0-blue.svg?style=flat-square
@@ -130,4 +130,3 @@ Licensed under [GPL]([license-url]).
 [npm-url]: http://badge.fury.io/js/centurion-framework
 [ruby-img]: https://badge.fury.io/rb/centurion-framework.svg
 [ruby-url]: http://badge.fury.io/rb/centurion-framework
-

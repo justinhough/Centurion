@@ -1,5 +1,7 @@
 # Centurion
 
+[![Join the chat at https://gitter.im/centurion-framework/Lobby](https://badges.gitter.im/centurion-framework/Lobby.svg)](https://gitter.im/centurion-framework/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![NPM version](https://badge.fury.io/js/centurion-framework.svg)](http://badge.fury.io/js/centurion-framework)
 [![Gem Version](https://badge.fury.io/rb/centurion-framework.svg)](http://badge.fury.io/rb/centurion-framework)
 

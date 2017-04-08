@@ -1,18 +1,12 @@
-# Centurion
+# Centurion [<img src="http://www.centurionframework.com/graphics/centurion_200_blue.png" alt="Kandor" width="200" align="right">][centurion]
 
-[![Join the chat at https://gitter.im/centurion-framework/Lobby](https://badges.gitter.im/centurion-framework/Lobby.svg)](https://gitter.im/centurion-framework/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-[![NPM version](https://badge.fury.io/js/centurion-framework.svg)](http://badge.fury.io/js/centurion-framework)
-[![Gem Version](https://badge.fury.io/rb/centurion-framework.svg)](http://badge.fury.io/rb/centurion-framework)
-
-![image](http://www.centurionframework.com/graphics/centurion_200_blue.png)
+[![NPM version][npm-img]][npm-url]
+[![Gem version][ruby-img]][ruby-url]
+[![Gitter chat][gitter-img]][gitter-url]
 
 Centurion is a responsive framework built for speed, simplicity, and flexibility. Originally based loosely on the [960 grid built by Nathan Smith](http://960.gs/), Centurion boasted a responsive grid system that would help alleviate the headache of building responsive designs. Like all web projects it grew and started to capitalize on several different areas like: typography, buttons, tables, and more in order to create a seamless framework that could allow web developers to start up a new project easily without the need to override every little piece.
 
 If you're concerned about browser support then we recommend either [html5shiv](https://code.google.com/p/html5shiv/) or [Modernizr](http://modernizr.com/) to your web site or project to help support CSS3 and HTML5.
-
-
-
 
 
 ## Install with NPM
@@ -125,4 +119,15 @@ I would also want to thank a few people for their contributions to Centurion.
 
 ## Licensing
 
-Licensed under [GPL](http://www.gnu.org/licenses/gpl.html).
+Licensed under [GPL]([license-url]).
+
+[centurion]: https://github.com/justinhough/Centurion
+[lic-img]: https://img.shields.io/badge/license-apache%202.0-blue.svg?style=flat-square
+[lic-url]: LICENSE.md
+[gitter-img]: https://badges.gitter.im/centurion-framework/Lobby.svg
+[gitter-url]: https://gitter.im/centurion-framework/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+[npm-img]: https://badge.fury.io/js/centurion-framework.svg
+[npm-url]: http://badge.fury.io/js/centurion-framework
+[ruby-img]: https://badge.fury.io/rb/centurion-framework.svg
+[ruby-url]: http://badge.fury.io/rb/centurion-framework
+

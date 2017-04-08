@@ -119,7 +119,7 @@ I would also want to thank a few people for their contributions to Centurion.
 
 ## Licensing
 
-Licensed under [GPL][license-url].
+Licensed under [GPL][lic-url].
 
 [centurion]: https://github.com/justinhough/Centurion
 [lic-img]: https://img.shields.io/badge/license-apache%202.0-blue.svg?style=flat-square

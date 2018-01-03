@@ -3,6 +3,7 @@
 [![NPM version][npm-img]][npm-url]
 [![Gem version][ruby-img]][ruby-url]
 [![Gitter chat][gitter-img]][gitter-url]
+[![Build Status][travisci-img]](travisci-url)
 
 Centurion is a responsive framework built for speed, simplicity, and flexibility. Originally based loosely on the [960 grid built by Nathan Smith](http://960.gs/), Centurion boasted a responsive grid system that would help alleviate the headache of building responsive designs. Like all web projects it grew and started to capitalize on several different areas like: typography, buttons, tables, and more in order to create a seamless framework that could allow web developers to start up a new project easily without the need to override every little piece.
 
@@ -130,3 +131,5 @@ Licensed under [GPL][lic-url].
 [npm-url]: http://badge.fury.io/js/centurion-framework
 [ruby-img]: https://badge.fury.io/rb/centurion-framework.svg
 [ruby-url]: http://badge.fury.io/rb/centurion-framework
+[travisci-img]: https://travis-ci.org/justinhough/Centurion.svg?branch=master
+[travisci-url]: https://travis-ci.org/justinhough/Centurion

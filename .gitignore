@@ -29,3 +29,5 @@ compass_app_log.txt
 _reinstate/*
 *.scssc
 *.sassc
+dist
+styleguide

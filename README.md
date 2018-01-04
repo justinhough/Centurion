@@ -1,4 +1,4 @@
-# Centurion [<img src="http://www.centurionframework.com/graphics/centurion_200_blue.png" alt="Kandor" width="200" align="right">][centurion]
+# Centurion [<img src="http://www.centurionframework.com/graphics/centurion_200_blue.png" alt="Centurion" width="200" align="right">][centurion]
 
 [![NPM version][npm-img]][npm-url]
 [![Gem version][ruby-img]][ruby-url]
@@ -131,5 +131,5 @@ Licensed under [GPL][lic-url].
 [npm-url]: http://badge.fury.io/js/centurion-framework
 [ruby-img]: https://badge.fury.io/rb/centurion-framework.svg
 [ruby-url]: http://badge.fury.io/rb/centurion-framework
-[travisci-img]: https://travis-ci.org/justinhough/Centurion.svg?branch=master
+[travisci-img]: https://travis-ci.org/justinhough/Centurion.svg?branch=4.0.0
 [travisci-url]: https://travis-ci.org/justinhough/Centurion

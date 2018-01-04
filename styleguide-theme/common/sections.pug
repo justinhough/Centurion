@@ -1,0 +1,42 @@
+//-
+ * sections.pug -- Render a list of nested sections
+ *
+ * Copyright (C) 2016 Michael Seibt
+ *
+ * With contributions from: -
+ *
+ * This software may be modified and distributed under the terms
+ * of the MIT license. See the LICENSE file for details.
+
+include ./components.pug
+
+mixin section-second-level ( items )
+  each elements, title in items
+    .SG-row
+      .SG-gr-12
+        .SG-h2(id='_'+title) #{title}
+
+    //- Entities in this section
+    -if(title === '_e')
+      +components(elements)
+    -else
+      //- Otherwise, it's a subsection
+      +section-nth-level ( elements, [], title)
+
+mixin section-nth-level ( items, parents, toplevel)
+  each elements, title in items
+
+    //- Entities in this section
+    if title === '_e'
+      +components(elements)
+    else
+      //- Otherwise, it's a subsection
+      if (title !== 'Other') && elements._e
+        .SG-row
+          .SG-gr-12
+            if parents.length > 0
+              .SG-h3 #{parents.join(' > ')} &gt; #{title}
+            else
+              .SG-h3(id='_' + toplevel + '_' + title) #{title}
+
+      +section-nth-level ( elements, parents.concat([title]))

@@ -1,0 +1,19 @@
+{
+  "title": "Centurion",
+  "files": ["lib/sass/**/*.scss"],
+  "target": "styleguide",
+  "css": [
+    "../dist/css/centurion.css",
+    "../dist/css/custom.css"
+  ],
+  "scripts": [
+    "../lib/js/libs/jquery-1.11.0.min.js",
+    "../lib/js/centurion.js"
+  ],
+  "template": "./styleguide-theme/",
+  "namespace": "page",
+  "verbose": 3,
+  "counterCSS": null,
+  "staticLipsum": false,
+  "placeholderService": false
+}

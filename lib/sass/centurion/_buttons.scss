@@ -1,9 +1,36 @@
 // Button Mixins
 // ----------------------------
+//
+/**
+ * @atom Button
+ * @section Forms > Buttons
+ * @description
+ *  Buttons for various purposes.
+ * @modifiers
+ *  .small-btn a smaller button
+ *  .large-btn a larger button
+ *  .full-btn a full width button
+ *  .inline-btn an inline button
+ *  .blue-btn a blue buttons
+ *  .red-btn a red button
+ *  .orange-btn an orange button
+ *  .purple-btn a purple button
+ *  .green-btn a green button
+ *  .dark-grey-btn a dark gret button
+ *  .blue-btn-bdr a bordered blue button
+ *  .red-btn-bdr a bordered red button
+ *  .orange-btn-bdr a bordered orange button
+ *  .purple-btn-bdr a bordered purple button
+ *  .green-btn-bdr a bordered green button
+ *  .dark-grey-btn-bdr a bordered dark gret button
+ * @markup
+ *   <button class="btn">Button</button>
+ *   <button class="btn-bdr">Bordered Button</button>
+ */
 @mixin default-button() {
   @extend %cursor;
   @extend %typography;
-  @include box-shadow(0, 1px, 2px);
+  // @include box-shadow(0, 1px, 2px);
   @include rem(font-size, $default-font-size);
   @include rem(margin, $default-font-size 0);
   @include rem(padding, 8px 16px);
@@ -70,9 +97,16 @@
     }
   }
 
+  .btn-bdr,
   %bordered-btn {
     background-color: transparent;
     border: 1px solid $grey;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      border-color: transparent;
+      @include default-button-hover;
+    }
   }
 
   .small-btn {

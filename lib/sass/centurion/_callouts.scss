@@ -1,6 +1,39 @@
 // Callout Mixins
 // ----------------------------
 
+/**
+ * General Callouts
+ *
+ * @molecule Callout
+ * @markup
+ *  <div class="blue-callout">
+ *    <h1>Headline 1 for callout</h1>
+ *    <h2>Headline 2 for callout</h2>
+ *    <h3>Headline 3 for callout</h3>
+ *    <p>Text for the callout</p>
+ *  </div>
+ */
+.callout {}
+
+ /**
+  * Expandable Callouts
+  *
+  * @molecule Callout
+  * @markup
+  *  <div class="callout alert">
+  *    <span class="btn-expand"></span>
+  *    <h1>Headline 1 for callout</h1>
+  *    <p>Text for the callout</p>
+  *
+  *    <div class="alert-expand">
+  *      <h2>Headline 2 for callout</h2>
+  *      <h3>Headline 3 for callout</h3>
+  *      <p>Text for the callout</p>
+  *    </div>
+  *  </div>
+  */
+.exandable-callout {}
+
 // @include callout(class, bkColor, borderColor, textColor)
 @mixin callout($class, $bk-color, $border-color, $text-color) {
   .#{$class}-callout {
@@ -47,6 +80,8 @@
 
   // Callouts
   // ----------------------------
+
+
   .callout,
   %callout {
     @extend %clearfix;

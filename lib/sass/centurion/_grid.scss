@@ -2,6 +2,61 @@
 // ----------------------------
 $gutter-half: 10px;
 
+/**
+ * Grid
+ * Note: This is just a minified example.
+ *
+ * @structure Grid
+ * @flag full-width
+ *
+ * @markup
+ *   <div class="ctn-container">
+ *     <div class="ctn-row">
+ *       <div class="ctn-grid-2">
+ *         <span class="box-grid"></span>
+ *       </div>
+ *       <div class="ctn-grid-22">
+ *         <span class="box-grid"></span>
+ *       </div>
+ *     </div>
+ *
+ *     <div class="ctn-row">
+ *       <div class="ctn-grid-3">
+ *         <span class="box-grid"></span>
+ *       </div>
+ *       <div class="ctn-grid-21">
+ *         <span class="box-grid"></span>
+ *       </div>
+ *     </div>
+ *
+ *     <div class="ctn-row">
+ *       <div class="ctn-grid-4">
+ *         <span class="box-grid"></span>
+ *       </div>
+ *       <div class="ctn-grid-20">
+ *         <span class="box-grid"></span>
+ *       </div>
+ *     </div>
+ *
+ *     <div class="ctn-row">
+ *       <div class="ctn-grid-5">
+ *         <span class="box-grid"></span>
+ *       </div>
+ *       <div class="ctn-grid-19">
+ *         <span class="box-grid"></span>
+ *       </div>
+ *     </div>
+ *
+ *     <div class="ctn-row">
+ *       <div class="ctn-grid-6">
+ *         <span class="box-grid"></span>
+ *       </div>
+ *       <div class="ctn-grid-18">
+ *         <span class="box-grid"></span>
+ *       </div>
+ *     </div>
+ *   </div>
+*/
 
 // Function: figure out grid percentage
 @function grid-percent($grid-columns, $container-width, $i) {

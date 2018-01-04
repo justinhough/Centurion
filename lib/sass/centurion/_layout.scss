@@ -1,3 +1,52 @@
+/**
+ * Full Blog page layout
+ * Note: This is just a minified example.
+ *
+ * @structure Page Layout
+ * @flag full-width
+ *
+ * @markup
+ *  <header>
+ *    <div class="ctn-container">
+ *      <div class="ctn-row">
+ *        <div class="ctn-grid-12 ctn-tablet-6">
+ *          <h1 id="layout-logo">Logo</h1>
+ *        </div>
+ *        <div class="ctn-grid-12 ctn-tablet-6">
+ *          <nav id="main" class="mobile"style="float:right;">
+ *            <a href="#" class="nav-current">Page</a>
+ *            <a href="#">Page</a>
+ *            <a href="#">Page</a>
+ *          </nav>
+ *        </div>
+ *      </div>
+ *    </div>
+ *  </header>
+
+ *    <section>
+ *      <div class="ctn-container">
+ *        <div class="ctn-row">
+ *          <div class="ctn-grid-18">
+ *            <div class="layout-tall"></div>
+ *          </div>
+ *          <div class="ctn-grid-6">
+ *            <div class="layout-tall"></div>
+ *          </div>
+ *        </div>
+ *      </div>
+ *    </section>
+ *
+ *    <footer>
+ *    <div class="ctn-container">
+ *      <div class="ctn-row">
+ *        <div class="ctn-grid-24">
+ *          <div class="layout-box"></div>
+ *          <p>&copy; Centurion Framework.</p>
+ *        </div>
+ *      </div>
+ *    </div>
+ *  </footer>
+ */
 // Layout Mixin - Margin
 // @include margin-block-layout
 @mixin margin-block-layout($layout-rows: 5) {

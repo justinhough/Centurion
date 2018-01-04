@@ -1,38 +1,74 @@
 // Colors
 // Centurion Colors
-$white: #ffffff;
-$black: #000000;
 
+/** @color Solid White */
+$white: #ffffff;
+/** @color Solid black */
+$black: #000000;
+/** @color Off White */
 $off-white: #efefef;
 
+/** @color Grey */
 $grey: #999999;
+/** @color Light Grey */
 $light-grey: #cccccc;
+/** @color Lighter Grey */
 $lighter-grey: #ededed;
+/** @color Dark Grey */
 $dark-grey: #555555;
+/** @color Darker Grey */
 $darker-grey: #333333;
 
+/** @color Red */
 $red: #e04646;
-$dark-red: darken($red, 10%);
-$light-red: lighten($red, 20%);
+/** @color Dark Red */
+$dark-red: #CE1B1E;
+/** @color Light Red */
+$light-red: #EE9C9C;
 
+/** @color Blue */
 $blue: #2971b2;
-$dark-blue: darken($blue, 10%);
-$light-blue: lighten($blue, 30%);
+/** @color Dark Blue */
+$dark-blue: #195989;
+/** @color Light Blue */
+$light-blue: #8EBDE5;
 
+/** @color Purple */
 $purple: #553a99; // #7f4d7b
-$dark-purple: darken($purple, 10%);
-$light-purple: lighten($purple, 30%);
+/** @color Dark Purple */
+$dark-purple: #3C2F74;
+/** @color Light Purple */
+$light-purple: #A597D7;
 
+/** @color Green */
 $green: #4a742c; // #277f35
-$dark-green: darken($green, 10%);
-$light-green: lighten($green, 30%);
+/** @color Dark Green */
+$dark-green: #354E1F;
+/** @color Light Green */
+$light-green: #9AC871;
 
+/** @color Orange */
 $orange: #fe9300;
-$dark-orange: darken($orange, 10%);
-$light-orange: lighten($orange, 20%);
+/** @color Dark Orange */
+$dark-orange: #CB7200;
+/** @color Light Orange */
+$light-orange: #FFBC64;
 
-
-// @include single-color-swatch(class, color, lightColor, darkColor)
+/**
+ * Single Color Swatch Mixin
+ *
+ * @mixin
+ * @section Mixins > Color Mixins
+ *
+ * @param $class Class name to use
+ * @param $color Color variable or color code
+ * @param $light-color Color for light variation
+ * @param $dark-color Color for dark variation
+ *
+ * @example
+ *   @include single-color-swatch(orangish, $orange, $light-orange, $dark-orange);
+ *
+ */
 @mixin single-color-swatch($class, $color, $light-color, $dark-color) {
   $class-alt: "." + $class;
 
@@ -49,7 +85,16 @@ $light-orange: lighten($orange, 20%);
   }
 }
 
-// Color Swatches
+/**
+ * Default Color Swatches
+ *
+ * @mixin
+ * @section Mixins > Color Mixins
+ *
+ * @example
+ *   @include color-swatches;
+ *
+ */
 @mixin color-swatches {
   %color-box-all {
     border: 1px solid $lighter-grey;

@@ -1,4 +1,4 @@
-# Centurion [<img src="http://www.centurionframework.com/graphics/centurion_200_blue.png" alt="Centurion" width="200" align="right">][centurion]
+# Centurion Framework[<img src="http://www.centurionframework.com/graphics/centurion_200_blue.png" alt="Centurion" width="200" align="right">][centurion]
 
 [![NPM version][npm-img]][npm-url]
 [![Gem version][ruby-img]][ruby-url]
@@ -8,6 +8,19 @@
 Centurion is a responsive framework built for speed, simplicity, and flexibility. Originally based loosely on the [960 grid built by Nathan Smith](http://960.gs/), Centurion boasted a responsive grid system that would help alleviate the headache of building responsive designs. Like all web projects it grew and started to capitalize on several different areas like: typography, buttons, tables, and more in order to create a seamless framework that could allow web developers to start up a new project easily without the need to override every little piece.
 
 If you're concerned about browser support then we recommend either [html5shiv](https://code.google.com/p/html5shiv/) or [Modernizr](http://modernizr.com/) to your web site or project to help support CSS3 and HTML5.
+
+
+## @TODO for 2018
+- Rebuild grid to use Flexbox and CSS Grid - [Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- Rework for responsive breakpoints
+- CSS classes reanalyzed to be semantic and better understandable
+- New color scheme and full greyscale for backgrounds, text, etc. - [Sass Color Variables That Don’t Suck](https://davidwalsh.name/sass-color-variables-dont-suck)
+- Better documentation for Grunt, Gulp and Ruby
+- Component and Pattern library for frequently used layouts
+- PostCSS package
+- SCSS to Sass linter via [Hound](https://houndci.com/configuration#sass-lint)
+- Travis CI integration
+- Living style guide using [Nucleus](https://holidaypirates.github.io/nucleus/index.html)
 
 
 ## Install with NPM

@@ -14,7 +14,7 @@
   "bugs": "https://github.com/justinhough/centurion/issues",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "npm-run-series sass styleguide",
     "styleguide": "nucleus --config config.nucleus.json",
     "prerelease": "npm-run-series changelog",
     "sass": "node-sass -r ./lib/sass/ -o ./dist/css/",

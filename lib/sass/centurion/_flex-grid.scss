@@ -15,6 +15,14 @@ $gutter-half: 10px;
 // ----------------------------
 @mixin flex-grid() {
 
+  %d-grid-base {
+    @include rem(padding, 0 7.5);
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
   .#{$container-class} {
     @extend %clearfix;
     box-sizing: border-box;
@@ -22,14 +30,6 @@ $gutter-half: 10px;
     margin: 0 auto;
     max-width: $d-width + $value;
     padding: 0;
-
-    %grid-flex-base {
-      @include rem(padding, 0 7.5);
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      flex-grow: 0;
-      flex-shrink: 0;
-    }
 
     // scss-lint:disable DeclarationOrder
     @include grid-flex-generate(desktop);
@@ -54,6 +54,25 @@ $gutter-half: 10px;
 
   // Tablet
   @media screen and (max-width: $t-width + px) {
+    %t-grid-base {
+      @include rem(padding, 0 7.5);
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+    %t-full-width {
+      @include rem(padding-left, $gutter-half !important);
+      @include rem(padding-right, $gutter-half !important);
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    %t-no-push-pull {
+      margin-#{$lang-front}: 0; // negate
+    }
+
     .#{$container-class} {
       @include grid-flex-generate(tablet);
     }
@@ -61,6 +80,25 @@ $gutter-half: 10px;
 
   // Mobile
   @media screen and (max-width: $m-width + px) {
+    %m-grid-base {
+      @include rem(padding, 0 7.5);
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+
+    %m-full-width {
+      @include rem(padding-left, $gutter-half !important);
+      @include rem(padding-right, $gutter-half !important);
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    %m-no-push-pull {
+      margin-#{$lang-front}: 0; // negate
+    }
+
     .#{$container-class} {
       @include grid-flex-generate(mobile);
     }
@@ -74,13 +112,13 @@ $gutter-half: 10px;
 // Flex Grid Creator
 // ----------------------------
 // @include grid-flex-creator('ctn-grid', 'ctn-push', 24, 1200);
-@mixin grid-flex-creator($class, $push, $columns, $width) {
+@mixin grid-flex-creator($class, $push, $columns, $width, $grid-flex-base) {
   @for $i from 1 through $columns {
 
     .#{$class}-#{$i} {
       @if ($columns == 24) {
-        @extend %grid-flex-base;
-        @extend %clearfix;
+        @extend %#{$grid-flex-base};
+        // @extend %clearfix;
       }
       flex-basis: grid-percent($columns, $width, $i);
       max-width: grid-percent($columns, $width, $i);
@@ -97,44 +135,33 @@ $gutter-half: 10px;
 @mixin grid-flex-generate($resp:null) {
   @if $resp == "desktop" {
     // create desktop grid
-    @include grid-flex-creator($grid-class, $push-class, $d-columns, $d-width);
+    @include grid-flex-creator($grid-class, $push-class, $d-columns, $d-width, "d-grid-base");
   }
   @if $resp == "tablet" {
     // adjust grid for tablet
-    @include adjust-flex-grid($t-columns, $d-columns, $grid-class, $push-class, t-full-width, t-no-push-pull);
+    @include adjust-flex-grid($t-columns, $d-columns, $grid-class, $push-class, "t-full-width", "t-no-push-pull");
     // create tablet grid
-    @include grid-flex-creator($t-grid-class, $t-push-class, $t-columns, $t-width);
+    @include grid-flex-creator($t-grid-class, $t-push-class, $t-columns, $t-width, "t-grid-base");
   }
   @if $resp == "mobile" {
     //adjust grid for mobile
-    @include adjust-flex-grid($m-columns, $d-columns, $grid-class, $push-class, t-full-width, t-no-push-pull);
-    @include adjust-flex-grid($m-columns, $t-columns, $grid-class, $t-push-class, m-full-width, m-no-push-pull);
+    @include adjust-flex-grid($m-columns, $d-columns, $grid-class, $push-class, "m-full-width", "m-no-push-pull");
+    @include adjust-flex-grid($m-columns, $t-columns, $t-grid-class, $t-push-class, "m-full-width", "m-no-push-pull");
     // create mobile grid
-    @include grid-flex-creator($m-grid-class, $m-push-class, $m-columns, $m-width);
+    @include grid-flex-creator($m-grid-class, $m-push-class, $m-columns, $m-width, "m-grid-base");
   }
   @include nested-flex-grid-elements();
 }
 
 // Adjust Grid on Smaller Devices (Tablets and Mobile
 @mixin adjust-flex-grid($columns, $columns-count, $class, $push, $full-width, $negate-push) {
-  %#{$full-width} {
-    @include rem(padding-left, $gutter-half !important);
-    @include rem(padding-right, $gutter-half !important);
-    flex-basis: 100%;
-    max-width: 100%;
-  }
-
-  %#{$negate-push} {
-    margin-#{$lang-front}: 0; // negate
-  }
 
   @for $i from 1 through $columns-count {
 
     @if $i < $columns {
-
       .#{$class}-#{$i} {
-        // @extend %grid-flex-base;
         @extend %#{$full-width};
+        // content: 'full-width ' %#{$full-width};
       }
 
       .#{$push}-#{$i} {

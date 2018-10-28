@@ -1,3 +1,8 @@
+## 3.6.4
+- Grunt package updates for vulnerabilities in `package-lock.js`
+- `@extend` within media query fix for Flex Grid (works with latest node-sass)
+- Readme updates
+
 ## 3.6.2
 - bug fix #27 when using `.ctn-center` would not center grid elements
 - Grunt Sass version updated in package.json to `1.1.0` to alleviate compile errors

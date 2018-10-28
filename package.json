@@ -42,7 +42,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-gh-pages": "^0.9.1",
     "grunt-github-releaser": "^0.1.18",
-    "grunt-http-server": "^1.4.0",
+    "grunt-http-server": "^2.1.0",
     "grunt-include-replace": "^3.0.0",
     "grunt-newer": "^1.1.0",
     "grunt-postcss": "^0.5.1",

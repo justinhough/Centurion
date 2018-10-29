@@ -6,16 +6,18 @@
 
 'use strict';
 
-var banner = '/* -------------------------------------------------------- \n' +
+const banner = '/* -------------------------------------------------------- \n' +
              ' *  <%= pkg.projectName %> v<%= pkg.version %> \n' +
              ' *  <%= pkg.author.name %> (<%= pkg.author.url %>) \n' +
              ' *  Licensed under GPL and MIT. \n' +
              ' * -------------------------------------------------------- */\n';
 
-var shortBanner = '/* <%= pkg.projectName %> - v <%= pkg.version %> */\n';
+const shortBanner = '/* <%= pkg.projectName %> - v <%= pkg.version %> */\n';
 
-var repoName = require('./package.json').name;
-var version = require('./package.json').version;
+const repoName = require('./package.json').name;
+const version = require('./package.json').version;
+
+const sass = require('node-sass');
 
 module.exports = function (grunt) {
 
@@ -101,6 +103,7 @@ module.exports = function (grunt) {
       },
       expanded: {
         options: {
+          implementation: sass,
           outputStyle: 'expanded'
         },
         files: [{
@@ -113,6 +116,7 @@ module.exports = function (grunt) {
       },
       minified: {
         options: {
+          implementation: sass,
           outputStyle: 'compressed'
         },
         files: [{
@@ -140,7 +144,7 @@ module.exports = function (grunt) {
       options: {
         //map: true,
         processors: [
-          require('autoprefixer-core')({browsers: 'last 2 version, > 5%, ie > 8'})
+          require('autoprefixer')({browsers: 'last 2 version, > 5%, ie > 8'})
         ]
       },
       dist: {

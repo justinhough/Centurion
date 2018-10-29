@@ -1,2 +1,5 @@
 scss:
   config_file: .scss-style.yml
+
+jshint:
+  config_file: .jshintrc

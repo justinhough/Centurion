@@ -13,15 +13,14 @@ If you're concerned about browser support then we recommend either [html5shiv](h
 ## @TODO for 2018
 - Rebuild grid to use Flexbox and CSS Grid - [Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - Rework for responsive breakpoints
-- CSS classes reanalyzed to be semantic and better understandable
+- CSS classes re-analyzed to be more semantic
 - New color scheme and full greyscale for backgrounds, text, etc. - [Sass Color Variables That Don’t Suck](https://davidwalsh.name/sass-color-variables-dont-suck)
-- Better documentation for Grunt, Gulp and Ruby
+- Better documentation
 - Component and Pattern library for frequently used layouts
-- PostCSS package
 - SCSS to Sass linter via [Hound](https://houndci.com/configuration#sass-lint)
 - Travis CI integration
 - Living style guide using [Nucleus](https://holidaypirates.github.io/nucleus/index.html)
-
+- Removal of Grunt in favor of a full Node build process (for less dependencies)
 
 ## Install with NPM
 

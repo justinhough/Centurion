@@ -1,5 +1,10 @@
-## v4.0.0
-- 
+## v3.8.1
+- Plugins updated:
+	- load-grunt-tasks from 3.5.2 to 4.0.0
+	- grunt-include-replace from 3.2.0 to 5.0.0
+	- grunt-contrib-connect from 0.9.0 to 2.0.0
+	- grunt-contrib-uglify from 0.9.2 to 4.0.0
+	- grunt-contrib-copy from 0.7.0 to 1.0.0
 
 ## v3.8.0
 - `.scss-style.yml` updated shorthand property rule to use 4

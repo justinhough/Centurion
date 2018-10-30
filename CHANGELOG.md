@@ -1,3 +1,33 @@
+## v3.8.1
+- Plugins updated:
+	- load-grunt-tasks from 3.5.2 to 4.0.0
+	- grunt-include-replace from 3.2.0 to 5.0.0
+	- grunt-contrib-connect from 0.9.0 to 2.0.0
+	- grunt-contrib-uglify from 0.9.2 to 4.0.0
+	- grunt-contrib-copy from 0.7.0 to 1.0.0
+
+## v3.8.0
+- `.scss-style.yml` updated shorthand property rule to use 4
+- Changed `autoprefixer-core` to `autoprefixer` since projects merged
+- Plugins updated:
+	- grunt-scss-lint from 0.3.8 to 0.5.0
+	- [Security] Bump grunt-gh-pages from 0.9.1 to 3.1.0
+	- grunt-contrib-compress from 0.13.0 to 1.4.3
+	- grunt-postcss from 0.5.5 to 0.9.0
+	- grunt from 0.4.5 to 1.0.3
+	- grunt-contrib-watch from 0.6.1 to 1.1.0
+
+
+## v3.7.0
+- `.hound.yml` updated to use `.jshintrc`
+- fixed compile issue with node-sass upgrade with @extend
+- Plugins updates:
+ 	- grunt-sass requirement from ^1.1.0 to ^3.0.2
+	- grunt-banner requirement from ^0.3.1 to ^0.6.0
+	- grunt-http-server requirement from ^1.4.0 to ^2.1.0
+	- grunt-contrib-clean requirement from ^0.6.0 to ^2.0.0
+	- grunt-concurrent requirement from ^1.0.0 to ^2.3.1
+
 ## 3.6.4
 - Grunt package updates for vulnerabilities in `package-lock.js`
 - `@extend` within media query fix for Flex Grid (works with latest node-sass)

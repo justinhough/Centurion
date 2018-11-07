@@ -1,5 +1,5 @@
 /* -------------------------------------------------------- 
- *  Centurion Framework v3.8.1 
+ *  Centurion Framework v3.8.2 
  *  Justin Hough (http://www.justinhough.com/) 
  *  Licensed under GPL and MIT. 
  * -------------------------------------------------------- */

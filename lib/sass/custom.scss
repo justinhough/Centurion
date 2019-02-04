@@ -192,5 +192,12 @@ footer {
 
 }
 
+code[class*="language"] {
+  height: auto !important;
+}
+
+// Reset for Resources page
+.ctn-row { height: auto !important; }
+
 @include clearfix;
 @include color-swatches;

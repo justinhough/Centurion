@@ -29,3 +29,6 @@ compass_app_log.txt
 _reinstate/*
 *.scssc
 *.sassc
+
+# repo specifc
+__backup

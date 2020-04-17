@@ -49,7 +49,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-gh-pages": "^3.1.0",
+    "grunt-gh-pages": "^4.0.0",
     "grunt-github-releaser": "^0.1.18",
     "grunt-http-server": "^2.1.0",
     "grunt-include-replace": "^5.0.0",

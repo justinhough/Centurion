@@ -47,7 +47,7 @@
     "grunt-contrib-compress": "^1.5.0",
     "grunt-contrib-connect": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-uglify": "^5.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-gh-pages": "^4.0.0",
     "grunt-github-releaser": "^0.1.18",

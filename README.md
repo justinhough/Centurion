@@ -9,7 +9,7 @@ Centurion is a responsive framework built for speed, simplicity, and flexibility
 If you're concerned about browser support then we recommend either [html5shiv](https://code.google.com/p/html5shiv/) or [Modernizr](http://modernizr.com/) to your web site or project to help support CSS3 and HTML5.
 
 
-## @TODO for 2018
+## @TODO
 - Rebuild grid to use Flexbox and CSS Grid - [Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - Rework for responsive breakpoints
 - CSS classes re-analyzed to be more semantic

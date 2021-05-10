@@ -65,6 +65,6 @@
     "mime": ">=1.4.1",
     "minimatch": ">=3.0.2",
     "negotiator": ">=0.6.1",
-    "node-sass": "^5.0.0"
+    "node-sass": "^6.0.0"
   }
 }

@@ -100,6 +100,7 @@ module.exports = function (grunt) {
       options: {
         precision: 4,
         banner: 'Testing',
+        nospawn: true,
       },
       expanded: {
         options: {
@@ -142,9 +143,10 @@ module.exports = function (grunt) {
 
     postcss: {
       options: {
-        //map: true,
+        map: true,
         processors: [
-          require('autoprefixer')({overrideBrowserslist: 'last 2 version, > 5%, ie > 8'})
+          // require('autoprefixer')({overrideBrowserslist: 'last 2 version, > 5%, ie > 8'})
+          require ('autoprefixer') ({overrideBrowserslist: ['last 2 versions']})
         ]
       },
       dist: {
